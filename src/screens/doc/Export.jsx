@@ -2,9 +2,11 @@ import React, { useMemo, useState } from 'react';
 import { useApp } from '../../ctx.js';
 import { splXml } from '../../engine/spl.js';
 import { download, slug } from '../../engine/io.js';
+import { labellingPackage, ccsiFile, m1Section } from '../../engine/handoff.js';
+import { currentVersion } from '../../engine/ccds.js';
 
-export default function Export({ doc, issues, product }) {
-  const { pack, toast } = useApp();
+export default function Export({ doc, docs, issues, product, project }) {
+  const { pack, toast, user } = useApp();
   const [busy, setBusy] = useState('');
   const xml = useMemo(() => splXml(doc, { product }), [doc, product]);
   const name = slug(`${doc.meta?.proprietaryName ?? doc.fields?.proprietaryName ?? 'label'}-${doc.title}-v${doc.version ?? 0}`);
@@ -24,7 +26,12 @@ export default function Export({ doc, issues, product }) {
         <div className="card"><h3>Check report PDF</h3><p className="small">Every finding with its rule, source, fix and any waiver reason.</p><button className="btn small" disabled={!!busy} onClick={() => run('report', (p) => p.checkReportPdf(doc, pack, issues))}>{busy === 'report' ? 'Making…' : 'Download PDF'}</button></div>
         <div className="card"><h3>Practice SPL-style XML</h3><p className="small">Sections with LOINC codes, in the general shape of an SPL file. Not validated; never submit it.</p><button className="btn small" onClick={() => download(`${name}-practice-spl.xml`, xml, 'application/xml')}>Download XML</button></div>
       </div>
-      <p className="small muted">The Module 1 labelling package for the eCTD Dossier Builder arrives in Phase 2. The whole project (all labels, versions, reviews and the audit trail) downloads from the button at the top of the page.</p>
+      <h3>For the other apps</h3>
+      <div className="cat-grid" style={{ marginBottom: '1.25rem' }}>
+        <div className="card"><h3>Module 1 labelling package</h3><p className="small">Every label in this project, placed for US Module 1.14 (this label goes to {m1Section(doc)}). In the <a href="https://randomthingsonlineatsk-cloud.github.io/ectd-dossier-builder/" target="_blank" rel="noreferrer">eCTD Dossier Builder</a>, open a US project for {product?.brandName} and use "Import labelling package" on the Sequences tab.</p><button className="btn small primary" onClick={() => download(`${slug(product?.brandName)}-labelling-package.json`, JSON.stringify(labellingPackage({ project, docs, product, pack, user }), null, 1))}>Download package</button></div>
+        {currentVersion(project?.ccds) && <div className="card"><h3>CCSI for pharmacovigilance</h3><p className="small">The core safety statements of CCDS {currentVersion(project.ccds).v}, the reference for whether a reaction is listed.</p><button className="btn small" onClick={() => download(`${slug(product?.brandName)}-ccsi.json`, JSON.stringify(ccsiFile({ project, product, user }), null, 1))}>Download CCSI file</button></div>}
+      </div>
+      <p className="small muted">The whole project (all labels, versions, reviews, the core data sheet, change requests and the audit trail) downloads from the button at the top of the page.</p>
       <details>
         <summary className="small" style={{ cursor: 'pointer', fontWeight: 600 }}>Show the XML</summary>
         <pre className="panel" style={{ overflow: 'auto', maxHeight: '60vh', fontSize: '.75rem' }}>{xml}</pre>

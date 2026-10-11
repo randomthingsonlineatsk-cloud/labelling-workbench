@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useApp } from '../ctx.js';
+import { moduleOf } from '../engine/pack.js';
 
 function shuffle(a, seed) {
   let s = seed >>> 0 || 1;
@@ -15,7 +16,9 @@ export default function Quiz() {
   const [topic, setTopic] = useState('');
   const [seed, setSeed] = useState(() => Date.now());
   const [mode, setMode] = useState('quiz');
-  const qs = useMemo(() => shuffle(data.questions.filter((q) => !topic || String(q.topic) === topic), seed).slice(0, 10), [data, topic, seed]);
+  // '' = US mixed round, 'core' = core module mixed round, a number = one lesson's questions.
+  const pick = (q) => (topic === '' ? moduleOf(q) === 'us' : topic === 'core' ? moduleOf(q) === 'core' : String(q.topic) === topic);
+  const qs = useMemo(() => shuffle(data.questions.filter(pick), seed).slice(0, 10), [data, topic, seed]);
   const [ans, setAns] = useState({});
   const [flip, setFlip] = useState({});
   const right = qs.filter((q) => ans[q.id] === q.answer).length;
@@ -25,12 +28,14 @@ export default function Quiz() {
   return (
     <div className="page">
       <h1>Quiz bank</h1>
-      <p>{data.questions.length} questions on US labelling, each with its source. Ten at a time. A mixed round ("All topics") of 80% or more counts towards the certificate.{past.length ? ` Best so far: ${Math.max(...past.map((a) => a.score))}%.` : ''}</p>
+      <p>{data.questions.length} questions, each with its source. Ten at a time. A mixed round of 80% or more counts towards that module's certificate: "All US topics" for the US certificate, "Core module" for the core certificate.{past.length ? ` Best so far: ${Math.max(...past.map((a) => a.score))}%.` : ''}</p>
       <div className="row panel" style={{ marginBottom: '1rem' }}>
         <label className="field" style={{ minWidth: 260 }}>Topic
           <select value={topic} onChange={(e) => { setTopic(e.target.value); setAns({}); setFlip({}); }}>
-            <option value="">All topics (mixed round)</option>
-            {data.topics.map((t) => <option key={t.id} value={String(t.id)}>{t.label}</option>)}
+            <option value="">All US topics (mixed round)</option>
+            <option value="core">Core module (mixed round)</option>
+            <optgroup label="US lessons">{data.topics.filter((t) => moduleOf(t) === 'us').map((t) => <option key={t.id} value={String(t.id)}>{t.label}</option>)}</optgroup>
+            <optgroup label="Core lessons">{data.topics.filter((t) => moduleOf(t) === 'core').map((t) => <option key={t.id} value={String(t.id)}>{t.label}</option>)}</optgroup>
           </select>
         </label>
         <div className="seg" role="group" aria-label="Mode">
@@ -66,7 +71,7 @@ export default function Quiz() {
       {mode === 'quiz' && (
         <div className="row" style={{ marginTop: '1rem' }}>
           <span aria-live="polite">{Object.keys(ans).length} of {qs.length} answered{Object.keys(ans).length ? `, ${right} right` : ''}.</span>
-          {done && <button className="btn primary" onClick={async () => { const score = Math.round((right / qs.length) * 100); await saveAttempt({ kind: 'quiz', topic: topic || 'all', score, right, total: qs.length }); toast(`Quiz: ${right} of ${qs.length}.`); reset(); }}>Save score</button>}
+          {done && <button className="btn primary" onClick={async () => { const score = Math.round((right / qs.length) * 100); await saveAttempt({ kind: 'quiz', topic: topic || 'all', module: topic === 'core' ? 'core' : moduleOf(data.topics.find((t) => String(t.id) === topic)) , score, right, total: qs.length }); toast(`Quiz: ${right} of ${qs.length}.`); reset(); }}>Save score</button>}
         </div>
       )}
     </div>

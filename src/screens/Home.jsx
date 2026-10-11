@@ -4,19 +4,32 @@ import { PRODUCTS } from '../engine/pack.js';
 import { runChecks, summarise } from '../engine/checks.js';
 import { KIND_LABEL } from '../engine/model.js';
 import { readFile } from '../engine/io.js';
+import { productFromEctdFile } from '../engine/handoff.js';
+import { moduleOf } from '../engine/pack.js';
 import { Counts, Modal, fmtDate } from '../components/ui.jsx';
 
-const KINDS = ['pi', 'mg', 'ppi', 'ifu', 'carton', 'container'];
+const KINDS = ['pi', 'mg', 'ppi', 'ifu', 'carton', 'container', 'pmi'];
 
 export default function Home() {
   const { pack, projects, docs, createFromSample, createBlank, importProject, toast, product } = useApp();
   const [showNew, setShowNew] = useState(false);
   const fileRef = useRef(null);
+  const ectdRef = useRef(null);
+  const onEctd = async (e) => {
+    const f = e.target.files?.[0];
+    e.target.value = '';
+    if (!f) return;
+    try {
+      const r = productFromEctdFile(await readFile(f), PRODUCTS);
+      r.warnings.forEach((w) => toast(w, 'warn'));
+      setShowNew({ productId: r.product.id, title: `${r.product.brandName}: labels for ${r.name || 'the eCTD project'}` });
+    } catch (err) { toast(err.message, 'error'); }
+  };
   const sums = useMemo(() => {
     const out = {};
     for (const p of projects) {
       const ds = docs.filter((d) => d.projectId === p.id);
-      const all = ds.flatMap((d) => runChecks(d, { pack, docs: ds, product: product(p.productId) }));
+      const all = ds.flatMap((d) => runChecks(d, { pack, docs: ds, product: product(p.productId), project: p }));
       out[p.id] = { sum: summarise(all), n: ds.length, approved: ds.filter((d) => d.status === 'approved').length };
     }
     return out;
@@ -43,7 +56,7 @@ export default function Home() {
         <div>
           <p className="kicker">Labelling practice · US pack {pack.version}</p>
           <h1>Write a label, then check it against the rules</h1>
-          <p className="lede">Author prescribing information in PLR format, Medication Guides and carton labels for fictional products. Every check names its regulation or guidance, and says where the app simplifies.</p>
+          <p className="lede">Author prescribing information in PLR format, Medication Guides and carton labels for fictional products, keep them in line with the company core data sheet, and take safety changes through agency comments to the pharmacy shelf. Every check names its regulation or guidance, and says where the app simplifies.</p>
           <div className="row">
             <button className="btn primary" onClick={() => open('ostrevia-errors')}>Try the error hunt</button>
             <button className="btn" onClick={() => open('ostrevia-clean')}>Open a clean label</button>
@@ -65,6 +78,8 @@ export default function Home() {
           <button className="btn" onClick={() => setShowNew(true)}>New blank project</button>
           <button className="btn ghost" onClick={() => fileRef.current?.click()}>Import a project file</button>
           <input ref={fileRef} type="file" accept=".json,application/json" hidden onChange={onImport} />
+          <button className="btn ghost" onClick={() => ectdRef.current?.click()} title="Start labels for the product of an eCTD Dossier Builder project">From an eCTD project file</button>
+          <input ref={ectdRef} type="file" accept=".json,application/json" hidden onChange={onEctd} />
         </div>
       </div>
       {projects.length === 0 ? <p className="muted">No projects yet. Open a sample below, or start a blank project.</p> : (
@@ -82,26 +97,31 @@ export default function Home() {
       )}
 
       <div className="section-head"><h2>Start from a sample</h2><span className="small muted">Each opens as your own copy; the sample stays unchanged.</span></div>
-      <div className="sample-grid">
-        {pack.samples.map((s) => (
-          <div key={s.id} className="sample-card">
-            <span className="kicker">{s.level}</span>
-            <h3>{s.title}</h3>
-            <p className="small" style={{ margin: 0 }}>{s.about}</p>
-            <p className="small muted" style={{ margin: 0 }}>{s.docs.map((d) => d.title).join(' · ')}</p>
-            <div><button className="btn small primary" onClick={() => open(s.id)}>Open a copy</button></div>
+      {[['us', 'US labelling'], ['core', 'Core data sheet and change management']].map(([m, title]) => (
+        <section key={m} style={{ marginBottom: '1.25rem' }}>
+          <h3 style={{ margin: '.5rem 0' }}>{title}</h3>
+          <div className="sample-grid">
+            {pack.samples.filter((s) => moduleOf(s) === m).map((s) => (
+              <div key={s.id} className="sample-card">
+                <span className="kicker">{s.level}</span>
+                <h3>{s.title}</h3>
+                <p className="small" style={{ margin: 0 }}>{s.about}</p>
+                <p className="small muted" style={{ margin: 0 }}>{[...s.docs.map((d) => d.title), ...(s.blank ?? []).map((k) => `${KIND_LABEL[k]} (blank)`)].join(' · ')}{s.ccds ? ' · CCDS' : ''}</p>
+                <div><button className="btn small primary" onClick={() => open(s.id)}>Open a copy</button></div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      {showNew && <NewProject onClose={() => setShowNew(false)} onCreate={async (v) => { const p = await createBlank(v); setShowNew(false); go(`/p/${p.id}`); }} />}
+        </section>
+      ))}
+      {showNew && <NewProject initial={typeof showNew === 'object' ? showNew : null} onClose={() => setShowNew(false)} onCreate={async (v) => { const p = await createBlank(v); setShowNew(false); go(`/p/${p.id}`); }} />}
     </div>
   );
 }
 
-function NewProject({ onClose, onCreate }) {
-  const [productId, setProductId] = useState(PRODUCTS[0].id);
+function NewProject({ initial, onClose, onCreate }) {
+  const [productId, setProductId] = useState(initial?.productId ?? PRODUCTS[0].id);
   const [kinds, setKinds] = useState(['pi', 'carton']);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState(initial?.title ?? '');
   const toggle = (k) => setKinds((x) => (x.includes(k) ? x.filter((y) => y !== k) : [...x, k]));
   return (
     <Modal title="New blank project" onClose={onClose}>

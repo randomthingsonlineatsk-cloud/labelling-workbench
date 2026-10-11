@@ -5,11 +5,70 @@ import { runChecks } from './checks.js';
 import { findSection, blocksText, hasContent } from './model.js';
 import { monthIndex } from './text.js';
 import { scoreMapping } from './convert.js';
+import { currentVersion, versionByV, autoMatch } from './ccds.js';
+import { satisfied, agreed } from './agency.js';
 
 const matches = (i, prefixes) => prefixes.some((p) => i.ruleId.startsWith(p)) && !i.waived && i.severity !== 'info';
 
-export function evaluateDrill(drill, { docs, sample, pack, product, mapping }) {
+const score = (goals) => ({ score: goals.length ? Math.round((goals.filter((x) => x.done).length / goals.length) * 100) : 0, goals });
+const coreErrors = (doc, ctx) => runChecks(doc, ctx).filter((i) => /^CORE-(MAP|DEV-JUST)$/.test(i.ruleId) && !i.waived && i.severity !== 'info');
+
+export function evaluateDrill(drill, { docs, sample, pack, product, mapping, project }) {
   const g = drill.goal;
+  const ctx = { pack, docs, product, project };
+  if (g.type === 'ccds-map') {
+    const cur = currentVersion(project?.ccds);
+    const goals = [];
+    for (const kind of g.docs) {
+      const d = docs.find((x) => x.kind === kind);
+      const label = kind === 'pi' ? 'prescribing information' : 'Medication Guide';
+      const errs = d ? runChecks(d, ctx).filter((i) => i.ruleId.startsWith('CORE-') && i.ruleId !== 'CORE-AGENCY' && !i.waived && i.severity !== 'info') : [{}];
+      goals.push({ label: `The ${label} is mapped to CCDS ${cur?.v ?? ''}`, done: !!d && d.ccdsMap?.version === cur?.v });
+      goals.push({ label: `Every statement in the ${label} aligned or justified (${errs.length} open)`, done: !!d && d.ccdsMap?.version === cur?.v && errs.length === 0 });
+    }
+    return score(goals);
+  }
+  if (g.type === 'o4') {
+    const ch = project?.changes?.find((c) => c.trigger === 'o4');
+    const goals = [{ label: 'Response sent to FDA within the 30 days', done: !!ch?.o4?.respondedOn && !ch.o4.late }];
+    for (const [kind, comments] of Object.entries(pack.agency?.[sample.id] ?? {})) {
+      const d = docs.find((x) => x.sampleDocId === kind);
+      for (const c of comments) if (c.expect && c.kind !== 'question') goals.push({ label: `${kind === 'pi' ? 'PI' : 'Medication Guide'}: ${c.where}`, done: !!d && satisfied(d, c) === true });
+    }
+    for (const kind of ['pi', 'mg']) { const d = docs.find((x) => x.sampleDocId === kind); goals.push({ label: `${kind === 'pi' ? 'Prescribing information' : 'Medication Guide'} agreed with the agency`, done: !!d && agreed(d) }); }
+    return score(goals);
+  }
+  if (g.type === 'rollout') {
+    const v = versionByV(project?.ccds, '4.0');
+    const st = v?.statements.find((x) => x.key === g.key);
+    const pi = docs.find((d) => d.kind === 'pi');
+    const mg = docs.find((d) => d.kind === 'mg');
+    const ch = (project?.changes ?? []).find((c) => c.ccdsVersion === '4.0');
+    const us = ch?.markets.find((m) => m.market === 'us');
+    const goals = [
+      { label: 'CCDS 4.0 made effective', done: v?.status === 'effective' },
+      { label: 'Change request for CCDS 4.0 covering the US, EU and India', done: !!ch && ['us', 'eu', 'in'].every((m) => ch.markets.some((x) => x.market === m)) },
+      { label: 'Prescribing information covers hepatitis B screening and reactivation (2.2 and section 5)', done: !!pi && !!st && autoMatch(pi, st).found },
+      { label: 'Medication Guide tells patients about hepatitis B', done: !!mg && !!st && autoMatch(mg, st).found },
+      { label: 'Both labels mapped to CCDS 4.0 with no open gaps', done: [pi, mg].every((d) => d && d.ccdsMap?.version === '4.0' && coreErrors(d, ctx).length === 0) },
+      { label: 'Prescribing information and Medication Guide approved', done: pi?.status === 'approved' && mg?.status === 'approved' && !!st && autoMatch(pi, st).found },
+      { label: 'US approval date and first shipment recorded in the tracker', done: !!us?.dates?.Approved && !!us?.firstShip },
+    ];
+    return score(goals);
+  }
+  if (g.type === 'pmi') {
+    const d = docs.find((x) => x.kind === 'pmi');
+    const issues = d ? runChecks(d, ctx).filter((i) => i.ruleId.startsWith('US-PMI-') && i.severity !== 'info' && !i.waived) : [];
+    const by = (id) => issues.filter((i) => i.ruleId === id).length;
+    const goals = [
+      { label: 'Every proposed heading, filled', done: !!d && by('US-PMI-HEAD') === 0 },
+      { label: 'Every boxed warning risk under Warnings', done: !!d && by('US-PMI-BW') === 0 },
+      { label: 'Directions for Use start with "Use exactly as prescribed."', done: !!d && by('US-PMI-USE') === 0 && /use exactly as prescribed/i.test(JSON.stringify(d.sections)) },
+      { label: 'Fits on one page', done: !!d && by('US-PMI-HEAD') === 0 && by('US-PMI-LEN') === 0 },
+      { label: 'No promotional words', done: !!d && by('US-PMI-HEAD') === 0 && by('US-PMI-PROMO') === 0 },
+    ];
+    return score(goals);
+  }
   if (g.type === 'rules') {
     const sDoc = sample.docs.find((d) => d.id === drill.doc);
     const doc = docs.find((d) => d.sampleDocId === drill.doc);

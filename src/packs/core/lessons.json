@@ -1,0 +1,140 @@
+{
+ "lessons": [
+  {
+   "id": 12,
+   "module": "core",
+   "title": "The core data sheet and the core safety information",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "One global position",
+     "p": [
+      "A company that sells a medicine in many countries keeps one global reference document for it: the Company Core Data Sheet (CCDS). It states the company's position on indications, dosing, contraindications, warnings, interactions, use in pregnancy, adverse reactions and overdose. Local labels in each market are written from it.",
+      "Inside the CCDS is the Company Core Safety Information (CCSI): the safety statements the company wants in every label in every market. The idea comes from CIOMS Working Groups III and V. Indications and dosing can differ between markets because approvals differ; the core safety information should not, unless there is a good reason."
+     ]
+    },
+    {
+     "h": "Why the CCSI matters beyond labelling",
+     "p": [
+      "Pharmacovigilance uses the CCSI as the reference safety information: in periodic benefit-risk reports (ICH E2C(R2)) a reaction is \"listed\" if it is in the CCSI and \"unlisted\" if not. So a gap between the CCSI and what is known is a safety problem, and a gap between the CCSI and a local label is a compliance problem."
+     ]
+    },
+    {
+     "h": "Versions",
+     "p": [
+      "The CCDS is a controlled document. Each change makes a new version with an effective date and a reason, usually a labelling committee decision after a signal, a new study or an agency request. A new version starts the clock for updating every local label.",
+      "In this app a project can hold the product's CCDS. Older versions are frozen; you edit a draft and make it effective, and the app lists every label and section the change affects."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-ccds",
+    "doc": "pi",
+    "tab": "core"
+   },
+   "watch": false
+  },
+  {
+   "id": 13,
+   "module": "core",
+   "title": "Mapping a local label and recording deviations",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Mapping",
+     "p": [
+      "Mapping means going through the CCDS statement by statement and finding where each one is in the local label. A statement can be aligned (the label says the same thing in substance), deviating (the label says something different or leaves it out) or not applicable (for example a dosing statement for an indication not approved in that market).",
+      "The words do not have to match. US labels follow 21 CFR 201.57 and FDA style, so a CCDS sentence may be split across Highlights, section 2, section 5 and section 17, and appear again in plain language in the Medication Guide."
+     ]
+    },
+    {
+     "h": "Deviations need reasons",
+     "p": [
+      "Every deviation goes into a deviation register with a justification that would satisfy an inspector: the agency did not accept the wording, the indication is not approved here, local regulations require something different, or the update is in progress with a date.",
+      "\"Not needed\" is not a justification. A CCSI statement missing from a label without a reason is the kind of gap inspections find."
+     ]
+    },
+    {
+     "h": "How the app helps",
+     "p": [
+      "The app suggests whether each statement is present by looking for its key terms in the mapped sections, and you confirm or correct it. A CCSI statement that is neither found nor justified is an error that blocks approval; a missing non-CCSI statement is a warning. The register downloads as a CSV file."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-ccds",
+    "doc": "pi",
+    "tab": "core"
+   },
+   "watch": false
+  },
+  {
+   "id": 14,
+   "module": "core",
+   "title": "Running a safety labelling change",
+   "minutes": 9,
+   "sections": [
+    {
+     "h": "Where changes come from",
+     "p": [
+      "A labelling change can start inside the company (a signal reviewed by the labelling committee, which becomes a new CCDS version) or outside it: in the US, FDA can notify the holder under section 505(o)(4) of the FD&C Act that new safety information should be in the labelling. A generic company also changes its label when the reference listed drug's label changes."
+     ]
+    },
+    {
+     "h": "The 505(o)(4) clock",
+     "p": [
+      "After an FDA notification, the holder has 30 days to submit a supplement with the proposed changes or a rebuttal saying why no change is warranted. If FDA disagrees, discussions follow (no more than 30 days). FDA can then order the change within 15 days, and the holder must submit within 15 days of the order. Missing these steps can lead to enforcement.",
+      "Separately, a holder can strengthen a warning straight away with a Changes Being Effected supplement under 21 CFR 314.70(c)(6)(iii), without waiting for FDA. Classifying the change is the Variations Classifier's job; this app exports the change to it."
+     ]
+    },
+    {
+     "h": "Agency comment rounds",
+     "p": [
+      "Proposed labelling is usually negotiated. FDA sends comments on the draft; the company accepts, partly accepts or declines each one with a reason, and sends back revised labelling. Several rounds can follow until the labelling is agreed. Keep a response table: comment, decision, reason, and where the text changed.",
+      "Pick your battles. Declining a comment needs evidence, and an agency rarely accepts promotional or unsupported claims."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-o4",
+    "doc": "pi",
+    "tab": "agency"
+   },
+   "watch": false
+  },
+  {
+   "id": 15,
+   "module": "core",
+   "title": "Implementation: from approval to the pharmacy shelf",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "Approval is not the end",
+     "p": [
+      "A change is implemented when packs with the new labelling are being distributed. That needs new artwork, printing, packaging runs and release. Companies set target dates for the first shipment with new labels and for when old stock should have left their control.",
+      "In the US, safety changes made through a CBE-0 supplement are implemented when the supplement is submitted, and the updated labelling is posted as SPL. The app records approval, first shipment and old-stock-out dates for each market and flags late ones."
+     ]
+    },
+    {
+     "h": "Tracking every market",
+     "p": [
+      "One CCDS change can mean a submission in every country where the product is sold, each with its own classification, review time and implementation rules. A tracker shows, per market, the status (not started, wording drafted, submitted, approved, implemented), the target date and how late it is.",
+      "The tracker in this app uses the same steps and target defaults as the Variations Classifier's labelling rollout, so a rollout file can move between the two apps."
+     ]
+    },
+    {
+     "h": "Sending the labels on",
+     "p": [
+      "Approved labels go into the dossier: in the US, Module 1.14 (draft labelling in 1.14.1, final in 1.14.2). The app exports a labelling package that the eCTD Dossier Builder imports into the right Module 1 sections, and the current CCSI as a file for pharmacovigilance."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-ccds4",
+    "doc": "pi",
+    "tab": "core"
+   },
+   "watch": false
+  }
+ ]
+}

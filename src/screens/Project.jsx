@@ -14,8 +14,12 @@ import Preview from './doc/Preview.jsx';
 import Compare from './doc/Compare.jsx';
 import Convert from './doc/Convert.jsx';
 import Proof from './doc/Proof.jsx';
+import Core from './doc/Core.jsx';
+import Changes from './doc/Changes.jsx';
+import Agency from './doc/Agency.jsx';
+import { scriptFor } from '../engine/agency.js';
 
-const TAB_LABEL = { edit: 'Edit', preview: 'Preview', checks: 'Checks', review: 'Review', versions: 'Versions', compare: 'Compare with reference', convert: 'Convert to PLR', proof: 'Proof check', export: 'Export' };
+const TAB_LABEL = { edit: 'Edit', preview: 'Preview', checks: 'Checks', review: 'Review', versions: 'Versions', compare: 'Compare with reference', convert: 'Convert to PLR', proof: 'Proof check', core: 'Core data sheet', agency: 'Agency comments', changes: 'Changes', export: 'Export' };
 
 export default function Project({ id, docId, tab }) {
   const app = useApp();
@@ -31,7 +35,7 @@ export default function Project({ id, docId, tab }) {
   const [showAdd, setShowAdd] = useState(false);
   const [renaming, setRenaming] = useState(false);
 
-  const ctx = useMemo(() => ({ pack, docs, product }), [pack, docs, product]);
+  const ctx = useMemo(() => ({ pack, docs, product, project }), [pack, docs, product, project]);
   const issuesByDoc = useMemo(() => Object.fromEntries(docs.map((d) => [d.id, runChecks(d, ctx)])), [docs, ctx]);
 
   useEffect(() => { if (lastDoc.current && lastDoc.current !== doc?.id) setFocus(null); lastDoc.current = doc?.id; }, [doc?.id]);
@@ -42,7 +46,9 @@ export default function Project({ id, docId, tab }) {
   if (doc.role === 'generic' && docs.some((d) => d.role === 'reference')) tabs.push('compare');
   if (doc.kind === 'pi-old') tabs.push('convert');
   if ((doc.kind === 'carton' || doc.kind === 'container') && project.proof?.docId === doc.id) tabs.push('proof');
-  tabs.push('export');
+  tabs.push('core');
+  if (scriptFor(pack, project, doc) || doc.agency) tabs.push('agency');
+  tabs.push('changes', 'export');
   const cur = tabs.includes(tab) ? tab : 'edit';
   const issues = issuesByDoc[doc.id] ?? [];
   const setTab = (t, f) => { if (f !== undefined) setFocus(f); go(`/p/${project.id}/${doc.id}/${t}`); };
@@ -75,7 +81,7 @@ export default function Project({ id, docId, tab }) {
         {project.about && <p className="small muted" style={{ margin: '.3rem 0 0' }}>{project.about}</p>}
         <div className="doc-tabs" role="list" aria-label="Labels in this project">
           {docs.map((d) => (
-            <button key={d.id} className="doc-tab" role="listitem" aria-current={d.id === doc.id ? 'true' : undefined} onClick={() => go(`/p/${project.id}/${d.id}/${cur === 'compare' || cur === 'convert' || cur === 'proof' ? 'edit' : cur}`)}>
+            <button key={d.id} className="doc-tab" role="listitem" aria-current={d.id === doc.id ? 'true' : undefined} onClick={() => go(`/p/${project.id}/${d.id}/${cur === 'compare' || cur === 'convert' || cur === 'proof' || cur === 'agency' ? 'edit' : cur}`)}>
               <span className="k">{d.role === 'reference' ? 'Reference (RLD)' : KIND_LABEL[d.kind]}</span>
               <span className="t">{d.title}</span>
               <span className="row" style={{ gap: '.25rem' }}><StatusPill status={d.status} /> <Counts sum={summarise(issuesByDoc[d.id] ?? [])} /></span>
@@ -83,7 +89,7 @@ export default function Project({ id, docId, tab }) {
           ))}
         </div>
         <div className="tabs" role="tablist" aria-label="Label views">
-          {tabs.map((t) => <button key={t} role="tab" aria-selected={cur === t} onClick={() => setTab(t)}>{TAB_LABEL[t]}{t === 'checks' ? ` (${issues.filter((i) => !i.waived && i.severity !== 'info').length})` : ''}</button>)}
+          {tabs.map((t) => <button key={t} role="tab" aria-selected={cur === t} onClick={() => setTab(t)}>{TAB_LABEL[t]}{t === 'checks' ? ` (${issues.filter((i) => !i.waived && i.severity !== 'info').length})` : ''}{t === 'changes' && (project.changes ?? []).length ? ` (${project.changes.length})` : ''}</button>)}
         </div>
       </div>
       {project.drill && <DrillBar project={project} docs={docs} />}
@@ -96,6 +102,9 @@ export default function Project({ id, docId, tab }) {
         {cur === 'compare' && <Compare key={doc.id} {...props} />}
         {cur === 'convert' && <Convert key={doc.id} {...props} />}
         {cur === 'proof' && <Proof key={doc.id} {...props} />}
+        {cur === 'core' && <Core key={doc.id} {...props} />}
+        {cur === 'agency' && <Agency key={doc.id} {...props} />}
+        {cur === 'changes' && <Changes key={project.id} {...props} />}
         {cur === 'export' && <Export key={doc.id} {...props} />}
       </div>
       {showAdd && <AddDoc project={project} product={product} onClose={() => setShowAdd(false)} onAdded={(d) => go(`/p/${project.id}/${d.id}/edit`)} />}
@@ -126,7 +135,7 @@ function DrillBar({ project, docs }) {
   const [nowT, setNow] = useState(Date.now());
   useEffect(() => { const t = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t); }, []);
   if (!drill || !sample) return null;
-  const r = evaluateDrill(drill, { docs, sample, pack, product: productOf(project.productId) });
+  const r = evaluateDrill(drill, { docs, sample, pack, product: productOf(project.productId), project });
   const secs = Math.floor((nowT - Date.parse(project.drill.startedAt)) / 1000);
   const left = drill.minutes * 60 - secs;
   const mmss = (s) => `${s < 0 ? '-' : ''}${Math.floor(Math.abs(s) / 60)}:${String(Math.abs(s) % 60).padStart(2, '0')}`;
@@ -143,6 +152,7 @@ function DrillBar({ project, docs }) {
       <ul className="goal-list">{r.goals.map((g) => <li key={g.label} className={g.done ? 'done' : ''}>{g.label}</li>)}</ul>
       <span>Score now: <b>{r.score}%</b></span>
       {!done && <button className="btn small primary" onClick={submit}>Submit drill</button>}
+      {done && project.drill.assignment && <a className="btn small primary" href="#/classroom">Send it to your class</a>}
       {done && <a className="btn small" href="#/drills">Back to drills</a>}
     </div>
   );

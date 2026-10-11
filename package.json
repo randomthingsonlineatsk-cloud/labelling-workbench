@@ -6,8 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "pack": "python3 tools/packs/us.py",
-    "test": "node tests/checks.test.mjs && node tests/workflow.test.mjs"
+    "pack": "python3 tools/packs/us.py && python3 tools/packs/core.py",
+    "test": "node tests/checks.test.mjs && node tests/workflow.test.mjs && node tests/core.test.mjs"
   },
   "author": "Khan Gulrez Shagufa Fazal Ahmed",
   "license": "Apache-2.0",

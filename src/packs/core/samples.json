@@ -1,0 +1,1794 @@
+[
+ {
+  "id": "ostrevia-ccds",
+  "base": "ostrevia-clean",
+  "productId": "nce-tablet",
+  "level": "Core",
+  "title": "Ostrevia: map the label to the core data sheet",
+  "about": "The approved Ostrevia labels and CCDS 3.0. Map each core statement to the prescribing information and the Medication Guide, confirm the matches, and record a justified deviation wherever the US label differs.",
+  "ccds": {
+   "productId": "nce-tablet",
+   "owner": "Halcyon Ridge Pharmaceuticals, Inc. (fictional), Global Labelling",
+   "versions": [
+    {
+     "v": "3.0",
+     "date": "2026-08-03",
+     "status": "effective",
+     "note": "Thrombosis added to the core safety information after the fictional HALO-LTE signal (labelling committee, July 2026).",
+     "statements": [
+      {
+       "key": "ind",
+       "heading": "Therapeutic indications",
+       "text": "Treatment of adults with moderate-to-severe chronic hand eczema inadequately controlled with, or not suitable for, topical corticosteroids.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "1"
+        ],
+        "mg": [
+         "m2"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hand eczema"
+        ],
+        "mg": [
+         "hand eczema"
+        ]
+       }
+      },
+      {
+       "key": "dose",
+       "heading": "Posology",
+       "text": "10 mg orally once daily; may be increased to 25 mg once daily if the response is inadequate after 12 weeks. Use the lowest effective dose.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "2.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ],
+        "mg": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ]
+       }
+      },
+      {
+       "key": "dose-labs",
+       "heading": "Posology",
+       "text": "Before starting: test for latent tuberculosis and obtain blood counts and liver enzymes. Do not start if the absolute lymphocyte count is below 500 cells/mm3 or the absolute neutrophil count is below 1,000 cells/mm3.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ],
+        "mg": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ]
+       }
+      },
+      {
+       "key": "dose-hep",
+       "heading": "Posology",
+       "text": "Moderate hepatic impairment (Child-Pugh B): 10 mg once daily. Not recommended in severe hepatic impairment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.3",
+         "8.6"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ],
+        "mg": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ]
+       }
+      },
+      {
+       "key": "dose-cyp",
+       "heading": "Posology",
+       "text": "With strong CYP3A4 inhibitors: 10 mg once daily.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.4",
+         "7.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ],
+        "mg": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ]
+       }
+      },
+      {
+       "key": "ci-hyp",
+       "heading": "Contraindications",
+       "text": "Hypersensitivity to lumiravostat or to any of the excipients.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "4"
+        ],
+        "mg": [
+         "m3"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hypersensitivity"
+        ],
+        "mg": [
+         "allergic"
+        ]
+       }
+      },
+      {
+       "key": "wp-inf",
+       "heading": "Special warnings and precautions",
+       "text": "Serious infections, some fatal, including pneumonia, cellulitis and herpes zoster. Avoid in active serious infection; interrupt treatment if a serious infection develops.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.1"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "serious infection",
+         "interrupt"
+        ],
+        "mg": [
+         "serious infection"
+        ]
+       }
+      },
+      {
+       "key": "wp-hz",
+       "heading": "Special warnings and precautions",
+       "text": "Consider vaccination against herpes zoster, in line with local guidance, before starting treatment. Live vaccines should not be given during treatment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.1",
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "vaccin",
+         "zoster"
+        ],
+        "mg": [
+         "vaccin",
+         "zoster"
+        ]
+       }
+      },
+      {
+       "key": "wp-mal",
+       "heading": "Special warnings and precautions",
+       "text": "Malignancies, including lymphoma and non-melanoma skin cancer, have been observed.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.2"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "lymphoma",
+         "skin cancer"
+        ],
+        "mg": [
+         "lymphoma",
+         "skin cancer"
+        ]
+       }
+      },
+      {
+       "key": "wp-thr",
+       "heading": "Special warnings and precautions",
+       "text": "Thrombosis, including deep venous thrombosis and pulmonary embolism. Avoid in patients at increased risk; discontinue promptly if symptoms occur.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.3"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "thrombosis",
+         "pulmonary embolism"
+        ],
+        "mg": [
+         "blood clot",
+         "lungs"
+        ]
+       }
+      },
+      {
+       "key": "wp-lab",
+       "heading": "Special warnings and precautions",
+       "text": "Decreases in lymphocytes, neutrophils and haemoglobin, and increases in liver enzymes. Monitor at baseline, at 4 weeks and every 3 months.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.4"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ],
+        "mg": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ]
+       }
+      },
+      {
+       "key": "wp-efd",
+       "heading": "Special warnings and precautions",
+       "text": "May cause fetal harm. Females of reproductive potential should use effective contraception during treatment and for 4 weeks after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.5",
+         "8.1",
+         "8.3"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "fetal",
+         "contraception",
+         "4 weeks"
+        ],
+        "mg": [
+         "unborn baby",
+         "birth control",
+         "4 weeks"
+        ]
+       }
+      },
+      {
+       "key": "int-ind",
+       "heading": "Interactions",
+       "text": "Avoid strong CYP3A4 inducers (reduced exposure and efficacy).",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "7.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "inducer"
+        ],
+        "mg": [
+         "inducer"
+        ]
+       }
+      },
+      {
+       "key": "lact",
+       "heading": "Fertility, pregnancy and lactation",
+       "text": "Do not breastfeed during treatment and for 4 days after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "8.2"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "breastfe",
+         "4 days"
+        ],
+        "mg": [
+         "breastfe",
+         "4 days"
+        ]
+       }
+      },
+      {
+       "key": "ar-common",
+       "heading": "Undesirable effects",
+       "text": "Very common or common adverse reactions: nasopharyngitis, headache, nausea, acne.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "6.1"
+        ],
+        "mg": [
+         "m7"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "nasopharyngitis",
+         "headache",
+         "nausea",
+         "acne"
+        ],
+        "mg": [
+         "common cold",
+         "headache",
+         "nausea",
+         "acne"
+        ]
+       }
+      },
+      {
+       "key": "ar-renal",
+       "heading": "Special populations",
+       "text": "No dose adjustment is needed in mild or moderate renal impairment. Not studied in severe renal impairment or end-stage renal disease.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "8.7"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "renal"
+        ],
+        "mg": [
+         "renal"
+        ]
+       }
+      },
+      {
+       "key": "od",
+       "heading": "Overdose",
+       "text": "No specific antidote. Monitor and give supportive care. Haemodialysis is not expected to remove lumiravostat.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "10"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "supportive",
+         "dialysis"
+        ],
+        "mg": [
+         "supportive",
+         "dialysis"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "docs": [
+   "pi",
+   "mg",
+   "carton",
+   "container"
+  ],
+  "approved": true
+ },
+ {
+  "id": "ostrevia-ccds4",
+  "base": "ostrevia-clean",
+  "productId": "nce-tablet",
+  "level": "Core",
+  "title": "Ostrevia: roll out CCDS 4.0 (hepatitis B reactivation)",
+  "about": "CCDS 4.0 is in draft with a new hepatitis B reactivation warning. Make it effective, start the change request from the impact list, update the prescribing information and Medication Guide, take them to approval and track implementation in every market.",
+  "ccds": {
+   "productId": "nce-tablet",
+   "owner": "Halcyon Ridge Pharmaceuticals, Inc. (fictional), Global Labelling",
+   "versions": [
+    {
+     "v": "3.0",
+     "date": "2026-08-03",
+     "status": "effective",
+     "note": "Thrombosis added to the core safety information after the fictional HALO-LTE signal (labelling committee, July 2026).",
+     "statements": [
+      {
+       "key": "ind",
+       "heading": "Therapeutic indications",
+       "text": "Treatment of adults with moderate-to-severe chronic hand eczema inadequately controlled with, or not suitable for, topical corticosteroids.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "1"
+        ],
+        "mg": [
+         "m2"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hand eczema"
+        ],
+        "mg": [
+         "hand eczema"
+        ]
+       }
+      },
+      {
+       "key": "dose",
+       "heading": "Posology",
+       "text": "10 mg orally once daily; may be increased to 25 mg once daily if the response is inadequate after 12 weeks. Use the lowest effective dose.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "2.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ],
+        "mg": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ]
+       }
+      },
+      {
+       "key": "dose-labs",
+       "heading": "Posology",
+       "text": "Before starting: test for latent tuberculosis and obtain blood counts and liver enzymes. Do not start if the absolute lymphocyte count is below 500 cells/mm3 or the absolute neutrophil count is below 1,000 cells/mm3.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ],
+        "mg": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ]
+       }
+      },
+      {
+       "key": "dose-hep",
+       "heading": "Posology",
+       "text": "Moderate hepatic impairment (Child-Pugh B): 10 mg once daily. Not recommended in severe hepatic impairment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.3",
+         "8.6"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ],
+        "mg": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ]
+       }
+      },
+      {
+       "key": "dose-cyp",
+       "heading": "Posology",
+       "text": "With strong CYP3A4 inhibitors: 10 mg once daily.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.4",
+         "7.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ],
+        "mg": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ]
+       }
+      },
+      {
+       "key": "ci-hyp",
+       "heading": "Contraindications",
+       "text": "Hypersensitivity to lumiravostat or to any of the excipients.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "4"
+        ],
+        "mg": [
+         "m3"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hypersensitivity"
+        ],
+        "mg": [
+         "allergic"
+        ]
+       }
+      },
+      {
+       "key": "wp-inf",
+       "heading": "Special warnings and precautions",
+       "text": "Serious infections, some fatal, including pneumonia, cellulitis and herpes zoster. Avoid in active serious infection; interrupt treatment if a serious infection develops.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.1"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "serious infection",
+         "interrupt"
+        ],
+        "mg": [
+         "serious infection"
+        ]
+       }
+      },
+      {
+       "key": "wp-hz",
+       "heading": "Special warnings and precautions",
+       "text": "Consider vaccination against herpes zoster, in line with local guidance, before starting treatment. Live vaccines should not be given during treatment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.1",
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "vaccin",
+         "zoster"
+        ],
+        "mg": [
+         "vaccin",
+         "zoster"
+        ]
+       }
+      },
+      {
+       "key": "wp-mal",
+       "heading": "Special warnings and precautions",
+       "text": "Malignancies, including lymphoma and non-melanoma skin cancer, have been observed.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.2"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "lymphoma",
+         "skin cancer"
+        ],
+        "mg": [
+         "lymphoma",
+         "skin cancer"
+        ]
+       }
+      },
+      {
+       "key": "wp-thr",
+       "heading": "Special warnings and precautions",
+       "text": "Thrombosis, including deep venous thrombosis and pulmonary embolism. Avoid in patients at increased risk; discontinue promptly if symptoms occur.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.3"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "thrombosis",
+         "pulmonary embolism"
+        ],
+        "mg": [
+         "blood clot",
+         "lungs"
+        ]
+       }
+      },
+      {
+       "key": "wp-lab",
+       "heading": "Special warnings and precautions",
+       "text": "Decreases in lymphocytes, neutrophils and haemoglobin, and increases in liver enzymes. Monitor at baseline, at 4 weeks and every 3 months.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.4"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ],
+        "mg": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ]
+       }
+      },
+      {
+       "key": "wp-efd",
+       "heading": "Special warnings and precautions",
+       "text": "May cause fetal harm. Females of reproductive potential should use effective contraception during treatment and for 4 weeks after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.5",
+         "8.1",
+         "8.3"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "fetal",
+         "contraception",
+         "4 weeks"
+        ],
+        "mg": [
+         "unborn baby",
+         "birth control",
+         "4 weeks"
+        ]
+       }
+      },
+      {
+       "key": "int-ind",
+       "heading": "Interactions",
+       "text": "Avoid strong CYP3A4 inducers (reduced exposure and efficacy).",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "7.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "inducer"
+        ],
+        "mg": [
+         "inducer"
+        ]
+       }
+      },
+      {
+       "key": "lact",
+       "heading": "Fertility, pregnancy and lactation",
+       "text": "Do not breastfeed during treatment and for 4 days after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "8.2"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "breastfe",
+         "4 days"
+        ],
+        "mg": [
+         "breastfe",
+         "4 days"
+        ]
+       }
+      },
+      {
+       "key": "ar-common",
+       "heading": "Undesirable effects",
+       "text": "Very common or common adverse reactions: nasopharyngitis, headache, nausea, acne.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "6.1"
+        ],
+        "mg": [
+         "m7"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "nasopharyngitis",
+         "headache",
+         "nausea",
+         "acne"
+        ],
+        "mg": [
+         "common cold",
+         "headache",
+         "nausea",
+         "acne"
+        ]
+       }
+      },
+      {
+       "key": "ar-renal",
+       "heading": "Special populations",
+       "text": "No dose adjustment is needed in mild or moderate renal impairment. Not studied in severe renal impairment or end-stage renal disease.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "8.7"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "renal"
+        ],
+        "mg": [
+         "renal"
+        ]
+       }
+      },
+      {
+       "key": "od",
+       "heading": "Overdose",
+       "text": "No specific antidote. Monitor and give supportive care. Haemodialysis is not expected to remove lumiravostat.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "10"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "supportive",
+         "dialysis"
+        ],
+        "mg": [
+         "supportive",
+         "dialysis"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "v": "4.0",
+     "date": "",
+     "status": "draft",
+     "note": "Hepatitis B virus reactivation added after the fictional signal from postmarketing reports (labelling committee decision, September 2026). Make this version effective, then roll it out.",
+     "statements": [
+      {
+       "key": "ind",
+       "heading": "Therapeutic indications",
+       "text": "Treatment of adults with moderate-to-severe chronic hand eczema inadequately controlled with, or not suitable for, topical corticosteroids.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "1"
+        ],
+        "mg": [
+         "m2"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hand eczema"
+        ],
+        "mg": [
+         "hand eczema"
+        ]
+       }
+      },
+      {
+       "key": "dose",
+       "heading": "Posology",
+       "text": "10 mg orally once daily; may be increased to 25 mg once daily if the response is inadequate after 12 weeks. Use the lowest effective dose.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "2.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ],
+        "mg": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ]
+       }
+      },
+      {
+       "key": "dose-labs",
+       "heading": "Posology",
+       "text": "Before starting: test for latent tuberculosis and obtain blood counts and liver enzymes. Do not start if the absolute lymphocyte count is below 500 cells/mm3 or the absolute neutrophil count is below 1,000 cells/mm3.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ],
+        "mg": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ]
+       }
+      },
+      {
+       "key": "dose-hep",
+       "heading": "Posology",
+       "text": "Moderate hepatic impairment (Child-Pugh B): 10 mg once daily. Not recommended in severe hepatic impairment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.3",
+         "8.6"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ],
+        "mg": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ]
+       }
+      },
+      {
+       "key": "dose-cyp",
+       "heading": "Posology",
+       "text": "With strong CYP3A4 inhibitors: 10 mg once daily.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.4",
+         "7.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ],
+        "mg": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ]
+       }
+      },
+      {
+       "key": "ci-hyp",
+       "heading": "Contraindications",
+       "text": "Hypersensitivity to lumiravostat or to any of the excipients.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "4"
+        ],
+        "mg": [
+         "m3"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hypersensitivity"
+        ],
+        "mg": [
+         "allergic"
+        ]
+       }
+      },
+      {
+       "key": "wp-inf",
+       "heading": "Special warnings and precautions",
+       "text": "Serious infections, some fatal, including pneumonia, cellulitis and herpes zoster. Avoid in active serious infection; interrupt treatment if a serious infection develops.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.1"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "serious infection",
+         "interrupt"
+        ],
+        "mg": [
+         "serious infection"
+        ]
+       }
+      },
+      {
+       "key": "wp-hz",
+       "heading": "Special warnings and precautions",
+       "text": "Consider vaccination against herpes zoster, in line with local guidance, before starting treatment. Live vaccines should not be given during treatment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.1",
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "vaccin",
+         "zoster"
+        ],
+        "mg": [
+         "vaccin",
+         "zoster"
+        ]
+       }
+      },
+      {
+       "key": "wp-mal",
+       "heading": "Special warnings and precautions",
+       "text": "Malignancies, including lymphoma and non-melanoma skin cancer, have been observed.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.2"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "lymphoma",
+         "skin cancer"
+        ],
+        "mg": [
+         "lymphoma",
+         "skin cancer"
+        ]
+       }
+      },
+      {
+       "key": "wp-hbv",
+       "heading": "Special warnings and precautions",
+       "text": "Hepatitis B virus reactivation, including cases of hepatic failure, has been reported. Screen for hepatitis B infection before starting treatment. Do not start in patients with active hepatitis B. Monitor patients with evidence of past infection (HBsAg negative, anti-HBc positive) for HBV DNA during treatment, and consult a liver specialist if HBV DNA is detected.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.2",
+         "5"
+        ],
+        "mg": [
+         "m1",
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hepatitis B",
+         "screen|test"
+        ],
+        "mg": [
+         "hepatitis B"
+        ]
+       }
+      },
+      {
+       "key": "wp-thr",
+       "heading": "Special warnings and precautions",
+       "text": "Thrombosis, including deep venous thrombosis and pulmonary embolism. Avoid in patients at increased risk; discontinue promptly if symptoms occur.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.3"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "thrombosis",
+         "pulmonary embolism"
+        ],
+        "mg": [
+         "blood clot",
+         "lungs"
+        ]
+       }
+      },
+      {
+       "key": "wp-lab",
+       "heading": "Special warnings and precautions",
+       "text": "Decreases in lymphocytes, neutrophils and haemoglobin, and increases in liver enzymes. Monitor at baseline, at 4 weeks and every 3 months.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.4"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ],
+        "mg": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ]
+       }
+      },
+      {
+       "key": "wp-efd",
+       "heading": "Special warnings and precautions",
+       "text": "May cause fetal harm. Females of reproductive potential should use effective contraception during treatment and for 4 weeks after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.5",
+         "8.1",
+         "8.3"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "fetal",
+         "contraception",
+         "4 weeks"
+        ],
+        "mg": [
+         "unborn baby",
+         "birth control",
+         "4 weeks"
+        ]
+       }
+      },
+      {
+       "key": "int-ind",
+       "heading": "Interactions",
+       "text": "Avoid strong CYP3A4 inducers (reduced exposure and efficacy).",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "7.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "inducer"
+        ],
+        "mg": [
+         "inducer"
+        ]
+       }
+      },
+      {
+       "key": "lact",
+       "heading": "Fertility, pregnancy and lactation",
+       "text": "Do not breastfeed during treatment and for 4 days after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "8.2"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "breastfe",
+         "4 days"
+        ],
+        "mg": [
+         "breastfe",
+         "4 days"
+        ]
+       }
+      },
+      {
+       "key": "ar-common",
+       "heading": "Undesirable effects",
+       "text": "Very common or common adverse reactions: nasopharyngitis, headache, nausea, acne.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "6.1"
+        ],
+        "mg": [
+         "m7"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "nasopharyngitis",
+         "headache",
+         "nausea",
+         "acne"
+        ],
+        "mg": [
+         "common cold",
+         "headache",
+         "nausea",
+         "acne"
+        ]
+       }
+      },
+      {
+       "key": "ar-renal",
+       "heading": "Special populations",
+       "text": "No dose adjustment is needed in mild or moderate renal impairment. Not studied in severe renal impairment or end-stage renal disease.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "8.7"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "renal"
+        ],
+        "mg": [
+         "renal"
+        ]
+       }
+      },
+      {
+       "key": "od",
+       "heading": "Overdose",
+       "text": "No specific antidote. Monitor and give supportive care. Haemodialysis is not expected to remove lumiravostat.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "10"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "supportive",
+         "dialysis"
+        ],
+        "mg": [
+         "supportive",
+         "dialysis"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "docs": [
+   "pi",
+   "mg"
+  ],
+  "mapped": "3.0",
+  "mappedRows": {
+   "pi": {
+    "wp-hz": {
+     "status": "deviates",
+     "justification": "Proposed for 5.1 in the 2023 review; FDA asked for vaccination advice to follow ACIP guidance by reference only. Re-proposal planned with the next safety supplement (fictional)."
+    },
+    "ar-renal": {
+     "status": "deviates",
+     "justification": "Renal impairment data were not reviewed for the US application; FDA did not include an 8.7 subsection (fictional review history)."
+    }
+   },
+   "mg": {}
+  },
+  "approved": true
+ },
+ {
+  "id": "ostrevia-o4",
+  "base": "ostrevia-clean",
+  "productId": "nce-tablet",
+  "level": "Core",
+  "title": "Ostrevia: respond to a 505(o)(4) notification",
+  "about": "FDA has notified Halcyon Ridge (fictional) of new safety information on serious hypersensitivity reactions. Decide your response within the 30-day clock, draft the changes, submit, and work through the agency comments until the labelling is agreed.",
+  "ccds": {
+   "productId": "nce-tablet",
+   "owner": "Halcyon Ridge Pharmaceuticals, Inc. (fictional), Global Labelling",
+   "versions": [
+    {
+     "v": "3.0",
+     "date": "2026-08-03",
+     "status": "effective",
+     "note": "Thrombosis added to the core safety information after the fictional HALO-LTE signal (labelling committee, July 2026).",
+     "statements": [
+      {
+       "key": "ind",
+       "heading": "Therapeutic indications",
+       "text": "Treatment of adults with moderate-to-severe chronic hand eczema inadequately controlled with, or not suitable for, topical corticosteroids.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "1"
+        ],
+        "mg": [
+         "m2"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hand eczema"
+        ],
+        "mg": [
+         "hand eczema"
+        ]
+       }
+      },
+      {
+       "key": "dose",
+       "heading": "Posology",
+       "text": "10 mg orally once daily; may be increased to 25 mg once daily if the response is inadequate after 12 weeks. Use the lowest effective dose.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "2.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ],
+        "mg": [
+         "10 mg",
+         "25 mg",
+         "once daily"
+        ]
+       }
+      },
+      {
+       "key": "dose-labs",
+       "heading": "Posology",
+       "text": "Before starting: test for latent tuberculosis and obtain blood counts and liver enzymes. Do not start if the absolute lymphocyte count is below 500 cells/mm3 or the absolute neutrophil count is below 1,000 cells/mm3.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ],
+        "mg": [
+         "tuberculosis",
+         "lymphocyte",
+         "neutrophil"
+        ]
+       }
+      },
+      {
+       "key": "dose-hep",
+       "heading": "Posology",
+       "text": "Moderate hepatic impairment (Child-Pugh B): 10 mg once daily. Not recommended in severe hepatic impairment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.3",
+         "8.6"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ],
+        "mg": [
+         "Child-Pugh B|moderate hepatic",
+         "severe hepatic"
+        ]
+       }
+      },
+      {
+       "key": "dose-cyp",
+       "heading": "Posology",
+       "text": "With strong CYP3A4 inhibitors: 10 mg once daily.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "2.4",
+         "7.1"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ],
+        "mg": [
+         "CYP3A4 inhibitor",
+         "10 mg"
+        ]
+       }
+      },
+      {
+       "key": "ci-hyp",
+       "heading": "Contraindications",
+       "text": "Hypersensitivity to lumiravostat or to any of the excipients.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "4"
+        ],
+        "mg": [
+         "m3"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "hypersensitivity"
+        ],
+        "mg": [
+         "allergic"
+        ]
+       }
+      },
+      {
+       "key": "wp-inf",
+       "heading": "Special warnings and precautions",
+       "text": "Serious infections, some fatal, including pneumonia, cellulitis and herpes zoster. Avoid in active serious infection; interrupt treatment if a serious infection develops.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.1"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "serious infection",
+         "interrupt"
+        ],
+        "mg": [
+         "serious infection"
+        ]
+       }
+      },
+      {
+       "key": "wp-hz",
+       "heading": "Special warnings and precautions",
+       "text": "Consider vaccination against herpes zoster, in line with local guidance, before starting treatment. Live vaccines should not be given during treatment.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.1",
+         "2.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "vaccin",
+         "zoster"
+        ],
+        "mg": [
+         "vaccin",
+         "zoster"
+        ]
+       }
+      },
+      {
+       "key": "wp-mal",
+       "heading": "Special warnings and precautions",
+       "text": "Malignancies, including lymphoma and non-melanoma skin cancer, have been observed.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.2"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "lymphoma",
+         "skin cancer"
+        ],
+        "mg": [
+         "lymphoma",
+         "skin cancer"
+        ]
+       }
+      },
+      {
+       "key": "wp-thr",
+       "heading": "Special warnings and precautions",
+       "text": "Thrombosis, including deep venous thrombosis and pulmonary embolism. Avoid in patients at increased risk; discontinue promptly if symptoms occur.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "bw",
+         "5.3"
+        ],
+        "mg": [
+         "m1"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "thrombosis",
+         "pulmonary embolism"
+        ],
+        "mg": [
+         "blood clot",
+         "lungs"
+        ]
+       }
+      },
+      {
+       "key": "wp-lab",
+       "heading": "Special warnings and precautions",
+       "text": "Decreases in lymphocytes, neutrophils and haemoglobin, and increases in liver enzymes. Monitor at baseline, at 4 weeks and every 3 months.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.4"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ],
+        "mg": [
+         "lymphocyte",
+         "neutrophil",
+         "liver enzymes"
+        ]
+       }
+      },
+      {
+       "key": "wp-efd",
+       "heading": "Special warnings and precautions",
+       "text": "May cause fetal harm. Females of reproductive potential should use effective contraception during treatment and for 4 weeks after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "5.5",
+         "8.1",
+         "8.3"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "fetal",
+         "contraception",
+         "4 weeks"
+        ],
+        "mg": [
+         "unborn baby",
+         "birth control",
+         "4 weeks"
+        ]
+       }
+      },
+      {
+       "key": "int-ind",
+       "heading": "Interactions",
+       "text": "Avoid strong CYP3A4 inducers (reduced exposure and efficacy).",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "7.2"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "inducer"
+        ],
+        "mg": [
+         "inducer"
+        ]
+       }
+      },
+      {
+       "key": "lact",
+       "heading": "Fertility, pregnancy and lactation",
+       "text": "Do not breastfeed during treatment and for 4 days after the last dose.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "8.2"
+        ],
+        "mg": [
+         "m4"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "breastfe",
+         "4 days"
+        ],
+        "mg": [
+         "breastfe",
+         "4 days"
+        ]
+       }
+      },
+      {
+       "key": "ar-common",
+       "heading": "Undesirable effects",
+       "text": "Very common or common adverse reactions: nasopharyngitis, headache, nausea, acne.",
+       "ccsi": true,
+       "targets": {
+        "pi": [
+         "6.1"
+        ],
+        "mg": [
+         "m7"
+        ]
+       },
+       "terms": {
+        "pi": [
+         "nasopharyngitis",
+         "headache",
+         "nausea",
+         "acne"
+        ],
+        "mg": [
+         "common cold",
+         "headache",
+         "nausea",
+         "acne"
+        ]
+       }
+      },
+      {
+       "key": "ar-renal",
+       "heading": "Special populations",
+       "text": "No dose adjustment is needed in mild or moderate renal impairment. Not studied in severe renal impairment or end-stage renal disease.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "8.7"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "renal"
+        ],
+        "mg": [
+         "renal"
+        ]
+       }
+      },
+      {
+       "key": "od",
+       "heading": "Overdose",
+       "text": "No specific antidote. Monitor and give supportive care. Haemodialysis is not expected to remove lumiravostat.",
+       "ccsi": false,
+       "targets": {
+        "pi": [
+         "10"
+        ],
+        "mg": []
+       },
+       "terms": {
+        "pi": [
+         "supportive",
+         "dialysis"
+        ],
+        "mg": [
+         "supportive",
+         "dialysis"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "docs": [
+   "pi",
+   "mg"
+  ],
+  "mapped": "3.0",
+  "mappedRows": {
+   "pi": {
+    "wp-hz": {
+     "status": "deviates",
+     "justification": "Proposed for 5.1 in the 2023 review; FDA asked for vaccination advice to follow ACIP guidance by reference only. Re-proposal planned with the next safety supplement (fictional)."
+    },
+    "ar-renal": {
+     "status": "deviates",
+     "justification": "Renal impairment data were not reviewed for the US application; FDA did not include an 8.7 subsection (fictional review history)."
+    }
+   },
+   "mg": {}
+  },
+  "approved": true,
+  "patch": [
+   {
+    "doc": "pi",
+    "num": "14",
+    "append": "OSTREVIA demonstrated superior efficacy, making it the best choice for chronic hand eczema."
+   }
+  ],
+  "change": {
+   "trigger": "o4",
+   "kind": "warning",
+   "title": "Serious hypersensitivity reactions (505(o)(4) notification)",
+   "notice": {
+    "from": "FDA, Division of Dermatology and Dentistry (fictional letter)",
+    "date": "2026-10-01",
+    "title": "Safety labeling change notification under section 505(o)(4)",
+    "text": "Based on postmarketing reports in FAERS and the published literature (fictional), FDA has become aware of new safety information about serious hypersensitivity reactions, including angioedema and anaphylaxis, with OSTREVIA. FDA believes this information should be included in the labeling. Within 30 days, submit a prior approval supplement proposing changes to the Warnings and Precautions, Adverse Reactions and Patient Counseling Information sections and the Medication Guide, or notify FDA that you do not believe a change is warranted and give your reasons (rebuttal).",
+    "sections": [
+     "5 Warnings and Precautions (new subsection)",
+     "Highlights",
+     "6.2 Postmarketing Experience",
+     "17 Patient Counseling Information",
+     "Medication Guide"
+    ]
+   },
+   "markets": [
+    "us"
+   ]
+  }
+ },
+ {
+  "id": "ostrevia-pmi",
+  "base": "ostrevia-clean",
+  "productId": "nce-tablet",
+  "level": "Watch",
+  "title": "Ostrevia: write a one-page PMI (proposed rule)",
+  "about": "FDA has proposed a one-page Patient Medication Information sheet (not final). Write one for Ostrevia from its prescribing information and Medication Guide: the fixed headings, every boxed warning risk, plain language, one page.",
+  "ccds": null,
+  "docs": [
+   "pi",
+   "mg"
+  ],
+  "blank": [
+   "pmi"
+  ]
+ }
+]

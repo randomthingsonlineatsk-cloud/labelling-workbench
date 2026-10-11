@@ -13,6 +13,8 @@ export default function Checks({ doc, issues, setTab }) {
   const sum = summarise(issues);
   const shown = issues.filter((i) => (filter === 'all' ? true : filter === 'open' ? !i.waived && i.severity !== 'info' : filter === 'hints' ? i.severity === 'info' : i.waived));
   const goTo = (i) => {
+    if (i.loc?.area === 'core') { setTab('core'); return; }
+    if (i.loc?.area === 'agency') { setTab('agency'); return; }
     const node = nodeOf(doc, i.loc);
     const sub = i.loc?.area === 'sec' && String(i.loc.key).includes('.') ? i.loc.key : undefined;
     setTab('edit', node ? { node, sub } : null);

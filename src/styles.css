@@ -116,6 +116,7 @@ textarea { min-height: 5rem; font-family: var(--font); font-size: var(--step-0);
 .callout { border-left: 4px solid var(--accent); background: var(--surface); padding: .75rem 1rem; border-radius: 0 var(--radius-s) var(--radius-s) 0; }
 .callout.warn { border-color: var(--medium); }
 .callout.bad { border-color: var(--high); }
+.callout.good { border-color: var(--ok); }
 table.data { width: 100%; border-collapse: collapse; font-size: var(--step--1); }
 table.data th, table.data td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 table.data th { color: var(--ink-3); font-weight: 600; }
@@ -126,6 +127,7 @@ table.data th { color: var(--ink-3); font-weight: 600; }
 .hero h1 { max-width: 14ch; }
 .hero .lede { font-size: var(--step-1); color: var(--ink-2); }
 .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 2.25rem 0 1rem; flex-wrap: wrap; }
+.panel > .section-head:first-child { margin-top: 0; }
 .list { display: grid; gap: .5rem; }
 .list-item { display: flex; gap: 1rem; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: .75rem 1rem; flex-wrap: wrap; }
 .list-item h3 { margin: 0; font-size: var(--step-0); }
@@ -353,3 +355,4 @@ details.rule summary { cursor: pointer; color: var(--accent); font-weight: 600; 
   .ws-body, .page { padding-left: 1rem; padding-right: 1rem; }
 }
 @media print { .topbar, .footer, .no-print, .tabs, .doc-tabs, .drill-bar { display: none !important; } body { background: #fff; } }
+.join-code { font-family: var(--mono, "JetBrains Mono", monospace); letter-spacing: .12em; font-size: 1.1em; }

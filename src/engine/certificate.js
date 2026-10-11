@@ -1,13 +1,16 @@
 // Certificate per region pack: every lesson check passed, a mixed quiz round passed and the
 // capstone drill completed. A portfolio exercise, not an accreditation.
 import { sha256 } from './sha256.js';
+import { moduleOf } from './pack.js';
+
+export const QUIZ_TOPIC = { us: 'all', core: 'core' };
 
 export const RULES = { lessonPass: 80, quizPass: 80, quizMin: 10, capstonePass: 100 };
 
 export function certificateStatus({ region = 'us', lessons, drills, attempts, lessonsDone }) {
-  const ls = lessons.lessons.map((l) => ({ id: l.id, title: l.title, best: lessonsDone?.[`${region}-${l.id}`]?.best ?? null }));
-  const quiz = attempts.filter((a) => a.kind === 'quiz' && a.region === region && a.topic === 'all' && (a.total ?? 0) >= RULES.quizMin).sort((a, b) => b.score - a.score)[0] ?? null;
-  const ds = drills.drills.map((d) => {
+  const ls = lessons.lessons.filter((l) => moduleOf(l) === region).map((l) => ({ id: l.id, title: l.title, best: lessonsDone?.[`us-${l.id}`]?.best ?? null }));
+  const quiz = attempts.filter((a) => a.kind === 'quiz' && (a.region ?? 'us') === 'us' && a.topic === QUIZ_TOPIC[region] && (a.total ?? 0) >= RULES.quizMin).sort((a, b) => b.score - a.score)[0] ?? null;
+  const ds = drills.drills.filter((d) => moduleOf(d) === region).map((d) => {
     const a = attempts.filter((x) => x.kind === 'drill' && x.drillId === d.id);
     return { id: d.id, title: d.title, capstone: !!d.capstone, best: a.length ? Math.max(...a.map((x) => x.score)) : null };
   });

@@ -8,8 +8,8 @@ export const uid = (p = 'x') => `${p}-${Date.now().toString(36)}-${Math.random()
 export const now = () => new Date().toISOString();
 const clone = (x) => (typeof structuredClone === 'function' ? structuredClone(x) : JSON.parse(JSON.stringify(x)));
 
-export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label' };
-export const STATUS = { draft: 'Draft', review: 'In review', changes: 'Changes requested', approved: 'Approved', superseded: 'Superseded' };
+export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)' };
+export const STATUS = { draft: 'Draft', review: 'In review', changes: 'Changes requested', approved: 'Approved', superseded: 'Superseded', submitted: 'Sent to agency' };
 
 export const newBlock = (t = 'p') => ({ id: uid('b'), t, ...(t === 'ul' ? { items: [''] } : t === 'table' ? { rows: [['', ''], ['', '']] } : { text: '' }) });
 
@@ -27,11 +27,19 @@ export function docFromSample(projectId, d, user) {
   return { ...doc, id: uid('d'), sampleDocId: d.id, projectId, userId: user?.userId ?? null, classId: user?.classId ?? null, status: d.status ?? 'draft', version: 0, waivers: {}, createdAt: now(), updatedAt: now() };
 }
 
-export function projectFromSample(sample, user) {
+export function projectFromSample(sample, user, { pack = null, product = null } = {}) {
   const id = uid('p');
   const docs = sample.docs.map((d) => docFromSample(id, d, user));
+  // Keep the sample's order: labels are listed by creation time.
+  const t0 = Date.now();
+  docs.forEach((d, i) => { d.createdAt = new Date(t0 + i).toISOString(); d.updatedAt = d.createdAt; });
   const project = { id, title: sample.title, productId: sample.productId, region: 'us', sampleId: sample.id, about: sample.about, userId: user?.userId ?? null, classId: user?.classId ?? null, createdAt: now(), updatedAt: now(), proof: sample.proof ? clone(sample.proof) : null };
   if (project.proof) project.proof.docId = docs.find((d) => d.sampleDocId === sample.proof.docId)?.id ?? null;
+  // Core samples: the CCDS, a starting mapping with recorded deviations, extra blank labels.
+  if (sample.ccds) project.ccds = clone(sample.ccds);
+  if (sample.mapped) for (const d of docs) if (d.kind === 'pi' || d.kind === 'mg') d.ccdsMap = { version: sample.mapped, rows: clone(sample.mappedRows?.[d.kind] ?? {}) };
+  if (pack && product) for (const k of sample.blank ?? []) { const d = blankDoc(pack, k, product, id, user); d.sampleDocId = k; d.createdAt = new Date(t0 + docs.length).toISOString(); docs.push(d); }
+  project.changes = [];
   return { project, docs };
 }
 

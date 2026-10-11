@@ -18,7 +18,7 @@ export function nodeOf(doc, loc) {
   if (loc.area === 'bw') return 'bw';
   if (loc.area === 'fixed') return 'fixed';
   if (loc.area === 'sec') {
-    if (doc.kind === 'pi') return String(loc.key).split('.')[0];
+    if (doc.kind === 'pi' || doc.kind === 'pmi') return String(loc.key).split('.')[0];
     return loc.key;
   }
   return null;
@@ -229,7 +229,7 @@ function FixedPane({ doc, change, t }) {
       <h2>Title and statements</h2>
       <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Proprietary name'], ['establishedName', 'Established name'], ['dosageForm', 'Dosage form'], ['revised', 'Revised', 'MM/YYYY'], ['manufacturer', 'Manufacturer or distributor']]} />
       {t.fixed && Object.entries(t.fixed).map(([k, v]) => (
-        <Fixed key={k} label={{ header: 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement' }[k] ?? k} value={doc.fixed?.[k]} want={fill(v, m)} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
+        <Fixed key={k} label={{ header: 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement', contact: 'Side-effect reporting statement', useStart: 'Opening of Directions for Use' }[k] ?? k} value={doc.fixed?.[k]} want={fill(v, m)} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
       ))}
     </div>
   );

@@ -1,0 +1,111 @@
+{
+ "ostrevia-o4": {
+  "pi": [
+   {
+    "id": "pi-1",
+    "where": "5 WARNINGS AND PRECAUTIONS",
+    "kind": "revise",
+    "text": "In the new hypersensitivity subsection, state that OSTREVIA should be discontinued and appropriate treatment started if a serious hypersensitivity reaction occurs.",
+    "expect": {
+     "area": "sec",
+     "num": "5",
+     "all": [
+      "hypersensitivity|anaphyla|angioedema",
+      "discontinue"
+     ]
+    },
+    "ifDeclined": "We do not agree. Prescribers need a clear action when a serious reaction occurs. Revise as requested."
+   },
+   {
+    "id": "pi-2",
+    "where": "Highlights, Warnings and Precautions",
+    "kind": "revise",
+    "text": "Add a Highlights bullet for hypersensitivity reactions that cites the new subsection.",
+    "expect": {
+     "area": "hl",
+     "key": "wp",
+     "all": [
+      "hypersensitivity|anaphyla|angioedema"
+     ]
+    }
+   },
+   {
+    "id": "pi-3",
+    "where": "6 ADVERSE REACTIONS",
+    "kind": "revise",
+    "text": "Add a 6.2 Postmarketing Experience subsection listing angioedema and anaphylaxis, with the standard statement that these reactions are reported voluntarily from a population of uncertain size.",
+    "expect": {
+     "area": "sec",
+     "num": "6.2",
+     "all": [
+      "angioedema",
+      "anaphyla",
+      "voluntarily|uncertain size"
+     ]
+    }
+   },
+   {
+    "id": "pi-4",
+    "where": "14 CLINICAL STUDIES",
+    "kind": "remove",
+    "text": "Delete \"OSTREVIA demonstrated superior efficacy, making it the best choice for chronic hand eczema.\" This is a comparative, promotional claim that is not supported by the studies described.",
+    "expect": {
+     "area": "sec",
+     "num": "14",
+     "none": [
+      "superior efficacy|best choice"
+     ]
+    },
+    "ifDeclined": "Head-to-head data are not in the application. The statement must be removed."
+   },
+   {
+    "id": "pi-5",
+    "where": "17 PATIENT COUNSELING INFORMATION",
+    "kind": "revise",
+    "text": "Add counselling on hypersensitivity: advise patients to stop OSTREVIA and get emergency help for swelling of the face, lips or tongue, or trouble breathing.",
+    "expect": {
+     "area": "sec",
+     "num": "17",
+     "all": [
+      "hypersensitivity|allergic",
+      "swelling|breathing"
+     ]
+    }
+   },
+   {
+    "id": "pi-6",
+    "where": "Highlights, Recent Major Changes",
+    "kind": "question",
+    "text": "Please confirm that the new Warnings and Precautions subsection is listed under Recent Major Changes with this revision date.",
+    "expect": {
+     "area": "hl",
+     "key": "rmc",
+     "all": []
+    }
+   }
+  ],
+  "mg": [
+   {
+    "id": "mg-1",
+    "where": "What are the possible side effects",
+    "kind": "revise",
+    "text": "Add serious allergic reactions to the serious side effects, in plain language, with the symptoms (swelling of the face, lips, mouth or tongue, trouble breathing, hives) and the action (stop taking and get emergency help).",
+    "expect": {
+     "area": "sec",
+     "num": "m7",
+     "all": [
+      "allergic",
+      "swelling",
+      "emergency"
+     ]
+    }
+   },
+   {
+    "id": "mg-2",
+    "where": "Who should not take",
+    "kind": "question",
+    "text": "No change needed to this section: the existing allergy statement covers the contraindication."
+   }
+  ]
+ }
+}

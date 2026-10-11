@@ -5,16 +5,17 @@ import { download } from '../engine/io.js';
 
 export default function Progress() {
   const { pack, attempts, lessonsDone, user, updateUser, toast, projects, docs } = useApp();
-  const status = useMemo(() => certificateStatus({ region: 'us', lessons: pack.lessons, drills: pack.drills, attempts, lessonsDone }), [pack, attempts, lessonsDone]);
+  const statuses = useMemo(() => ['us', 'core'].map((region) => certificateStatus({ region, lessons: pack.lessons, drills: pack.drills, attempts, lessonsDone })), [pack, attempts, lessonsDone]);
+  const status = { lessons: statuses.flatMap((s) => s.lessons), drills: statuses.flatMap((s) => s.drills), quiz: statuses[0].quiz };
   const [name, setName] = useState(user?.displayName ?? '');
   const approved = docs.filter((d) => d.status === 'approved').length;
-  const make = async () => {
+  const make = async (st) => {
     if (name.trim().length < 2) { toast('Type your name as it should appear.', 'warn'); return; }
     await updateUser({ displayName: name.trim() });
     const date = new Date().toISOString().slice(0, 10);
-    const code = verificationCode({ name, userId: user.userId, status, date });
+    const code = verificationCode({ name, userId: user.userId, status: st, date });
     const { certificatePdf } = await import('../engine/pdf.js');
-    download(`labelling-workbench-certificate-${date}.pdf`, new Blob([await certificatePdf({ name, userId: user.userId, status, code, region: pack.short, date })], { type: 'application/pdf' }));
+    download(`labelling-workbench-${st.region}-certificate-${date}.pdf`, new Blob([await certificatePdf({ name, userId: user.userId, status: st, code, region: pack.short, date })], { type: 'application/pdf' }));
   };
   return (
     <div className="page" style={{ maxWidth: 900 }}>
@@ -24,17 +25,18 @@ export default function Progress() {
         <div className="panel"><div style={{ fontSize: 'var(--step-3)', fontWeight: 800 }}>{status.drills.filter((d) => d.best !== null).length}/{status.drills.length}</div><span className="small muted">drills attempted</span></div>
         <div className="panel"><div style={{ fontSize: 'var(--step-3)', fontWeight: 800 }}>{projects.length}</div><span className="small muted">projects · {approved} label version(s) approved</span></div>
       </div>
-      <h2 style={{ fontSize: 'var(--step-2)' }}>US certificate</h2>
-      <ul className="checks" style={{ marginBottom: '1rem' }}>
-        {status.criteria.map((c) => (
-          <li key={c.id}><span className={`tick ${c.done >= c.of ? 'on' : ''}`} aria-hidden="true">{c.done >= c.of ? '✓' : ''}</span><span>{c.label}: <b>{c.done} of {c.of}</b></span></li>
-        ))}
-      </ul>
-      <div className="panel row" style={{ marginBottom: '1.5rem', alignItems: 'end' }}>
-        <label className="field" style={{ minWidth: 260 }}>Name on the certificate <input type="text" value={name} onChange={(e) => setName(e.target.value)} /></label>
-        <button className="btn primary" disabled={!status.eligible} onClick={make}>Download certificate PDF</button>
-        {!status.eligible && <span className="small muted">Opens when every criterion is met.</span>}
-      </div>
+      <label className="field" style={{ maxWidth: 360, marginBottom: '1rem' }}>Name on the certificates <input type="text" value={name} onChange={(e) => setName(e.target.value)} /></label>
+      {statuses.map((st) => (
+        <section key={st.region} style={{ marginBottom: '1.25rem' }}>
+          <h2 style={{ fontSize: 'var(--step-2)' }}>{st.region === 'core' ? 'Core data sheet and change management certificate' : 'US labelling certificate'}</h2>
+          <ul className="checks" style={{ marginBottom: '.75rem' }}>
+            {st.criteria.map((c) => (
+              <li key={c.id}><span className={`tick ${c.done >= c.of ? 'on' : ''}`} aria-hidden="true">{c.done >= c.of ? '✓' : ''}</span><span>{c.id === 'quiz' && st.region === 'core' ? c.label.replace('A mixed quiz round', 'A core module quiz round') : c.label}: <b>{c.done} of {c.of}</b></span></li>
+            ))}
+          </ul>
+          <div className="row"><button className="btn primary" disabled={!st.eligible} onClick={() => make(st)}>Download certificate PDF</button>{!st.eligible && <span className="small muted">Opens when every criterion is met.</span>}</div>
+        </section>
+      ))}
       <p className="small muted">The certificate is a portfolio exercise, not an accreditation. Its verification code is a hash of your name, learner ID, date and scores.</p>
       <h3>Lessons</h3>
       <div className="table-wrap"><table className="data"><thead><tr><th>Lesson</th><th>Best check</th></tr></thead><tbody>{status.lessons.map((l) => <tr key={l.id}><td><a href={`#/learn/${l.id}`}>{l.id}. {l.title}</a></td><td>{l.best === null ? '—' : `${l.best}%`}</td></tr>)}</tbody></table></div>

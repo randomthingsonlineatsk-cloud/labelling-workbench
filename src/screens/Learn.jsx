@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useApp, go } from '../ctx.js';
+import { moduleOf } from '../engine/pack.js';
 
 export async function openSample(app, sampleId, docSampleId, tab = 'edit', focus = null, extra = {}) {
   const { project, docs } = await app.createFromSample(sampleId, extra);
@@ -14,23 +15,30 @@ export async function openSample(app, sampleId, docSampleId, tab = 'edit', focus
 export function Learn() {
   const { pack, lessonsDone } = useApp();
   const ls = pack.lessons.lessons;
+  const groups = [['us', 'US labelling', 'The prescribing information, patient labelling, carton and container, SPL and generic labelling.'], ['core', 'Core data sheet and change management', 'The company core data sheet, mapping and deviations, safety labelling changes, agency comment rounds and implementation.']];
   return (
     <div className="page">
       <h1>Learn</h1>
-      <p>{ls.length} short lessons on US labelling. Each ends with a four-question check (pass at 80%) and a "Try it" button that opens a sample at the right place. The <a href="#/glossary">glossary</a> explains the terms.</p>
-      <div className="lesson-grid">
-        {ls.map((l) => {
-          const best = lessonsDone[`us-${l.id}`]?.best;
-          return (
-            <a key={l.id} className="lesson-card" href={`#/learn/${l.id}`}>
-              <span className="n">{l.id}</span>
-              <strong>{l.title}</strong>
-              <span className="small muted">{l.minutes} min{best !== undefined ? ` · check ${best}%` : ''}</span>
-              {best >= 80 && <span className="sev ok" style={{ justifySelf: 'start' }}>Passed</span>}
-            </a>
-          );
-        })}
-      </div>
+      <p>{ls.length} short lessons in two modules. Each ends with a four-question check (pass at 80%) and a "Try it" button that opens a sample at the right place. The <a href="#/glossary">glossary</a> explains the terms. Each module has its own certificate on the <a href="#/progress">progress page</a>.</p>
+      {groups.map(([m, title, about]) => (
+        <section key={m} style={{ marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: 'var(--step-2)', marginBottom: '.2rem' }}>{title}</h2>
+          <p className="small muted" style={{ marginTop: 0 }}>{about}</p>
+          <div className="lesson-grid">
+            {ls.filter((l) => moduleOf(l) === m).map((l) => {
+              const best = lessonsDone[`us-${l.id}`]?.best;
+              return (
+                <a key={l.id} className="lesson-card" href={`#/learn/${l.id}`}>
+                  <span className="n">{l.id}</span>
+                  <strong>{l.title}</strong>
+                  <span className="small muted">{l.minutes} min{best !== undefined ? ` · check ${best}%` : ''}</span>
+                  {best >= 80 && <span className="sev ok" style={{ justifySelf: 'start' }}>Passed</span>}
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

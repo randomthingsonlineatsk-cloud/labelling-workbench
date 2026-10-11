@@ -27,7 +27,7 @@ PACK = {
          'text': 'FDA has proposed moving to a uniform 12-digit National Drug Code. Until a final rule applies, the app checks the current 10-digit formats (4-4-2, 5-3-2 or 5-4-1).',
          'src': 'ndc'},
         {'id': 'interchange', 'title': 'Interchangeability statements for biosimilars',
-         'text': 'FDA has been revising how interchangeability is shown in biosimilar labelling. The biosimilar exercise arrives in Phase 2 and will be marked Watch until the policy settles.',
+         'text': 'FDA has been revising how interchangeability is shown in biosimilar labelling. A biosimilar labelling exercise is planned for a later phase and will be marked Watch until the policy settles.',
          'src': 'biosim'},
     ],
     'sources': [

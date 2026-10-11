@@ -32,6 +32,7 @@ export function parseProjectFile(text, user, pack) {
   const docIds = Object.fromEntries(body.docs.map((x) => [x.id, uid('d')]));
   const project = own({ ...body.project, id: pid, title: `${body.project.title} (imported)` });
   if (project.proof?.docId) project.proof.docId = docIds[project.proof.docId] ?? null;
+  if (project.changes) project.changes = project.changes.map((c) => ({ ...c, docIds: (c.docIds ?? []).map((id) => docIds[id]).filter(Boolean) }));
   return {
     warnings,
     project,

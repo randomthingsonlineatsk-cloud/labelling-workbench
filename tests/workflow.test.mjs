@@ -121,7 +121,8 @@ t('blank documents start with the template and fail the right checks', () => {
   for (const k of pack.kinds.filter((x) => x !== 'pi-old')) {
     const d = blankDoc(pack, k, p, 'p', user);
     const iss = runChecks(d, { pack, docs: [d], product: p });
-    assert.ok(iss.some((i) => i.severity === 'error'), k);
+    // The proposed PMI is a Watch item: its checks warn but never block with errors.
+    assert.ok(iss.some((i) => i.severity === (k === 'pmi' ? 'warning' : 'error')), k);
   }
 });
 
