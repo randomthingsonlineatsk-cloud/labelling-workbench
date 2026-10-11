@@ -286,7 +286,9 @@ t('hand-off: CCSI file has only core safety statements; eCTD project file gives 
   assert.equal(f.statements.length, currentVersion(project.ccds).statements.filter((s) => s.ccsi).length);
   const r = productFromEctdFile(JSON.stringify({ kind: 'ectd-dossier-builder/project', project: { productId: 'talmisartan-er', region: 'EU', name: 'Talvera XR MAA' } }), PRODUCTS);
   assert.equal(r.product.id, 'talmisartan-er');
-  assert.equal(r.warnings.length, 1);
+  assert.equal(r.region, 'EU');
+  assert.equal(r.warnings.length, 0, 'EU has a pack now');
+  assert.equal(productFromEctdFile(JSON.stringify({ kind: 'ectd-dossier-builder/project', project: { productId: 'nce-tablet', region: 'JP' } }), PRODUCTS).warnings.length, 1);
   assert.throws(() => productFromEctdFile('{"kind":"x"}', PRODUCTS));
 });
 

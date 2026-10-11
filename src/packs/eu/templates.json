@@ -1,0 +1,433 @@
+{
+ "smpc": {
+  "kind": "smpc",
+  "label": "Summary of Product Characteristics",
+  "short": "SmPC",
+  "src": "qrd",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "NAME OF THE MEDICINAL PRODUCT",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "PHARMACEUTICAL FORM",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "CLINICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "4.1",
+      "title": "Therapeutic indications",
+      "need": "required"
+     },
+     {
+      "num": "4.2",
+      "title": "Posology and method of administration",
+      "need": "required"
+     },
+     {
+      "num": "4.3",
+      "title": "Contraindications",
+      "need": "required"
+     },
+     {
+      "num": "4.4",
+      "title": "Special warnings and precautions for use",
+      "need": "required"
+     },
+     {
+      "num": "4.5",
+      "title": "Interaction with other medicinal products and other forms of interaction",
+      "need": "required"
+     },
+     {
+      "num": "4.6",
+      "title": "Fertility, pregnancy and lactation",
+      "need": "required"
+     },
+     {
+      "num": "4.7",
+      "title": "Effects on ability to drive and use machines",
+      "need": "required"
+     },
+     {
+      "num": "4.8",
+      "title": "Undesirable effects",
+      "need": "required"
+     },
+     {
+      "num": "4.9",
+      "title": "Overdose",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "5",
+    "title": "PHARMACOLOGICAL PROPERTIES",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "5.1",
+      "title": "Pharmacodynamic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.2",
+      "title": "Pharmacokinetic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.3",
+      "title": "Preclinical safety data",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "6",
+    "title": "PHARMACEUTICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "6.1",
+      "title": "List of excipients",
+      "need": "required"
+     },
+     {
+      "num": "6.2",
+      "title": "Incompatibilities",
+      "need": "required"
+     },
+     {
+      "num": "6.3",
+      "title": "Shelf life",
+      "need": "required"
+     },
+     {
+      "num": "6.4",
+      "title": "Special precautions for storage",
+      "need": "required"
+     },
+     {
+      "num": "6.5",
+      "title": "Nature and contents of container",
+      "need": "required"
+     },
+     {
+      "num": "6.6",
+      "title": "Special precautions for disposal <and other handling>",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "7",
+    "title": "MARKETING AUTHORISATION HOLDER",
+    "need": "required"
+   },
+   {
+    "num": "8",
+    "title": "MARKETING AUTHORISATION NUMBER(S)",
+    "need": "required"
+   },
+   {
+    "num": "9",
+    "title": "DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION",
+    "need": "required"
+   },
+   {
+    "num": "10",
+    "title": "DATE OF REVISION OF THE TEXT",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "header": "ANNEX I: SUMMARY OF PRODUCT CHARACTERISTICS",
+   "blackTriangle": "▼ This medicinal product is subject to additional monitoring. This will allow quick identification of new safety information. Healthcare professionals are asked to report any suspected adverse reactions. See section 4.8 for how to report adverse reactions."
+  },
+  "reporting": "Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V."
+ },
+ "pl": {
+  "kind": "pl",
+  "label": "Package leaflet",
+  "short": "PL",
+  "src": "qrd",
+  "sections": [
+   {
+    "num": "pl1",
+    "title": "1. What {name} is and what it is used for",
+    "need": "required"
+   },
+   {
+    "num": "pl2",
+    "title": "2. What you need to know before you take {name}",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl2.1",
+      "title": "Do not take {name}",
+      "need": "required"
+     },
+     {
+      "num": "pl2.2",
+      "title": "Warnings and precautions",
+      "need": "required"
+     },
+     {
+      "num": "pl2.3",
+      "title": "Children and adolescents",
+      "need": "recommended"
+     },
+     {
+      "num": "pl2.4",
+      "title": "Other medicines and {name}",
+      "need": "required"
+     },
+     {
+      "num": "pl2.5",
+      "title": "{name} with food, drink and alcohol",
+      "need": "optional"
+     },
+     {
+      "num": "pl2.6",
+      "title": "Pregnancy and breast-feeding",
+      "need": "required"
+     },
+     {
+      "num": "pl2.7",
+      "title": "Driving and using machines",
+      "need": "required"
+     },
+     {
+      "num": "pl2.8",
+      "title": "{name} contains sodium",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "pl3",
+    "title": "3. How to take {name}",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl3.1",
+      "title": "If you take more {name} than you should",
+      "need": "required"
+     },
+     {
+      "num": "pl3.2",
+      "title": "If you forget to take {name}",
+      "need": "required"
+     },
+     {
+      "num": "pl3.3",
+      "title": "If you stop taking {name}",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "pl4",
+    "title": "4. Possible side effects",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl4.1",
+      "title": "Reporting of side effects",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "pl5",
+    "title": "5. How to store {name}",
+    "need": "required"
+   },
+   {
+    "num": "pl6",
+    "title": "6. Contents of the pack and other information",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl6.1",
+      "title": "What {name} contains",
+      "need": "required"
+     },
+     {
+      "num": "pl6.2",
+      "title": "What {name} looks like and contents of the pack",
+      "need": "required"
+     },
+     {
+      "num": "pl6.3",
+      "title": "Marketing Authorisation Holder and Manufacturer",
+      "need": "required"
+     }
+    ]
+   }
+  ],
+  "fixed": {
+   "header": "Package leaflet: Information for the patient",
+   "blackTriangle": "▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. See the end of section 4 for how to report side effects.",
+   "readFirst": "Read all of this leaflet carefully before you start taking this medicine because it contains important information for you. Keep this leaflet. You may need to read it again. If you have any further questions, ask your doctor or pharmacist. This medicine has been prescribed for you only. Do not pass it on to others. It may harm them, even if their signs of illness are the same as yours. If you get any side effects, talk to your doctor or pharmacist. This includes any possible side effects not listed in this leaflet. See section 4.",
+   "lastRevised": "This leaflet was last revised in"
+  },
+  "reporting": "If you get any side effects, talk to your doctor or pharmacist. This includes any possible side effects not listed in this leaflet. You can also report side effects directly via the national reporting system listed in Appendix V. By reporting side effects you can help provide more information on the safety of this medicine."
+ },
+ "eu-outer": {
+  "kind": "eu-outer",
+  "label": "Outer carton (Annex IIIA)",
+  "short": "Outer",
+  "src": "qrd",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "NAME OF THE MEDICINAL PRODUCT",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "STATEMENT OF ACTIVE SUBSTANCE(S)",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "LIST OF EXCIPIENTS",
+    "need": "recommended"
+   },
+   {
+    "num": "4",
+    "title": "PHARMACEUTICAL FORM AND CONTENTS",
+    "need": "required"
+   },
+   {
+    "num": "5",
+    "title": "METHOD AND ROUTE(S) OF ADMINISTRATION",
+    "need": "required"
+   },
+   {
+    "num": "6",
+    "title": "SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN",
+    "need": "required"
+   },
+   {
+    "num": "7",
+    "title": "OTHER SPECIAL WARNING(S), IF NECESSARY",
+    "need": "optional"
+   },
+   {
+    "num": "8",
+    "title": "EXPIRY DATE",
+    "need": "required"
+   },
+   {
+    "num": "9",
+    "title": "SPECIAL STORAGE CONDITIONS",
+    "need": "optional"
+   },
+   {
+    "num": "10",
+    "title": "SPECIAL PRECAUTIONS FOR DISPOSAL OF UNUSED MEDICINAL PRODUCTS OR WASTE MATERIALS DERIVED FROM SUCH MEDICINAL PRODUCTS, IF APPROPRIATE",
+    "need": "optional"
+   },
+   {
+    "num": "11",
+    "title": "NAME AND ADDRESS OF THE MARKETING AUTHORISATION HOLDER",
+    "need": "required"
+   },
+   {
+    "num": "12",
+    "title": "MARKETING AUTHORISATION NUMBER(S)",
+    "need": "required"
+   },
+   {
+    "num": "13",
+    "title": "BATCH NUMBER",
+    "need": "required"
+   },
+   {
+    "num": "14",
+    "title": "GENERAL CLASSIFICATION FOR SUPPLY",
+    "need": "optional"
+   },
+   {
+    "num": "15",
+    "title": "INSTRUCTIONS ON USE",
+    "need": "optional"
+   },
+   {
+    "num": "16",
+    "title": "INFORMATION IN BRAILLE",
+    "need": "required"
+   },
+   {
+    "num": "17",
+    "title": "UNIQUE IDENTIFIER - 2D BARCODE",
+    "need": "required"
+   },
+   {
+    "num": "18",
+    "title": "UNIQUE IDENTIFIER - HUMAN READABLE DATA",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "header": "PARTICULARS TO APPEAR ON THE OUTER PACKAGING"
+  },
+  "standard": {
+   "6": "Keep out of the sight and reach of children.",
+   "17": "2D barcode carrying the unique identifier included."
+  }
+ },
+ "eu-blister": {
+  "kind": "eu-blister",
+  "label": "Blister (Annex IIIA)",
+  "short": "Blister",
+  "src": "qrd",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "NAME OF THE MEDICINAL PRODUCT",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "NAME OF THE MARKETING AUTHORISATION HOLDER",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "EXPIRY DATE",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "BATCH NUMBER",
+    "need": "required"
+   },
+   {
+    "num": "5",
+    "title": "OTHER",
+    "need": "optional"
+   }
+  ],
+  "fixed": {
+   "header": "MINIMUM PARTICULARS TO APPEAR ON BLISTERS OR STRIPS"
+  }
+ }
+}

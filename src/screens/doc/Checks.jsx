@@ -5,7 +5,7 @@ import { ruleById } from '../../engine/pack.js';
 import { Sev, RuleCard, Counts, Modal } from '../../components/ui.jsx';
 import { nodeOf, editable } from './Editor.jsx';
 
-export default function Checks({ doc, issues, setTab }) {
+export default function Checks({ doc, issues, setTab, project }) {
   const { pack, updateDoc, user } = useApp();
   const [filter, setFilter] = useState('open');
   const [waiving, setWaiving] = useState(null);
@@ -34,7 +34,7 @@ export default function Checks({ doc, issues, setTab }) {
       <div className="pane-head">
         <div>
           <h2 style={{ fontSize: 'var(--step-2)' }}>Checks</h2>
-          <p className="small muted" style={{ margin: 0 }}>{pack.name} pack {pack.version} ({pack.asOf}). Checks run as you type. Errors must be fixed; warnings can be fixed or waived with a reason; hints never block.</p>
+          <p className="small muted" style={{ margin: 0 }}>{(() => { const r = pack.regions?.[project?.region ?? 'us'] ?? pack; return `${r.name} pack ${r.version} (${r.asOf})`; })()}. Checks run as you type. Errors must be fixed; warnings can be fixed or waived with a reason; hints never block.</p>
         </div>
         <div className="row"><Counts sum={sum} zero="No open findings" />{sum.waived ? <span className="sev waived">{sum.waived} waived</span> : null}</div>
       </div>

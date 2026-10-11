@@ -73,5 +73,6 @@ export function productFromEctdFile(text, products) {
   if (d?.kind !== ECTD_PROJECT_KIND || !d.project) throw new Error('This is not an eCTD Dossier Builder project file.');
   const p = products.find((x) => x.id === d.project.productId);
   if (!p) throw new Error(`The eCTD project is for a product this app does not have (${d.project.productId}).`);
-  return { product: p, region: d.project.region ?? 'US', name: d.project.name ?? '', warnings: d.project.region && d.project.region !== 'US' ? [`The eCTD project is for ${d.project.region}; this app has the US pack, so the labels start in US format.`] : [] };
+  const region = d.project.region ?? 'US';
+  return { product: p, region, name: d.project.name ?? '', warnings: !['US', 'EU'].includes(region) ? [`The eCTD project is for ${region}; this app has US and EU packs, so the labels start in US format.`] : [] };
 }

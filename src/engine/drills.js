@@ -7,6 +7,8 @@ import { monthIndex } from './text.js';
 import { scoreMapping } from './convert.js';
 import { currentVersion, versionByV, autoMatch } from './ccds.js';
 import { satisfied, agreed } from './agency.js';
+import { userTestResult } from './usertest.js';
+import { translationFindings } from './checks-eu.js';
 
 const matches = (i, prefixes) => prefixes.some((p) => i.ruleId.startsWith(p)) && !i.waived && i.severity !== 'info';
 
@@ -55,6 +57,54 @@ export function evaluateDrill(drill, { docs, sample, pack, product, mapping, pro
       { label: 'US approval date and first shipment recorded in the tracker', done: !!us?.dates?.Approved && !!us?.firstShip },
     ];
     return score(goals);
+  }
+  if (g.type === 'rules-multi') {
+    const count = (list, dd) => list.reduce((n, d) => n + runChecks(d, { pack, docs: dd, product, project }).filter((i) => matches(i, g.prefixes)).length, 0);
+    const base = count(sample.docs.filter((d) => g.docs.includes(d.id)), sample.docs);
+    const mine = docs.filter((d) => g.docs.includes(d.sampleDocId));
+    const left = count(mine, docs);
+    return { score: base ? Math.max(0, Math.round((1 - left / base) * 100)) : 100, goals: g.docs.map((id) => { const d = docs.find((x) => x.sampleDocId === id); const n = d ? runChecks(d, { pack, docs, product, project }).filter((i) => matches(i, g.prefixes)).length : 1; return { label: `${d?.title ?? id}: ${n ? `${n} finding(s) left` : 'clear'}`, done: !n }; }) };
+  }
+  if (g.type === 'usertest') {
+    const d = docs.find((x) => x.sampleDocId === drill.doc);
+    const r = d ? userTestResult(d) : { perQuestion: [], passed: false, sameText: false };
+    const rounds = d?.userTest?.rounds?.length ?? 0;
+    const goals = [
+      { label: 'At least one round run on the draft', done: rounds > 0 },
+      ...r.perQuestion.map((p) => ({ label: `${p.id}: ${p.q} (${p.score ?? '-'} of 20)`, done: p.pass })),
+      { label: 'Two final rounds on the same text', done: !!r.sameText },
+    ];
+    return score(goals);
+  }
+  if (g.type === 'translation') {
+    const d = docs.find((x) => x.sampleDocId === drill.doc);
+    const f = d ? translationFindings(d, { pack, docs, project }) : [{ rule: 'x' }];
+    const by = (r) => f.filter((x) => x.rule === r).length;
+    return score([
+      { label: 'Every number matches the English', done: !!d && by('EU-TR-NUM') === 0 },
+      { label: 'Approved terms from the term base used', done: !!d && by('EU-TR-TERM') === 0 },
+      { label: 'Every section translated', done: !!d && by('EU-TR-MISS') === 0 },
+      { label: 'Linguistic review comments answered and the translation agreed', done: !!d && agreed(d) },
+    ]);
+  }
+  if (g.type === 'prac') {
+    const smpc = docs.find((d) => d.kind === 'smpc'); const pl = docs.find((d) => d.kind === 'pl' && d.role !== 'translation');
+    const t = (d, num) => (d ? [findSection(d, num)].filter(Boolean).flatMap((s) => [blocksText(s.blocks), ...(s.subs ?? []).map((x) => blocksText(x.blocks))]).join('\n') : '');
+    const ch = (project?.changes ?? []).find((c) => c.trigger === 'prac');
+    const eu = ch?.markets.find((m) => m.market === 'eu');
+    const s44 = /DRESS|eosinophilia/i.test(t(smpc, '4.4')) && /withdrawn|discontinu|stop/i.test(t(smpc, '4.4'));
+    const s48 = /DRESS|eosinophilia/i.test(t(smpc, '4.8')) && /not known/i.test(t(smpc, '4.8'));
+    const p2 = /DRESS|rash/i.test(t(pl, 'pl2')) && /temperature|fever/i.test(t(pl, 'pl2'));
+    const p4 = /DRESS|drug hypersensitivity syndrome/i.test(t(pl, 'pl4'));
+    return score([
+      { label: 'SmPC 4.4: DRESS warning with the action to take', done: s44 },
+      { label: 'SmPC 4.8: DRESS, frequency not known', done: s48 },
+      { label: 'Leaflet section 2: warning signs and what to do', done: p2 },
+      { label: 'Leaflet section 4: DRESS as a side effect', done: p4 },
+      { label: 'SmPC and leaflet approved with the new wording', done: smpc?.status === 'approved' && pl?.status === 'approved' && s44 && p2 },
+      { label: 'Variation classified in the tracker (EU)', done: !!eu?.classification?.trim() },
+      { label: 'EU variation submitted before the deadline', done: !!eu?.dates?.Submitted && eu.dates.Submitted <= eu.deadline },
+    ]);
   }
   if (g.type === 'pmi') {
     const d = docs.find((x) => x.kind === 'pmi');

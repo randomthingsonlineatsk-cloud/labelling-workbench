@@ -1,0 +1,293 @@
+[
+ {
+  "id": "EU-HEAD",
+  "title": "QRD headings, in order",
+  "text": "Every heading of the QRD template appears with its exact wording and in the template order. Optional headings may be left out.",
+  "kinds": [
+   "smpc",
+   "pl",
+   "eu-outer",
+   "eu-blister"
+  ],
+  "severity": "error",
+  "src": "qrd",
+  "at": "QRD template v10.4",
+  "check": "EU-HEAD",
+  "simplified": "Alternative wording in angle brackets in the template is accepted as written in the app (for example \"<and other handling>\")."
+ },
+ {
+  "id": "EU-REQ",
+  "title": "Required sections are filled",
+  "text": "Each required section has content. If a section does not apply, the template usually gives the wording to use instead (for example \"Not applicable.\").",
+  "kinds": [
+   "smpc",
+   "pl",
+   "eu-outer",
+   "eu-blister"
+  ],
+  "severity": "error",
+  "src": "qrd",
+  "at": "QRD template v10.4",
+  "check": "EU-REQ"
+ },
+ {
+  "id": "EU-BT",
+  "title": "Black triangle for additional monitoring",
+  "text": "A medicine under additional monitoring carries the black inverted triangle and the standard statement at the start of the SmPC and the package leaflet. Medicines not under additional monitoring do not.",
+  "kinds": [
+   "smpc",
+   "pl"
+  ],
+  "severity": "error",
+  "src": "am",
+  "at": "Implementing Regulation 198/2013, Article 1; QRD template",
+  "check": "EU-BT"
+ },
+ {
+  "id": "EU-48-REPORT",
+  "title": "Reporting statement in 4.8",
+  "text": "Section 4.8 ends with the standard text on reporting suspected adverse reactions, pointing to the national reporting system listed in Appendix V.",
+  "kinds": [
+   "smpc"
+  ],
+  "severity": "error",
+  "src": "qrd",
+  "at": "QRD template v10.4, section 4.8",
+  "check": "EU-48-REPORT"
+ },
+ {
+  "id": "EU-48-FREQ",
+  "title": "Frequency categories in 4.8",
+  "text": "Adverse reactions are listed by MedDRA system organ class and frequency, using the convention very common (≥1/10), common (≥1/100 to <1/10), uncommon (≥1/1,000 to <1/100), rare (≥1/10,000 to <1/1,000), very rare (<1/10,000) and not known. Words such as \"frequent\" or \"occasional\" are not used.",
+  "kinds": [
+   "smpc"
+  ],
+  "severity": "warning",
+  "src": "smpcgl",
+  "at": "SmPC guideline, section 4.8",
+  "check": "EU-48-FREQ",
+  "simplified": "The app looks for the category names and for non-standard frequency words; it does not check the system organ class order."
+ },
+ {
+  "id": "EU-EXC",
+  "title": "Excipients with a known effect",
+  "text": "Excipients listed in the annex to the excipients guideline need the set statement in the package leaflet (section 2) and the matching information in SmPC section 4.4; most must also be named on the outer carton.",
+  "kinds": [
+   "smpc",
+   "pl",
+   "eu-outer"
+  ],
+  "severity": "error",
+  "src": "excip",
+  "at": "Annex, Rev. 2",
+  "check": "EU-EXC",
+  "simplified": "The app knows six common excipients and checks for the key words of each statement, not the full text or the dose thresholds."
+ },
+ {
+  "id": "EU-PL-STD",
+  "title": "Standard statements in the leaflet",
+  "text": "The leaflet starts with the \"Read all of this leaflet carefully\" box, section 4 ends with \"Reporting of side effects\" pointing to Appendix V, and the last line gives the date it was last revised.",
+  "kinds": [
+   "pl"
+  ],
+  "severity": "error",
+  "src": "qrd",
+  "at": "QRD template v10.4, Annex IIIB",
+  "check": "EU-PL-STD"
+ },
+ {
+  "id": "EU-PL-CONSIST",
+  "title": "Leaflet consistent with the SmPC",
+  "text": "The leaflet says the same things as the SmPC in patient language: contraindications in 4.3 appear under \"Do not take\", strengths match, and the warnings in 4.4 are reflected in \"Warnings and precautions\".",
+  "kinds": [
+   "pl"
+  ],
+  "severity": "warning",
+  "src": "read",
+  "at": "Readability guideline; Directive 2001/83/EC Article 59",
+  "check": "EU-PL-CONSIST",
+  "simplified": "The app compares strengths and checks that an allergy contraindication in 4.3 is mirrored in the leaflet."
+ },
+ {
+  "id": "EU-LAB-CHILD",
+  "title": "Keep out of the sight and reach of children",
+  "text": "Section 6 of the outer packaging carries exactly \"Keep out of the sight and reach of children.\"",
+  "kinds": [
+   "eu-outer"
+  ],
+  "severity": "error",
+  "src": "qrd",
+  "at": "QRD template, Annex IIIA section 6",
+  "check": "EU-LAB-CHILD"
+ },
+ {
+  "id": "EU-BRAILLE",
+  "title": "Name in Braille",
+  "text": "The name of the medicinal product is in Braille on the packaging; where there are several strengths, the strength is included. The text to be embossed is given in section 16.",
+  "kinds": [
+   "eu-outer"
+  ],
+  "severity": "error",
+  "src": "dir",
+  "at": "Directive 2001/83/EC, Article 56a",
+  "check": "EU-BRAILLE",
+  "simplified": "The app checks the text given for Braille, not the embossing itself."
+ },
+ {
+  "id": "EU-SF",
+  "title": "Safety features",
+  "text": "Prescription medicines carry a unique identifier in a 2D data matrix and an anti-tampering device. Section 17 states \"2D barcode carrying the unique identifier included.\" and section 18 shows the human-readable product code (PC), serial number (SN) and, where applicable, national reimbursement number (NN).",
+  "kinds": [
+   "eu-outer"
+  ],
+  "severity": "error",
+  "src": "sf",
+  "at": "Delegated Regulation (EU) 2016/161, Articles 4 to 7",
+  "check": "EU-SF",
+  "simplified": "The app checks the template statements and the PC/SN/NN lines, not a real code."
+ },
+ {
+  "id": "EU-LAB-PART",
+  "title": "Particulars agree with the SmPC",
+  "text": "The name, strength, pharmaceutical form, pack size, authorisation number and holder on the packaging agree with the SmPC.",
+  "kinds": [
+   "eu-outer",
+   "eu-blister"
+  ],
+  "severity": "error",
+  "src": "dir",
+  "at": "Directive 2001/83/EC, Articles 54 and 55",
+  "check": "EU-LAB-PART"
+ },
+ {
+  "id": "EU-BLUEBOX",
+  "title": "Blue box for national particulars",
+  "text": "Centrally authorised products may carry a \"blue box\" on the outer packaging for national particulars (for example price or reimbursement) required by a member state.",
+  "kinds": [
+   "eu-outer"
+  ],
+  "severity": "info",
+  "src": "dir",
+  "at": "Directive 2001/83/EC, Article 57",
+  "check": "EU-BLUEBOX",
+  "simplified": "Shown as a hint only: whether a blue box is needed depends on the member states where the pack is sold."
+ },
+ {
+  "id": "EU-QR",
+  "title": "QR codes need agency assessment",
+  "text": "A QR code or other mobile-scanning link in the labelling or leaflet of a centrally authorised product must be submitted to EMA, and the content it links to must be consistent with the approved product information and not promotional.",
+  "kinds": [
+   "pl",
+   "eu-outer"
+  ],
+  "severity": "info",
+  "src": "qr",
+  "at": "EMA QR code guidance",
+  "check": "EU-QR"
+ },
+ {
+  "id": "EU-DATE",
+  "title": "Revision dates",
+  "text": "SmPC section 10 gives the date of revision, and the leaflet ends with the month and year it was last revised.",
+  "kinds": [
+   "smpc",
+   "pl"
+  ],
+  "severity": "warning",
+  "src": "qrd",
+  "at": "QRD template v10.4, SmPC section 10 and Annex IIIB",
+  "check": "EU-DATE"
+ },
+ {
+  "id": "EU-STR",
+  "title": "Strengths agree",
+  "text": "The strengths in the SmPC name and composition agree with the product and with the labelling.",
+  "kinds": [
+   "smpc",
+   "eu-outer"
+  ],
+  "severity": "warning",
+  "src": "qrd",
+  "at": "QRD template v10.4",
+  "check": "EU-STR"
+ },
+ {
+  "id": "EU-PL-READ",
+  "title": "Plain language in the leaflet",
+  "text": "The leaflet should be easy to read: short sentences, everyday words, explained medical terms.",
+  "kinds": [
+   "pl"
+  ],
+  "severity": "info",
+  "src": "read",
+  "at": "Readability guideline, chapter A",
+  "check": "EU-PL-READ",
+  "simplified": "Reading grade is an estimate (Flesch-Kincaid style) shown as a hint."
+ },
+ {
+  "id": "EU-UT",
+  "title": "User test passed",
+  "text": "The leaflet is user tested (or bridged to a tested leaflet). The usual success standard: for each question, at least 16 of 20 participants (about 81%) find the information and show they understand it, over two rounds of 10 on the final text.",
+  "kinds": [
+   "pl"
+  ],
+  "severity": "warning",
+  "src": "readno",
+  "at": "Readability guideline; national agency summary",
+  "check": "EU-UT",
+  "simplified": "The simulator estimates participants' results from the leaflet text; a real test uses real people."
+ },
+ {
+  "id": "EU-TR-TERM",
+  "title": "Approved terms in the translation",
+  "text": "A translation uses the approved terms from the term base for each source term it translates.",
+  "kinds": [
+   "smpc",
+   "pl"
+  ],
+  "severity": "error",
+  "src": "ling",
+  "at": "Linguistic review process",
+  "check": "EU-TR-TERM"
+ },
+ {
+  "id": "EU-TR-NUM",
+  "title": "Numbers kept in the translation",
+  "text": "Every number in a section of the source (doses, durations, strengths) appears in the matching section of the translation.",
+  "kinds": [
+   "smpc",
+   "pl"
+  ],
+  "severity": "error",
+  "src": "ling",
+  "at": "Linguistic review process",
+  "check": "EU-TR-NUM",
+  "simplified": "The app compares digits section by section."
+ },
+ {
+  "id": "EU-TR-MISS",
+  "title": "Every section translated",
+  "text": "Every section of the source has a translated section with content.",
+  "kinds": [
+   "smpc",
+   "pl"
+  ],
+  "severity": "warning",
+  "src": "ling",
+  "at": "Linguistic review process",
+  "check": "EU-TR-MISS"
+ },
+ {
+  "id": "EU-PROMO",
+  "title": "No promotional wording",
+  "text": "Product information must not be promotional. Words such as \"best\", \"safest\" or \"superior\" do not belong in it.",
+  "kinds": [
+   "smpc",
+   "pl"
+  ],
+  "severity": "warning",
+  "src": "dir",
+  "at": "Directive 2001/83/EC, Article 62",
+  "check": "EU-PROMO"
+ }
+]

@@ -1,5 +1,5 @@
 {
- "_about": "Fictional products shared with the eCTD Dossier Builder and the Variations Classifier (same ids, names and companies). Application numbers are invented.",
+ "_about": "Fictional products shared with the eCTD Dossier Builder and the Variations Classifier (same ids, names and companies). Application numbers are invented. EU details (procedure, authorisation numbers, EU holders) match the Variations Classifier; all are invented.",
  "products": [
   {
    "id": "nce-tablet",
@@ -22,7 +22,32 @@
    },
    "shelfLife": "36 months",
    "storage": "Store at 20°C to 25°C",
-   "summary": "New chemical entity, immediate-release film-coated tablet."
+   "summary": "New chemical entity, immediate-release film-coated tablet.",
+   "eu": {
+    "route": "centralised",
+    "maNumber": "EU/1/23/9901/001-004",
+    "approvalDate": "2023-06-20",
+    "holder": {
+     "name": "Halcyon Ridge Pharmaceuticals Europe B.V.",
+     "address": "Fictieweg 21, 3000 CC Voorbeeldhaven, Netherlands"
+    },
+    "manufacturer": {
+     "name": "Halcyon Ridge Manufacturing Ireland Ltd.",
+     "address": "Unit 9, Sample Industrial Estate, Exampleford, Ireland"
+    },
+    "additionalMonitoring": true,
+    "packs": [
+     "28 film-coated tablets",
+     "84 film-coated tablets"
+    ],
+    "excipients": [
+     {
+      "key": "sodium",
+      "amount": "0.6 mg",
+      "per": "tablet"
+     }
+    ]
+   }
   },
   {
    "id": "generic-tablet",
@@ -50,6 +75,17 @@
     "name": "CORVENZA (talmisartan) tablets",
     "holder": "Northmere Pharma Inc.",
     "application": "NDA 210999 (fictional)"
+   },
+   "eu": {
+    "route": "dcp",
+    "rms": "NL",
+    "maNumber": "NL/H/9902/001-002",
+    "approvalDate": "2022-11-15",
+    "holder": {
+     "name": "Ashvale Generics Europe B.V.",
+     "address": "Voorbeeldstraat 10, 1000 AA Voorbeeldstad, Netherlands",
+     "contact": "Femke de Vries, Regulatory Affairs Manager"
+    }
    }
   },
   {
@@ -73,7 +109,18 @@
    },
    "shelfLife": "24 months",
    "storage": "Store at 20°C to 25°C",
-   "summary": "Extended-release capsule approved under section 505(b)(2)."
+   "summary": "Extended-release capsule approved under section 505(b)(2).",
+   "eu": {
+    "route": "mrp",
+    "rms": "DE",
+    "maNumber": "DE/H/9903/001-002",
+    "approvalDate": "2025-02-10",
+    "holder": {
+     "name": "Calderon Therapeutics GmbH",
+     "address": "Musterallee 3, 10000 Beispielstadt, Germany",
+     "contact": "Jonas Weber, Head of Regulatory Affairs"
+    }
+   }
   },
   {
    "id": "sterile-injectable",
@@ -95,7 +142,12 @@
    },
    "shelfLife": "24 months",
    "storage": "Store below 25°C; do not freeze; keep the vial in the outer carton to protect from light",
-   "summary": "Aseptically filled sterile solution in glass vials."
+   "summary": "Aseptically filled sterile solution in glass vials.",
+   "eu": {
+    "route": "centralised",
+    "maNumber": "EU/1/21/9904/001",
+    "approvalDate": "2021-09-30"
+   }
   },
   {
    "id": "mab-infusion",
@@ -117,7 +169,17 @@
    },
    "shelfLife": "36 months",
    "storage": "Store in a refrigerator (2°C to 8°C); do not freeze; protect from light",
-   "summary": "Monoclonal antibody licensed under a BLA."
+   "summary": "Monoclonal antibody licensed under a BLA.",
+   "eu": {
+    "route": "centralised",
+    "maNumber": "EU/1/22/9905/001",
+    "approvalDate": "2022-05-12",
+    "holder": {
+     "name": "Lumenfield Biologics Europe B.V.",
+     "address": "Kanaalweg 8, 2000 BB Voorbeelddorp, Netherlands",
+     "contact": "Sanne Bakker, Director, EU Regulatory Affairs"
+    }
+   }
   },
   {
    "id": "biosimilar-mab",
@@ -139,7 +201,12 @@
    },
    "shelfLife": "30 months",
    "storage": "Store at 2°C to 8°C; protect from light",
-   "summary": "Biosimilar antibody licensed under section 351(k)."
+   "summary": "Biosimilar antibody licensed under section 351(k).",
+   "eu": {
+    "route": "centralised",
+    "maNumber": "EU/1/25/9906/001",
+    "approvalDate": "2025-07-01"
+   }
   },
   {
    "id": "mdi-aerosol",
@@ -161,7 +228,18 @@
    },
    "shelfLife": "24 months",
    "storage": "Store at 20°C to 25°C; contents under pressure",
-   "summary": "Metered-dose inhaler: the valve and actuator control the dose."
+   "summary": "Metered-dose inhaler: the valve and actuator control the dose.",
+   "eu": {
+    "route": "national",
+    "authority": "the national competent authority (IE)",
+    "maNumber": "PA9907/001/001",
+    "approvalDate": "2020-12-01",
+    "holder": {
+     "name": "Northvale Respiratory Ireland Ltd.",
+     "address": "Unit 4, Example Business Park, Exampletown, Ireland",
+     "contact": "Aoife Byrne, Regulatory Affairs Lead"
+    }
+   }
   }
  ]
 }

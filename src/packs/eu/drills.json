@@ -1,0 +1,109 @@
+{
+ "drills": [
+  {
+   "id": "eu-smpc-fix",
+   "module": "eu",
+   "title": "Fix the SmPC",
+   "minutes": 15,
+   "sample": "eu-ostrevia-errors",
+   "doc": "smpc",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "EU-"
+    ]
+   },
+   "about": "Clear every QRD, black triangle, 4.8, excipient, strength and promotional finding in the Ostrevia SmPC."
+  },
+  {
+   "id": "eu-pl-fix",
+   "module": "eu",
+   "title": "Repair the package leaflet",
+   "minutes": 15,
+   "sample": "eu-ostrevia-errors",
+   "doc": "pl",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "EU-"
+    ]
+   },
+   "about": "Restore the standard statements, headings, excipient statement and consistency with the SmPC."
+  },
+  {
+   "id": "eu-carton-fix",
+   "module": "eu",
+   "title": "Fix the outer carton",
+   "minutes": 10,
+   "sample": "eu-ostrevia-errors",
+   "doc": "outer-10",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "EU-"
+    ]
+   },
+   "about": "Children warning, Braille, the safety features and the authorisation number."
+  },
+  {
+   "id": "eu-lactose",
+   "module": "eu",
+   "title": "Declare a new excipient",
+   "minutes": 15,
+   "sample": "eu-ostrevia-lactose",
+   "doc": "pl",
+   "goal": {
+    "type": "rules-multi",
+    "docs": [
+     "smpc",
+     "pl",
+     "outer-25"
+    ],
+    "prefixes": [
+     "EU-EXC"
+    ]
+   },
+   "about": "The 25 mg tablet now contains lactose. Add the statements to SmPC 4.4, the leaflet (section 2) and the carton (section 3)."
+  },
+  {
+   "id": "eu-usertest",
+   "module": "eu",
+   "title": "Pass the user test",
+   "minutes": 25,
+   "sample": "eu-ostrevia-usertest",
+   "doc": "pl",
+   "tab": "usertest",
+   "goal": {
+    "type": "usertest"
+   },
+   "about": "Run a round, rewrite the sections participants could not use, and pass two final rounds of 10 on the same text (16 of 20 on every question)."
+  },
+  {
+   "id": "eu-translation",
+   "module": "eu",
+   "title": "Review the French leaflet",
+   "minutes": 20,
+   "sample": "eu-ostrevia-translation",
+   "doc": "pl-fr",
+   "tab": "translation",
+   "goal": {
+    "type": "translation"
+   },
+   "about": "Fix the dose, the missing period and the wrong term against the English and the term base, then answer the linguistic review comments."
+  },
+  {
+   "id": "eu-prac",
+   "module": "eu",
+   "capstone": true,
+   "title": "Capstone: implement a PRAC signal recommendation",
+   "minutes": 35,
+   "sample": "eu-ostrevia-prac",
+   "doc": "smpc",
+   "tab": "changes",
+   "goal": {
+    "type": "prac"
+   },
+   "about": "Add the PRAC wording on DRESS to SmPC 4.4 and 4.8 and leaflet sections 2 and 4, approve both, classify the variation and record the submission before the 60-day deadline."
+  }
+ ]
+}

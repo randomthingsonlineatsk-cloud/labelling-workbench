@@ -1,0 +1,64 @@
+{
+ "terms": [
+  {
+   "term": "Additional monitoring",
+   "def": "EU status for medicines monitored more closely, shown by an inverted black triangle in the SmPC and leaflet."
+  },
+  {
+   "term": "Annex IIIA / IIIB",
+   "def": "The labelling (IIIA) and package leaflet (IIIB) of a centrally authorised product."
+  },
+  {
+   "term": "Appendix V",
+   "def": "The list of national reporting systems for suspected adverse reactions, referred to in SmPC 4.8 and leaflet section 4."
+  },
+  {
+   "term": "Blue box",
+   "def": "An area on the outer packaging of a centrally authorised product for national particulars such as price."
+  },
+  {
+   "term": "Bridging",
+   "def": "Showing that a leaflet is similar enough to a user-tested leaflet that a new test is not needed."
+  },
+  {
+   "term": "ePI",
+   "def": "Electronic product information: the SmPC and leaflet as structured data (EU standard based on HL7 FHIR)."
+  },
+  {
+   "term": "Excipient with a known effect",
+   "def": "An excipient listed in the annex to the excipients guideline, needing a set statement in the product information."
+  },
+  {
+   "term": "Linguistic review",
+   "def": "Member states’ review of the translations of a centrally authorised product’s product information."
+  },
+  {
+   "term": "Package leaflet (PL)",
+   "def": "The EU patient information that comes in the pack (Annex IIIB)."
+  },
+  {
+   "term": "PRAC",
+   "def": "Pharmacovigilance Risk Assessment Committee of EMA; recommends safety wording and deadlines."
+  },
+  {
+   "term": "PSUSA",
+   "def": "Periodic safety update single assessment: one EU assessment of PSURs for an active substance."
+  },
+  {
+   "term": "QRD",
+   "def": "Quality Review of Documents: the EMA group that publishes the product information templates."
+  },
+  {
+   "term": "SmPC",
+   "def": "Summary of Product Characteristics: the EU product information for health professionals (Annex I)."
+  },
+  {
+   "term": "Unique identifier",
+   "def": "The serialised code in a 2D data matrix on EU prescription packs (Delegated Regulation 2016/161)."
+  },
+  {
+   "term": "User test",
+   "def": "Testing a leaflet with members of the public; each question passes when 16 of 20 find and understand the answer."
+  }
+ ]
+}

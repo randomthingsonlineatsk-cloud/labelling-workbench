@@ -1,0 +1,726 @@
+{
+ "topics": [
+  {
+   "id": 16,
+   "label": "16. The QRD template",
+   "module": "eu"
+  },
+  {
+   "id": 17,
+   "label": "17. Section 4.8: undesirable effects",
+   "module": "eu"
+  },
+  {
+   "id": 18,
+   "label": "18. Excipients with a known effect",
+   "module": "eu"
+  },
+  {
+   "id": 19,
+   "label": "19. Additional monitoring and the blue box",
+   "module": "eu"
+  },
+  {
+   "id": 20,
+   "label": "20. Readability and user testing",
+   "module": "eu"
+  },
+  {
+   "id": 21,
+   "label": "21. Braille and the safety features",
+   "module": "eu"
+  },
+  {
+   "id": 22,
+   "label": "22. Translations and linguistic review",
+   "module": "eu"
+  },
+  {
+   "id": 23,
+   "label": "23. PRAC signals and PSUSA outcomes",
+   "module": "eu"
+  },
+  {
+   "id": 24,
+   "label": "24. Electronic product information (Watch)",
+   "module": "eu"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q16-1",
+   "topic": 16,
+   "module": "eu",
+   "q": "Which annex of a centrally authorised product is the package leaflet?",
+   "options": [
+    "Annex IIIB",
+    "Annex I",
+    "Annex II",
+    "Annex IIIA"
+   ],
+   "answer": 0,
+   "why": "Annex I is the SmPC, Annex II the conditions, IIIA the labelling and IIIB the leaflet.",
+   "cite": "QRD template v10.4"
+  },
+  {
+   "id": "q16-2",
+   "topic": 16,
+   "module": "eu",
+   "q": "Which QRD template version is current (October 2026)?",
+   "options": [
+    "9.0",
+    "11.0",
+    "8.3",
+    "10.4"
+   ],
+   "answer": 3,
+   "why": "Version 10.4 (February 2024); version 11 was consulted on in 2025 and is not yet in force.",
+   "cite": "EMA QRD templates page"
+  },
+  {
+   "id": "q16-3",
+   "topic": 16,
+   "module": "eu",
+   "q": "A section of the SmPC does not apply. What do you do?",
+   "options": [
+    "Leave it blank",
+    "Merge it with the next section",
+    "Keep the heading and write the template wording, such as \"Not applicable.\"",
+    "Delete the heading"
+   ],
+   "answer": 2,
+   "why": "Headings are kept; the template gives the wording for sections that do not apply.",
+   "cite": "QRD annotated template"
+  },
+  {
+   "id": "q16-4",
+   "topic": 16,
+   "module": "eu",
+   "q": "What does text in angle brackets in the QRD template mean?",
+   "options": [
+    "Text for the blue box",
+    "Alternative wording to choose from",
+    "Text to delete before submission",
+    "Text in Braille"
+   ],
+   "answer": 1,
+   "why": "Angle brackets mark alternatives; curly brackets mark information to fill in.",
+   "cite": "QRD template conventions"
+  },
+  {
+   "id": "q16-5",
+   "topic": 16,
+   "module": "eu",
+   "q": "Which document explains what goes in each SmPC section?",
+   "options": [
+    "The SmPC guideline (Rev. 2)",
+    "The readability guideline",
+    "Delegated Regulation 2016/161",
+    "The excipients annex"
+   ],
+   "answer": 0,
+   "why": "The European Commission SmPC guideline, revision 2 (2009).",
+   "cite": "SmPC guideline"
+  },
+  {
+   "id": "q17-1",
+   "topic": 17,
+   "module": "eu",
+   "q": "What frequency is \"common\"?",
+   "options": [
+    "≥1/10",
+    "≥1/1,000 to <1/100",
+    "<1/10,000",
+    "≥1/100 to <1/10"
+   ],
+   "answer": 3,
+   "why": "Very common ≥1/10; common ≥1/100 to <1/10; uncommon ≥1/1,000 to <1/100.",
+   "cite": "SmPC guideline 4.8"
+  },
+  {
+   "id": "q17-2",
+   "topic": 17,
+   "module": "eu",
+   "q": "Reactions known only from spontaneous reports usually go in which category?",
+   "options": [
+    "Rare",
+    "Uncommon",
+    "Not known",
+    "Very rare"
+   ],
+   "answer": 2,
+   "why": "When the frequency cannot be estimated from the data, \"not known\" is used.",
+   "cite": "SmPC guideline 4.8"
+  },
+  {
+   "id": "q17-3",
+   "topic": 17,
+   "module": "eu",
+   "q": "Which word is not used for frequency in 4.8?",
+   "options": [
+    "Not known",
+    "Frequent",
+    "Common",
+    "Rare"
+   ],
+   "answer": 1,
+   "why": "Only the convention categories are used.",
+   "cite": "SmPC guideline 4.8"
+  },
+  {
+   "id": "q17-4",
+   "topic": 17,
+   "module": "eu",
+   "q": "What closes SmPC section 4.8?",
+   "options": [
+    "The standard text on reporting suspected adverse reactions (Appendix V)",
+    "The overdose advice",
+    "The list of excipients",
+    "The date of revision"
+   ],
+   "answer": 0,
+   "why": "The reporting statement points to the national systems in Appendix V.",
+   "cite": "QRD template v10.4"
+  },
+  {
+   "id": "q17-5",
+   "topic": 17,
+   "module": "eu",
+   "q": "How are adverse reactions grouped in the 4.8 table?",
+   "options": [
+    "Alphabetically",
+    "By clinical study",
+    "By severity only",
+    "By MedDRA system organ class and frequency"
+   ],
+   "answer": 3,
+   "why": "System organ class first, then frequency within it.",
+   "cite": "SmPC guideline 4.8"
+  },
+  {
+   "id": "q18-1",
+   "topic": 18,
+   "module": "eu",
+   "q": "An oral tablet contains 0.6 mg sodium per tablet. What does the leaflet say?",
+   "options": [
+    "The percentage of the daily intake",
+    "Not to take it on a low-salt diet",
+    "That it is essentially \"sodium-free\"",
+    "Nothing"
+   ],
+   "answer": 2,
+   "why": "Below 1 mmol (23 mg) per dose the \"essentially sodium-free\" statement applies.",
+   "cite": "Excipients annex Rev. 2"
+  },
+  {
+   "id": "q18-2",
+   "topic": 18,
+   "module": "eu",
+   "q": "What is the threshold for the lactose statement in an oral product?",
+   "options": [
+    "100 mg per dose",
+    "Zero",
+    "5 g per dose",
+    "1 mmol per dose"
+   ],
+   "answer": 1,
+   "why": "Lactose has a zero threshold for oral products; a further statement applies at 5 g.",
+   "cite": "Excipients annex Rev. 2"
+  },
+  {
+   "id": "q18-3",
+   "topic": 18,
+   "module": "eu",
+   "q": "Where in the leaflet do excipient statements go?",
+   "options": [
+    "Section 2, under \"[Name] contains ...\"",
+    "Section 4",
+    "Section 5",
+    "Only on the carton"
+   ],
+   "answer": 0,
+   "why": "Section 2 has a subheading for each excipient with a known effect.",
+   "cite": "QRD template v10.4"
+  },
+  {
+   "id": "q18-4",
+   "topic": 18,
+   "module": "eu",
+   "q": "Why does aspartame need a statement?",
+   "options": [
+    "It contains sodium",
+    "It is an azo dye",
+    "It causes drowsiness",
+    "It is a source of phenylalanine, harmful in phenylketonuria"
+   ],
+   "answer": 3,
+   "why": "Aspartame (E 951) is a source of phenylalanine.",
+   "cite": "Excipients annex Rev. 2"
+  },
+  {
+   "id": "q18-5",
+   "topic": 18,
+   "module": "eu",
+   "q": "Where does the outer carton name excipients with a known effect?",
+   "options": [
+    "Section 6",
+    "Section 18",
+    "Section 3, List of excipients",
+    "Section 16"
+   ],
+   "answer": 2,
+   "why": "Section 3 lists them, usually pointing to the leaflet.",
+   "cite": "QRD template, Annex IIIA"
+  },
+  {
+   "id": "q19-1",
+   "topic": 19,
+   "module": "eu",
+   "q": "What does the inverted black triangle mean?",
+   "options": [
+    "It has a boxed warning",
+    "The medicine is under additional monitoring",
+    "It is a controlled drug",
+    "It is for hospital use only"
+   ],
+   "answer": 1,
+   "why": "It flags additional monitoring and invites reporting of suspected adverse reactions.",
+   "cite": "Regulation (EU) 1235/2010"
+  },
+  {
+   "id": "q19-2",
+   "topic": 19,
+   "module": "eu",
+   "q": "Which medicine is automatically under additional monitoring?",
+   "options": [
+    "One with a new active substance authorised after 1 January 2011",
+    "Every generic",
+    "Every over-the-counter medicine",
+    "Every medicine older than 20 years"
+   ],
+   "answer": 0,
+   "why": "New active substances (and biologicals) authorised after 2011 are included.",
+   "cite": "Regulation (EU) 1235/2010"
+  },
+  {
+   "id": "q19-3",
+   "topic": 19,
+   "module": "eu",
+   "q": "What goes in the blue box?",
+   "options": [
+    "The black triangle",
+    "The Braille text",
+    "The SmPC summary",
+    "National particulars a member state requires, such as price"
+   ],
+   "answer": 3,
+   "why": "The blue box keeps national details separate from the common EU text.",
+   "cite": "Directive 2001/83/EC Art. 57"
+  },
+  {
+   "id": "q19-4",
+   "topic": 19,
+   "module": "eu",
+   "q": "Where does the black triangle statement appear?",
+   "options": [
+    "Only in 4.8",
+    "In the blue box",
+    "At the start of the SmPC and the leaflet",
+    "Only on the carton"
+   ],
+   "answer": 2,
+   "why": "Both the SmPC and the leaflet open with it.",
+   "cite": "Implementing Regulation 198/2013"
+  },
+  {
+   "id": "q19-5",
+   "topic": 19,
+   "module": "eu",
+   "q": "How long does additional monitoring usually last?",
+   "options": [
+    "Until the first PSUR",
+    "Five years (it can be extended)",
+    "One year",
+    "For the life of the product"
+   ],
+   "answer": 1,
+   "why": "Typically five years from the reference date.",
+   "cite": "EMA additional monitoring page"
+  },
+  {
+   "id": "q20-1",
+   "topic": 20,
+   "module": "eu",
+   "q": "What is the usual success standard for each user-test question?",
+   "options": [
+    "At least 16 of 20 participants find and understand the information",
+    "10 of 20",
+    "All 20",
+    "50%"
+   ],
+   "answer": 0,
+   "why": "90% find it and 90% of those understand it, about 81%, so 16 of 20.",
+   "cite": "Readability guideline"
+  },
+  {
+   "id": "q20-2",
+   "topic": 20,
+   "module": "eu",
+   "q": "Who should not be a participant in a user test?",
+   "options": [
+    "A retired teacher",
+    "A patient with the condition",
+    "A carer",
+    "A pharmacist"
+   ],
+   "answer": 3,
+   "why": "Health professionals and people who know the medicine are excluded.",
+   "cite": "Readability guideline"
+  },
+  {
+   "id": "q20-3",
+   "topic": 20,
+   "module": "eu",
+   "q": "How many participants are usually in each round?",
+   "options": [
+    "3",
+    "100",
+    "10",
+    "50"
+   ],
+   "answer": 2,
+   "why": "Rounds of 10, with revisions between them.",
+   "cite": "Readability guideline"
+  },
+  {
+   "id": "q20-4",
+   "topic": 20,
+   "module": "eu",
+   "q": "What is bridging?",
+   "options": [
+    "Merging two leaflets",
+    "Showing a leaflet is similar enough to one already user tested",
+    "Translating a leaflet",
+    "Adding a QR code"
+   ],
+   "answer": 1,
+   "why": "A bridging report can replace a full test when content and layout are similar.",
+   "cite": "Readability guideline"
+  },
+  {
+   "id": "q20-5",
+   "topic": 20,
+   "module": "eu",
+   "q": "Which is easier for patients?",
+   "options": [
+    "\"Tell your doctor straight away if you get leg pain or swelling\"",
+    "\"Manifestations of venous thromboembolism necessitate immediate consultation\"",
+    "Both are equal",
+    "Neither"
+   ],
+   "answer": 0,
+   "why": "Short, active sentences with everyday words.",
+   "cite": "Readability guideline"
+  },
+  {
+   "id": "q21-1",
+   "topic": 21,
+   "module": "eu",
+   "q": "What must be in Braille on the packaging?",
+   "options": [
+    "The full leaflet",
+    "The batch number",
+    "The authorisation number",
+    "The name of the medicine (and the strength if there are several)"
+   ],
+   "answer": 3,
+   "why": "Article 56a requires the name in Braille.",
+   "cite": "Directive 2001/83/EC Art. 56a"
+  },
+  {
+   "id": "q21-2",
+   "topic": 21,
+   "module": "eu",
+   "q": "What does the 2D data matrix on a prescription pack carry?",
+   "options": [
+    "The price",
+    "A QR link to a website",
+    "The unique identifier: product code, serial number, batch, expiry (and a national number where required)",
+    "The leaflet text"
+   ],
+   "answer": 2,
+   "why": "The unique identifier under Delegated Regulation 2016/161.",
+   "cite": "Delegated Regulation (EU) 2016/161"
+  },
+  {
+   "id": "q21-3",
+   "topic": 21,
+   "module": "eu",
+   "q": "What does section 18 of the labelling show?",
+   "options": [
+    "The storage conditions",
+    "The human-readable PC, SN and NN",
+    "The Braille text",
+    "The excipients"
+   ],
+   "answer": 1,
+   "why": "Section 18 is the human-readable form of the unique identifier.",
+   "cite": "QRD template, Annex IIIA"
+  },
+  {
+   "id": "q21-4",
+   "topic": 21,
+   "module": "eu",
+   "q": "Since when have the safety features applied to most prescription medicines?",
+   "options": [
+    "9 February 2019",
+    "1 January 2011",
+    "30 June 2015",
+    "2026"
+   ],
+   "answer": 0,
+   "why": "Delegated Regulation 2016/161 applied from 9 February 2019.",
+   "cite": "Delegated Regulation (EU) 2016/161"
+  },
+  {
+   "id": "q21-5",
+   "topic": 21,
+   "module": "eu",
+   "q": "A company wants a QR code on the carton. What is needed?",
+   "options": [
+    "Nothing",
+    "Only a national notification",
+    "A new marketing authorisation",
+    "Submission and assessment, with content consistent with the approved information"
+   ],
+   "answer": 3,
+   "why": "EMA assesses QR codes and what they link to.",
+   "cite": "EMA QR code guidance"
+  },
+  {
+   "id": "q22-1",
+   "topic": 22,
+   "module": "eu",
+   "q": "Who reviews the translations of a centrally authorised product?",
+   "options": [
+    "PRAC",
+    "The WHO",
+    "Member state linguistic experts, in the linguistic review",
+    "The company alone"
+   ],
+   "answer": 2,
+   "why": "Member states review the translations after the CHMP opinion.",
+   "cite": "EMA linguistic review process"
+  },
+  {
+   "id": "q22-2",
+   "topic": 22,
+   "module": "eu",
+   "q": "The English says 10 mg and the French says 25 mg. What kind of error is this?",
+   "options": [
+    "A Braille error",
+    "A translation error that changes the meaning",
+    "Acceptable local adaptation",
+    "A QRD heading error"
+   ],
+   "answer": 1,
+   "why": "Numbers must be the same in every language.",
+   "cite": "EMA linguistic review process"
+  },
+  {
+   "id": "q22-3",
+   "topic": 22,
+   "module": "eu",
+   "q": "Why keep a term base?",
+   "options": [
+    "To use approved terms consistently across documents and updates",
+    "To store the artwork",
+    "To count side effects",
+    "To track deadlines"
+   ],
+   "answer": 0,
+   "why": "Consistent terms make review faster and avoid confusion.",
+   "cite": "Industry practice"
+  },
+  {
+   "id": "q22-4",
+   "topic": 22,
+   "module": "eu",
+   "q": "In French product information, which term is used for side effects?",
+   "options": [
+    "Effets secondaires",
+    "Réactions",
+    "Symptômes",
+    "Effets indésirables"
+   ],
+   "answer": 3,
+   "why": "The QRD French template uses \"effets indésirables\".",
+   "cite": "QRD template (French)"
+  },
+  {
+   "id": "q22-5",
+   "topic": 22,
+   "module": "eu",
+   "q": "How many language versions does a centrally authorised product need?",
+   "options": [
+    "English and French",
+    "Only the languages where it is marketed",
+    "All official EU languages plus Icelandic and Norwegian",
+    "Only English"
+   ],
+   "answer": 2,
+   "why": "The decision covers the EU and the EEA states.",
+   "cite": "EMA linguistic review process"
+  },
+  {
+   "id": "q23-1",
+   "topic": 23,
+   "module": "eu",
+   "q": "Who decides the EU product information wording for a confirmed signal?",
+   "options": [
+    "The national price authority",
+    "PRAC recommends it",
+    "The company alone",
+    "The WHO"
+   ],
+   "answer": 1,
+   "why": "PRAC recommendations include the wording and the deadline.",
+   "cite": "EMA PRAC recommendations"
+  },
+  {
+   "id": "q23-2",
+   "topic": 23,
+   "module": "eu",
+   "q": "Agreed PRAC wording implemented as it is: which variation?",
+   "options": [
+    "Type IA-IN, C.3.a",
+    "Type II, C.3.c",
+    "A line extension",
+    "No variation"
+   ],
+   "answer": 0,
+   "why": "C.3.a covers implementation of agreed wording without new data.",
+   "cite": "Variation guidelines C/2025/5045"
+  },
+  {
+   "id": "q23-3",
+   "topic": 23,
+   "module": "eu",
+   "q": "Where is the deadline for implementing a PRAC signal recommendation?",
+   "options": [
+    "Always 30 days",
+    "Always one year",
+    "There is none",
+    "In the recommendation itself"
+   ],
+   "answer": 3,
+   "why": "Each recommendation sets its own deadline.",
+   "cite": "HALMED instructions"
+  },
+  {
+   "id": "q23-4",
+   "topic": 23,
+   "module": "eu",
+   "q": "What is a PSUSA?",
+   "options": [
+    "A translation check",
+    "A carton design review",
+    "A single assessment of periodic safety reports for an active substance",
+    "A user test"
+   ],
+   "answer": 2,
+   "why": "PSUSA outcomes can change the product information of every product with the substance.",
+   "cite": "EMA PSUSA"
+  },
+  {
+   "id": "q23-5",
+   "topic": 23,
+   "module": "eu",
+   "q": "In which languages does EMA publish PRAC signal wording?",
+   "options": [
+    "The company’s language",
+    "English and all official EU languages",
+    "English only",
+    "French only"
+   ],
+   "answer": 1,
+   "why": "Translations follow about three weeks after the meeting.",
+   "cite": "EMA PRAC recommendations"
+  },
+  {
+   "id": "q24-1",
+   "topic": 24,
+   "module": "eu",
+   "q": "What is the EU ePI standard based on?",
+   "options": [
+    "HL7 FHIR",
+    "PDF/A",
+    "Word templates",
+    "SPL"
+   ],
+   "answer": 0,
+   "why": "The EU ePI common standard uses HL7 FHIR.",
+   "cite": "EMA ePI page"
+  },
+  {
+   "id": "q24-2",
+   "topic": 24,
+   "module": "eu",
+   "q": "When did the EU ePI pilot run?",
+   "options": [
+    "2015 to 2016",
+    "2026 to 2027",
+    "It has not run",
+    "July 2023 to August 2024"
+   ],
+   "answer": 3,
+   "why": "Results were published in December 2024.",
+   "cite": "EMA ePI page"
+  },
+  {
+   "id": "q24-3",
+   "topic": 24,
+   "module": "eu",
+   "q": "Does this app produce FHIR ePI resources?",
+   "options": [
+    "Yes, for the US only",
+    "Only for the carton",
+    "No, it shows a simplified structured view",
+    "Yes, validated"
+   ],
+   "answer": 2,
+   "why": "The ePI view is a teaching aid, not a FHIR export.",
+   "cite": "App note"
+  },
+  {
+   "id": "q24-4",
+   "topic": 24,
+   "module": "eu",
+   "q": "What did the 2025 political agreement on new EU pharmaceutical legislation say about ePI?",
+   "options": [
+    "It said nothing",
+    "Approved product information must be made available electronically (ePI)",
+    "ePI is banned",
+    "ePI is optional forever"
+   ],
+   "answer": 1,
+   "why": "The agreement requires ePI; formal adoption and transition details follow.",
+   "cite": "EMA statement, December 2025"
+  },
+  {
+   "id": "q24-5",
+   "topic": 24,
+   "module": "eu",
+   "q": "Is QRD version 11 in force?",
+   "options": [
+    "No, it was consulted on in 2025",
+    "Yes, since 2024",
+    "Yes, since 2019",
+    "It was withdrawn"
+   ],
+   "answer": 0,
+   "why": "The consultation closed in August 2025.",
+   "cite": "EMA QRD templates page"
+  }
+ ]
+}

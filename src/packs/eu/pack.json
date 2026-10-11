@@ -1,0 +1,116 @@
+{
+ "id": "eu",
+ "name": "European Union (EMA, centralised procedure)",
+ "short": "EU",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "smpc",
+  "pl",
+  "eu-outer",
+  "eu-blister"
+ ],
+ "about": "Product information for a centrally authorised medicine: the Summary of Product Characteristics (Annex I), the labelling (Annex IIIA: outer carton and blister) and the package leaflet (Annex IIIB), following QRD template version 10.4. National procedures use the same headings with national details. Where a check estimates or simplifies, its rule card says so.",
+ "watch": [
+  {
+   "id": "qrd11",
+   "title": "QRD template version 11",
+   "src": "qrd",
+   "text": "EMA consulted on QRD v11 (April to August 2025): a shorter leaflet, important information first, warnings grouped by subject and an optional section 7 for instructions for use. Until v11 is published and in force, the app checks against v10.4 and teaches v11 in a lesson."
+  },
+  {
+   "id": "keyinfo",
+   "title": "Key information section in the leaflet",
+   "src": "qrd",
+   "text": "EMA also consulted (April to May 2025) on a key information section at the top of the package leaflet of centrally authorised medicines. No decision has been published; the app does not require it."
+  },
+  {
+   "id": "epi",
+   "title": "Electronic product information (ePI)",
+   "src": "epi",
+   "text": "The EU ePI common standard is based on HL7 FHIR. EMA published guidance for submitting ePI in centralised procedures in September 2026, ahead of go-live, and the new EU pharmaceutical legislation (political agreement December 2025) requires ePI. The app shows a simplified structured ePI view; it does not produce FHIR."
+  }
+ ],
+ "sources": [
+  {
+   "id": "qrd",
+   "title": "EMA: Product-information (QRD) templates, human, version 10.4 (February 2024)",
+   "url": "https://www.ema.europa.eu/en/human-regulatory/marketing-authorisation/product-information/product-information-templates-human"
+  },
+  {
+   "id": "qrdann",
+   "title": "EMA: QRD annotated template (English) version 10.4, with guidance on each heading",
+   "url": "https://www.ema.europa.eu/en/human-regulatory/marketing-authorisation/product-information/product-information-templates-human"
+  },
+  {
+   "id": "smpcgl",
+   "title": "European Commission: A Guideline on Summary of Product Characteristics (SmPC), Rev. 2 (September 2009)",
+   "url": "https://health.ec.europa.eu/system/files/2016-11/smpc_guideline_rev2_en_0.pdf"
+  },
+  {
+   "id": "dir",
+   "title": "Directive 2001/83/EC, Articles 54 to 59 (labelling and package leaflet), 56a (Braille), 57 (blue box)",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02001L0083-20220101"
+  },
+  {
+   "id": "excip",
+   "title": "Annex to the European Commission guideline on excipients in the labelling and package leaflet of medicinal products for human use, Rev. 2 (November 2019, updated 2022)",
+   "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/annex-european-commission-guideline-excipients-labelling-package-leaflet-medicinal-products-human-use-sante-2017-11668-revision-2_en.pdf"
+  },
+  {
+   "id": "read",
+   "title": "European Commission: Guideline on the readability of the labelling and package leaflet of medicinal products for human use, Rev. 1 (January 2009)",
+   "url": "https://health.ec.europa.eu/system/files/2016-11/2009_01_12_readability_guideline_final_en_0.pdf"
+  },
+  {
+   "id": "readno",
+   "title": "Norwegian Medical Products Agency: Readability testing and bridging (summary of the success criteria)",
+   "url": "https://www.dmp.no/en/approval-of-medicines/approval-and-follow-up-of-marketing-authorisation-ma/Product-information---templates-and-guidance/readability-testing-and-bridging"
+  },
+  {
+   "id": "am",
+   "title": "Regulation (EU) No 1235/2010 and Commission Implementing Regulation (EU) No 198/2013: additional monitoring and the black symbol",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacovigilance-post-authorisation/medicines-under-additional-monitoring"
+  },
+  {
+   "id": "sf",
+   "title": "Commission Delegated Regulation (EU) 2016/161: safety features (unique identifier and anti-tampering device)",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0161"
+  },
+  {
+   "id": "qr",
+   "title": "EMA: Mobile scanning and other technologies in the labelling and package leaflet of centrally authorised medicinal products (QR codes)",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/product-information-requirements"
+  },
+  {
+   "id": "prac",
+   "title": "EMA: PRAC recommendations on signals (with product information wording in all EU languages)",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacovigilance-post-authorisation/signal-management/prac-recommendations-safety-signals"
+  },
+  {
+   "id": "psusa",
+   "title": "HALMED: Variations following PSUSA outcomes and PRAC signal recommendations (C.3.a, C.3.b, C.3.c; deadline set in the recommendation)",
+   "url": "https://halmed.hr/en/Lijekovi/Arbitrazni-postupci-PSUSA-postupci-i-PRAC-signali-upute-za-prijavu-izmjena-/Upute-za-prijavu-izmjena-na-temelju-preporuka-PRAC-a-nakon-ocjene-sigurnosnih-signala/"
+  },
+  {
+   "id": "ling",
+   "title": "EMA: Linguistic review process of product information in the centralised procedure",
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/product-information-requirements/linguistic-review-process-product-information-centralised-procedure"
+  },
+  {
+   "id": "epi",
+   "title": "EMA: Electronic product information (ePI), page updated September 2026",
+   "url": "https://www.ema.europa.eu/en/human-regulatory/marketing-authorisation/product-information/electronic-product-information-epi"
+  }
+ ],
+ "langs": {
+  "fr": "French",
+  "de": "German",
+  "es": "Spanish",
+  "it": "Italian",
+  "nl": "Dutch",
+  "pl": "Polish",
+  "pt": "Portuguese",
+  "sv": "Swedish"
+ }
+}

@@ -1,0 +1,142 @@
+{
+ "excipients": [
+  {
+   "key": "sodium",
+   "label": "Sodium",
+   "route": "oral, parenteral",
+   "threshold": "below 1 mmol (23 mg) per dose",
+   "pl": "essentially .sodium-free",
+   "smpc": "essentially .sodium-free",
+   "plSub": "pl2.8",
+   "text": "This medicine contains less than 1 mmol sodium (23 mg) per tablet, that is to say essentially ‘sodium-free’."
+  },
+  {
+   "key": "lactose",
+   "label": "Lactose",
+   "route": "oral",
+   "threshold": "zero",
+   "pl": "intolerance to some sugars",
+   "smpc": "galactose intolerance|lactase deficiency|glucose-galactose malabsorption",
+   "plSub": "pl2.8",
+   "carton": "lactose",
+   "text": "If you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this medicinal product."
+  },
+  {
+   "key": "sucrose",
+   "label": "Sucrose",
+   "route": "oral",
+   "threshold": "zero",
+   "pl": "intolerance to some sugars",
+   "smpc": "fructose intolerance|sucrase-isomaltase",
+   "plSub": "pl2.8",
+   "carton": "sucrose",
+   "text": "If you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this medicinal product."
+  },
+  {
+   "key": "aspartame",
+   "label": "Aspartame (E 951)",
+   "route": "oral",
+   "threshold": "zero",
+   "pl": "phenylalanine",
+   "smpc": "phenylalanine|phenylketonuria",
+   "plSub": "pl2.8",
+   "carton": "aspartame",
+   "text": "This medicine contains x mg aspartame in each tablet. Aspartame is a source of phenylalanine. It may be harmful if you have phenylketonuria (PKU)."
+  },
+  {
+   "key": "benzyl-alcohol",
+   "label": "Benzyl alcohol",
+   "route": "all",
+   "threshold": "zero",
+   "pl": "benzyl alcohol",
+   "smpc": "benzyl alcohol",
+   "plSub": "pl2.8",
+   "carton": "benzyl alcohol",
+   "text": "This medicine contains x mg benzyl alcohol in each dose. Benzyl alcohol may cause allergic reactions."
+  },
+  {
+   "key": "azo",
+   "label": "Azo colouring agents (E 102, E 110, E 124 and others)",
+   "route": "oral",
+   "threshold": "zero",
+   "pl": "allergic reactions",
+   "smpc": "allergic reactions",
+   "plSub": "pl2.8",
+   "carton": "E ?1(02|10|24)",
+   "text": "May cause allergic reactions."
+  }
+ ],
+ "frequencies": [
+  "very common",
+  "common",
+  "uncommon",
+  "rare",
+  "very rare",
+  "not known"
+ ],
+ "nonstandardFrequencies": [
+  "frequent",
+  "frequently",
+  "occasional",
+  "occasionally",
+  "infrequent",
+  "isolated cases",
+  "sporadic",
+  "often"
+ ],
+ "promo": [
+  "best",
+  "safest",
+  "superior",
+  "breakthrough",
+  "revolutionary",
+  "miracle",
+  "guaranteed",
+  "unmatched"
+ ],
+ "termBase": {
+  "fr": [
+   {
+    "source": "side effects",
+    "target": "effets indésirables",
+    "note": "Not \"effets secondaires\" in product information."
+   },
+   {
+    "source": "doctor",
+    "target": "médecin"
+   },
+   {
+    "source": "pharmacist",
+    "target": "pharmacien"
+   },
+   {
+    "source": "film-coated tablet",
+    "target": "comprimé pelliculé"
+   },
+   {
+    "source": "blood clots",
+    "target": "caillots sanguins"
+   },
+   {
+    "source": "breast-feeding",
+    "target": "allaitement"
+   },
+   {
+    "source": "pregnancy",
+    "target": "grossesse"
+   },
+   {
+    "source": "leaflet",
+    "target": "notice"
+   },
+   {
+    "source": "contraception",
+    "target": "contraception"
+   },
+   {
+    "source": "infection",
+    "target": "infection"
+   }
+  ]
+ }
+}

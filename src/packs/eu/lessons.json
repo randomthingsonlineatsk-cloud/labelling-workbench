@@ -1,0 +1,265 @@
+{
+ "lessons": [
+  {
+   "id": 16,
+   "module": "eu",
+   "title": "The QRD template",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Three documents, one set of headings",
+     "p": [
+      "In the EU the product information of a centrally authorised medicine has three parts: the Summary of Product Characteristics (SmPC, Annex I) for health professionals, the labelling (Annex IIIA: outer carton and immediate packaging such as blisters) and the package leaflet (Annex IIIB) for patients. Annex II covers the conditions of the authorisation.",
+      "The Quality Review of Documents (QRD) group publishes the templates. Version 10.4 (February 2024) is current. Every heading, its number and much of the standard text is fixed; text in angle brackets offers alternatives, and text in curly brackets is to be filled in."
+     ]
+    },
+    {
+     "h": "SmPC structure",
+     "p": [
+      "The SmPC has ten numbered sections: name, composition, pharmaceutical form, clinical particulars (4.1 to 4.9), pharmacological properties (5.1 to 5.3), pharmaceutical particulars (6.1 to 6.6), holder, authorisation numbers, date of first authorisation and date of revision. Headings are used exactly as written, even when a section says only \"Not applicable.\"",
+      "The SmPC guideline (Rev. 2, 2009) explains what goes in each section, and it is the reference agencies use in assessment."
+     ]
+    },
+    {
+     "h": "What is changing (Watch)",
+     "p": [
+      "EMA consulted in 2025 on QRD version 11: a shorter leaflet, important information first, warnings grouped by subject and an optional section 7 for long instructions for use. It also consulted on a key information section at the top of the leaflet. Neither is in force; this app checks against v10.4."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-clean",
+    "doc": "smpc"
+   },
+   "watch": false
+  },
+  {
+   "id": 17,
+   "module": "eu",
+   "title": "Section 4.8: undesirable effects",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "How 4.8 is built",
+     "p": [
+      "Section 4.8 opens with a summary of the safety profile, then a tabulated list of adverse reactions by MedDRA system organ class, with each reaction in a frequency category, then descriptions of selected reactions, special populations, and finally the standard text on reporting suspected adverse reactions."
+     ]
+    },
+    {
+     "h": "Frequency categories",
+     "p": [
+      "The convention is: very common (≥1/10), common (≥1/100 to <1/10), uncommon (≥1/1,000 to <1/100), rare (≥1/10,000 to <1/1,000), very rare (<1/10,000) and not known (cannot be estimated from the available data). Reactions from spontaneous reports usually go in \"not known\".",
+      "Words such as \"frequent\", \"occasional\" or \"isolated cases\" are not used: they mean different things to different readers."
+     ]
+    },
+    {
+     "h": "The reporting statement",
+     "p": [
+      "Since 2012 every SmPC ends 4.8 with: \"Reporting suspected adverse reactions after authorisation of the medicinal product is important... Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V.\" The leaflet has the patient version at the end of section 4."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-errors",
+    "doc": "smpc",
+    "focus": "4.8"
+   },
+   "watch": false
+  },
+  {
+   "id": 18,
+   "module": "eu",
+   "title": "Excipients with a known effect",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "Why some excipients must be declared",
+     "p": [
+      "Some excipients can matter to some patients: lactose to people with sugar intolerances, aspartame to people with phenylketonuria, benzyl alcohol to newborns, sodium to people on a low-salt diet. The annex to the European Commission excipients guideline lists them, with the route, the threshold and the exact statement."
+     ]
+    },
+    {
+     "h": "Where the statements go",
+     "p": [
+      "The leaflet carries the statement in section 2, under its own subheading such as \"Ostrevia contains sodium\". SmPC section 4.4 carries the information for professionals, and section 2 of the SmPC names the excipients with a known effect. The outer carton lists them in section 3 (\"Contains lactose. See the package leaflet for further information.\").",
+      "Thresholds differ: lactose has a zero threshold for oral products; sodium below 1 mmol (23 mg) per dose gets the \"essentially sodium-free\" statement."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-lactose",
+    "doc": "pl"
+   },
+   "watch": false
+  },
+  {
+   "id": 19,
+   "module": "eu",
+   "title": "Additional monitoring and the blue box",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "The black triangle",
+     "p": [
+      "Medicines under additional monitoring carry an inverted black triangle and a standard sentence at the start of the SmPC and the leaflet. The list includes medicines with a new active substance authorised after 1 January 2011, biological medicines and products with conditional approvals or post-authorisation safety studies. Status usually lasts five years."
+     ]
+    },
+    {
+     "h": "The blue box",
+     "p": [
+      "Centrally authorised products have one labelling for the whole EU. Member states may still require national details, such as price, reimbursement or legal status, on the pack; these go in a \"blue box\" on the outer packaging so the common text stays the same."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-errors",
+    "doc": "smpc"
+   },
+   "watch": false
+  },
+  {
+   "id": 20,
+   "module": "eu",
+   "title": "Readability and user testing",
+   "minutes": 9,
+   "sections": [
+    {
+     "h": "The legal requirement",
+     "p": [
+      "Directive 2001/83/EC requires the leaflet to reflect consultation with target patient groups so that it is legible, clear and easy to use. In practice that means a user test (readability test), or a bridging report to a leaflet that was tested."
+     ]
+    },
+    {
+     "h": "How a user test works",
+     "p": [
+      "About 12 to 15 questions cover the key safety messages, dosing and how to use the medicine. Participants are recruited from the target population, excluding health professionals and people who know the medicine. The first round usually has 10 participants; the leaflet is revised, then tested again.",
+      "The usual standard: for each question, 90% of participants can find the information and 90% of those can show they understand it, so at least 16 of 20 (about 81%) succeed on each question, on the final text."
+     ]
+    },
+    {
+     "h": "Writing for patients",
+     "p": [
+      "Short sentences, active verbs, everyday words, headings that are questions, bullet lists for symptoms and actions. Medical terms are explained the first time (\"blood clot in the lungs (pulmonary embolism)\")."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-usertest",
+    "doc": "pl",
+    "tab": "usertest"
+   },
+   "watch": false
+  },
+  {
+   "id": 21,
+   "module": "eu",
+   "title": "Braille and the safety features",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "Braille",
+     "p": [
+      "Article 56a of Directive 2001/83/EC requires the name of the medicine in Braille on the packaging, and the strength where there is more than one. Section 16 of the labelling template gives the text to be embossed. The leaflet must be available in formats for blind and partially sighted people on request."
+     ]
+    },
+    {
+     "h": "Unique identifier and anti-tampering device",
+     "p": [
+      "Since February 2019, most prescription medicines carry a unique identifier encoded in a 2D data matrix (product code, serial number, batch, expiry, and a national reimbursement number where required) and an anti-tampering device. Pharmacies verify and decommission the identifier before supply. Labelling sections 17 and 18 hold the template statements and the human-readable PC, SN and NN."
+     ]
+    },
+    {
+     "h": "QR codes",
+     "p": [
+      "A QR code linking to product information or training material must be submitted and assessed; what it links to must match the approved product information and must not promote the medicine."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-errors",
+    "doc": "outer-10"
+   },
+   "watch": false
+  },
+  {
+   "id": 22,
+   "module": "eu",
+   "title": "Translations and linguistic review",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "All languages at once",
+     "p": [
+      "A centrally authorised product has product information in every official EU language plus Icelandic and Norwegian. After the CHMP opinion, the company sends the translations; member state experts review them in the linguistic review and send comments, which the company implements before the Commission decision."
+     ]
+    },
+    {
+     "h": "What reviewers look for",
+     "p": [
+      "The translation must say exactly what the English says: the same doses, numbers and durations, the QRD standard wording in that language, and approved terms used consistently (in French, \"effets indésirables\", not \"effets secondaires\"). A term base keeps terms consistent across products and updates."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-translation",
+    "doc": "pl-fr",
+    "tab": "translation"
+   },
+   "watch": false
+  },
+  {
+   "id": 23,
+   "module": "eu",
+   "title": "PRAC signals and PSUSA outcomes",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Where EU safety wording comes from",
+     "p": [
+      "The Pharmacovigilance Risk Assessment Committee (PRAC) assesses safety signals. When a signal confirms a risk, PRAC recommends the wording for the SmPC and leaflet, published in English with translations in all EU languages, and sets the deadline for the variation.",
+      "A periodic safety update single assessment (PSUSA) can also end in changes to the product information, which then apply to every product with that active substance."
+     ]
+    },
+    {
+     "h": "Implementing the wording",
+     "p": [
+      "Agreed wording taken as it is goes in as a type IA-IN variation (C.3.a); wording that needs minor assessment as type IB (C.3.b); changes that need new data as type II (C.3.c). The company adds the wording to every affected section and language, keeps the deadline and records it in its tracker."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-prac",
+    "doc": "smpc",
+    "tab": "changes"
+   },
+   "watch": false
+  },
+  {
+   "id": 24,
+   "module": "eu",
+   "title": "Electronic product information (Watch)",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "ePI",
+     "p": [
+      "Electronic product information is the SmPC and leaflet as structured, searchable data rather than a PDF. The EU common standard is based on HL7 FHIR. A pilot ran from July 2023 to August 2024; EMA published guidance for submitting ePI in centralised procedures in September 2026, ahead of go-live.",
+      "The new EU pharmaceutical legislation (political agreement December 2025) requires ePI to be made available. Whether and when paper leaflets change is still being worked out."
+     ]
+    },
+    {
+     "h": "In this app",
+     "p": [
+      "The ePI view shows the SmPC or leaflet as structured sections with stable identifiers, the way an ePI is organised. It is simplified and does not produce FHIR resources."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "eu-ostrevia-clean",
+    "doc": "pl",
+    "tab": "preview"
+   },
+   "watch": true
+  }
+ ]
+}

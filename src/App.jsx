@@ -145,9 +145,9 @@ export default function App() {
       await reload();
       return { project, docs: ds };
     },
-    createBlank: async ({ productId, kinds, title }) => {
+    createBlank: async ({ productId, kinds, title, region = 'us' }) => {
       const product = productById(productId);
-      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new label set`, productId, region: 'us', createdAt: now(), updatedAt: now() });
+      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new ${region === 'eu' ? 'EU product information' : 'label set'}`, productId, region, createdAt: now(), updatedAt: now() });
       await db.put('projects', project);
       for (const k of kinds) {
         const d = blankDoc(pack, k, product, project.id, user);
@@ -216,13 +216,13 @@ export default function App() {
           <span className="spacer" />
           <button className="btn small ghost" onClick={cycleTheme} aria-label={`Theme: ${theme}. Change theme`}>Theme: {theme}</button>
         </header>
-        {age > 12 && <div className="banner" role="note">The {pack.name} pack is dated {pack.asOf}, more than 12 months ago. Rules may have changed since; check the sources before relying on a result.</div>}
+        {age > 12 && <div className="banner" role="note">A content pack is more than 12 months old (see Rules and sources). Rules may have changed since; check the sources before relying on a result.</div>}
         {dbError && <div className="callout bad" role="alert" style={{ margin: '1rem' }}>{dbError}</div>}
         <main id="main">{user || dbError ? screen : <div className="page muted">Loading…</div>}</main>
         <footer className="footer">
           <span>Built by <strong>Khan Gulrez Shagufa Fazal Ahmed</strong></span>
           <span>Training use only. Products, companies and people are fictional; nothing here is an approved label or regulatory advice. Your work stays in this browser.</span>
-          <span>US pack {pack.version} ({pack.asOf}) · Apache-2.0</span>
+          <span>{Object.values(pack.regions).map((r) => `${r.short} pack ${r.version} (${r.asOf})`).join(' · ')} · Apache-2.0</span>
         </footer>
         <div className="toasts" aria-live="polite">
           {toasts.map((t) => (

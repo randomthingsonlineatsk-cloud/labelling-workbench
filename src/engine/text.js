@@ -23,7 +23,7 @@ export const todayMonth = (d = new Date()) => d.getFullYear() * 12 + d.getMonth(
 
 // ---------- readability ----------
 export const sentences = (text) => String(text ?? '').split(/(?<=[.!?])\s+(?=[A-Z0-9"(])/).map((s) => s.trim()).filter(Boolean);
-const words = (text) => String(text ?? '').match(/[A-Za-z][A-Za-z'-]*/g) ?? [];
+export const words = (text) => String(text ?? '').match(/[A-Za-z][A-Za-z'-]*/g) ?? [];
 export function syllables(word) {
   const w = word.toLowerCase().replace(/[^a-z]/g, '');
   if (w.length <= 3) return 1;
