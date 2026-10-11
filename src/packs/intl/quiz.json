@@ -1,0 +1,496 @@
+{
+ "topics": [
+  {
+   "id": 30,
+   "label": "30. Canada: the product monograph and the label",
+   "module": "intl"
+  },
+  {
+   "id": 31,
+   "label": "31. Switzerland: Fachinformation and patient information",
+   "module": "intl"
+  },
+  {
+   "id": 32,
+   "label": "32. Japan: the package insert since 2019",
+   "module": "intl"
+  },
+  {
+   "id": 33,
+   "label": "33. Australia: PI, CMI and the black triangle",
+   "module": "intl"
+  },
+  {
+   "id": 34,
+   "label": "34. WHO prequalification: the SmPC of a WHOPAR",
+   "module": "intl"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q30-1",
+   "topic": 30,
+   "module": "intl",
+   "q": "Which symbol does a Canadian prescription drug label carry in the upper left quarter of the main panel?",
+   "options": [
+    "Pr",
+    "Rx",
+    "Rx only",
+    "POM"
+   ],
+   "answer": 0,
+   "why": "C.01.004(1)(a): \"Pr\"; no other drug may show it.",
+   "cite": "Food and Drug Regulations C.01.004"
+  },
+  {
+   "id": "q30-2",
+   "topic": 30,
+   "module": "intl",
+   "q": "How many digits does a Canadian DIN have?",
+   "options": [
+    "Six",
+    "Ten",
+    "Eleven",
+    "Eight"
+   ],
+   "answer": 3,
+   "why": "The drug identification number is eight digits, shown with \"DIN\".",
+   "cite": "C.01.005"
+  },
+  {
+   "id": "q30-3",
+   "topic": 30,
+   "module": "intl",
+   "q": "How large must the proper name be on a Canadian label?",
+   "options": [
+    "The same size as the brand",
+    "Any size",
+    "At least half the size of the brand name",
+    "At least two sizes larger than the brand"
+   ],
+   "answer": 2,
+   "why": "C.01.004(1)(a).",
+   "cite": "C.01.004"
+  },
+  {
+   "id": "q30-4",
+   "topic": 30,
+   "module": "intl",
+   "q": "How long do entries stay in Recent Major Label Changes?",
+   "options": [
+    "Until the next renewal",
+    "24 months",
+    "12 months",
+    "6 months"
+   ],
+   "answer": 1,
+   "why": "The template says retain for 24 months.",
+   "cite": "PM master template"
+  },
+  {
+   "id": "q30-5",
+   "topic": 30,
+   "module": "intl",
+   "q": "Where is the Serious Warnings and Precautions box?",
+   "options": [
+    "Section 3",
+    "Section 7",
+    "The title page",
+    "Part II"
+   ],
+   "answer": 0,
+   "why": "Section 3, with cross-references to the detailed sections.",
+   "cite": "PM master template"
+  },
+  {
+   "id": "q30-7",
+   "topic": 30,
+   "module": "intl",
+   "q": "Which toll-free number does the Overdose box of the Canadian Patient Medication Information give?",
+   "options": [
+    "1-866-234-2345",
+    "911 only",
+    "The sponsor's number",
+    "1-844 POISON-X (1-844-764-7669)"
+   ],
+   "answer": 3,
+   "why": "Health Canada's poison control number; 1-866-234-2345 is for reporting side effects to Canada Vigilance.",
+   "cite": "PM master template, Patient Medication Information"
+  },
+  {
+   "id": "q30-6",
+   "topic": 30,
+   "module": "intl",
+   "q": "In which date form is the date of authorization given on the title page?",
+   "options": [
+    "Month YYYY",
+    "MM/YYYY",
+    "YYYY-MM-DD",
+    "DD/MM/YYYY"
+   ],
+   "answer": 2,
+   "why": "The template uses YYYY-MM-DD.",
+   "cite": "PM master template"
+  },
+  {
+   "id": "q31-1",
+   "topic": 31,
+   "module": "intl",
+   "q": "In which annex of the AMZV is the Fachinformation set out?",
+   "options": [
+    "Annex 7",
+    "Annex 4",
+    "Annex 1",
+    "Annex 5.1"
+   ],
+   "answer": 1,
+   "why": "Annex 4; the patient information is Annex 5.1.",
+   "cite": "AMZV"
+  },
+  {
+   "id": "q31-2",
+   "topic": 31,
+   "module": "intl",
+   "q": "Which products carry the Swiss black triangle?",
+   "options": [
+    "New active substances, new biologicals, time-limited authorisations and authorisations with conditions",
+    "All prescription medicines",
+    "Only vaccines",
+    "Only generics"
+   ],
+   "answer": 0,
+   "why": "AMZV Art. 14a.",
+   "cite": "AMZV Art. 14a"
+  },
+  {
+   "id": "q31-3",
+   "topic": 31,
+   "module": "intl",
+   "q": "How long does a Swiss medicine stay under additional monitoring?",
+   "options": [
+    "Five years from first supply",
+    "Two years",
+    "Permanently",
+    "As a rule until the authorisation is renewed"
+   ],
+   "answer": 3,
+   "why": "Until renewal, unless Swissmedic extends it.",
+   "cite": "Swissmedic black triangle"
+  },
+  {
+   "id": "q31-4",
+   "topic": 31,
+   "module": "intl",
+   "q": "How is the Swiss authorisation number written?",
+   "options": [
+    "\"SM 99101\"",
+    "\"Reg. No. 99101\"",
+    "\"99101 (Swissmedic)\"",
+    "\"CH-99101\""
+   ],
+   "answer": 2,
+   "why": "Five digits followed by \"(Swissmedic)\".",
+   "cite": "AMZV Annex 4"
+  },
+  {
+   "id": "q31-5",
+   "topic": 31,
+   "module": "intl",
+   "q": "Where does the Fachinformation give the dispensing category?",
+   "options": [
+    "Stand der Information",
+    "Packungen",
+    "Zusammensetzung",
+    "Sonstige Hinweise"
+   ],
+   "answer": 1,
+   "why": "The packs section gives the Abgabekategorie.",
+   "cite": "AMZV Annex 4"
+  },
+  {
+   "id": "q31-6",
+   "topic": 31,
+   "module": "intl",
+   "q": "Through which portal does the Fachinformation ask professionals to report?",
+   "options": [
+    "ElViS",
+    "EudraVigilance",
+    "MedWatch",
+    "Yellow Card"
+   ],
+   "answer": 0,
+   "why": "ElViS; ElViS 2.0 is planned for December 2026.",
+   "cite": "Swissmedic"
+  },
+  {
+   "id": "q32-1",
+   "topic": 32,
+   "module": "intl",
+   "q": "A Japanese insert has no section 12. What number does OVERDOSAGE keep?",
+   "options": [
+    "12",
+    "11",
+    "It is renumbered at the next revision",
+    "13"
+   ],
+   "answer": 3,
+   "why": "Numbers are not moved up.",
+   "cite": "PSEHB Notification No. 0608-1"
+  },
+  {
+   "id": "q32-2",
+   "topic": 32,
+   "module": "intl",
+   "q": "What must a contraindication other than hypersensitivity include?",
+   "options": [
+    "A literature reference number",
+    "A boxed warning",
+    "Its reason, briefly, in square brackets",
+    "A frequency"
+   ],
+   "answer": 2,
+   "why": "The rationale goes in [ ].",
+   "cite": "PSEHB Notification No. 0608-1"
+  },
+  {
+   "id": "q32-3",
+   "topic": 32,
+   "module": "intl",
+   "q": "When is section 1 WARNINGS used?",
+   "options": [
+    "Only for injectables",
+    "When fatal or extremely serious, irreversible adverse reactions can occur",
+    "Always",
+    "Only for controlled drugs"
+   ],
+   "answer": 1,
+   "why": "When alert is particularly needed.",
+   "cite": "PSEHB Notification No. 0608-1"
+  },
+  {
+   "id": "q32-4",
+   "topic": 32,
+   "module": "intl",
+   "q": "What do Japanese drug Standard Commodity Classification Numbers start with?",
+   "options": [
+    "87",
+    "49",
+    "30",
+    "99"
+   ],
+   "answer": 0,
+   "why": "Drugs are in class 87.",
+   "cite": "Header item B"
+  },
+  {
+   "id": "q32-5",
+   "topic": 32,
+   "module": "intl",
+   "q": "Since when are paper inserts abolished in principle for prescription drugs?",
+   "options": [
+    "April 2019",
+    "January 2015",
+    "April 2024",
+    "August 2021"
+   ],
+   "answer": 3,
+   "why": "The electronic insert system took effect on 1 August 2021.",
+   "cite": "PMDA"
+  },
+  {
+   "id": "q32-6",
+   "topic": 32,
+   "module": "intl",
+   "q": "How does a user reach the electronic insert?",
+   "options": [
+    "Only through a pharmacist login",
+    "By email request",
+    "By reading the code on the outer box with an app",
+    "By calling the MAH"
+   ],
+   "answer": 2,
+   "why": "A barcode or 2D code on the outer box.",
+   "cite": "PMDA"
+  },
+  {
+   "id": "q33-1",
+   "topic": 33,
+   "module": "intl",
+   "q": "How does the Australian PI title line start?",
+   "options": [
+    "\"SUMMARY OF PRODUCT CHARACTERISTICS\"",
+    "\"AUSTRALIAN PRODUCT INFORMATION –\"",
+    "\"PRODUCT INFORMATION\"",
+    "\"PRESCRIBING INFORMATION\""
+   ],
+   "answer": 1,
+   "why": "The approved form sets it.",
+   "cite": "PI form"
+  },
+  {
+   "id": "q33-2",
+   "topic": 33,
+   "module": "intl",
+   "q": "Which number does section 4.9 give?",
+   "options": [
+    "The Poisons Information Centre, 13 11 26",
+    "000",
+    "The sponsor’s number",
+    "Medicines Line"
+   ],
+   "answer": 0,
+   "why": "The PI form text points to the Poisons Information Centre.",
+   "cite": "PI form"
+  },
+  {
+   "id": "q33-3",
+   "topic": 33,
+   "module": "intl",
+   "q": "How long does a medicine stay in the Australian black triangle scheme?",
+   "options": [
+    "Two years",
+    "Until renewal",
+    "Ten years",
+    "Five years"
+   ],
+   "answer": 3,
+   "why": "Five years from first supply or approval of the new indication.",
+   "cite": "TGA black triangle scheme"
+  },
+  {
+   "id": "q33-4",
+   "topic": 33,
+   "module": "intl",
+   "q": "What does the CMI start with?",
+   "options": [
+    "The list of excipients",
+    "A boxed warning in every case",
+    "A one-page summary",
+    "The sponsor details"
+   ],
+   "answer": 2,
+   "why": "The CMI summary, required for prescription medicines.",
+   "cite": "CMI template"
+  },
+  {
+   "id": "q33-5",
+   "topic": 33,
+   "module": "intl",
+   "q": "Which section of the PI gives the Poisons Standard schedule?",
+   "options": [
+    "2",
+    "7",
+    "6.7",
+    "8"
+   ],
+   "answer": 1,
+   "why": "Section 7 Medicine schedule (Poisons Standard).",
+   "cite": "PI form"
+  },
+  {
+   "id": "q33-6",
+   "topic": 33,
+   "module": "intl",
+   "q": "Which order sets the label standard for Australian prescription medicines?",
+   "options": [
+    "TGO 91",
+    "TGO 92",
+    "TGO 100",
+    "Schedule 12"
+   ],
+   "answer": 0,
+   "why": "TGO 91; TGO 92 covers non-prescription medicines.",
+   "cite": "TGO 91"
+  },
+  {
+   "id": "q34-1",
+   "topic": 34,
+   "module": "intl",
+   "q": "Which part of a WHOPAR is the SmPC?",
+   "options": [
+    "Part 1",
+    "Part 3",
+    "Part 6",
+    "Part 4"
+   ],
+   "answer": 3,
+   "why": "Part 4 is the information for the health care provider.",
+   "cite": "WHOPAR structure"
+  },
+  {
+   "id": "q34-2",
+   "topic": 34,
+   "module": "intl",
+   "q": "What does section 8 of a WHO PQ SmPC give?",
+   "options": [
+    "The date of revision",
+    "The supplier",
+    "The WHO reference number",
+    "The marketing authorisation number"
+   ],
+   "answer": 2,
+   "why": "For example MA999(a).",
+   "cite": "WHOPAR Part 4"
+  },
+  {
+   "id": "q34-3",
+   "topic": 34,
+   "module": "intl",
+   "q": "Are trade names prequalified by WHO?",
+   "options": [
+    "Only after five years",
+    "No",
+    "Yes",
+    "Only for antimalarials"
+   ],
+   "answer": 1,
+   "why": "Trade names are the national regulator’s responsibility.",
+   "cite": "WHOPAR Part 4"
+  },
+  {
+   "id": "q34-4",
+   "topic": 34,
+   "module": "intl",
+   "q": "What does the opening statement of the SmPC say?",
+   "options": [
+    "It covers the uses prequalified by WHO; national authorities may authorise others",
+    "It is legally binding in every country",
+    "It replaces national labelling",
+    "It is a summary for patients"
+   ],
+   "answer": 0,
+   "why": "It sets the scope.",
+   "cite": "WHOPAR Part 4"
+  },
+  {
+   "id": "q34-5",
+   "topic": 34,
+   "module": "intl",
+   "q": "Which frequency word belongs in section 4.8?",
+   "options": [
+    "Often",
+    "Sometimes",
+    "Occasionally",
+    "Uncommon"
+   ],
+   "answer": 3,
+   "why": "The MedDRA convention.",
+   "cite": "Section guidance 4.8"
+  },
+  {
+   "id": "q34-6",
+   "topic": 34,
+   "module": "intl",
+   "q": "Which storage wording does the section guidance offer for 6.4?",
+   "options": [
+    "\"Room temperature\"",
+    "\"Keep dry if possible\"",
+    "\"Do not store above 30°C\"",
+    "\"Store cool\""
+   ],
+   "answer": 2,
+   "why": "Standard optional wording.",
+   "cite": "Section guidance 6.4"
+  }
+ ]
+}

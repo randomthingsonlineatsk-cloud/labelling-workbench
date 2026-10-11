@@ -165,21 +165,28 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
     for (const [k, v] of Object.entries(f)) if (v) { w.text(FIELD_LABEL[k] ?? k, { size: 8, color: MUTED }); w.text(v, { size: k === 'proprietaryName' ? 14 : 10, f: k === 'proprietaryName' || k === 'strength' ? bold : undefined }); w.space(3); }
   } else {
     const fx = doc.fixed ?? {};
+    if (fx.title) w.h(fx.title, 12);
+    if (doc.kind === 'jp-pi') for (const k of ['revised', 'commodity', 'approval', 'storage', 'category', 'regulatory']) if (fx[k]) w.text(fx[k], { size: 8.5 });
     if (fx.header) w.h(fx.header, doc.kind === 'in-pi' ? 10 : 13);
-    w.text(`${m.proprietaryName ?? ''} (${m.establishedName ?? ''}) ${m.dosageForm ?? ''}`, { f: bold });
+    w.text(`${m.scheduleSymbol ? `${m.scheduleSymbol} ` : ''}${m.proprietaryName ?? ''} (${m.establishedName ?? ''}) ${m.dosageForm ?? ''}`, { f: bold });
     w.space(4);
     if (fx.nameLine) for (const l of fx.nameLine.split('\n')) w.text(l, { f: bold, size: 9.5 });
     if (fx.blackTriangle) { w.space(3); w.text(fx.blackTriangle, { f: bold, size: 9 }); }
     if (fx.readFirst) { w.space(3); w.text(fx.readFirst, { size: 8.5 }); }
+    if (fx.readThis) { w.space(3); w.text(fx.readThis, { f: bold, size: 9.5 }); }
+    if (fx.intro) { w.space(3); w.text(fx.intro, { f: italic, size: 8.5 }); }
+    if (fx.summaryIntro) { w.space(3); w.text(fx.summaryIntro, { f: italic, size: 8.5 }); }
     for (const s of doc.sections ?? []) {
-      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister', 'in-pi'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
-      writeBlocks(w, s.blocks, { ...opts, red: doc.kind === 'in-pi' });
+      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister', 'in-pi', 'ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
+      writeBlocks(w, s.blocks, { ...opts, red: doc.kind === 'in-pi' || doc.kind === 'jp-pi' });
       for (const x of s.subs ?? []) { w.h(/^\d/.test(x.num) ? sectionTitle(x) : x.title, 9.5); writeBlocks(w, x.blocks, opts); }
     }
     if (fx.lastRevised) w.text(fx.lastRevised, { size: 8.5 });
+    if (fx.prepared) w.text(fx.prepared, { size: 8.5 });
+    if (fx.lastChecked) w.text(fx.lastChecked, { size: 8.5 });
     if (fx.sideEffects) w.text(fx.sideEffects, { f: bold, size: 9 });
     if (fx.approval) { w.space(6); w.text(fx.approval, { size: 8.5 }); }
-    if (m.revised && !fx.lastRevised && !['smpc', 'in-pi'].includes(doc.kind)) w.text(`Revised: ${m.revised}`, { size: 8.5 });
+    if (m.revised && !fx.lastRevised && !['smpc', 'in-pi', 'jp-pi'].includes(doc.kind)) w.text(`Revised: ${m.revised}`, { size: 8.5 });
   }
   w.space(8);
   w.text('Training use only. Fictional product and company. Not an approved label and not for submission.', { size: 8, color: WARN });
@@ -232,6 +239,7 @@ export async function certificatePdf({ name, userId, status, code, region = 'US'
   const core = status.region === 'core';
   const eu = status.region === 'eu';
   const india = status.region === 'in';
+  const more = status.region === 'intl';
   const { pdf, font, bold } = await setup('Labelling Workbench - portfolio certificate');
   const page = pdf.addPage([792, 612]);
   const { width: W, height: H } = page.getSize();
@@ -240,10 +248,14 @@ export async function certificatePdf({ name, userId, status, code, region = 'US'
   page.drawRectangle({ x: 32, y: 32, width: W - 64, height: H - 64, borderColor: ACCENT, borderWidth: 0.5 });
   [0, 1, 2, 3].forEach((i) => page.drawRectangle({ x: W / 2 - 36, y: H - 72 - i * 7, width: 72 - (i % 2) * 22, height: 3.5, color: i === 1 ? rgb(0.62, 0.14, 0.14) : ACCENT }));
   centre('LABELLING WORKBENCH', bold, 13, H - 112, ACCENT);
-  centre(core ? 'Certificate of completion: core data sheet and change management' : eu ? 'Certificate of completion: EU product information' : india ? 'Certificate of completion: India labelling' : `Certificate of completion: ${region} labelling`, font, core ? 20 : eu ? 24 : 26, H - 152);
+  centre(core ? 'Certificate of completion: core data sheet and change management' : eu ? 'Certificate of completion: EU product information' : india ? 'Certificate of completion: India labelling' : more ? 'Certificate of completion: labelling in more markets' : `Certificate of completion: ${region} labelling`, font, core ? 20 : eu ? 24 : 26, H - 152);
   centre('This certifies that', font, 12, H - 190, MUTED);
   centre(name.trim(), font, 28, H - 228);
-  (india ? [
+  (more ? [
+    `completed all ${status.lessons.length} more-markets lessons and their checks, a module quiz round and the capstone drill`,
+    'in the Labelling Workbench: the Canadian product monograph and label, the Swiss Fachinformation, the Japanese',
+    'package insert, the Australian PI and CMI, the WHO PQ SmPC, and one safety change taken to four markets.',
+  ] : india ? [
     `completed all ${status.lessons.length} India lessons and their checks, an India quiz round and the capstone drill`,
     'in the Labelling Workbench: Rule 96 label particulars, Rule 97 schedule cautions and symbols, the package insert,',
     'Schedule H2 QR codes, the MRP and proper-name rules, and implementing a CDSCO directive.',

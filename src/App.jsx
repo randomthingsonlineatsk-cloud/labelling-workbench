@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AppCtx } from './ctx.js';
 import { db, getUser, getMeta, setMeta } from './engine/db.js';
-import { PACKS, productById, packAgeMonths } from './engine/pack.js';
+import { PACKS, productById, packAgeMonths, REGION_LABEL } from './engine/pack.js';
 import { projectFromSample, blankDoc, uid, now } from './engine/model.js';
 import { sampleChange } from './engine/changes.js';
 import { parseProjectFile } from './engine/io.js';
@@ -147,7 +147,7 @@ export default function App() {
     },
     createBlank: async ({ productId, kinds, title, region = 'us' }) => {
       const product = productById(productId);
-      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new ${region === 'eu' ? 'EU product information' : region === 'in' ? 'India label set' : 'label set'}`, productId, region, createdAt: now(), updatedAt: now() });
+      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new ${region === 'eu' ? 'EU product information' : region === 'in' ? 'India label set' : region === 'us' ? 'label set' : `${REGION_LABEL[region] ?? region} product information`}`, productId, region, createdAt: now(), updatedAt: now() });
       await db.put('projects', project);
       for (const k of kinds) {
         const d = blankDoc(pack, k, product, project.id, user);

@@ -1,0 +1,97 @@
+{
+ "jpHeader": [
+  {
+   "key": "revised",
+   "label": "Date of preparation or revision",
+   "re": "(Revised|Prepared)\\b.*\\b(19|20)\\d{2}"
+  },
+  {
+   "key": "commodity",
+   "label": "Standard Commodity Classification Number of Japan",
+   "re": "^\\s*87\\d{4}\\s*$"
+  },
+  {
+   "key": "approval",
+   "label": "Approval number, date of initial marketing in Japan",
+   "re": "\\b\\d{5}[A-Z]{3}\\d{8}\\b.*\\b(19|20)\\d{2}"
+  },
+  {
+   "key": "storage",
+   "label": "Storage, shelf life",
+   "re": "(Stor|store).*\\b(shelf life|expir)"
+  },
+  {
+   "key": "category",
+   "label": "Therapeutic category",
+   "re": "\\w"
+  },
+  {
+   "key": "regulatory",
+   "label": "Regulatory classification",
+   "re": "Prescription drug"
+  }
+ ],
+ "jpRx": "Prescription drug (Caution: use only pursuant to the prescription of a physician, etc.)",
+ "chBtCore": [
+  "Dieses Arzneimittel unterliegt einer zusätzlichen Überwachung.",
+  "Dies ermöglicht eine schnelle Identifizierung neuer Erkenntnisse über die Sicherheit."
+ ],
+ "chReport": "Meldung des Verdachts einer unerwünschten Wirkung: Die Meldung des Verdachts einer unerwünschten Wirkung nach der Zulassung ist von grosser Wichtigkeit. Sie ermöglicht eine kontinuierliche Überwachung des Nutzen-Risiko-Verhältnisses des Arzneimittels. Angehörige von Gesundheitsberufen sind aufgefordert, jeden Verdacht einer neuen oder schwerwiegenden unerwünschten Wirkung über das Online-Portal ElViS (Electronic Vigilance System) anzuzeigen. Informationen dazu finden Sie unter www.swissmedic.ch.",
+ "caPmiOd": "If you think you, or a person you are caring for, have taken too much {name}, contact a healthcare professional, hospital emergency department, regional poison control centre or Health Canada's toll-free number, 1-844 POISON-X (1-844-764-7669) immediately, even if there are no signs or symptoms.",
+ "caPmiReport": "You can report any suspected side effects associated with the use of health products to Health Canada by: visiting the web page on Adverse Reaction Reporting for information on how to report online, by mail or by fax; or calling toll-free at 1-866-234-2345. NOTE: Contact your healthcare professional if you need information about how to manage your side effects. The Canada Vigilance Program does not provide medical advice.",
+ "auCmiReport": "After you have received medical advice for any side effects you experience, you can report side effects to the Therapeutic Goods Administration online at www.tga.gov.au/reporting-problems.",
+ "auCmiSe": [
+  "All medicines can have side effects.",
+  "Tell your doctor or pharmacist if you notice anything else that may be making you feel unwell.",
+  "Other side effects not listed here may occur in some people."
+ ],
+ "auPic": "For information on the management of overdose, contact the Poisons Information Centre on 13 11 26 (Australia).",
+ "frMarkers": {
+  "l5": {
+   "label": "dosage form",
+   "re": "comprimés|gélules|capsules|solution|pellicul"
+  },
+  "l7": {
+   "label": "net amount",
+   "re": "comprimés|gélules|flacon|unités"
+  },
+  "l8": {
+   "label": "directions for use",
+   "re": "posologie|monographie|mode d.emploi"
+  },
+  "l10": {
+   "label": "storage",
+   "re": "conserver"
+  },
+  "l14": {
+   "label": "contact and reporting statement",
+   "re": "signal|déclar"
+  }
+ },
+ "promo": [
+  "best",
+  "safest",
+  "superior",
+  "breakthrough",
+  "miracle",
+  "guaranteed",
+  "number one",
+  "revolutionary"
+ ],
+ "nonstandardFrequencies": [
+  "frequently",
+  "often",
+  "occasionally",
+  "sometimes",
+  "infrequent",
+  "seldom"
+ ],
+ "frequencies": [
+  "very common",
+  "common",
+  "uncommon",
+  "rare",
+  "very rare",
+  "not known"
+ ]
+}

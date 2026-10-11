@@ -1,0 +1,94 @@
+[
+ {
+  "id": "CH-HEAD",
+  "title": "Fachinformation and patient information headings",
+  "text": "The Fachinformation uses the headings of AMZV Annex 4 and the patient information those of Annex 5.1, in order and with the standard wording.",
+  "kinds": [
+   "ch-fi",
+   "ch-pi"
+  ],
+  "severity": "error",
+  "src": "amzv",
+  "at": "AMZV Annexes 4 and 5.1",
+  "check": "CH-HEAD",
+  "simplified": "The app checks the German headings; French and Italian versions follow the same order."
+ },
+ {
+  "id": "CH-REQ",
+  "title": "Required content is filled",
+  "text": "Each heading of the Fachinformation and patient information has content.",
+  "kinds": [
+   "ch-fi",
+   "ch-pi"
+  ],
+  "severity": "error",
+  "src": "amzv",
+  "at": "AMZV Annexes 4 and 5.1",
+  "check": "CH-REQ"
+ },
+ {
+  "id": "CH-BT",
+  "title": "Black triangle (additional monitoring)",
+  "text": "New active substances, biological medicines authorised since 2019, time-limited authorisations and authorisations with conditions carry the black triangle and the standard text at the top of the Fachinformation and the patient information, until the authorisation is renewed.",
+  "kinds": [
+   "ch-fi",
+   "ch-pi"
+  ],
+  "severity": "error",
+  "src": "chbt",
+  "at": "AMZV Art. 14a",
+  "check": "CH-BT"
+ },
+ {
+  "id": "CH-ELVIS",
+  "title": "Reporting text in \"Unerwünschte Wirkungen\"",
+  "text": "The section on undesirable effects ends with the request to report suspected new or serious adverse reactions through the ElViS portal.",
+  "kinds": [
+   "ch-fi"
+  ],
+  "severity": "error",
+  "src": "wlinfo",
+  "at": "Wegleitung Arzneimittelinformation",
+  "check": "CH-ELVIS",
+  "simplified": "The app looks for the reporting paragraph and the name ElViS (or ElViS 2.0)."
+ },
+ {
+  "id": "CH-ZUL",
+  "title": "Authorisation number",
+  "text": "The authorisation number is the five-digit Swissmedic number followed by \"(Swissmedic)\", the same in the Fachinformation and the patient information.",
+  "kinds": [
+   "ch-fi",
+   "ch-pi"
+  ],
+  "severity": "error",
+  "src": "amzv",
+  "at": "AMZV Annexes 4 and 5.1",
+  "check": "CH-ZUL"
+ },
+ {
+  "id": "CH-CAT",
+  "title": "Dispensing category",
+  "text": "The packs section gives the dispensing category (Abgabekategorie A to E).",
+  "kinds": [
+   "ch-fi",
+   "ch-pi"
+  ],
+  "severity": "error",
+  "src": "amzv",
+  "at": "AMZV Annex 4 (Packungen) and 5.1",
+  "check": "CH-CAT"
+ },
+ {
+  "id": "CH-DATE",
+  "title": "Date of the information",
+  "text": "The Fachinformation ends with the month and year of the information (\"Stand der Information\"); the patient information ends with the month it was last checked by Swissmedic.",
+  "kinds": [
+   "ch-fi",
+   "ch-pi"
+  ],
+  "severity": "error",
+  "src": "amzv",
+  "at": "AMZV Annexes 4 and 5.1",
+  "check": "CH-DATE"
+ }
+]

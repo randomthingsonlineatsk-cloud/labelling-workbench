@@ -1,0 +1,111 @@
+{
+ "drills": [
+  {
+   "id": "ca-fix",
+   "module": "intl",
+   "title": "Canada: fix the monograph, patient information and label",
+   "minutes": 15,
+   "sample": "ca-ostrevia-errors",
+   "doc": "pm",
+   "goal": {
+    "type": "rules-multi",
+    "docs": [
+     "pm",
+     "pmi",
+     "carton-10"
+    ],
+    "prefixes": [
+     "CA-",
+     "INTL-"
+    ]
+   },
+   "about": "The title page, the box cross-references, the label changes, a heading, Pr, the DIN, the proper name size, French, the reporting contact and the expiry."
+  },
+  {
+   "id": "ch-fix",
+   "module": "intl",
+   "title": "Switzerland: fix the Fachinformation and patient information",
+   "minutes": 12,
+   "sample": "ch-ostrevia-errors",
+   "doc": "fi",
+   "goal": {
+    "type": "rules-multi",
+    "docs": [
+     "fi",
+     "pi"
+    ],
+    "prefixes": [
+     "CH-",
+     "INTL-"
+    ]
+   },
+   "about": "The black triangle, a heading, the ElViS text, the authorisation numbers, the dispensing category and the dates."
+  },
+  {
+   "id": "jp-fix",
+   "module": "intl",
+   "title": "Japan: fix the package insert",
+   "minutes": 10,
+   "sample": "jp-ostrevia-errors",
+   "doc": "pi",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "JP-",
+     "INTL-"
+    ]
+   },
+   "about": "A header item, the Warnings box, a contraindication reason, a section number, an empty subsection and a strength."
+  },
+  {
+   "id": "au-fix",
+   "module": "intl",
+   "title": "Australia: fix the PI and CMI",
+   "minutes": 12,
+   "sample": "au-ostrevia-errors",
+   "doc": "pi",
+   "goal": {
+    "type": "rules-multi",
+    "docs": [
+     "pi",
+     "cmi"
+    ],
+    "prefixes": [
+     "AU-",
+     "INTL-"
+    ]
+   },
+   "about": "The title, the black triangle, the Poisons Information Centre, the schedule, a heading and the CMI standard statements."
+  },
+  {
+   "id": "who-fix",
+   "module": "intl",
+   "title": "WHO PQ: fix the SmPC",
+   "minutes": 8,
+   "sample": "who-malvaren-errors",
+   "doc": "smpc",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "WHO-",
+     "INTL-"
+    ]
+   },
+   "about": "The scope statement, the reference number, the dates, the frequencies, a heading and the posology."
+  },
+  {
+   "id": "intl-ild",
+   "module": "intl",
+   "capstone": true,
+   "title": "Capstone: one safety signal, four markets",
+   "minutes": 35,
+   "sample": "intl-ostrevia-ild",
+   "doc": "ca-pm",
+   "tab": "changes",
+   "goal": {
+    "type": "rollout-intl"
+   },
+   "about": "Add the interstitial lung disease warning to the Canadian monograph, the Swiss Fachinformation, the Japanese insert and the Australian PI and CMI in the right places, move each date on, approve all five, and classify and submit in the four markets within 60 days."
+  }
+ ]
+}

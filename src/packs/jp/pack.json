@@ -1,0 +1,41 @@
+{
+ "id": "jp",
+ "name": "Japan (MHLW/PMDA)",
+ "short": "JP",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "jp-pi"
+ ],
+ "about": "The package insert of a prescription drug in the format in use since April 2019 (PSEHB Notification No. 0608-1, 2017): header items, then numbered sections 1 to 26 whose numbers are kept even when a section is empty. Since August 2021 the insert is electronic, reached from a code on the outer box. The practice text is an English rendering; Japanese inserts are in Japanese.",
+ "watch": [
+  {
+   "id": "epijp",
+   "title": "Structured electronic package inserts (ePI-JP)",
+   "src": "epijp",
+   "text": "A FHIR implementation guide for Japanese electronic package inserts is in development. The app shows the section structure only."
+  }
+ ],
+ "sources": [
+  {
+   "id": "jp0608",
+   "title": "PSEHB Notification No. 0608-1 (8 June 2017): instructions for package inserts of prescription drugs (English translation)",
+   "url": "https://www.phrma-jp.org/wordpress/wp-content/uploads/2019/05/PSEHB-Notification-No.0608-1_E_1.1.pdf"
+  },
+  {
+   "id": "jp360",
+   "title": "Pharmaceuticals and Medical Devices Safety Information No. 360 (February 2019): package inserts under the revised instructions",
+   "url": "https://www.pmda.go.jp/files/000227942.pdf"
+  },
+  {
+   "id": "jpepi",
+   "title": "PMDA: electronic package inserts (paper inserts abolished in principle from August 2021; code on the outer box)",
+   "url": "https://www.pmda.go.jp/english/safety/info-services/e-pack-ins/0001.html"
+  },
+  {
+   "id": "epijp",
+   "title": "Japanese Electronic Medicinal Product Information (ePI-JP), FHIR implementation guide (draft)",
+   "url": "https://build.fhir.org/ig/cander2/epi-jp/"
+  }
+ ]
+}

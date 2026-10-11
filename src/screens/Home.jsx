@@ -5,7 +5,7 @@ import { runChecks, summarise } from '../engine/checks.js';
 import { KIND_LABEL } from '../engine/model.js';
 import { readFile } from '../engine/io.js';
 import { productFromEctdFile } from '../engine/handoff.js';
-import { moduleOf, kindsFor } from '../engine/pack.js';
+import { moduleOf, kindsFor, REGION_LABEL } from '../engine/pack.js';
 import { Counts, Modal, fmtDate } from '../components/ui.jsx';
 
 
@@ -96,7 +96,7 @@ export default function Home() {
       )}
 
       <div className="section-head"><h2>Start from a sample</h2><span className="small muted">Each opens as your own copy; the sample stays unchanged.</span></div>
-      {[['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling']].map(([m, title]) => (
+      {[['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling'], ['intl', 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ']].map(([m, title]) => (
         <section key={m} style={{ marginBottom: '1.25rem' }}>
           <h3 style={{ margin: '.5rem 0' }}>{title}</h3>
           <div className="sample-grid">
@@ -123,7 +123,7 @@ function NewProject({ initial, onClose, onCreate }) {
   const [region, setRegion] = useState({ EU: 'eu', IN: 'in' }[initial?.region] ?? 'us');
   const [kinds, setKinds] = useState({ EU: ['smpc', 'pl', 'eu-outer'], IN: ['in-pi', 'in-carton', 'in-label'] }[initial?.region] ?? ['pi', 'carton']);
   const KINDS = kindsFor(pack, region).filter((k) => k !== 'pi-old');
-  const pickRegion = (r) => { setRegion(r); setKinds(r === 'eu' ? ['smpc', 'pl', 'eu-outer'] : r === 'in' ? ['in-pi', 'in-carton', 'in-label'] : ['pi', 'carton']); };
+  const pickRegion = (r) => { setRegion(r); setKinds(r === 'us' ? ['pi', 'carton'] : r === 'eu' ? ['smpc', 'pl', 'eu-outer'] : kindsFor(pack, r)); };
   const [title, setTitle] = useState(initial?.title ?? '');
   const toggle = (k) => setKinds((x) => (x.includes(k) ? x.filter((y) => y !== k) : [...x, k]));
   return (
@@ -139,11 +139,16 @@ function NewProject({ initial, onClose, onCreate }) {
             <option value="us">United States (FDA)</option>
             <option value="eu">European Union (EMA, QRD)</option>
             <option value="in">India (CDSCO)</option>
+            <option value="ca">Canada (Health Canada)</option>
+            <option value="ch">Switzerland (Swissmedic)</option>
+            <option value="jp">Japan (MHLW/PMDA)</option>
+            <option value="au">Australia (TGA)</option>
+            <option value="who">WHO prequalification</option>
           </select>
         </label>
         <label className="field">Project name <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Optional" /></label>
         <fieldset className="plain">
-          <legend className="small" style={{ fontWeight: 600, color: 'var(--ink-2)' }}>Documents to create ({region === 'eu' ? 'EU' : region === 'in' ? 'India' : 'US'})</legend>
+          <legend className="small" style={{ fontWeight: 600, color: 'var(--ink-2)' }}>Documents to create ({REGION_LABEL[region] ?? region})</legend>
           {KINDS.map((k) => <label key={k} className="row small" style={{ margin: '.25rem 0' }}><input type="checkbox" checked={kinds.includes(k)} onChange={() => toggle(k)} /> {KIND_LABEL[k]}</label>)}
         </fieldset>
         <div className="row"><button className="btn primary" disabled={!kinds.length} onClick={() => onCreate({ productId, kinds, title, region })}>Create</button><button className="btn ghost" onClick={onClose}>Cancel</button></div>

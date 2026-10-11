@@ -1,0 +1,219 @@
+{
+ "au-pi": {
+  "kind": "au-pi",
+  "label": "Product Information (Australia)",
+  "short": "PI",
+  "src": "piform",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "NAME OF THE MEDICINE",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "PHARMACEUTICAL FORM",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "CLINICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "4.1",
+      "title": "Therapeutic indications",
+      "need": "required"
+     },
+     {
+      "num": "4.2",
+      "title": "Dose and method of administration",
+      "need": "required"
+     },
+     {
+      "num": "4.3",
+      "title": "Contraindications",
+      "need": "required"
+     },
+     {
+      "num": "4.4",
+      "title": "Special warnings and precautions for use",
+      "need": "required"
+     },
+     {
+      "num": "4.5",
+      "title": "Interactions with other medicines and other forms of interactions",
+      "need": "required"
+     },
+     {
+      "num": "4.6",
+      "title": "Fertility, pregnancy and lactation",
+      "need": "required"
+     },
+     {
+      "num": "4.7",
+      "title": "Effects on ability to drive and use machines",
+      "need": "required"
+     },
+     {
+      "num": "4.8",
+      "title": "Adverse effects (Undesirable effects)",
+      "need": "required"
+     },
+     {
+      "num": "4.9",
+      "title": "Overdose",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "5",
+    "title": "PHARMACOLOGICAL PROPERTIES",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "5.1",
+      "title": "Pharmacodynamic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.2",
+      "title": "Pharmacokinetic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.3",
+      "title": "Preclinical safety data",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "6",
+    "title": "PHARMACEUTICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "6.1",
+      "title": "List of excipients",
+      "need": "required"
+     },
+     {
+      "num": "6.2",
+      "title": "Incompatibilities",
+      "need": "required"
+     },
+     {
+      "num": "6.3",
+      "title": "Shelf life",
+      "need": "required"
+     },
+     {
+      "num": "6.4",
+      "title": "Special precautions for storage",
+      "need": "required"
+     },
+     {
+      "num": "6.5",
+      "title": "Nature and contents of container",
+      "need": "required"
+     },
+     {
+      "num": "6.6",
+      "title": "Special precautions for disposal",
+      "need": "required"
+     },
+     {
+      "num": "6.7",
+      "title": "Physicochemical properties",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "7",
+    "title": "MEDICINE SCHEDULE (POISONS STANDARD)",
+    "need": "required"
+   },
+   {
+    "num": "8",
+    "title": "SPONSOR",
+    "need": "required"
+   },
+   {
+    "num": "9",
+    "title": "DATE OF FIRST APPROVAL",
+    "need": "required"
+   },
+   {
+    "num": "10",
+    "title": "DATE OF REVISION",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "title": "AUSTRALIAN PRODUCT INFORMATION – {NAME} ({established}) {form}",
+   "blackTriangle": "▼ This medicinal product is subject to additional monitoring in Australia. This will allow quick identification of new safety information. Healthcare professionals are asked to report any suspected adverse events at www.tga.gov.au/reporting-problems."
+  }
+ },
+ "au-cmi": {
+  "kind": "au-cmi",
+  "label": "Consumer Medicine Information (Australia)",
+  "short": "CMI",
+  "src": "cmitpl",
+  "sections": [
+   {
+    "num": "sum",
+    "title": "Consumer Medicine Information (CMI) summary",
+    "need": "required"
+   },
+   {
+    "num": "1",
+    "title": "Why am I using {name}?",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "What should I know before I use {name}?",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "What if I am taking other medicines?",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "How do I use {name}?",
+    "need": "required"
+   },
+   {
+    "num": "5",
+    "title": "What should I know while using {name}?",
+    "need": "required"
+   },
+   {
+    "num": "6",
+    "title": "Are there any side effects?",
+    "need": "required"
+   },
+   {
+    "num": "7",
+    "title": "Product details",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "blackTriangle": "▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. You can report side effects to your doctor, or directly at www.tga.gov.au/reporting-problems.",
+   "summaryIntro": "The full CMI on the next page has more details. If you are worried about using this medicine, speak to your doctor or pharmacist.",
+   "prepared": "This leaflet was prepared in {month}."
+  }
+ }
+}

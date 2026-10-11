@@ -1,0 +1,42 @@
+{
+ "id": "ch",
+ "name": "Switzerland (Swissmedic)",
+ "short": "CH",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "ch-fi",
+  "ch-pi"
+ ],
+ "about": "The information for healthcare professionals (Fachinformation, AMZV Annex 4) and the patient information (Patienteninformation, Annex 5.1). Headings and the standard statements are given in German, as Swissmedic publishes them; the practice body text is in English. Official texts are in German, French and Italian.",
+ "watch": [
+  {
+   "id": "elvis2",
+   "title": "ElViS 2.0",
+   "src": "elvis2",
+   "text": "Swissmedic plans to replace its ElViS reporting portal with ElViS 2.0 (E2B(R3)) on 21 December 2026. The reporting text in the Fachinformation names ElViS; the app accepts either name."
+  }
+ ],
+ "sources": [
+  {
+   "id": "amzv",
+   "title": "Arzneimittel-Zulassungsverordnung (AMZV, SR 812.212.22): Annex 4 (Fachinformation), Annex 5.1 (Patienteninformation), Art. 14a (additional monitoring)",
+   "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/recht-normen/HMV4-Swissmedic/AMZV.pdf.download.pdf/20180907_AMZV_de.pdf"
+  },
+  {
+   "id": "chbt",
+   "title": "Swissmedic: black triangle for medicines under additional monitoring (in force for new submissions from 1 January 2019)",
+   "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/stab/veranstaltung/hmg/blacktriangle.pdf.download.pdf/04_Black%20Triangle_Philiipp%20Weyermann.pdf"
+  },
+  {
+   "id": "wlinfo",
+   "title": "Swissmedic: Wegleitung Arzneimittelinformation für Humanarzneimittel",
+   "url": "https://www.swissmedic.ch/swissmedic/de/home/humanarzneimittel/authorisations/informationen/anpassung-wl-aminfo-ham.html"
+  },
+  {
+   "id": "elvis2",
+   "title": "Swissmedic: ElViS 2.0 replaces the electronic vigilance system (notice of 4 September 2026)",
+   "url": "https://www.swissmedic.ch/swissmedic/de/home/news/mitteilungen/elvis2-0-elektronisches-vigilanzsystem-wird-durch-modernisiertes-meldetool-abgeloest.html"
+  }
+ ]
+}

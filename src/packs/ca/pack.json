@@ -1,0 +1,41 @@
+{
+ "id": "ca",
+ "name": "Canada (Health Canada)",
+ "short": "CA",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "ca-pm",
+  "ca-pmi",
+  "ca-label"
+ ],
+ "about": "The product monograph to the Health Canada master template (Part I health professional information, Part II scientific information) and the outer label of a prescription drug under the Food and Drug Regulations: the Pr symbol, the DIN, the proper name, bilingual text and the plain language labelling contact statement.",
+ "watch": [],
+ "sources": [
+  {
+   "id": "pmtpl",
+   "title": "Health Canada: Product monograph master template (issued 2020-10-30, modified 2025-06-13)",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/product-monograph/master-template.html"
+  },
+  {
+   "id": "pmguide",
+   "title": "Health Canada: Guidance document, Product Monograph",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/product-monograph/guidance-document-product-monograph.html"
+  },
+  {
+   "id": "fdr",
+   "title": "Food and Drug Regulations (C.R.C., c. 870), C.01.004 to C.01.005: labels, Pr symbol, DIN, plain language labelling",
+   "url": "https://laws.justice.gc.ca/eng/regulations/c.r.c.,_c._870/page-45.html"
+  },
+  {
+   "id": "fdra",
+   "title": "Food and Drug Regulations (C.R.C., c. 870), A.01.015: label information in English and French",
+   "url": "https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/"
+  },
+  {
+   "id": "pll",
+   "title": "Health Canada: Plain language labelling regulations for prescription drugs, contact information requirement",
+   "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/plain-language-labelling-regulations-prescription-drugs/contact-information-requirement.html"
+  }
+ ]
+}

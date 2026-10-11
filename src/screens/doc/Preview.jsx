@@ -8,6 +8,9 @@ import { download, slug } from '../../engine/io.js';
 
 const EU = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
 const IN = ['in-pi', 'in-carton', 'in-label'];
+const NUMBERED = ['ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'];
+const JP_HDR = [['revised', 'Date of revision'], ['commodity', 'Standard Commodity Classification No.'], ['approval', 'Approval number'], ['storage', 'Storage, shelf life'], ['category', 'Therapeutic category'], ['regulatory', 'Regulatory classification']];
+const PARTS = { 'ca-pm': { 1: 'PART I: HEALTH PROFESSIONAL INFORMATION', 13: 'PART II: SCIENTIFIC INFORMATION' } };
 const txt = (s) => (s?.blocks ?? []).flatMap((b) => (b.t === 'ul' ? b.items : b.t === 'table' ? b.rows.flat() : [b.text ?? ''])).filter((x) => x.trim()).join(' ');
 
 // An Indian carton or strip, schematic: the symbol top left in red, the proper name larger than
@@ -70,7 +73,7 @@ export default function Preview({ doc }) {
   if (doc.kind === 'carton' || doc.kind === 'container') return <div><CartonMock doc={doc} /><p className="small muted" style={{ marginTop: '.5rem' }}>Schematic only. Export a PDF from the Export tab.</p></div>;
   const t = templateFor(pack, doc.kind);
   if (doc.kind === 'in-carton' || doc.kind === 'in-label') return <div><InLabelMock doc={doc} /><p className="small muted" style={{ marginTop: '.5rem' }}>Schematic only: the type sizes come from "Product, schedule and type sizes" on the Edit tab. Export a PDF from the Export tab.</p></div>;
-  const red = IN.includes(doc.kind);
+  const red = IN.includes(doc.kind) || doc.kind === 'jp-pi';
   return (
     <div>
       <div className="row no-print" style={{ marginBottom: '.75rem' }}>
@@ -107,13 +110,19 @@ export default function Preview({ doc }) {
             </section>
           ))}
         </>) : epi ? <EpiView doc={doc} /> : (<>
+          {doc.fixed?.title && <h2 style={{ textAlign: 'center' }}>{doc.fixed.title}</h2>}
+          {doc.kind === 'jp-pi' && <table><tbody>{JP_HDR.map(([k, l]) => <tr key={k}><td>{l}</td><td>{doc.fixed?.[k]}</td></tr>)}</tbody></table>}
           {doc.fixed?.header && (red ? <p style={{ textAlign: 'center', fontWeight: 700 }}>{doc.fixed.header}</p> : <h2 style={{ textAlign: 'center' }}>{doc.fixed.header}</h2>)}
-          {doc.fixed?.nameLine ? <p style={{ textAlign: 'center', whiteSpace: 'pre-line' }}><b>{doc.fixed.nameLine}</b></p> : <p style={{ textAlign: 'center' }}><b>{m.proprietaryName}</b> ({m.establishedName}) {m.dosageForm}</p>}
+          {doc.fixed?.nameLine ? <p style={{ textAlign: 'center', whiteSpace: 'pre-line' }}><b>{doc.fixed.nameLine}</b></p> : <p style={{ textAlign: 'center' }}>{m.scheduleSymbol && <sup>{m.scheduleSymbol}</sup>}<b>{m.proprietaryName}</b> ({m.establishedName}) {m.dosageForm}</p>}
           {doc.fixed?.blackTriangle && <p><b>{doc.fixed.blackTriangle}</b></p>}
           {doc.fixed?.readFirst && <div className="bwbox"><p>{doc.fixed.readFirst}</p></div>}
+          {doc.fixed?.readThis && <p style={{ textAlign: 'center' }}><b>{doc.fixed.readThis}</b></p>}
+          {doc.fixed?.intro && <p><i>{doc.fixed.intro}</i></p>}
+          {doc.fixed?.summaryIntro && <p><i>{doc.fixed.summaryIntro}</i></p>}
           {(doc.sections ?? []).map((s) => (
             <section key={s.num}>
-              <h3>{/^\d/.test(s.num) && (EU.includes(doc.kind) || red) ? sectionTitle(s) : s.title}</h3>
+              {PARTS[doc.kind]?.[s.num] && <h2>{PARTS[doc.kind][s.num]}</h2>}
+              <h3>{/^\d/.test(s.num) && (EU.includes(doc.kind) || red || NUMBERED.includes(doc.kind)) ? sectionTitle(s) : s.title}</h3>
               <Blocks blocks={s.blocks} anno={anno} red={red} />
               {(s.subs ?? []).map((x) => <div key={x.num}><h4>{/^\d/.test(x.num) ? sectionTitle(x) : x.title}</h4><Blocks blocks={x.blocks} anno={anno} red={red} /></div>)}
             </section>
@@ -121,6 +130,8 @@ export default function Preview({ doc }) {
           {doc.fixed?.sideEffects && <p><b>{doc.fixed.sideEffects}</b></p>}
           {doc.fixed?.approval && <p style={{ fontSize: '.8rem' }}>{doc.fixed.approval} Revised: {m.revised}</p>}
           {doc.fixed?.lastRevised && <p style={{ fontSize: '.85rem' }}>{doc.fixed.lastRevised}</p>}
+          {doc.fixed?.prepared && <p style={{ fontSize: '.85rem' }}>{doc.fixed.prepared}</p>}
+          {doc.fixed?.lastChecked && <p style={{ fontSize: '.85rem' }}>{doc.fixed.lastChecked}</p>}
         </>)}
       </article>
     </div>

@@ -1,0 +1,850 @@
+[
+ {
+  "id": "who-malvaren-clean",
+  "region": "who",
+  "productId": "pq-antimalarial",
+  "level": "Start here",
+  "title": "Malvaren (WHO PQ): clean SmPC",
+  "about": "A prequalified paediatric antimalarial: the WHOPAR Part 4 SmPC with weight-band dosing, the MedDRA frequency table, the supplier, the WHO reference number and the dates.",
+  "docs": [
+   {
+    "id": "smpc",
+    "kind": "who-smpc",
+    "title": "SmPC (WHOPAR Part 4)",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Malvaren",
+     "establishedName": "arterolin and lumexantine",
+     "dosageForm": "dispersible tablets",
+     "route": "oral",
+     "strengths": [
+      "20 mg/120 mg"
+     ],
+     "manufacturer": "Sunpath Essential Medicines Ltd.",
+     "pqRef": "MA999(a)",
+     "lang": "en"
+    },
+    "fixed": {
+     "intro": "This summary of product characteristics focuses on uses of the medicine covered by WHO's Prequalification Team - Medicines. The medicine may be authorised for additional or different uses by national medicines regulatory authorities."
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b219",
+        "t": "p",
+        "text": "Malvaren 20 mg/120 mg dispersible tablets*"
+       },
+       {
+        "id": "b220",
+        "t": "p",
+        "text": "*Trade names are not prequalified by WHO. This is the national medicines regulatory authority’s responsibility."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b221",
+        "t": "p",
+        "text": "Each dispersible tablet contains 20 mg arterolin and 120 mg lumexantine."
+       },
+       {
+        "id": "b222",
+        "t": "p",
+        "text": "Excipient with known effect: each tablet contains 1.5 mg saccharin sodium. For the full list of excipients, see section 6.1."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "PHARMACEUTICAL FORM",
+      "blocks": [
+       {
+        "id": "b223",
+        "t": "p",
+        "text": "Dispersible tablet. Yellow, round, flat tablets with a break line on one side and \"SM\" on the other. The break line is not intended for dividing the dose."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indications",
+        "blocks": [
+         {
+          "id": "b224",
+          "t": "p",
+          "text": "Malvaren is indicated for the treatment of acute uncomplicated malaria caused by Plasmodium falciparum in infants and children weighing 5 kg to less than 35 kg."
+         },
+         {
+          "id": "b225",
+          "t": "p",
+          "text": "Consideration should be given to official guidance on the appropriate use of antimalarial agents."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b226",
+          "t": "table",
+          "rows": [
+           [
+            "Body weight",
+            "Dose (tablets) at 0, 8, 24, 36, 48 and 60 hours"
+           ],
+           [
+            "5 kg to < 15 kg",
+            "1"
+           ],
+           [
+            "15 kg to < 25 kg",
+            "2"
+           ],
+           [
+            "25 kg to < 35 kg",
+            "3"
+           ]
+          ]
+         },
+         {
+          "id": "b227",
+          "t": "p",
+          "text": "Disperse the tablets in a small amount of water (about 10 mL per tablet) and give the whole mixture at once. Give with food or milk to improve absorption of lumexantine. If the child vomits within 1 hour, repeat the dose."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b228",
+          "t": "ul",
+          "items": [
+           "Hypersensitivity to the active substances or to any of the excipients listed in section 6.1.",
+           "Severe malaria (WHO definition).",
+           "Known prolongation of the QTc interval or a family history of congenital QT prolongation."
+          ]
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b229",
+          "t": "p",
+          "text": "Malvaren is not indicated for severe malaria or for the prevention of malaria."
+         },
+         {
+          "id": "b230",
+          "t": "p",
+          "text": "Lumexantine can prolong the QTc interval. Use with caution with other medicines that prolong the QTc interval and in patients with electrolyte disturbances."
+         },
+         {
+          "id": "b231",
+          "t": "p",
+          "text": "If the patient does not eat, monitor closely, as exposure to lumexantine may be lower."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interaction with other medicinal products and other forms of interaction",
+        "blocks": [
+         {
+          "id": "b232",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase lumexantine exposure; strong CYP3A4 inducers (rifampicin, carbamazepine) reduce exposure to both components and may cause treatment failure. Avoid medicines that prolong the QTc interval."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Fertility, pregnancy and breastfeeding",
+        "blocks": [
+         {
+          "id": "b233",
+          "t": "p",
+          "text": "Pregnancy: data from more than 1000 exposed pregnancies in the second and third trimesters show no malformative or feto/neonatal toxicity. In the first trimester, use only if the expected benefit outweighs the risk, following national guidelines."
+         },
+         {
+          "id": "b234",
+          "t": "p",
+          "text": "Breastfeeding: small amounts pass into human milk; breastfeeding may continue."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b235",
+          "t": "p",
+          "text": "Not relevant for the intended population."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b236",
+          "t": "p",
+          "text": "Frequencies: very common (≥1/10), common (≥1/100 to <1/10), uncommon (≥1/1,000 to <1/100)."
+         },
+         {
+          "id": "b237",
+          "t": "table",
+          "rows": [
+           [
+            "System organ class",
+            "Very common",
+            "Common",
+            "Uncommon"
+           ],
+           [
+            "Metabolism and nutrition disorders",
+            "",
+            "Decreased appetite",
+            ""
+           ],
+           [
+            "Nervous system disorders",
+            "",
+            "Headache, dizziness",
+            ""
+           ],
+           [
+            "Cardiac disorders",
+            "",
+            "",
+            "Electrocardiogram QT prolonged"
+           ],
+           [
+            "Respiratory, thoracic and mediastinal disorders",
+            "Cough",
+            "",
+            ""
+           ],
+           [
+            "Gastrointestinal disorders",
+            "Vomiting",
+            "Abdominal pain, diarrhoea",
+            ""
+           ],
+           [
+            "Skin and subcutaneous tissue disorders",
+            "",
+            "Rash",
+            "Urticaria"
+           ],
+           [
+            "General disorders",
+            "Pyrexia",
+            "",
+            ""
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b238",
+          "t": "p",
+          "text": "There is no experience of overdose. Give symptomatic and supportive treatment and monitor the ECG and serum potassium."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b239",
+          "t": "p",
+          "text": "Pharmacotherapeutic group: antimalarials, combinations (fictional ATC). Arterolin, an artemisinin-type endoperoxide (fictional), rapidly reduces parasite biomass; lumexantine, a long-acting blood schizonticide (fictional), clears the remaining parasites."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b240",
+          "t": "p",
+          "text": "Arterolin is absorbed rapidly (Tmax about 2 hours) and eliminated with a half-life of about 1 hour. Lumexantine absorption increases with food; its half-life is 3 to 5 days."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Preclinical safety data",
+        "blocks": [
+         {
+          "id": "b241",
+          "t": "p",
+          "text": "Embryo-lethality was seen with arterolin in rats in early pregnancy. Lumexantine was not genotoxic."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "List of excipients",
+        "blocks": [
+         {
+          "id": "b242",
+          "t": "p",
+          "text": "Microcrystalline cellulose, crospovidone, saccharin sodium, cherry flavour, colloidal anhydrous silica, magnesium stearate."
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b243",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "6.3",
+        "title": "Shelf life",
+        "blocks": [
+         {
+          "id": "b244",
+          "t": "p",
+          "text": "24 months."
+         }
+        ]
+       },
+       {
+        "num": "6.4",
+        "title": "Special precautions for storage",
+        "blocks": [
+         {
+          "id": "b245",
+          "t": "p",
+          "text": "Do not store above 30°C. Store in the original package in order to protect from moisture."
+         }
+        ]
+       },
+       {
+        "num": "6.5",
+        "title": "Nature and contents of container",
+        "blocks": [
+         {
+          "id": "b246",
+          "t": "p",
+          "text": "Aluminium/aluminium blisters of 6, 12 and 18 tablets, in cartons."
+         }
+        ]
+       },
+       {
+        "num": "6.6",
+        "title": "Special precautions for disposal and other handling",
+        "blocks": [
+         {
+          "id": "b247",
+          "t": "p",
+          "text": "No special requirements."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "SUPPLIER",
+      "blocks": [
+       {
+        "id": "b248",
+        "t": "p",
+        "text": "Sunpath Essential Medicines Ltd., Plot 9, Fictional Industrial Estate, Example City, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "WHO REFERENCE NUMBER (WHO Prequalification Programme)",
+      "blocks": [
+       {
+        "id": "b249",
+        "t": "p",
+        "text": "MA999(a)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "DATE OF PREQUALIFICATION",
+      "blocks": [
+       {
+        "id": "b250",
+        "t": "p",
+        "text": "20 September 2023"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DATE OF REVISION OF THE TEXT",
+      "blocks": [
+       {
+        "id": "b251",
+        "t": "p",
+        "text": "July 2026"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "who-malvaren-errors",
+  "region": "who",
+  "productId": "pq-antimalarial",
+  "level": "Practice",
+  "title": "Malvaren (WHO PQ): find and fix the errors",
+  "about": "6 planted errors: the scope statement, the reference number, the dates, the 4.8 frequencies, a heading and empty posology.",
+  "docs": [
+   {
+    "id": "smpc",
+    "kind": "who-smpc",
+    "title": "SmPC (WHOPAR Part 4)",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Malvaren",
+     "establishedName": "arterolin and lumexantine",
+     "dosageForm": "dispersible tablets",
+     "route": "oral",
+     "strengths": [
+      "20 mg/120 mg"
+     ],
+     "manufacturer": "Sunpath Essential Medicines Ltd.",
+     "pqRef": "MA999(a)",
+     "lang": "en"
+    },
+    "fixed": {
+     "intro": ""
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b219",
+        "t": "p",
+        "text": "Malvaren 20 mg/120 mg dispersible tablets*"
+       },
+       {
+        "id": "b220",
+        "t": "p",
+        "text": "*Trade names are not prequalified by WHO. This is the national medicines regulatory authority’s responsibility."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b221",
+        "t": "p",
+        "text": "Each dispersible tablet contains 20 mg arterolin and 120 mg lumexantine."
+       },
+       {
+        "id": "b222",
+        "t": "p",
+        "text": "Excipient with known effect: each tablet contains 1.5 mg saccharin sodium. For the full list of excipients, see section 6.1."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "PHARMACEUTICAL FORM",
+      "blocks": [
+       {
+        "id": "b223",
+        "t": "p",
+        "text": "Dispersible tablet. Yellow, round, flat tablets with a break line on one side and \"SM\" on the other. The break line is not intended for dividing the dose."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indications",
+        "blocks": [
+         {
+          "id": "b224",
+          "t": "p",
+          "text": "Malvaren is indicated for the treatment of acute uncomplicated malaria caused by Plasmodium falciparum in infants and children weighing 5 kg to less than 35 kg."
+         },
+         {
+          "id": "b225",
+          "t": "p",
+          "text": "Consideration should be given to official guidance on the appropriate use of antimalarial agents."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b280",
+          "t": "p",
+          "text": ""
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b228",
+          "t": "ul",
+          "items": [
+           "Hypersensitivity to the active substances or to any of the excipients listed in section 6.1.",
+           "Severe malaria (WHO definition).",
+           "Known prolongation of the QTc interval or a family history of congenital QT prolongation."
+          ]
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b229",
+          "t": "p",
+          "text": "Malvaren is not indicated for severe malaria or for the prevention of malaria."
+         },
+         {
+          "id": "b230",
+          "t": "p",
+          "text": "Lumexantine can prolong the QTc interval. Use with caution with other medicines that prolong the QTc interval and in patients with electrolyte disturbances."
+         },
+         {
+          "id": "b231",
+          "t": "p",
+          "text": "If the patient does not eat, monitor closely, as exposure to lumexantine may be lower."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interaction with other medicinal products and other forms of interaction",
+        "blocks": [
+         {
+          "id": "b232",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase lumexantine exposure; strong CYP3A4 inducers (rifampicin, carbamazepine) reduce exposure to both components and may cause treatment failure. Avoid medicines that prolong the QTc interval."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Fertility, pregnancy and breastfeeding",
+        "blocks": [
+         {
+          "id": "b233",
+          "t": "p",
+          "text": "Pregnancy: data from more than 1000 exposed pregnancies in the second and third trimesters show no malformative or feto/neonatal toxicity. In the first trimester, use only if the expected benefit outweighs the risk, following national guidelines."
+         },
+         {
+          "id": "b234",
+          "t": "p",
+          "text": "Breastfeeding: small amounts pass into human milk; breastfeeding may continue."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b235",
+          "t": "p",
+          "text": "Not relevant for the intended population."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b279",
+          "t": "p",
+          "text": "Vomiting, cough and fever occur often; headache and rash occur sometimes; QT prolongation has been seen."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b238",
+          "t": "p",
+          "text": "There is no experience of overdose. Give symptomatic and supportive treatment and monitor the ECG and serum potassium."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b239",
+          "t": "p",
+          "text": "Pharmacotherapeutic group: antimalarials, combinations (fictional ATC). Arterolin, an artemisinin-type endoperoxide (fictional), rapidly reduces parasite biomass; lumexantine, a long-acting blood schizonticide (fictional), clears the remaining parasites."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b240",
+          "t": "p",
+          "text": "Arterolin is absorbed rapidly (Tmax about 2 hours) and eliminated with a half-life of about 1 hour. Lumexantine absorption increases with food; its half-life is 3 to 5 days."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Preclinical safety data",
+        "blocks": [
+         {
+          "id": "b241",
+          "t": "p",
+          "text": "Embryo-lethality was seen with arterolin in rats in early pregnancy. Lumexantine was not genotoxic."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "List of excipients",
+        "blocks": [
+         {
+          "id": "b242",
+          "t": "p",
+          "text": "Microcrystalline cellulose, crospovidone, saccharin sodium, cherry flavour, colloidal anhydrous silica, magnesium stearate."
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b243",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "6.3",
+        "title": "Shelf life",
+        "blocks": [
+         {
+          "id": "b244",
+          "t": "p",
+          "text": "24 months."
+         }
+        ]
+       },
+       {
+        "num": "6.4",
+        "title": "Special precautions for storage",
+        "blocks": [
+         {
+          "id": "b245",
+          "t": "p",
+          "text": "Do not store above 30°C. Store in the original package in order to protect from moisture."
+         }
+        ]
+       },
+       {
+        "num": "6.5",
+        "title": "Nature and contents of container",
+        "blocks": [
+         {
+          "id": "b246",
+          "t": "p",
+          "text": "Aluminium/aluminium blisters of 6, 12 and 18 tablets, in cartons."
+         }
+        ]
+       },
+       {
+        "num": "6.6",
+        "title": "Special precautions for disposal",
+        "blocks": [
+         {
+          "id": "b247",
+          "t": "p",
+          "text": "No special requirements."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "SUPPLIER",
+      "blocks": [
+       {
+        "id": "b248",
+        "t": "p",
+        "text": "Sunpath Essential Medicines Ltd., Plot 9, Fictional Industrial Estate, Example City, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "WHO REFERENCE NUMBER (WHO Prequalification Programme)",
+      "blocks": [
+       {
+        "id": "b277",
+        "t": "p",
+        "text": "MA999"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "DATE OF PREQUALIFICATION",
+      "blocks": [
+       {
+        "id": "b250",
+        "t": "p",
+        "text": "20 September 2023"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DATE OF REVISION OF THE TEXT",
+      "blocks": [
+       {
+        "id": "b278",
+        "t": "p",
+        "text": "May 2023"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "WHO-INTRO",
+      "where": "Opening statement",
+      "what": "Missing."
+     },
+     {
+      "rule": "WHO-REF",
+      "where": "8",
+      "what": "The reference is MA999(a)."
+     },
+     {
+      "rule": "WHO-DATE",
+      "where": "10",
+      "what": "Earlier than the date of prequalification."
+     },
+     {
+      "rule": "WHO-48",
+      "where": "4.8",
+      "what": "\"often\" and \"sometimes\" are not frequency categories."
+     },
+     {
+      "rule": "WHO-HEAD",
+      "where": "6.6",
+      "what": "The heading is \"Special precautions for disposal and other handling\"."
+     },
+     {
+      "rule": "WHO-REQ",
+      "where": "4.2",
+      "what": "Posology is empty."
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -39,22 +39,27 @@
   {
    "id": "ca",
    "label": "Canada",
-   "pack": false
+   "pack": true
   },
   {
    "id": "ch",
    "label": "Switzerland",
-   "pack": false
+   "pack": true
   },
   {
    "id": "jp",
    "label": "Japan",
-   "pack": false
+   "pack": true
+  },
+  {
+   "id": "au",
+   "label": "Australia",
+   "pack": true
   },
   {
    "id": "who",
    "label": "WHO prequalification",
-   "pack": false
+   "pack": true
   }
  ],
  "statuses": [

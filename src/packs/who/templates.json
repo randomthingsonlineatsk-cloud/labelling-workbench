@@ -1,0 +1,160 @@
+{
+ "who-smpc": {
+  "kind": "who-smpc",
+  "label": "SmPC (WHO prequalification)",
+  "short": "SmPC",
+  "src": "whoex",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "NAME OF THE MEDICINAL PRODUCT",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "PHARMACEUTICAL FORM",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "CLINICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "4.1",
+      "title": "Therapeutic indications",
+      "need": "required"
+     },
+     {
+      "num": "4.2",
+      "title": "Posology and method of administration",
+      "need": "required"
+     },
+     {
+      "num": "4.3",
+      "title": "Contraindications",
+      "need": "required"
+     },
+     {
+      "num": "4.4",
+      "title": "Special warnings and precautions for use",
+      "need": "required"
+     },
+     {
+      "num": "4.5",
+      "title": "Interaction with other medicinal products and other forms of interaction",
+      "need": "required"
+     },
+     {
+      "num": "4.6",
+      "title": "Fertility, pregnancy and breastfeeding",
+      "need": "required"
+     },
+     {
+      "num": "4.7",
+      "title": "Effects on ability to drive and use machines",
+      "need": "required"
+     },
+     {
+      "num": "4.8",
+      "title": "Undesirable effects",
+      "need": "required"
+     },
+     {
+      "num": "4.9",
+      "title": "Overdose",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "5",
+    "title": "PHARMACOLOGICAL PROPERTIES",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "5.1",
+      "title": "Pharmacodynamic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.2",
+      "title": "Pharmacokinetic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.3",
+      "title": "Preclinical safety data",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "6",
+    "title": "PHARMACEUTICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "6.1",
+      "title": "List of excipients",
+      "need": "required"
+     },
+     {
+      "num": "6.2",
+      "title": "Incompatibilities",
+      "need": "required"
+     },
+     {
+      "num": "6.3",
+      "title": "Shelf life",
+      "need": "required"
+     },
+     {
+      "num": "6.4",
+      "title": "Special precautions for storage",
+      "need": "required"
+     },
+     {
+      "num": "6.5",
+      "title": "Nature and contents of container",
+      "need": "required"
+     },
+     {
+      "num": "6.6",
+      "title": "Special precautions for disposal and other handling",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "7",
+    "title": "SUPPLIER",
+    "need": "required"
+   },
+   {
+    "num": "8",
+    "title": "WHO REFERENCE NUMBER (WHO Prequalification Programme)",
+    "need": "required"
+   },
+   {
+    "num": "9",
+    "title": "DATE OF PREQUALIFICATION",
+    "need": "required"
+   },
+   {
+    "num": "10",
+    "title": "DATE OF REVISION OF THE TEXT",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "intro": "This summary of product characteristics focuses on uses of the medicine covered by WHO's Prequalification Team - Medicines. The medicine may be authorised for additional or different uses by national medicines regulatory authorities."
+  }
+ }
+}

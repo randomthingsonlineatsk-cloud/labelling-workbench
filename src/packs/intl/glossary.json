@@ -1,0 +1,44 @@
+{
+ "terms": [
+  {
+   "term": "Abgabekategorie",
+   "def": "Swiss dispensing category (A to E), given in the packs section."
+  },
+  {
+   "term": "AMZV",
+   "def": "Arzneimittel-Zulassungsverordnung: the Swissmedic ordinance on authorisation requirements, whose annexes set the Fachinformation and patient information."
+  },
+  {
+   "term": "ARTG",
+   "def": "Australian Register of Therapeutic Goods; AUST R numbers identify registered medicines."
+  },
+  {
+   "term": "CMI",
+   "def": "Consumer Medicine Information: the Australian patient leaflet, with a one-page summary."
+  },
+  {
+   "term": "DIN",
+   "def": "Drug Identification Number: the eight-digit number Health Canada assigns to a drug product."
+  },
+  {
+   "term": "ElViS",
+   "def": "Electronic Vigilance System: Swissmedic’s portal for reporting adverse reactions (ElViS 2.0 from December 2026)."
+  },
+  {
+   "term": "Fachinformation",
+   "def": "The Swiss information for healthcare professionals."
+  },
+  {
+   "term": "Pr symbol",
+   "def": "The symbol on Canadian labels and monographs of prescription drugs."
+  },
+  {
+   "term": "Product monograph",
+   "def": "The Canadian factual document on a drug, for healthcare professionals, with Patient Medication Information."
+  },
+  {
+   "term": "WHOPAR",
+   "def": "WHO Public Assessment Report for a prequalified product; Part 4 is the SmPC."
+  }
+ ]
+}

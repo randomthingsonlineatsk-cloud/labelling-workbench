@@ -3,7 +3,7 @@ import { useApp } from '../ctx.js';
 import { openSample } from './Learn.jsx';
 import { moduleOf } from '../engine/pack.js';
 
-const GROUPS = [['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling']];
+const GROUPS = [['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling'], ['intl', 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ']];
 
 export default function Drills() {
   const app = useApp();
@@ -26,7 +26,7 @@ export default function Drills() {
           const openOne = projects.find((p) => p.drill?.id === d.id && !p.drill.done);
           return (
             <div key={d.id} className="card" style={d.capstone ? { borderColor: 'var(--accent)', boxShadow: '0 0 0 1px var(--accent)' } : undefined}>
-              {d.capstone && <span className="kicker">Capstone · needed for the {m === 'core' ? 'core' : m === 'eu' ? 'EU' : m === 'in' ? 'India' : 'US'} certificate</span>}
+              {d.capstone && <span className="kicker">Capstone · needed for the {m === 'core' ? 'core' : m === 'eu' ? 'EU' : m === 'in' ? 'India' : m === 'intl' ? 'more markets' : 'US'} certificate</span>}
               <h3>{d.title}</h3>
               <p className="small" style={{ margin: 0 }}>{d.about}</p>
               <p className="small muted" style={{ margin: 0 }}>{d.minutes} minutes · {best === null ? 'not attempted' : `best ${best}%`}</p>

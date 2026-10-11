@@ -1,0 +1,2050 @@
+[
+ {
+  "id": "intl-ostrevia-ild",
+  "region": "intl",
+  "productId": "nce-tablet",
+  "level": "Capstone",
+  "title": "Ostrevia: one safety signal, four markets",
+  "about": "A new interstitial lung disease warning reaches Canada, Switzerland, Japan and Australia at once. Put it in the right sections of each format, move the dates, approve, and track the four submissions within 60 days.",
+  "docs": [
+   {
+    "id": "ca-pm",
+    "kind": "ca-pm",
+    "title": "Product monograph",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals Canada ULC, 200 Maple Crescent, Suite 4, Fictionton, ON A1A 1A1",
+     "scheduleSymbol": "Pr",
+     "revised": "2026-08-20",
+     "controlNo": "299999",
+     "swp": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "title": "PRODUCT MONOGRAPH INCLUDING PATIENT MEDICATION INFORMATION"
+    },
+    "sections": [
+     {
+      "num": "rmlc",
+      "title": "RECENT MAJOR LABEL CHANGES",
+      "blocks": [
+       {
+        "id": "b1",
+        "t": "table",
+        "rows": [
+         [
+          "Section",
+          "Date"
+         ],
+         [
+          "7 WARNINGS AND PRECAUTIONS, Hepatic/Biliary/Pancreatic",
+          "2026-08"
+         ]
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "1",
+      "title": "INDICATIONS",
+      "blocks": [
+       {
+        "id": "b2",
+        "t": "p",
+        "text": "OSTREVIA (lumiravostat) is indicated for the treatment of adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable."
+       }
+      ],
+      "subs": [
+       {
+        "num": "1.1",
+        "title": "Pediatrics",
+        "blocks": [
+         {
+          "id": "b3",
+          "t": "p",
+          "text": "Pediatrics (< 18 years of age): No data are available to Health Canada; therefore, Health Canada has not authorized an indication for pediatric use."
+         }
+        ]
+       },
+       {
+        "num": "1.2",
+        "title": "Geriatrics",
+        "blocks": [
+         {
+          "id": "b4",
+          "t": "p",
+          "text": "Geriatrics (≥ 65 years of age): Clinical studies included too few patients aged 65 and over to determine whether they respond differently. Use with caution."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "2",
+      "title": "CONTRAINDICATIONS",
+      "blocks": [
+       {
+        "id": "b5",
+        "t": "ul",
+        "items": [
+         "Patients who are hypersensitive to lumiravostat or to any ingredient in the formulation, including any non-medicinal ingredient. For a complete listing, see 6 DOSAGE FORMS, STRENGTHS, COMPOSITION, AND PACKAGING.",
+         "Patients with active tuberculosis or an active serious infection.",
+         "Pregnancy."
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "SERIOUS WARNINGS AND PRECAUTIONS BOX",
+      "blocks": [
+       {
+        "id": "b6",
+        "t": "box",
+        "text": "Serious Warnings and Precautions\n• Serious infections leading to hospitalization or death, including tuberculosis, have occurred (see 7 WARNINGS AND PRECAUTIONS, Immune).\n• Malignancies, including lymphoma, have occurred (see 7 WARNINGS AND PRECAUTIONS, Carcinogenesis and Genotoxicity).\n• Thrombosis, including pulmonary embolism, has occurred (see 7 WARNINGS AND PRECAUTIONS, Hematologic)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "DOSAGE AND ADMINISTRATION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Dosing Considerations",
+        "blocks": [
+         {
+          "id": "b7",
+          "t": "p",
+          "text": "Screen for latent tuberculosis and check blood counts and liver enzymes before starting treatment (see 7 WARNINGS AND PRECAUTIONS)."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Recommended Dose and Dosage Adjustment",
+        "blocks": [
+         {
+          "id": "b8",
+          "t": "p",
+          "text": "The recommended dose is 10 mg once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks."
+         },
+         {
+          "id": "b9",
+          "t": "p",
+          "text": "Moderate hepatic impairment: 10 mg once daily. Severe hepatic impairment: not recommended."
+         },
+         {
+          "id": "b10",
+          "t": "p",
+          "text": "With strong CYP3A4 inhibitors (for example ketoconazole or clarithromycin): 10 mg once daily."
+         },
+         {
+          "id": "b11",
+          "t": "p",
+          "text": "Renal impairment: no dose adjustment."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Administration",
+        "blocks": [
+         {
+          "id": "b12",
+          "t": "p",
+          "text": "Swallow tablets whole with water, with or without food."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Missed Dose",
+        "blocks": [
+         {
+          "id": "b13",
+          "t": "p",
+          "text": "If a dose is missed, take it as soon as possible unless the next dose is due within 12 hours. Do not take two doses at once."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "OVERDOSE",
+      "blocks": [
+       {
+        "id": "b14",
+        "t": "p",
+        "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+       },
+       {
+        "id": "b15",
+        "t": "p",
+        "text": "For management of a suspected drug overdose, contact your regional poison control centre."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "6",
+      "title": "DOSAGE FORMS, STRENGTHS, COMPOSITION, AND PACKAGING",
+      "blocks": [
+       {
+        "id": "b16",
+        "t": "table",
+        "rows": [
+         [
+          "Route",
+          "Dosage form / strength",
+          "Non-medicinal ingredients"
+         ],
+         [
+          "Oral",
+          "Tablet, film-coated, 10 mg and 25 mg",
+          "microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)"
+         ]
+        ]
+       },
+       {
+        "id": "b17",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       },
+       {
+        "id": "b18",
+        "t": "p",
+        "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+       },
+       {
+        "id": "b19",
+        "t": "p",
+        "text": "Blister packs of 30 tablets (3 x 10)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "7",
+      "title": "WARNINGS AND PRECAUTIONS",
+      "blocks": [
+       {
+        "id": "b20",
+        "t": "p",
+        "text": "Please see 3 SERIOUS WARNINGS AND PRECAUTIONS BOX."
+       },
+       {
+        "id": "b21",
+        "t": "p",
+        "text": "Carcinogenesis and Genotoxicity: Malignancy, including lymphoma and non-melanoma skin cancer, has been reported. Consider the risks and benefits before starting treatment in patients with a known malignancy."
+       },
+       {
+        "id": "b22",
+        "t": "p",
+        "text": "Hematologic: Venous thromboembolism, including deep vein thrombosis and pulmonary embolism, has been reported. Use with caution in patients with risk factors and stop treatment if it occurs."
+       },
+       {
+        "id": "b23",
+        "t": "p",
+        "text": "Hepatic/Biliary/Pancreatic: Elevations of liver enzymes have occurred. Interrupt treatment if drug-induced liver injury is suspected."
+       },
+       {
+        "id": "b24",
+        "t": "p",
+        "text": "Immune: Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+       },
+       {
+        "id": "b25",
+        "t": "p",
+        "text": "Monitoring and Laboratory Tests: Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+       }
+      ],
+      "subs": [
+       {
+        "num": "7.1.1",
+        "title": "Pregnancy",
+        "blocks": [
+         {
+          "id": "b26",
+          "t": "p",
+          "text": "Lumiravostat caused embryo-fetal toxicity in rats and rabbits. It is contraindicated in pregnancy. Women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "7.1.2",
+        "title": "Breastfeeding",
+        "blocks": [
+         {
+          "id": "b27",
+          "t": "p",
+          "text": "It is not known whether lumiravostat passes into human milk. Do not breastfeed during treatment and for 4 days after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "7.1.3",
+        "title": "Pediatrics",
+        "blocks": [
+         {
+          "id": "b28",
+          "t": "p",
+          "text": "Safety and efficacy have not been established."
+         }
+        ]
+       },
+       {
+        "num": "7.1.4",
+        "title": "Geriatrics",
+        "blocks": [
+         {
+          "id": "b29",
+          "t": "p",
+          "text": "Infections were more frequent in patients aged 65 and over."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "8",
+      "title": "ADVERSE REACTIONS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "8.1",
+        "title": "Adverse Reaction Overview",
+        "blocks": [
+         {
+          "id": "b30",
+          "t": "p",
+          "text": "The most common adverse reactions (≥ 10%) were nasopharyngitis. Serious infections, malignancy and thrombosis are described in 7 WARNINGS AND PRECAUTIONS."
+         }
+        ]
+       },
+       {
+        "num": "8.2",
+        "title": "Clinical Trial Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b31",
+          "t": "p",
+          "text": "Clinical trials are conducted under very specific conditions. The adverse reaction rates observed in the clinical trials, therefore, may not reflect the rates observed in practice and should not be compared to the rates in the clinical trials of another drug."
+         },
+         {
+          "id": "b32",
+          "t": "table",
+          "rows": [
+           [
+            "Frequency",
+            "Adverse reactions"
+           ],
+           [
+            "Very common",
+            "nasopharyngitis"
+           ],
+           [
+            "Common",
+            "headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, alanine aminotransferase increased"
+           ],
+           [
+            "Uncommon",
+            "pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism"
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "num": "8.3",
+        "title": "Less Common Clinical Trial Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b33",
+          "t": "p",
+          "text": "Infections: pneumonia, cellulitis. Vascular: deep vein thrombosis, pulmonary embolism."
+         }
+        ]
+       },
+       {
+        "num": "8.5",
+        "title": "Post-Market Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b34",
+          "t": "p",
+          "text": "Hypersensitivity reactions, including angioedema, have been reported."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "9",
+      "title": "DRUG INTERACTIONS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "9.2",
+        "title": "Drug Interactions Overview",
+        "blocks": [
+         {
+          "id": "b35",
+          "t": "p",
+          "text": "Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       },
+       {
+        "num": "9.4",
+        "title": "Drug-Drug Interactions",
+        "blocks": [
+         {
+          "id": "b36",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase lumiravostat exposure (use 10 mg once daily). Strong CYP3A4 inducers, such as rifampicin, reduce exposure; avoid concomitant use."
+         }
+        ]
+       },
+       {
+        "num": "9.5",
+        "title": "Drug-Food Interactions",
+        "blocks": [
+         {
+          "id": "b37",
+          "t": "p",
+          "text": "Food does not affect exposure to a clinically relevant extent."
+         }
+        ]
+       },
+       {
+        "num": "9.6",
+        "title": "Drug-Herb Interactions",
+        "blocks": [
+         {
+          "id": "b38",
+          "t": "p",
+          "text": "St. John's wort is a CYP3A4 inducer and may reduce exposure; avoid."
+         }
+        ]
+       },
+       {
+        "num": "9.7",
+        "title": "Drug-Laboratory Test Interactions",
+        "blocks": [
+         {
+          "id": "b39",
+          "t": "p",
+          "text": "Interactions with laboratory tests have not been established."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "10",
+      "title": "CLINICAL PHARMACOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "10.1",
+        "title": "Mechanism of Action",
+        "blocks": [
+         {
+          "id": "b40",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+         }
+        ]
+       },
+       {
+        "num": "10.2",
+        "title": "Pharmacodynamics",
+        "blocks": [
+         {
+          "id": "b41",
+          "t": "p",
+          "text": "Dose-dependent reductions in markers of skin inflammation were seen within 2 weeks."
+         }
+        ]
+       },
+       {
+        "num": "10.3",
+        "title": "Pharmacokinetics",
+        "blocks": [
+         {
+          "id": "b42",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "11",
+      "title": "STORAGE, STABILITY, AND DISPOSAL",
+      "blocks": [
+       {
+        "id": "b43",
+        "t": "p",
+        "text": "Store at 15°C to 30°C. Keep in the original package to protect from moisture. Keep out of reach and sight of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "13",
+      "title": "PHARMACEUTICAL INFORMATION",
+      "blocks": [
+       {
+        "id": "b44",
+        "t": "p",
+        "text": "Proper name: lumiravostat. Molecular formula and mass: fictional. Physicochemical properties: white to off-white powder, slightly soluble in water."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "14",
+      "title": "CLINICAL TRIALS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "14.1",
+        "title": "Clinical Trials by Indication",
+        "blocks": [
+         {
+          "id": "b45",
+          "t": "p",
+          "text": "In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "16",
+      "title": "NON-CLINICAL TOXICOLOGY",
+      "blocks": [
+       {
+        "id": "b46",
+        "t": "p",
+        "text": "Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to the human exposure at 25 mg."
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "ch-fi",
+    "kind": "ch-fi",
+    "title": "Fachinformation",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "Filmtabletten",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharma (Schweiz) AG, Beispielstadt",
+     "additionalMonitoring": true,
+     "authNumber": "99101",
+     "lang": "de"
+    },
+    "fixed": {
+     "blackTriangle": "▼ Dieses Arzneimittel unterliegt einer zusätzlichen Überwachung. Dies ermöglicht eine schnelle Identifizierung neuer Erkenntnisse über die Sicherheit. Angehörige von Gesundheitsberufen sind aufgefordert, jeden Verdacht einer neuen oder schwerwiegenden Nebenwirkung zu melden."
+    },
+    "sections": [
+     {
+      "num": "f1",
+      "title": "Zusammensetzung",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "f1.1",
+        "title": "Wirkstoffe",
+        "blocks": [
+         {
+          "id": "b83",
+          "t": "p",
+          "text": "Lumiravostat."
+         }
+        ]
+       },
+       {
+        "num": "f1.2",
+        "title": "Hilfsstoffe",
+        "blocks": [
+         {
+          "id": "b84",
+          "t": "p",
+          "text": "Tablet core: microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow). Each tablet contains less than 1 mmol (23 mg) sodium."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "f2",
+      "title": "Darreichungsform und Wirkstoffmenge pro Einheit",
+      "blocks": [
+       {
+        "id": "b85",
+        "t": "p",
+        "text": "Film-coated tablets of 10 mg and 25 mg lumiravostat."
+       },
+       {
+        "id": "b86",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       },
+       {
+        "id": "b87",
+        "t": "p",
+        "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f3",
+      "title": "Indikationen/Anwendungsmöglichkeiten",
+      "blocks": [
+       {
+        "id": "b88",
+        "t": "p",
+        "text": "Treatment of adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f4",
+      "title": "Dosierung/Anwendung",
+      "blocks": [
+       {
+        "id": "b89",
+        "t": "p",
+        "text": "The recommended dose is 10 mg once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks."
+       },
+       {
+        "id": "b90",
+        "t": "p",
+        "text": "Moderate hepatic impairment: 10 mg once daily. Severe hepatic impairment: not recommended."
+       },
+       {
+        "id": "b91",
+        "t": "p",
+        "text": "With strong CYP3A4 inhibitors (for example ketoconazole or clarithromycin): 10 mg once daily."
+       },
+       {
+        "id": "b92",
+        "t": "p",
+        "text": "Children and adolescents: safety and efficacy have not been established."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f5",
+      "title": "Kontraindikationen",
+      "blocks": [
+       {
+        "id": "b93",
+        "t": "p",
+        "text": "Hypersensitivity to the active substance or to any excipient. Active tuberculosis or active serious infection. Pregnancy."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f6",
+      "title": "Warnhinweise und Vorsichtsmassnahmen",
+      "blocks": [
+       {
+        "id": "b94",
+        "t": "p",
+        "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+       },
+       {
+        "id": "b95",
+        "t": "p",
+        "text": "Malignancy, including lymphoma and non-melanoma skin cancer, has been reported. Consider the risks and benefits before starting treatment in patients with a known malignancy."
+       },
+       {
+        "id": "b96",
+        "t": "p",
+        "text": "Venous thromboembolism, including deep vein thrombosis and pulmonary embolism, has been reported. Use with caution in patients with risk factors and stop treatment if it occurs."
+       },
+       {
+        "id": "b97",
+        "t": "p",
+        "text": "Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f7",
+      "title": "Interaktionen",
+      "blocks": [
+       {
+        "id": "b98",
+        "t": "p",
+        "text": "Strong CYP3A4 inhibitors increase lumiravostat exposure (use 10 mg once daily). Strong CYP3A4 inducers, such as rifampicin, reduce exposure; avoid concomitant use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f8",
+      "title": "Schwangerschaft, Stillzeit",
+      "blocks": [
+       {
+        "id": "b99",
+        "t": "p",
+        "text": "Lumiravostat caused embryo-fetal toxicity in rats and rabbits. It is contraindicated in pregnancy. Women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose."
+       },
+       {
+        "id": "b100",
+        "t": "p",
+        "text": "It is not known whether lumiravostat passes into human milk. Do not breastfeed during treatment and for 4 days after the last dose."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f9",
+      "title": "Wirkung auf die Fahrtüchtigkeit und auf das Bedienen von Maschinen",
+      "blocks": [
+       {
+        "id": "b101",
+        "t": "p",
+        "text": "No corresponding studies have been performed. Lumiravostat is not expected to affect the ability to drive."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f10",
+      "title": "Unerwünschte Wirkungen",
+      "blocks": [
+       {
+        "id": "b102",
+        "t": "p",
+        "text": "Adverse reactions are listed by frequency: very common (≥1/10), common (≥1/100 to <1/10), uncommon (≥1/1,000 to <1/100)."
+       },
+       {
+        "id": "b103",
+        "t": "table",
+        "rows": [
+         [
+          "Frequency",
+          "Adverse reactions"
+         ],
+         [
+          "Very common",
+          "nasopharyngitis"
+         ],
+         [
+          "Common",
+          "headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, alanine aminotransferase increased"
+         ],
+         [
+          "Uncommon",
+          "pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism"
+         ]
+        ]
+       },
+       {
+        "id": "b104",
+        "t": "p",
+        "text": "Meldung des Verdachts einer unerwünschten Wirkung: Die Meldung des Verdachts einer unerwünschten Wirkung nach der Zulassung ist von grosser Wichtigkeit. Sie ermöglicht eine kontinuierliche Überwachung des Nutzen-Risiko-Verhältnisses des Arzneimittels. Angehörige von Gesundheitsberufen sind aufgefordert, jeden Verdacht einer neuen oder schwerwiegenden unerwünschten Wirkung über das Online-Portal ElViS (Electronic Vigilance System) anzuzeigen. Informationen dazu finden Sie unter www.swissmedic.ch."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f11",
+      "title": "Überdosierung",
+      "blocks": [
+       {
+        "id": "b105",
+        "t": "p",
+        "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f12",
+      "title": "Eigenschaften/Wirkungen",
+      "blocks": [
+       {
+        "id": "b106",
+        "t": "p",
+        "text": "ATC code: not yet assigned (fictional substance)."
+       },
+       {
+        "id": "b107",
+        "t": "p",
+        "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+       },
+       {
+        "id": "b108",
+        "t": "p",
+        "text": "Dose-dependent reductions in markers of skin inflammation were seen within 2 weeks."
+       },
+       {
+        "id": "b109",
+        "t": "p",
+        "text": "In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f13",
+      "title": "Pharmakokinetik",
+      "blocks": [
+       {
+        "id": "b110",
+        "t": "p",
+        "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f14",
+      "title": "Präklinische Daten",
+      "blocks": [
+       {
+        "id": "b111",
+        "t": "p",
+        "text": "Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to the human exposure at 25 mg."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f15",
+      "title": "Sonstige Hinweise",
+      "blocks": [
+       {
+        "id": "b112",
+        "t": "p",
+        "text": "Shelf life: do not use after the expiry date (EXP) on the pack. Storage: do not store above 30°C; store in the original package to protect from moisture; keep out of the reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f16",
+      "title": "Zulassungsnummer",
+      "blocks": [
+       {
+        "id": "b113",
+        "t": "p",
+        "text": "99101 (Swissmedic)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f17",
+      "title": "Packungen",
+      "blocks": [
+       {
+        "id": "b114",
+        "t": "p",
+        "text": "Ostrevia 10 mg: 30 film-coated tablets [B]. Ostrevia 25 mg: 30 film-coated tablets [B]."
+       },
+       {
+        "id": "b115",
+        "t": "p",
+        "text": "Abgabekategorie B"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f18",
+      "title": "Zulassungsinhaberin",
+      "blocks": [
+       {
+        "id": "b116",
+        "t": "p",
+        "text": "Halcyon Ridge Pharma (Schweiz) AG, Beispielstadt"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "f19",
+      "title": "Stand der Information",
+      "blocks": [
+       {
+        "id": "b117",
+        "t": "p",
+        "text": "August 2026"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "jp-pi",
+    "kind": "jp-pi",
+    "title": "Package insert (English practice text)",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA Tablets 10 mg / 25 mg",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Japan K.K.",
+     "warnings": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "revised": "Revised: August 2026 (2nd version)",
+     "commodity": "873999",
+     "approval": "10 mg: 30500AMX00101000; 25 mg: 30500AMX00102000. Initial marketing in Japan: May 2024",
+     "storage": "Storage: store at room temperature. Shelf life: 36 months.",
+     "category": "STRK1 inhibitor (fictional); agent for chronic hand eczema",
+     "regulatory": "Powerful drug; Prescription drug (Caution: use only pursuant to the prescription of a physician, etc.)"
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "WARNINGS",
+      "blocks": [
+       {
+        "id": "b131",
+        "t": "box",
+        "text": "1.1 Serious infections, including tuberculosis and pneumonia, some fatal, and malignancies have been reported. Use only under a physician with sufficient knowledge and experience of the treatment of hand eczema and of this drug, after explaining its risks to the patient.\n1.2 Before treatment, check for tuberculosis by interview, an interferon-gamma release assay or tuberculin test, and a chest X-ray. [See 2.2, 8.1, 9.1.1.]"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "CONTRAINDICATIONS",
+      "blocks": [
+       {
+        "id": "b132",
+        "t": "ul",
+        "items": [
+         "2.1 Patients with a history of hypersensitivity to any ingredient of this drug",
+         "2.2 Patients with serious infections, including active tuberculosis [Symptoms may worsen. See 1.1, 8.1, 9.1.1.]",
+         "2.3 Pregnant women or women who may be pregnant [See 9.5.]"
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "COMPOSITION AND PRODUCT DESCRIPTION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "3.1",
+        "title": "Composition",
+        "blocks": [
+         {
+          "id": "b133",
+          "t": "table",
+          "rows": [
+           [
+            "Brand name",
+            "OSTREVIA Tablets 10 mg",
+            "OSTREVIA Tablets 25 mg"
+           ],
+           [
+            "Active ingredient (per tablet)",
+            "Lumiravostat 10 mg",
+            "Lumiravostat 25 mg"
+           ],
+           [
+            "Additives",
+            "microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)",
+            "microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)"
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "num": "3.2",
+        "title": "Product Description",
+        "blocks": [
+         {
+          "id": "b134",
+          "t": "p",
+          "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+         },
+         {
+          "id": "b135",
+          "t": "p",
+          "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "4",
+      "title": "INDICATIONS",
+      "blocks": [
+       {
+        "id": "b136",
+        "t": "p",
+        "text": "Chronic hand eczema in adults that has not responded adequately to existing treatment"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "6",
+      "title": "DOSAGE AND ADMINISTRATION",
+      "blocks": [
+       {
+        "id": "b137",
+        "t": "p",
+        "text": "The usual adult dosage is 10 mg of lumiravostat administered orally once daily. The dose may be increased to 25 mg once daily depending on the patient’s condition."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "IMPORTANT PRECAUTIONS",
+      "blocks": [
+       {
+        "id": "b138",
+        "t": "p",
+        "text": "8.1 Serious infections may occur. Monitor patients carefully and instruct them to contact a physician promptly if fever, cough or fatigue occurs."
+       },
+       {
+        "id": "b139",
+        "t": "p",
+        "text": "8.2 Measure lymphocyte and neutrophil counts, haemoglobin and liver enzymes before treatment, at 4 weeks and every 3 months thereafter."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "PRECAUTIONS CONCERNING PATIENTS WITH SPECIFIC BACKGROUNDS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "9.1",
+        "title": "Patients with Complication or History of Diseases, etc.",
+        "blocks": [
+         {
+          "id": "b140",
+          "t": "p",
+          "text": "9.1.1 Patients with a history of tuberculosis or with findings suggesting tuberculosis: tuberculosis may reactivate."
+         },
+         {
+          "id": "b141",
+          "t": "p",
+          "text": "9.1.2 Patients with risk factors for venous thromboembolism."
+         }
+        ]
+       },
+       {
+        "num": "9.3",
+        "title": "Patients with Hepatic Impairment",
+        "blocks": [
+         {
+          "id": "b142",
+          "t": "p",
+          "text": "9.3.1 Patients with severe hepatic impairment: not studied; administration is not recommended."
+         }
+        ]
+       },
+       {
+        "num": "9.4",
+        "title": "Persons with Reproductive Potential",
+        "blocks": [
+         {
+          "id": "b143",
+          "t": "p",
+          "text": "Instruct women of childbearing potential to use effective contraception during treatment and for 4 weeks after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "9.5",
+        "title": "Pregnant Women",
+        "blocks": [
+         {
+          "id": "b144",
+          "t": "p",
+          "text": "Do not administer. Embryo-fetal toxicity was observed in rats and rabbits."
+         }
+        ]
+       },
+       {
+        "num": "9.6",
+        "title": "Breast-feeding Women",
+        "blocks": [
+         {
+          "id": "b145",
+          "t": "p",
+          "text": "Advise women not to breastfeed during treatment and for 4 days after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "9.7",
+        "title": "Pediatric Use",
+        "blocks": [
+         {
+          "id": "b146",
+          "t": "p",
+          "text": "No clinical studies have been conducted in children."
+         }
+        ]
+       },
+       {
+        "num": "9.8",
+        "title": "Geriatric Use",
+        "blocks": [
+         {
+          "id": "b147",
+          "t": "p",
+          "text": "Administer with care while monitoring the patient. Infections occurred more often in elderly patients."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "10",
+      "title": "INTERACTIONS",
+      "blocks": [
+       {
+        "id": "b148",
+        "t": "p",
+        "text": "Lumiravostat is metabolised mainly by CYP3A4."
+       }
+      ],
+      "subs": [
+       {
+        "num": "10.2",
+        "title": "Precautions for Co-administration",
+        "blocks": [
+         {
+          "id": "b149",
+          "t": "table",
+          "rows": [
+           [
+            "Drugs",
+            "Signs, symptoms and treatment",
+            "Mechanism and risk factors"
+           ],
+           [
+            "Strong CYP3A4 inhibitors (ketoconazole, clarithromycin, etc.)",
+            "Use 10 mg once daily.",
+            "Exposure to this drug increases."
+           ],
+           [
+            "CYP3A4 inducers (rifampicin, etc.)",
+            "Avoid co-administration.",
+            "Exposure to this drug decreases."
+           ]
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "11",
+      "title": "ADVERSE REACTIONS",
+      "blocks": [
+       {
+        "id": "b150",
+        "t": "p",
+        "text": "The following adverse reactions may occur. Patients should be carefully monitored, and if any abnormalities are observed, appropriate measures such as discontinuation should be taken."
+       }
+      ],
+      "subs": [
+       {
+        "num": "11.1",
+        "title": "Clinically Significant Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b151",
+          "t": "p",
+          "text": "11.1.1 Serious infections (pneumonia 0.8%, herpes zoster 3.1%, tuberculosis frequency unknown)"
+         },
+         {
+          "id": "b152",
+          "t": "p",
+          "text": "11.1.2 Venous thromboembolism (0.3%)"
+         }
+        ]
+       },
+       {
+        "num": "11.2",
+        "title": "Other Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b153",
+          "t": "table",
+          "rows": [
+           [
+            "",
+            "≥5%",
+            "1% to <5%"
+           ],
+           [
+            "Infections",
+            "Nasopharyngitis",
+            ""
+           ],
+           [
+            "Nervous system",
+            "",
+            "Headache"
+           ],
+           [
+            "Skin",
+            "",
+            "Acne"
+           ],
+           [
+            "Laboratory",
+            "",
+            "Lymphopenia, neutropenia, ALT increased"
+           ]
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "13",
+      "title": "OVERDOSAGE",
+      "blocks": [
+       {
+        "id": "b154",
+        "t": "p",
+        "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "14",
+      "title": "PRECAUTIONS CONCERNING USE",
+      "blocks": [
+       {
+        "id": "b155",
+        "t": "p",
+        "text": "Instruct patients to remove the tablet from the PTP sheet before taking it. Swallowing the PTP sheet may cause the sharp corners to injure the oesophageal mucosa."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "16",
+      "title": "PHARMACOKINETICS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "16.1",
+        "title": "Blood Level",
+        "blocks": [
+         {
+          "id": "b156",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "17",
+      "title": "CLINICAL STUDIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "17.1",
+        "title": "Clinical Studies for Efficacy and Safety",
+        "blocks": [
+         {
+          "id": "b157",
+          "t": "p",
+          "text": "In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "18",
+      "title": "PHARMACOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "18.1",
+        "title": "Mechanism of Action",
+        "blocks": [
+         {
+          "id": "b158",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "19",
+      "title": "PHYSICOCHEMICAL PROPERTIES",
+      "blocks": [
+       {
+        "id": "b159",
+        "t": "p",
+        "text": "Nonproprietary name: lumiravostat (JAN). Description: white to off-white powder, slightly soluble in water."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "21",
+      "title": "APPROVAL CONDITIONS",
+      "blocks": [
+       {
+        "id": "b160",
+        "t": "p",
+        "text": "21.1 Develop and appropriately implement a risk management plan."
+       },
+       {
+        "id": "b161",
+        "t": "p",
+        "text": "21.2 Conduct a post-marketing use-results survey of all patients until data from a set number of patients have been gathered."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "22",
+      "title": "PACKAGING",
+      "blocks": [
+       {
+        "id": "b162",
+        "t": "p",
+        "text": "OSTREVIA Tablets 10 mg: 28 tablets (14 tablets x 2, PTP). OSTREVIA Tablets 25 mg: 28 tablets (14 tablets x 2, PTP)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "23",
+      "title": "REFERENCES",
+      "blocks": [
+       {
+        "id": "b163",
+        "t": "p",
+        "text": "1) Internal report: HANDS-1 study (fictional). 2) Internal report: HANDS-2 study (fictional)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "24",
+      "title": "REFERENCE REQUEST AND CONTACT INFORMATION",
+      "blocks": [
+       {
+        "id": "b164",
+        "t": "p",
+        "text": "Halcyon Ridge Japan K.K., Medical Information Center, 1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000. Tel: 0120-000-000 (fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "26",
+      "title": "MARKETING AUTHORIZATION HOLDER, etc.",
+      "blocks": [
+       {
+        "id": "b165",
+        "t": "p",
+        "text": "26.1 Marketing authorization holder: Halcyon Ridge Japan K.K., 1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "au-pi",
+    "kind": "au-pi",
+    "title": "Product Information",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals Australia Pty Ltd",
+     "additionalMonitoring": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "title": "AUSTRALIAN PRODUCT INFORMATION – OSTREVIA (lumiravostat) film-coated tablets",
+     "blackTriangle": "▼ This medicinal product is subject to additional monitoring in Australia. This will allow quick identification of new safety information. Healthcare professionals are asked to report any suspected adverse events at www.tga.gov.au/reporting-problems."
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINE",
+      "blocks": [
+       {
+        "id": "b166",
+        "t": "p",
+        "text": "Lumiravostat"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b167",
+        "t": "p",
+        "text": "Each film-coated tablet contains 10 mg or 25 mg of lumiravostat. For the full list of excipients, see Section 6.1 List of excipients."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "PHARMACEUTICAL FORM",
+      "blocks": [
+       {
+        "id": "b168",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       },
+       {
+        "id": "b169",
+        "t": "p",
+        "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indications",
+        "blocks": [
+         {
+          "id": "b170",
+          "t": "p",
+          "text": "OSTREVIA is indicated for the treatment of adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Dose and method of administration",
+        "blocks": [
+         {
+          "id": "b171",
+          "t": "p",
+          "text": "The recommended dose is 10 mg once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks."
+         },
+         {
+          "id": "b172",
+          "t": "p",
+          "text": "Moderate hepatic impairment: 10 mg once daily. Severe hepatic impairment: not recommended."
+         },
+         {
+          "id": "b173",
+          "t": "p",
+          "text": "With strong CYP3A4 inhibitors (for example ketoconazole or clarithromycin): 10 mg once daily."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b174",
+          "t": "p",
+          "text": "Hypersensitivity to lumiravostat or any excipient. Active tuberculosis or active serious infection. Pregnancy (Category D, fictional)."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b175",
+          "t": "p",
+          "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+         },
+         {
+          "id": "b176",
+          "t": "p",
+          "text": "Malignancy, including lymphoma and non-melanoma skin cancer, has been reported. Consider the risks and benefits before starting treatment in patients with a known malignancy."
+         },
+         {
+          "id": "b177",
+          "t": "p",
+          "text": "Venous thromboembolism, including deep vein thrombosis and pulmonary embolism, has been reported. Use with caution in patients with risk factors and stop treatment if it occurs."
+         },
+         {
+          "id": "b178",
+          "t": "p",
+          "text": "Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interactions with other medicines and other forms of interactions",
+        "blocks": [
+         {
+          "id": "b179",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase lumiravostat exposure (use 10 mg once daily). Strong CYP3A4 inducers, such as rifampicin, reduce exposure; avoid concomitant use."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Fertility, pregnancy and lactation",
+        "blocks": [
+         {
+          "id": "b180",
+          "t": "p",
+          "text": "Lumiravostat caused embryo-fetal toxicity in rats and rabbits. It is contraindicated in pregnancy. Women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose."
+         },
+         {
+          "id": "b181",
+          "t": "p",
+          "text": "It is not known whether lumiravostat passes into human milk. Do not breastfeed during treatment and for 4 days after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b182",
+          "t": "p",
+          "text": "OSTREVIA has no or negligible influence on the ability to drive and use machines."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Adverse effects (Undesirable effects)",
+        "blocks": [
+         {
+          "id": "b183",
+          "t": "table",
+          "rows": [
+           [
+            "Frequency",
+            "Adverse reactions"
+           ],
+           [
+            "Very common",
+            "nasopharyngitis"
+           ],
+           [
+            "Common",
+            "headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, alanine aminotransferase increased"
+           ],
+           [
+            "Uncommon",
+            "pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism"
+           ]
+          ]
+         },
+         {
+          "id": "b184",
+          "t": "p",
+          "text": "Reporting suspected adverse effects: Reporting suspected adverse reactions after registration of the medicinal product is important. It allows continued monitoring of the benefit-risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions at www.tga.gov.au/reporting-problems."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b185",
+          "t": "p",
+          "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+         },
+         {
+          "id": "b186",
+          "t": "p",
+          "text": "For information on the management of overdose, contact the Poisons Information Centre on 13 11 26 (Australia)."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b187",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+         },
+         {
+          "id": "b188",
+          "t": "p",
+          "text": "Dose-dependent reductions in markers of skin inflammation were seen within 2 weeks."
+         },
+         {
+          "id": "b189",
+          "t": "p",
+          "text": "Clinical trials: In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b190",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Preclinical safety data",
+        "blocks": [
+         {
+          "id": "b191",
+          "t": "p",
+          "text": "Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to the human exposure at 25 mg."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "List of excipients",
+        "blocks": [
+         {
+          "id": "b192",
+          "t": "p",
+          "text": "Microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)."
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b193",
+          "t": "p",
+          "text": "Incompatibilities were either not assessed or not identified as part of the registration of this medicine."
+         }
+        ]
+       },
+       {
+        "num": "6.3",
+        "title": "Shelf life",
+        "blocks": [
+         {
+          "id": "b194",
+          "t": "p",
+          "text": "In Australia, information on the shelf life can be found on the public summary of the Australian Register of Therapeutic Goods (ARTG). The expiry date can be found on the packaging."
+         }
+        ]
+       },
+       {
+        "num": "6.4",
+        "title": "Special precautions for storage",
+        "blocks": [
+         {
+          "id": "b195",
+          "t": "p",
+          "text": "Store below 30°C. Store in the original package."
+         }
+        ]
+       },
+       {
+        "num": "6.5",
+        "title": "Nature and contents of container",
+        "blocks": [
+         {
+          "id": "b196",
+          "t": "p",
+          "text": "Aluminium/aluminium blister packs of 28 tablets."
+         }
+        ]
+       },
+       {
+        "num": "6.6",
+        "title": "Special precautions for disposal",
+        "blocks": [
+         {
+          "id": "b197",
+          "t": "p",
+          "text": "In Australia, any unused medicine or waste material should be disposed of by taking it to your local pharmacy."
+         }
+        ]
+       },
+       {
+        "num": "6.7",
+        "title": "Physicochemical properties",
+        "blocks": [
+         {
+          "id": "b198",
+          "t": "p",
+          "text": "Chemical structure: fictional. CAS number: not applicable (fictional substance)."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "MEDICINE SCHEDULE (POISONS STANDARD)",
+      "blocks": [
+       {
+        "id": "b199",
+        "t": "p",
+        "text": "Prescription Only Medicine (Schedule 4)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "SPONSOR",
+      "blocks": [
+       {
+        "id": "b200",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals Australia Pty Ltd, Level 5, 10 Example Street, Fictionville NSW 2000. www.halcyonridge.example/au"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "DATE OF FIRST APPROVAL",
+      "blocks": [
+       {
+        "id": "b201",
+        "t": "p",
+        "text": "12 March 2025"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DATE OF REVISION",
+      "blocks": [
+       {
+        "id": "b202",
+        "t": "p",
+        "text": "20 August 2026"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "au-cmi",
+    "kind": "au-cmi",
+    "title": "Consumer Medicine Information",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals Australia Pty Ltd",
+     "additionalMonitoring": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "blackTriangle": "▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. You can report side effects to your doctor, or directly at www.tga.gov.au/reporting-problems.",
+     "summaryIntro": "The full CMI on the next page has more details. If you are worried about using this medicine, speak to your doctor or pharmacist.",
+     "prepared": "This leaflet was prepared in August 2026."
+    },
+    "sections": [
+     {
+      "num": "sum",
+      "title": "Consumer Medicine Information (CMI) summary",
+      "blocks": [
+       {
+        "id": "b203",
+        "t": "ul",
+        "items": [
+         "1. Why am I using OSTREVIA? It contains lumiravostat and is used to treat long-lasting hand eczema in adults.",
+         "2. What should I know before I use OSTREVIA? Do not use it if you are allergic to it, have an active serious infection or tuberculosis, or are pregnant.",
+         "3. What if I am taking other medicines? Some medicines may interfere with OSTREVIA.",
+         "4. How do I use OSTREVIA? Take one tablet once a day.",
+         "5. What should I know while using OSTREVIA? Tell your doctor straight away if you have signs of infection.",
+         "6. Are there any side effects? Common side effects include cold symptoms, headache and acne. Serious side effects include infections and blood clots."
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "1",
+      "title": "Why am I using OSTREVIA?",
+      "blocks": [
+       {
+        "id": "b204",
+        "t": "p",
+        "text": "OSTREVIA contains the active ingredient lumiravostat. It calms the immune activity that causes long-lasting hand eczema when creams have not worked well enough."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "What should I know before I use OSTREVIA?",
+      "blocks": [
+       {
+        "id": "b205",
+        "t": "p",
+        "text": "Do not use OSTREVIA if you are allergic to lumiravostat or any of the ingredients listed at the end of this leaflet, if you have tuberculosis or another serious infection, or if you are pregnant."
+       },
+       {
+        "id": "b206",
+        "t": "p",
+        "text": "Check with your doctor if you have had tuberculosis, cancer or blood clots, or have liver problems."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "What if I am taking other medicines?",
+      "blocks": [
+       {
+        "id": "b207",
+        "t": "p",
+        "text": "Tell your doctor or pharmacist if you are taking any other medicines, including any medicines, vitamins or supplements that you buy without a prescription. Some antifungals, antibiotics and St John’s wort may interfere with OSTREVIA."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "How do I use OSTREVIA?",
+      "blocks": [
+       {
+        "id": "b208",
+        "t": "p",
+        "text": "Take one tablet once a day, with or without food. Swallow it whole with water. If you forget a dose, take it as soon as you remember, unless the next dose is due within 12 hours."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "5",
+      "title": "What should I know while using OSTREVIA?",
+      "blocks": [
+       {
+        "id": "b209",
+        "t": "table",
+        "rows": [
+         [
+          "Things you should do",
+          "Tell your doctor straight away if you have a fever, cough or a painful swollen leg."
+         ],
+         [
+          "Things you should not do",
+          "Do not stop taking it or change the dose without checking with your doctor."
+         ],
+         [
+          "Looking after your medicine",
+          "Store below 30°C in the original pack."
+         ]
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "6",
+      "title": "Are there any side effects?",
+      "blocks": [
+       {
+        "id": "b210",
+        "t": "p",
+        "text": "All medicines can have side effects. If you do experience any side effects, most of them are minor and temporary."
+       },
+       {
+        "id": "b211",
+        "t": "table",
+        "rows": [
+         [
+          "Less serious side effects",
+          "What to do"
+         ],
+         [
+          "Cold symptoms, headache, nausea, acne",
+          "Speak to your doctor if you have any of these less serious side effects and they worry you."
+         ]
+        ]
+       },
+       {
+        "id": "b212",
+        "t": "table",
+        "rows": [
+         [
+          "Serious side effects",
+          "What to do"
+         ],
+         [
+          "Fever, cough, painful blistering rash; pain or swelling in a leg, chest pain or sudden breathlessness",
+          "Call your doctor straight away, or go straight to the Emergency Department at your nearest hospital if you notice any of these serious side effects."
+         ]
+        ]
+       },
+       {
+        "id": "b213",
+        "t": "p",
+        "text": "Tell your doctor or pharmacist if you notice anything else that may be making you feel unwell. Other side effects not listed here may occur in some people."
+       },
+       {
+        "id": "b214",
+        "t": "p",
+        "text": "Reporting side effects: After you have received medical advice for any side effects you experience, you can report side effects to the Therapeutic Goods Administration online at www.tga.gov.au/reporting-problems."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "7",
+      "title": "Product details",
+      "blocks": [
+       {
+        "id": "b215",
+        "t": "p",
+        "text": "This medicine is only available with a doctor’s prescription."
+       },
+       {
+        "id": "b216",
+        "t": "p",
+        "text": "What OSTREVIA contains: lumiravostat 10 mg or 25 mg; inactive ingredients microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow). Do not take this medicine if you are allergic to any of these ingredients."
+       },
+       {
+        "id": "b217",
+        "t": "p",
+        "text": "What OSTREVIA looks like: 10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other. 25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other. (AUST R 999101, AUST R 999102, fictional)."
+       },
+       {
+        "id": "b218",
+        "t": "p",
+        "text": "Who distributes OSTREVIA: Halcyon Ridge Pharmaceuticals Australia Pty Ltd, Level 5, 10 Example Street, Fictionville NSW 2000."
+       }
+      ],
+      "subs": []
+     }
+    ]
+   }
+  ],
+  "change": {
+   "trigger": "signal",
+   "kind": "warning",
+   "title": "Interstitial lung disease (CCDS 4.1)",
+   "notice": {
+    "from": "Halcyon Ridge global safety (fictional): CCDS 4.1 effective",
+    "title": "Interstitial lung disease: new warning in every market",
+    "text": "A cumulative review found a causal association between lumiravostat and interstitial lung disease (ILD), including fatal cases. The CCDS now warns that patients should be told to report new or worsening cough, breathlessness or fever, and that treatment should be interrupted while ILD is investigated and stopped if it is confirmed. ILD is added to the post-marketing adverse reactions. Implement the wording in Canada, Switzerland, Japan and Australia and submit within 60 days.",
+    "sections": [
+     "CA PM: 7 (Respiratory) and 8.5; Recent Major Label Changes",
+     "CH FI: Warnhinweise, Unerwünschte Wirkungen, Stand der Information",
+     "JP PI: 8 and 11.1; revision date",
+     "AU PI: 4.4, 4.8, 10; CMI: section 6"
+    ],
+    "deadlineDays": 60
+   },
+   "markets": [
+    "ca",
+    "ch",
+    "jp",
+    "au"
+   ],
+   "deadlineDays": 60
+  }
+ }
+]

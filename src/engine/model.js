@@ -8,7 +8,7 @@ export const uid = (p = 'x') => `${p}-${Date.now().toString(36)}-${Math.random()
 export const now = () => new Date().toISOString();
 const clone = (x) => (typeof structuredClone === 'function' ? structuredClone(x) : JSON.parse(JSON.stringify(x)));
 
-export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)', 'in-pi': 'Package insert (India)', 'in-carton': 'Carton (India)', 'in-label': 'Strip or container label (India)' };
+export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)', 'in-pi': 'Package insert (India)', 'in-carton': 'Carton (India)', 'in-label': 'Strip or container label (India)', 'ca-pm': 'Product monograph (Canada)', 'ca-pmi': 'Patient Medication Information (Canada)', 'ca-label': 'Outer label (Canada)', 'ch-fi': 'Fachinformation (Switzerland)', 'ch-pi': 'Patienteninformation (Switzerland)', 'jp-pi': 'Package insert (Japan)', 'au-pi': 'Product Information (Australia)', 'au-cmi': 'Consumer Medicine Information (Australia)', 'who-smpc': 'SmPC (WHO prequalification)' };
 export const STATUS = { draft: 'Draft', review: 'In review', changes: 'Changes requested', approved: 'Approved', superseded: 'Superseded', submitted: 'Sent to agency' };
 
 export const newBlock = (t = 'p') => ({ id: uid('b'), t, ...(t === 'ul' ? { items: [''] } : t === 'table' ? { rows: [['', ''], ['', '']] } : { text: '' }) });
@@ -48,6 +48,7 @@ export function blankDoc(pack, kind, product, projectId, user) {
   const t = templateFor(pack, kind);
   if (EU_KINDS.includes(kind)) return blankEuDoc(pack, kind, product, projectId, user);
   if (IN_KINDS.includes(kind)) return blankInDoc(pack, kind, product, projectId, user);
+  if (MORE_KINDS.includes(kind)) return blankMoreDoc(pack, kind, product, projectId, user);
   const meta = {
     proprietaryName: (product?.brandName ?? '').toUpperCase(), establishedName: product?.inn ?? '',
     dosageForm: (product?.dosageForm ?? '').split(',')[0], route: product?.route ? `for ${product.route} use` : '',
@@ -71,7 +72,29 @@ export function blankDoc(pack, kind, product, projectId, user) {
 
 export const EU_KINDS = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
 export const IN_KINDS = ['in-pi', 'in-carton', 'in-label'];
-export const regionOfKind = (kind) => (EU_KINDS.includes(kind) ? 'eu' : IN_KINDS.includes(kind) ? 'in' : 'us');
+export const MORE_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'];
+export const regionOfKind = (kind) => (EU_KINDS.includes(kind) ? 'eu' : IN_KINDS.includes(kind) ? 'in' : MORE_KINDS.includes(kind) ? kind.split('-')[0] : 'us');
+
+// Canada, Switzerland, Japan, Australia and WHO PQ documents: the template's sections, the
+// product's regional details, and the fixed statements (the black triangle only when it applies).
+function blankMoreDoc(pack, kind, product, projectId, user) {
+  const t = templateFor(pack, kind);
+  const r = kind.split('-')[0];
+  const reg = product?.[r] ?? {};
+  const upper = ['ca', 'jp', 'au'].includes(r);
+  const meta = {
+    proprietaryName: upper ? (product?.brandName ?? '').toUpperCase() : product?.brandName ?? '', establishedName: product?.inn ?? '', dosageForm: product?.dosageForm ?? '', route: product?.route ?? '',
+    strengths: kind === 'ca-label' ? (product?.strengths ?? []).slice(0, 1) : product?.strengths ?? [], manufacturer: reg.holder?.name ?? reg.sponsor?.name ?? product?.holder?.name ?? '', lang: r === 'ch' ? 'de' : 'en',
+  };
+  if (r === 'ca') Object.assign(meta, { scheduleSymbol: 'Pr', revised: '', swp: false, ...(kind === 'ca-label' ? { sizes: { brand: 16, proper: 9 } } : {}) });
+  if (r === 'ch') Object.assign(meta, { additionalMonitoring: !!reg.additionalMonitoring, authNumber: reg.authNumber ?? '' });
+  if (r === 'jp') Object.assign(meta, { warnings: false });
+  if (r === 'au') Object.assign(meta, { additionalMonitoring: !!reg.blackTriangle });
+  if (r === 'who') Object.assign(meta, { pqRef: reg.pqRef ?? '' });
+  const sections = t.sections.filter((s) => s.need !== 'optional').map((s) => ({ num: s.num, title: fill(s.title, meta), blocks: [newBlock()], subs: (s.fixedSubs ?? []).filter((x) => x.need !== 'optional').map((x) => ({ num: x.num, title: fill(x.title, meta), blocks: [newBlock()] })) }));
+  const fixed = Object.fromEntries(Object.entries(t.fixed ?? {}).map(([k, v]) => [k, k === 'blackTriangle' && !meta.additionalMonitoring ? '' : fill(v, meta).replace('{month}', 'MONTH YEAR')]));
+  return { id: uid('d'), kind, projectId, title: KIND_LABEL[kind], meta, fixed, sections, status: 'draft', version: 0, waivers: {}, userId: user?.userId ?? null, classId: user?.classId ?? null, createdAt: now(), updatedAt: now() };
+}
 
 // India documents: the CDSCO insert format or the Rule 96 label particulars. Brand names in
 // capitals; schedule, Schedule H2 status and type sizes in the metadata. Labels start with the
