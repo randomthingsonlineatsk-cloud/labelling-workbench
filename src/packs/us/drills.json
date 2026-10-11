@@ -1,0 +1,106 @@
+{
+ "drills": [
+  {
+   "id": "hl-fix",
+   "title": "Fix the Highlights",
+   "minutes": 15,
+   "sample": "ostrevia-errors",
+   "doc": "pi",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "US-HL-"
+    ]
+   },
+   "about": "Every Highlights rule fails at least once in this label. Clear all Highlights errors and warnings."
+  },
+  {
+   "id": "fpi-fix",
+   "title": "Fix the full prescribing information",
+   "minutes": 20,
+   "sample": "ostrevia-errors",
+   "doc": "pi",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "US-PI-",
+     "US-ME-",
+     "US-NAME"
+    ]
+   },
+   "about": "Clear the section, PLLR, cross-reference, strength and medication-error findings in the full prescribing information."
+  },
+  {
+   "id": "mg-fix",
+   "title": "Repair the Medication Guide",
+   "minutes": 10,
+   "sample": "ostrevia-errors",
+   "doc": "mg",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "US-PT-",
+     "US-MG-"
+    ]
+   },
+   "about": "Restore the missing heading and statement and make the most important information plain."
+  },
+  {
+   "id": "carton-fix",
+   "title": "Fix the injectable carton",
+   "minutes": 10,
+   "sample": "nelvaprox-convert",
+   "doc": "carton",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "US-CC-",
+     "US-ME-"
+    ]
+   },
+   "about": "Six planted errors on a vial carton. Clear them all."
+  },
+  {
+   "id": "carve",
+   "title": "Complete the carve-out",
+   "minutes": 15,
+   "sample": "talmisartan-generic",
+   "doc": "pi",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "US-ANDA-",
+     "US-HL-REF"
+    ]
+   },
+   "about": "Remove every trace of the protected diabetic nephropathy indication and restore the text that is not a permitted difference."
+  },
+  {
+   "id": "convert",
+   "title": "Map an older-format label to PLR",
+   "minutes": 10,
+   "sample": "nelvaprox-convert",
+   "doc": "old",
+   "goal": {
+    "type": "convert",
+    "pass": 80
+   },
+   "about": "Send each block of the older-format label to its PLR section. 80% or more passes."
+  },
+  {
+   "id": "capstone",
+   "title": "Capstone: a safety update from signal to approved labels",
+   "minutes": 45,
+   "sample": "ostrevia-clean",
+   "doc": "pi",
+   "capstone": true,
+   "goal": {
+    "type": "capstone",
+    "keyword": "interstitial lung disease",
+    "mgKeyword": "lung",
+    "section": "5"
+   },
+   "about": "Signal (fictional): in the HALO-LTE extension study, 6 cases of interstitial lung disease (ILD) were reported in patients taking OSTREVIA, 2 of them serious. The labelling committee has agreed to add a warning. Add a new Warnings and Precautions subsection on interstitial lung disease, summarise it in Highlights with its section number, add a Recent Major Changes entry dated with the new revision date, update the revision date, tell patients in the Medication Guide (shortness of breath or cough), and take the PI and the Medication Guide through review to approval with no open errors or warnings."
+  }
+ ]
+}

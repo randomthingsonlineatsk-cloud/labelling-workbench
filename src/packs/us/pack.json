@@ -1,0 +1,154 @@
+{
+ "id": "us",
+ "name": "United States (FDA)",
+ "short": "US",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "pi",
+  "pi-old",
+  "mg",
+  "ppi",
+  "ifu",
+  "carton",
+  "container"
+ ],
+ "about": "Prescribing information in PLR format (21 CFR 201.56 and 201.57) and the older format (21 CFR 201.80), patient labelling (Medication Guide under 21 CFR 208, Patient Package Insert, Instructions for Use), and carton and container labels. The checks follow the regulations and FDA guidance listed below; where a check estimates or simplifies, its rule card says so.",
+ "watch": [
+  {
+   "id": "pmi",
+   "title": "Patient Medication Information (PMI)",
+   "text": "FDA proposed a one-page Patient Medication Information sheet in May 2023 that would replace Medication Guides and most Patient Package Inserts. As of mid-2026 the rule is still proposed (FDA reconfirmed the existing Medication Guide requirements in a July 2026 information-collection notice). The app teaches it in lesson 6 and never flags its absence; a one-page PMI drill is planned for Phase 2.",
+   "src": "pmi"
+  },
+  {
+   "id": "ndc12",
+   "title": "12-digit NDC",
+   "text": "FDA has proposed moving to a uniform 12-digit National Drug Code. Until a final rule applies, the app checks the current 10-digit formats (4-4-2, 5-3-2 or 5-4-1).",
+   "src": "ndc"
+  },
+  {
+   "id": "interchange",
+   "title": "Interchangeability statements for biosimilars",
+   "text": "FDA has been revising how interchangeability is shown in biosimilar labelling. The biosimilar exercise arrives in Phase 2 and will be marked Watch until the policy settles.",
+   "src": "biosim"
+  }
+ ],
+ "sources": [
+  {
+   "id": "cfr20156",
+   "title": "21 CFR 201.56: Requirements on content and format of labeling for human prescription drug and biological products",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-B/section-201.56"
+  },
+  {
+   "id": "cfr20157",
+   "title": "21 CFR 201.57: Specific requirements on content and format of labeling (PLR format)",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-B/section-201.57"
+  },
+  {
+   "id": "cfr20180",
+   "title": "21 CFR 201.80: Specific requirements for older-format labeling",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-B/section-201.80"
+  },
+  {
+   "id": "cfr208",
+   "title": "21 CFR Part 208: Medication Guides for prescription drug products",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-208"
+  },
+  {
+   "id": "cfr20125",
+   "title": "21 CFR 201.25: Bar code label requirements",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.25"
+  },
+  {
+   "id": "cfr2011",
+   "title": "21 CFR 201.1: Drugs; name and place of business of manufacturer, packer, or distributor",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.1"
+  },
+  {
+   "id": "cfr20110",
+   "title": "21 CFR 201.10: Drugs; statement of ingredients (established name prominence)",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.10"
+  },
+  {
+   "id": "cfr20117",
+   "title": "21 CFR 201.17: Drugs; location of expiration date",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.17"
+  },
+  {
+   "id": "cfr20118",
+   "title": "21 CFR 201.18: Drugs; significance of control numbers",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.18"
+  },
+  {
+   "id": "cfr20151",
+   "title": "21 CFR 201.51: Declaration of net quantity of contents",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.51"
+  },
+  {
+   "id": "cfr201100",
+   "title": "21 CFR 201.100: Prescription drugs for human use (Rx only and label statements)",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-D/section-201.100"
+  },
+  {
+   "id": "ndc",
+   "title": "21 CFR 207.33: National Drug Code format",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-207/subpart-C/section-207.33"
+  },
+  {
+   "id": "cfr31494",
+   "title": "21 CFR 314.94(a)(8): ANDA labeling and permitted differences",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-C/section-314.94"
+  },
+  {
+   "id": "cfr314127",
+   "title": "21 CFR 314.127(a)(7): Omission of protected indications from generic labeling",
+   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-D/section-314.127"
+  },
+  {
+   "id": "viii",
+   "title": "FD&C Act 505(j)(2)(A)(viii) (21 U.S.C. 355): section viii statements",
+   "url": "https://www.law.cornell.edu/uscode/text/21/355"
+  },
+  {
+   "id": "plrpage",
+   "title": "FDA: PLR requirements for prescribing information (labeling resources and guidances)",
+   "url": "https://www.fda.gov/drugs/laws-acts-and-rules/plr-requirements-prescribing-information"
+  },
+  {
+   "id": "carton",
+   "title": "FDA guidance: Safety Considerations for Container Labels and Carton Labeling Design to Minimize Medication Errors (May 2022)",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/safety-considerations-container-labels-and-carton-labeling-design-minimize-medication-errors"
+  },
+  {
+   "id": "ismp",
+   "title": "ISMP List of Error-Prone Abbreviations, Symbols and Dose Designations (cited by FDA in its carton and container guidance)",
+   "url": "https://www.ismp.org/recommendations/error-prone-abbreviations-list"
+  },
+  {
+   "id": "spl",
+   "title": "FDA: Structured Product Labeling resources",
+   "url": "https://www.fda.gov/industry/fda-data-standards-advisory-board/structured-product-labeling-resources"
+  },
+  {
+   "id": "pmi",
+   "title": "FDA: proposed rule for Patient Medication Information (May 2023)",
+   "url": "https://www.fda.gov/news-events/press-announcements/fda-proposes-new-easy-read-medication-guide-patients-patient-medication-information"
+  },
+  {
+   "id": "mgnotice",
+   "title": "Federal Register 2026-13346: Medication Guides information collection (July 2026)",
+   "url": "https://public-inspection.federalregister.gov/2026-13346.pdf"
+  },
+  {
+   "id": "patient",
+   "title": "FDA: Patient labeling resources (Medication Guides, PPIs, IFUs)",
+   "url": "https://www.fda.gov/drugs/fdas-labeling-resources-human-prescription-drugs/patient-labeling-resources"
+  },
+  {
+   "id": "biosim",
+   "title": "FDA: Biosimilar and interchangeable products labeling resources",
+   "url": "https://www.fda.gov/drugs/biosimilars/biosimilar-and-interchangeable-biologics-more-treatment-choices"
+  }
+ ]
+}

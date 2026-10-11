@@ -1,0 +1,324 @@
+{
+ "region": "us",
+ "lessons": [
+  {
+   "id": 1,
+   "title": "What labelling is and who reads it",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "One product, many labels",
+     "p": [
+      "In US regulation, \"labeling\" covers every piece of written, printed or graphic matter on or with a drug: the prescribing information (PI) for health professionals, patient labeling (Medication Guide, Patient Package Insert, Instructions for Use), and the carton and container labels.",
+      "Each piece has a different reader. The PI is written for prescribers and pharmacists and is dense and referenced. Patient labeling is written in plain language. Carton and container labels are read in a hurry, often by a nurse or pharmacist picking one product from a shelf of similar ones."
+     ]
+    },
+    {
+     "h": "Why the rules are so detailed",
+     "p": [
+      "Labels are the main way the evidence in the application reaches the people using the product. FDA approves the exact wording, so labelling work is part writing, part negotiation and part proof-reading.",
+      "The rules come from the regulations (21 CFR 201.56 and 201.57 for the PI, 21 CFR 208 for Medication Guides, 21 CFR 201 subpart A and 201.25 for package labels) and from FDA guidances that explain how to write each section."
+     ]
+    },
+    {
+     "h": "How this app works",
+     "p": [
+      "Each project holds the labels for one fictional product. The editor keeps the sections in the order the template requires, and the checks test the text against rule cards. Every rule card names its source and says when the app simplifies.",
+      "Nothing you make here is an approved label. Exports carry a \"Training use only\" watermark."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-clean",
+    "doc": "pi"
+   },
+   "watch": false
+  },
+  {
+   "id": 2,
+   "title": "PLR structure and Highlights",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Three parts",
+     "p": [
+      "A PLR-format prescribing information has three parts: Highlights (a half-page summary), the Table of Contents, and the Full Prescribing Information (FPI) with 17 numbered sections.",
+      "Section numbers never change. If a section does not apply it is left out, but the numbering of the rest stays the same, so \"8.4 Pediatric Use\" is 8.4 in every PLR label."
+     ]
+    },
+    {
+     "h": "What Highlights must contain",
+     "p": [
+      "Highlights start with a fixed limitation statement naming the product, then the product title (proprietary name, established name, dosage form, route) and the year of initial US approval. Then come the headings in a fixed order: Boxed Warning, Recent Major Changes, Indications and Usage, Dosage and Administration, Dosage Forms and Strengths, Contraindications, Warnings and Precautions, Adverse Reactions, Drug Interactions, Use in Specific Populations.",
+      "Every statement ends with the number of the FPI section it summarises, in parentheses. Highlights end with the patient counselling statement and \"Revised: MM/YYYY\".",
+      "Highlights, not counting a boxed warning, must fit on one half page in the required two-column layout. The app estimates the length from the text; a real label is measured on the typeset page."
+     ]
+    },
+    {
+     "h": "The adverse reaction contact line",
+     "p": [
+      "Under Adverse Reactions, Highlights carry: \"To report SUSPECTED ADVERSE REACTIONS, contact [manufacturer] at [phone] or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.\" The manufacturer and number must match the company named on the label."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-clean",
+    "doc": "pi",
+    "focus": "hl"
+   },
+   "watch": false
+  },
+  {
+   "id": 3,
+   "title": "Boxed Warning and Recent Major Changes",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "Boxed warning",
+     "p": [
+      "A boxed warning is used for serious risks, such as those that may lead to death or serious injury. In the FPI it sits before section 1, inside a box, with a heading starting \"WARNING:\" in capitals. Each risk points to the Warnings and Precautions subsection with the detail.",
+      "Highlights carry a shorter summary of the box, no longer than 20 lines, ending with \"See full prescribing information for complete boxed warning.\""
+     ]
+    },
+    {
+     "h": "Recent Major Changes",
+     "p": [
+      "Recent Major Changes tell prescribers what changed recently. Only substantive changes to the Boxed Warning, Indications and Usage, Dosage and Administration, Contraindications, or Warnings and Precautions are listed, each with its heading, section number and the month and year.",
+      "An entry stays for at least a year and comes off at the first printing after that year. Changes in other sections, such as Adverse Reactions, are not listed even when they matter."
+     ]
+    },
+    {
+     "h": "A safety update touches several places",
+     "p": [
+      "A new risk usually means: a new or revised 5.x subsection, a Highlights bullet citing it, a Recent Major Changes entry, possibly the boxed warning, section 17, the Medication Guide, and a new revision date. The capstone drill takes you through all of them."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-errors",
+    "doc": "pi",
+    "focus": "hl"
+   },
+   "watch": false
+  },
+  {
+   "id": 4,
+   "title": "Writing sections 5 and 6",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Warnings and Precautions",
+     "p": [
+      "Section 5 describes clinically significant risks: what the risk is, how often and how serious it is when that is known, how to monitor for it, and what to do. Each risk gets its own numbered subsection with a short heading.",
+      "Cross-references take the form \"[see Warnings and Precautions (5.3)]\". When subsections move, every reference has to follow; the editor rewrites references when you reorder subsections."
+     ]
+    },
+    {
+     "h": "Adverse Reactions",
+     "p": [
+      "Section 6 starts by listing the clinically significant reactions described elsewhere, then gives trial data in 6.1 Clinical Trials Experience and spontaneous reports in 6.2 Postmarketing Experience.",
+      "When 6.1 presents trial rates, it includes the standard statement that rates from different trials cannot be compared directly. Tables usually show reactions above a threshold incidence and more frequent than placebo."
+     ]
+    },
+    {
+     "h": "Contraindications",
+     "p": [
+      "Section 4 lists situations in which the drug should not be used because the risk clearly outweighs any benefit. If there are none, the section says \"None.\" It is never left blank."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-errors",
+    "doc": "pi",
+    "focus": "5"
+   },
+   "watch": false
+  },
+  {
+   "id": 5,
+   "title": "PLLR: sections 8.1 to 8.3",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "What changed in 2015",
+     "p": [
+      "The Pregnancy and Lactation Labeling Rule took effect on 30 June 2015. It removed the pregnancy letter categories (A, B, C, D and X) and replaced them with narrative sections: 8.1 Pregnancy, 8.2 Lactation and 8.3 Females and Males of Reproductive Potential.",
+      "Older labels moved to the new content on a phased timetable; a new or revised PLR label must not use letter categories at all."
+     ]
+    },
+    {
+     "h": "What each subsection holds",
+     "p": [
+      "8.1 Pregnancy: a pregnancy exposure registry if there is one, a Risk Summary, Clinical Considerations and Data. 8.2 Lactation: a Risk Summary, Clinical Considerations and Data. 8.3: pregnancy testing, contraception and infertility, when relevant.",
+      "The Risk Summary integrates human and animal data into a statement of risk; the background rates of birth defects and miscarriage in the US population are stated."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-errors",
+    "doc": "pi",
+    "focus": "8.1"
+   },
+   "watch": false
+  },
+  {
+   "id": 6,
+   "title": "Medication Guide, PPI and IFU",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Medication Guides",
+     "p": [
+      "A Medication Guide is required under 21 CFR 208 when FDA decides patient information is needed to prevent serious adverse effects, when patients need to know about a serious risk to decide whether to use the product, or when adherence is crucial.",
+      "It uses question headings (\"What is the most important information I should know about X?\"), plain language, the side-effect reporting statement, the statement that FDA approved it, and a revision date. The carton must tell the dispenser to give it to each patient."
+     ]
+    },
+    {
+     "h": "Patient Package Inserts and Instructions for Use",
+     "p": [
+      "A PPI is required for a few classes (such as oral contraceptives and oestrogens) and voluntary for others. An IFU explains how to use a product with complex steps, such as an injector or inhaler.",
+      "In the PI, section 17 tells the prescriber to advise the patient to read the patient labeling, and the Highlights counselling statement mentions it."
+     ]
+    },
+    {
+     "h": "Patient Medication Information (Watch)",
+     "p": [
+      "FDA proposed a one-page Patient Medication Information sheet in 2023 that would replace Medication Guides and most PPIs. It is still a proposal; this app teaches it but never requires it."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-errors",
+    "doc": "mg"
+   },
+   "watch": false
+  },
+  {
+   "id": 7,
+   "title": "Carton and container: designing out medication errors",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "What must be on the label",
+     "p": [
+      "Package labels carry the proprietary and established names, strength, dosage form, net quantity, \"Rx only\", the NDC, lot number, expiration date and the name and place of business of the manufacturer, packer or distributor. Cartons also carry the route, a dosage statement and storage. A linear bar code containing the NDC is required (21 CFR 201.25).",
+      "The established name must be at least half as large as the proprietary name (21 CFR 201.10(g)(2))."
+     ]
+    },
+    {
+     "h": "Safety by design",
+     "p": [
+      "FDA's 2022 guidance on container and carton design focuses on the errors that labels cause: no trailing zeros (\"5 mg\", never \"5.0 mg\"), leading zeros for doses below 1 (\"0.5 mg\"), no error-prone abbreviations, strength for injectables per total volume and per mL, and enough contrast and differentiation between strengths."
+     ]
+    },
+    {
+     "h": "Proof-reading the artwork",
+     "p": [
+      "Approved text becomes artwork at a printer. Every proof is compared word by word with the approved text before release; the Proof check tab does this for you."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "nelvaprox-convert",
+    "doc": "carton"
+   },
+   "watch": false
+  },
+  {
+   "id": 8,
+   "title": "SPL basics",
+   "minutes": 5,
+   "sections": [
+    {
+     "h": "Labels as data",
+     "p": [
+      "FDA receives labeling as Structured Product Labeling (SPL), an HL7 XML standard. Each section has a LOINC code, so systems such as DailyMed can show and search the same text.",
+      "The app exports a practice SPL-style file so you can see how sections map to codes. It is not a validated SPL file and must never be submitted."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ostrevia-clean",
+    "doc": "pi",
+    "tab": "export"
+   },
+   "watch": false
+  },
+  {
+   "id": 9,
+   "title": "Generics and section viii",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Same as the reference",
+     "p": [
+      "An ANDA's labeling must be the same as the reference listed drug's, except for permitted differences such as the manufacturer's name, inactive ingredients, how supplied, and aspects omitted because of patents or exclusivity (21 CFR 314.94(a)(8)(iv)).",
+      "When the reference label changes, generic labels are updated to match."
+     ]
+    },
+    {
+     "h": "Carve-outs",
+     "p": [
+      "If a method-of-use patent covers one indication, the generic applicant can file a section viii statement and omit that indication (21 CFR 314.127(a)(7)). The carve-out must be complete: the indication, its dosing, any text that depends on it in adverse reactions and clinical studies, and the Highlights entries.",
+      "The Compare tab shows the generic against the reference, section by section, with permitted differences marked."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "talmisartan-generic",
+    "doc": "pi",
+    "tab": "compare"
+   },
+   "watch": false
+  },
+  {
+   "id": 10,
+   "title": "Safety labelling changes under 505(o)(4)",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "FDA can require a change",
+     "p": [
+      "Under section 505(o)(4) of the FD&C Act, when FDA becomes aware of new safety information it believes should be in the labeling, it notifies the holder. The holder has 30 days to submit a supplement with the change or a rebuttal explaining why it is not warranted.",
+      "If they disagree, discussions follow; FDA can then order the change. Phase 2 of this app adds a guided 505(o)(4) exercise and the change-request tracker."
+     ]
+    },
+    {
+     "h": "Changes the holder starts",
+     "p": [
+      "Holders can also strengthen safety wording themselves through a Changes Being Effected supplement. Which supplement type applies is covered in the Variations Classifier."
+     ]
+    }
+   ],
+   "tryIt": null,
+   "watch": false
+  },
+  {
+   "id": 11,
+   "title": "Converting an older-format label to PLR",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "Two formats",
+     "p": [
+      "Older labels (21 CFR 201.80) have unnumbered sections: Description, Clinical Pharmacology, Indications and Usage, Contraindications, Warnings, Precautions, Adverse Reactions, Drug Abuse and Dependence, Overdosage, Dosage and Administration, How Supplied.",
+      "Converting to PLR moves the same content into the 17 numbered sections and adds Highlights. Precautions splits up: drug interactions go to 7, pregnancy and nursing to 8.1 and 8.2 (rewritten for PLLR), pediatric and geriatric use to 8.4 and 8.5, and patient information to 17."
+     ]
+    },
+    {
+     "h": "What usually needs rewriting",
+     "p": [
+      "Letter categories become a Risk Summary. \"Nursing Mothers\" becomes Lactation. Clinical trial results in Clinical Pharmacology move to 14 Clinical Studies. Warnings and the relevant precautions become numbered 5.x subsections.",
+      "The Convert tab scores your mapping and builds a PLR draft for you to finish."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "nelvaprox-convert",
+    "doc": "old",
+    "tab": "convert"
+   },
+   "watch": false
+  }
+ ]
+}

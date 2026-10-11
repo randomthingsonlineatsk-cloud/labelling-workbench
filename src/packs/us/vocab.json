@@ -1,0 +1,93 @@
+{
+ "abbreviations": [
+  {
+   "pattern": "\\d\\s*U\\b",
+   "label": "U (units)",
+   "use": "units"
+  },
+  {
+   "pattern": "\\d\\s*IU\\b",
+   "label": "IU (international units)",
+   "use": "units"
+  },
+  {
+   "pattern": "\\b(QD|qd|Q\\.D\\.|q\\.d\\.)\\b",
+   "label": "QD",
+   "use": "daily"
+  },
+  {
+   "pattern": "\\b(QOD|qod|Q\\.O\\.D\\.)\\b",
+   "label": "QOD",
+   "use": "every other day"
+  },
+  {
+   "pattern": "\\b(SC|SQ|sub q|subq)\\b",
+   "label": "SC or SQ",
+   "use": "subcutaneous"
+  },
+  {
+   "pattern": "\\d\\s*cc\\b",
+   "label": "cc",
+   "use": "mL"
+  },
+  {
+   "pattern": "\\d\\s*ug\\b",
+   "label": "ug",
+   "use": "mcg"
+  },
+  {
+   "pattern": "\\bTIW\\b",
+   "label": "TIW",
+   "use": "three times weekly"
+  },
+  {
+   "pattern": "\\b(HS|hs)\\b",
+   "label": "HS",
+   "use": "at bedtime"
+  },
+  {
+   "pattern": "\\bD/C\\b",
+   "label": "D/C",
+   "use": "discharge or discontinue"
+  },
+  {
+   "pattern": "\\b(MSO4|MgSO4)\\b",
+   "label": "MSO4 or MgSO4",
+   "use": "the full drug name"
+  }
+ ],
+ "jargon": {
+  "hepatic": "liver",
+  "renal": "kidney",
+  "administer": "give",
+  "adverse reaction": "side effect",
+  "contraindicated": "should not be used",
+  "hypertension": "high blood pressure",
+  "hypotension": "low blood pressure",
+  "myocardial infarction": "heart attack",
+  "pruritus": "itching",
+  "concomitant": "at the same time",
+  "efficacy": "how well it works",
+  "subcutaneous": "under the skin",
+  "dyspnea": "shortness of breath",
+  "erythema": "redness",
+  "malignancy": "cancer",
+  "thrombosis": "blood clot",
+  "neutropenia": "low white blood cell count",
+  "pyrexia": "fever",
+  "cephalgia": "headache",
+  "emesis": "vomiting",
+  "syncope": "fainting",
+  "edema": "swelling",
+  "gastrointestinal": "stomach and bowel",
+  "discontinue": "stop",
+  "initiate": "start",
+  "prior to": "before",
+  "in the event of": "if",
+  "nasopharyngitis": "common cold",
+  "arthralgia": "joint pain",
+  "anaphylaxis": "a severe allergic reaction",
+  "angioedema": "swelling of the face, lips, tongue or throat",
+  "hyperkalemia": "high potassium in the blood"
+ }
+}

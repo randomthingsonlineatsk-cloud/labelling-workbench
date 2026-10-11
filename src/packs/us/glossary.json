@@ -1,0 +1,144 @@
+{
+ "terms": [
+  {
+   "term": "ANDA",
+   "def": "Abbreviated New Drug Application: the application for a generic drug, which relies on the reference listed drug."
+  },
+  {
+   "term": "Annotated label",
+   "def": "A copy of the label with notes linking each statement to its source (study, CCDS section, agency request)."
+  },
+  {
+   "term": "Boxed warning",
+   "def": "A warning in a box at the start of the FPI for serious risks; summarised in Highlights in no more than 20 lines."
+  },
+  {
+   "term": "Carton",
+   "def": "The outer package label. Carries more information than the container label."
+  },
+  {
+   "term": "Carve-out",
+   "def": "Leaving a protected indication out of generic labeling under a section viii statement."
+  },
+  {
+   "term": "CBE",
+   "def": "Changes Being Effected supplement: some labeling changes, such as strengthening a warning, can be implemented when the supplement is submitted."
+  },
+  {
+   "term": "CCDS",
+   "def": "Company Core Data Sheet: the company's global reference for a product's safety and use, against which local labels are compared (Phase 2)."
+  },
+  {
+   "term": "CCSI",
+   "def": "Company Core Safety Information: the safety part of the CCDS."
+  },
+  {
+   "term": "Container label",
+   "def": "The label on the immediate container, such as a bottle or vial."
+  },
+  {
+   "term": "Cross-reference",
+   "def": "A pointer to another section, written as \"[see Warnings and Precautions (5.3)]\"."
+  },
+  {
+   "term": "DailyMed",
+   "def": "The public website that publishes SPL labeling for marketed products."
+  },
+  {
+   "term": "Established name",
+   "def": "The official non-proprietary name of the drug, such as lumiravostat."
+  },
+  {
+   "term": "FPI",
+   "def": "Full Prescribing Information: the 17 numbered sections after Highlights and the table of contents."
+  },
+  {
+   "term": "Highlights",
+   "def": "The half-page summary at the top of a PLR prescribing information."
+  },
+  {
+   "term": "IFU",
+   "def": "Instructions for Use: step-by-step patient labeling for products with complex use."
+  },
+  {
+   "term": "Labeling",
+   "def": "All written, printed or graphic matter on or accompanying a drug."
+  },
+  {
+   "term": "LOINC",
+   "def": "A coding system; in SPL, LOINC codes identify each labeling section."
+  },
+  {
+   "term": "Medication Guide",
+   "def": "FDA-approved patient labeling required under 21 CFR 208 for certain products with serious risks."
+  },
+  {
+   "term": "Naked decimal",
+   "def": "A decimal without a leading zero (\".5 mg\"). Write \"0.5 mg\"."
+  },
+  {
+   "term": "NDC",
+   "def": "National Drug Code: a 10-digit identifier for labeler, product and package (4-4-2, 5-3-2 or 5-4-1)."
+  },
+  {
+   "term": "Old format",
+   "def": "The labeling format in 21 CFR 201.80, used before PLR, with unnumbered sections."
+  },
+  {
+   "term": "PI",
+   "def": "Prescribing information: the label written for health professionals."
+  },
+  {
+   "term": "PLLR",
+   "def": "Pregnancy and Lactation Labeling Rule (in effect 30 June 2015): replaced letter categories with 8.1, 8.2 and 8.3."
+  },
+  {
+   "term": "PLR",
+   "def": "Physician Labeling Rule (2006): the Highlights plus 17-section format in 21 CFR 201.57."
+  },
+  {
+   "term": "PMI",
+   "def": "Patient Medication Information: a proposed one-page patient sheet (2023 proposal, not final)."
+  },
+  {
+   "term": "PPI",
+   "def": "Patient Package Insert: patient labeling required for some classes and voluntary for others."
+  },
+  {
+   "term": "Proof",
+   "def": "The printer's artwork, checked word by word against approved text before printing."
+  },
+  {
+   "term": "Recent Major Changes",
+   "def": "A Highlights list of recent substantive changes to the Boxed Warning or sections 1, 2, 4 or 5."
+  },
+  {
+   "term": "Reference listed drug (RLD)",
+   "def": "The approved drug a generic is compared with and whose labeling it follows."
+  },
+  {
+   "term": "Risk Summary",
+   "def": "The opening of 8.1 and 8.2 under PLLR, integrating data into a statement of risk."
+  },
+  {
+   "term": "Section viii statement",
+   "def": "A statement in an ANDA that it does not seek approval for a patented method of use."
+  },
+  {
+   "term": "SPL",
+   "def": "Structured Product Labeling: the HL7 XML format FDA uses to receive labeling."
+  },
+  {
+   "term": "Trailing zero",
+   "def": "A zero after a decimal point (\"5.0 mg\"), which can cause tenfold errors."
+  },
+  {
+   "term": "Waiver",
+   "def": "In this app, a recorded reason for accepting a warning without changing the text. Errors cannot be waived."
+  },
+  {
+   "term": "505(o)(4)",
+   "def": "The FD&C Act power for FDA to require safety labeling changes; the holder has 30 days to respond."
+  }
+ ]
+}

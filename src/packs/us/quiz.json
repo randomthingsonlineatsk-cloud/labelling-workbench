@@ -1,0 +1,1114 @@
+{
+ "topics": [
+  {
+   "id": 1,
+   "label": "1. What labelling is and who reads it"
+  },
+  {
+   "id": 2,
+   "label": "2. PLR structure and Highlights"
+  },
+  {
+   "id": 3,
+   "label": "3. Boxed Warning and Recent Major Changes"
+  },
+  {
+   "id": 4,
+   "label": "4. Writing sections 5 and 6"
+  },
+  {
+   "id": 5,
+   "label": "5. PLLR: sections 8.1 to 8.3"
+  },
+  {
+   "id": 6,
+   "label": "6. Medication Guide, PPI and IFU"
+  },
+  {
+   "id": 7,
+   "label": "7. Carton and container: designing out medication errors"
+  },
+  {
+   "id": 8,
+   "label": "8. SPL basics"
+  },
+  {
+   "id": 9,
+   "label": "9. Generics and section viii"
+  },
+  {
+   "id": 10,
+   "label": "10. Safety labelling changes under 505(o)(4)"
+  },
+  {
+   "id": 11,
+   "label": "11. Converting an older-format label to PLR"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q1-1",
+   "topic": 1,
+   "q": "Which of these is NOT part of a product's labeling in US terms?",
+   "options": [
+    "The prescribing information",
+    "The Medication Guide",
+    "The carton",
+    "The clinical study report"
+   ],
+   "answer": 3,
+   "why": "Labeling is the written matter on or with the product. A study report supports the application but is not labeling.",
+   "cite": "FD&C Act 201(m); 21 CFR 201"
+  },
+  {
+   "id": "q1-2",
+   "topic": 1,
+   "q": "Who is the main reader of the prescribing information?",
+   "options": [
+    "Patients",
+    "Health professionals",
+    "Distributors",
+    "Payers"
+   ],
+   "answer": 1,
+   "why": "The PI is written for prescribers and pharmacists; patient labeling is written for patients.",
+   "cite": "21 CFR 201.56(a)"
+  },
+  {
+   "id": "q1-3",
+   "topic": 1,
+   "q": "Which regulation sets the PLR content and format requirements?",
+   "options": [
+    "21 CFR 201.57",
+    "21 CFR 314.70",
+    "21 CFR 211.137",
+    "21 CFR 50"
+   ],
+   "answer": 0,
+   "why": "201.56 gives general requirements and 201.57 the specific PLR content and format.",
+   "cite": "21 CFR 201.57"
+  },
+  {
+   "id": "q1-4",
+   "topic": 1,
+   "q": "Who approves the exact wording of a prescription drug label in the US?",
+   "options": [
+    "The manufacturer alone",
+    "FDA",
+    "The pharmacy board",
+    "USP"
+   ],
+   "answer": 1,
+   "why": "Labeling is part of the approved application; FDA approves its wording.",
+   "cite": "21 CFR 314.50(e)"
+  },
+  {
+   "id": "q1-5",
+   "topic": 1,
+   "q": "Medication Guides are governed by which part of 21 CFR?",
+   "options": [
+    "Part 208",
+    "Part 312",
+    "Part 600",
+    "Part 11"
+   ],
+   "answer": 0,
+   "why": "Part 208 covers Medication Guides for prescription drugs.",
+   "cite": "21 CFR 208"
+  },
+  {
+   "id": "q1-6",
+   "topic": 1,
+   "q": "The bar code requirement for drug labels is in:",
+   "options": [
+    "21 CFR 201.25",
+    "21 CFR 201.57",
+    "21 CFR 207.33",
+    "21 CFR 208.20"
+   ],
+   "answer": 0,
+   "why": "201.25 requires a linear bar code containing the NDC.",
+   "cite": "21 CFR 201.25"
+  },
+  {
+   "id": "q1-7",
+   "topic": 1,
+   "q": "What does a \"Training use only\" watermark on this app's exports mean?",
+   "options": [
+    "The label is approved",
+    "The label is a practice document and must not be used as a real label",
+    "The label is in draft at FDA",
+    "The label is for internal company use"
+   ],
+   "answer": 1,
+   "why": "All products here are fictional and nothing is an approved label.",
+   "cite": "App ground rules"
+  },
+  {
+   "id": "q1-8",
+   "topic": 1,
+   "q": "Which reader is most likely to be under time pressure and confuse look-alike products?",
+   "options": [
+    "A regulatory reviewer",
+    "A nurse choosing a vial from a shelf",
+    "A patient reading the leaflet at home",
+    "A statistician"
+   ],
+   "answer": 1,
+   "why": "Carton and container labels are designed for quick, accurate selection at the point of use.",
+   "cite": "FDA container and carton guidance (2022)"
+  },
+  {
+   "id": "q2-1",
+   "topic": 2,
+   "q": "How long may Highlights be, not counting a boxed warning?",
+   "options": [
+    "One quarter page",
+    "One half page",
+    "One page",
+    "There is no limit"
+   ],
+   "answer": 1,
+   "why": "Highlights must fit on one half page unless FDA grants a waiver.",
+   "cite": "21 CFR 201.57(d)(8)"
+  },
+  {
+   "id": "q2-2",
+   "topic": 2,
+   "q": "Which item comes right after the product title in Highlights?",
+   "options": [
+    "Recent Major Changes",
+    "Initial U.S. Approval",
+    "Indications and Usage",
+    "Revised date"
+   ],
+   "answer": 1,
+   "why": "The year of initial US approval follows the product title.",
+   "cite": "21 CFR 201.57(a)(3)"
+  },
+  {
+   "id": "q2-3",
+   "topic": 2,
+   "q": "How does each Highlights statement point to the detail?",
+   "options": [
+    "A footnote",
+    "The FPI section number in parentheses",
+    "A hyperlink only",
+    "Nothing; Highlights stand alone"
+   ],
+   "answer": 1,
+   "why": "Each statement ends with its FPI section number, for example (5.2).",
+   "cite": "21 CFR 201.57(a); PLR guidance"
+  },
+  {
+   "id": "q2-4",
+   "topic": 2,
+   "q": "Section 3 of the FPI is:",
+   "options": [
+    "Contraindications",
+    "Dosage Forms and Strengths",
+    "Description",
+    "Drug Interactions"
+   ],
+   "answer": 1,
+   "why": "Sections 1 to 4 are Indications, Dosage and Administration, Dosage Forms and Strengths, Contraindications.",
+   "cite": "21 CFR 201.57(c)(4)"
+  },
+  {
+   "id": "q2-5",
+   "topic": 2,
+   "q": "If a product has no drug abuse concerns, what happens to section 9?",
+   "options": [
+    "It says \"None\"",
+    "It is omitted and later sections keep their numbers",
+    "Section 10 becomes section 9",
+    "It moves to the end"
+   ],
+   "answer": 1,
+   "why": "Sections can be omitted when not applicable, but numbering never changes.",
+   "cite": "21 CFR 201.57(d)"
+  },
+  {
+   "id": "q2-6",
+   "topic": 2,
+   "q": "The Highlights adverse reaction contact statement includes which FDA number?",
+   "options": [
+    "1-800-FDA-1088",
+    "1-888-INFO-FDA",
+    "1-800-222-1222",
+    "No FDA number is required"
+   ],
+   "answer": 0,
+   "why": "The statement names the manufacturer and FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+   "cite": "21 CFR 201.57(a)(11)"
+  },
+  {
+   "id": "q2-7",
+   "topic": 2,
+   "q": "Highlights end with:",
+   "options": [
+    "The table of contents",
+    "The patient counselling statement and the revision date",
+    "The boxed warning",
+    "The manufacturer's address"
+   ],
+   "answer": 1,
+   "why": "The counselling statement and \"Revised: MM/YYYY\" close Highlights.",
+   "cite": "21 CFR 201.57(a)(14) and (15)"
+  },
+  {
+   "id": "q2-8",
+   "topic": 2,
+   "q": "Which is the correct revision date format?",
+   "options": [
+    "Revised: August 2026",
+    "Revised: 08/2026",
+    "Rev. 2026-08-01",
+    "Revised 8/26"
+   ],
+   "answer": 1,
+   "why": "Month and year: MM/YYYY.",
+   "cite": "21 CFR 201.57(a)(15)"
+  },
+  {
+   "id": "q3-1",
+   "topic": 3,
+   "q": "The Highlights summary of a boxed warning may be at most:",
+   "options": [
+    "10 lines",
+    "20 lines",
+    "30 lines",
+    "One page"
+   ],
+   "answer": 1,
+   "why": "The summary is limited to 20 lines.",
+   "cite": "21 CFR 201.57(a)(4)"
+  },
+  {
+   "id": "q3-2",
+   "topic": 3,
+   "q": "Which change can be listed in Recent Major Changes?",
+   "options": [
+    "A new adverse reaction in 6.2",
+    "A new subsection in Warnings and Precautions",
+    "A new storage condition in 16",
+    "An updated pharmacokinetic table"
+   ],
+   "answer": 1,
+   "why": "Only the Boxed Warning and sections 1, 2, 4 and 5 can be listed.",
+   "cite": "21 CFR 201.57(a)(5)"
+  },
+  {
+   "id": "q3-3",
+   "topic": 3,
+   "q": "How long does a Recent Major Changes entry stay?",
+   "options": [
+    "Until the next annual report",
+    "At least one year, removed at the first printing after that",
+    "Six months",
+    "Permanently"
+   ],
+   "answer": 1,
+   "why": "Entries stay at least a year after the change.",
+   "cite": "21 CFR 201.57(a)(5)"
+  },
+  {
+   "id": "q3-4",
+   "topic": 3,
+   "q": "A boxed warning heading must begin with:",
+   "options": [
+    "CAUTION:",
+    "WARNING:",
+    "IMPORTANT:",
+    "BOXED:"
+   ],
+   "answer": 1,
+   "why": "The heading begins \"WARNING:\" followed by the risk, in capitals.",
+   "cite": "21 CFR 201.57(c)(1)"
+  },
+  {
+   "id": "q3-5",
+   "topic": 3,
+   "q": "The Highlights boxed warning ends with:",
+   "options": [
+    "\"See full prescribing information for complete boxed warning.\"",
+    "\"Call your doctor.\"",
+    "\"Revised: MM/YYYY.\"",
+    "Nothing"
+   ],
+   "answer": 0,
+   "why": "That closing line is required.",
+   "cite": "21 CFR 201.57(a)(4)"
+  },
+  {
+   "id": "q3-6",
+   "topic": 3,
+   "q": "Where does the full boxed warning sit in the FPI?",
+   "options": [
+    "After section 17",
+    "Before section 1",
+    "Inside section 5",
+    "In Highlights only"
+   ],
+   "answer": 1,
+   "why": "It appears at the beginning of the FPI.",
+   "cite": "21 CFR 201.57(c)(1)"
+  },
+  {
+   "id": "q3-7",
+   "topic": 3,
+   "q": "A new risk is added as 5.6. Which of these does NOT normally need updating?",
+   "options": [
+    "Highlights Warnings and Precautions",
+    "Recent Major Changes",
+    "Section 11 Description",
+    "The revision date"
+   ],
+   "answer": 2,
+   "why": "Description covers the product's composition and is unaffected by a new risk.",
+   "cite": "PLR guidance; 21 CFR 201.57"
+  },
+  {
+   "id": "q3-8",
+   "topic": 3,
+   "q": "Each boxed warning risk in the FPI should refer to:",
+   "options": [
+    "Section 14",
+    "The relevant Warnings and Precautions subsection",
+    "The Medication Guide",
+    "Section 16"
+   ],
+   "answer": 1,
+   "why": "The box summarises; section 5 holds the detail.",
+   "cite": "21 CFR 201.57(c)(1)"
+  },
+  {
+   "id": "q4-1",
+   "topic": 4,
+   "q": "If a drug has no contraindications, section 4 says:",
+   "options": [
+    "Nothing; it is omitted",
+    "\"None.\"",
+    "\"See section 5.\"",
+    "\"Not applicable.\""
+   ],
+   "answer": 1,
+   "why": "Section 4 is never left out; it states \"None.\" when there are none.",
+   "cite": "21 CFR 201.57(c)(5)"
+  },
+  {
+   "id": "q4-2",
+   "topic": 4,
+   "q": "Which is the correct PLR cross-reference style?",
+   "options": [
+    "(see section five)",
+    "[see Warnings and Precautions (5.3)]",
+    "cf. 5.3",
+    "See W&P"
+   ],
+   "answer": 1,
+   "why": "Cross-references name the section and give its number in parentheses.",
+   "cite": "PLR implementation guidance"
+  },
+  {
+   "id": "q4-3",
+   "topic": 4,
+   "q": "6.1 Clinical Trials Experience includes a standard statement that:",
+   "options": [
+    "The drug is safe",
+    "Rates from different trials cannot be compared directly",
+    "All reactions are listed",
+    "Placebo had no reactions"
+   ],
+   "answer": 1,
+   "why": "The statement warns against comparing rates across trials.",
+   "cite": "21 CFR 201.57(c)(7)(ii)(A)"
+  },
+  {
+   "id": "q4-4",
+   "topic": 4,
+   "q": "Where do spontaneous reports after approval usually go?",
+   "options": [
+    "6.1",
+    "6.2 Postmarketing Experience",
+    "14",
+    "17"
+   ],
+   "answer": 1,
+   "why": "Postmarketing reports are described in 6.2.",
+   "cite": "21 CFR 201.57(c)(7)(ii)(B)"
+  },
+  {
+   "id": "q4-5",
+   "topic": 4,
+   "q": "A contraindication is appropriate when:",
+   "options": [
+    "A side effect is common but mild",
+    "The risk clearly outweighs any possible benefit in that situation",
+    "The drug was not studied in a group",
+    "Two drugs interact mildly"
+   ],
+   "answer": 1,
+   "why": "Contraindications are for situations where the drug should not be used.",
+   "cite": "21 CFR 201.57(c)(5)"
+  },
+  {
+   "id": "q4-6",
+   "topic": 4,
+   "q": "You swap 5.2 and 5.3. What else must change?",
+   "options": [
+    "Nothing",
+    "Every cross-reference to 5.2 and 5.3, and the Highlights references",
+    "Only the table of contents",
+    "Only section 17"
+   ],
+   "answer": 1,
+   "why": "References follow the numbers; the editor rewrites them when you reorder.",
+   "cite": "PLR implementation guidance"
+  },
+  {
+   "id": "q4-7",
+   "topic": 4,
+   "q": "Section 6 begins by listing:",
+   "options": [
+    "All reactions alphabetically",
+    "Clinically significant reactions described elsewhere in the labeling",
+    "Only fatal reactions",
+    "Placebo reactions"
+   ],
+   "answer": 1,
+   "why": "It lists the serious reactions covered in other sections, with references.",
+   "cite": "21 CFR 201.57(c)(7)"
+  },
+  {
+   "id": "q4-8",
+   "topic": 4,
+   "q": "Which belongs in Warnings and Precautions?",
+   "options": [
+    "Tablet colour",
+    "How to monitor for and manage a serious risk",
+    "The molecular formula",
+    "Storage temperature"
+   ],
+   "answer": 1,
+   "why": "Section 5 covers clinically significant risks and their management.",
+   "cite": "21 CFR 201.57(c)(6)"
+  },
+  {
+   "id": "q5-1",
+   "topic": 5,
+   "q": "When did the PLLR take effect?",
+   "options": [
+    "1 January 2006",
+    "30 June 2015",
+    "1 June 2020",
+    "12 April 2023"
+   ],
+   "answer": 1,
+   "why": "The Pregnancy and Lactation Labeling Rule took effect on 30 June 2015.",
+   "cite": "PLLR final rule (December 2014)"
+  },
+  {
+   "id": "q5-2",
+   "topic": 5,
+   "q": "Which of these may a PLR label still show?",
+   "options": [
+    "Pregnancy Category C",
+    "A Risk Summary under 8.1",
+    "Nursing Mothers as 8.3",
+    "Category X in Contraindications"
+   ],
+   "answer": 1,
+   "why": "Letter categories were removed; 8.1 and 8.2 begin with a Risk Summary.",
+   "cite": "21 CFR 201.57(c)(9)(i)"
+  },
+  {
+   "id": "q5-3",
+   "topic": 5,
+   "q": "8.2 is titled:",
+   "options": [
+    "Nursing Mothers",
+    "Lactation",
+    "Breastfeeding",
+    "Labor and Delivery"
+   ],
+   "answer": 1,
+   "why": "PLLR renamed the subsection Lactation.",
+   "cite": "21 CFR 201.57(c)(9)(ii)"
+  },
+  {
+   "id": "q5-4",
+   "topic": 5,
+   "q": "8.3 covers:",
+   "options": [
+    "Pediatric use",
+    "Females and Males of Reproductive Potential",
+    "Geriatric use",
+    "Hepatic impairment"
+   ],
+   "answer": 1,
+   "why": "8.3 covers pregnancy testing, contraception and infertility.",
+   "cite": "21 CFR 201.57(c)(9)(iii)"
+  },
+  {
+   "id": "q5-5",
+   "topic": 5,
+   "q": "If a pregnancy exposure registry exists, where is it described?",
+   "options": [
+    "Section 17 only",
+    "At the start of 8.1",
+    "Section 14",
+    "It is not mentioned"
+   ],
+   "answer": 1,
+   "why": "Registry information appears in 8.1 before the Risk Summary.",
+   "cite": "21 CFR 201.57(c)(9)(i)(A)"
+  },
+  {
+   "id": "q5-6",
+   "topic": 5,
+   "q": "The 8.1 Risk Summary states background rates of:",
+   "options": [
+    "Adverse reactions",
+    "Major birth defects and miscarriage",
+    "Overdose",
+    "Hospitalisation"
+   ],
+   "answer": 1,
+   "why": "Background risks for the population are given for context.",
+   "cite": "21 CFR 201.57(c)(9)(i)(B)"
+  },
+  {
+   "id": "q5-7",
+   "topic": 5,
+   "q": "Animal data supporting a pregnancy risk statement go under:",
+   "options": [
+    "Data, within 8.1",
+    "13.2 only",
+    "12.3",
+    "Section 15"
+   ],
+   "answer": 0,
+   "why": "Human and animal data are summarised under Data in 8.1 (with nonclinical detail in 13).",
+   "cite": "21 CFR 201.57(c)(9)(i)(D)"
+  },
+  {
+   "id": "q5-8",
+   "topic": 5,
+   "q": "An older-format label still shows \"Pregnancy Category B\". When converting to PLR you should:",
+   "options": [
+    "Keep it",
+    "Replace it with a Risk Summary and data",
+    "Move it to section 17",
+    "Delete 8.1"
+   ],
+   "answer": 1,
+   "why": "PLR labels cannot use letter categories.",
+   "cite": "21 CFR 201.57(c)(9)"
+  },
+  {
+   "id": "q6-1",
+   "topic": 6,
+   "q": "A Medication Guide is required when:",
+   "options": [
+    "Every new drug is approved",
+    "FDA decides patient information is needed for safe and effective use, for one of the reasons in Part 208",
+    "The company prefers",
+    "The drug is a generic"
+   ],
+   "answer": 1,
+   "why": "Part 208 sets out when FDA requires one.",
+   "cite": "21 CFR 208.1"
+  },
+  {
+   "id": "q6-2",
+   "topic": 6,
+   "q": "Which heading belongs in a Medication Guide?",
+   "options": [
+    "\"Clinical Pharmacology\"",
+    "\"What is the most important information I should know about X?\"",
+    "\"Description\"",
+    "\"Overdosage\""
+   ],
+   "answer": 1,
+   "why": "Medication Guides use question headings in plain language.",
+   "cite": "21 CFR 208.20(b)"
+  },
+  {
+   "id": "q6-3",
+   "topic": 6,
+   "q": "What must the carton say when a Medication Guide is required?",
+   "options": [
+    "Nothing",
+    "Instruct the dispenser to give the Medication Guide to each patient",
+    "List all side effects",
+    "Show the FDA logo"
+   ],
+   "answer": 1,
+   "why": "The label tells the dispenser to provide the Medication Guide.",
+   "cite": "21 CFR 208.24(d)"
+  },
+  {
+   "id": "q6-4",
+   "topic": 6,
+   "q": "The Medication Guide side-effect statement mentions:",
+   "options": [
+    "The company website only",
+    "Reporting side effects to FDA at 1-800-FDA-1088",
+    "The pharmacist's phone number",
+    "Nothing"
+   ],
+   "answer": 1,
+   "why": "It reads \"Call your doctor for medical advice about side effects. You may report side effects to FDA at 1-800-FDA-1088.\"",
+   "cite": "21 CFR 208.20(b)(7)(iii)"
+  },
+  {
+   "id": "q6-5",
+   "topic": 6,
+   "q": "Which product type usually needs an IFU?",
+   "options": [
+    "A film-coated tablet",
+    "A prefilled pen or metered-dose inhaler",
+    "An oral solution in a bottle",
+    "A capsule"
+   ],
+   "answer": 1,
+   "why": "IFUs explain multi-step use of devices and complex products.",
+   "cite": "FDA patient labeling resources"
+  },
+  {
+   "id": "q6-6",
+   "topic": 6,
+   "q": "Where in the PI is the prescriber told to advise reading the patient labeling?",
+   "options": [
+    "Section 2",
+    "Section 17",
+    "Section 11",
+    "Highlights only"
+   ],
+   "answer": 1,
+   "why": "Section 17 opens with that advice.",
+   "cite": "21 CFR 201.57(c)(18)"
+  },
+  {
+   "id": "q6-7",
+   "topic": 6,
+   "q": "Status of FDA's Patient Medication Information (PMI) rule as of mid-2026:",
+   "options": [
+    "Final and in force",
+    "Proposed, not yet final",
+    "Withdrawn",
+    "Applies only to biologics"
+   ],
+   "answer": 1,
+   "why": "PMI was proposed in May 2023 and was still proposed in mid-2026.",
+   "cite": "FDA PMI proposed rule (2023); FR 2026-13346"
+  },
+  {
+   "id": "q6-8",
+   "topic": 6,
+   "q": "A Medication Guide states that it:",
+   "options": [
+    "Has been approved by the U.S. Food and Drug Administration",
+    "Replaces the PI",
+    "Is optional reading",
+    "Was written by the pharmacist"
+   ],
+   "answer": 0,
+   "why": "The approval statement is required.",
+   "cite": "21 CFR 208.20(b)"
+  },
+  {
+   "id": "q7-1",
+   "topic": 7,
+   "q": "Which strength expression avoids a tenfold error?",
+   "options": [
+    "5.0 mg",
+    "5 mg",
+    ".5 mg",
+    "5 mg."
+   ],
+   "answer": 1,
+   "why": "No trailing zeros, and a leading zero for values below 1.",
+   "cite": "FDA container and carton guidance (2022); ISMP list"
+  },
+  {
+   "id": "q7-2",
+   "topic": 7,
+   "q": "The established name on a carton must be at least:",
+   "options": [
+    "The same size as the proprietary name",
+    "Half the size of the proprietary name",
+    "One quarter of the size",
+    "6 pt"
+   ],
+   "answer": 1,
+   "why": "21 CFR 201.10(g)(2) sets the half-size minimum.",
+   "cite": "21 CFR 201.10(g)(2)"
+  },
+  {
+   "id": "q7-3",
+   "topic": 7,
+   "q": "For a 5 mL vial containing 50 mg, the strength reads:",
+   "options": [
+    "10 mg",
+    "50 mg/5 mL (10 mg/mL)",
+    "50 mg",
+    "10 mg/mL only"
+   ],
+   "answer": 1,
+   "why": "Injectables show the amount per total volume, then per mL.",
+   "cite": "FDA container and carton guidance (2022)"
+  },
+  {
+   "id": "q7-4",
+   "topic": 7,
+   "q": "Which is a valid 10-digit NDC configuration?",
+   "options": [
+    "5-4-1",
+    "3-3-4",
+    "6-2-2",
+    "4-5-1"
+   ],
+   "answer": 0,
+   "why": "Valid configurations are 4-4-2, 5-3-2 and 5-4-1.",
+   "cite": "21 CFR 207.33"
+  },
+  {
+   "id": "q7-5",
+   "topic": 7,
+   "q": "The linear bar code on a prescription drug label must contain:",
+   "options": [
+    "The lot number only",
+    "The NDC",
+    "The price",
+    "The expiry date only"
+   ],
+   "answer": 1,
+   "why": "201.25 requires the NDC in a linear bar code.",
+   "cite": "21 CFR 201.25"
+  },
+  {
+   "id": "q7-6",
+   "topic": 7,
+   "q": "Which abbreviation is on the error-prone list?",
+   "options": [
+    "mg",
+    "mL",
+    "U (for units)",
+    "mcg"
+   ],
+   "answer": 2,
+   "why": "\"U\" can be misread as 0 or 4; write \"units\".",
+   "cite": "ISMP error-prone abbreviations list"
+  },
+  {
+   "id": "q7-7",
+   "topic": 7,
+   "q": "\"Rx only\" on a label is required by:",
+   "options": [
+    "21 CFR 201.100(b)(1)",
+    "21 CFR 314.81",
+    "21 CFR 208.24",
+    "21 CFR 600.3"
+   ],
+   "answer": 0,
+   "why": "201.100(b)(1) requires the \"Rx only\" symbol or statement.",
+   "cite": "21 CFR 201.100(b)(1)"
+  },
+  {
+   "id": "q7-8",
+   "topic": 7,
+   "q": "What is a proof check?",
+   "options": [
+    "A stability test",
+    "Comparing printed artwork word by word with the approved text",
+    "A user test",
+    "A bar code scan only"
+   ],
+   "answer": 1,
+   "why": "Proofs are checked against approved text before release.",
+   "cite": "FDA container and carton guidance (2022)"
+  },
+  {
+   "id": "q8-1",
+   "topic": 8,
+   "q": "SPL is based on which standard?",
+   "options": [
+    "PDF/A",
+    "HL7 XML",
+    "CSV",
+    "JSON-LD"
+   ],
+   "answer": 1,
+   "why": "Structured Product Labeling is an HL7 XML standard.",
+   "cite": "FDA SPL resources"
+  },
+  {
+   "id": "q8-2",
+   "topic": 8,
+   "q": "How are PI sections identified in SPL?",
+   "options": [
+    "By page number",
+    "By LOINC section codes",
+    "By font",
+    "By colour"
+   ],
+   "answer": 1,
+   "why": "Each section carries a LOINC code.",
+   "cite": "FDA SPL resources"
+  },
+  {
+   "id": "q8-3",
+   "topic": 8,
+   "q": "Can this app's XML export be submitted to FDA?",
+   "options": [
+    "Yes",
+    "No, it is a practice file and not validated",
+    "Only for generics",
+    "Only after printing"
+   ],
+   "answer": 1,
+   "why": "It is a teaching example, marked as such inside the file.",
+   "cite": "App ground rules"
+  },
+  {
+   "id": "q8-4",
+   "topic": 8,
+   "q": "Which public site shows SPL labels for marketed products?",
+   "options": [
+    "DailyMed",
+    "ClinicalTrials.gov",
+    "PubMed",
+    "Orange Book only"
+   ],
+   "answer": 0,
+   "why": "DailyMed publishes the SPL labeling FDA receives.",
+   "cite": "FDA SPL resources"
+  },
+  {
+   "id": "q9-1",
+   "topic": 9,
+   "q": "Which difference from the reference label is permitted for a generic?",
+   "options": [
+    "A shorter Warnings and Precautions section",
+    "A different list of inactive ingredients",
+    "Removing the boxed warning",
+    "Changing the dosing"
+   ],
+   "answer": 1,
+   "why": "Inactive ingredients are among the permitted differences.",
+   "cite": "21 CFR 314.94(a)(8)(iv)"
+  },
+  {
+   "id": "q9-2",
+   "topic": 9,
+   "q": "A section viii statement lets a generic:",
+   "options": [
+    "Skip bioequivalence",
+    "Omit an indication protected by a method-of-use patent",
+    "Change the strength",
+    "Avoid a Medication Guide"
+   ],
+   "answer": 1,
+   "why": "The protected use is carved out of the label.",
+   "cite": "FD&C Act 505(j)(2)(A)(viii); 21 CFR 314.127(a)(7)"
+  },
+  {
+   "id": "q9-3",
+   "topic": 9,
+   "q": "After carving out indication 1.2, which must also go?",
+   "options": [
+    "Section 16",
+    "Dosing, study results and Highlights entries that depend on 1.2",
+    "The boxed warning",
+    "Section 11"
+   ],
+   "answer": 1,
+   "why": "Every mention that depends on the carved indication goes.",
+   "cite": "21 CFR 314.127(a)(7)"
+  },
+  {
+   "id": "q9-4",
+   "topic": 9,
+   "q": "Who must update a generic label when the reference label changes?",
+   "options": [
+    "Nobody",
+    "The ANDA holder",
+    "FDA only",
+    "The reference holder"
+   ],
+   "answer": 1,
+   "why": "ANDA holders keep their labeling the same as the RLD.",
+   "cite": "FDA guidance on ANDA labeling updates (2024)"
+  },
+  {
+   "id": "q9-5",
+   "topic": 9,
+   "q": "Which section is usually different between a generic and its reference?",
+   "options": [
+    "5 Warnings and Precautions",
+    "16 How Supplied",
+    "4 Contraindications",
+    "2 Dosage and Administration"
+   ],
+   "answer": 1,
+   "why": "How supplied details (NDCs, pack sizes) are the generic's own.",
+   "cite": "21 CFR 314.94(a)(8)(iv)"
+  },
+  {
+   "id": "q9-6",
+   "topic": 9,
+   "q": "The \"Initial U.S. Approval\" year on a generic label is:",
+   "options": [
+    "The ANDA approval year",
+    "The year the active moiety was first approved",
+    "Left blank",
+    "The patent expiry year"
+   ],
+   "answer": 1,
+   "why": "It refers to the active moiety, so it matches the reference.",
+   "cite": "21 CFR 201.57(a)(3)"
+  },
+  {
+   "id": "q10-1",
+   "topic": 10,
+   "q": "Under 505(o)(4), after FDA notifies the holder, the holder has how long to respond?",
+   "options": [
+    "10 days",
+    "30 days",
+    "90 days",
+    "6 months"
+   ],
+   "answer": 1,
+   "why": "The holder submits a supplement or a rebuttal within 30 days.",
+   "cite": "FD&C Act 505(o)(4)"
+  },
+  {
+   "id": "q10-2",
+   "topic": 10,
+   "q": "If the holder disagrees with FDA's proposed change, what happens?",
+   "options": [
+    "The change is dropped",
+    "Discussions follow and FDA may order the change",
+    "The product is withdrawn",
+    "Nothing"
+   ],
+   "answer": 1,
+   "why": "After discussions FDA can issue an order.",
+   "cite": "FD&C Act 505(o)(4)"
+  },
+  {
+   "id": "q10-3",
+   "topic": 10,
+   "q": "What triggers a 505(o)(4) notification?",
+   "options": [
+    "A marketing request",
+    "New safety information FDA believes should be in the labeling",
+    "A manufacturing change",
+    "A price change"
+   ],
+   "answer": 1,
+   "why": "It is a safety labeling power.",
+   "cite": "FD&C Act 505(o)(4)"
+  },
+  {
+   "id": "q10-4",
+   "topic": 10,
+   "q": "A holder wants to add a new warning quickly on its own initiative. Which route is typical?",
+   "options": [
+    "Annual report",
+    "Changes Being Effected supplement",
+    "No filing",
+    "A new NDA"
+   ],
+   "answer": 1,
+   "why": "Strengthening safety wording can go through a CBE supplement.",
+   "cite": "21 CFR 314.70(c)(6)(iii)"
+  },
+  {
+   "id": "q11-1",
+   "topic": 11,
+   "q": "In conversion, \"Nursing Mothers\" content goes to:",
+   "options": [
+    "8.2 Lactation",
+    "8.4",
+    "17",
+    "6.2"
+   ],
+   "answer": 0,
+   "why": "It becomes 8.2 Lactation, rewritten for PLLR.",
+   "cite": "21 CFR 201.57(c)(9)(ii)"
+  },
+  {
+   "id": "q11-2",
+   "topic": 11,
+   "q": "Old-format \"Clinical Trials\" results inside Clinical Pharmacology move to:",
+   "options": [
+    "12.3",
+    "14 Clinical Studies",
+    "6.1",
+    "1"
+   ],
+   "answer": 1,
+   "why": "Efficacy results belong in section 14.",
+   "cite": "21 CFR 201.57(c)(15)"
+  },
+  {
+   "id": "q11-3",
+   "topic": 11,
+   "q": "\"Information for Patients\" under Precautions moves to:",
+   "options": [
+    "17 Patient Counseling Information",
+    "16",
+    "2",
+    "11"
+   ],
+   "answer": 0,
+   "why": "Counselling content goes to section 17.",
+   "cite": "21 CFR 201.57(c)(18)"
+  },
+  {
+   "id": "q11-4",
+   "topic": 11,
+   "q": "Old-format drug interaction text under Precautions moves to:",
+   "options": [
+    "7 Drug Interactions",
+    "12.1",
+    "5",
+    "10"
+   ],
+   "answer": 0,
+   "why": "PLR gives drug interactions their own section.",
+   "cite": "21 CFR 201.57(c)(8)"
+  },
+  {
+   "id": "q11-5",
+   "topic": 11,
+   "q": "Which part is new when converting to PLR?",
+   "options": [
+    "Description",
+    "Highlights",
+    "Overdosage",
+    "How Supplied"
+   ],
+   "answer": 1,
+   "why": "The older format has no Highlights.",
+   "cite": "21 CFR 201.57(a)"
+  },
+  {
+   "id": "q11-6",
+   "topic": 11,
+   "q": "Older-format labels are governed by:",
+   "options": [
+    "21 CFR 201.80",
+    "21 CFR 201.57",
+    "21 CFR 208",
+    "21 CFR 314.94"
+   ],
+   "answer": 0,
+   "why": "201.80 covers the older format.",
+   "cite": "21 CFR 201.80"
+  }
+ ]
+}

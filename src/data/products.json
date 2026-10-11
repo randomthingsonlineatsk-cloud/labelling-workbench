@@ -1,0 +1,167 @@
+{
+ "_about": "Fictional products shared with the eCTD Dossier Builder and the Variations Classifier (same ids, names and companies). Application numbers are invented.",
+ "products": [
+  {
+   "id": "nce-tablet",
+   "ectdProductId": "nce-tablet",
+   "brandName": "Ostrevia",
+   "inn": "lumiravostat",
+   "dosageForm": "tablet, film-coated",
+   "route": "oral",
+   "strengths": [
+    "10 mg",
+    "25 mg"
+   ],
+   "appType": "nda",
+   "applicationNumber": "999101",
+   "approvalDate": "2023-03-14",
+   "holder": {
+    "name": "Halcyon Ridge Pharmaceuticals, Inc.",
+    "address": "400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA",
+    "contact": "Dana Okafor, Director, Regulatory Affairs"
+   },
+   "shelfLife": "36 months",
+   "storage": "Store at 20°C to 25°C",
+   "summary": "New chemical entity, immediate-release film-coated tablet."
+  },
+  {
+   "id": "generic-tablet",
+   "ectdProductId": "generic-tablet",
+   "brandName": "Talmisartan Tablets",
+   "inn": "talmisartan",
+   "dosageForm": "tablet",
+   "route": "oral",
+   "strengths": [
+    "20 mg",
+    "40 mg"
+   ],
+   "appType": "anda",
+   "applicationNumber": "999202",
+   "approvalDate": "2022-08-30",
+   "holder": {
+    "name": "Ashvale Generics Ltd.",
+    "address": "Plot 21, Fictional Pharma Park, Example Town, India",
+    "contact": "Ritu Sathe, Head of Regulatory Affairs"
+   },
+   "shelfLife": "24 months",
+   "storage": "Store at 20°C to 25°C",
+   "summary": "Generic immediate-release tablet approved under an ANDA.",
+   "rld": {
+    "name": "CORVENZA (talmisartan) tablets",
+    "holder": "Northmere Pharma Inc.",
+    "application": "NDA 210999 (fictional)"
+   }
+  },
+  {
+   "id": "talmisartan-er",
+   "ectdProductId": "talmisartan-er",
+   "brandName": "Talvera XR",
+   "inn": "talmisartan",
+   "dosageForm": "capsule, extended release",
+   "route": "oral",
+   "strengths": [
+    "40 mg",
+    "80 mg"
+   ],
+   "appType": "nda",
+   "applicationNumber": "999303",
+   "approvalDate": "2024-11-05",
+   "holder": {
+    "name": "Calderon Therapeutics Inc.",
+    "address": "77 Meridian Court, Fictionburg, MA 02000, USA",
+    "contact": "Priya Menon, Senior Director, Regulatory Affairs"
+   },
+   "shelfLife": "24 months",
+   "storage": "Store at 20°C to 25°C",
+   "summary": "Extended-release capsule approved under section 505(b)(2)."
+  },
+  {
+   "id": "sterile-injectable",
+   "ectdProductId": "sterile-injectable",
+   "brandName": "Nelvaprox",
+   "inn": "velnaprozine",
+   "dosageForm": "solution for injection",
+   "route": "intravenous",
+   "strengths": [
+    "10 mg/mL"
+   ],
+   "appType": "nda",
+   "applicationNumber": "999404",
+   "approvalDate": "2021-06-22",
+   "holder": {
+    "name": "Meridale Therapeutics Inc.",
+    "address": "77 Harbor View Road, Fictionville, MA 02000, USA",
+    "contact": "Lena Marsh, Senior Director, Regulatory Operations"
+   },
+   "shelfLife": "24 months",
+   "storage": "Store below 25°C; do not freeze; keep the vial in the outer carton to protect from light",
+   "summary": "Aseptically filled sterile solution in glass vials."
+  },
+  {
+   "id": "mab-infusion",
+   "ectdProductId": "mab-infusion",
+   "brandName": "Arventa",
+   "inn": "olvecitamab",
+   "dosageForm": "concentrate for solution for infusion",
+   "route": "intravenous",
+   "strengths": [
+    "100 mg/10 mL"
+   ],
+   "appType": "bla",
+   "applicationNumber": "999505",
+   "approvalDate": "2022-02-09",
+   "holder": {
+    "name": "Lumenfield Biologics Inc.",
+    "address": "9 Brightwater Parkway, Fictionville, NC 27000, USA",
+    "contact": "Imani Clarke, Vice President, Regulatory Affairs"
+   },
+   "shelfLife": "36 months",
+   "storage": "Store in a refrigerator (2°C to 8°C); do not freeze; protect from light",
+   "summary": "Monoclonal antibody licensed under a BLA."
+  },
+  {
+   "id": "biosimilar-mab",
+   "ectdProductId": "biosimilar-mab",
+   "brandName": "Selvanta",
+   "inn": "olvecitamab-kzrt",
+   "dosageForm": "concentrate for solution for infusion",
+   "route": "intravenous",
+   "strengths": [
+    "100 mg/10 mL"
+   ],
+   "appType": "bla",
+   "applicationNumber": "999606",
+   "approvalDate": "2025-04-17",
+   "holder": {
+    "name": "Brightmere Biosimilars Ltd.",
+    "address": "3 Orchard Science Park, Exampletown, Ireland",
+    "contact": "Niamh Doyle, Head of Regulatory Operations"
+   },
+   "shelfLife": "30 months",
+   "storage": "Store at 2°C to 8°C; protect from light",
+   "summary": "Biosimilar antibody licensed under section 351(k)."
+  },
+  {
+   "id": "mdi-aerosol",
+   "ectdProductId": null,
+   "brandName": "Brezovent",
+   "inn": "tavoterol",
+   "dosageForm": "inhalation aerosol, metered",
+   "route": "inhalation",
+   "strengths": [
+    "90 mcg per actuation"
+   ],
+   "appType": "nda",
+   "applicationNumber": "999707",
+   "approvalDate": "2020-09-01",
+   "holder": {
+    "name": "Northvale Respiratory Inc.",
+    "address": "12 Cedar Mill Lane, Fictionton, PA 19000, USA",
+    "contact": "Marcus Lee, Director, Regulatory CMC"
+   },
+   "shelfLife": "24 months",
+   "storage": "Store at 20°C to 25°C; contents under pressure",
+   "summary": "Metered-dose inhaler: the valve and actuator control the dose."
+  }
+ ]
+}
