@@ -1,0 +1,756 @@
+{
+ "pi": {
+  "kind": "pi",
+  "label": "Prescribing information (PLR format)",
+  "short": "PI",
+  "src": "cfr20157",
+  "sections": [
+   {
+    "num": "1",
+    "title": "INDICATIONS AND USAGE",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "DOSAGE AND ADMINISTRATION",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "DOSAGE FORMS AND STRENGTHS",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "CONTRAINDICATIONS",
+    "need": "required"
+   },
+   {
+    "num": "5",
+    "title": "WARNINGS AND PRECAUTIONS",
+    "need": "required"
+   },
+   {
+    "num": "6",
+    "title": "ADVERSE REACTIONS",
+    "need": "required"
+   },
+   {
+    "num": "7",
+    "title": "DRUG INTERACTIONS",
+    "need": "recommended"
+   },
+   {
+    "num": "8",
+    "title": "USE IN SPECIFIC POPULATIONS",
+    "need": "required",
+    "extraSubs": true,
+    "fixedSubs": [
+     {
+      "num": "8.1",
+      "title": "Pregnancy",
+      "need": "required"
+     },
+     {
+      "num": "8.2",
+      "title": "Lactation",
+      "need": "required"
+     },
+     {
+      "num": "8.3",
+      "title": "Females and Males of Reproductive Potential",
+      "need": "optional"
+     },
+     {
+      "num": "8.4",
+      "title": "Pediatric Use",
+      "need": "required"
+     },
+     {
+      "num": "8.5",
+      "title": "Geriatric Use",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "9",
+    "title": "DRUG ABUSE AND DEPENDENCE",
+    "need": "optional",
+    "fixedSubs": [
+     {
+      "num": "9.1",
+      "title": "Controlled Substance",
+      "need": "optional"
+     },
+     {
+      "num": "9.2",
+      "title": "Abuse",
+      "need": "optional"
+     },
+     {
+      "num": "9.3",
+      "title": "Dependence",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "10",
+    "title": "OVERDOSAGE",
+    "need": "recommended"
+   },
+   {
+    "num": "11",
+    "title": "DESCRIPTION",
+    "need": "required"
+   },
+   {
+    "num": "12",
+    "title": "CLINICAL PHARMACOLOGY",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "12.1",
+      "title": "Mechanism of Action",
+      "need": "required"
+     },
+     {
+      "num": "12.2",
+      "title": "Pharmacodynamics",
+      "need": "recommended"
+     },
+     {
+      "num": "12.3",
+      "title": "Pharmacokinetics",
+      "need": "required"
+     },
+     {
+      "num": "12.4",
+      "title": "Microbiology",
+      "need": "optional"
+     },
+     {
+      "num": "12.5",
+      "title": "Pharmacogenomics",
+      "need": "optional"
+     },
+     {
+      "num": "12.6",
+      "title": "Immunogenicity",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "13",
+    "title": "NONCLINICAL TOXICOLOGY",
+    "need": "recommended",
+    "fixedSubs": [
+     {
+      "num": "13.1",
+      "title": "Carcinogenesis, Mutagenesis, Impairment of Fertility",
+      "need": "recommended"
+     },
+     {
+      "num": "13.2",
+      "title": "Animal Toxicology and/or Pharmacology",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "14",
+    "title": "CLINICAL STUDIES",
+    "need": "recommended"
+   },
+   {
+    "num": "15",
+    "title": "REFERENCES",
+    "need": "optional"
+   },
+   {
+    "num": "16",
+    "title": "HOW SUPPLIED/STORAGE AND HANDLING",
+    "need": "required"
+   },
+   {
+    "num": "17",
+    "title": "PATIENT COUNSELING INFORMATION",
+    "need": "required"
+   }
+  ],
+  "hl": [
+   {
+    "key": "rmc",
+    "title": "RECENT MAJOR CHANGES",
+    "kind": "rmc"
+   },
+   {
+    "key": "ind",
+    "title": "INDICATIONS AND USAGE",
+    "ref": "1",
+    "need": "required"
+   },
+   {
+    "key": "da",
+    "title": "DOSAGE AND ADMINISTRATION",
+    "ref": "2",
+    "need": "required"
+   },
+   {
+    "key": "dfs",
+    "title": "DOSAGE FORMS AND STRENGTHS",
+    "ref": "3",
+    "need": "required"
+   },
+   {
+    "key": "ci",
+    "title": "CONTRAINDICATIONS",
+    "ref": "4",
+    "need": "required"
+   },
+   {
+    "key": "wp",
+    "title": "WARNINGS AND PRECAUTIONS",
+    "ref": "5",
+    "need": "required"
+   },
+   {
+    "key": "ar",
+    "title": "ADVERSE REACTIONS",
+    "ref": "6",
+    "need": "required"
+   },
+   {
+    "key": "di",
+    "title": "DRUG INTERACTIONS",
+    "ref": "7",
+    "need": "optional"
+   },
+   {
+    "key": "usp",
+    "title": "USE IN SPECIFIC POPULATIONS",
+    "ref": "8",
+    "need": "optional"
+   }
+  ],
+  "fixed": {
+   "limitation": "These highlights do not include all the information needed to use {NAME} safely and effectively. See full prescribing information for {NAME}.",
+   "bwClose": "See full prescribing information for complete boxed warning.",
+   "arContact": "To report SUSPECTED ADVERSE REACTIONS, contact {manufacturer} at {phone} or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.",
+   "pci": "See 17 for PATIENT COUNSELING INFORMATION",
+   "pciMG": "See 17 for PATIENT COUNSELING INFORMATION and Medication Guide.",
+   "pciPPI": "See 17 for PATIENT COUNSELING INFORMATION and FDA-approved patient labeling.",
+   "arStatement": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice."
+  }
+ },
+ "pi-old": {
+  "kind": "pi-old",
+  "label": "Prescribing information (older format, 201.80)",
+  "short": "Old PI",
+  "src": "cfr20180",
+  "sections": [
+   {
+    "num": "A",
+    "title": "DESCRIPTION",
+    "need": "required"
+   },
+   {
+    "num": "B",
+    "title": "CLINICAL PHARMACOLOGY",
+    "need": "required"
+   },
+   {
+    "num": "C",
+    "title": "INDICATIONS AND USAGE",
+    "need": "required"
+   },
+   {
+    "num": "D",
+    "title": "CONTRAINDICATIONS",
+    "need": "required"
+   },
+   {
+    "num": "E",
+    "title": "WARNINGS",
+    "need": "required"
+   },
+   {
+    "num": "F",
+    "title": "PRECAUTIONS",
+    "need": "required"
+   },
+   {
+    "num": "G",
+    "title": "ADVERSE REACTIONS",
+    "need": "required"
+   },
+   {
+    "num": "H",
+    "title": "DRUG ABUSE AND DEPENDENCE",
+    "need": "optional"
+   },
+   {
+    "num": "I",
+    "title": "OVERDOSAGE",
+    "need": "recommended"
+   },
+   {
+    "num": "J",
+    "title": "DOSAGE AND ADMINISTRATION",
+    "need": "required"
+   },
+   {
+    "num": "K",
+    "title": "HOW SUPPLIED",
+    "need": "required"
+   }
+  ]
+ },
+ "mg": {
+  "kind": "mg",
+  "label": "Medication Guide",
+  "short": "MG",
+  "src": "cfr208",
+  "sections": [
+   {
+    "num": "m1",
+    "title": "What is the most important information I should know about {name}?",
+    "need": "required"
+   },
+   {
+    "num": "m2",
+    "title": "What is {name}?",
+    "need": "required"
+   },
+   {
+    "num": "m3",
+    "title": "Who should not take {name}?",
+    "alt": [
+     "Do not take {name} if you:"
+    ],
+    "need": "recommended"
+   },
+   {
+    "num": "m4",
+    "title": "What should I tell my healthcare provider before taking {name}?",
+    "alt": [
+     "Before taking {name}, tell your healthcare provider about all of your medical conditions, including if you:"
+    ],
+    "need": "recommended"
+   },
+   {
+    "num": "m5",
+    "title": "How should I take {name}?",
+    "need": "recommended"
+   },
+   {
+    "num": "m6",
+    "title": "What should I avoid while taking {name}?",
+    "need": "optional"
+   },
+   {
+    "num": "m7",
+    "title": "What are the possible side effects of {name}?",
+    "need": "required"
+   },
+   {
+    "num": "m8",
+    "title": "How should I store {name}?",
+    "need": "recommended"
+   },
+   {
+    "num": "m9",
+    "title": "General information about the safe and effective use of {name}.",
+    "need": "required"
+   },
+   {
+    "num": "m10",
+    "title": "What are the ingredients in {name}?",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "header": "MEDICATION GUIDE",
+   "sideEffects": "Call your doctor for medical advice about side effects. You may report side effects to FDA at 1-800-FDA-1088.",
+   "approval": "This Medication Guide has been approved by the U.S. Food and Drug Administration."
+  }
+ },
+ "ppi": {
+  "kind": "ppi",
+  "label": "Patient Package Insert",
+  "short": "PPI",
+  "src": "patient",
+  "sections": [
+   {
+    "num": "p1",
+    "title": "What is {name}?",
+    "need": "required"
+   },
+   {
+    "num": "p2",
+    "title": "Who should not take {name}?",
+    "alt": [
+     "Do not take {name} if you:"
+    ],
+    "need": "recommended"
+   },
+   {
+    "num": "p3",
+    "title": "What should I tell my healthcare provider before taking {name}?",
+    "need": "recommended"
+   },
+   {
+    "num": "p4",
+    "title": "How should I take {name}?",
+    "need": "required"
+   },
+   {
+    "num": "p5",
+    "title": "What are the possible side effects of {name}?",
+    "need": "required"
+   },
+   {
+    "num": "p6",
+    "title": "How should I store {name}?",
+    "need": "recommended"
+   },
+   {
+    "num": "p7",
+    "title": "General information about the safe and effective use of {name}.",
+    "need": "required"
+   },
+   {
+    "num": "p8",
+    "title": "What are the ingredients in {name}?",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "header": "PATIENT INFORMATION",
+   "approval": "This Patient Information has been approved by the U.S. Food and Drug Administration."
+  }
+ },
+ "ifu": {
+  "kind": "ifu",
+  "label": "Instructions for Use",
+  "short": "IFU",
+  "src": "patient",
+  "sections": [
+   {
+    "num": "i1",
+    "title": "Important information you need to know before using {name}",
+    "need": "required"
+   },
+   {
+    "num": "i2",
+    "title": "Supplies you will need",
+    "need": "recommended"
+   },
+   {
+    "num": "i3",
+    "title": "Preparing your dose",
+    "need": "recommended"
+   },
+   {
+    "num": "i4",
+    "title": "Using {name}",
+    "need": "required"
+   },
+   {
+    "num": "i5",
+    "title": "Storing {name}",
+    "need": "recommended"
+   },
+   {
+    "num": "i6",
+    "title": "Disposing of {name}",
+    "need": "recommended"
+   }
+  ],
+  "fixed": {
+   "header": "INSTRUCTIONS FOR USE",
+   "approval": "This Instructions for Use has been approved by the U.S. Food and Drug Administration."
+  }
+ },
+ "carton": {
+  "kind": "carton",
+  "label": "Carton",
+  "short": "Carton",
+  "src": "carton",
+  "fields": [
+   {
+    "key": "proprietaryName",
+    "label": "Proprietary name",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20110",
+    "at": "201.10"
+   },
+   {
+    "key": "establishedName",
+    "label": "Established name",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20110",
+    "at": "201.10(g)"
+   },
+   {
+    "key": "strength",
+    "label": "Strength",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "carton",
+    "at": "Section III"
+   },
+   {
+    "key": "dosageForm",
+    "label": "Dosage form",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "carton",
+    "at": "Section III"
+   },
+   {
+    "key": "route",
+    "label": "Route of administration",
+    "need": {
+     "carton": "required",
+     "container": "recommended"
+    },
+    "src": "cfr201100",
+    "at": "201.100(b)(3)"
+   },
+   {
+    "key": "netQuantity",
+    "label": "Net quantity",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20151",
+    "at": "201.51"
+   },
+   {
+    "key": "rxOnly",
+    "label": "Rx only statement",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr201100",
+    "at": "201.100(b)(1)"
+   },
+   {
+    "key": "ndc",
+    "label": "NDC",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "ndc",
+    "at": "207.33"
+   },
+   {
+    "key": "dosageStatement",
+    "label": "Dosage statement",
+    "need": {
+     "carton": "required",
+     "container": "optional"
+    },
+    "src": "cfr201100",
+    "at": "201.100(b)(2)"
+   },
+   {
+    "key": "storage",
+    "label": "Storage",
+    "need": {
+     "carton": "required",
+     "container": "recommended"
+    },
+    "src": "carton",
+    "at": "Section III"
+   },
+   {
+    "key": "lot",
+    "label": "Lot number",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20118",
+    "at": "201.18"
+   },
+   {
+    "key": "expiry",
+    "label": "Expiration date",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20117",
+    "at": "201.17"
+   },
+   {
+    "key": "manufacturer",
+    "label": "Manufacturer, packer or distributor",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr2011",
+    "at": "201.1"
+   }
+  ],
+  "fixed": {
+   "mgStatement": "Dispense the accompanying Medication Guide to each patient."
+  }
+ },
+ "container": {
+  "kind": "container",
+  "label": "Container label",
+  "short": "Container",
+  "src": "carton",
+  "fields": [
+   {
+    "key": "proprietaryName",
+    "label": "Proprietary name",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20110",
+    "at": "201.10"
+   },
+   {
+    "key": "establishedName",
+    "label": "Established name",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20110",
+    "at": "201.10(g)"
+   },
+   {
+    "key": "strength",
+    "label": "Strength",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "carton",
+    "at": "Section III"
+   },
+   {
+    "key": "dosageForm",
+    "label": "Dosage form",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "carton",
+    "at": "Section III"
+   },
+   {
+    "key": "route",
+    "label": "Route of administration",
+    "need": {
+     "carton": "required",
+     "container": "recommended"
+    },
+    "src": "cfr201100",
+    "at": "201.100(b)(3)"
+   },
+   {
+    "key": "netQuantity",
+    "label": "Net quantity",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20151",
+    "at": "201.51"
+   },
+   {
+    "key": "rxOnly",
+    "label": "Rx only statement",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr201100",
+    "at": "201.100(b)(1)"
+   },
+   {
+    "key": "ndc",
+    "label": "NDC",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "ndc",
+    "at": "207.33"
+   },
+   {
+    "key": "dosageStatement",
+    "label": "Dosage statement",
+    "need": {
+     "carton": "required",
+     "container": "optional"
+    },
+    "src": "cfr201100",
+    "at": "201.100(b)(2)"
+   },
+   {
+    "key": "storage",
+    "label": "Storage",
+    "need": {
+     "carton": "required",
+     "container": "recommended"
+    },
+    "src": "carton",
+    "at": "Section III"
+   },
+   {
+    "key": "lot",
+    "label": "Lot number",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20118",
+    "at": "201.18"
+   },
+   {
+    "key": "expiry",
+    "label": "Expiration date",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr20117",
+    "at": "201.17"
+   },
+   {
+    "key": "manufacturer",
+    "label": "Manufacturer, packer or distributor",
+    "need": {
+     "carton": "required",
+     "container": "required"
+    },
+    "src": "cfr2011",
+    "at": "201.1"
+   }
+  ]
+ }
+}

@@ -1,0 +1,495 @@
+[
+ {
+  "id": "US-HL-LIM",
+  "title": "Highlights limitation statement",
+  "text": "Highlights begin with the verbatim limitation statement naming the product: \"These highlights do not include all the information needed to use [PROPRIETARY NAME] safely and effectively. See full prescribing information for [PROPRIETARY NAME].\"",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(1)",
+  "check": "US-HL-LIM"
+ },
+ {
+  "id": "US-HL-TITLE",
+  "title": "Product title",
+  "text": "The product title gives the proprietary name, the established name, the dosage form and the route of administration, plus the controlled substance symbol where one applies.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(2)",
+  "check": "US-HL-TITLE"
+ },
+ {
+  "id": "US-HL-APPROVAL",
+  "title": "Initial U.S. Approval",
+  "text": "Highlights state \"Initial U.S. Approval:\" and the four-digit year the active moiety was first approved in the US.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(3)",
+  "check": "US-HL-APPROVAL"
+ },
+ {
+  "id": "US-HL-BW",
+  "title": "Boxed warning in Highlights",
+  "text": "When the full prescribing information has a boxed warning, Highlights carry a summary: a heading starting \"WARNING:\", no more than 20 lines, ending with \"See full prescribing information for complete boxed warning.\"",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(4)",
+  "check": "US-HL-BW",
+  "simplified": "The 20-line limit is estimated from the text length (about 65 characters per line in the two-column layout)."
+ },
+ {
+  "id": "US-HL-RMC",
+  "title": "Recent Major Changes",
+  "text": "Recent Major Changes list substantive changes to the Boxed Warning, Indications and Usage, Dosage and Administration, Contraindications, or Warnings and Precautions only, each with the section heading, number and the month and year of the change. An entry stays for at least one year and is removed at the first printing after that year.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(5)",
+  "check": "US-HL-RMC",
+  "simplified": "The app flags entries older than 12 months before the revision date. In practice an entry may stay until the next printing after the year ends."
+ },
+ {
+  "id": "US-HL-REF",
+  "title": "Highlights cite their sections",
+  "text": "Each statement in Highlights is followed by the number of the section or subsection in the full prescribing information that it summarises, in parentheses, for example \"(5.2)\".",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "warning",
+  "src": "plrpage",
+  "at": "201.57(a); PLR implementation guidance",
+  "check": "US-HL-REF",
+  "simplified": "Checked for bullets and paragraphs under Indications, Dosage and Administration, Dosage Forms, Contraindications, Warnings and Precautions, Adverse Reactions, Drug Interactions and Use in Specific Populations."
+ },
+ {
+  "id": "US-HL-AR",
+  "title": "Adverse reaction contact statement",
+  "text": "The Adverse Reactions heading in Highlights includes \"To report SUSPECTED ADVERSE REACTIONS, contact [name of manufacturer] at [phone] or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch.\"",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(11)",
+  "check": "US-HL-AR"
+ },
+ {
+  "id": "US-HL-PCI",
+  "title": "Patient counselling statement",
+  "text": "Highlights end with \"See 17 for PATIENT COUNSELING INFORMATION\", adding \"and Medication Guide\" or \"and FDA-approved patient labeling\" when patient labeling exists.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(14)",
+  "check": "US-HL-PCI"
+ },
+ {
+  "id": "US-HL-REV",
+  "title": "Revision date",
+  "text": "Highlights show the date of the most recent revision as \"Revised: MM/YYYY\".",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(a)(15)",
+  "check": "US-HL-REV"
+ },
+ {
+  "id": "US-HL-LEN",
+  "title": "Highlights length",
+  "text": "Highlights, not counting the boxed warning, fit on one-half page in the required two-column layout. A waiver may be requested.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "warning",
+  "src": "cfr20157",
+  "at": "201.57(d)(8)",
+  "check": "US-HL-LEN",
+  "simplified": "Estimated: about 76 lines of 65 characters, counting each heading as a line. Real length depends on the typeset page."
+ },
+ {
+  "id": "US-HL-CI",
+  "title": "Contraindications match",
+  "text": "Every contraindication in section 4 is summarised in Highlights; \"None\" in section 4 is \"None\" in Highlights.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "warning",
+  "src": "cfr20157",
+  "at": "201.57(a)(9)",
+  "check": "US-HL-CI",
+  "simplified": "Compared by count of items: each list item or paragraph in section 4 should have a matching Highlights item."
+ },
+ {
+  "id": "US-PI-SEC-REQ",
+  "title": "Required sections have content",
+  "text": "Sections 1 to 6, 8 (with 8.1, 8.2, 8.4 and 8.5), 11, 12 (with 12.1 and 12.3), 16 and 17 are required in PLR format; 7, 10, 13 and 14 are expected for most products. Section and subsection numbers never change, even when one is omitted.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(c) and (d)",
+  "check": "US-PI-SEC-REQ",
+  "simplified": "Sections marked recommended are a warning when empty; the regulation allows them to be omitted when not applicable."
+ },
+ {
+  "id": "US-PI-SEC-TITLE",
+  "title": "Exact headings",
+  "text": "Section and fixed subsection headings use the wording set by the regulation, for example \"8.4 Pediatric Use\", not \"8.4 Pediatrics\".",
+  "kinds": [
+   "pi",
+   "pi-old"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(c); 201.80",
+  "check": "US-PI-SEC-TITLE"
+ },
+ {
+  "id": "US-PI-CI-NONE",
+  "title": "Contraindications never left blank",
+  "text": "Section 4 lists each contraindication, or states \"None.\" when there are none.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(c)(5)",
+  "check": "US-PI-CI-NONE"
+ },
+ {
+  "id": "US-PI-XREF",
+  "title": "Cross-references resolve",
+  "text": "Every cross-reference in parentheses, for example \"[see Warnings and Precautions (5.3)]\", points to a section or subsection that exists.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "plrpage",
+  "at": "PLR implementation guidance (cross-references)",
+  "check": "US-PI-XREF"
+ },
+ {
+  "id": "US-PI-BW-REF",
+  "title": "Boxed warning points to section 5",
+  "text": "The boxed warning in the full prescribing information refers to the Warnings and Precautions subsection(s) where the risk is discussed in more detail.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "warning",
+  "src": "cfr20157",
+  "at": "201.57(c)(1)",
+  "check": "US-PI-BW-REF"
+ },
+ {
+  "id": "US-PI-PLLR",
+  "title": "Pregnancy and lactation (PLLR)",
+  "text": "Section 8.1 Pregnancy and 8.2 Lactation each include a \"Risk Summary\". The letter categories (A, B, C, D, X) were removed by the Pregnancy and Lactation Labeling Rule and must not appear.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(c)(9)(i) and (ii)",
+  "check": "US-PI-PLLR"
+ },
+ {
+  "id": "US-PI-AR-STMT",
+  "title": "Clinical trials statement in section 6",
+  "text": "When section 6 presents clinical trial data, it includes the standard statement that adverse reaction rates from different trials cannot be compared directly.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "warning",
+  "src": "cfr20157",
+  "at": "201.57(c)(7)(ii)(A)",
+  "check": "US-PI-AR-STMT"
+ },
+ {
+  "id": "US-PI-STR",
+  "title": "Strengths agree",
+  "text": "The strengths in Highlights (Dosage Forms and Strengths), section 3, section 16 and the product record are the same.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(c)(4) and (c)(17)",
+  "check": "US-PI-STR"
+ },
+ {
+  "id": "US-PI-17-MG",
+  "title": "Section 17 points to patient labelling",
+  "text": "When a Medication Guide or other FDA-approved patient labeling exists, section 17 tells the prescriber to advise the patient to read it.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr20157",
+  "at": "201.57(c)(18)",
+  "check": "US-PI-17-MG"
+ },
+ {
+  "id": "US-NAME",
+  "title": "Established name spelled consistently",
+  "text": "The established name is spelled the same way everywhere. Near-misses (one or two letters different) are usually typing errors.",
+  "kinds": [
+   "pi",
+   "pi-old",
+   "mg",
+   "ppi",
+   "ifu",
+   "carton",
+   "container"
+  ],
+  "severity": "warning",
+  "src": "cfr20110",
+  "at": "201.10",
+  "check": "US-NAME",
+  "simplified": "Detects words within two letters of the established name."
+ },
+ {
+  "id": "US-ME-TZ",
+  "title": "No trailing zeros",
+  "text": "Doses and strengths never carry a trailing zero (\"5 mg\", not \"5.0 mg\"): the decimal point can be missed and a tenfold overdose given.",
+  "kinds": [
+   "pi",
+   "pi-old",
+   "mg",
+   "ppi",
+   "ifu",
+   "carton",
+   "container"
+  ],
+  "severity": "error",
+  "src": "carton",
+  "at": "Section III.B; ISMP list",
+  "check": "US-ME-TZ"
+ },
+ {
+  "id": "US-ME-ND",
+  "title": "No naked decimals",
+  "text": "Doses below 1 always carry a leading zero (\"0.5 mg\", not \".5 mg\").",
+  "kinds": [
+   "pi",
+   "pi-old",
+   "mg",
+   "ppi",
+   "ifu",
+   "carton",
+   "container"
+  ],
+  "severity": "error",
+  "src": "carton",
+  "at": "Section III.B; ISMP list",
+  "check": "US-ME-ND"
+ },
+ {
+  "id": "US-ME-ABBR",
+  "title": "No error-prone abbreviations",
+  "text": "Avoid abbreviations on the ISMP error-prone list, for example U or IU for units, QD, QOD, SC or SQ, cc, and ug for micrograms.",
+  "kinds": [
+   "pi",
+   "pi-old",
+   "mg",
+   "ppi",
+   "ifu",
+   "carton",
+   "container"
+  ],
+  "severity": "warning",
+  "src": "ismp",
+  "at": "Error-prone abbreviations list",
+  "check": "US-ME-ABBR",
+  "simplified": "A subset of the ISMP list is checked."
+ },
+ {
+  "id": "US-PT-HEAD",
+  "title": "Patient labelling headings",
+  "text": "Patient labelling uses the required headings in order, in question form, with the product name filled in, and each required heading has content.",
+  "kinds": [
+   "mg",
+   "ppi",
+   "ifu"
+  ],
+  "severity": "error",
+  "src": "cfr208",
+  "at": "208.20(b)",
+  "check": "US-PT-HEAD",
+  "simplified": "Headings follow the FDA templates; the PPI and IFU headings are recommended practice rather than regulation."
+ },
+ {
+  "id": "US-PT-FIXED",
+  "title": "Patient labelling statements",
+  "text": "A Medication Guide is titled \"MEDICATION GUIDE\", gives the side-effect reporting statement, states that it has been approved by FDA, and shows the revision date.",
+  "kinds": [
+   "mg",
+   "ppi",
+   "ifu"
+  ],
+  "severity": "error",
+  "src": "cfr208",
+  "at": "208.20(b)",
+  "check": "US-PT-FIXED"
+ },
+ {
+  "id": "US-MG-PI",
+  "title": "Most important information matches the boxed warning",
+  "text": "When the prescribing information has a boxed warning, the Medication Guide opens with the most important information on that risk.",
+  "kinds": [
+   "mg"
+  ],
+  "severity": "warning",
+  "src": "cfr208",
+  "at": "208.20(b)(2)",
+  "check": "US-MG-PI"
+ },
+ {
+  "id": "US-PT-READ",
+  "title": "Reading level",
+  "text": "Patient labelling is written in plain language. The app estimates a reading grade and flags long sentences and medical terms with lay alternatives.",
+  "kinds": [
+   "mg",
+   "ppi",
+   "ifu"
+  ],
+  "severity": "info",
+  "src": "cfr208",
+  "at": "208.20(a)(2)",
+  "check": "US-PT-READ",
+  "simplified": "Flesch-Kincaid grade estimate in English; a hint only, never a pass or fail."
+ },
+ {
+  "id": "US-CC-REQ",
+  "title": "Required label particulars",
+  "text": "Carton and container labels carry the proprietary and established names, strength, dosage form, net quantity, \"Rx only\", NDC, lot number, expiration date and the name and place of business of the manufacturer, packer or distributor; cartons also carry the route, a dosage statement and storage.",
+  "kinds": [
+   "carton",
+   "container"
+  ],
+  "severity": "error",
+  "src": "cfr201100",
+  "at": "201.1, 201.17, 201.18, 201.51, 201.100",
+  "check": "US-CC-REQ",
+  "simplified": "Small-container exemptions are not modelled."
+ },
+ {
+  "id": "US-CC-NDC",
+  "title": "NDC format",
+  "text": "The NDC is 10 digits in one of the configurations 4-4-2, 5-3-2 or 5-4-1.",
+  "kinds": [
+   "carton",
+   "container"
+  ],
+  "severity": "error",
+  "src": "ndc",
+  "at": "207.33",
+  "check": "US-CC-NDC"
+ },
+ {
+  "id": "US-CC-BARCODE",
+  "title": "Bar code",
+  "text": "Prescription drug labels carry a linear bar code that contains the NDC.",
+  "kinds": [
+   "carton",
+   "container"
+  ],
+  "severity": "error",
+  "src": "cfr20125",
+  "at": "201.25",
+  "check": "US-CC-BARCODE"
+ },
+ {
+  "id": "US-CC-ESTNAME",
+  "title": "Established name prominence",
+  "text": "The established name is printed in letters at least half as large as the letters of the proprietary name, with prominence commensurate with it.",
+  "kinds": [
+   "carton",
+   "container"
+  ],
+  "severity": "error",
+  "src": "cfr20110",
+  "at": "201.10(g)(2)",
+  "check": "US-CC-ESTNAME"
+ },
+ {
+  "id": "US-CC-STR",
+  "title": "Strength matches the PI",
+  "text": "The strength on the carton or container is one of the strengths in the approved prescribing information.",
+  "kinds": [
+   "carton",
+   "container"
+  ],
+  "severity": "error",
+  "src": "carton",
+  "at": "Section III",
+  "check": "US-CC-STR"
+ },
+ {
+  "id": "US-CC-PERML",
+  "title": "Strength per total volume and per mL",
+  "text": "For injectables, the strength is shown as the amount per total volume, followed by the amount per mL (for example \"50 mg/5 mL (10 mg/mL)\").",
+  "kinds": [
+   "carton",
+   "container"
+  ],
+  "severity": "warning",
+  "src": "carton",
+  "at": "Section III.A",
+  "check": "US-CC-PERML"
+ },
+ {
+  "id": "US-CC-MG",
+  "title": "Medication Guide statement",
+  "text": "When a Medication Guide is required, the carton tells the dispenser to provide it: \"Dispense the accompanying Medication Guide to each patient.\"",
+  "kinds": [
+   "carton"
+  ],
+  "severity": "error",
+  "src": "cfr208",
+  "at": "208.24(d)",
+  "check": "US-CC-MG"
+ },
+ {
+  "id": "US-ANDA-SAME",
+  "title": "Same as the reference label",
+  "text": "Generic labeling is the same as the reference listed drug labeling, except for permitted differences: for example the manufacturer, inactive ingredients, how supplied, and indications omitted because of patents or exclusivity.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "warning",
+  "src": "cfr31494",
+  "at": "314.94(a)(8)(iv)",
+  "check": "US-ANDA-SAME"
+ },
+ {
+  "id": "US-ANDA-CARVE",
+  "title": "Carve-outs are complete",
+  "text": "When a protected indication is carved out under section viii, every mention that depends on it is removed: the indication, its dosing, its clinical studies and its Highlights entries.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "cfr314127",
+  "at": "314.127(a)(7); FD&C Act 505(j)(2)(A)(viii)",
+  "check": "US-ANDA-CARVE",
+  "simplified": "Mentions are found by keywords defined for each indication in the exercise."
+ }
+]
