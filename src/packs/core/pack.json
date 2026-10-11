@@ -34,7 +34,7 @@
   {
    "id": "in",
    "label": "India",
-   "pack": false
+   "pack": true
   },
   {
    "id": "ca",
@@ -93,6 +93,11 @@
   {
    "id": "psusa",
    "label": "PSUSA outcome (EU)",
+   "safety": true
+  },
+  {
+   "id": "cdsco",
+   "label": "CDSCO directive (India)",
    "safety": true
   },
   {

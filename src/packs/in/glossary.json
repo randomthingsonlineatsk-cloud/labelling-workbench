@@ -1,0 +1,56 @@
+{
+ "terms": [
+  {
+   "term": "CDSCO",
+   "def": "Central Drugs Standard Control Organisation: India’s national drug regulator, headed by the Drugs Controller General of India (DCGI)."
+  },
+  {
+   "term": "DPCO",
+   "def": "Drugs (Prices Control) Order, 2013: sets ceiling prices and requires the MRP, inclusive of all taxes, on the label."
+  },
+  {
+   "term": "MRP",
+   "def": "Maximum retail price, printed on the label inclusive of all taxes."
+  },
+  {
+   "term": "NPPA",
+   "def": "National Pharmaceutical Pricing Authority: fixes and revises ceiling prices."
+  },
+  {
+   "term": "NRx / XRx",
+   "def": "Symbols for narcotic or psychotropic Schedule H/H1 drugs (NRx) and Schedule X drugs (XRx)."
+  },
+  {
+   "term": "Package insert (India)",
+   "def": "The prescribing information approved by CDSCO, packed with the drug."
+  },
+  {
+   "term": "Proper name",
+   "def": "The generic name of the drug, printed at least two font sizes larger than the brand name."
+  },
+  {
+   "term": "PvPI",
+   "def": "Pharmacovigilance Programme of India."
+  },
+  {
+   "term": "Rule 96",
+   "def": "The rule of the Drugs Rules, 1945 that lists the particulars every drug label must show."
+  },
+  {
+   "term": "Rule 97",
+   "def": "The rule setting the cautions and warnings for Schedule G, H, H1 and X drugs, printed in a red box."
+  },
+  {
+   "term": "Schedule H / H1 / X",
+   "def": "Lists of prescription drugs with increasing control; each has its own label caution and symbol."
+  },
+  {
+   "term": "Schedule H2",
+   "def": "The list of brands that must carry a QR code with set data elements."
+  },
+  {
+   "term": "Schedule J",
+   "def": "Diseases a drug may not claim to prevent or cure."
+  }
+ ]
+}

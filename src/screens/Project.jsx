@@ -69,7 +69,7 @@ export default function Project({ id, docId, tab }) {
       <div className="ws-head">
         <div className="ws-title">
           <div>
-            <p className="small" style={{ margin: 0 }}><a href="#/">Projects</a> / {product?.brandName} ({product?.inn}) · {project.region === 'eu' ? 'EU' : 'US'} · fictional</p>
+            <p className="small" style={{ margin: 0 }}><a href="#/">Projects</a> / {product?.brandName} ({product?.inn}) · {{ eu: 'EU', in: 'India' }[project.region] ?? 'US'} · fictional</p>
             {renaming ? (
               <form className="row" onSubmit={async (e) => { e.preventDefault(); await saveProject({ ...project, title: e.target.t.value || project.title }); setRenaming(false); }}>
                 <input name="t" type="text" defaultValue={project.title} aria-label="Project name" style={{ minWidth: 280 }} /><button className="btn small primary">Save</button>

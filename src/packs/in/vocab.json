@@ -1,0 +1,116 @@
+{
+ "schedules": {
+  "H": {
+   "symbol": "Rx",
+   "header": "SCHEDULE H PRESCRIPTION DRUG – CAUTION",
+   "text": [
+    "Not to be sold by retail without the prescription of a Registered Medical Practitioner."
+   ]
+  },
+  "H-NDPS": {
+   "symbol": "NRx",
+   "header": "SCHEDULE H PRESCRIPTION DRUG – WARNING",
+   "text": [
+    "To be sold by retail on the prescription of a Registered Medical Practitioner only."
+   ]
+  },
+  "H1": {
+   "symbol": "Rx",
+   "header": "SCHEDULE H1 PRESCRIPTION DRUG – CAUTION",
+   "text": [
+    "It is dangerous to take this preparation except in accordance with the medical advice.",
+    "Not to be sold by retail without the prescription of a Registered Medical Practitioner."
+   ]
+  },
+  "H1-NDPS": {
+   "symbol": "NRx",
+   "header": "SCHEDULE H1 PRESCRIPTION DRUG – CAUTION",
+   "text": [
+    "It is dangerous to take this preparation except in accordance with the medical advice.",
+    "Not to be sold by retail without the prescription of a Registered Medical Practitioner."
+   ]
+  },
+  "X": {
+   "symbol": "XRx",
+   "header": "SCHEDULE X PRESCRIPTION DRUG – WARNING",
+   "text": [
+    "To be sold by retail on the prescription of a Registered Medical Practitioner only."
+   ]
+  },
+  "G": {
+   "symbol": "",
+   "header": "SCHEDULE G PRESCRIPTION DRUG – CAUTION",
+   "text": [
+    "It is dangerous to take this preparation except under medical supervision."
+   ]
+  }
+ },
+ "scheduleLabels": {
+  "H": "Schedule H",
+  "H-NDPS": "Schedule H (NDPS substance)",
+  "H1": "Schedule H1",
+  "H1-NDPS": "Schedule H1 (NDPS substance)",
+  "X": "Schedule X",
+  "G": "Schedule G",
+  "none": "No schedule (OTC)"
+ },
+ "h2": [
+  {
+   "key": "upic",
+   "label": "Unique product identification code",
+   "re": "unique product identification code|UPIC"
+  },
+  {
+   "key": "name",
+   "label": "Proper and generic name",
+   "re": "generic name|proper name"
+  },
+  {
+   "key": "brand",
+   "label": "Brand name",
+   "re": "brand name"
+  },
+  {
+   "key": "mfr",
+   "label": "Name and address of the manufacturer",
+   "re": "manufacturer"
+  },
+  {
+   "key": "batch",
+   "label": "Batch number",
+   "re": "batch"
+  },
+  {
+   "key": "mfg",
+   "label": "Date of manufacturing",
+   "re": "date of manufactur"
+  },
+  {
+   "key": "exp",
+   "label": "Date of expiry",
+   "re": "date of expiry|expiry date"
+  },
+  {
+   "key": "lic",
+   "label": "Manufacturing licence number",
+   "re": "licen[cs]e"
+  }
+ ],
+ "promo": [
+  "best",
+  "safest",
+  "superior",
+  "breakthrough",
+  "miracle",
+  "guaranteed",
+  "number one"
+ ],
+ "schj": [
+  "cancer",
+  "diabetes",
+  "AIDS",
+  "tuberculosis",
+  "blindness",
+  "paralysis"
+ ]
+}

@@ -122,5 +122,5 @@ export function applyRolloutFile(core, change, text) {
 export function sampleChange(core, sample, docs, user, on = today()) {
   if (!sample.change) return null;
   const start = addDays(on, -3);
-  return newChange(core, { ...sample.change, notice: sample.change.notice ? { ...sample.change.notice, date: start } : null, startDate: start, docIds: docs.filter((d) => ['pi', 'mg', 'smpc', 'pl'].includes(d.kind) && d.role !== 'translation').map((d) => d.id), user });
+  return newChange(core, { ...sample.change, notice: sample.change.notice ? { ...sample.change.notice, date: start } : null, startDate: start, docIds: docs.filter((d) => ['pi', 'mg', 'smpc', 'pl', 'in-pi', 'in-carton', 'in-label'].includes(d.kind) && d.role !== 'translation').map((d) => d.id), user });
 }

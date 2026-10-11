@@ -8,7 +8,7 @@ export const uid = (p = 'x') => `${p}-${Date.now().toString(36)}-${Math.random()
 export const now = () => new Date().toISOString();
 const clone = (x) => (typeof structuredClone === 'function' ? structuredClone(x) : JSON.parse(JSON.stringify(x)));
 
-export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)' };
+export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)', 'in-pi': 'Package insert (India)', 'in-carton': 'Carton (India)', 'in-label': 'Strip or container label (India)' };
 export const STATUS = { draft: 'Draft', review: 'In review', changes: 'Changes requested', approved: 'Approved', superseded: 'Superseded', submitted: 'Sent to agency' };
 
 export const newBlock = (t = 'p') => ({ id: uid('b'), t, ...(t === 'ul' ? { items: [''] } : t === 'table' ? { rows: [['', ''], ['', '']] } : { text: '' }) });
@@ -47,6 +47,7 @@ export function projectFromSample(sample, user, { pack = null, product = null } 
 export function blankDoc(pack, kind, product, projectId, user) {
   const t = templateFor(pack, kind);
   if (EU_KINDS.includes(kind)) return blankEuDoc(pack, kind, product, projectId, user);
+  if (IN_KINDS.includes(kind)) return blankInDoc(pack, kind, product, projectId, user);
   const meta = {
     proprietaryName: (product?.brandName ?? '').toUpperCase(), establishedName: product?.inn ?? '',
     dosageForm: (product?.dosageForm ?? '').split(',')[0], route: product?.route ? `for ${product.route} use` : '',
@@ -69,7 +70,29 @@ export function blankDoc(pack, kind, product, projectId, user) {
 }
 
 export const EU_KINDS = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
-export const regionOfKind = (kind) => (EU_KINDS.includes(kind) ? 'eu' : 'us');
+export const IN_KINDS = ['in-pi', 'in-carton', 'in-label'];
+export const regionOfKind = (kind) => (EU_KINDS.includes(kind) ? 'eu' : IN_KINDS.includes(kind) ? 'in' : 'us');
+
+// India documents: the CDSCO insert format or the Rule 96 label particulars. Brand names in
+// capitals; schedule, Schedule H2 status and type sizes in the metadata. Labels start with the
+// schedule's red box and symbol filled in, the insert with the RMP statement.
+function blankInDoc(pack, kind, product, projectId, user) {
+  const t = templateFor(pack, kind);
+  const ind = product?.in ?? {};
+  const meta = {
+    proprietaryName: (product?.brandName ?? '').toUpperCase(), establishedName: product?.inn ?? '', dosageForm: product?.dosageForm ?? '', route: product?.route ?? '',
+    strengths: kind === 'in-pi' ? product?.strengths ?? [] : (product?.strengths ?? []).slice(0, 1), manufacturer: ind.manufacturer ?? product?.holder?.name ?? '', revised: '',
+    schedule: ind.schedule ?? 'H', h2: !!ind.h2, sizes: { proper: 14, brand: 10 }, lang: 'en',
+  };
+  const sch = pack.vocab?.in?.schedules?.[meta.schedule];
+  const start = { c1: sch?.symbol ?? '', c11: 'B. No.: ', c12: 'Mfg. Date: MM/YYYY', c13: 'Exp. Date: MM/YYYY', c10: 'Mfg. Lic. No.: ' };
+  const sections = t.sections.filter((s) => s.need !== 'optional').map((s) => {
+    const blocks = s.num === 'c6' && sch ? [{ id: uid('b'), t: 'box', text: [sch.header, ...sch.text].join('\n') }] : [{ ...newBlock(), text: start[s.num] ?? '' }];
+    return { num: s.num, title: s.title, blocks, subs: (s.fixedSubs ?? []).filter((x) => x.need !== 'optional').map((x) => ({ num: x.num, title: x.title, blocks: [newBlock()] })) };
+  });
+  const fixed = Object.fromEntries(Object.entries(t.fixed ?? {}).map(([k, v]) => [k, fill(v, meta)]));
+  return { id: uid('d'), kind, projectId, title: KIND_LABEL[kind], meta, fixed, sections, status: 'draft', version: 0, waivers: {}, userId: user?.userId ?? null, classId: user?.classId ?? null, createdAt: now(), updatedAt: now() };
+}
 
 // EU documents: QRD sections, the product's EU details, names in normal case.
 function blankEuDoc(pack, kind, product, projectId, user) {

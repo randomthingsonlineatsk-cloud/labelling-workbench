@@ -1,0 +1,79 @@
+{
+ "id": "in",
+ "name": "India (CDSCO)",
+ "short": "IN",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "in-pi",
+  "in-carton",
+  "in-label"
+ ],
+ "about": "The package insert (prescribing information) of a new drug approved by CDSCO, the carton, and the label on the strip or container. Label particulars follow Rule 96 of the Drugs Rules, 1945, schedule warnings follow Rule 97 (as amended in 2018), the QR code follows Schedule H2, and the price display follows the Drugs (Prices Control) Order, 2013. Where a check follows common practice rather than a rule text, its rule card says so.",
+ "watch": [
+  {
+   "id": "h2ext",
+   "title": "Schedule H2 QR codes for more products",
+   "src": "h2ext",
+   "text": "The QR code requirement, in force since 1 August 2023 for the top 300 brands, is being extended: vaccines, anti-cancer and NDPS drugs from 1 July 2027 and antimicrobials from 1 July 2028. The app checks a product only when it is marked as in scope."
+  },
+  {
+   "id": "excipqr",
+   "title": "Excipients in QR codes",
+   "src": "excipqr",
+   "text": "The Health Ministry has said it will amend the Drugs Rules so that QR codes also carry excipient details. Until the amendment is final, the app does not require them."
+  }
+ ],
+ "sources": [
+  {
+   "id": "r96",
+   "title": "Drugs Rules, 1945 (formerly Drugs and Cosmetics Rules), Rule 96: manner of labelling",
+   "url": "https://cdsco.gov.in/opencms/opencms/en/Acts-and-rules/"
+  },
+  {
+   "id": "r97",
+   "title": "Drugs and Cosmetics (Fifth Amendment) Rules, 2018: Rule 97 schedule cautions and warnings in a red box, Rx/NRx/XRx symbols (in force 1 November 2018)",
+   "url": "https://business.medicaldialogues.in/labelling-norms-for-high-risk-medicines-made-stringent-check-out-details"
+  },
+  {
+   "id": "fdcname",
+   "title": "Drugs and Cosmetics Rules amendment: proper name at least two font sizes larger than the brand name (in force 1 April 2019)",
+   "url": "https://business.medicaldialogues.in/government-issues-law-for-labelling-drugs-fdcs-details"
+  },
+  {
+   "id": "h2",
+   "title": "Drugs (Eighth Amendment) Rules, 2022: Schedule H2, QR code on the label of the top 300 brands (in force 1 August 2023)",
+   "url": "https://business.medicaldialogues.in/track-and-trace-codes-for-pharma-apis-ministry-issues-gazette-cdsco-issues-notice"
+  },
+  {
+   "id": "h2ext",
+   "title": "Schedule H2 extended to vaccines, antimicrobials, anti-cancer and NDPS drugs (2027 and 2028)",
+   "url": "https://anantamias.com/current-affairs/qr-code-drug-traceability-vaccines-antimicrobials/"
+  },
+  {
+   "id": "excipqr",
+   "title": "Health Ministry to amend the Drugs Rules for excipient details in QR codes",
+   "url": "https://www.digitalhealthnews.com/union-health-ministry-to-amend-drugs-rules-for-inclusion-of-excipients-in-qr-codes"
+  },
+  {
+   "id": "ndct",
+   "title": "New Drugs and Clinical Trials Rules, 2019 (permission for new drugs; prescribing information submitted with the application)",
+   "url": "https://cdsco.gov.in/opencms/opencms/en/Acts-and-rules/New-Drugs/"
+  },
+  {
+   "id": "pifmt",
+   "title": "Package insert format used in CDSCO-approved prescribing information (headings 1 to 12)",
+   "url": "https://cdsco.gov.in/opencms/opencms/en/Drugs/New-Drugs/"
+  },
+  {
+   "id": "dpco",
+   "title": "Drugs (Prices Control) Order, 2013: display of the maximum retail price on the label, inclusive of all taxes",
+   "url": "https://www.nppaindia.nic.in/"
+  },
+  {
+   "id": "schj",
+   "title": "Drugs Rules, 1945, Schedule J: diseases a drug may not claim to prevent or cure",
+   "url": "https://en.wikipedia.org/wiki/Drugs_and_Cosmetics_Rules,_1945"
+  }
+ ]
+}

@@ -15,7 +15,7 @@ export async function openSample(app, sampleId, docSampleId, tab = 'edit', focus
 export function Learn() {
   const { pack, lessonsDone } = useApp();
   const ls = pack.lessons.lessons;
-  const groups = [['us', 'US labelling', 'The prescribing information, patient labelling, carton and container, SPL and generic labelling.'], ['core', 'Core data sheet and change management', 'The company core data sheet, mapping and deviations, safety labelling changes, agency comment rounds and implementation.'], ['eu', 'EU product information', 'The QRD template, SmPC 4.8, excipients, additional monitoring, user testing, Braille and safety features, translations, PRAC wording and ePI.']];
+  const groups = [['us', 'US labelling', 'The prescribing information, patient labelling, carton and container, SPL and generic labelling.'], ['core', 'Core data sheet and change management', 'The company core data sheet, mapping and deviations, safety labelling changes, agency comment rounds and implementation.'], ['eu', 'EU product information', 'The QRD template, SmPC 4.8, excipients, additional monitoring, user testing, Braille and safety features, translations, PRAC wording and ePI.'], ['in', 'India labelling', 'Rule 96 label particulars, the Rule 97 red-box cautions and symbols, the CDSCO package insert format, Schedule H2 QR codes, and the MRP and proper-name rules.']];
   return (
     <div className="page">
       <h1>Learn</h1>

@@ -7,6 +7,30 @@ import { epiSections, epiHtml } from '../../engine/epi.js';
 import { download, slug } from '../../engine/io.js';
 
 const EU = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
+const IN = ['in-pi', 'in-carton', 'in-label'];
+const txt = (s) => (s?.blocks ?? []).flatMap((b) => (b.t === 'ul' ? b.items : b.t === 'table' ? b.rows.flat() : [b.text ?? ''])).filter((x) => x.trim()).join(' ');
+
+// An Indian carton or strip, schematic: the symbol top left in red, the proper name larger than
+// the brand name (scaled from the type sizes), the Rule 97 caution in a red box, then the
+// Rule 96 particulars and the MRP.
+function InLabelMock({ doc }) {
+  const sec = (n) => (doc.sections ?? []).find((s) => s.num === n);
+  const sz = doc.meta?.sizes ?? {};
+  const scale = (pt, fallback) => `${Math.max(0.7, Math.min(2.6, (Number(pt) || fallback) / 8))}rem`;
+  const order = (doc.sections ?? []).map((s) => s.num).filter((n) => n === 'c2' || n === 'c3');
+  const rest = (doc.sections ?? []).filter((s) => !['c1', 'c2', 'c3', 'c6'].includes(s.num));
+  return (
+    <div className="in-label" aria-label="Label schematic">
+      <div className="in-symbol">{txt(sec('c1'))}</div>
+      {order.map((n) => n === 'c2'
+        ? <div key={n} style={{ fontSize: scale(sz.proper, 14), fontWeight: 700, lineHeight: 1.15 }}>{txt(sec('c2'))}</div>
+        : <div key={n} style={{ fontSize: scale(sz.brand, 10), fontWeight: 600, color: 'var(--ink-2)' }}>{txt(sec('c3'))}</div>)}
+      <p className="small muted" style={{ margin: '.2rem 0 .6rem' }}>Proper name {sz.proper ?? '?'} pt · brand name {sz.brand ?? '?'} pt</p>
+      {(sec('c6')?.blocks ?? []).map((b) => (b.t === 'box' ? <div key={b.id} className="in-redbox">{b.text}</div> : b.text?.trim() ? <p key={b.id} className="small">{b.text}</p> : null))}
+      {rest.map((s) => { const v = txt(s); return v ? <p key={s.num} className="in-part">{s.num === 'c16' ? <span className="in-qr" aria-hidden="true" /> : null}{v}</p> : null; })}
+    </div>
+  );
+}
 
 // A structured view of the product information, the way an ePI organises it: typed sections with
 // stable identifiers and language. Simplified; not FHIR.
@@ -26,12 +50,12 @@ function EpiView({ doc }) {
   );
 }
 
-function Blocks({ blocks, anno }) {
+function Blocks({ blocks, anno, red }) {
   return (blocks ?? []).map((b) => (
     <React.Fragment key={b.id}>
       {b.t === 'ul' ? <ul>{b.items.filter((x) => x.trim()).map((x, i) => <li key={i}>{x}</li>)}</ul>
         : b.t === 'table' ? <table><tbody>{b.rows.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody></table>
-          : b.t === 'box' ? <div className="bwbox">{b.text}</div>
+          : b.t === 'box' ? <div className={red ? 'in-redbox' : 'bwbox'}>{b.text}</div>
             : b.text?.trim() ? <p>{b.text}</p> : null}
       {anno && b.note && <span className="anno">Annotation: {b.note}</span>}
     </React.Fragment>
@@ -45,6 +69,8 @@ export default function Preview({ doc }) {
   const m = doc.meta ?? {};
   if (doc.kind === 'carton' || doc.kind === 'container') return <div><CartonMock doc={doc} /><p className="small muted" style={{ marginTop: '.5rem' }}>Schematic only. Export a PDF from the Export tab.</p></div>;
   const t = templateFor(pack, doc.kind);
+  if (doc.kind === 'in-carton' || doc.kind === 'in-label') return <div><InLabelMock doc={doc} /><p className="small muted" style={{ marginTop: '.5rem' }}>Schematic only: the type sizes come from "Product, schedule and type sizes" on the Edit tab. Export a PDF from the Export tab.</p></div>;
+  const red = IN.includes(doc.kind);
   return (
     <div>
       <div className="row no-print" style={{ marginBottom: '.75rem' }}>
@@ -81,15 +107,15 @@ export default function Preview({ doc }) {
             </section>
           ))}
         </>) : epi ? <EpiView doc={doc} /> : (<>
-          {doc.fixed?.header && <h2 style={{ textAlign: 'center' }}>{doc.fixed.header}</h2>}
+          {doc.fixed?.header && (red ? <p style={{ textAlign: 'center', fontWeight: 700 }}>{doc.fixed.header}</p> : <h2 style={{ textAlign: 'center' }}>{doc.fixed.header}</h2>)}
           {doc.fixed?.nameLine ? <p style={{ textAlign: 'center', whiteSpace: 'pre-line' }}><b>{doc.fixed.nameLine}</b></p> : <p style={{ textAlign: 'center' }}><b>{m.proprietaryName}</b> ({m.establishedName}) {m.dosageForm}</p>}
           {doc.fixed?.blackTriangle && <p><b>{doc.fixed.blackTriangle}</b></p>}
           {doc.fixed?.readFirst && <div className="bwbox"><p>{doc.fixed.readFirst}</p></div>}
           {(doc.sections ?? []).map((s) => (
             <section key={s.num}>
-              <h3>{/^\d/.test(s.num) && EU.includes(doc.kind) ? sectionTitle(s) : s.title}</h3>
-              <Blocks blocks={s.blocks} anno={anno} />
-              {(s.subs ?? []).map((x) => <div key={x.num}><h4>{/^\d/.test(x.num) ? sectionTitle(x) : x.title}</h4><Blocks blocks={x.blocks} anno={anno} /></div>)}
+              <h3>{/^\d/.test(s.num) && (EU.includes(doc.kind) || red) ? sectionTitle(s) : s.title}</h3>
+              <Blocks blocks={s.blocks} anno={anno} red={red} />
+              {(s.subs ?? []).map((x) => <div key={x.num}><h4>{/^\d/.test(x.num) ? sectionTitle(x) : x.title}</h4><Blocks blocks={x.blocks} anno={anno} red={red} /></div>)}
             </section>
           ))}
           {doc.fixed?.sideEffects && <p><b>{doc.fixed.sideEffects}</b></p>}

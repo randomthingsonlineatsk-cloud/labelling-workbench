@@ -1,0 +1,52 @@
+{
+ "drills": [
+  {
+   "id": "in-pi-fix",
+   "module": "in",
+   "title": "Fix the package insert",
+   "minutes": 12,
+   "sample": "in-ostrevia-errors",
+   "doc": "pi",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "IN-"
+    ]
+   },
+   "about": "Restore the RMP statement, the heading, the permission date, the strength and the revision date, and remove the promotional claim."
+  },
+  {
+   "id": "in-label-fix",
+   "module": "in",
+   "title": "Fix the carton and strip",
+   "minutes": 15,
+   "sample": "in-ostrevia-errors",
+   "doc": "carton-10",
+   "goal": {
+    "type": "rules-multi",
+    "docs": [
+     "carton-10",
+     "strip-10"
+    ],
+    "prefixes": [
+     "IN-"
+    ]
+   },
+   "about": "The Rx symbol, the 2018 red-box caution, the proper name size, the Rule 96 prefixes, the MRP and the expiry date."
+  },
+  {
+   "id": "in-directive",
+   "module": "in",
+   "capstone": true,
+   "title": "Capstone: implement a CDSCO directive",
+   "minutes": 30,
+   "sample": "in-ostrevia-directive",
+   "doc": "pi",
+   "tab": "changes",
+   "goal": {
+    "type": "directive"
+   },
+   "about": "Add tuberculosis screening (IGRA or skin test, chest X-ray) to 4.4 and section 9, revise the date, add the Schedule H2 QR code and the new MRP to the carton and strip, approve all three, and record the submission within 30 days."
+  }
+ ]
+}

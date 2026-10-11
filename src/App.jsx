@@ -147,7 +147,7 @@ export default function App() {
     },
     createBlank: async ({ productId, kinds, title, region = 'us' }) => {
       const product = productById(productId);
-      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new ${region === 'eu' ? 'EU product information' : 'label set'}`, productId, region, createdAt: now(), updatedAt: now() });
+      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new ${region === 'eu' ? 'EU product information' : region === 'in' ? 'India label set' : 'label set'}`, productId, region, createdAt: now(), updatedAt: now() });
       await db.put('projects', project);
       for (const k of kinds) {
         const d = blankDoc(pack, k, product, project.id, user);

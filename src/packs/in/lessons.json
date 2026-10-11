@@ -1,0 +1,134 @@
+{
+ "lessons": [
+  {
+   "id": 25,
+   "module": "in",
+   "title": "Rule 96: what every Indian label must show",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "The particulars",
+     "p": [
+      "Rule 96 of the Drugs Rules, 1945 (until 2023 the Drugs and Cosmetics Rules) lists what the label of a drug must show: the proper name, the net content, the content of active ingredients, the name and address of the manufacturer and the premises, the batch number, the manufacturing licence number, and the dates of manufacture and expiry.",
+      "Each comes with a set prefix: \"B. No.\" or \"Batch No.\", \"Mfg. Lic. No.\" or \"M.L.\", \"Mfg. Date\" and \"Exp. Date\". Inspectors and pharmacists rely on finding them in the same form on every pack."
+     ]
+    },
+    {
+     "h": "Proper name first",
+     "p": [
+      "Since April 2019 the proper (generic) name is printed in a font at least two sizes larger than the brand name, and the brand name comes below or after it. Vitamin fixed-dose combinations and combinations of three or more drugs are exempt."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "in-ostrevia-errors",
+    "doc": "carton-10"
+   },
+   "watch": false
+  },
+  {
+   "id": 26,
+   "module": "in",
+   "title": "Schedule cautions and warnings (Rule 97)",
+   "minutes": 7,
+   "sections": [
+    {
+     "h": "Which drugs, which words",
+     "p": [
+      "Drugs in Schedules G, H, H1 and X carry a caution or warning set by Rule 97. Since November 2018 it is printed in legible black type inside a completely red rectangular box, and each schedule has its own header, such as \"SCHEDULE H PRESCRIPTION DRUG – CAUTION\" followed by \"Not to be sold by retail without the prescription of a Registered Medical Practitioner.\"",
+      "Schedule H1 adds \"It is dangerous to take this preparation except in accordance with the medical advice.\" Schedule X and narcotic or psychotropic Schedule H drugs use \"WARNING\" and \"To be sold by retail on the prescription of a Registered Medical Practitioner only.\""
+     ]
+    },
+    {
+     "h": "Symbols",
+     "p": [
+      "Rx goes at the top left of Schedule H and H1 labels in red; NRx for narcotic and psychotropic substances; XRx for Schedule X. The old red vertical line on the left of the label was replaced by the red box."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "in-ostrevia-errors",
+    "doc": "carton-10",
+    "focus": "c6"
+   },
+   "watch": false
+  },
+  {
+   "id": 27,
+   "module": "in",
+   "title": "The package insert",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "The CDSCO format",
+     "p": [
+      "For a new drug, the prescribing information approved with the permission under the New Drugs and Clinical Trials Rules, 2019 becomes the package insert. CDSCO-approved inserts follow a set of numbered headings: generic name, composition, dosage form and strength, clinical particulars (4.1 to 4.9), pharmacological and nonclinical properties, description, pharmaceutical particulars, patient counselling information, manufacturer, permission or licence number with date, and date of revision.",
+      "The insert opens with \"For the use of a Registered Medical Practitioner or a Hospital or a Laboratory only.\" Its content must match what CDSCO approved; changes go through CDSCO."
+     ]
+    },
+    {
+     "h": "Adverse reaction reporting",
+     "p": [
+      "Inserts point to the Pharmacovigilance Programme of India (PvPI) for reporting suspected adverse reactions, alongside the company."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "in-ostrevia-clean",
+    "doc": "pi"
+   },
+   "watch": false
+  },
+  {
+   "id": 28,
+   "module": "in",
+   "title": "QR codes under Schedule H2",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "What the code carries",
+     "p": [
+      "Schedule H2, added by the Drugs (Eighth Amendment) Rules, 2022, requires a QR code on the primary package label (or the secondary label where the primary has no space) of listed brands. It encodes the unique product identification code, the proper and generic name, the brand name, the manufacturer’s name and address, the batch number, the dates of manufacture and expiry, and the manufacturing licence number."
+     ]
+    },
+    {
+     "h": "Who is in scope",
+     "p": [
+      "The top 300 brands by sales value have carried the code since 1 August 2023. The list is being extended to vaccines, anti-cancer and NDPS drugs from 1 July 2027 and to antimicrobials from 1 July 2028. The Health Ministry has also said excipient details will be added."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "in-ostrevia-directive",
+    "doc": "carton-10"
+   },
+   "watch": false
+  },
+  {
+   "id": 29,
+   "module": "in",
+   "title": "Price and the pack",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "The maximum retail price",
+     "p": [
+      "Under the Drugs (Prices Control) Order, 2013, the label of the container and of the smallest pack offered for retail sale shows the maximum retail price, inclusive of all taxes. For scheduled formulations the price cannot exceed the ceiling price fixed by the National Pharmaceutical Pricing Authority (NPPA); when the ceiling is revised, the MRP on new packs changes.",
+      "A strip sold on its own is a retail pack, so it carries its own MRP."
+     ]
+    },
+    {
+     "h": "Claims",
+     "p": [
+      "Labels and inserts must not claim to prevent or cure the diseases in Schedule J unless the drug is approved for it, and like all product information they must not be promotional."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "in-ostrevia-errors",
+    "doc": "strip-10"
+   },
+   "watch": false
+  }
+ ]
+}

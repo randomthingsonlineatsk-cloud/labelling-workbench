@@ -74,5 +74,5 @@ export function productFromEctdFile(text, products) {
   const p = products.find((x) => x.id === d.project.productId);
   if (!p) throw new Error(`The eCTD project is for a product this app does not have (${d.project.productId}).`);
   const region = d.project.region ?? 'US';
-  return { product: p, region, name: d.project.name ?? '', warnings: !['US', 'EU'].includes(region) ? [`The eCTD project is for ${region}; this app has US and EU packs, so the labels start in US format.`] : [] };
+  return { product: p, region, name: d.project.name ?? '', warnings: !['US', 'EU', 'IN'].includes(region) ? [`The eCTD project is for ${region}; this app has US, EU and India packs, so the labels start in US format.`] : [] };
 }
