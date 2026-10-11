@@ -14,7 +14,7 @@ export default function Rules() {
         {Object.values(pack.regions).map((r) => (
           <div key={r.id} className="panel">
             <h2 style={{ fontSize: 'var(--step-1)' }}>{r.name}</h2>
-            <p className="small">Version <b>{r.version}</b>, as of <b>{r.asOf}</b>. {pack.rules.filter((x) => x.id.startsWith(r.id === 'us' ? 'US-' : 'EU-')).length} rule cards, {pack.samples.filter((x) => (x.region ?? 'us') === r.id).length} sample projects.</p>
+            <p className="small">Version <b>{r.version}</b>, as of <b>{r.asOf}</b>. {pack.rules.filter((x) => x.id.startsWith(`${r.id.toUpperCase()}-`)).length} rule cards, {pack.samples.filter((x) => (x.region ?? 'us') === r.id).length} sample projects.</p>
             <p className="small">{r.about}</p>
           </div>
         ))}
@@ -24,15 +24,15 @@ export default function Rules() {
           <p className="small">{pack.core.about}</p>
         </div>
       </div>
-      <p className="small muted">Packs are built by generator scripts (tools/packs/us.py, core.py, eu.py) and every rule must cite a source or the build fails. The India pack, then Canada, Switzerland, Japan, Australia and WHO PQ, follow the same shape. The oldest pack is {packAgeMonths(pack)} month(s) old.</p>
+      <p className="small muted">Packs are built by generator scripts (tools/packs/us.py, core.py, eu.py, in.py) and every rule must cite a source or the build fails. Canada, Switzerland, Japan, Australia and WHO PQ, follow the same shape. The oldest pack is {packAgeMonths(pack)} month(s) old.</p>
       <h2 style={{ fontSize: 'var(--step-2)' }}>Watch items</h2>
       <p className="small muted">Rules that are proposed or changing. The app teaches them but never reports them as errors.</p>
       <div className="cat-grid" style={{ marginBottom: '1.5rem' }}>
-        {pack.watch.map((w) => { const s = sourceOf(pack, w.src); return <div key={w.id} className="card"><span className="kicker">Watch · {w.region === 'eu' ? 'EU' : 'US'}</span><h3>{w.title}</h3><p className="small" style={{ margin: 0 }}>{w.text}</p><a className="small" href={s.url} target="_blank" rel="noreferrer">{s.title}</a></div>; })}
+        {pack.watch.map((w) => { const s = sourceOf(pack, w.src); return <div key={w.id} className="card"><span className="kicker">Watch · {{ eu: 'EU', in: 'India' }[w.region] ?? 'US'}</span><h3>{w.title}</h3><p className="small" style={{ margin: 0 }}>{w.text}</p><a className="small" href={s.url} target="_blank" rel="noreferrer">{s.title}</a></div>; })}
       </div>
       <div className="section-head"><h2 style={{ margin: 0, fontSize: 'var(--step-2)' }}>Rule cards</h2>
         <label className="field" style={{ minWidth: 240 }}>Applies to
-          <select value={kind} onChange={(e) => setKind(e.target.value)}><option value="">All labels</option>{[...pack.kindsByRegion.us, ...pack.kindsByRegion.eu].map((k) => <option key={k} value={k}>{KIND_LABEL[k]}</option>)}</select>
+          <select value={kind} onChange={(e) => setKind(e.target.value)}><option value="">All labels</option>{Object.values(pack.kindsByRegion).flat().map((k) => <option key={k} value={k}>{KIND_LABEL[k]}</option>)}</select>
         </label>
       </div>
       <div className="issues">

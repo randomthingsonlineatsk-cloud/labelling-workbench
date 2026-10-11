@@ -1,0 +1,340 @@
+{
+ "in-pi": {
+  "kind": "in-pi",
+  "label": "Package insert (prescribing information)",
+  "short": "PI",
+  "src": "pifmt",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "GENERIC NAME",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "DOSAGE FORM AND STRENGTH",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "CLINICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "4.1",
+      "title": "Therapeutic indication",
+      "need": "required"
+     },
+     {
+      "num": "4.2",
+      "title": "Posology and method of administration",
+      "need": "required"
+     },
+     {
+      "num": "4.3",
+      "title": "Contraindications",
+      "need": "required"
+     },
+     {
+      "num": "4.4",
+      "title": "Special warnings and precautions for use",
+      "need": "required"
+     },
+     {
+      "num": "4.5",
+      "title": "Drug interactions",
+      "need": "required"
+     },
+     {
+      "num": "4.6",
+      "title": "Use in special populations (such as pregnant women, lactating women, paediatric patients, geriatric patients etc.)",
+      "need": "required"
+     },
+     {
+      "num": "4.7",
+      "title": "Effects on ability to drive and use machines",
+      "need": "required"
+     },
+     {
+      "num": "4.8",
+      "title": "Undesirable effects",
+      "need": "required"
+     },
+     {
+      "num": "4.9",
+      "title": "Overdose",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "5",
+    "title": "PHARMACOLOGICAL PROPERTIES",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "5.1",
+      "title": "Mechanism of action",
+      "need": "required"
+     },
+     {
+      "num": "5.2",
+      "title": "Pharmacodynamic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.3",
+      "title": "Pharmacokinetic properties",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "6",
+    "title": "NONCLINICAL PROPERTIES",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "6.1",
+      "title": "Animal toxicology or pharmacology",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "7",
+    "title": "DESCRIPTION",
+    "need": "required"
+   },
+   {
+    "num": "8",
+    "title": "PHARMACEUTICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "8.1",
+      "title": "Incompatibilities",
+      "need": "required"
+     },
+     {
+      "num": "8.2",
+      "title": "Shelf-life",
+      "need": "required"
+     },
+     {
+      "num": "8.3",
+      "title": "Packaging information",
+      "need": "required"
+     },
+     {
+      "num": "8.4",
+      "title": "Storage and handling instructions",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "9",
+    "title": "PATIENT COUNSELLING INFORMATION",
+    "need": "required"
+   },
+   {
+    "num": "10",
+    "title": "DETAILS OF MANUFACTURER",
+    "need": "required"
+   },
+   {
+    "num": "11",
+    "title": "DETAILS OF PERMISSION OR LICENCE NUMBER WITH DATE",
+    "need": "required"
+   },
+   {
+    "num": "12",
+    "title": "DATE OF REVISION",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "header": "For the use of a Registered Medical Practitioner or a Hospital or a Laboratory only."
+  }
+ },
+ "in-carton": {
+  "kind": "in-carton",
+  "label": "Carton (India)",
+  "short": "Carton",
+  "src": "r96",
+  "sections": [
+   {
+    "num": "c1",
+    "title": "Symbol (Rx, NRx or XRx)",
+    "need": "recommended"
+   },
+   {
+    "num": "c2",
+    "title": "Proper (generic) name",
+    "need": "required"
+   },
+   {
+    "num": "c3",
+    "title": "Brand name",
+    "need": "recommended"
+   },
+   {
+    "num": "c4",
+    "title": "Composition (content of active ingredients)",
+    "need": "required"
+   },
+   {
+    "num": "c5",
+    "title": "Dosage form and net content",
+    "need": "required"
+   },
+   {
+    "num": "c6",
+    "title": "Schedule caution or warning (red box)",
+    "need": "recommended"
+   },
+   {
+    "num": "c7",
+    "title": "Dosage and directions",
+    "need": "recommended"
+   },
+   {
+    "num": "c8",
+    "title": "Storage",
+    "need": "required"
+   },
+   {
+    "num": "c9",
+    "title": "Manufacturer (name and address of the premises)",
+    "need": "required"
+   },
+   {
+    "num": "c10",
+    "title": "Manufacturing licence number",
+    "need": "required"
+   },
+   {
+    "num": "c11",
+    "title": "Batch number",
+    "need": "required"
+   },
+   {
+    "num": "c12",
+    "title": "Date of manufacture",
+    "need": "required"
+   },
+   {
+    "num": "c13",
+    "title": "Date of expiry",
+    "need": "required"
+   },
+   {
+    "num": "c14",
+    "title": "Maximum retail price",
+    "need": "required"
+   },
+   {
+    "num": "c15",
+    "title": "Marketed by",
+    "need": "optional"
+   },
+   {
+    "num": "c16",
+    "title": "QR code (Schedule H2)",
+    "need": "optional"
+   }
+  ],
+  "fixed": {}
+ },
+ "in-label": {
+  "kind": "in-label",
+  "label": "Strip or container label (India)",
+  "short": "Label",
+  "src": "r96",
+  "sections": [
+   {
+    "num": "c1",
+    "title": "Symbol (Rx, NRx or XRx)",
+    "need": "recommended"
+   },
+   {
+    "num": "c2",
+    "title": "Proper (generic) name",
+    "need": "required"
+   },
+   {
+    "num": "c3",
+    "title": "Brand name",
+    "need": "recommended"
+   },
+   {
+    "num": "c4",
+    "title": "Composition (content of active ingredients)",
+    "need": "required"
+   },
+   {
+    "num": "c5",
+    "title": "Dosage form and net content",
+    "need": "required"
+   },
+   {
+    "num": "c6",
+    "title": "Schedule caution or warning (red box)",
+    "need": "recommended"
+   },
+   {
+    "num": "c8",
+    "title": "Storage",
+    "need": "required"
+   },
+   {
+    "num": "c9",
+    "title": "Manufacturer (name and address of the premises)",
+    "need": "required"
+   },
+   {
+    "num": "c10",
+    "title": "Manufacturing licence number",
+    "need": "required"
+   },
+   {
+    "num": "c11",
+    "title": "Batch number",
+    "need": "required"
+   },
+   {
+    "num": "c12",
+    "title": "Date of manufacture",
+    "need": "required"
+   },
+   {
+    "num": "c13",
+    "title": "Date of expiry",
+    "need": "required"
+   },
+   {
+    "num": "c14",
+    "title": "Maximum retail price",
+    "need": "required"
+   },
+   {
+    "num": "c15",
+    "title": "Marketed by",
+    "need": "optional"
+   },
+   {
+    "num": "c16",
+    "title": "QR code (Schedule H2)",
+    "need": "optional"
+   }
+  ],
+  "fixed": {}
+ }
+}

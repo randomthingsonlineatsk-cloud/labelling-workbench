@@ -106,6 +106,32 @@ export function evaluateDrill(drill, { docs, sample, pack, product, mapping, pro
       { label: 'EU variation submitted before the deadline', done: !!eu?.dates?.Submitted && eu.dates.Submitted <= eu.deadline },
     ]);
   }
+  if (g.type === 'directive') {
+    const pi = docs.find((d) => d.kind === 'in-pi');
+    const carton = docs.find((d) => d.kind === 'in-carton');
+    const strip = docs.find((d) => d.kind === 'in-label');
+    const t = (d, num) => (d ? [findSection(d, num)].filter(Boolean).flatMap((s) => [blocksText(s.blocks), ...(s.subs ?? []).map((x) => blocksText(x.blocks))]).join('\n') : '');
+    const startRev = t(sample.docs.find((d) => d.kind === 'in-pi'), '12').trim();
+    const s44 = /IGRA|interferon[- ]gamma|tuberculin skin test|skin test|Mantoux/i.test(t(pi, '4.4')) && /chest X-?ray|chest radiograph/i.test(t(pi, '4.4'));
+    const s9 = /tuberculosis|\bTB\b/i.test(t(pi, '9')) && /test|screen|X-?ray/i.test(t(pi, '9'));
+    const rev = !!pi && t(pi, '12').trim() !== '' && t(pi, '12').trim() !== startRev;
+    const h2 = (d) => !!d && hasContent(findSection(d, 'c16')?.blocks) && runChecks(d, ctx).filter((i) => i.ruleId === 'IN-H2' && !i.waived).length === 0;
+    const price = (d, amount) => !!d && new RegExp(`(₹|Rs\\.?)\\s?${amount.replace(',', ',?')}(\\.00)?\\b`).test(t(d, 'c14')) && /inclusive of all taxes/i.test(t(d, 'c14'));
+    const ch = (project?.changes ?? []).find((c) => c.trigger === 'cdsco');
+    const inm = ch?.markets.find((m) => m.market === 'in');
+    return score([
+      { label: 'Package insert 4.4: screening with IGRA or a tuberculin skin test, and a chest X-ray', done: s44 },
+      { label: 'Package insert section 9: patients told about tuberculosis screening', done: s9 },
+      { label: 'Package insert date of revision moved on', done: rev },
+      { label: 'Carton: QR code with every Schedule H2 data element', done: h2(carton) },
+      { label: 'Strip: QR code with every Schedule H2 data element', done: h2(strip) },
+      { label: 'Carton MRP ₹ 3,600.00, inclusive of all taxes', done: price(carton, '3,600') },
+      { label: 'Strip MRP ₹ 1,200.00, inclusive of all taxes', done: price(strip, '1,200') },
+      { label: 'Insert, carton and strip approved with the changes', done: [pi, carton, strip].every((d) => d?.status === 'approved') && s44 && h2(carton) && price(strip, '1,200') },
+      { label: 'Change classified in the tracker (India)', done: !!inm?.classification?.trim() },
+      { label: 'Submitted to CDSCO before the deadline', done: !!inm?.dates?.Submitted && inm.dates.Submitted <= inm.deadline },
+    ]);
+  }
   if (g.type === 'pmi') {
     const d = docs.find((x) => x.kind === 'pmi');
     const issues = d ? runChecks(d, ctx).filter((i) => i.ruleId.startsWith('US-PMI-') && i.severity !== 'info' && !i.waived) : [];

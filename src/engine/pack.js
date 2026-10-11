@@ -32,6 +32,15 @@ import euLessons from '../packs/eu/lessons.json' with { type: 'json' };
 import euQuiz from '../packs/eu/quiz.json' with { type: 'json' };
 import euDrills from '../packs/eu/drills.json' with { type: 'json' };
 import euGlossary from '../packs/eu/glossary.json' with { type: 'json' };
+import inPack from '../packs/in/pack.json' with { type: 'json' };
+import inTemplates from '../packs/in/templates.json' with { type: 'json' };
+import inRules from '../packs/in/rules.json' with { type: 'json' };
+import inVocab from '../packs/in/vocab.json' with { type: 'json' };
+import inSamples from '../packs/in/samples.json' with { type: 'json' };
+import inLessons from '../packs/in/lessons.json' with { type: 'json' };
+import inQuiz from '../packs/in/quiz.json' with { type: 'json' };
+import inDrills from '../packs/in/drills.json' with { type: 'json' };
+import inGlossary from '../packs/in/glossary.json' with { type: 'json' };
 import products from '../data/products.json' with { type: 'json' };
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
@@ -53,27 +62,27 @@ const META = (p) => ({ id: p.id, name: p.name, short: p.short, version: p.versio
 
 const merged = {
   ...usPack,
-  regions: { us: META(usPack), eu: META(euPack) },
+  regions: { us: META(usPack), eu: META(euPack), in: META(inPack) },
   kinds: [...usPack.kinds, 'pmi'],
-  kindsByRegion: { us: [...usPack.kinds, 'pmi'], eu: euPack.kinds },
+  kindsByRegion: { us: [...usPack.kinds, 'pmi'], eu: euPack.kinds, in: inPack.kinds },
   langs: euPack.langs,
-  watch: [...usPack.watch.map((w) => ({ ...w, region: 'us' })), ...euPack.watch.map((w) => ({ ...w, region: 'eu' }))],
-  sources: [...usPack.sources, ...corePack.sources, ...euPack.sources],
-  templates: { ...usTemplates, ...coreTemplates, ...euTemplates },
-  rules: [...usRules, ...coreRules, ...euRules],
-  vocab: { ...usVocab, promo: coreVocab.promo, eu: euVocab },
-  samples: [...usSamples.map((x) => ({ ...x, region: 'us' })), ...coreSamples.map(expandCoreSample), ...euSamples.map((x) => ({ ...x, module: 'eu' }))],
-  lessons: { ...usLessons, lessons: [...usLessons.lessons, ...coreLessons.lessons, ...euLessons.lessons] },
-  quiz: { topics: [...usQuiz.topics, ...coreQuiz.topics, ...euQuiz.topics], questions: [...usQuiz.questions, ...coreQuiz.questions, ...euQuiz.questions] },
-  drills: { drills: [...usDrills.drills, ...coreDrills.drills, ...euDrills.drills] },
-  glossary: { terms: [...usGlossary.terms.filter((t) => !/^CC(DS|SI)$|^PMI$/.test(t.term)), ...coreGlossary.terms, ...euGlossary.terms].sort((a, b) => a.term.localeCompare(b.term)) },
+  watch: [...usPack.watch.map((w) => ({ ...w, region: 'us' })), ...euPack.watch.map((w) => ({ ...w, region: 'eu' })), ...inPack.watch.map((w) => ({ ...w, region: 'in' }))],
+  sources: [...usPack.sources, ...corePack.sources, ...euPack.sources, ...inPack.sources],
+  templates: { ...usTemplates, ...coreTemplates, ...euTemplates, ...inTemplates },
+  rules: [...usRules, ...coreRules, ...euRules, ...inRules],
+  vocab: { ...usVocab, promo: coreVocab.promo, eu: euVocab, in: inVocab },
+  samples: [...usSamples.map((x) => ({ ...x, region: 'us' })), ...coreSamples.map(expandCoreSample), ...euSamples.map((x) => ({ ...x, module: 'eu' })), ...inSamples.map((x) => ({ ...x, region: 'in', module: 'in' }))],
+  lessons: { ...usLessons, lessons: [...usLessons.lessons, ...coreLessons.lessons, ...euLessons.lessons, ...inLessons.lessons] },
+  quiz: { topics: [...usQuiz.topics, ...coreQuiz.topics, ...euQuiz.topics, ...inQuiz.topics], questions: [...usQuiz.questions, ...coreQuiz.questions, ...euQuiz.questions, ...inQuiz.questions] },
+  drills: { drills: [...usDrills.drills, ...coreDrills.drills, ...euDrills.drills, ...inDrills.drills] },
+  glossary: { terms: [...usGlossary.terms.filter((t) => !/^CC(DS|SI)$|^PMI$/.test(t.term)), ...coreGlossary.terms, ...euGlossary.terms, ...inGlossary.terms].sort((a, b) => a.term.localeCompare(b.term)) },
   core: corePack,
   agency: { ...coreAgency, ...euAgency },
 };
 
 export const PACKS = { us: merged };
-export const MODULES = { us: { id: 'us', label: 'US labelling', short: 'US' }, core: { id: 'core', label: 'Core data sheet and change management', short: 'Core' }, eu: { id: 'eu', label: 'EU product information', short: 'EU' } };
-export const REGION_LABEL = { us: 'United States', eu: 'European Union' };
+export const MODULES = { us: { id: 'us', label: 'US labelling', short: 'US' }, core: { id: 'core', label: 'Core data sheet and change management', short: 'Core' }, eu: { id: 'eu', label: 'EU product information', short: 'EU' }, in: { id: 'in', label: 'India labelling', short: 'India' } };
+export const REGION_LABEL = { us: 'United States', eu: 'European Union', in: 'India' };
 export const kindsFor = (pack, region = 'us') => pack.kindsByRegion?.[region] ?? pack.kinds;
 export const moduleOf = (x) => x?.module ?? 'us';
 

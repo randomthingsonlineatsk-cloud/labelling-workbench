@@ -27,7 +27,7 @@ PACK = {
     'markets': [
         {'id': 'us', 'label': 'United States', 'pack': True},
         {'id': 'eu', 'label': 'European Union', 'pack': True},
-        {'id': 'in', 'label': 'India', 'pack': False},
+        {'id': 'in', 'label': 'India', 'pack': True},
         {'id': 'ca', 'label': 'Canada', 'pack': False},
         {'id': 'ch', 'label': 'Switzerland', 'pack': False},
         {'id': 'jp', 'label': 'Japan', 'pack': False},
@@ -41,6 +41,7 @@ PACK = {
         {'id': 'rld', 'label': 'Reference listed drug labelling changed', 'safety': None},
         {'id': 'prac', 'label': 'PRAC signal recommendation (EU)', 'safety': True},
         {'id': 'psusa', 'label': 'PSUSA outcome (EU)', 'safety': True},
+        {'id': 'cdsco', 'label': 'CDSCO directive (India)', 'safety': True},
         {'id': 'other', 'label': 'Other (editorial, new data)', 'safety': False},
     ],
     'kinds': [

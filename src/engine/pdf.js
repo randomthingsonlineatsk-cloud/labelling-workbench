@@ -10,10 +10,12 @@ const MUTED = rgb(0.38, 0.42, 0.48);
 const ACCENT = rgb(0.17, 0.4, 0.38);
 const NOTE = rgb(0.45, 0.3, 0.05);
 const WARN = rgb(0.62, 0.14, 0.14);
+const RED = rgb(0.78, 0.06, 0.18);
 const LETTER = [612, 792];
 
-const MAP = { '‘': "'", '’': "'", '“': '"', '”': '"', '–': '-', '—': '-', '→': '->', '≥': '>=', '≤': '<=', '…': '...', ' ': ' ', '•': '-', '✕': 'x', 'µ': 'mc', '▼': '(black triangle)', '×': 'x', '⁹': '^9', '«': '"', '»': '"' };
-export const clean = (s) => String(s ?? '').replace(/[‘’“”–—→≥≤… •✕µ]/g, (c) => MAP[c]).replace(/[^\x09\x0a\x0d\x20-\x7e¡-ÿ]/g, '?');
+const MAP = { '‘': "'", '’': "'", '“': '"', '”': '"', '–': '-', '—': '-', '→': '->', '≥': '>=', '≤': '<=', '…': '...', ' ': ' ', '•': '-', '✕': 'x', 'µ': 'mc', '▼': '(black triangle)', '×': 'x', '⁹': '^9', '«': '"', '»': '"', '₹': 'Rs.' };
+const MAP_RE = new RegExp(`[${Object.keys(MAP).join('')}]`, 'g');
+export const clean = (s) => String(s ?? '').replace(MAP_RE, (c) => MAP[c]).replace(/[^\x09\x0a\x0d\x20-\x7e\u00a1-\u00ff]/g, '?');
 
 async function setup(title) {
   const pdf = await PDFDocument.create();
@@ -69,7 +71,7 @@ function writer(pdf, fonts, { header, watermark = 'TRAINING USE ONLY' }) {
     space(n = 5) { y -= n; },
     rule() { need(10); page.drawLine({ start: { x: M, y: y - 4 }, end: { x: M + W(), y: y - 4 }, thickness: 0.6, color: rgb(0.75, 0.78, 0.82) }); y -= 10; },
     // A ruled box around a set of lines (boxed warning). Breaks across pages if it must.
-    box(title, lines, { size = 9 } = {}) {
+    box(title, lines, { size = 9, border = INK, weight = 1 } = {}) {
       const all = [{ t: title, f: bold }, ...lines.map((t) => ({ t, f: font }))];
       const wrapped = all.flatMap((l) => wrap(l.t, l.f, size, W() - 16).map((t) => ({ t, f: l.f })));
       let i = 0;
@@ -80,7 +82,7 @@ function writer(pdf, fonts, { header, watermark = 'TRAINING USE ONLY' }) {
         const chunk = wrapped.slice(i, i + room);
         for (const l of chunk) { page.drawText(l.t, { x: M + 8, y: y - size - 4, size, font: l.f, color: INK }); y -= size + 2.6; }
         y -= 8;
-        page.drawRectangle({ x: M, y, width: W(), height: top - y, borderColor: INK, borderWidth: 1 });
+        page.drawRectangle({ x: M, y, width: W(), height: top - y, borderColor: border, borderWidth: weight });
         y -= 6;
         i += chunk.length;
       }
@@ -90,11 +92,11 @@ function writer(pdf, fonts, { header, watermark = 'TRAINING USE ONLY' }) {
   return api;
 }
 
-function writeBlocks(w, blocks, { annotate = false, italic, indent = 0 } = {}) {
+function writeBlocks(w, blocks, { annotate = false, italic, indent = 0, red = false } = {}) {
   for (const b of blocks ?? []) {
     if (b.t === 'ul') for (const it of b.items) w.text(`- ${it}`, { indent: indent + 8 });
     else if (b.t === 'table') { for (const [i, r] of b.rows.entries()) w.text(r.join('  |  '), { size: 8.5, f: i === 0 ? w.boldFont : undefined, indent }); w.space(3); }
-    else if (b.t === 'box') w.box('', [b.text]);
+    else if (b.t === 'box') { const [first, ...rest] = String(b.text ?? '').split('\n'); if (red) w.box(first, rest, { border: RED, weight: 2.5 }); else w.box('', [b.text]); }
     else if (blockTexts(b)[0]) w.text(b.text, { indent });
     if (annotate && b.note) w.text(`[Annotation: ${b.note}]`, { size: 8, f: italic, color: NOTE, indent: indent + 8 });
     w.space(2);
@@ -140,6 +142,21 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
       writeBlocks(w, s.blocks, opts);
       for (const x of s.subs ?? []) { w.h(sectionTitle(x), 9.5); writeBlocks(w, x.blocks, opts); }
     }
+  } else if (doc.kind === 'in-carton' || doc.kind === 'in-label') {
+    const sec = (n) => (doc.sections ?? []).find((x) => x.num === n);
+    const one = (n) => (sec(n)?.blocks ?? []).flatMap(blockTexts).filter((x) => x.trim()).join(' ');
+    const sz = m.sizes ?? {};
+    w.h(`${doc.kind === 'in-carton' ? 'Carton' : 'Strip or container label'} (India): text and layout notes`, 12);
+    w.text(`Schedule: ${pack.vocab?.in?.scheduleLabels?.[m.schedule ?? 'none'] ?? m.schedule}. Type sizes: proper name ${sz.proper ?? '-'} pt, brand name ${sz.brand ?? '-'} pt.${m.h2 ? ' Schedule H2: QR code required.' : ''}`, { size: 8.5, color: MUTED });
+    w.rule();
+    if (one('c1')) w.text(one('c1'), { f: bold, size: 16, color: RED });
+    for (const s of doc.sections ?? []) {
+      if (s.num === 'c1') continue;
+      w.text(s.title, { size: 8, color: MUTED });
+      if (s.num === 'c2' || s.num === 'c3') { w.text(one(s.num), { f: bold, size: Math.max(8, Math.min(22, Number(s.num === 'c2' ? sz.proper : sz.brand) || 10)) }); w.space(3); continue; }
+      writeBlocks(w, s.blocks, { ...opts, red: true });
+      w.space(2);
+    }
   } else if (doc.kind === 'carton' || doc.kind === 'container') {
     const f = doc.fields ?? {};
     w.h(`${doc.kind === 'carton' ? 'Carton' : 'Container label'}: text of the principal display panel and side panels`, 12);
@@ -148,21 +165,21 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
     for (const [k, v] of Object.entries(f)) if (v) { w.text(FIELD_LABEL[k] ?? k, { size: 8, color: MUTED }); w.text(v, { size: k === 'proprietaryName' ? 14 : 10, f: k === 'proprietaryName' || k === 'strength' ? bold : undefined }); w.space(3); }
   } else {
     const fx = doc.fixed ?? {};
-    if (fx.header) w.h(fx.header, 13);
+    if (fx.header) w.h(fx.header, doc.kind === 'in-pi' ? 10 : 13);
     w.text(`${m.proprietaryName ?? ''} (${m.establishedName ?? ''}) ${m.dosageForm ?? ''}`, { f: bold });
     w.space(4);
     if (fx.nameLine) for (const l of fx.nameLine.split('\n')) w.text(l, { f: bold, size: 9.5 });
     if (fx.blackTriangle) { w.space(3); w.text(fx.blackTriangle, { f: bold, size: 9 }); }
     if (fx.readFirst) { w.space(3); w.text(fx.readFirst, { size: 8.5 }); }
     for (const s of doc.sections ?? []) {
-      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
-      writeBlocks(w, s.blocks, opts);
+      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister', 'in-pi'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
+      writeBlocks(w, s.blocks, { ...opts, red: doc.kind === 'in-pi' });
       for (const x of s.subs ?? []) { w.h(/^\d/.test(x.num) ? sectionTitle(x) : x.title, 9.5); writeBlocks(w, x.blocks, opts); }
     }
     if (fx.lastRevised) w.text(fx.lastRevised, { size: 8.5 });
     if (fx.sideEffects) w.text(fx.sideEffects, { f: bold, size: 9 });
     if (fx.approval) { w.space(6); w.text(fx.approval, { size: 8.5 }); }
-    if (m.revised && !fx.lastRevised && doc.kind !== 'smpc') w.text(`Revised: ${m.revised}`, { size: 8.5 });
+    if (m.revised && !fx.lastRevised && !['smpc', 'in-pi'].includes(doc.kind)) w.text(`Revised: ${m.revised}`, { size: 8.5 });
   }
   w.space(8);
   w.text('Training use only. Fictional product and company. Not an approved label and not for submission.', { size: 8, color: WARN });
@@ -214,6 +231,7 @@ export async function diffReportPdf(title, rows, { left = 'Before', right = 'Aft
 export async function certificatePdf({ name, userId, status, code, region = 'US', date = today() }) {
   const core = status.region === 'core';
   const eu = status.region === 'eu';
+  const india = status.region === 'in';
   const { pdf, font, bold } = await setup('Labelling Workbench - portfolio certificate');
   const page = pdf.addPage([792, 612]);
   const { width: W, height: H } = page.getSize();
@@ -222,10 +240,14 @@ export async function certificatePdf({ name, userId, status, code, region = 'US'
   page.drawRectangle({ x: 32, y: 32, width: W - 64, height: H - 64, borderColor: ACCENT, borderWidth: 0.5 });
   [0, 1, 2, 3].forEach((i) => page.drawRectangle({ x: W / 2 - 36, y: H - 72 - i * 7, width: 72 - (i % 2) * 22, height: 3.5, color: i === 1 ? rgb(0.62, 0.14, 0.14) : ACCENT }));
   centre('LABELLING WORKBENCH', bold, 13, H - 112, ACCENT);
-  centre(core ? 'Certificate of completion: core data sheet and change management' : eu ? 'Certificate of completion: EU product information' : `Certificate of completion: ${region} labelling`, font, core ? 20 : eu ? 24 : 26, H - 152);
+  centre(core ? 'Certificate of completion: core data sheet and change management' : eu ? 'Certificate of completion: EU product information' : india ? 'Certificate of completion: India labelling' : `Certificate of completion: ${region} labelling`, font, core ? 20 : eu ? 24 : 26, H - 152);
   centre('This certifies that', font, 12, H - 190, MUTED);
   centre(name.trim(), font, 28, H - 228);
-  (eu ? [
+  (india ? [
+    `completed all ${status.lessons.length} India lessons and their checks, an India quiz round and the capstone drill`,
+    'in the Labelling Workbench: Rule 96 label particulars, Rule 97 schedule cautions and symbols, the package insert,',
+    'Schedule H2 QR codes, the MRP and proper-name rules, and implementing a CDSCO directive.',
+  ] : eu ? [
     `completed all ${status.lessons.length} EU lessons and their checks, an EU quiz round and the capstone drill`,
     'in the Labelling Workbench: the QRD template, SmPC section 4.8, excipients, additional monitoring, user testing,',
     'Braille and safety features, translations and implementing PRAC safety wording.',

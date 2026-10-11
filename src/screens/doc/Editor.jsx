@@ -19,7 +19,7 @@ export function nodeOf(doc, loc) {
   if (loc.area === 'fixed') return 'fixed';
   if (loc.area === 'sec') {
     // Subsections (5.1, pl2.1, p1.1) belong to their section's tree node.
-    if (/^(pi|pmi|smpc|pl)$/.test(doc.kind)) return String(loc.key).split('.')[0];
+    if (/^(pi|pmi|smpc|pl|in-pi)$/.test(doc.kind)) return String(loc.key).split('.')[0];
     return loc.key;
   }
   return null;
@@ -36,7 +36,7 @@ export default function Editor({ doc, docs, issues, focus, setFocus, setTab, pro
   const nodes = useMemo(() => {
     const out = [];
     if (doc.kind === 'pi') { out.push({ key: 'hl', label: 'Highlights', n: 'HL' }); out.push({ key: 'bw', label: doc.bw ? 'Boxed warning' : 'Boxed warning (none)', n: 'BW', absent: !doc.bw }); }
-    if (doc.fixed || doc.kind === 'mg' || doc.kind === 'ppi' || doc.kind === 'ifu') out.push({ key: 'fixed', label: 'Title and statements', n: '·' });
+    if (doc.fixed || doc.kind === 'mg' || doc.kind === 'ppi' || doc.kind === 'ifu') out.push({ key: 'fixed', label: ['in-carton', 'in-label'].includes(doc.kind) ? 'Product, schedule and type sizes' : 'Title and statements', n: '·' });
     const present = new Map((doc.sections ?? []).map((s) => [s.num, s]));
     const seen = new Set();
     for (const ts of t.sections) {
@@ -226,11 +226,40 @@ function BoxedPane({ doc, change }) {
 function FixedPane({ doc, change, t, pack }) {
   const m = doc.meta ?? {};
   const eu = ['smpc', 'pl', 'eu-outer', 'eu-blister'].includes(doc.kind);
+  const india = ['in-pi', 'in-carton', 'in-label'].includes(doc.kind);
   const exList = pack?.vocab?.eu?.excipients ?? [];
+  const iv = pack?.vocab?.in ?? {};
   return (
     <div>
-      <h2>Title and statements</h2>
-      {eu ? (<>
+      <h2>{india && doc.kind !== 'in-pi' ? 'Product, schedule and type sizes' : 'Title and statements'}</h2>
+      {india ? (<>
+        <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Brand name'], ['establishedName', 'Proper (generic) name'], ['dosageForm', 'Dosage form'], ['manufacturer', 'Manufacturer']]} />
+        <div className="grid-2" style={{ marginBottom: '1rem' }}>
+          <label className="field">Schedule <small>Sets the Rule 97 box wording and the symbol</small>
+            <select value={m.schedule ?? 'none'} onChange={(e) => change((d) => { d.meta.schedule = e.target.value; }, 'Schedule')}>
+              {Object.entries(iv.scheduleLabels ?? {}).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+            </select>
+          </label>
+          <label className="field">Strengths <small>Comma-separated, for example "10 mg, 25 mg"</small>
+            <input type="text" value={(m.strengths ?? []).join(', ')} onChange={(e) => change((d) => { d.meta.strengths = e.target.value.split(',').map((x) => x.trim()).filter(Boolean); }, 'Strengths')} />
+          </label>
+          {doc.kind !== 'in-pi' && (<>
+            <label className="field">Proper name type size (pt) <small>At least two sizes larger than the brand name</small>
+              <input type="number" min="4" max="48" value={m.sizes?.proper ?? ''} onChange={(e) => change((d) => { d.meta.sizes = { ...(d.meta.sizes ?? {}), proper: e.target.value === '' ? '' : Number(e.target.value) }; }, 'Type sizes')} />
+            </label>
+            <label className="field">Brand name type size (pt)
+              <input type="number" min="4" max="48" value={m.sizes?.brand ?? ''} onChange={(e) => change((d) => { d.meta.sizes = { ...(d.meta.sizes ?? {}), brand: e.target.value === '' ? '' : Number(e.target.value) }; }, 'Type sizes')} />
+            </label>
+          </>)}
+        </div>
+        {doc.kind !== 'in-pi' && <label className="row small" style={{ margin: '.5rem 0' }}><input type="checkbox" checked={!!m.h2} onChange={(e) => change((d) => { d.meta.h2 = e.target.checked; }, 'Schedule H2 status')} /> Product is in Schedule H2 (QR code required)</label>}
+        {doc.kind !== 'in-pi' && iv.schedules?.[m.schedule] && (
+          <div className="callout" style={{ margin: '.5rem 0 1rem' }}>
+            <p className="small" style={{ margin: 0 }}>Rule 97 for {iv.scheduleLabels?.[m.schedule]}: symbol <b>{iv.schedules[m.schedule].symbol || 'none'}</b>, and in a red box:</p>
+            <p className="small" style={{ margin: '.3rem 0 0', whiteSpace: 'pre-line' }}><b>{[iv.schedules[m.schedule].header, ...iv.schedules[m.schedule].text].join('\n')}</b></p>
+          </div>
+        )}
+      </>) : eu ? (<>
         <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Name of the medicinal product'], ['establishedName', 'Active substance'], ['dosageForm', 'Pharmaceutical form'], ['manufacturer', 'Marketing authorisation holder'], ['maNumber', 'Authorisation number(s)']]} />
         <label className="row small" style={{ margin: '.5rem 0' }}><input type="checkbox" checked={!!m.additionalMonitoring} onChange={(e) => change((d) => { d.meta.additionalMonitoring = e.target.checked; }, 'Additional monitoring status')} /> Under additional monitoring (black triangle)</label>
         <fieldset className="plain" style={{ margin: '.5rem 0 1rem' }}>
@@ -251,7 +280,7 @@ function FixedPane({ doc, change, t, pack }) {
         <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Proprietary name'], ['establishedName', 'Established name'], ['dosageForm', 'Dosage form'], ['revised', 'Revised', 'MM/YYYY'], ['manufacturer', 'Manufacturer or distributor']]} />
       )}
       {t.fixed && Object.entries(t.fixed).map(([k, v]) => (
-        <Fixed key={k} label={{ header: 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement', contact: 'Side-effect reporting statement', useStart: 'Opening of Directions for Use', blackTriangle: 'Black triangle statement (additional monitoring)', readFirst: '"Read all of this leaflet" box', lastRevised: 'Last revised line', nameLine: 'Name, strength and form' }[k] ?? k} value={doc.fixed?.[k]} want={fill(v, m)} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
+        <Fixed key={k} label={{ header: doc.kind === 'in-pi' ? 'Statement at the top of the insert' : 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement', contact: 'Side-effect reporting statement', useStart: 'Opening of Directions for Use', blackTriangle: 'Black triangle statement (additional monitoring)', readFirst: '"Read all of this leaflet" box', lastRevised: 'Last revised line', nameLine: 'Name, strength and form' }[k] ?? k} value={doc.fixed?.[k]} want={fill(v, m)} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
       ))}
     </div>
   );

@@ -57,12 +57,12 @@ export default function Changes({ project, docs, product, focus }) {
               </div>
               <a className="small" href={CLASSIFIER} target="_blank" rel="noreferrer">Open the Variations Classifier</a>
             </div>
-            <div className="card">
+            {(project.region ?? 'us') === 'us' && <div className="card">
               <h3>Labelling package for the eCTD</h3>
               <p className="small">The linked labels for US Module 1.14 (draft or final by status), with a manifest. The eCTD Dossier Builder imports it into a labeling supplement.</p>
               <button className="btn small" onClick={() => { const ds = (c.docIds ?? []).map((id) => docs.find((d) => d.id === id)).filter(Boolean); download(`${slug(product.brandName)}-labelling-package.json`, JSON.stringify(labellingPackage({ project, docs: ds.length ? ds : docs, product, pack, user, change: c }), null, 1)); }}>Download package</button>
               <a className="small" href={ECTD} target="_blank" rel="noreferrer">Open the eCTD Dossier Builder</a>
-            </div>
+            </div>}
             <div className="card">
               <h3>Tracker as CSV</h3>
               <p className="small">One row per market with the status, dates and flags.</p>
@@ -89,7 +89,7 @@ function NewChange({ project, docs, onCancel, onCreate }) {
   const { pack, toast, user } = useApp();
   const core = pack.core;
   const cur = currentVersion(project.ccds);
-  const [f, setF] = useState({ trigger: 'signal', kind: 'warning', title: '', text: '', startDate: today(), markets: [project.region === 'eu' ? 'eu' : 'us'], ccdsVersion: cur?.v ?? '' });
+  const [f, setF] = useState({ trigger: 'signal', kind: 'warning', title: '', text: '', startDate: today(), markets: [project.region ?? 'us'], ccdsVersion: cur?.v ?? '' });
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
   const toggle = (m) => setF({ ...f, markets: f.markets.includes(m) ? f.markets.filter((x) => x !== m) : [...f.markets, m] });
   const create = () => {

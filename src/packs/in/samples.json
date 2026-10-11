@@ -1,0 +1,2407 @@
+[
+ {
+  "id": "in-ostrevia-clean",
+  "region": "in",
+  "productId": "nce-tablet",
+  "level": "Start here",
+  "title": "Ostrevia (India): clean package insert and labels",
+  "about": "A Schedule H new drug: the package insert in the CDSCO format, the carton and the strip, with the red-box caution, the Rx symbol, Rule 96 particulars and the MRP.",
+  "docs": [
+   {
+    "id": "pi",
+    "kind": "in-pi",
+    "title": "Package insert",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": false,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {
+     "header": "For the use of a Registered Medical Practitioner or a Hospital or a Laboratory only."
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "GENERIC NAME",
+      "blocks": [
+       {
+        "id": "b1",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg / 25 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b2",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg (or 25 mg). Excipients q.s. Colour: Titanium Dioxide IP (25 mg: Iron Oxide Yellow)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "DOSAGE FORM AND STRENGTH",
+      "blocks": [
+       {
+        "id": "b3",
+        "t": "p",
+        "text": "Film-coated tablets, 10 mg and 25 mg."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indication",
+        "blocks": [
+         {
+          "id": "b4",
+          "t": "p",
+          "text": "Lumiravostat is indicated for the treatment of adults with moderate to severe chronic hand eczema not adequately controlled with potent topical corticosteroids, or when these are not advisable."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b5",
+          "t": "p",
+          "text": "10 mg orally once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks. Hepatic impairment: 10 mg once daily in moderate impairment; not recommended in severe impairment. With strong CYP3A4 inhibitors: 10 mg once daily."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b6",
+          "t": "p",
+          "text": "Hypersensitivity to lumiravostat or any excipient. Active tuberculosis or active serious infection. Pregnancy."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b7",
+          "t": "p",
+          "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported. Screen for latent tuberculosis before starting treatment. Interrupt treatment if a serious infection develops."
+         },
+         {
+          "id": "b8",
+          "t": "p",
+          "text": "Malignancy, including lymphoma and non-melanoma skin cancer, and venous thromboembolism have been reported. Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Drug interactions",
+        "blocks": [
+         {
+          "id": "b9",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase exposure (use 10 mg once daily). Strong CYP3A4 inducers such as rifampicin reduce exposure; avoid concomitant use."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Use in special populations (such as pregnant women, lactating women, paediatric patients, geriatric patients etc.)",
+        "blocks": [
+         {
+          "id": "b10",
+          "t": "p",
+          "text": "Pregnancy: contraindicated; women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose. Lactation: do not breastfeed during treatment and for 4 days after the last dose. Paediatric patients: safety and efficacy not established. Geriatric patients: no dose adjustment."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b11",
+          "t": "p",
+          "text": "No or negligible influence."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b12",
+          "t": "p",
+          "text": "Very common: nasopharyngitis. Common: headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, ALT increased. Uncommon: pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism."
+         },
+         {
+          "id": "b13",
+          "t": "p",
+          "text": "Reporting of suspected adverse reactions: report to the marketer, or to the Pharmacovigilance Programme of India (PvPI) through the ADR reporting form or helpline."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b14",
+          "t": "p",
+          "text": "No specific antidote. Monitor and give supportive treatment."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Mechanism of action",
+        "blocks": [
+         {
+          "id": "b15",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b16",
+          "t": "p",
+          "text": "Dose-dependent reductions in markers of skin inflammation within 2 weeks."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b17",
+          "t": "p",
+          "text": "Peak concentrations at 1 to 2 hours; half-life about 16 hours; metabolised mainly by CYP3A4."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "NONCLINICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "Animal toxicology or pharmacology",
+        "blocks": [
+         {
+          "id": "b18",
+          "t": "p",
+          "text": "Not genotoxic. Embryo-fetal toxicity in rats and rabbits at exposures close to human exposure."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "DESCRIPTION",
+      "blocks": [
+       {
+        "id": "b19",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" and \"10\". 25 mg: yellow, oval, film-coated tablets debossed \"HR\" and \"25\"."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "8.1",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b20",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "8.2",
+        "title": "Shelf-life",
+        "blocks": [
+         {
+          "id": "b21",
+          "t": "p",
+          "text": "36 months."
+         }
+        ]
+       },
+       {
+        "num": "8.3",
+        "title": "Packaging information",
+        "blocks": [
+         {
+          "id": "b22",
+          "t": "p",
+          "text": "Alu-Alu strip of 10 tablets; carton of 3 strips."
+         }
+        ]
+       },
+       {
+        "num": "8.4",
+        "title": "Storage and handling instructions",
+        "blocks": [
+         {
+          "id": "b23",
+          "t": "p",
+          "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "9",
+      "title": "PATIENT COUNSELLING INFORMATION",
+      "blocks": [
+       {
+        "id": "b24",
+        "t": "p",
+        "text": "Tell patients that lumiravostat can lower the ability to fight infections, including tuberculosis, and to report fever, cough or weight loss. Advise them to seek help for leg swelling, chest pain or breathlessness, to use contraception, and not to breastfeed."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DETAILS OF MANUFACTURER",
+      "blocks": [
+       {
+        "id": "b25",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       },
+       {
+        "id": "b26",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "11",
+      "title": "DETAILS OF PERMISSION OR LICENCE NUMBER WITH DATE",
+      "blocks": [
+       {
+        "id": "b27",
+        "t": "p",
+        "text": "Permission No. ND/IMP-MFG/2025/0123 (fictional), dated 14 March 2025"
+       },
+       {
+        "id": "b28",
+        "t": "p",
+        "text": "Mfg. Lic. No. MH/102345 (fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "12",
+      "title": "DATE OF REVISION",
+      "blocks": [
+       {
+        "id": "b29",
+        "t": "p",
+        "text": "September 2026"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "carton-10",
+    "kind": "in-carton",
+    "title": "Carton, 10 mg, 3 x 10 tablets",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": false,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "c1",
+      "title": "Symbol (Rx, NRx or XRx)",
+      "blocks": [
+       {
+        "id": "b30",
+        "t": "p",
+        "text": "Rx"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "Proper (generic) name",
+      "blocks": [
+       {
+        "id": "b31",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "Brand name",
+      "blocks": [
+       {
+        "id": "b32",
+        "t": "p",
+        "text": "OSTREVIA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "Composition (content of active ingredients)",
+      "blocks": [
+       {
+        "id": "b33",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg. Excipients q.s. Colour: Titanium Dioxide IP."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "Dosage form and net content",
+      "blocks": [
+       {
+        "id": "b34",
+        "t": "p",
+        "text": "3 strips of 10 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "Schedule caution or warning (red box)",
+      "blocks": [
+       {
+        "id": "box",
+        "t": "box",
+        "text": "SCHEDULE H PRESCRIPTION DRUG – CAUTION\nNot to be sold by retail without the prescription of a Registered Medical Practitioner."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c7",
+      "title": "Dosage and directions",
+      "blocks": [
+       {
+        "id": "b35",
+        "t": "p",
+        "text": "Dosage: As directed by the physician."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "Storage",
+      "blocks": [
+       {
+        "id": "b36",
+        "t": "p",
+        "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "Manufacturer (name and address of the premises)",
+      "blocks": [
+       {
+        "id": "b37",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "Manufacturing licence number",
+      "blocks": [
+       {
+        "id": "b38",
+        "t": "p",
+        "text": "Mfg. Lic. No.: MH/102345"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "Batch number",
+      "blocks": [
+       {
+        "id": "b39",
+        "t": "p",
+        "text": "B. No.: XXXXXX"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "Date of manufacture",
+      "blocks": [
+       {
+        "id": "b40",
+        "t": "p",
+        "text": "Mfg. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "Date of expiry",
+      "blocks": [
+       {
+        "id": "b41",
+        "t": "p",
+        "text": "Exp. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c14",
+      "title": "Maximum retail price",
+      "blocks": [
+       {
+        "id": "b42",
+        "t": "p",
+        "text": "M.R.P. ₹ 3,750.00 for 30 tablets (inclusive of all taxes)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "Marketed by",
+      "blocks": [
+       {
+        "id": "b43",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "strip-10",
+    "kind": "in-label",
+    "title": "Strip, 10 mg, 10 tablets",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": false,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "c1",
+      "title": "Symbol (Rx, NRx or XRx)",
+      "blocks": [
+       {
+        "id": "b44",
+        "t": "p",
+        "text": "Rx"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "Proper (generic) name",
+      "blocks": [
+       {
+        "id": "b45",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "Brand name",
+      "blocks": [
+       {
+        "id": "b46",
+        "t": "p",
+        "text": "OSTREVIA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "Composition (content of active ingredients)",
+      "blocks": [
+       {
+        "id": "b47",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg. Excipients q.s. Colour: Titanium Dioxide IP."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "Dosage form and net content",
+      "blocks": [
+       {
+        "id": "b48",
+        "t": "p",
+        "text": "10 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "Schedule caution or warning (red box)",
+      "blocks": [
+       {
+        "id": "box",
+        "t": "box",
+        "text": "SCHEDULE H PRESCRIPTION DRUG – CAUTION\nNot to be sold by retail without the prescription of a Registered Medical Practitioner."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "Storage",
+      "blocks": [
+       {
+        "id": "b49",
+        "t": "p",
+        "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "Manufacturer (name and address of the premises)",
+      "blocks": [
+       {
+        "id": "b50",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "Manufacturing licence number",
+      "blocks": [
+       {
+        "id": "b51",
+        "t": "p",
+        "text": "Mfg. Lic. No.: MH/102345"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "Batch number",
+      "blocks": [
+       {
+        "id": "b52",
+        "t": "p",
+        "text": "B. No.: XXXXXX"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "Date of manufacture",
+      "blocks": [
+       {
+        "id": "b53",
+        "t": "p",
+        "text": "Mfg. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "Date of expiry",
+      "blocks": [
+       {
+        "id": "b54",
+        "t": "p",
+        "text": "Exp. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c14",
+      "title": "Maximum retail price",
+      "blocks": [
+       {
+        "id": "b55",
+        "t": "p",
+        "text": "M.R.P. ₹ 1,250.00 per strip of 10 tablets (inclusive of all taxes)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "Marketed by",
+      "blocks": [
+       {
+        "id": "b56",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "in-ostrevia-errors",
+  "region": "in",
+  "productId": "nce-tablet",
+  "level": "Practice",
+  "title": "Ostrevia (India): find and fix the errors",
+  "about": "The same set with 14 planted errors: the old schedule wording, a missing Rx, a brand name larger than the proper name, Rule 96 prefixes, the MRP wording, the permission date and more.",
+  "docs": [
+   {
+    "id": "pi",
+    "kind": "in-pi",
+    "title": "Package insert",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": false,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {
+     "header": ""
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "GENERIC NAME",
+      "blocks": [
+       {
+        "id": "b1",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg / 25 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b2",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg (or 25 mg). Excipients q.s. Colour: Titanium Dioxide IP (25 mg: Iron Oxide Yellow)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "DOSAGE FORM AND STRENGTH",
+      "blocks": [
+       {
+        "id": "b59",
+        "t": "p",
+        "text": "Film-coated tablets, 10 mg and 20 mg."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indication",
+        "blocks": [
+         {
+          "id": "b4",
+          "t": "p",
+          "text": "Lumiravostat is indicated for the treatment of adults with moderate to severe chronic hand eczema not adequately controlled with potent topical corticosteroids, or when these are not advisable."
+         },
+         {
+          "id": "b58",
+          "t": "p",
+          "text": "Ostrevia is the best treatment available for hand eczema."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b5",
+          "t": "p",
+          "text": "10 mg orally once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks. Hepatic impairment: 10 mg once daily in moderate impairment; not recommended in severe impairment. With strong CYP3A4 inhibitors: 10 mg once daily."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b6",
+          "t": "p",
+          "text": "Hypersensitivity to lumiravostat or any excipient. Active tuberculosis or active serious infection. Pregnancy."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b7",
+          "t": "p",
+          "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported. Screen for latent tuberculosis before starting treatment. Interrupt treatment if a serious infection develops."
+         },
+         {
+          "id": "b8",
+          "t": "p",
+          "text": "Malignancy, including lymphoma and non-melanoma skin cancer, and venous thromboembolism have been reported. Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interactions",
+        "blocks": [
+         {
+          "id": "b9",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase exposure (use 10 mg once daily). Strong CYP3A4 inducers such as rifampicin reduce exposure; avoid concomitant use."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Use in special populations (such as pregnant women, lactating women, paediatric patients, geriatric patients etc.)",
+        "blocks": [
+         {
+          "id": "b10",
+          "t": "p",
+          "text": "Pregnancy: contraindicated; women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose. Lactation: do not breastfeed during treatment and for 4 days after the last dose. Paediatric patients: safety and efficacy not established. Geriatric patients: no dose adjustment."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b11",
+          "t": "p",
+          "text": "No or negligible influence."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b12",
+          "t": "p",
+          "text": "Very common: nasopharyngitis. Common: headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, ALT increased. Uncommon: pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism."
+         },
+         {
+          "id": "b13",
+          "t": "p",
+          "text": "Reporting of suspected adverse reactions: report to the marketer, or to the Pharmacovigilance Programme of India (PvPI) through the ADR reporting form or helpline."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b14",
+          "t": "p",
+          "text": "No specific antidote. Monitor and give supportive treatment."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Mechanism of action",
+        "blocks": [
+         {
+          "id": "b15",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b16",
+          "t": "p",
+          "text": "Dose-dependent reductions in markers of skin inflammation within 2 weeks."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b17",
+          "t": "p",
+          "text": "Peak concentrations at 1 to 2 hours; half-life about 16 hours; metabolised mainly by CYP3A4."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "NONCLINICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "Animal toxicology or pharmacology",
+        "blocks": [
+         {
+          "id": "b18",
+          "t": "p",
+          "text": "Not genotoxic. Embryo-fetal toxicity in rats and rabbits at exposures close to human exposure."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "DESCRIPTION",
+      "blocks": [
+       {
+        "id": "b19",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" and \"10\". 25 mg: yellow, oval, film-coated tablets debossed \"HR\" and \"25\"."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "8.1",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b20",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "8.2",
+        "title": "Shelf-life",
+        "blocks": [
+         {
+          "id": "b21",
+          "t": "p",
+          "text": "36 months."
+         }
+        ]
+       },
+       {
+        "num": "8.3",
+        "title": "Packaging information",
+        "blocks": [
+         {
+          "id": "b22",
+          "t": "p",
+          "text": "Alu-Alu strip of 10 tablets; carton of 3 strips."
+         }
+        ]
+       },
+       {
+        "num": "8.4",
+        "title": "Storage and handling instructions",
+        "blocks": [
+         {
+          "id": "b23",
+          "t": "p",
+          "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "9",
+      "title": "PATIENT COUNSELLING INFORMATION",
+      "blocks": [
+       {
+        "id": "b24",
+        "t": "p",
+        "text": "Tell patients that lumiravostat can lower the ability to fight infections, including tuberculosis, and to report fever, cough or weight loss. Advise them to seek help for leg swelling, chest pain or breathlessness, to use contraception, and not to breastfeed."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DETAILS OF MANUFACTURER",
+      "blocks": [
+       {
+        "id": "b25",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       },
+       {
+        "id": "b26",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "11",
+      "title": "DETAILS OF PERMISSION OR LICENCE NUMBER WITH DATE",
+      "blocks": [
+       {
+        "id": "b57",
+        "t": "p",
+        "text": "Permission No. ND/IMP-MFG/2025/0123 (fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "12",
+      "title": "DATE OF REVISION",
+      "blocks": [
+       {
+        "id": "b60",
+        "t": "p",
+        "text": ""
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "IN-RMP",
+      "where": "Top of the insert",
+      "what": "The registered medical practitioner statement is missing."
+     },
+     {
+      "rule": "IN-HEAD",
+      "where": "4.5",
+      "what": "Heading should be \"Drug interactions\"."
+     },
+     {
+      "rule": "IN-PERM",
+      "where": "11",
+      "what": "The date of the permission is missing."
+     },
+     {
+      "rule": "IN-PROMO",
+      "where": "4.1",
+      "what": "\"best\": promotional."
+     },
+     {
+      "rule": "IN-STR",
+      "where": "3",
+      "what": "20 mg is not a strength."
+     },
+     {
+      "rule": "IN-REQ",
+      "where": "12",
+      "what": "No date of revision."
+     }
+    ]
+   },
+   {
+    "id": "carton-10",
+    "kind": "in-carton",
+    "title": "Carton, 10 mg, 3 x 10 tablets",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": false,
+     "sizes": {
+      "proper": 10,
+      "brand": 16
+     },
+     "lang": "en"
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "c1",
+      "title": "Symbol (Rx, NRx or XRx)",
+      "blocks": [
+       {
+        "id": "b61",
+        "t": "p",
+        "text": ""
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "Proper (generic) name",
+      "blocks": [
+       {
+        "id": "b31",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "Brand name",
+      "blocks": [
+       {
+        "id": "b32",
+        "t": "p",
+        "text": "OSTREVIA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "Composition (content of active ingredients)",
+      "blocks": [
+       {
+        "id": "b33",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg. Excipients q.s. Colour: Titanium Dioxide IP."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "Dosage form and net content",
+      "blocks": [
+       {
+        "id": "b34",
+        "t": "p",
+        "text": "3 strips of 10 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "Schedule caution or warning (red box)",
+      "blocks": [
+       {
+        "id": "b62",
+        "t": "p",
+        "text": "Schedule H drug. Warning: Not to be sold by retail without the prescription of a Registered Medical Practitioner."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c7",
+      "title": "Dosage and directions",
+      "blocks": [
+       {
+        "id": "b35",
+        "t": "p",
+        "text": "Dosage: As directed by the physician."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "Storage",
+      "blocks": [
+       {
+        "id": "b36",
+        "t": "p",
+        "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "Manufacturer (name and address of the premises)",
+      "blocks": [
+       {
+        "id": "b37",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "Manufacturing licence number",
+      "blocks": [
+       {
+        "id": "b38",
+        "t": "p",
+        "text": "Mfg. Lic. No.: MH/102345"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "Batch number",
+      "blocks": [
+       {
+        "id": "b63",
+        "t": "p",
+        "text": "Batch: XXXXXX"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "Date of manufacture",
+      "blocks": [
+       {
+        "id": "b40",
+        "t": "p",
+        "text": "Mfg. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "Date of expiry",
+      "blocks": [
+       {
+        "id": "b65",
+        "t": "p",
+        "text": ""
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c14",
+      "title": "Maximum retail price",
+      "blocks": [
+       {
+        "id": "b64",
+        "t": "p",
+        "text": "MRP Rs. 3,750.00"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "Marketed by",
+      "blocks": [
+       {
+        "id": "b43",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "IN-97-SYM",
+      "where": "Symbol",
+      "what": "Rx is missing for a Schedule H drug."
+     },
+     {
+      "rule": "IN-97-BOX",
+      "where": "Schedule warning",
+      "what": "Old pre-2018 wording, and not in a box."
+     },
+     {
+      "rule": "IN-NAME",
+      "where": "Type sizes",
+      "what": "The brand name is larger than the proper name."
+     },
+     {
+      "rule": "IN-96-PART",
+      "where": "Batch number",
+      "what": "Not preceded by \"B. No.\" or \"Batch No.\"."
+     },
+     {
+      "rule": "IN-MRP",
+      "where": "Maximum retail price",
+      "what": "\"inclusive of all taxes\" is missing."
+     },
+     {
+      "rule": "IN-REQ",
+      "where": "Date of expiry",
+      "what": "No expiry date particular."
+     }
+    ]
+   },
+   {
+    "id": "strip-10",
+    "kind": "in-label",
+    "title": "Strip, 10 mg, 10 tablets",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": false,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "c1",
+      "title": "Symbol (Rx, NRx or XRx)",
+      "blocks": [
+       {
+        "id": "b44",
+        "t": "p",
+        "text": "Rx"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "Proper (generic) name",
+      "blocks": [
+       {
+        "id": "b45",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "Brand name",
+      "blocks": [
+       {
+        "id": "b46",
+        "t": "p",
+        "text": "OSTREVIA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "Composition (content of active ingredients)",
+      "blocks": [
+       {
+        "id": "b47",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg. Excipients q.s. Colour: Titanium Dioxide IP."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "Dosage form and net content",
+      "blocks": [
+       {
+        "id": "b48",
+        "t": "p",
+        "text": "10 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "Schedule caution or warning (red box)",
+      "blocks": [
+       {
+        "id": "box",
+        "t": "box",
+        "text": "SCHEDULE H PRESCRIPTION DRUG – CAUTION\nNot to be sold by retail without the prescription of a Registered Medical Practitioner."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "Storage",
+      "blocks": [
+       {
+        "id": "b49",
+        "t": "p",
+        "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "Manufacturer (name and address of the premises)",
+      "blocks": [
+       {
+        "id": "b50",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "Manufacturing licence number",
+      "blocks": [
+       {
+        "id": "b66",
+        "t": "p",
+        "text": "Lic: MH/102345"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "Batch number",
+      "blocks": [
+       {
+        "id": "b52",
+        "t": "p",
+        "text": "B. No.: XXXXXX"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "Date of manufacture",
+      "blocks": [
+       {
+        "id": "b53",
+        "t": "p",
+        "text": "Mfg. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "Date of expiry",
+      "blocks": [
+       {
+        "id": "b54",
+        "t": "p",
+        "text": "Exp. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "Marketed by",
+      "blocks": [
+       {
+        "id": "b56",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "IN-REQ",
+      "where": "Maximum retail price",
+      "what": "The strip is the smallest retail pack and must show the MRP."
+     },
+     {
+      "rule": "IN-96-PART",
+      "where": "Manufacturing licence number",
+      "what": "Not preceded by \"Mfg. Lic. No.\" or \"M.L.\"."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "in-ostrevia-directive",
+  "region": "in",
+  "productId": "nce-tablet",
+  "level": "Capstone",
+  "title": "Ostrevia (India): implement a CDSCO directive",
+  "about": "CDSCO asks for tuberculosis screening wording, the brand joins Schedule H2, and the ceiling price is revised. Update the insert, add the QR code, change the MRP on the carton and strip, approve, and record it within 30 days.",
+  "docs": [
+   {
+    "id": "pi",
+    "kind": "in-pi",
+    "title": "Package insert",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": true,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {
+     "header": "For the use of a Registered Medical Practitioner or a Hospital or a Laboratory only."
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "GENERIC NAME",
+      "blocks": [
+       {
+        "id": "b1",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg / 25 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b2",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg (or 25 mg). Excipients q.s. Colour: Titanium Dioxide IP (25 mg: Iron Oxide Yellow)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "DOSAGE FORM AND STRENGTH",
+      "blocks": [
+       {
+        "id": "b3",
+        "t": "p",
+        "text": "Film-coated tablets, 10 mg and 25 mg."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indication",
+        "blocks": [
+         {
+          "id": "b4",
+          "t": "p",
+          "text": "Lumiravostat is indicated for the treatment of adults with moderate to severe chronic hand eczema not adequately controlled with potent topical corticosteroids, or when these are not advisable."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b5",
+          "t": "p",
+          "text": "10 mg orally once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks. Hepatic impairment: 10 mg once daily in moderate impairment; not recommended in severe impairment. With strong CYP3A4 inhibitors: 10 mg once daily."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b6",
+          "t": "p",
+          "text": "Hypersensitivity to lumiravostat or any excipient. Active tuberculosis or active serious infection. Pregnancy."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b7",
+          "t": "p",
+          "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported. Screen for latent tuberculosis before starting treatment. Interrupt treatment if a serious infection develops."
+         },
+         {
+          "id": "b8",
+          "t": "p",
+          "text": "Malignancy, including lymphoma and non-melanoma skin cancer, and venous thromboembolism have been reported. Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Drug interactions",
+        "blocks": [
+         {
+          "id": "b9",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase exposure (use 10 mg once daily). Strong CYP3A4 inducers such as rifampicin reduce exposure; avoid concomitant use."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Use in special populations (such as pregnant women, lactating women, paediatric patients, geriatric patients etc.)",
+        "blocks": [
+         {
+          "id": "b10",
+          "t": "p",
+          "text": "Pregnancy: contraindicated; women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose. Lactation: do not breastfeed during treatment and for 4 days after the last dose. Paediatric patients: safety and efficacy not established. Geriatric patients: no dose adjustment."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b11",
+          "t": "p",
+          "text": "No or negligible influence."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b12",
+          "t": "p",
+          "text": "Very common: nasopharyngitis. Common: headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, ALT increased. Uncommon: pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism."
+         },
+         {
+          "id": "b13",
+          "t": "p",
+          "text": "Reporting of suspected adverse reactions: report to the marketer, or to the Pharmacovigilance Programme of India (PvPI) through the ADR reporting form or helpline."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b14",
+          "t": "p",
+          "text": "No specific antidote. Monitor and give supportive treatment."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Mechanism of action",
+        "blocks": [
+         {
+          "id": "b15",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b16",
+          "t": "p",
+          "text": "Dose-dependent reductions in markers of skin inflammation within 2 weeks."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b17",
+          "t": "p",
+          "text": "Peak concentrations at 1 to 2 hours; half-life about 16 hours; metabolised mainly by CYP3A4."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "NONCLINICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "Animal toxicology or pharmacology",
+        "blocks": [
+         {
+          "id": "b18",
+          "t": "p",
+          "text": "Not genotoxic. Embryo-fetal toxicity in rats and rabbits at exposures close to human exposure."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "DESCRIPTION",
+      "blocks": [
+       {
+        "id": "b19",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" and \"10\". 25 mg: yellow, oval, film-coated tablets debossed \"HR\" and \"25\"."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "8.1",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b20",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "8.2",
+        "title": "Shelf-life",
+        "blocks": [
+         {
+          "id": "b21",
+          "t": "p",
+          "text": "36 months."
+         }
+        ]
+       },
+       {
+        "num": "8.3",
+        "title": "Packaging information",
+        "blocks": [
+         {
+          "id": "b22",
+          "t": "p",
+          "text": "Alu-Alu strip of 10 tablets; carton of 3 strips."
+         }
+        ]
+       },
+       {
+        "num": "8.4",
+        "title": "Storage and handling instructions",
+        "blocks": [
+         {
+          "id": "b23",
+          "t": "p",
+          "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "9",
+      "title": "PATIENT COUNSELLING INFORMATION",
+      "blocks": [
+       {
+        "id": "b24",
+        "t": "p",
+        "text": "Tell patients that lumiravostat can lower the ability to fight infections, including tuberculosis, and to report fever, cough or weight loss. Advise them to seek help for leg swelling, chest pain or breathlessness, to use contraception, and not to breastfeed."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DETAILS OF MANUFACTURER",
+      "blocks": [
+       {
+        "id": "b25",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       },
+       {
+        "id": "b26",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "11",
+      "title": "DETAILS OF PERMISSION OR LICENCE NUMBER WITH DATE",
+      "blocks": [
+       {
+        "id": "b27",
+        "t": "p",
+        "text": "Permission No. ND/IMP-MFG/2025/0123 (fictional), dated 14 March 2025"
+       },
+       {
+        "id": "b28",
+        "t": "p",
+        "text": "Mfg. Lic. No. MH/102345 (fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "12",
+      "title": "DATE OF REVISION",
+      "blocks": [
+       {
+        "id": "b29",
+        "t": "p",
+        "text": "September 2026"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "carton-10",
+    "kind": "in-carton",
+    "title": "Carton, 10 mg, 3 x 10 tablets",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": true,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "c1",
+      "title": "Symbol (Rx, NRx or XRx)",
+      "blocks": [
+       {
+        "id": "b30",
+        "t": "p",
+        "text": "Rx"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "Proper (generic) name",
+      "blocks": [
+       {
+        "id": "b31",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "Brand name",
+      "blocks": [
+       {
+        "id": "b32",
+        "t": "p",
+        "text": "OSTREVIA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "Composition (content of active ingredients)",
+      "blocks": [
+       {
+        "id": "b33",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg. Excipients q.s. Colour: Titanium Dioxide IP."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "Dosage form and net content",
+      "blocks": [
+       {
+        "id": "b34",
+        "t": "p",
+        "text": "3 strips of 10 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "Schedule caution or warning (red box)",
+      "blocks": [
+       {
+        "id": "box",
+        "t": "box",
+        "text": "SCHEDULE H PRESCRIPTION DRUG – CAUTION\nNot to be sold by retail without the prescription of a Registered Medical Practitioner."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c7",
+      "title": "Dosage and directions",
+      "blocks": [
+       {
+        "id": "b35",
+        "t": "p",
+        "text": "Dosage: As directed by the physician."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "Storage",
+      "blocks": [
+       {
+        "id": "b36",
+        "t": "p",
+        "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "Manufacturer (name and address of the premises)",
+      "blocks": [
+       {
+        "id": "b37",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "Manufacturing licence number",
+      "blocks": [
+       {
+        "id": "b38",
+        "t": "p",
+        "text": "Mfg. Lic. No.: MH/102345"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "Batch number",
+      "blocks": [
+       {
+        "id": "b39",
+        "t": "p",
+        "text": "B. No.: XXXXXX"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "Date of manufacture",
+      "blocks": [
+       {
+        "id": "b40",
+        "t": "p",
+        "text": "Mfg. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "Date of expiry",
+      "blocks": [
+       {
+        "id": "b41",
+        "t": "p",
+        "text": "Exp. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c14",
+      "title": "Maximum retail price",
+      "blocks": [
+       {
+        "id": "b42",
+        "t": "p",
+        "text": "M.R.P. ₹ 3,750.00 for 30 tablets (inclusive of all taxes)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "Marketed by",
+      "blocks": [
+       {
+        "id": "b43",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "strip-10",
+    "kind": "in-label",
+    "title": "Strip, 10 mg, 10 tablets",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India",
+     "revised": "09/2026",
+     "schedule": "H",
+     "h2": true,
+     "sizes": {
+      "proper": 14,
+      "brand": 10
+     },
+     "lang": "en"
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "c1",
+      "title": "Symbol (Rx, NRx or XRx)",
+      "blocks": [
+       {
+        "id": "b44",
+        "t": "p",
+        "text": "Rx"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "Proper (generic) name",
+      "blocks": [
+       {
+        "id": "b45",
+        "t": "p",
+        "text": "Lumiravostat Tablets 10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "Brand name",
+      "blocks": [
+       {
+        "id": "b46",
+        "t": "p",
+        "text": "OSTREVIA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "Composition (content of active ingredients)",
+      "blocks": [
+       {
+        "id": "b47",
+        "t": "p",
+        "text": "Each film-coated tablet contains: Lumiravostat 10 mg. Excipients q.s. Colour: Titanium Dioxide IP."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "Dosage form and net content",
+      "blocks": [
+       {
+        "id": "b48",
+        "t": "p",
+        "text": "10 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "Schedule caution or warning (red box)",
+      "blocks": [
+       {
+        "id": "box",
+        "t": "box",
+        "text": "SCHEDULE H PRESCRIPTION DRUG – CAUTION\nNot to be sold by retail without the prescription of a Registered Medical Practitioner."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "Storage",
+      "blocks": [
+       {
+        "id": "b49",
+        "t": "p",
+        "text": "Store below 30°C. Protect from moisture. Keep out of reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "Manufacturer (name and address of the premises)",
+      "blocks": [
+       {
+        "id": "b50",
+        "t": "p",
+        "text": "Manufactured by: Sahyadri Formulations Pvt. Ltd., Plot 12, MIDC Example Area, Fictionpur 411000, Maharashtra, India"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "Manufacturing licence number",
+      "blocks": [
+       {
+        "id": "b51",
+        "t": "p",
+        "text": "Mfg. Lic. No.: MH/102345"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "Batch number",
+      "blocks": [
+       {
+        "id": "b52",
+        "t": "p",
+        "text": "B. No.: XXXXXX"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "Date of manufacture",
+      "blocks": [
+       {
+        "id": "b53",
+        "t": "p",
+        "text": "Mfg. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "Date of expiry",
+      "blocks": [
+       {
+        "id": "b54",
+        "t": "p",
+        "text": "Exp. Date: MM/YYYY"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c14",
+      "title": "Maximum retail price",
+      "blocks": [
+       {
+        "id": "b55",
+        "t": "p",
+        "text": "M.R.P. ₹ 1,250.00 per strip of 10 tablets (inclusive of all taxes)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "Marketed by",
+      "blocks": [
+       {
+        "id": "b56",
+        "t": "p",
+        "text": "Marketed by: Halcyon Ridge Pharmaceuticals India Pvt. Ltd., 5th Floor, Example Towers, Andheri (East), Mumbai 400069"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   }
+  ],
+  "change": {
+   "trigger": "cdsco",
+   "kind": "warning",
+   "title": "CDSCO directive: TB screening, Schedule H2, revised price",
+   "notice": {
+    "from": "CDSCO (fictional letter after a Subject Expert Committee meeting)",
+    "title": "Directive: tuberculosis screening wording, Schedule H2 inclusion and revised price",
+    "text": "Following the recommendation of the Subject Expert Committee (fictional), all holders of permission for lumiravostat tablets shall, within 30 days, revise the package insert to state in 4.4 that patients must be screened for latent tuberculosis with an interferon-gamma release assay (IGRA) or tuberculin skin test, and a chest X-ray, before starting treatment, and add matching counselling in section 9. Separately, the brand has been added to Schedule H2 (fictional notification): the label must carry a QR code with the data elements of Schedule H2. The ceiling price has been revised (fictional NPPA order): the MRP becomes ₹ 3,600.00 for 30 tablets (₹ 1,200.00 per strip of 10).",
+    "sections": [
+     "Package insert 4.4",
+     "Package insert 9",
+     "Package insert 12",
+     "Carton: QR code and MRP",
+     "Strip: QR code and MRP"
+    ],
+    "deadlineDays": 30
+   },
+   "markets": [
+    "in"
+   ],
+   "deadlineDays": 30
+  }
+ }
+]

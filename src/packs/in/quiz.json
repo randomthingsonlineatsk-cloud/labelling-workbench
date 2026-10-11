@@ -1,0 +1,406 @@
+{
+ "topics": [
+  {
+   "id": 25,
+   "label": "25. Rule 96: what every Indian label must show",
+   "module": "in"
+  },
+  {
+   "id": 26,
+   "label": "26. Schedule cautions and warnings (Rule 97)",
+   "module": "in"
+  },
+  {
+   "id": 27,
+   "label": "27. The package insert",
+   "module": "in"
+  },
+  {
+   "id": 28,
+   "label": "28. QR codes under Schedule H2",
+   "module": "in"
+  },
+  {
+   "id": 29,
+   "label": "29. Price and the pack",
+   "module": "in"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q25-1",
+   "topic": 25,
+   "module": "in",
+   "q": "Which prefix does Rule 96 use for the batch number?",
+   "options": [
+    "\"B. No.\" or \"Batch No.\"",
+    "\"Lot\"",
+    "\"BN#\"",
+    "None"
+   ],
+   "answer": 0,
+   "why": "Rule 96 prescribes the prefix.",
+   "cite": "Rule 96(1)"
+  },
+  {
+   "id": "q25-2",
+   "topic": 25,
+   "module": "in",
+   "q": "How much larger must the proper name be than the brand name?",
+   "options": [
+    "The same size",
+    "Twice the height",
+    "One font size",
+    "At least two font sizes"
+   ],
+   "answer": 3,
+   "why": "Since April 2019, at least two font sizes larger, brand name below or after.",
+   "cite": "Rule 96 proviso"
+  },
+  {
+   "id": "q25-3",
+   "topic": 25,
+   "module": "in",
+   "q": "Which products are exempt from the proper-name size rule?",
+   "options": [
+    "All tablets",
+    "Schedule X drugs",
+    "Vitamin FDCs and FDCs of three or more drugs",
+    "All imported drugs"
+   ],
+   "answer": 2,
+   "why": "Those FDCs are exempt.",
+   "cite": "Rule 96 proviso"
+  },
+  {
+   "id": "q25-4",
+   "topic": 25,
+   "module": "in",
+   "q": "Which prefix goes before the manufacturing licence number?",
+   "options": [
+    "\"Reg.\"",
+    "\"Mfg. Lic. No.\" or \"M.L.\"",
+    "\"Licence\"",
+    "\"DL No.\""
+   ],
+   "answer": 1,
+   "why": "Rule 96 sets the prefix.",
+   "cite": "Rule 96(1)"
+  },
+  {
+   "id": "q25-5",
+   "topic": 25,
+   "module": "in",
+   "q": "What is the Drugs and Cosmetics Rules, 1945 now called for drugs?",
+   "options": [
+    "The Drugs Rules, 1945",
+    "The Medicines Act",
+    "The NDCT Rules",
+    "DPCO"
+   ],
+   "answer": 0,
+   "why": "The rules were renamed in 2023 when cosmetics moved to separate rules.",
+   "cite": "Drugs Rules, 1945"
+  },
+  {
+   "id": "q26-1",
+   "topic": 26,
+   "module": "in",
+   "q": "How is the Schedule H caution printed since 2018?",
+   "options": [
+    "A red vertical line on the left",
+    "Red type with no box",
+    "Only in the insert",
+    "Black type in a completely red rectangular box"
+   ],
+   "answer": 3,
+   "why": "The red box replaced the red line.",
+   "cite": "Rule 97 (2018 amendment)"
+  },
+  {
+   "id": "q26-2",
+   "topic": 26,
+   "module": "in",
+   "q": "Which symbol goes on a Schedule X label?",
+   "options": [
+    "NRx",
+    "No symbol",
+    "XRx",
+    "Rx"
+   ],
+   "answer": 2,
+   "why": "Schedule X uses XRx.",
+   "cite": "Rule 97"
+  },
+  {
+   "id": "q26-3",
+   "topic": 26,
+   "module": "in",
+   "q": "Which sentence is added for Schedule H1?",
+   "options": [
+    "Store below 30°C.",
+    "It is dangerous to take this preparation except in accordance with the medical advice.",
+    "Keep out of reach of children.",
+    "For external use only."
+   ],
+   "answer": 1,
+   "why": "H1 adds this caution.",
+   "cite": "Rule 97"
+  },
+  {
+   "id": "q26-4",
+   "topic": 26,
+   "module": "in",
+   "q": "A Schedule H drug that is a psychotropic substance carries which symbol?",
+   "options": [
+    "NRx",
+    "Rx",
+    "XRx",
+    "H"
+   ],
+   "answer": 0,
+   "why": "NDPS substances use NRx.",
+   "cite": "Rule 97"
+  },
+  {
+   "id": "q26-5",
+   "topic": 26,
+   "module": "in",
+   "q": "Where does the schedule caution go?",
+   "options": [
+    "Only on the carton",
+    "Only in the insert",
+    "Only on the invoice",
+    "On the innermost container label and every covering"
+   ],
+   "answer": 3,
+   "why": "Every label layer carries it.",
+   "cite": "Rule 97"
+  },
+  {
+   "id": "q27-1",
+   "topic": 27,
+   "module": "in",
+   "q": "Which statement opens a prescription drug’s package insert?",
+   "options": [
+    "Rx only.",
+    "Read before use.",
+    "For the use of a Registered Medical Practitioner or a Hospital or a Laboratory only.",
+    "Keep this leaflet."
+   ],
+   "answer": 2,
+   "why": "CDSCO-approved inserts carry it.",
+   "cite": "CDSCO package insert format"
+  },
+  {
+   "id": "q27-2",
+   "topic": 27,
+   "module": "in",
+   "q": "What does section 11 of the insert give?",
+   "options": [
+    "The storage temperature",
+    "The permission or licence number with its date",
+    "The price",
+    "The batch number"
+   ],
+   "answer": 1,
+   "why": "Heading 11 is the permission or licence number with date.",
+   "cite": "CDSCO package insert format"
+  },
+  {
+   "id": "q27-3",
+   "topic": 27,
+   "module": "in",
+   "q": "Which programme receives adverse reaction reports in India?",
+   "options": [
+    "The Pharmacovigilance Programme of India (PvPI)",
+    "MedWatch",
+    "EudraVigilance",
+    "Yellow Card"
+   ],
+   "answer": 0,
+   "why": "PvPI is India’s national programme.",
+   "cite": "PvPI"
+  },
+  {
+   "id": "q27-4",
+   "topic": 27,
+   "module": "in",
+   "q": "Under which rules does CDSCO grant permission for a new drug?",
+   "options": [
+    "DPCO 2013",
+    "Legal Metrology Rules",
+    "Schedule M",
+    "New Drugs and Clinical Trials Rules, 2019"
+   ],
+   "answer": 3,
+   "why": "The NDCT Rules govern new drug permission.",
+   "cite": "NDCT Rules 2019"
+  },
+  {
+   "id": "q27-5",
+   "topic": 27,
+   "module": "in",
+   "q": "Can a company change the approved insert wording on its own?",
+   "options": [
+    "Only the price",
+    "Only the indication",
+    "No, changes go through CDSCO",
+    "Yes, any time"
+   ],
+   "answer": 2,
+   "why": "The insert must match the approved text.",
+   "cite": "NDCT Rules 2019"
+  },
+  {
+   "id": "q28-1",
+   "topic": 28,
+   "module": "in",
+   "q": "Since when have the top 300 brands carried a QR code?",
+   "options": [
+    "They do not",
+    "1 August 2023",
+    "1 January 2020",
+    "1 July 2027"
+   ],
+   "answer": 1,
+   "why": "Schedule H2 applied from 1 August 2023.",
+   "cite": "Drugs (Eighth Amendment) Rules, 2022"
+  },
+  {
+   "id": "q28-2",
+   "topic": 28,
+   "module": "in",
+   "q": "Which is not one of the Schedule H2 data elements?",
+   "options": [
+    "The price",
+    "The batch number",
+    "The brand name",
+    "The manufacturing licence number"
+   ],
+   "answer": 0,
+   "why": "Price is not in the list.",
+   "cite": "Schedule H2"
+  },
+  {
+   "id": "q28-3",
+   "topic": 28,
+   "module": "in",
+   "q": "Where does the QR code go?",
+   "options": [
+    "Only the shipping case",
+    "Only the insert",
+    "The invoice",
+    "The primary package label, or the secondary label if the primary has no space"
+   ],
+   "answer": 3,
+   "why": "Primary first, secondary if needed.",
+   "cite": "Schedule H2"
+  },
+  {
+   "id": "q28-4",
+   "topic": 28,
+   "module": "in",
+   "q": "From when are antimicrobials added to Schedule H2?",
+   "options": [
+    "2026",
+    "Never",
+    "1 July 2028",
+    "1 August 2023"
+   ],
+   "answer": 2,
+   "why": "Antimicrobials from 1 July 2028; vaccines, anti-cancer and NDPS drugs from 1 July 2027.",
+   "cite": "Schedule H2 extension"
+  },
+  {
+   "id": "q28-5",
+   "topic": 28,
+   "module": "in",
+   "q": "What is planned to be added to the QR code?",
+   "options": [
+    "The patient’s name",
+    "Excipient details",
+    "The doctor’s name",
+    "The pharmacy address"
+   ],
+   "answer": 1,
+   "why": "The Health Ministry announced it would add excipients.",
+   "cite": "Health Ministry announcement"
+  },
+  {
+   "id": "q29-1",
+   "topic": 29,
+   "module": "in",
+   "q": "What words must follow the MRP?",
+   "options": [
+    "Inclusive of all taxes",
+    "Plus GST",
+    "Excluding taxes",
+    "Approximately"
+   ],
+   "answer": 0,
+   "why": "DPCO 2013 requires the MRP inclusive of all taxes.",
+   "cite": "DPCO 2013"
+  },
+  {
+   "id": "q29-2",
+   "topic": 29,
+   "module": "in",
+   "q": "Does a strip sold on its own need an MRP?",
+   "options": [
+    "No, only the carton",
+    "Only for Schedule X",
+    "Only for imports",
+    "Yes, it is the smallest retail pack"
+   ],
+   "answer": 3,
+   "why": "The smallest pack offered for sale shows the MRP.",
+   "cite": "DPCO 2013"
+  },
+  {
+   "id": "q29-3",
+   "topic": 29,
+   "module": "in",
+   "q": "Who fixes ceiling prices of scheduled formulations?",
+   "options": [
+    "The state drug controller",
+    "The pharmacist",
+    "NPPA",
+    "CDSCO"
+   ],
+   "answer": 2,
+   "why": "The National Pharmaceutical Pricing Authority.",
+   "cite": "DPCO 2013"
+  },
+  {
+   "id": "q29-4",
+   "topic": 29,
+   "module": "in",
+   "q": "Which claim is not allowed on a label?",
+   "options": [
+    "The batch number",
+    "That it cures cancer, unless approved for it",
+    "The strength",
+    "The storage"
+   ],
+   "answer": 1,
+   "why": "Schedule J lists diseases a drug may not claim to cure or prevent.",
+   "cite": "Schedule J"
+  },
+  {
+   "id": "q29-5",
+   "topic": 29,
+   "module": "in",
+   "q": "The ceiling price is revised downwards. What changes on new packs?",
+   "options": [
+    "The MRP",
+    "The batch number format",
+    "The schedule warning",
+    "The proper name"
+   ],
+   "answer": 0,
+   "why": "New packs carry the revised MRP.",
+   "cite": "DPCO 2013"
+  }
+ ]
+}

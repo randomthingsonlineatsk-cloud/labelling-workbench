@@ -1,0 +1,180 @@
+[
+ {
+  "id": "IN-HEAD",
+  "title": "Package insert headings, in order",
+  "text": "The package insert uses the headings of the format CDSCO approves, in order: generic name, composition, dosage form and strength, clinical particulars (4.1 to 4.9), pharmacological properties, nonclinical properties, description, pharmaceutical particulars, patient counselling information, manufacturer, permission or licence number with date, and date of revision.",
+  "kinds": [
+   "in-pi"
+  ],
+  "severity": "error",
+  "src": "pifmt",
+  "at": "Common format of CDSCO-approved package inserts",
+  "check": "IN-HEAD",
+  "simplified": "The app checks the heading set used in CDSCO-approved inserts; check the current CDSCO format for your product type."
+ },
+ {
+  "id": "IN-REQ",
+  "title": "Required content is filled",
+  "text": "Each required heading of the package insert, and each mandatory particular of the label, has content.",
+  "kinds": [
+   "in-pi",
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "error",
+  "src": "r96",
+  "at": "Rule 96(1)",
+  "check": "IN-REQ"
+ },
+ {
+  "id": "IN-RMP",
+  "title": "Registered medical practitioner statement",
+  "text": "A package insert for a prescription drug carries \"For the use of a Registered Medical Practitioner or a Hospital or a Laboratory only.\"",
+  "kinds": [
+   "in-pi"
+  ],
+  "severity": "error",
+  "src": "pifmt",
+  "at": "CDSCO-approved package inserts",
+  "check": "IN-RMP",
+  "simplified": "Taken from the statement on CDSCO-approved prescribing information."
+ },
+ {
+  "id": "IN-PERM",
+  "title": "Permission or licence number with date",
+  "text": "Section 11 gives the CDSCO permission (or manufacturing licence) number and its date.",
+  "kinds": [
+   "in-pi"
+  ],
+  "severity": "error",
+  "src": "ndct",
+  "at": "NDCT Rules 2019; CDSCO package insert format",
+  "check": "IN-PERM"
+ },
+ {
+  "id": "IN-96-PART",
+  "title": "Rule 96 particulars and their prefixes",
+  "text": "The label shows the batch number preceded by \"B. No.\" or \"Batch No.\", the manufacturing licence number preceded by \"Mfg. Lic. No.\" or \"M.L.\", and the dates of manufacture and expiry preceded by \"Mfg. Date\" and \"Exp. Date\", with the month and year.",
+  "kinds": [
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "error",
+  "src": "r96",
+  "at": "Rule 96(1)",
+  "check": "IN-96-PART",
+  "simplified": "The app checks the prefixes and the month/year form, not the exact print layout."
+ },
+ {
+  "id": "IN-97-BOX",
+  "title": "Schedule caution or warning in a red box",
+  "text": "Drugs in Schedules G, H, H1 and X carry the caution or warning set by Rule 97 for their schedule, in legible black type inside a completely red rectangular box, on the innermost container label and every covering.",
+  "kinds": [
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "error",
+  "src": "r97",
+  "at": "Rule 97 (Fifth Amendment Rules, 2018)",
+  "check": "IN-97-BOX"
+ },
+ {
+  "id": "IN-97-SYM",
+  "title": "Rx, NRx or XRx symbol",
+  "text": "Schedule H and H1 drugs carry Rx (NRx for narcotic or psychotropic substances), and Schedule X drugs carry XRx, conspicuously at the top left of the label, in red.",
+  "kinds": [
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "error",
+  "src": "r97",
+  "at": "Rule 97 (Fifth Amendment Rules, 2018)",
+  "check": "IN-97-SYM",
+  "simplified": "The app checks the symbol text in the symbol particular; it does not check position or colour."
+ },
+ {
+  "id": "IN-NAME",
+  "title": "Proper name larger than the brand name",
+  "text": "The proper (generic) name is printed in a font at least two sizes larger than the brand name, and the brand name comes below or after it. Vitamin FDCs and FDCs of three or more drugs are exempt.",
+  "kinds": [
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "error",
+  "src": "fdcname",
+  "at": "Proviso to Rule 96(1)(i), in force 1 April 2019",
+  "check": "IN-NAME",
+  "simplified": "\"Two font sizes larger\" is checked as at least 2 points larger."
+ },
+ {
+  "id": "IN-MRP",
+  "title": "Maximum retail price, inclusive of all taxes",
+  "text": "The label of the container and the smallest pack offered for retail sale shows the maximum retail price, with the words \"inclusive of all taxes\".",
+  "kinds": [
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "error",
+  "src": "dpco",
+  "at": "DPCO 2013, display of prices",
+  "check": "IN-MRP",
+  "simplified": "The app checks the words \"MRP\" or \"Maximum Retail Price\", a rupee amount and \"inclusive of all taxes\"."
+ },
+ {
+  "id": "IN-H2",
+  "title": "Schedule H2 QR code",
+  "text": "For products in Schedule H2, the primary package label (or the secondary label where the primary has no space) carries a QR code encoding the unique product identification code, proper and generic name, brand name, manufacturer name and address, batch number, dates of manufacture and expiry, and manufacturing licence number.",
+  "kinds": [
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "error",
+  "src": "h2",
+  "at": "Schedule H2 (Drugs (Eighth Amendment) Rules, 2022)",
+  "check": "IN-H2",
+  "simplified": "The app checks that the QR particular lists each data element; it does not make a code."
+ },
+ {
+  "id": "IN-STR",
+  "title": "Strengths agree",
+  "text": "The strength on the label and in the package insert agree with the approved product.",
+  "kinds": [
+   "in-pi",
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "warning",
+  "src": "r96",
+  "at": "Rule 96(1)",
+  "check": "IN-STR"
+ },
+ {
+  "id": "IN-SCHJ",
+  "title": "No Schedule J claims",
+  "text": "Labels and inserts must not claim to prevent or cure the diseases listed in Schedule J (for example cancer, diabetes or AIDS) except where the drug is approved for it.",
+  "kinds": [
+   "in-pi",
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "warning",
+  "src": "schj",
+  "at": "Rule 106 and Schedule J",
+  "check": "IN-SCHJ",
+  "simplified": "The app looks for \"cure\" next to a few Schedule J diseases."
+ },
+ {
+  "id": "IN-PROMO",
+  "title": "No promotional wording",
+  "text": "Prescribing information and labels state facts. Words such as \"best\", \"safest\" or \"superior\" do not belong in them.",
+  "kinds": [
+   "in-pi",
+   "in-carton",
+   "in-label"
+  ],
+  "severity": "warning",
+  "src": "r96",
+  "at": "Rule 96; CDSCO approved text",
+  "check": "IN-PROMO"
+ }
+]

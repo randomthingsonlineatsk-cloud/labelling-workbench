@@ -10,7 +10,7 @@ import { go } from '../../ctx.js';
 
 export default function Export({ doc, docs, issues, product, project }) {
   const { pack, toast, user, addDoc } = useApp();
-  const eu = ['smpc', 'pl', 'eu-outer', 'eu-blister'].includes(doc.kind);
+  const eu = ['smpc', 'pl', 'eu-outer', 'eu-blister', 'in-pi', 'in-carton', 'in-label'].includes(doc.kind); // not US: no SPL, no US Module 1.14
   const [lang, setLang] = useState('fr');
   const startTranslation = async () => {
     const d = JSON.parse(JSON.stringify(doc));
@@ -19,7 +19,7 @@ export default function Export({ doc, docs, issues, product, project }) {
     go(`/p/${project.id}/${d.id}/edit`);
   };
   const [busy, setBusy] = useState('');
-  const xml = useMemo(() => splXml(doc, { product }), [doc, product]);
+  const xml = useMemo(() => (eu ? '' : splXml(doc, { product })), [doc, product, eu]);
   const name = slug(`${doc.meta?.proprietaryName ?? doc.fields?.proprietaryName ?? 'label'}-${doc.title}-v${doc.version ?? 0}`);
   const run = async (what, fn) => {
     setBusy(what);
@@ -47,10 +47,10 @@ export default function Export({ doc, docs, issues, product, project }) {
         {currentVersion(project?.ccds) && <div className="card"><h3>CCSI for pharmacovigilance</h3><p className="small">The core safety statements of CCDS {currentVersion(project.ccds).v}, the reference for whether a reaction is listed.</p><button className="btn small" onClick={() => download(`${slug(product?.brandName)}-ccsi.json`, JSON.stringify(ccsiFile({ project, product, user }), null, 1))}>Download CCSI file</button></div>}
       </div>
       <p className="small muted">The whole project (all labels, versions, reviews, the core data sheet, change requests and the audit trail) downloads from the button at the top of the page.</p>
-      <details>
+      {!eu && <details>
         <summary className="small" style={{ cursor: 'pointer', fontWeight: 600 }}>Show the XML</summary>
         <pre className="panel" style={{ overflow: 'auto', maxHeight: '60vh', fontSize: '.75rem' }}>{xml}</pre>
-      </details>
+      </details>}
     </div>
   );
 }
