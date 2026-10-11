@@ -7,6 +7,7 @@ import { coreIssues } from './ccds.js';
 import { agencyIssues } from './agency.js';
 import { checkEu, EU_KINDS } from './checks-eu.js';
 import { checkIn, IN_KINDS } from './checks-in.js';
+import { checkIntl, INTL_KINDS } from './checks-intl.js';
 
 export const HL_LINE_CHARS = 65;
 export const HL_MAX_LINES = 76;
@@ -47,6 +48,7 @@ export function runChecks(doc, ctx) {
   if (kind === 'pmi') checkPmi(doc, ctx, add);
   if (EU_KINDS.includes(kind)) checkEu(doc, ctx, add);
   if (IN_KINDS.includes(kind)) checkIn(doc, ctx, add);
+  if (INTL_KINDS.includes(kind)) checkIntl(doc, ctx, add);
   if (['pi', 'mg', 'ppi', 'pmi'].includes(kind) && doc.role !== 'reference') checkPromo(doc, ctx, add);
   checkMedErrors(doc, ctx, add);
   checkName(doc, ctx, add);

@@ -1,0 +1,42 @@
+[
+ {
+  "id": "INTL-STR",
+  "title": "Strengths agree",
+  "text": "The strengths in the composition and dosage form sections agree with the product.",
+  "kinds": [
+   "ca-pm",
+   "ca-pmi",
+   "ca-label",
+   "ch-fi",
+   "ch-pi",
+   "jp-pi",
+   "au-pi",
+   "au-cmi",
+   "who-smpc"
+  ],
+  "severity": "warning",
+  "src": "pmtpl",
+  "at": "Every template (composition and pharmaceutical form)",
+  "check": "INTL-STR"
+ },
+ {
+  "id": "INTL-PROMO",
+  "title": "No promotional wording",
+  "text": "Product information states facts. Words such as \"best\", \"safest\" or \"superior\" do not belong in it.",
+  "kinds": [
+   "ca-pm",
+   "ca-pmi",
+   "ca-label",
+   "ch-fi",
+   "ch-pi",
+   "jp-pi",
+   "au-pi",
+   "au-cmi",
+   "who-smpc"
+  ],
+  "severity": "warning",
+  "src": "pmguide",
+  "at": "Every template; product information is not advertising",
+  "check": "INTL-PROMO"
+ }
+]

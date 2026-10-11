@@ -1,0 +1,226 @@
+{
+ "ch-fi": {
+  "kind": "ch-fi",
+  "label": "Fachinformation (Switzerland)",
+  "short": "FI",
+  "src": "amzv",
+  "sections": [
+   {
+    "num": "f1",
+    "title": "Zusammensetzung",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "f1.1",
+      "title": "Wirkstoffe",
+      "need": "required",
+      "gloss": "Active substances"
+     },
+     {
+      "num": "f1.2",
+      "title": "Hilfsstoffe",
+      "need": "required",
+      "gloss": "Excipients"
+     }
+    ],
+    "gloss": "Composition"
+   },
+   {
+    "num": "f2",
+    "title": "Darreichungsform und Wirkstoffmenge pro Einheit",
+    "need": "required",
+    "gloss": "Pharmaceutical form and quantity of active substance per unit"
+   },
+   {
+    "num": "f3",
+    "title": "Indikationen/Anwendungsmöglichkeiten",
+    "need": "required",
+    "gloss": "Indications"
+   },
+   {
+    "num": "f4",
+    "title": "Dosierung/Anwendung",
+    "need": "required",
+    "gloss": "Posology and method of administration"
+   },
+   {
+    "num": "f5",
+    "title": "Kontraindikationen",
+    "need": "required",
+    "gloss": "Contraindications"
+   },
+   {
+    "num": "f6",
+    "title": "Warnhinweise und Vorsichtsmassnahmen",
+    "need": "required",
+    "gloss": "Warnings and precautions"
+   },
+   {
+    "num": "f7",
+    "title": "Interaktionen",
+    "need": "required",
+    "gloss": "Interactions"
+   },
+   {
+    "num": "f8",
+    "title": "Schwangerschaft, Stillzeit",
+    "need": "required",
+    "gloss": "Pregnancy, lactation"
+   },
+   {
+    "num": "f9",
+    "title": "Wirkung auf die Fahrtüchtigkeit und auf das Bedienen von Maschinen",
+    "need": "required",
+    "gloss": "Effects on ability to drive and use machines"
+   },
+   {
+    "num": "f10",
+    "title": "Unerwünschte Wirkungen",
+    "need": "required",
+    "gloss": "Undesirable effects"
+   },
+   {
+    "num": "f11",
+    "title": "Überdosierung",
+    "need": "required",
+    "gloss": "Overdose"
+   },
+   {
+    "num": "f12",
+    "title": "Eigenschaften/Wirkungen",
+    "need": "required",
+    "gloss": "Properties/effects (pharmacodynamics)"
+   },
+   {
+    "num": "f13",
+    "title": "Pharmakokinetik",
+    "need": "required",
+    "gloss": "Pharmacokinetics"
+   },
+   {
+    "num": "f14",
+    "title": "Präklinische Daten",
+    "need": "required",
+    "gloss": "Preclinical data"
+   },
+   {
+    "num": "f15",
+    "title": "Sonstige Hinweise",
+    "need": "required",
+    "gloss": "Other information (incompatibilities, shelf life, storage)"
+   },
+   {
+    "num": "f16",
+    "title": "Zulassungsnummer",
+    "need": "required",
+    "gloss": "Authorisation number"
+   },
+   {
+    "num": "f17",
+    "title": "Packungen",
+    "need": "required",
+    "gloss": "Packs (with dispensing category)"
+   },
+   {
+    "num": "f18",
+    "title": "Zulassungsinhaberin",
+    "need": "required",
+    "gloss": "Marketing authorisation holder"
+   },
+   {
+    "num": "f19",
+    "title": "Stand der Information",
+    "need": "required",
+    "gloss": "Date of the information"
+   }
+  ],
+  "fixed": {
+   "blackTriangle": "▼ Dieses Arzneimittel unterliegt einer zusätzlichen Überwachung. Dies ermöglicht eine schnelle Identifizierung neuer Erkenntnisse über die Sicherheit. Angehörige von Gesundheitsberufen sind aufgefordert, jeden Verdacht einer neuen oder schwerwiegenden Nebenwirkung zu melden."
+  }
+ },
+ "ch-pi": {
+  "kind": "ch-pi",
+  "label": "Patienteninformation (Switzerland)",
+  "short": "PI",
+  "src": "amzv",
+  "sections": [
+   {
+    "num": "p1",
+    "title": "Was ist {name} und wann wird es angewendet?",
+    "need": "required",
+    "gloss": "What is it and what is it used for?"
+   },
+   {
+    "num": "p2",
+    "title": "Was sollte dazu beachtet werden?",
+    "need": "optional",
+    "gloss": "What should be considered?"
+   },
+   {
+    "num": "p3",
+    "title": "Wann darf {name} nicht eingenommen werden?",
+    "need": "required",
+    "gloss": "When must it not be taken?"
+   },
+   {
+    "num": "p4",
+    "title": "Wann ist bei der Einnahme von {name} Vorsicht geboten?",
+    "need": "required",
+    "gloss": "When is caution needed?"
+   },
+   {
+    "num": "p5",
+    "title": "Darf {name} während einer Schwangerschaft oder in der Stillzeit eingenommen werden?",
+    "need": "required",
+    "gloss": "Pregnancy and breastfeeding"
+   },
+   {
+    "num": "p6",
+    "title": "Wie verwenden Sie {name}?",
+    "need": "required",
+    "gloss": "How to use it"
+   },
+   {
+    "num": "p7",
+    "title": "Welche Nebenwirkungen kann {name} haben?",
+    "need": "required",
+    "gloss": "Possible side effects"
+   },
+   {
+    "num": "p8",
+    "title": "Was ist ferner zu beachten?",
+    "need": "required",
+    "gloss": "Other information (storage)"
+   },
+   {
+    "num": "p9",
+    "title": "Was ist in {name} enthalten?",
+    "need": "required",
+    "gloss": "What it contains"
+   },
+   {
+    "num": "p10",
+    "title": "Zulassungsnummer",
+    "need": "required",
+    "gloss": "Authorisation number"
+   },
+   {
+    "num": "p11",
+    "title": "Wo erhalten Sie {name}? Welche Packungen sind erhältlich?",
+    "need": "required",
+    "gloss": "Where to get it, which packs"
+   },
+   {
+    "num": "p12",
+    "title": "Zulassungsinhaberin",
+    "need": "required",
+    "gloss": "Marketing authorisation holder"
+   }
+  ],
+  "fixed": {
+   "header": "Information für Patientinnen und Patienten",
+   "blackTriangle": "▼ Dieses Arzneimittel unterliegt einer zusätzlichen Überwachung. Dies ermöglicht eine schnelle Identifizierung neuer Erkenntnisse über die Sicherheit. Sie können dabei helfen, indem Sie Nebenwirkungen melden.",
+   "lastChecked": "Diese Packungsbeilage wurde im {month} letztmals durch die Arzneimittelbehörde (Swissmedic) geprüft."
+  }
+ }
+}

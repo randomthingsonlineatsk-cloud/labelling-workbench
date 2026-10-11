@@ -1,0 +1,29 @@
+{
+ "id": "who",
+ "name": "WHO prequalification (PQT/MED)",
+ "short": "WHO",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "who-smpc"
+ ],
+ "about": "The summary of product characteristics of a prequalified finished pharmaceutical product, published as Part 4 of the WHO Public Assessment Report (WHOPAR): an SmPC-style template whose last sections give the supplier, the WHO reference number, the date of prequalification and the date of revision.",
+ "watch": [],
+ "sources": [
+  {
+   "id": "whopar",
+   "title": "WHO PQT/MED: Contents and structure of a WHOPAR (Part 4 is the SmPC)",
+   "url": "https://extranet.who.int/prequal/medicines/contents-and-structure-whopar"
+  },
+  {
+   "id": "whop4",
+   "title": "WHO PQT/MED: Section guidance, WHOPAR Part 4 (SmPC): 4.6, 4.8 frequency terms, 6.4 storage",
+   "url": "https://extranet.who.int/prequal/sites/default/files/document_files/111%20Section%20guidance%20Part%204%20WHOPAR_Oct2016.pdf"
+  },
+  {
+   "id": "whoex",
+   "title": "Example of a published WHOPAR Part 4 (HA790): section headings 1 to 10 and the opening statement",
+   "url": "https://extranet.who.int/prequal/sites/default/files/whopar_files/HA790part4v3.pdf"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "au",
+ "name": "Australia (TGA)",
+ "short": "AU",
+ "version": "1.0.0",
+ "asOf": "2026-10-11",
+ "kinds": [
+  "au-pi",
+  "au-cmi"
+ ],
+ "about": "The Australian Product Information in the approved form (sections 1 to 10) and the Consumer Medicine Information in the TGA template (a one-page summary and seven sections), with the black triangle scheme. Labels follow Therapeutic Goods Order No. 91 and are not part of this pack.",
+ "watch": [],
+ "sources": [
+  {
+   "id": "piform",
+   "title": "TGA: Form for providing product information (approved under section 7D of the Therapeutic Goods Act 1989)",
+   "url": "https://www.tga.gov.au/sites/default/files/legislation-pi-form-approval-180308.pdf"
+  },
+  {
+   "id": "cmitpl",
+   "title": "TGA: Improved Consumer Medicine Information template (Schedule 12, Therapeutic Goods Regulations 1990)",
+   "url": "https://www.tga.gov.au/sites/default/files/improved-consumer-medicine-information-template.pdf"
+  },
+  {
+   "id": "cmiguide",
+   "title": "TGA: Using the TGA CMI template, guidance for sponsors",
+   "url": "https://www.tga.gov.au/resources/resource/guidance/using-tga-cmi-template-guidance-sponsors"
+  },
+  {
+   "id": "aubt",
+   "title": "TGA: Black triangle scheme, information for sponsors (statements, placement, five years)",
+   "url": "https://www.tga.gov.au/sites/default/files/black-triangle-scheme-information-for-sponsors.pdf"
+  },
+  {
+   "id": "tgo91",
+   "title": "TGA: Creating prescription medicine labels that meet requirements (Therapeutic Goods Order No. 91)",
+   "url": "https://tga.gov.au/node/289612"
+  },
+  {
+   "id": "poisons",
+   "title": "Poisons Standard (SUSMP): Schedule 4, Prescription Only Medicine",
+   "url": "https://www.legislation.gov.au/F2023L00617/asmade/2023-05-26/text/original/epub/OEBPS/document_1/document_1.html"
+  }
+ ]
+}

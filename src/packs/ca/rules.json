@@ -1,0 +1,155 @@
+[
+ {
+  "id": "CA-HEAD",
+  "title": "Product monograph headings, in order",
+  "text": "The product monograph uses the numbered headings of the master template in order: 1 Indications to 12 Special Handling Instructions in Part I, 13 Pharmaceutical Information to 17 Supporting Product Monographs in Part II. The Patient Medication Information uses the plain-language headings of the template.",
+  "kinds": [
+   "ca-pm",
+   "ca-pmi"
+  ],
+  "severity": "error",
+  "src": "pmtpl",
+  "at": "Product monograph master template",
+  "check": "CA-HEAD",
+  "simplified": "Subsections 7.1.1 to 7.1.4 sit directly under section 7 in the editor; the unnumbered body-system subheadings of section 7 are written in the text."
+ },
+ {
+  "id": "CA-REQ",
+  "title": "Required content is filled",
+  "text": "Each required heading of the product monograph and the Patient Medication Information, and each mandatory item of the label, has content.",
+  "kinds": [
+   "ca-pm",
+   "ca-pmi",
+   "ca-label"
+  ],
+  "severity": "error",
+  "src": "pmtpl",
+  "at": "Master template; Food and Drug Regulations C.01.004",
+  "check": "CA-REQ"
+ },
+ {
+  "id": "CA-TITLE",
+  "title": "Title page",
+  "text": "The title page gives \"Product Monograph Including Patient Medication Information\", the scheduling symbol before the brand name (Pr for a prescription drug), and the date of authorization in YYYY-MM-DD form.",
+  "kinds": [
+   "ca-pm"
+  ],
+  "severity": "error",
+  "src": "pmtpl",
+  "at": "Master template, title page",
+  "check": "CA-TITLE",
+  "simplified": "The app checks the title, the symbol and the dates; the full title page also carries the sponsor, the control number and any trademark declaration."
+ },
+ {
+  "id": "CA-SWP",
+  "title": "Serious Warnings and Precautions box",
+  "text": "When serious warnings were identified, section 3 holds them in a box of bulleted text, generally no more than 20 lines, with cross-references to the relevant sections, and the Patient Medication Information repeats them in plain language in its own serious warnings box.",
+  "kinds": [
+   "ca-pm",
+   "ca-pmi"
+  ],
+  "severity": "error",
+  "src": "pmtpl",
+  "at": "Master template, section 3",
+  "check": "CA-SWP"
+ },
+ {
+  "id": "CA-RMLC",
+  "title": "Recent Major Label Changes",
+  "text": "Each entry names the section and gives the month of approval in YYYY-MM form; entries are kept for 24 months.",
+  "kinds": [
+   "ca-pm"
+  ],
+  "severity": "warning",
+  "src": "pmtpl",
+  "at": "Master template, Recent Major Label Changes",
+  "check": "CA-RMLC"
+ },
+ {
+  "id": "CA-PMI-STD",
+  "title": "Standard Patient Medication Information statements",
+  "text": "The Patient Medication Information opens with \"READ THIS FOR SAFE AND EFFECTIVE USE OF YOUR MEDICINE\", its Overdose box gives the poison control text with Health Canada's toll-free number 1-844 POISON-X (1-844-764-7669), and Reporting side effects gives the Canada Vigilance toll-free number 1-866-234-2345 and says the program does not provide medical advice.",
+  "kinds": [
+   "ca-pmi"
+  ],
+  "severity": "error",
+  "src": "pmtpl",
+  "at": "Master template, Patient Medication Information",
+  "check": "CA-PMI-STD",
+  "simplified": "The app checks the opening line, the telephone numbers and the medical-advice sentence rather than every word."
+ },
+ {
+  "id": "CA-PR",
+  "title": "Pr symbol",
+  "text": "A prescription drug shows the symbol \"Pr\" in the upper left quarter of the principal display panel; no other drug may show it.",
+  "kinds": [
+   "ca-label"
+  ],
+  "severity": "error",
+  "src": "fdr",
+  "at": "C.01.004(1)(a)",
+  "check": "CA-PR"
+ },
+ {
+  "id": "CA-DIN",
+  "title": "Drug identification number",
+  "text": "The principal display panel shows the eight-digit DIN with \"DIN\" (or \"Drug Identification Number\" / \"Drogue : identification numérique\").",
+  "kinds": [
+   "ca-label"
+  ],
+  "severity": "error",
+  "src": "fdr",
+  "at": "C.01.005",
+  "check": "CA-DIN"
+ },
+ {
+  "id": "CA-PROPER",
+  "title": "Proper name at least half the size of the brand name",
+  "text": "Where there is a brand name, the proper name is shown on the principal display panel in letters at least one half the size of the brand name.",
+  "kinds": [
+   "ca-label"
+  ],
+  "severity": "error",
+  "src": "fdr",
+  "at": "C.01.004(1)(a)",
+  "check": "CA-PROPER"
+ },
+ {
+  "id": "CA-LAB",
+  "title": "Lot and expiry",
+  "text": "The label shows the lot number (with \"Lot\") and the expiration date (with \"EXP\"), giving at least the month and year.",
+  "kinds": [
+   "ca-label"
+  ],
+  "severity": "error",
+  "src": "fdr",
+  "at": "C.01.004(1)(c)",
+  "check": "CA-LAB",
+  "simplified": "The app checks the prefixes and a month and year; the regulations do not fix a date format."
+ },
+ {
+  "id": "CA-BIL",
+  "title": "English and French",
+  "text": "Information required on the label is shown in both English and French.",
+  "kinds": [
+   "ca-label"
+  ],
+  "severity": "error",
+  "src": "fdra",
+  "at": "A.01.015",
+  "check": "CA-BIL",
+  "simplified": "The app looks for French wording in the dosage form, net amount, directions, storage and reporting panels."
+ },
+ {
+  "id": "CA-REPORT",
+  "title": "Contact for reporting side effects",
+  "text": "Labels of drugs in dosage form give a way to contact a person in Canada (telephone, email, website or postal address) and state that suspected injuries can be reported to that person.",
+  "kinds": [
+   "ca-label"
+  ],
+  "severity": "error",
+  "src": "pll",
+  "at": "C.01.004.01(1)",
+  "check": "CA-REPORT"
+ }
+]

@@ -1,0 +1,453 @@
+{
+ "ca-pm": {
+  "kind": "ca-pm",
+  "label": "Product monograph (Canada)",
+  "short": "PM",
+  "src": "pmtpl",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "rmlc",
+    "title": "RECENT MAJOR LABEL CHANGES",
+    "need": "optional"
+   },
+   {
+    "num": "1",
+    "title": "INDICATIONS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "1.1",
+      "title": "Pediatrics",
+      "need": "required"
+     },
+     {
+      "num": "1.2",
+      "title": "Geriatrics",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "2",
+    "title": "CONTRAINDICATIONS",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "SERIOUS WARNINGS AND PRECAUTIONS BOX",
+    "need": "optional"
+   },
+   {
+    "num": "4",
+    "title": "DOSAGE AND ADMINISTRATION",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "4.1",
+      "title": "Dosing Considerations",
+      "need": "required"
+     },
+     {
+      "num": "4.2",
+      "title": "Recommended Dose and Dosage Adjustment",
+      "need": "required"
+     },
+     {
+      "num": "4.3",
+      "title": "Reconstitution",
+      "need": "optional"
+     },
+     {
+      "num": "4.4",
+      "title": "Administration",
+      "need": "required"
+     },
+     {
+      "num": "4.5",
+      "title": "Missed Dose",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "5",
+    "title": "OVERDOSE",
+    "need": "required"
+   },
+   {
+    "num": "6",
+    "title": "DOSAGE FORMS, STRENGTHS, COMPOSITION, AND PACKAGING",
+    "need": "required"
+   },
+   {
+    "num": "7",
+    "title": "WARNINGS AND PRECAUTIONS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "7.1.1",
+      "title": "Pregnancy",
+      "need": "required"
+     },
+     {
+      "num": "7.1.2",
+      "title": "Breastfeeding",
+      "need": "required"
+     },
+     {
+      "num": "7.1.3",
+      "title": "Pediatrics",
+      "need": "required"
+     },
+     {
+      "num": "7.1.4",
+      "title": "Geriatrics",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "8",
+    "title": "ADVERSE REACTIONS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "8.1",
+      "title": "Adverse Reaction Overview",
+      "need": "required"
+     },
+     {
+      "num": "8.2",
+      "title": "Clinical Trial Adverse Reactions",
+      "need": "required"
+     },
+     {
+      "num": "8.3",
+      "title": "Less Common Clinical Trial Adverse Reactions",
+      "need": "required"
+     },
+     {
+      "num": "8.4",
+      "title": "Abnormal Laboratory Findings: Hematologic, Clinical Chemistry, and Other Quantitative Data",
+      "need": "optional"
+     },
+     {
+      "num": "8.5",
+      "title": "Post-Market Adverse Reactions",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "9",
+    "title": "DRUG INTERACTIONS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "9.1",
+      "title": "Serious Drug Interactions",
+      "need": "optional"
+     },
+     {
+      "num": "9.2",
+      "title": "Drug Interactions Overview",
+      "need": "required"
+     },
+     {
+      "num": "9.3",
+      "title": "Drug-Behaviour Interactions",
+      "need": "optional"
+     },
+     {
+      "num": "9.4",
+      "title": "Drug-Drug Interactions",
+      "need": "required"
+     },
+     {
+      "num": "9.5",
+      "title": "Drug-Food Interactions",
+      "need": "required"
+     },
+     {
+      "num": "9.6",
+      "title": "Drug-Herb Interactions",
+      "need": "required"
+     },
+     {
+      "num": "9.7",
+      "title": "Drug-Laboratory Test Interactions",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "10",
+    "title": "CLINICAL PHARMACOLOGY",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "10.1",
+      "title": "Mechanism of Action",
+      "need": "required"
+     },
+     {
+      "num": "10.2",
+      "title": "Pharmacodynamics",
+      "need": "required"
+     },
+     {
+      "num": "10.3",
+      "title": "Pharmacokinetics",
+      "need": "required"
+     },
+     {
+      "num": "10.4",
+      "title": "Immunogenicity",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "11",
+    "title": "STORAGE, STABILITY, AND DISPOSAL",
+    "need": "required"
+   },
+   {
+    "num": "12",
+    "title": "SPECIAL HANDLING INSTRUCTIONS",
+    "need": "optional"
+   },
+   {
+    "num": "13",
+    "title": "PHARMACEUTICAL INFORMATION",
+    "need": "required"
+   },
+   {
+    "num": "14",
+    "title": "CLINICAL TRIALS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "14.1",
+      "title": "Clinical Trials by Indication",
+      "need": "required"
+     },
+     {
+      "num": "14.2",
+      "title": "Comparative Bioavailability Studies",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "15",
+    "title": "MICROBIOLOGY",
+    "need": "optional"
+   },
+   {
+    "num": "16",
+    "title": "NON-CLINICAL TOXICOLOGY",
+    "need": "required"
+   },
+   {
+    "num": "17",
+    "title": "SUPPORTING PRODUCT MONOGRAPHS",
+    "need": "optional"
+   }
+  ],
+  "fixed": {
+   "title": "PRODUCT MONOGRAPH INCLUDING PATIENT MEDICATION INFORMATION"
+  }
+ },
+ "ca-pmi": {
+  "kind": "ca-pmi",
+  "label": "Patient Medication Information (Canada)",
+  "short": "PMI",
+  "src": "pmtpl",
+  "sections": [
+   {
+    "num": "m0",
+    "title": "Serious warnings and precautions",
+    "need": "optional"
+   },
+   {
+    "num": "m1",
+    "title": "What {name} is used for",
+    "need": "required"
+   },
+   {
+    "num": "m2",
+    "title": "How {name} works",
+    "need": "required"
+   },
+   {
+    "num": "m3",
+    "title": "The ingredients in {name} are",
+    "need": "required"
+   },
+   {
+    "num": "m4",
+    "title": "{name} comes in the following dosage forms",
+    "need": "required"
+   },
+   {
+    "num": "m5",
+    "title": "Do not use {name} if",
+    "need": "required"
+   },
+   {
+    "num": "m6",
+    "title": "To help avoid side effects and ensure proper use, talk to your healthcare professional before you take {name}",
+    "need": "required"
+   },
+   {
+    "num": "m7",
+    "title": "Other warnings you should know about",
+    "need": "optional"
+   },
+   {
+    "num": "m8",
+    "title": "Tell your healthcare professional about all the medicines you take",
+    "need": "required"
+   },
+   {
+    "num": "m9",
+    "title": "The following may interact with {name}",
+    "need": "required"
+   },
+   {
+    "num": "m10",
+    "title": "How to take {name}",
+    "need": "required"
+   },
+   {
+    "num": "m11",
+    "title": "Usual dose",
+    "need": "required"
+   },
+   {
+    "num": "m12",
+    "title": "Overdose",
+    "need": "required"
+   },
+   {
+    "num": "m13",
+    "title": "Missed dose",
+    "need": "required"
+   },
+   {
+    "num": "m14",
+    "title": "Possible side effects from using {name}",
+    "need": "required"
+   },
+   {
+    "num": "m15",
+    "title": "Serious side effects and what to do about them",
+    "need": "optional"
+   },
+   {
+    "num": "m16",
+    "title": "Reporting side effects",
+    "need": "required"
+   },
+   {
+    "num": "m17",
+    "title": "Storage",
+    "need": "required"
+   },
+   {
+    "num": "m18",
+    "title": "If you want more information about {name}",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "readThis": "READ THIS FOR SAFE AND EFFECTIVE USE OF YOUR MEDICINE"
+  }
+ },
+ "ca-label": {
+  "kind": "ca-label",
+  "label": "Outer label (Canada)",
+  "short": "Label",
+  "src": "fdr",
+  "sections": [
+   {
+    "num": "l1",
+    "title": "Scheduling symbol (Pr)",
+    "need": "recommended"
+   },
+   {
+    "num": "l2",
+    "title": "Brand name",
+    "need": "required"
+   },
+   {
+    "num": "l3",
+    "title": "Proper name",
+    "need": "required"
+   },
+   {
+    "num": "l4",
+    "title": "Strength",
+    "need": "required"
+   },
+   {
+    "num": "l5",
+    "title": "Dosage form",
+    "need": "required"
+   },
+   {
+    "num": "l6",
+    "title": "Drug identification number (DIN)",
+    "need": "required"
+   },
+   {
+    "num": "l7",
+    "title": "Net amount",
+    "need": "required"
+   },
+   {
+    "num": "l8",
+    "title": "Directions for use",
+    "need": "required"
+   },
+   {
+    "num": "l9",
+    "title": "Medicinal ingredients (quantitative)",
+    "need": "required"
+   },
+   {
+    "num": "l10",
+    "title": "Storage",
+    "need": "required"
+   },
+   {
+    "num": "l11",
+    "title": "Lot number",
+    "need": "required"
+   },
+   {
+    "num": "l12",
+    "title": "Expiry date",
+    "need": "required"
+   },
+   {
+    "num": "l13",
+    "title": "Sponsor or manufacturer (name and address)",
+    "need": "required"
+   },
+   {
+    "num": "l14",
+    "title": "Contact and side-effect reporting statement",
+    "need": "required"
+   },
+   {
+    "num": "l15",
+    "title": "Non-medicinal ingredients",
+    "need": "optional"
+   }
+  ],
+  "fixed": {}
+ }
+}

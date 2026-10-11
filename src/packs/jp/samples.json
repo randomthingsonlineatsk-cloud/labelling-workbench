@@ -1,0 +1,1050 @@
+[
+ {
+  "id": "jp-ostrevia-clean",
+  "region": "jp",
+  "productId": "nce-tablet",
+  "level": "Start here",
+  "title": "Ostrevia (Japan): clean package insert",
+  "about": "The 2019 format in an English practice rendering: header items, the boxed Warnings, contraindications with their reasons in brackets, and sections numbered 1 to 26 with the gaps kept.",
+  "docs": [
+   {
+    "id": "pi",
+    "kind": "jp-pi",
+    "title": "Package insert (English practice text)",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "OSTREVIA Tablets 10 mg / 25 mg",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Japan K.K.",
+     "warnings": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "revised": "Revised: August 2026 (2nd version)",
+     "commodity": "873999",
+     "approval": "10 mg: 30500AMX00101000; 25 mg: 30500AMX00102000. Initial marketing in Japan: May 2024",
+     "storage": "Storage: store at room temperature. Shelf life: 36 months.",
+     "category": "STRK1 inhibitor (fictional); agent for chronic hand eczema",
+     "regulatory": "Powerful drug; Prescription drug (Caution: use only pursuant to the prescription of a physician, etc.)"
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "WARNINGS",
+      "blocks": [
+       {
+        "id": "b131",
+        "t": "box",
+        "text": "1.1 Serious infections, including tuberculosis and pneumonia, some fatal, and malignancies have been reported. Use only under a physician with sufficient knowledge and experience of the treatment of hand eczema and of this drug, after explaining its risks to the patient.\n1.2 Before treatment, check for tuberculosis by interview, an interferon-gamma release assay or tuberculin test, and a chest X-ray. [See 2.2, 8.1, 9.1.1.]"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "CONTRAINDICATIONS",
+      "blocks": [
+       {
+        "id": "b132",
+        "t": "ul",
+        "items": [
+         "2.1 Patients with a history of hypersensitivity to any ingredient of this drug",
+         "2.2 Patients with serious infections, including active tuberculosis [Symptoms may worsen. See 1.1, 8.1, 9.1.1.]",
+         "2.3 Pregnant women or women who may be pregnant [See 9.5.]"
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "COMPOSITION AND PRODUCT DESCRIPTION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "3.1",
+        "title": "Composition",
+        "blocks": [
+         {
+          "id": "b133",
+          "t": "table",
+          "rows": [
+           [
+            "Brand name",
+            "OSTREVIA Tablets 10 mg",
+            "OSTREVIA Tablets 25 mg"
+           ],
+           [
+            "Active ingredient (per tablet)",
+            "Lumiravostat 10 mg",
+            "Lumiravostat 25 mg"
+           ],
+           [
+            "Additives",
+            "microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)",
+            "microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)"
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "num": "3.2",
+        "title": "Product Description",
+        "blocks": [
+         {
+          "id": "b134",
+          "t": "p",
+          "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+         },
+         {
+          "id": "b135",
+          "t": "p",
+          "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "4",
+      "title": "INDICATIONS",
+      "blocks": [
+       {
+        "id": "b136",
+        "t": "p",
+        "text": "Chronic hand eczema in adults that has not responded adequately to existing treatment"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "6",
+      "title": "DOSAGE AND ADMINISTRATION",
+      "blocks": [
+       {
+        "id": "b137",
+        "t": "p",
+        "text": "The usual adult dosage is 10 mg of lumiravostat administered orally once daily. The dose may be increased to 25 mg once daily depending on the patient’s condition."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "IMPORTANT PRECAUTIONS",
+      "blocks": [
+       {
+        "id": "b138",
+        "t": "p",
+        "text": "8.1 Serious infections may occur. Monitor patients carefully and instruct them to contact a physician promptly if fever, cough or fatigue occurs."
+       },
+       {
+        "id": "b139",
+        "t": "p",
+        "text": "8.2 Measure lymphocyte and neutrophil counts, haemoglobin and liver enzymes before treatment, at 4 weeks and every 3 months thereafter."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "PRECAUTIONS CONCERNING PATIENTS WITH SPECIFIC BACKGROUNDS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "9.1",
+        "title": "Patients with Complication or History of Diseases, etc.",
+        "blocks": [
+         {
+          "id": "b140",
+          "t": "p",
+          "text": "9.1.1 Patients with a history of tuberculosis or with findings suggesting tuberculosis: tuberculosis may reactivate."
+         },
+         {
+          "id": "b141",
+          "t": "p",
+          "text": "9.1.2 Patients with risk factors for venous thromboembolism."
+         }
+        ]
+       },
+       {
+        "num": "9.3",
+        "title": "Patients with Hepatic Impairment",
+        "blocks": [
+         {
+          "id": "b142",
+          "t": "p",
+          "text": "9.3.1 Patients with severe hepatic impairment: not studied; administration is not recommended."
+         }
+        ]
+       },
+       {
+        "num": "9.4",
+        "title": "Persons with Reproductive Potential",
+        "blocks": [
+         {
+          "id": "b143",
+          "t": "p",
+          "text": "Instruct women of childbearing potential to use effective contraception during treatment and for 4 weeks after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "9.5",
+        "title": "Pregnant Women",
+        "blocks": [
+         {
+          "id": "b144",
+          "t": "p",
+          "text": "Do not administer. Embryo-fetal toxicity was observed in rats and rabbits."
+         }
+        ]
+       },
+       {
+        "num": "9.6",
+        "title": "Breast-feeding Women",
+        "blocks": [
+         {
+          "id": "b145",
+          "t": "p",
+          "text": "Advise women not to breastfeed during treatment and for 4 days after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "9.7",
+        "title": "Pediatric Use",
+        "blocks": [
+         {
+          "id": "b146",
+          "t": "p",
+          "text": "No clinical studies have been conducted in children."
+         }
+        ]
+       },
+       {
+        "num": "9.8",
+        "title": "Geriatric Use",
+        "blocks": [
+         {
+          "id": "b147",
+          "t": "p",
+          "text": "Administer with care while monitoring the patient. Infections occurred more often in elderly patients."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "10",
+      "title": "INTERACTIONS",
+      "blocks": [
+       {
+        "id": "b148",
+        "t": "p",
+        "text": "Lumiravostat is metabolised mainly by CYP3A4."
+       }
+      ],
+      "subs": [
+       {
+        "num": "10.2",
+        "title": "Precautions for Co-administration",
+        "blocks": [
+         {
+          "id": "b149",
+          "t": "table",
+          "rows": [
+           [
+            "Drugs",
+            "Signs, symptoms and treatment",
+            "Mechanism and risk factors"
+           ],
+           [
+            "Strong CYP3A4 inhibitors (ketoconazole, clarithromycin, etc.)",
+            "Use 10 mg once daily.",
+            "Exposure to this drug increases."
+           ],
+           [
+            "CYP3A4 inducers (rifampicin, etc.)",
+            "Avoid co-administration.",
+            "Exposure to this drug decreases."
+           ]
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "11",
+      "title": "ADVERSE REACTIONS",
+      "blocks": [
+       {
+        "id": "b150",
+        "t": "p",
+        "text": "The following adverse reactions may occur. Patients should be carefully monitored, and if any abnormalities are observed, appropriate measures such as discontinuation should be taken."
+       }
+      ],
+      "subs": [
+       {
+        "num": "11.1",
+        "title": "Clinically Significant Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b151",
+          "t": "p",
+          "text": "11.1.1 Serious infections (pneumonia 0.8%, herpes zoster 3.1%, tuberculosis frequency unknown)"
+         },
+         {
+          "id": "b152",
+          "t": "p",
+          "text": "11.1.2 Venous thromboembolism (0.3%)"
+         }
+        ]
+       },
+       {
+        "num": "11.2",
+        "title": "Other Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b153",
+          "t": "table",
+          "rows": [
+           [
+            "",
+            "≥5%",
+            "1% to <5%"
+           ],
+           [
+            "Infections",
+            "Nasopharyngitis",
+            ""
+           ],
+           [
+            "Nervous system",
+            "",
+            "Headache"
+           ],
+           [
+            "Skin",
+            "",
+            "Acne"
+           ],
+           [
+            "Laboratory",
+            "",
+            "Lymphopenia, neutropenia, ALT increased"
+           ]
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "13",
+      "title": "OVERDOSAGE",
+      "blocks": [
+       {
+        "id": "b154",
+        "t": "p",
+        "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "14",
+      "title": "PRECAUTIONS CONCERNING USE",
+      "blocks": [
+       {
+        "id": "b155",
+        "t": "p",
+        "text": "Instruct patients to remove the tablet from the PTP sheet before taking it. Swallowing the PTP sheet may cause the sharp corners to injure the oesophageal mucosa."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "16",
+      "title": "PHARMACOKINETICS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "16.1",
+        "title": "Blood Level",
+        "blocks": [
+         {
+          "id": "b156",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "17",
+      "title": "CLINICAL STUDIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "17.1",
+        "title": "Clinical Studies for Efficacy and Safety",
+        "blocks": [
+         {
+          "id": "b157",
+          "t": "p",
+          "text": "In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "18",
+      "title": "PHARMACOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "18.1",
+        "title": "Mechanism of Action",
+        "blocks": [
+         {
+          "id": "b158",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "19",
+      "title": "PHYSICOCHEMICAL PROPERTIES",
+      "blocks": [
+       {
+        "id": "b159",
+        "t": "p",
+        "text": "Nonproprietary name: lumiravostat (JAN). Description: white to off-white powder, slightly soluble in water."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "21",
+      "title": "APPROVAL CONDITIONS",
+      "blocks": [
+       {
+        "id": "b160",
+        "t": "p",
+        "text": "21.1 Develop and appropriately implement a risk management plan."
+       },
+       {
+        "id": "b161",
+        "t": "p",
+        "text": "21.2 Conduct a post-marketing use-results survey of all patients until data from a set number of patients have been gathered."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "22",
+      "title": "PACKAGING",
+      "blocks": [
+       {
+        "id": "b162",
+        "t": "p",
+        "text": "OSTREVIA Tablets 10 mg: 28 tablets (14 tablets x 2, PTP). OSTREVIA Tablets 25 mg: 28 tablets (14 tablets x 2, PTP)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "23",
+      "title": "REFERENCES",
+      "blocks": [
+       {
+        "id": "b163",
+        "t": "p",
+        "text": "1) Internal report: HANDS-1 study (fictional). 2) Internal report: HANDS-2 study (fictional)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "24",
+      "title": "REFERENCE REQUEST AND CONTACT INFORMATION",
+      "blocks": [
+       {
+        "id": "b164",
+        "t": "p",
+        "text": "Halcyon Ridge Japan K.K., Medical Information Center, 1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000. Tel: 0120-000-000 (fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "26",
+      "title": "MARKETING AUTHORIZATION HOLDER, etc.",
+      "blocks": [
+       {
+        "id": "b165",
+        "t": "p",
+        "text": "26.1 Marketing authorization holder: Halcyon Ridge Japan K.K., 1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "jp-ostrevia-errors",
+  "region": "jp",
+  "productId": "nce-tablet",
+  "level": "Practice",
+  "title": "Ostrevia (Japan): find and fix the errors",
+  "about": "6 planted errors: a header item, unboxed warnings, a contraindication without its reason, a section that moved up a number, an empty subsection and a strength.",
+  "docs": [
+   {
+    "id": "pi",
+    "kind": "jp-pi",
+    "title": "Package insert (English practice text)",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "OSTREVIA Tablets 10 mg / 25 mg",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Japan K.K.",
+     "warnings": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "revised": "Revised: August 2026 (2nd version)",
+     "commodity": "123456",
+     "approval": "10 mg: 30500AMX00101000; 25 mg: 30500AMX00102000. Initial marketing in Japan: May 2024",
+     "storage": "Storage: store at room temperature. Shelf life: 36 months.",
+     "category": "STRK1 inhibitor (fictional); agent for chronic hand eczema",
+     "regulatory": "Powerful drug; Prescription drug (Caution: use only pursuant to the prescription of a physician, etc.)"
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "WARNINGS",
+      "blocks": [
+       {
+        "id": "b270",
+        "t": "p",
+        "text": "1.1 Serious infections, including tuberculosis and pneumonia, some fatal, and malignancies have been reported. Use only under a physician with sufficient knowledge and experience of the treatment of hand eczema and of this drug, after explaining its risks to the patient.\n1.2 Before treatment, check for tuberculosis by interview, an interferon-gamma release assay or tuberculin test, and a chest X-ray. [See 2.2, 8.1, 9.1.1.]"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "CONTRAINDICATIONS",
+      "blocks": [
+       {
+        "id": "b271",
+        "t": "ul",
+        "items": [
+         "2.1 Patients with a history of hypersensitivity to any ingredient of this drug",
+         "2.2 Patients with serious infections, including active tuberculosis",
+         "2.3 Pregnant women or women who may be pregnant [See 9.5.]"
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "COMPOSITION AND PRODUCT DESCRIPTION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "3.1",
+        "title": "Composition",
+        "blocks": [
+         {
+          "id": "b273",
+          "t": "table",
+          "rows": [
+           [
+            "Brand name",
+            "OSTREVIA Tablets 10 mg",
+            "OSTREVIA Tablets 25 mg"
+           ],
+           [
+            "Active ingredient (per tablet)",
+            "Lumiravostat 10 mg",
+            "Lumiravostat 20 mg"
+           ],
+           [
+            "Additives",
+            "microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)",
+            "microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)"
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "num": "3.2",
+        "title": "Product Description",
+        "blocks": [
+         {
+          "id": "b134",
+          "t": "p",
+          "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+         },
+         {
+          "id": "b135",
+          "t": "p",
+          "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "4",
+      "title": "INDICATIONS",
+      "blocks": [
+       {
+        "id": "b136",
+        "t": "p",
+        "text": "Chronic hand eczema in adults that has not responded adequately to existing treatment"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "6",
+      "title": "DOSAGE AND ADMINISTRATION",
+      "blocks": [
+       {
+        "id": "b137",
+        "t": "p",
+        "text": "The usual adult dosage is 10 mg of lumiravostat administered orally once daily. The dose may be increased to 25 mg once daily depending on the patient’s condition."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "IMPORTANT PRECAUTIONS",
+      "blocks": [
+       {
+        "id": "b138",
+        "t": "p",
+        "text": "8.1 Serious infections may occur. Monitor patients carefully and instruct them to contact a physician promptly if fever, cough or fatigue occurs."
+       },
+       {
+        "id": "b139",
+        "t": "p",
+        "text": "8.2 Measure lymphocyte and neutrophil counts, haemoglobin and liver enzymes before treatment, at 4 weeks and every 3 months thereafter."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "PRECAUTIONS CONCERNING PATIENTS WITH SPECIFIC BACKGROUNDS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "9.1",
+        "title": "Patients with Complication or History of Diseases, etc.",
+        "blocks": [
+         {
+          "id": "b140",
+          "t": "p",
+          "text": "9.1.1 Patients with a history of tuberculosis or with findings suggesting tuberculosis: tuberculosis may reactivate."
+         },
+         {
+          "id": "b141",
+          "t": "p",
+          "text": "9.1.2 Patients with risk factors for venous thromboembolism."
+         }
+        ]
+       },
+       {
+        "num": "9.3",
+        "title": "Patients with Hepatic Impairment",
+        "blocks": [
+         {
+          "id": "b142",
+          "t": "p",
+          "text": "9.3.1 Patients with severe hepatic impairment: not studied; administration is not recommended."
+         }
+        ]
+       },
+       {
+        "num": "9.4",
+        "title": "Persons with Reproductive Potential",
+        "blocks": [
+         {
+          "id": "b143",
+          "t": "p",
+          "text": "Instruct women of childbearing potential to use effective contraception during treatment and for 4 weeks after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "9.5",
+        "title": "Pregnant Women",
+        "blocks": [
+         {
+          "id": "b272",
+          "t": "p",
+          "text": ""
+         }
+        ]
+       },
+       {
+        "num": "9.6",
+        "title": "Breast-feeding Women",
+        "blocks": [
+         {
+          "id": "b145",
+          "t": "p",
+          "text": "Advise women not to breastfeed during treatment and for 4 days after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "9.7",
+        "title": "Pediatric Use",
+        "blocks": [
+         {
+          "id": "b146",
+          "t": "p",
+          "text": "No clinical studies have been conducted in children."
+         }
+        ]
+       },
+       {
+        "num": "9.8",
+        "title": "Geriatric Use",
+        "blocks": [
+         {
+          "id": "b147",
+          "t": "p",
+          "text": "Administer with care while monitoring the patient. Infections occurred more often in elderly patients."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "10",
+      "title": "INTERACTIONS",
+      "blocks": [
+       {
+        "id": "b148",
+        "t": "p",
+        "text": "Lumiravostat is metabolised mainly by CYP3A4."
+       }
+      ],
+      "subs": [
+       {
+        "num": "10.2",
+        "title": "Precautions for Co-administration",
+        "blocks": [
+         {
+          "id": "b149",
+          "t": "table",
+          "rows": [
+           [
+            "Drugs",
+            "Signs, symptoms and treatment",
+            "Mechanism and risk factors"
+           ],
+           [
+            "Strong CYP3A4 inhibitors (ketoconazole, clarithromycin, etc.)",
+            "Use 10 mg once daily.",
+            "Exposure to this drug increases."
+           ],
+           [
+            "CYP3A4 inducers (rifampicin, etc.)",
+            "Avoid co-administration.",
+            "Exposure to this drug decreases."
+           ]
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "11",
+      "title": "ADVERSE REACTIONS",
+      "blocks": [
+       {
+        "id": "b150",
+        "t": "p",
+        "text": "The following adverse reactions may occur. Patients should be carefully monitored, and if any abnormalities are observed, appropriate measures such as discontinuation should be taken."
+       }
+      ],
+      "subs": [
+       {
+        "num": "11.1",
+        "title": "Clinically Significant Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b151",
+          "t": "p",
+          "text": "11.1.1 Serious infections (pneumonia 0.8%, herpes zoster 3.1%, tuberculosis frequency unknown)"
+         },
+         {
+          "id": "b152",
+          "t": "p",
+          "text": "11.1.2 Venous thromboembolism (0.3%)"
+         }
+        ]
+       },
+       {
+        "num": "11.2",
+        "title": "Other Adverse Reactions",
+        "blocks": [
+         {
+          "id": "b153",
+          "t": "table",
+          "rows": [
+           [
+            "",
+            "≥5%",
+            "1% to <5%"
+           ],
+           [
+            "Infections",
+            "Nasopharyngitis",
+            ""
+           ],
+           [
+            "Nervous system",
+            "",
+            "Headache"
+           ],
+           [
+            "Skin",
+            "",
+            "Acne"
+           ],
+           [
+            "Laboratory",
+            "",
+            "Lymphopenia, neutropenia, ALT increased"
+           ]
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "12",
+      "title": "OVERDOSAGE",
+      "blocks": [
+       {
+        "id": "b154",
+        "t": "p",
+        "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "14",
+      "title": "PRECAUTIONS CONCERNING USE",
+      "blocks": [
+       {
+        "id": "b155",
+        "t": "p",
+        "text": "Instruct patients to remove the tablet from the PTP sheet before taking it. Swallowing the PTP sheet may cause the sharp corners to injure the oesophageal mucosa."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "16",
+      "title": "PHARMACOKINETICS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "16.1",
+        "title": "Blood Level",
+        "blocks": [
+         {
+          "id": "b156",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "17",
+      "title": "CLINICAL STUDIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "17.1",
+        "title": "Clinical Studies for Efficacy and Safety",
+        "blocks": [
+         {
+          "id": "b157",
+          "t": "p",
+          "text": "In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "18",
+      "title": "PHARMACOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "18.1",
+        "title": "Mechanism of Action",
+        "blocks": [
+         {
+          "id": "b158",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "19",
+      "title": "PHYSICOCHEMICAL PROPERTIES",
+      "blocks": [
+       {
+        "id": "b159",
+        "t": "p",
+        "text": "Nonproprietary name: lumiravostat (JAN). Description: white to off-white powder, slightly soluble in water."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "21",
+      "title": "APPROVAL CONDITIONS",
+      "blocks": [
+       {
+        "id": "b160",
+        "t": "p",
+        "text": "21.1 Develop and appropriately implement a risk management plan."
+       },
+       {
+        "id": "b161",
+        "t": "p",
+        "text": "21.2 Conduct a post-marketing use-results survey of all patients until data from a set number of patients have been gathered."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "22",
+      "title": "PACKAGING",
+      "blocks": [
+       {
+        "id": "b162",
+        "t": "p",
+        "text": "OSTREVIA Tablets 10 mg: 28 tablets (14 tablets x 2, PTP). OSTREVIA Tablets 25 mg: 28 tablets (14 tablets x 2, PTP)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "23",
+      "title": "REFERENCES",
+      "blocks": [
+       {
+        "id": "b163",
+        "t": "p",
+        "text": "1) Internal report: HANDS-1 study (fictional). 2) Internal report: HANDS-2 study (fictional)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "24",
+      "title": "REFERENCE REQUEST AND CONTACT INFORMATION",
+      "blocks": [
+       {
+        "id": "b164",
+        "t": "p",
+        "text": "Halcyon Ridge Japan K.K., Medical Information Center, 1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000. Tel: 0120-000-000 (fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "26",
+      "title": "MARKETING AUTHORIZATION HOLDER, etc.",
+      "blocks": [
+       {
+        "id": "b165",
+        "t": "p",
+        "text": "26.1 Marketing authorization holder: Halcyon Ridge Japan K.K., 1-2-3 Fictional-cho, Example-ku, Tokyo 100-0000"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "JP-HDR",
+      "where": "Header",
+      "what": "The Standard Commodity Classification Number for a drug starts with 87."
+     },
+     {
+      "rule": "JP-WARN",
+      "where": "1",
+      "what": "The warnings are not boxed."
+     },
+     {
+      "rule": "JP-CI",
+      "where": "2.2",
+      "what": "No rationale in [ ]."
+     },
+     {
+      "rule": "JP-HEAD",
+      "where": "OVERDOSAGE",
+      "what": "Numbered 12; section 12 is left out, so OVERDOSAGE keeps 13."
+     },
+     {
+      "rule": "JP-REQ",
+      "where": "9.5",
+      "what": "Pregnant women: empty."
+     },
+     {
+      "rule": "INTL-STR",
+      "where": "3.1",
+      "what": "20 mg is not a strength."
+     }
+    ]
+   }
+  ]
+ }
+]

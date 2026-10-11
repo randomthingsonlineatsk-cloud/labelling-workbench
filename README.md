@@ -16,7 +16,8 @@ A browser-based practice tool for writing and checking drug labels. Write prescr
 - run a **class**: set drills with due dates, collect and re-score submissions (classroom server shared with the other two apps);
 - write **EU product information** to the QRD template (SmPC, package leaflet, outer carton, blister) with checks for headings, the black triangle, section 4.8, excipients, Braille and the safety features;
 - run a simulated **user test** of a leaflet (the 16-of-20 rule), review a **translation** against a term base with a member state's linguistic comments, implement **PRAC** safety wording, and see a simplified **ePI** view;
-- write an **Indian package insert** in the CDSCO format and the **carton and strip**, with checks for the Rule 96 particulars, the Rule 97 **red-box caution** and Rx/NRx/XRx symbol, the proper name two sizes larger than the brand, the **MRP** "inclusive of all taxes" and the **Schedule H2 QR code**, then implement a CDSCO directive.
+- write an **Indian package insert** in the CDSCO format and the **carton and strip**, with checks for the Rule 96 particulars, the Rule 97 **red-box caution** and Rx/NRx/XRx symbol, the proper name two sizes larger than the brand, the **MRP** "inclusive of all taxes" and the **Schedule H2 QR code**, then implement a CDSCO directive;
+- work in **five more formats**: the Canadian **product monograph**, Patient Medication Information and bilingual label, the Swiss **Fachinformation** and patient information, the Japanese **package insert** (2019 format), the Australian **PI and CMI**, and the **WHO PQ SmPC**, then take one safety signal to four markets at once.
 
 Third app in a series with the [eCTD Dossier Builder](https://github.com/randomthingsonlineatsk-cloud/ectd-dossier-builder) and the [Variations Classifier](https://github.com/randomthingsonlineatsk-cloud/variations-classifier), using the same fictional products.
 
@@ -24,7 +25,7 @@ Live site: https://randomthingsonlineatsk-cloud.github.io/labelling-workbench/
 
 **Training only.** Every product, company and person is fictional. Real regulation and guidance names are used so the practice is realistic; nothing here imitates an agency form or an approved label, exports carry a "Training use only" watermark, the XML is not validated SPL, and results are not regulatory advice.
 
-## What is in this release (Phases 1 to 4)
+## What is in this release (Phases 1 to 5)
 
 **US pack 1.0.0, dated 2026-10-11.** Document kinds: PLR prescribing information, older-format prescribing information, Medication Guide, Patient Information (PPI), Instructions for Use, carton and container. Built from:
 
@@ -102,6 +103,22 @@ Where a check follows common practice rather than a rule text (the insert headin
 
 **India learning:** 5 lessons (25 to 29), 25 quiz questions, 3 drills and an India certificate.
 
+**More-markets packs 1.0.0, dated 2026-10-11.** Five small region packs that share one learning module:
+
+| Region | Document kinds | Signature checks | Built from |
+|---|---|---|---|
+| Canada | Product monograph (Part I and II), Patient Medication Information, outer label | Master template headings (numbers never shift), title page with Pr and the date of authorization, Serious Warnings and Precautions box with cross-references (and its plain-language version), Recent Major Label Changes kept 24 months, the PMI overdose and reporting statements, Pr symbol, eight-digit DIN, proper name at least half the brand size, English and French, plain language labelling contact | PM master template (2020, modified 2025); Food and Drug Regulations C.01.004, C.01.004.01, C.01.005, A.01.015 |
+| Switzerland | Fachinformation, Patienteninformation | AMZV Annex 4 and 5.1 headings (German), black triangle (Art. 14a), ElViS reporting text, authorisation number "(Swissmedic)", dispensing category, date of the information | AMZV; Swissmedic black triangle and Wegleitung Arzneimittelinformation |
+| Japan | Package insert (English practice text) | Header items A to G, sections 1 to 26 with numbers kept when a section is left out, boxed Warnings, reasons for contraindications | PSEHB Notification No. 0608-1 (2017, applied from April 2019); PMDA electronic inserts (August 2021) |
+| Australia | Product Information, Consumer Medicine Information | PI form headings 1 to 10 and title line, black triangle statements, 4.8 reporting address, Poisons Information Centre 13 11 26, schedule in section 7, CMI template and summary page, CMI standard statements | PI form (s. 7D); CMI template (Schedule 12); black triangle scheme |
+| WHO PQ | SmPC (WHOPAR Part 4) | Headings 1 to 10 with Supplier, WHO reference number, date of prequalification and revision; scope statement; MedDRA frequency terms | WHOPAR structure and Part 4 section guidance; published WHOPARs |
+
+**More-markets Watch items:** ElViS 2.0 replacing Swissmedic's ElViS (planned for 21 December 2026) and structured Japanese electronic package inserts (ePI-JP).
+
+**More-markets samples:** a clean and an error set for each region (Ostrevia in Canada, Switzerland, Japan and Australia; Malvaren, a fictional antimalarial, for WHO PQ), and the capstone: an interstitial lung disease signal (CCDS 4.1) taken into the Canadian monograph, the Fachinformation, the Japanese insert and the Australian PI and CMI, with four submissions tracked within 60 days.
+
+**More-markets learning:** 5 lessons (30 to 34), 31 quiz questions, 6 drills and a more-markets certificate.
+
 **Classroom:** the shared Cloudflare Worker in the eCTD Dossier Builder repository serves this app under `/lw/v1` (`lw_` tables). Assignments are drills; students send the drill project, the instructor re-scores it in their own browser and comments. Email reminders use the same Brevo setup as the other apps.
 
 ## Phases
@@ -112,13 +129,13 @@ Where a check follows common practice rather than a rule text (the insert headin
 | 2 | Company core data sheet, mapping and deviations, change requests and the 505(o)(4) path, implementation tracking, agency comment rounds, Module 1 labelling package for the eCTD Dossier Builder, exchange with the Variations Classifier, CCSI file, classroom on the shared Worker (/lw/v1), PMI one-page drill | Done |
 | 3 | EU pack: QRD templates, 4.8 frequencies, excipients, black triangle, blue box, Braille, safety features, user-testing simulator, translations and linguistic review, PRAC and PSUSA triggers, ePI view | Done |
 | 4 | India pack: package insert, carton and strip, Rules 96 and 97, schedule red boxes and symbols, proper-name size, Schedule H2 QR codes, MRP, CDSCO directive capstone | Done |
-| 5 | Canada, Switzerland, Japan, Australia and WHO PQ packs | Planned |
+| 5 | Canada (product monograph, PMI, label), Switzerland (Fachinformation, patient information), Japan (package insert), Australia (PI, CMI), WHO PQ (SmPC) packs; four-market capstone | Done |
 
 ## How it works
 
-- `src/packs/<region>/`: a content pack (`us`, `eu`, `in`, and `core` for the CCDS and change-management module). All are merged at load; document kinds, rule ids and lesson ids are distinct, and each project names its region. `pack.json` holds the version, date, sources and Watch items; `templates.json` the document kinds; `rules.json` the rule cards; `vocab.json` controlled terms; `samples.json`, `lessons.json`, `quiz.json`, `drills.json` and `glossary.json` the practice content.
+- `src/packs/<region>/`: a content pack (`us`, `eu`, `in`, `ca`, `ch`, `jp`, `au`, `who`, `intl` for their shared module, and `core` for the CCDS and change-management module). All are merged at load; document kinds, rule ids and lesson ids are distinct, and each project names its region. `pack.json` holds the version, date, sources and Watch items; `templates.json` the document kinds; `rules.json` the rule cards; `vocab.json` controlled terms; `samples.json`, `lessons.json`, `quiz.json`, `drills.json` and `glossary.json` the practice content.
 - `tools/packs/`: the Python generators that write each pack (`npm run pack`), so every rule and sample can be reviewed and rebuilt.
-- `src/engine/`: checks, comparison and diff, conversion, drills, practice SPL, PDFs, storage and project files; `ccds.js` (mapping, deviations, impact), `changes.js` (change requests, 505(o)(4), tracker, the classifier exchange), `agency.js` (comment rounds), `handoff.js` (labelling package, CCSI file, eCTD project files), `classroom.js`, and for the EU `checks-eu.js` (QRD, excipients, labelling, translation review), `usertest.js` (the simulator) and `epi.js`, and for India `checks-in.js` (insert format, Rule 96 and 97, MRP, Schedule H2). No UI code.
+- `src/engine/`: checks, comparison and diff, conversion, drills, practice SPL, PDFs, storage and project files; `ccds.js` (mapping, deviations, impact), `changes.js` (change requests, 505(o)(4), tracker, the classifier exchange), `agency.js` (comment rounds), `handoff.js` (labelling package, CCSI file, eCTD project files), `classroom.js`, and for the EU `checks-eu.js` (QRD, excipients, labelling, translation review), `usertest.js` (the simulator) and `epi.js`, for India `checks-in.js` (insert format, Rule 96 and 97, MRP, Schedule H2), and for the other markets `checks-intl.js`. No UI code.
 - `src/screens/`: the app. Labels open in tabs: Edit, Preview, Checks, Review, Versions, Core data sheet, Changes, Export, plus Compare, Convert, Proof, Agency comments, User test and Translation review where they apply.
 
 ### Files exchanged with the other apps

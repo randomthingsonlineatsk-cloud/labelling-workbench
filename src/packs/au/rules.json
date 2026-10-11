@@ -1,0 +1,91 @@
+[
+ {
+  "id": "AU-HEAD",
+  "title": "PI and CMI headings",
+  "text": "The Product Information uses the headings of the approved form, sections 1 to 10 in order; the CMI uses the summary and the seven headings of the TGA template.",
+  "kinds": [
+   "au-pi",
+   "au-cmi"
+  ],
+  "severity": "error",
+  "src": "piform",
+  "at": "PI form (s. 7D); CMI template (Schedule 12)",
+  "check": "AU-HEAD"
+ },
+ {
+  "id": "AU-REQ",
+  "title": "Required content is filled",
+  "text": "Each heading of the PI and the CMI has content.",
+  "kinds": [
+   "au-pi",
+   "au-cmi"
+  ],
+  "severity": "error",
+  "src": "piform",
+  "at": "PI form; CMI template",
+  "check": "AU-REQ"
+ },
+ {
+  "id": "AU-TITLE",
+  "title": "PI title line",
+  "text": "The PI starts \"AUSTRALIAN PRODUCT INFORMATION –\" followed by the trade name, the active ingredient and the dosage form.",
+  "kinds": [
+   "au-pi"
+  ],
+  "severity": "error",
+  "src": "piform",
+  "at": "PI form",
+  "check": "AU-TITLE"
+ },
+ {
+  "id": "AU-BT",
+  "title": "Black triangle scheme",
+  "text": "Medicines in the scheme show the ▼ and the standard statement at the top of the first page of the PI and the CMI for five years; others do not.",
+  "kinds": [
+   "au-pi",
+   "au-cmi"
+  ],
+  "severity": "error",
+  "src": "aubt",
+  "at": "Black triangle scheme",
+  "check": "AU-BT"
+ },
+ {
+  "id": "AU-PI-STD",
+  "title": "Standard PI statements",
+  "text": "Section 4.8 points to www.tga.gov.au/reporting-problems, section 4.9 gives the Poisons Information Centre number 13 11 26, section 7 gives the Poisons Standard schedule (for example \"Prescription Only Medicine (Schedule 4)\"), and sections 9 and 10 give dates.",
+  "kinds": [
+   "au-pi"
+  ],
+  "severity": "error",
+  "src": "piform",
+  "at": "PI form",
+  "check": "AU-PI-STD",
+  "simplified": "The app checks the reporting address and the Poisons Information Centre number rather than the full paragraphs."
+ },
+ {
+  "id": "AU-CMI-STD",
+  "title": "Standard CMI statements",
+  "text": "The CMI summary opens with the standard introduction; section 6 carries the standard side-effect sentences and the TGA reporting statement; section 7 ends with \"This leaflet was prepared in\" and the month and year.",
+  "kinds": [
+   "au-cmi"
+  ],
+  "severity": "error",
+  "src": "cmitpl",
+  "at": "CMI template",
+  "check": "AU-CMI-STD"
+ },
+ {
+  "id": "AU-CMI-SUM",
+  "title": "The summary fits on one page",
+  "text": "The CMI summary is a single page: the most important information at a glance.",
+  "kinds": [
+   "au-cmi"
+  ],
+  "severity": "warning",
+  "src": "cmiguide",
+  "at": "Using the TGA CMI template",
+  "check": "AU-CMI-SUM",
+  "simplified": "Estimated at 45 lines of about 90 characters."
+ }
+]

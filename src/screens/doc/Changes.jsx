@@ -89,7 +89,7 @@ function NewChange({ project, docs, onCancel, onCreate }) {
   const { pack, toast, user } = useApp();
   const core = pack.core;
   const cur = currentVersion(project.ccds);
-  const [f, setF] = useState({ trigger: 'signal', kind: 'warning', title: '', text: '', startDate: today(), markets: [project.region ?? 'us'], ccdsVersion: cur?.v ?? '' });
+  const [f, setF] = useState({ trigger: 'signal', kind: 'warning', title: '', text: '', startDate: today(), markets: [project.region === 'intl' ? 'ca' : project.region ?? 'us'], ccdsVersion: cur?.v ?? '' });
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
   const toggle = (m) => setF({ ...f, markets: f.markets.includes(m) ? f.markets.filter((x) => x !== m) : [...f.markets, m] });
   const create = () => {

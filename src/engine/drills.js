@@ -132,6 +132,37 @@ export function evaluateDrill(drill, { docs, sample, pack, product, mapping, pro
       { label: 'Submitted to CDSCO before the deadline', done: !!inm?.dates?.Submitted && inm.dates.Submitted <= inm.deadline },
     ]);
   }
+  if (g.type === 'rollout-intl') {
+    const ILD = /interstitial lung disease|pneumonitis/i;
+    const by = (k) => docs.find((d) => d.kind === k);
+    const orig = (k) => sample.docs.find((d) => d.kind === k);
+    const t = (d, ...nums) => (d ? nums.map((n) => findSection(d, n)).filter(Boolean).flatMap((s) => [blocksText(s.blocks), ...(s.subs ?? []).map((x) => blocksText(x.blocks))]).join('\n') : '');
+    const [ca, ch, jp, au, cmi] = ['ca-pm', 'ch-fi', 'jp-pi', 'au-pi', 'au-cmi'].map(by);
+    const caDone = ILD.test(t(ca, '7')) && ILD.test(t(ca, '8.5'));
+    const caRev = !!ca && ca.meta?.revised !== orig('ca-pm')?.meta?.revised && /^\d{4}-\d{2}-\d{2}$/.test(ca.meta?.revised ?? '');
+    const caRmlc = !!ca && (findSection(ca, 'rmlc')?.blocks ?? []).some((b) => b.t === 'table' && b.rows.some((r) => /^7\b/.test(String(r[0]).trim()) && String(r[1]).trim() === String(ca.meta?.revised ?? '').slice(0, 7)));
+    const chDone = ILD.test(t(ch, 'f6')) && ILD.test(t(ch, 'f10'));
+    const chRev = !!ch && t(ch, 'f19').trim() !== t(orig('ch-fi'), 'f19').trim();
+    const jpDone = ILD.test(t(jp, '8')) && ILD.test(t(jp, '11'));
+    const jpRev = !!jp && (jp.fixed?.revised ?? '') !== (orig('jp-pi')?.fixed?.revised ?? '') && /20\d{2}/.test(jp.fixed?.revised ?? '');
+    const auDone = ILD.test(t(au, '4.4')) && ILD.test(t(au, '4.8'));
+    const auRev = !!au && t(au, '10').trim() !== t(orig('au-pi'), '10').trim();
+    const cmiDone = /lung|breath/i.test(t(cmi, '6')) && /cough/i.test(t(cmi, '6')) && t(cmi, '6') !== t(orig('au-cmi'), '6');
+    const ch2 = (project?.changes ?? []).find((c) => c.trigger === 'signal');
+    const mk = (id) => ch2?.markets.find((m) => m.market === id);
+    const markets = ['ca', 'ch', 'jp', 'au'];
+    return score([
+      { label: 'Canada: section 7 (Respiratory) and 8.5 Post-Market Adverse Reactions cover ILD', done: caDone },
+      { label: 'Canada: revision date moved on and a Recent Major Label Changes entry for section 7 dated that month', done: caRev && caRmlc },
+      { label: 'Switzerland: Warnhinweise und Vorsichtsmassnahmen and Unerwünschte Wirkungen cover ILD; Stand der Information updated', done: chDone && chRev },
+      { label: 'Japan: 8 Important Precautions and 11 Adverse Reactions cover ILD; revision date updated', done: jpDone && jpRev },
+      { label: 'Australia: PI 4.4 and 4.8 cover ILD; date of revision updated', done: auDone && auRev },
+      { label: 'Australia: CMI section 6 tells patients about cough and breathlessness', done: cmiDone },
+      { label: 'All five documents approved with the new wording', done: [ca, ch, jp, au, cmi].every((d) => d?.status === 'approved') && caDone && chDone && jpDone && auDone && cmiDone },
+      { label: 'Change classified in the tracker for Canada, Switzerland, Japan and Australia', done: markets.every((m) => !!mk(m)?.classification?.trim()) },
+      { label: 'Submitted in all four markets before the deadline', done: markets.every((m) => !!mk(m)?.dates?.Submitted && mk(m).dates.Submitted <= mk(m).deadline) },
+    ]);
+  }
   if (g.type === 'pmi') {
     const d = docs.find((x) => x.kind === 'pmi');
     const issues = d ? runChecks(d, ctx).filter((i) => i.ruleId.startsWith('US-PMI-') && i.severity !== 'info' && !i.waived) : [];

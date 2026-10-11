@@ -1,0 +1,63 @@
+[
+ {
+  "id": "JP-HEAD",
+  "title": "Package insert sections and numbers",
+  "text": "Sections use the numbers and headings of the 2017 instructions. A section with nothing to say is left out, but the following sections keep their numbers: they are not moved up.",
+  "kinds": [
+   "jp-pi"
+  ],
+  "severity": "error",
+  "src": "jp0608",
+  "at": "PSEHB Notification No. 0608-1",
+  "check": "JP-HEAD"
+ },
+ {
+  "id": "JP-REQ",
+  "title": "Required content is filled",
+  "text": "The sections that apply to every prescription drug have content.",
+  "kinds": [
+   "jp-pi"
+  ],
+  "severity": "error",
+  "src": "jp0608",
+  "at": "PSEHB Notification No. 0608-1",
+  "check": "JP-REQ"
+ },
+ {
+  "id": "JP-HDR",
+  "title": "Header items",
+  "text": "Above section 1 the insert gives the date of preparation or revision, the Standard Commodity Classification Number of Japan (87xxxx for drugs), the approval number with the date of initial marketing, storage and shelf life, the therapeutic category and the regulatory classification.",
+  "kinds": [
+   "jp-pi"
+  ],
+  "severity": "error",
+  "src": "jp0608",
+  "at": "PSEHB Notification No. 0608-1, header items A to G",
+  "check": "JP-HDR"
+ },
+ {
+  "id": "JP-WARN",
+  "title": "Warnings",
+  "text": "When fatal or extremely serious, irreversible adverse reactions can occur, section 1 Warnings is filled and set apart in a box at the top.",
+  "kinds": [
+   "jp-pi"
+  ],
+  "severity": "error",
+  "src": "jp0608",
+  "at": "PSEHB Notification No. 0608-1, section 1",
+  "check": "JP-WARN",
+  "simplified": "The red frame of the Warnings box is the usual layout; the app checks that the warnings are boxed."
+ },
+ {
+  "id": "JP-CI",
+  "title": "Reasons for contraindications",
+  "text": "Except for hypersensitivity, each contraindication gives its rationale briefly in square brackets [ ].",
+  "kinds": [
+   "jp-pi"
+  ],
+  "severity": "error",
+  "src": "jp0608",
+  "at": "PSEHB Notification No. 0608-1, section 2",
+  "check": "JP-CI"
+ }
+]

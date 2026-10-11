@@ -1,0 +1,166 @@
+{
+ "lessons": [
+  {
+   "id": 30,
+   "module": "intl",
+   "title": "Canada: the product monograph and the label",
+   "minutes": 9,
+   "sections": [
+    {
+     "h": "The master template",
+     "p": [
+      "A Canadian product monograph follows the Health Canada master template. Part I, Health Professional Information, runs from 1 Indications to 12 Special Handling Instructions; Part II, Scientific Information, from 13 Pharmaceutical Information to 17 Supporting Product Monographs; the Patient Medication Information follows. Headings are numbered and in capitals; section 7 has unnumbered body-system subheadings such as \"Immune\" and \"Hematologic\", in alphabetical order after \"General\".",
+      "The title page gives \"Product Monograph Including Patient Medication Information\", the scheduling symbol before the brand name (\"Pr\" for a prescription drug), and the date of authorization as YYYY-MM-DD (the master template revised in 2025 has one date line, \"Date of Authorization\")."
+     ]
+    },
+    {
+     "h": "The box and recent changes",
+     "p": [
+      "Section 3, the Serious Warnings and Precautions box, lists serious warnings as bullets, generally no more than 20 lines, each with a cross-reference such as \"(see 7 WARNINGS AND PRECAUTIONS, Immune)\". It is omitted when there are none.",
+      "Recent Major Label Changes, before the table of contents, lists each changed section with the month of approval (YYYY-MM). Entries stay for 24 months."
+     ]
+    },
+    {
+     "h": "Patient Medication Information",
+     "p": [
+      "The patient part of the monograph opens with \"READ THIS FOR SAFE AND EFFECTIVE USE OF YOUR MEDICINE\" and uses plain-language headings: \"What [BRAND] is used for\", \"Do not use [BRAND] if\", \"How to take [BRAND]\", \"Possible side effects from using [BRAND]\" and so on. When section 3 has a box, the patient version repeats the serious warnings in plain language in its own box.",
+      "Two passages are standard: the Overdose box sends people to a healthcare professional, an emergency department, a poison control centre or Health Canada's toll-free number 1-844 POISON-X (1-844-764-7669); Reporting side effects gives the Canada Vigilance toll-free number 1-866-234-2345 and says the program does not provide medical advice."
+     ]
+    },
+    {
+     "h": "The label",
+     "p": [
+      "Under the Food and Drug Regulations the principal display panel shows \"Pr\" in the upper left quarter for a prescription drug, the brand name, the proper name in letters at least half the size of the brand name, and the eight-digit DIN. Elsewhere on the label: the sponsor’s name and address, the lot number, the expiry date, the net amount, directions and the medicinal ingredients. Label information is in English and French, and plain language labelling adds a contact in Canada to which side effects can be reported."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ca-ostrevia-errors",
+    "doc": "pm"
+   },
+   "watch": false
+  },
+  {
+   "id": 31,
+   "module": "intl",
+   "title": "Switzerland: Fachinformation and patient information",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Two documents, three languages",
+     "p": [
+      "Swissmedic approves the information for healthcare professionals (Fachinformation, AMZV Annex 4) and the patient information (Patienteninformation, Annex 5.1). They are published in German, French and Italian, with fixed headings: \"Zusammensetzung\", \"Indikationen/Anwendungsmöglichkeiten\", \"Dosierung/Anwendung\" and so on, ending with \"Zulassungsnummer\", \"Packungen\", \"Zulassungsinhaberin\" and \"Stand der Information\".",
+      "The packs section gives the dispensing category (Abgabekategorie A to E). The authorisation number is the five-digit Swissmedic number, written \"99101 (Swissmedic)\"."
+     ]
+    },
+    {
+     "h": "The black triangle",
+     "p": [
+      "Since 2019 (AMZV Art. 14a), new active substances, new biological medicines, time-limited authorisations and authorisations with conditions carry a black triangle and the text \"Dieses Arzneimittel unterliegt einer zusätzlichen Überwachung. Dies ermöglicht eine schnelle Identifizierung neuer Erkenntnisse über die Sicherheit.\" at the top of both documents, until the authorisation is renewed."
+     ]
+    },
+    {
+     "h": "Reporting",
+     "p": [
+      "The section on undesirable effects ends with a request to report suspected new or serious adverse reactions through ElViS, Swissmedic’s electronic vigilance portal. ElViS 2.0 is planned for 21 December 2026. The patient information ends with the month it was last checked by Swissmedic."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "ch-ostrevia-errors",
+    "doc": "fi"
+   },
+   "watch": false
+  },
+  {
+   "id": 32,
+   "module": "intl",
+   "title": "Japan: the package insert since 2019",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "Header and sections",
+     "p": [
+      "The instructions of 2017 (PSEHB Notification No. 0608-1), applied from April 2019, set the header items (date of revision, the Standard Commodity Classification Number, approval number and launch date, storage and shelf life, therapeutic category, regulatory classification, name) and 26 numbered sections, from 1 WARNINGS and 2 CONTRAINDICATIONS to 26 MARKETING AUTHORIZATION HOLDER, etc.",
+      "A section with nothing to say is left out, but the numbers are not moved up: if there is no section 12, OVERDOSAGE is still 13. Subsections are numbered 9.1, sub-subsections 9.1.1."
+     ]
+    },
+    {
+     "h": "Warnings and contraindications",
+     "p": [
+      "WARNINGS (section 1) is used when fatal or extremely serious, irreversible adverse reactions can occur, and sits in a box at the top (traditionally a red frame). For each contraindication other than hypersensitivity, the reason is given briefly in square brackets, such as \"[Symptoms may worsen. See 9.1.1.]\"."
+     ]
+    },
+    {
+     "h": "Electronic inserts",
+     "p": [
+      "Since August 2021 paper inserts are abolished in principle for prescription drugs. The outer box carries a code that a smartphone app reads to open the latest insert on the PMDA website."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "jp-ostrevia-errors",
+    "doc": "pi"
+   },
+   "watch": false
+  },
+  {
+   "id": 33,
+   "module": "intl",
+   "title": "Australia: PI, CMI and the black triangle",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "The PI form",
+     "p": [
+      "The Australian Product Information follows the approved form: a title line \"AUSTRALIAN PRODUCT INFORMATION – NAME (active ingredient) dosage form\", then sections 1 to 10, close to an SmPC, with 6.7 Physicochemical properties, 7 Medicine schedule (Poisons Standard), 8 Sponsor, 9 Date of first approval and 10 Date of revision.",
+      "Section 4.8 points healthcare professionals to www.tga.gov.au/reporting-problems, and 4.9 gives the Poisons Information Centre number, 13 11 26."
+     ]
+    },
+    {
+     "h": "The CMI template",
+     "p": [
+      "The Consumer Medicine Information starts with a one-page summary and has seven headings: why am I using it, what should I know before I use it, other medicines, how do I use it, what should I know while using it, are there any side effects, and product details. Section 6 has standard sentences and the TGA reporting statement; the leaflet ends \"This leaflet was prepared in\" with the month and year."
+     ]
+    },
+    {
+     "h": "Black triangle scheme",
+     "p": [
+      "New prescription medicines (Type A applications), provisionally registered medicines and significantly new indications carry the ▼ and a standard statement at the top of the PI and CMI for five years. Labels follow Therapeutic Goods Order No. 91."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "au-ostrevia-errors",
+    "doc": "pi"
+   },
+   "watch": false
+  },
+  {
+   "id": 34,
+   "module": "intl",
+   "title": "WHO prequalification: the SmPC of a WHOPAR",
+   "minutes": 6,
+   "sections": [
+    {
+     "h": "Part 4 of the WHOPAR",
+     "p": [
+      "For a prequalified finished pharmaceutical product, WHO publishes a public assessment report (WHOPAR) in eight parts. Part 4 is the summary of product characteristics, close to the EU template, opening with a statement that it covers the uses prequalified by WHO and that national authorities may authorise others.",
+      "Its last sections are 7 Supplier, 8 WHO reference number (such as MA999(a) for an antimalarial), 9 Date of prequalification and 10 Date of revision of the text. Trade names are not prequalified."
+     ]
+    },
+    {
+     "h": "Writing for programmes",
+     "p": [
+      "Prequalified medicines are bought by procurement agencies for national programmes, often for children. Weight-band dosing tables, preparation of dispersible tablets and the MedDRA frequency convention in 4.8 matter more than brand wording."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "who-malvaren-errors",
+    "doc": "smpc"
+   },
+   "watch": false
+  }
+ ]
+}

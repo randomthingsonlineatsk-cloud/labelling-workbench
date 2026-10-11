@@ -1,0 +1,305 @@
+{
+ "jp-pi": {
+  "kind": "jp-pi",
+  "label": "Package insert (Japan)",
+  "short": "PI",
+  "src": "jp0608",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "WARNINGS",
+    "need": "optional"
+   },
+   {
+    "num": "2",
+    "title": "CONTRAINDICATIONS",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "COMPOSITION AND PRODUCT DESCRIPTION",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "3.1",
+      "title": "Composition",
+      "need": "required"
+     },
+     {
+      "num": "3.2",
+      "title": "Product Description",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "4",
+    "title": "INDICATIONS",
+    "need": "required"
+   },
+   {
+    "num": "5",
+    "title": "PRECAUTIONS CONCERNING INDICATIONS",
+    "need": "optional"
+   },
+   {
+    "num": "6",
+    "title": "DOSAGE AND ADMINISTRATION",
+    "need": "required"
+   },
+   {
+    "num": "7",
+    "title": "PRECAUTIONS CONCERNING DOSAGE AND ADMINISTRATION",
+    "need": "optional"
+   },
+   {
+    "num": "8",
+    "title": "IMPORTANT PRECAUTIONS",
+    "need": "required"
+   },
+   {
+    "num": "9",
+    "title": "PRECAUTIONS CONCERNING PATIENTS WITH SPECIFIC BACKGROUNDS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "9.1",
+      "title": "Patients with Complication or History of Diseases, etc.",
+      "need": "optional"
+     },
+     {
+      "num": "9.2",
+      "title": "Patients with Renal Impairment",
+      "need": "optional"
+     },
+     {
+      "num": "9.3",
+      "title": "Patients with Hepatic Impairment",
+      "need": "optional"
+     },
+     {
+      "num": "9.4",
+      "title": "Persons with Reproductive Potential",
+      "need": "optional"
+     },
+     {
+      "num": "9.5",
+      "title": "Pregnant Women",
+      "need": "required"
+     },
+     {
+      "num": "9.6",
+      "title": "Breast-feeding Women",
+      "need": "required"
+     },
+     {
+      "num": "9.7",
+      "title": "Pediatric Use",
+      "need": "required"
+     },
+     {
+      "num": "9.8",
+      "title": "Geriatric Use",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "10",
+    "title": "INTERACTIONS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "10.1",
+      "title": "Contraindications for Co-administration",
+      "need": "optional"
+     },
+     {
+      "num": "10.2",
+      "title": "Precautions for Co-administration",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "11",
+    "title": "ADVERSE REACTIONS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "11.1",
+      "title": "Clinically Significant Adverse Reactions",
+      "need": "required"
+     },
+     {
+      "num": "11.2",
+      "title": "Other Adverse Reactions",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "12",
+    "title": "INFLUENCE ON LABORATORY TESTS",
+    "need": "optional"
+   },
+   {
+    "num": "13",
+    "title": "OVERDOSAGE",
+    "need": "optional"
+   },
+   {
+    "num": "14",
+    "title": "PRECAUTIONS CONCERNING USE",
+    "need": "required"
+   },
+   {
+    "num": "15",
+    "title": "OTHER PRECAUTIONS",
+    "need": "optional",
+    "fixedSubs": [
+     {
+      "num": "15.1",
+      "title": "Information Based on Clinical Uses",
+      "need": "optional"
+     },
+     {
+      "num": "15.2",
+      "title": "Information Based on Nonclinical Studies",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "16",
+    "title": "PHARMACOKINETICS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "16.1",
+      "title": "Blood Level",
+      "need": "optional"
+     },
+     {
+      "num": "16.2",
+      "title": "Absorption",
+      "need": "optional"
+     },
+     {
+      "num": "16.3",
+      "title": "Distribution",
+      "need": "optional"
+     },
+     {
+      "num": "16.4",
+      "title": "Metabolism",
+      "need": "optional"
+     },
+     {
+      "num": "16.5",
+      "title": "Excretion",
+      "need": "optional"
+     },
+     {
+      "num": "16.6",
+      "title": "Patients with Specific Backgrounds",
+      "need": "optional"
+     },
+     {
+      "num": "16.7",
+      "title": "Drug-Drug Interactions",
+      "need": "optional"
+     },
+     {
+      "num": "16.8",
+      "title": "Others",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "17",
+    "title": "CLINICAL STUDIES",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "17.1",
+      "title": "Clinical Studies for Efficacy and Safety",
+      "need": "required"
+     },
+     {
+      "num": "17.2",
+      "title": "Post-marketing Surveillance, etc.",
+      "need": "optional"
+     },
+     {
+      "num": "17.3",
+      "title": "Others",
+      "need": "optional"
+     }
+    ]
+   },
+   {
+    "num": "18",
+    "title": "PHARMACOLOGY",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "18.1",
+      "title": "Mechanism of Action",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "19",
+    "title": "PHYSICOCHEMICAL PROPERTIES",
+    "need": "required"
+   },
+   {
+    "num": "20",
+    "title": "PRECAUTIONS FOR HANDLING",
+    "need": "optional"
+   },
+   {
+    "num": "21",
+    "title": "APPROVAL CONDITIONS",
+    "need": "optional"
+   },
+   {
+    "num": "22",
+    "title": "PACKAGING",
+    "need": "required"
+   },
+   {
+    "num": "23",
+    "title": "REFERENCES",
+    "need": "required"
+   },
+   {
+    "num": "24",
+    "title": "REFERENCE REQUEST AND CONTACT INFORMATION",
+    "need": "required"
+   },
+   {
+    "num": "25",
+    "title": "PRECAUTION CONCERNING HEALTH INSURANCE BENEFITS",
+    "need": "optional"
+   },
+   {
+    "num": "26",
+    "title": "MARKETING AUTHORIZATION HOLDER, etc.",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "revised": "",
+   "commodity": "",
+   "approval": "",
+   "storage": "",
+   "category": "",
+   "regulatory": ""
+  }
+ }
+}

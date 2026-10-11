@@ -1,0 +1,74 @@
+[
+ {
+  "id": "WHO-HEAD",
+  "title": "SmPC headings",
+  "text": "The SmPC uses the headings of the WHOPAR Part 4 template, sections 1 to 10 in order.",
+  "kinds": [
+   "who-smpc"
+  ],
+  "severity": "error",
+  "src": "whoex",
+  "at": "WHOPAR Part 4",
+  "check": "WHO-HEAD"
+ },
+ {
+  "id": "WHO-REQ",
+  "title": "Required content is filled",
+  "text": "Each heading of the SmPC has content.",
+  "kinds": [
+   "who-smpc"
+  ],
+  "severity": "error",
+  "src": "whoex",
+  "at": "WHOPAR Part 4",
+  "check": "WHO-REQ"
+ },
+ {
+  "id": "WHO-INTRO",
+  "title": "Scope statement",
+  "text": "The SmPC opens by saying it covers the uses prequalified by WHO and that national authorities may authorise other uses.",
+  "kinds": [
+   "who-smpc"
+  ],
+  "severity": "error",
+  "src": "whoex",
+  "at": "WHOPAR Part 4, opening statement",
+  "check": "WHO-INTRO"
+ },
+ {
+  "id": "WHO-REF",
+  "title": "WHO reference number",
+  "text": "Section 8 gives the WHO reference number of the prequalified product (for example \"MA999(a)\").",
+  "kinds": [
+   "who-smpc"
+  ],
+  "severity": "error",
+  "src": "whoex",
+  "at": "WHOPAR Part 4, section 8",
+  "check": "WHO-REF"
+ },
+ {
+  "id": "WHO-DATE",
+  "title": "Dates",
+  "text": "Section 9 gives the date of prequalification and section 10 the month and year of the last revision, not earlier than prequalification.",
+  "kinds": [
+   "who-smpc"
+  ],
+  "severity": "error",
+  "src": "whoex",
+  "at": "WHOPAR Part 4, sections 9 and 10",
+  "check": "WHO-DATE"
+ },
+ {
+  "id": "WHO-48",
+  "title": "Frequency terms in 4.8",
+  "text": "Undesirable effects use the MedDRA frequency convention (very common, common, uncommon, rare, very rare, not known), not words such as \"often\" or \"sometimes\".",
+  "kinds": [
+   "who-smpc"
+  ],
+  "severity": "warning",
+  "src": "whop4",
+  "at": "Section guidance, 4.8",
+  "check": "WHO-48"
+ }
+]
