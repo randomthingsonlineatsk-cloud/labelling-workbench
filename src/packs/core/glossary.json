@@ -1,0 +1,48 @@
+{
+ "terms": [
+  {
+   "term": "Change request",
+   "def": "In this app, a labelling change with its trigger, the markets it affects, their deadlines and the label versions it produces."
+  },
+  {
+   "term": "Company Core Data Sheet (CCDS)",
+   "def": "The company's global reference for a product's indications, dosing, safety and use. Local labels are written from it."
+  },
+  {
+   "term": "Company Core Safety Information (CCSI)",
+   "def": "The safety part of the CCDS; the reference safety information for periodic reports."
+  },
+  {
+   "term": "Deviation register",
+   "def": "The list of places where a local label differs from the CCDS, each with a justification."
+  },
+  {
+   "term": "Implementation",
+   "def": "The point when packs carrying the new labelling are being distributed."
+  },
+  {
+   "term": "Labelling committee",
+   "def": "The company group that decides changes to the CCDS."
+  },
+  {
+   "term": "Listed / unlisted",
+   "def": "Whether an adverse reaction is in the CCSI (listed) or not (unlisted), in periodic safety reports."
+  },
+  {
+   "term": "Mapping",
+   "def": "Finding where each CCDS statement appears in a local label and recording whether it is aligned, deviating or not applicable."
+  },
+  {
+   "term": "Patient Medication Information (PMI)",
+   "def": "A proposed one-page FDA patient sheet with fixed headings (proposed 2023, not final)."
+  },
+  {
+   "term": "Rebuttal",
+   "def": "Under 505(o)(4), the holder's statement, with reasons, that no labelling change is warranted."
+  },
+  {
+   "term": "Response table",
+   "def": "A table of agency comments with the company's decision, reason and the resulting text change."
+  }
+ ]
+}

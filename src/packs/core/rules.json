@@ -1,0 +1,142 @@
+[
+ {
+  "id": "CORE-MAP",
+  "title": "Every core safety statement is in the label or justified",
+  "text": "Each statement of the company core safety information (CCSI) should appear in the local label in substance. Where it does not, the difference is recorded in the deviation register with a justification. Non-CCSI parts of the CCDS (indications, dosing, pharmacology) may differ more freely, but the difference is still recorded.",
+  "kinds": [
+   "pi",
+   "mg"
+  ],
+  "severity": "error",
+  "src": "cioms3",
+  "at": "CCSI and local labelling",
+  "check": "CORE-MAP",
+  "simplified": "The app suggests a match by key terms in the mapped sections and asks you to confirm it. Real alignment is a judgement about meaning, made by the labelling team."
+ },
+ {
+  "id": "CORE-DEV-JUST",
+  "title": "A deviation needs a justification",
+  "text": "A statement marked as deviating (or not applicable) needs a written reason, for example a local agency decision, an indication not approved in this market, or a local requirement.",
+  "kinds": [
+   "pi",
+   "mg"
+  ],
+  "severity": "error",
+  "src": "cioms3",
+  "at": "Deviations",
+  "check": "CORE-DEV-JUST"
+ },
+ {
+  "id": "CORE-VERSION",
+  "title": "The label is mapped to the current core data sheet",
+  "text": "When a new CCDS version becomes effective, every local label is assessed against it. A label still mapped to an older version needs an impact assessment.",
+  "kinds": [
+   "pi",
+   "mg"
+  ],
+  "severity": "warning",
+  "src": "cioms3",
+  "at": "CCDS updates",
+  "check": "CORE-VERSION",
+  "simplified": "The app compares version numbers only."
+ },
+ {
+  "id": "CORE-AGENCY",
+  "title": "Agency comments answered and labelling agreed",
+  "text": "When the agency has commented on draft labelling, every comment needs a response (accept, partially accept, or decline with a reason), and the label is final only once the agency has agreed it.",
+  "kinds": [
+   "pi",
+   "mg",
+   "ppi",
+   "ifu",
+   "carton",
+   "container",
+   "pmi"
+  ],
+  "severity": "error",
+  "src": "o4",
+  "at": "Discussion and agreement of labelling",
+  "check": "CORE-AGENCY",
+  "simplified": "The agency comments are scripted by the app; real review is a negotiation."
+ },
+ {
+  "id": "US-PMI-HEAD",
+  "title": "PMI headings in the proposed order",
+  "text": "The proposed PMI has a fixed structure: the product name and use, then \"Important Safety Information\" with the subheadings Warnings, Do not take, Serious side effects and Tell your health care provider before taking, then \"Common Side Effects\", then \"Directions for Use\".",
+  "kinds": [
+   "pmi"
+  ],
+  "severity": "warning",
+  "src": "pmisum",
+  "at": "Proposed 21 CFR 208 (2023)",
+  "check": "US-PMI-HEAD",
+  "simplified": "Proposed rule only (Watch). The app uses the headings described in public summaries of the proposal; check the final rule when it is published."
+ },
+ {
+  "id": "US-PMI-LEN",
+  "title": "PMI fits on one page",
+  "text": "The proposed PMI is a single page, with a 10-point minimum type size. FDA said it expects to grant waivers rarely.",
+  "kinds": [
+   "pmi"
+  ],
+  "severity": "warning",
+  "src": "pmi",
+  "at": "Proposed rule, format",
+  "check": "US-PMI-LEN",
+  "simplified": "The app estimates the page from a word count (about 520 words at 10 point on one page with headings). A real PMI is measured on the typeset page."
+ },
+ {
+  "id": "US-PMI-USE",
+  "title": "Directions for Use start with \"Use exactly as prescribed\"",
+  "text": "The Directions for Use section starts with the statement \"Use exactly as prescribed\", followed by how to take the product, storage and disposal.",
+  "kinds": [
+   "pmi"
+  ],
+  "severity": "warning",
+  "src": "pmisum",
+  "at": "Proposed rule, Directions for Use",
+  "check": "US-PMI-USE"
+ },
+ {
+  "id": "US-PMI-BW",
+  "title": "Boxed warning risks are in the PMI warnings",
+  "text": "The PMI is based on the prescribing information. Each risk in the boxed warning should appear under Important Safety Information, Warnings.",
+  "kinds": [
+   "pmi"
+  ],
+  "severity": "warning",
+  "src": "pmi",
+  "at": "Consistency with the PI",
+  "check": "US-PMI-BW",
+  "simplified": "The app looks for each boxed warning heading word (for example \"infection\") in the Warnings subsection."
+ },
+ {
+  "id": "US-PMI-PROMO",
+  "title": "No promotional wording",
+  "text": "Patient labelling must not be promotional in tone, false or misleading. Words such as \"best\", \"safest\", \"superior\" or \"breakthrough\" do not belong in it.",
+  "kinds": [
+   "pmi",
+   "mg",
+   "ppi",
+   "pi"
+  ],
+  "severity": "warning",
+  "src": "promo",
+  "at": "201.56(a)(2), 208.20(b)(2)",
+  "check": "US-PMI-PROMO",
+  "simplified": "The app looks for a short list of promotional words; a reviewer judges tone as a whole."
+ },
+ {
+  "id": "US-PMI-READ",
+  "title": "Plain language",
+  "text": "Patient information should be written for patients. A reading level around grade 6 to 8 is a common target.",
+  "kinds": [
+   "pmi"
+  ],
+  "severity": "info",
+  "src": "pmi",
+  "at": "Proposed rule, plain language",
+  "check": "US-PMI-READ",
+  "simplified": "Reading grade is an estimate (Flesch-Kincaid style) and is shown as a hint only."
+ }
+]

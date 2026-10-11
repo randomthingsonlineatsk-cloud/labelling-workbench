@@ -1,0 +1,59 @@
+{
+ "pmi": {
+  "kind": "pmi",
+  "label": "Patient Medication Information (proposed)",
+  "short": "PMI",
+  "src": "pmi",
+  "watch": true,
+  "sections": [
+   {
+    "num": "p0",
+    "title": "{name} ({established}): what it is used for",
+    "need": "required"
+   },
+   {
+    "num": "p1",
+    "title": "Important Safety Information",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "p1.1",
+      "title": "Warnings",
+      "need": "required"
+     },
+     {
+      "num": "p1.2",
+      "title": "Do not take",
+      "need": "required"
+     },
+     {
+      "num": "p1.3",
+      "title": "Serious side effects",
+      "need": "required"
+     },
+     {
+      "num": "p1.4",
+      "title": "Tell your health care provider before taking",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "p2",
+    "title": "Common Side Effects",
+    "need": "required"
+   },
+   {
+    "num": "p3",
+    "title": "Directions for Use",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "header": "PATIENT MEDICATION INFORMATION",
+   "contact": "Call your doctor for medical advice about side effects. You may report side effects to FDA at 1-800-FDA-1088.",
+   "useStart": "Use exactly as prescribed."
+  },
+  "pageWords": 520
+ }
+}

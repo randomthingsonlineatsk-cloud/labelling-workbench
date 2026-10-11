@@ -1,0 +1,386 @@
+{
+ "topics": [
+  {
+   "id": 12,
+   "label": "12. The core data sheet and the core safety information",
+   "module": "core"
+  },
+  {
+   "id": 13,
+   "label": "13. Mapping a local label and recording deviations",
+   "module": "core"
+  },
+  {
+   "id": 14,
+   "label": "14. Running a safety labelling change",
+   "module": "core"
+  },
+  {
+   "id": 15,
+   "label": "15. Implementation: from approval to the pharmacy shelf",
+   "module": "core"
+  }
+ ],
+ "questions": [
+  {
+   "id": "q12-1",
+   "topic": 12,
+   "module": "core",
+   "q": "What is the CCSI?",
+   "options": [
+    "The safety part of the company core data sheet",
+    "A US FDA form for safety changes",
+    "The local label in the company's home country",
+    "A list of adverse events from one clinical study"
+   ],
+   "answer": 0,
+   "why": "The Company Core Safety Information is the safety subset of the CCDS that the company wants in every local label.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q12-2",
+   "topic": 12,
+   "module": "core",
+   "q": "In a periodic benefit-risk report, a reaction that is in the CCSI is called…",
+   "options": [
+    "Labelled in the US",
+    "Expected by FDA",
+    "Serious",
+    "Listed"
+   ],
+   "answer": 3,
+   "why": "ICH E2C(R2) uses the CCSI as the reference safety information: reactions in it are listed, others unlisted.",
+   "cite": "ICH E2C(R2)"
+  },
+  {
+   "id": "q12-3",
+   "topic": 12,
+   "module": "core",
+   "q": "Which part of the CCDS may most legitimately differ between markets?",
+   "options": [
+    "A contraindication",
+    "An overdose warning",
+    "The approved indications",
+    "A boxed-warning-level safety statement"
+   ],
+   "answer": 2,
+   "why": "Indications depend on what each agency approved. Core safety statements should be in every label unless a deviation is justified.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q12-4",
+   "topic": 12,
+   "module": "core",
+   "q": "What usually creates a new CCDS version?",
+   "options": [
+    "A new pack size",
+    "A labelling committee decision, for example after a safety signal",
+    "Every local label approval",
+    "A change of artwork supplier"
+   ],
+   "answer": 1,
+   "why": "The CCDS changes when the company's position changes, typically after a signal, new data or an agency request.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q12-5",
+   "topic": 12,
+   "module": "core",
+   "q": "Why is a CCDS version frozen once it is effective?",
+   "options": [
+    "So every label can be traced to the exact text it was assessed against",
+    "Because agencies approve the CCDS",
+    "Because it is printed on the carton",
+    "So it can be submitted as SPL"
+   ],
+   "answer": 0,
+   "why": "Labels are mapped to a specific version; changing an effective version would break that trace. Changes go into a new version.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q12-6",
+   "topic": 12,
+   "module": "core",
+   "q": "Who approves the CCDS?",
+   "options": [
+    "FDA",
+    "EMA",
+    "The WHO",
+    "The company (for example its labelling committee)"
+   ],
+   "answer": 3,
+   "why": "The CCDS is the company's own document. Agencies approve local labels.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q13-1",
+   "topic": 13,
+   "module": "core",
+   "q": "A CCSI statement is missing from the US label and no reason is recorded. What is it?",
+   "options": [
+    "Only a problem if FDA asks",
+    "A Recent Major Change",
+    "An unjustified deviation that must be fixed or justified",
+    "Acceptable, because US style differs"
+   ],
+   "answer": 2,
+   "why": "Every deviation from the CCSI needs a documented justification.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q13-2",
+   "topic": 13,
+   "module": "core",
+   "q": "Which is an acceptable deviation justification?",
+   "options": [
+    "We forgot",
+    "FDA did not accept the proposed wording in the 2025 review (letter on file)",
+    "The section was full",
+    "Not needed"
+   ],
+   "answer": 1,
+   "why": "A justification names a real reason that can be checked: an agency decision, a local requirement, an indication not approved.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q13-3",
+   "topic": 13,
+   "module": "core",
+   "q": "Does mapping require the label to repeat the CCDS word for word?",
+   "options": [
+    "No, it must say the same thing in substance",
+    "Yes, always",
+    "Only for the boxed warning",
+    "Only in the Medication Guide"
+   ],
+   "answer": 0,
+   "why": "Local labels follow local format and style; alignment is about meaning.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q13-4",
+   "topic": 13,
+   "module": "core",
+   "q": "A CCDS dosing statement covers an indication not approved in the US. How is it recorded?",
+   "options": [
+    "Aligned",
+    "Deleted from the CCDS",
+    "Left blank",
+    "Not applicable, with the reason"
+   ],
+   "answer": 3,
+   "why": "\"Not applicable\" still needs a reason, here that the indication is not approved in the market.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q13-5",
+   "topic": 13,
+   "module": "core",
+   "q": "Where might one CCDS warning appear in a US PLR label?",
+   "options": [
+    "Only the carton",
+    "Only section 12",
+    "Highlights, section 5, section 17 and the Medication Guide",
+    "Only section 5"
+   ],
+   "answer": 2,
+   "why": "A warning is summarised in Highlights, described in 5.x, used in counselling (17) and explained to patients in the Medication Guide.",
+   "cite": "21 CFR 201.57"
+  },
+  {
+   "id": "q13-6",
+   "topic": 13,
+   "module": "core",
+   "q": "In this app, what happens if a CCSI statement is neither found nor justified?",
+   "options": [
+    "The CCDS is changed automatically",
+    "An error blocks approval",
+    "Nothing",
+    "A warning that can be waived"
+   ],
+   "answer": 1,
+   "why": "The CORE-MAP rule treats an unexplained CCSI gap as an error.",
+   "cite": "App rule CORE-MAP"
+  },
+  {
+   "id": "q14-1",
+   "topic": 14,
+   "module": "core",
+   "q": "After a 505(o)(4) notification, how long does the holder have to respond?",
+   "options": [
+    "30 days",
+    "15 days",
+    "90 days",
+    "6 months"
+   ],
+   "answer": 0,
+   "why": "The holder must submit a supplement or a rebuttal within 30 days.",
+   "cite": "FD&C Act 505(o)(4); FDA guidance 2013"
+  },
+  {
+   "id": "q14-2",
+   "topic": 14,
+   "module": "core",
+   "q": "What are the two ways to respond to a 505(o)(4) notification?",
+   "options": [
+    "A phone call or an email",
+    "A new NDA or an ANDA",
+    "A PSUR or a DSUR",
+    "A supplement with proposed changes, or a rebuttal giving reasons no change is warranted"
+   ],
+   "answer": 3,
+   "why": "The statute allows a labelling supplement or a statement that the holder believes no change is warranted, with reasons.",
+   "cite": "FDA guidance 2013"
+  },
+  {
+   "id": "q14-3",
+   "topic": 14,
+   "module": "core",
+   "q": "If FDA disagrees with the response, how long can discussions last?",
+   "options": [
+    "15 days",
+    "There is no limit",
+    "No more than 30 days",
+    "Up to a year"
+   ],
+   "answer": 2,
+   "why": "Discussions are limited to 30 days, after which FDA may order the change within 15 days.",
+   "cite": "FDA guidance 2013"
+  },
+  {
+   "id": "q14-4",
+   "topic": 14,
+   "module": "core",
+   "q": "Which route lets a holder strengthen a warning before FDA approves it?",
+   "options": [
+    "A new SPL listing only",
+    "A CBE-0 supplement under 21 CFR 314.70(c)(6)(iii)",
+    "An annual report",
+    "A prior approval supplement only"
+   ],
+   "answer": 1,
+   "why": "Changes that add or strengthen a warning can be made on submission of a Changes Being Effected supplement.",
+   "cite": "21 CFR 314.70(c)(6)(iii)"
+  },
+  {
+   "id": "q14-5",
+   "topic": 14,
+   "module": "core",
+   "q": "An agency comment asks you to delete \"superior efficacy\" from section 14. Best response?",
+   "options": [
+    "Accept and delete it, unless you have adequate head-to-head data in the application",
+    "Decline because marketing wants it",
+    "Move it to the Medication Guide",
+    "Ignore the comment"
+   ],
+   "answer": 0,
+   "why": "Comparative claims need substantial evidence; labelling must not be promotional or misleading.",
+   "cite": "21 CFR 201.56(a)(2)"
+  },
+  {
+   "id": "q14-6",
+   "topic": 14,
+   "module": "core",
+   "q": "What belongs in a response table for agency comments?",
+   "options": [
+    "Only the accepted comments",
+    "The reviewer's name and phone number",
+    "The artwork files",
+    "Each comment, the decision, the reason and where the text changed"
+   ],
+   "answer": 3,
+   "why": "A full response table lets the reviewer check every comment quickly.",
+   "cite": "FDA guidance 2013"
+  },
+  {
+   "id": "q15-1",
+   "topic": 15,
+   "module": "core",
+   "q": "When is a labelling change \"implemented\"?",
+   "options": [
+    "When the agency receives the submission",
+    "When the artwork is drafted",
+    "When packs with the new labelling are being distributed",
+    "When the CCDS is approved"
+   ],
+   "answer": 2,
+   "why": "Implementation means the new labelling is in use on product leaving the company.",
+   "cite": "Industry practice"
+  },
+  {
+   "id": "q15-2",
+   "topic": 15,
+   "module": "core",
+   "q": "Where does final US labelling go in the eCTD?",
+   "options": [
+    "Module 5.3.6",
+    "Module 1.14.2",
+    "Module 2.5",
+    "Module 3.2.P.7"
+   ],
+   "answer": 1,
+   "why": "Module 1.14 holds labelling: 1.14.1 draft, 1.14.2 final, 1.14.3 listed drug labelling.",
+   "cite": "FDA eCTD Module 1 headings"
+  },
+  {
+   "id": "q15-3",
+   "topic": 15,
+   "module": "core",
+   "q": "Why track a CCDS change per market?",
+   "options": [
+    "Each market has its own submission, classification, review time and implementation date",
+    "Because the CCDS is different in each market",
+    "Only to report to the WHO",
+    "It is not needed"
+   ],
+   "answer": 0,
+   "why": "One core change becomes many local changes, each on its own clock.",
+   "cite": "CIOMS III/V"
+  },
+  {
+   "id": "q15-4",
+   "topic": 15,
+   "module": "core",
+   "q": "In this app, the 90-day target to first shipment is…",
+   "options": [
+    "An FDA regulation",
+    "An EU regulation",
+    "An ICH guideline",
+    "A training default the company would set in its procedures"
+   ],
+   "answer": 3,
+   "why": "There is no single legal deadline; companies set their own targets. The app labels its defaults as such.",
+   "cite": "App note"
+  },
+  {
+   "id": "q15-5",
+   "topic": 15,
+   "module": "core",
+   "q": "Which file does this app hand to pharmacovigilance?",
+   "options": [
+    "The SPL file",
+    "The certificate",
+    "The current CCSI as reference safety information",
+    "The carton artwork"
+   ],
+   "answer": 2,
+   "why": "PV uses the CCSI to decide whether reactions are listed.",
+   "cite": "ICH E2C(R2)"
+  },
+  {
+   "id": "q15-6",
+   "topic": 15,
+   "module": "core",
+   "q": "What does \"old stock out\" record?",
+   "options": [
+    "The date the CCDS was drafted",
+    "The date by which packs with the old labelling have left the company's control",
+    "The expiry date of the product",
+    "The approval date"
+   ],
+   "answer": 1,
+   "why": "It closes the implementation: after it, only the new labelling is distributed.",
+   "cite": "Industry practice"
+  }
+ ]
+}

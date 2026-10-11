@@ -1,0 +1,62 @@
+{
+ "drills": [
+  {
+   "id": "ccds-map",
+   "module": "core",
+   "title": "Map the US label to the core data sheet",
+   "minutes": 20,
+   "sample": "ostrevia-ccds",
+   "doc": "pi",
+   "tab": "core",
+   "goal": {
+    "type": "ccds-map",
+    "docs": [
+     "pi",
+     "mg"
+    ]
+   },
+   "about": "Map CCDS 3.0 to the Ostrevia prescribing information and Medication Guide. Confirm every match, and record a justification for each statement the label does not carry (two are missing on purpose)."
+  },
+  {
+   "id": "o4-respond",
+   "module": "core",
+   "title": "Respond to a 505(o)(4) notification",
+   "minutes": 30,
+   "sample": "ostrevia-o4",
+   "doc": "pi",
+   "tab": "agency",
+   "goal": {
+    "type": "o4"
+   },
+   "about": "FDA has notified you of serious hypersensitivity reactions. Choose your response within the 30-day clock, draft the new warning, Highlights, 6.2, section 17 and Medication Guide text, submit, answer the agency comments and get the labelling agreed."
+  },
+  {
+   "id": "ccds-rollout",
+   "module": "core",
+   "capstone": true,
+   "title": "Capstone: roll out a CCDS change to every market",
+   "minutes": 40,
+   "sample": "ostrevia-ccds4",
+   "doc": "pi",
+   "tab": "core",
+   "goal": {
+    "type": "rollout",
+    "key": "wp-hbv"
+   },
+   "about": "CCDS 4.0 adds hepatitis B reactivation. Make it effective, start the change request from the impact list with deadlines for the US, EU and India, update the US prescribing information (2.2 and section 5) and Medication Guide, map them to 4.0 with no gaps, approve both, and record the US approval and first shipment."
+  },
+  {
+   "id": "pmi-write",
+   "module": "core",
+   "title": "Write a one-page PMI (proposed rule)",
+   "minutes": 25,
+   "sample": "ostrevia-pmi",
+   "doc": "pmi",
+   "tab": "edit",
+   "goal": {
+    "type": "pmi"
+   },
+   "about": "Watch item: FDA's Patient Medication Information rule is still proposed. Write Ostrevia's PMI with the proposed headings, every boxed warning risk, \"Use exactly as prescribed\", no promotional words, on one page."
+  }
+ ]
+}

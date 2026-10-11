@@ -3,6 +3,8 @@
 import { templateFor, ruleById, fill } from './pack.js';
 import { textEntries, blockTexts, blocksText, hasContent, sectionNums, findSection, sectionTitle, HL_LABEL } from './model.js';
 import { strengths, normStrength, monthIndex, todayMonth, readingGrade, sentences, wordCount, levenshtein, norm, escapeRe } from './text.js';
+import { coreIssues } from './ccds.js';
+import { agencyIssues } from './agency.js';
 
 export const HL_LINE_CHARS = 65;
 export const HL_MAX_LINES = 76;
@@ -40,8 +42,12 @@ export function runChecks(doc, ctx) {
   if (kind === 'pi-old') checkOld(doc, ctx, add);
   if (kind === 'mg' || kind === 'ppi' || kind === 'ifu') checkPatient(doc, ctx, add);
   if (kind === 'carton' || kind === 'container') checkCarton(doc, ctx, add);
+  if (kind === 'pmi') checkPmi(doc, ctx, add);
+  if (['pi', 'mg', 'ppi', 'pmi'].includes(kind) && doc.role !== 'reference') checkPromo(doc, ctx, add);
   checkMedErrors(doc, ctx, add);
   checkName(doc, ctx, add);
+  if (ctx.project) coreIssues(doc, ctx.project, add);
+  agencyIssues(doc, add);
   const waivers = doc.waivers ?? {};
   for (const i of out) if (waivers[i.key] && i.severity !== 'error') i.waived = waivers[i.key];
   return out;
@@ -411,5 +417,51 @@ function checkName(doc, ctx, add) {
         if (d > 0 && d <= 2 && Math.abs(lw.length - t.length) <= 2) { seen.add(lw); add('US-NAME', e.loc, `"${w}" looks like a misspelling of ${t}.`, `Write "${t}".`); }
       }
     }
+  }
+}
+
+// ---------------------------------------------------------------- Proposed PMI (Watch)
+const RISK_WORDS = { infection: 'infection', infections: 'infection', malignancy: 'cancer|malignan|lymphoma', malignancies: 'cancer|malignan|lymphoma', thrombosis: 'blood clot|thrombo', mortality: 'death|died', hepatotoxicity: 'liver', suicidal: 'suicid' };
+export function boxedRisks(pi) {
+  const title = norm(pi?.bw?.title ?? '');
+  if (!title) return [];
+  return title.replace(/^WARNING:\s*/i, '').split(/,\s*(?:AND\s+)?|\s+AND\s+/i).map((x) => x.trim()).filter(Boolean).map((phrase) => {
+    const w = phrase.toLowerCase().split(/\s+/).at(-1);
+    return { phrase, re: RISK_WORDS[w] ?? escapeRe(w.slice(0, 6)) };
+  });
+}
+function checkPmi(doc, ctx, add) {
+  const t = templateFor(ctx.pack, 'pmi');
+  const m = doc.meta ?? {};
+  const want = [];
+  for (const s of t.sections) { want.push(s); for (const x of s.fixedSubs ?? []) want.push(x); }
+  for (const w of want) {
+    const s = findSection(doc, w.num);
+    const title = fill(w.title, m);
+    const loc = { area: 'sec', key: w.num, label: title };
+    const filled = s && (hasContent(s.blocks) || (s.subs ?? []).some((x) => hasContent(x.blocks)));
+    if (!s) add('US-PMI-HEAD', loc, `"${title}" is missing.`, 'Keep every proposed heading, in order.');
+    else if (norm(s.title) !== norm(title)) add('US-PMI-HEAD', loc, `Heading "${s.title}" should be "${title}".`, 'Use the proposed heading wording.');
+    else if (!filled && !(w.fixedSubs ?? []).length) add('US-PMI-HEAD', loc, `"${title}" is empty.`, 'Every section of the PMI needs content.');
+  }
+  const all = textEntries(doc).filter((e) => e.loc.area === 'sec').map((e) => e.text).join('\n');
+  const words = wordCount(all);
+  if (words > t.pageWords) add('US-PMI-LEN', { area: 'sec', key: 'p0', label: 'Length' }, `About ${words} words; one page holds about ${t.pageWords} at 10 point.`, 'Cut to what a patient needs most; the details stay in the prescribing information.');
+  const p3 = findSection(doc, 'p3');
+  if (p3 && hasContent(p3.blocks) && !norm(blocksText(p3.blocks)).toLowerCase().startsWith(norm(t.fixed.useStart).toLowerCase().replace(/\.$/, ''))) add('US-PMI-USE', { area: 'sec', key: 'p3', label: 'Directions for Use' }, 'Directions for Use do not start with "Use exactly as prescribed."', 'Make it the first sentence.');
+  const pi = (ctx.docs ?? []).find((d) => d.kind === 'pi' && d.role !== 'reference');
+  const warn = norm(blocksText(findSection(doc, 'p1.1')?.blocks)).toLowerCase();
+  for (const r of boxedRisks(pi)) if (!new RegExp(r.re, 'i').test(warn)) add('US-PMI-BW', { area: 'sec', key: 'p1.1', label: 'Important Safety Information, Warnings' }, `The boxed warning risk "${r.phrase.toLowerCase()}" is not in Warnings.`, 'Explain each boxed warning risk in plain words.');
+  const g = readingGrade(all);
+  if (words > 40 && g > 8) add('US-PMI-READ', { area: 'sec', key: 'p0', label: 'Reading level' }, `Estimated reading grade ${g.toFixed(1)}.`, 'Shorter sentences and everyday words bring it down; grade 6 to 8 is a common target.', 'info');
+}
+function checkPromo(doc, ctx, add) {
+  const words = ctx.pack.vocab?.promo ?? [];
+  if (!words.length) return;
+  const re = new RegExp(`\\b(${words.map(escapeRe).join('|')})\\b`, 'i');
+  for (const e of textEntries(doc)) {
+    if (e.loc.area === 'fixed') continue;
+    const mm = re.exec(e.text);
+    if (mm) add('US-PMI-PROMO', e.loc, `"${mm[1]}" reads as promotional.`, 'Labelling states facts and the evidence for them; remove claims of superiority.');
   }
 }

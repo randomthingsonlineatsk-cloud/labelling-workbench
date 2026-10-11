@@ -204,6 +204,7 @@ export async function diffReportPdf(title, rows, { left = 'Before', right = 'Aft
 
 // ---------- certificate ----------
 export async function certificatePdf({ name, userId, status, code, region = 'US', date = today() }) {
+  const core = status.region === 'core';
   const { pdf, font, bold } = await setup('Labelling Workbench - portfolio certificate');
   const page = pdf.addPage([792, 612]);
   const { width: W, height: H } = page.getSize();
@@ -212,14 +213,18 @@ export async function certificatePdf({ name, userId, status, code, region = 'US'
   page.drawRectangle({ x: 32, y: 32, width: W - 64, height: H - 64, borderColor: ACCENT, borderWidth: 0.5 });
   [0, 1, 2, 3].forEach((i) => page.drawRectangle({ x: W / 2 - 36, y: H - 72 - i * 7, width: 72 - (i % 2) * 22, height: 3.5, color: i === 1 ? rgb(0.62, 0.14, 0.14) : ACCENT }));
   centre('LABELLING WORKBENCH', bold, 13, H - 112, ACCENT);
-  centre(`Certificate of completion: ${region} labelling`, font, 26, H - 152);
+  centre(core ? 'Certificate of completion: core data sheet and change management' : `Certificate of completion: ${region} labelling`, font, core ? 20 : 26, H - 152);
   centre('This certifies that', font, 12, H - 190, MUTED);
   centre(name.trim(), font, 28, H - 228);
-  [
+  (core ? [
+    `completed all ${status.lessons.length} core lessons and their checks, a core quiz round and the capstone drill`,
+    'in the Labelling Workbench: mapping labels to a company core data sheet, deviations, safety labelling changes,',
+    'agency comment rounds and tracking implementation in every market.',
+  ] : [
     `completed all ${status.lessons.length} ${region} lessons and their checks, a mixed quiz round and the capstone drill`,
     'in the Labelling Workbench, a browser-based practice tool for prescribing information, patient labelling,',
     'carton and container labels, generic labelling and the review of labels against the rules.',
-  ].forEach((t, i) => centre(t, font, 11, H - 266 - i * 16));
+  ]).forEach((t, i) => centre(t, font, 11, H - 266 - i * 16));
   page.drawText(clean(`Date: ${date}`), { x: 70, y: 120, size: 11, font, color: INK });
   page.drawText(clean(`Verification code: ${code}`), { x: 70, y: 102, size: 11, font, color: INK });
   page.drawText(clean(`Best mixed quiz: ${status.quiz?.score ?? '-'}%`), { x: 70, y: 84, size: 11, font, color: INK });

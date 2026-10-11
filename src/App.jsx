@@ -3,6 +3,7 @@ import { AppCtx } from './ctx.js';
 import { db, getUser, getMeta, setMeta } from './engine/db.js';
 import { PACKS, productById, packAgeMonths } from './engine/pack.js';
 import { projectFromSample, blankDoc, uid, now } from './engine/model.js';
+import { sampleChange } from './engine/changes.js';
 import { parseProjectFile } from './engine/io.js';
 import Home from './screens/Home.jsx';
 import Project from './screens/Project.jsx';
@@ -12,6 +13,7 @@ import Drills from './screens/Drills.jsx';
 import Glossary from './screens/Glossary.jsx';
 import Progress from './screens/Progress.jsx';
 import Rules from './screens/Rules.jsx';
+import Classroom from './screens/Classroom.jsx';
 import { Mark } from './components/ui.jsx';
 
 function useHashRoute() {
@@ -25,7 +27,7 @@ function useHashRoute() {
   return parts;
 }
 
-const NAV = [['', 'Projects'], ['learn', 'Learn'], ['quiz', 'Quiz'], ['drills', 'Drills'], ['progress', 'Progress'], ['rules', 'Rules and sources']];
+const NAV = [['', 'Projects'], ['learn', 'Learn'], ['quiz', 'Quiz'], ['drills', 'Drills'], ['progress', 'Progress'], ['classroom', 'Classroom'], ['rules', 'Rules and sources']];
 
 export default function App() {
   const route = useHashRoute();
@@ -122,7 +124,8 @@ export default function App() {
       return next;
     },
     deleteDoc: async (doc) => { await db.del('docs', doc.id); setDocs((ds) => ds.filter((d) => d.id !== doc.id)); await addAudit({ entity: 'doc', entityId: doc.id, projectId: doc.projectId, action: 'delete', detail: doc.title }); },
-    saveProject: async (p) => { const next = { ...p, updatedAt: now() }; await db.put('projects', next); setProjects((ps) => [next, ...ps.filter((x) => x.id !== next.id)]); return next; },
+    // State first, then storage, so typing into project-level fields (CCDS, change requests) keeps up.
+    saveProject: async (p) => { const next = { ...p, updatedAt: now() }; setProjects((ps) => [next, ...ps.filter((x) => x.id !== next.id)]); await db.put('projects', next); return next; },
     deleteProject: async (p) => {
       for (const d of docs.filter((x) => x.projectId === p.id)) await db.del('docs', d.id);
       for (const v of versions.filter((x) => x.projectId === p.id)) await db.del('versions', v.id);
@@ -132,7 +135,9 @@ export default function App() {
     },
     createFromSample: async (sampleId, extra = {}) => {
       const sample = pack.samples.find((s) => s.id === sampleId);
-      const { project, docs: ds } = projectFromSample(sample, user);
+      const { project, docs: ds } = projectFromSample(sample, user, { pack, product: productById(sample.productId) });
+      const c = sampleChange(pack.core, sample, ds, user);
+      if (c) project.changes = [c];
       Object.assign(project, extra);
       await db.put('projects', project);
       for (const d of ds) await db.put('docs', d);
@@ -189,6 +194,7 @@ export default function App() {
   else if (section === 'glossary') screen = <Glossary />;
   else if (section === 'progress') screen = <Progress />;
   else if (section === 'rules') screen = <Rules />;
+  else if (section === 'classroom') screen = <Classroom />;
   else screen = <div className="page"><h1>Page not found</h1><p><a href="#/">Go to your projects</a></p></div>;
 
   const cycleTheme = async () => {
