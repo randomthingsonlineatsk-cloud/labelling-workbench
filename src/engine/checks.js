@@ -5,6 +5,7 @@ import { textEntries, blockTexts, blocksText, hasContent, sectionNums, findSecti
 import { strengths, normStrength, monthIndex, todayMonth, readingGrade, sentences, wordCount, levenshtein, norm, escapeRe } from './text.js';
 import { coreIssues } from './ccds.js';
 import { agencyIssues } from './agency.js';
+import { checkEu, EU_KINDS } from './checks-eu.js';
 
 export const HL_LINE_CHARS = 65;
 export const HL_MAX_LINES = 76;
@@ -43,6 +44,7 @@ export function runChecks(doc, ctx) {
   if (kind === 'mg' || kind === 'ppi' || kind === 'ifu') checkPatient(doc, ctx, add);
   if (kind === 'carton' || kind === 'container') checkCarton(doc, ctx, add);
   if (kind === 'pmi') checkPmi(doc, ctx, add);
+  if (EU_KINDS.includes(kind)) checkEu(doc, ctx, add);
   if (['pi', 'mg', 'ppi', 'pmi'].includes(kind) && doc.role !== 'reference') checkPromo(doc, ctx, add);
   checkMedErrors(doc, ctx, add);
   checkName(doc, ctx, add);

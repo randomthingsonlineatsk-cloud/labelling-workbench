@@ -3,7 +3,7 @@
 import { sha256 } from './sha256.js';
 import { moduleOf } from './pack.js';
 
-export const QUIZ_TOPIC = { us: 'all', core: 'core' };
+export const QUIZ_TOPIC = { us: 'all', core: 'core', eu: 'eu' };
 
 export const RULES = { lessonPass: 80, quizPass: 80, quizMin: 10, capstonePass: 100 };
 

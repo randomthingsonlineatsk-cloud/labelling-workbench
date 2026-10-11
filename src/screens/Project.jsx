@@ -18,8 +18,11 @@ import Core from './doc/Core.jsx';
 import Changes from './doc/Changes.jsx';
 import Agency from './doc/Agency.jsx';
 import { scriptFor } from '../engine/agency.js';
+import UserTest from './doc/UserTest.jsx';
+import Translation from './doc/Translation.jsx';
+import { kindsFor } from '../engine/pack.js';
 
-const TAB_LABEL = { edit: 'Edit', preview: 'Preview', checks: 'Checks', review: 'Review', versions: 'Versions', compare: 'Compare with reference', convert: 'Convert to PLR', proof: 'Proof check', core: 'Core data sheet', agency: 'Agency comments', changes: 'Changes', export: 'Export' };
+const TAB_LABEL = { edit: 'Edit', preview: 'Preview', checks: 'Checks', review: 'Review', versions: 'Versions', compare: 'Compare with reference', convert: 'Convert to PLR', proof: 'Proof check', core: 'Core data sheet', agency: 'Agency comments', changes: 'Changes', usertest: 'User test', translation: 'Translation review', export: 'Export' };
 
 export default function Project({ id, docId, tab }) {
   const app = useApp();
@@ -46,6 +49,8 @@ export default function Project({ id, docId, tab }) {
   if (doc.role === 'generic' && docs.some((d) => d.role === 'reference')) tabs.push('compare');
   if (doc.kind === 'pi-old') tabs.push('convert');
   if ((doc.kind === 'carton' || doc.kind === 'container') && project.proof?.docId === doc.id) tabs.push('proof');
+  if (doc.kind === 'pl' && doc.role !== 'translation') tabs.push('usertest');
+  if (doc.role === 'translation') tabs.push('translation');
   tabs.push('core');
   if (scriptFor(pack, project, doc) || doc.agency) tabs.push('agency');
   tabs.push('changes', 'export');
@@ -64,7 +69,7 @@ export default function Project({ id, docId, tab }) {
       <div className="ws-head">
         <div className="ws-title">
           <div>
-            <p className="small" style={{ margin: 0 }}><a href="#/">Projects</a> / {product?.brandName} ({product?.inn}) · fictional</p>
+            <p className="small" style={{ margin: 0 }}><a href="#/">Projects</a> / {product?.brandName} ({product?.inn}) · {project.region === 'eu' ? 'EU' : 'US'} · fictional</p>
             {renaming ? (
               <form className="row" onSubmit={async (e) => { e.preventDefault(); await saveProject({ ...project, title: e.target.t.value || project.title }); setRenaming(false); }}>
                 <input name="t" type="text" defaultValue={project.title} aria-label="Project name" style={{ minWidth: 280 }} /><button className="btn small primary">Save</button>
@@ -81,8 +86,8 @@ export default function Project({ id, docId, tab }) {
         {project.about && <p className="small muted" style={{ margin: '.3rem 0 0' }}>{project.about}</p>}
         <div className="doc-tabs" role="list" aria-label="Labels in this project">
           {docs.map((d) => (
-            <button key={d.id} className="doc-tab" role="listitem" aria-current={d.id === doc.id ? 'true' : undefined} onClick={() => go(`/p/${project.id}/${d.id}/${cur === 'compare' || cur === 'convert' || cur === 'proof' || cur === 'agency' ? 'edit' : cur}`)}>
-              <span className="k">{d.role === 'reference' ? 'Reference (RLD)' : KIND_LABEL[d.kind]}</span>
+            <button key={d.id} className="doc-tab" role="listitem" aria-current={d.id === doc.id ? 'true' : undefined} onClick={() => go(`/p/${project.id}/${d.id}/${['compare', 'convert', 'proof', 'agency', 'usertest', 'translation'].includes(cur) ? 'edit' : cur}`)}>
+              <span className="k">{d.role === 'reference' ? 'Reference (RLD)' : d.role === 'translation' ? `${KIND_LABEL[d.kind]} · ${(d.meta?.lang ?? '').toUpperCase()}` : KIND_LABEL[d.kind]}</span>
               <span className="t">{d.title}</span>
               <span className="row" style={{ gap: '.25rem' }}><StatusPill status={d.status} /> <Counts sum={summarise(issuesByDoc[d.id] ?? [])} /></span>
             </button>
@@ -102,6 +107,8 @@ export default function Project({ id, docId, tab }) {
         {cur === 'compare' && <Compare key={doc.id} {...props} />}
         {cur === 'convert' && <Convert key={doc.id} {...props} />}
         {cur === 'proof' && <Proof key={doc.id} {...props} />}
+        {cur === 'usertest' && <UserTest key={doc.id} {...props} />}
+        {cur === 'translation' && <Translation key={doc.id} {...props} />}
         {cur === 'core' && <Core key={doc.id} {...props} />}
         {cur === 'agency' && <Agency key={doc.id} {...props} />}
         {cur === 'changes' && <Changes key={project.id} {...props} />}
@@ -119,7 +126,7 @@ function AddDoc({ project, product, onClose, onAdded }) {
     <Modal title="Add a label" onClose={onClose}>
       <label className="field">Kind
         <select value={kind} onChange={(e) => setKind(e.target.value)}>
-          {pack.kinds.filter((k) => k !== 'pi-old').map((k) => <option key={k} value={k}>{KIND_LABEL[k]}</option>)}
+          {kindsFor(pack, project.region).filter((k) => k !== 'pi-old').map((k) => <option key={k} value={k}>{KIND_LABEL[k]}</option>)}
         </select>
       </label>
       <p className="small muted">The label starts empty, with the template's required sections in place.</p>

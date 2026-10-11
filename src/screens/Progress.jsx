@@ -5,7 +5,7 @@ import { download } from '../engine/io.js';
 
 export default function Progress() {
   const { pack, attempts, lessonsDone, user, updateUser, toast, projects, docs } = useApp();
-  const statuses = useMemo(() => ['us', 'core'].map((region) => certificateStatus({ region, lessons: pack.lessons, drills: pack.drills, attempts, lessonsDone })), [pack, attempts, lessonsDone]);
+  const statuses = useMemo(() => ['us', 'core', 'eu'].map((region) => certificateStatus({ region, lessons: pack.lessons, drills: pack.drills, attempts, lessonsDone })), [pack, attempts, lessonsDone]);
   const status = { lessons: statuses.flatMap((s) => s.lessons), drills: statuses.flatMap((s) => s.drills), quiz: statuses[0].quiz };
   const [name, setName] = useState(user?.displayName ?? '');
   const approved = docs.filter((d) => d.status === 'approved').length;
@@ -28,10 +28,10 @@ export default function Progress() {
       <label className="field" style={{ maxWidth: 360, marginBottom: '1rem' }}>Name on the certificates <input type="text" value={name} onChange={(e) => setName(e.target.value)} /></label>
       {statuses.map((st) => (
         <section key={st.region} style={{ marginBottom: '1.25rem' }}>
-          <h2 style={{ fontSize: 'var(--step-2)' }}>{st.region === 'core' ? 'Core data sheet and change management certificate' : 'US labelling certificate'}</h2>
+          <h2 style={{ fontSize: 'var(--step-2)' }}>{st.region === 'core' ? 'Core data sheet and change management certificate' : st.region === 'eu' ? 'EU product information certificate' : 'US labelling certificate'}</h2>
           <ul className="checks" style={{ marginBottom: '.75rem' }}>
             {st.criteria.map((c) => (
-              <li key={c.id}><span className={`tick ${c.done >= c.of ? 'on' : ''}`} aria-hidden="true">{c.done >= c.of ? '✓' : ''}</span><span>{c.id === 'quiz' && st.region === 'core' ? c.label.replace('A mixed quiz round', 'A core module quiz round') : c.label}: <b>{c.done} of {c.of}</b></span></li>
+              <li key={c.id}><span className={`tick ${c.done >= c.of ? 'on' : ''}`} aria-hidden="true">{c.done >= c.of ? '✓' : ''}</span><span>{c.id === 'quiz' && st.region !== 'us' ? c.label.replace('A mixed quiz round', `An ${st.region === 'eu' ? 'EU' : 'core'} module quiz round`.replace('An core', 'A core')) : c.label}: <b>{c.done} of {c.of}</b></span></li>
             ))}
           </ul>
           <div className="row"><button className="btn primary" disabled={!st.eligible} onClick={() => make(st)}>Download certificate PDF</button>{!st.eligible && <span className="small muted">Opens when every criterion is met.</span>}</div>

@@ -13,7 +13,9 @@ A browser-based practice tool for writing and checking drug labels. Write prescr
 - work through scripted **agency comment rounds** with a response table until the labelling is agreed;
 - write a one-page **Patient Medication Information** sheet to the proposed rule (a Watch item);
 - send labels to the **eCTD Dossier Builder** (a Module 1.14 labelling package), a change to the **Variations Classifier** (and its rollout back), and the **CCSI** to pharmacovigilance;
-- run a **class**: set drills with due dates, collect and re-score submissions (classroom server shared with the other two apps).
+- run a **class**: set drills with due dates, collect and re-score submissions (classroom server shared with the other two apps);
+- write **EU product information** to the QRD template (SmPC, package leaflet, outer carton, blister) with checks for headings, the black triangle, section 4.8, excipients, Braille and the safety features;
+- run a simulated **user test** of a leaflet (the 16-of-20 rule), review a **translation** against a term base with a member state's linguistic comments, implement **PRAC** safety wording, and see a simplified **ePI** view.
 
 Third app in a series with the [eCTD Dossier Builder](https://github.com/randomthingsonlineatsk-cloud/ectd-dossier-builder) and the [Variations Classifier](https://github.com/randomthingsonlineatsk-cloud/variations-classifier), using the same fictional products.
 
@@ -21,7 +23,7 @@ Live site: https://randomthingsonlineatsk-cloud.github.io/labelling-workbench/
 
 **Training only.** Every product, company and person is fictional. Real regulation and guidance names are used so the practice is realistic; nothing here imitates an agency form or an approved label, exports carry a "Training use only" watermark, the XML is not validated SPL, and results are not regulatory advice.
 
-## What is in this release (Phases 1 and 2)
+## What is in this release (Phases 1 to 3)
 
 **US pack 1.0.0, dated 2026-10-11.** Document kinds: PLR prescribing information, older-format prescribing information, Medication Guide, Patient Information (PPI), Instructions for Use, carton and container. Built from:
 
@@ -59,6 +61,26 @@ Company targets (30 days to submit a safety change, 90 for others, first shipmen
 
 **Core learning:** 4 lessons (12 to 15), 24 quiz questions, 4 drills (the capstone rolls a CCDS change out to every market) and a separate core certificate.
 
+**EU pack 1.0.0, dated 2026-10-11.** Document kinds: SmPC (Annex I), package leaflet (Annex IIIB), outer carton and blister (Annex IIIA), for a centrally authorised product. Built from:
+
+| Source | Used for |
+|---|---|
+| EMA QRD template v10.4 (February 2024) and annotated template | Headings, order, standard statements |
+| SmPC guideline Rev. 2 (2009) | Section 4.8 frequency convention and content |
+| Annex to the excipients guideline, Rev. 2 (2019, updated 2022) | Excipient statements in the SmPC, leaflet and carton |
+| Readability guideline Rev. 1 (2009) and a national agency summary | User testing and the 16-of-20 standard |
+| Regulation 1235/2010 and Implementing Regulation 198/2013 | Additional monitoring and the black triangle |
+| Directive 2001/83/EC Articles 54 to 59, 56a, 57, 62 | Labelling particulars, Braille, blue box, no promotion |
+| Delegated Regulation (EU) 2016/161 | Unique identifier and anti-tampering device |
+| EMA linguistic review process; PRAC signal recommendations; PSUSA variation instructions | Translation review; PRAC and PSUSA triggers (C.3.a/b/c) |
+| EMA ePI page (September 2026) | Watch item: the simplified ePI view |
+
+**EU Watch items:** QRD version 11 and the key information section (consulted on in 2025), and ePI under the new EU legislation.
+
+**EU samples:** Ostrevia's clean product information; the same set with about 20 planted errors; a jargon-heavy leaflet to user test; a French translation with three errors and linguistic review comments; a lactose reformulation (excipients); and the capstone, a PRAC signal recommendation on DRESS with a 60-day deadline.
+
+**EU learning:** 9 lessons (16 to 24), 45 quiz questions, 7 drills and an EU certificate.
+
 **Classroom:** the shared Cloudflare Worker in the eCTD Dossier Builder repository serves this app under `/lw/v1` (`lw_` tables). Assignments are drills; students send the drill project, the instructor re-scores it in their own browser and comments. Email reminders use the same Brevo setup as the other apps.
 
 ## Phases
@@ -67,16 +89,16 @@ Company targets (30 days to submit a safety change, 90 for others, first shipmen
 |---|---|---|
 | 1 | Engine and US pack: editor, checks, comparison and carve-outs, conversion, proof check, review and audit, exports, lessons, quiz, drills, certificate | Done |
 | 2 | Company core data sheet, mapping and deviations, change requests and the 505(o)(4) path, implementation tracking, agency comment rounds, Module 1 labelling package for the eCTD Dossier Builder, exchange with the Variations Classifier, CCSI file, classroom on the shared Worker (/lw/v1), PMI one-page drill | Done |
-| 3 | EU pack: QRD templates, 4.8 frequencies, excipients, black triangle, blue box, Braille, safety features, user-testing simulator, translations | Planned |
+| 3 | EU pack: QRD templates, 4.8 frequencies, excipients, black triangle, blue box, Braille, safety features, user-testing simulator, translations and linguistic review, PRAC and PSUSA triggers, ePI view | Done |
 | 4 | India pack: Rules 96 and 97, schedule warnings, package insert, Schedule H2 QR codes, price | Planned |
 | 5 | Canada, Switzerland, Japan, Australia and WHO PQ packs | Planned |
 
 ## How it works
 
-- `src/packs/<region>/`: a content pack (`us`, and `core` for the CCDS and change-management module, merged into the US pack at load). `pack.json` holds the version, date, sources and Watch items; `templates.json` the document kinds; `rules.json` the rule cards; `vocab.json` controlled terms; `samples.json`, `lessons.json`, `quiz.json`, `drills.json` and `glossary.json` the practice content.
+- `src/packs/<region>/`: a content pack (`us`, `eu`, and `core` for the CCDS and change-management module). All are merged at load; document kinds, rule ids and lesson ids are distinct, and each project names its region. `pack.json` holds the version, date, sources and Watch items; `templates.json` the document kinds; `rules.json` the rule cards; `vocab.json` controlled terms; `samples.json`, `lessons.json`, `quiz.json`, `drills.json` and `glossary.json` the practice content.
 - `tools/packs/`: the Python generators that write each pack (`npm run pack`), so every rule and sample can be reviewed and rebuilt.
-- `src/engine/`: checks, comparison and diff, conversion, drills, practice SPL, PDFs, storage and project files; `ccds.js` (mapping, deviations, impact), `changes.js` (change requests, 505(o)(4), tracker, the classifier exchange), `agency.js` (comment rounds), `handoff.js` (labelling package, CCSI file, eCTD project files) and `classroom.js`. No UI code.
-- `src/screens/`: the app. Labels open in tabs: Edit, Preview, Checks, Review, Versions, Core data sheet, Changes, Export, plus Compare, Convert, Proof and Agency comments where they apply.
+- `src/engine/`: checks, comparison and diff, conversion, drills, practice SPL, PDFs, storage and project files; `ccds.js` (mapping, deviations, impact), `changes.js` (change requests, 505(o)(4), tracker, the classifier exchange), `agency.js` (comment rounds), `handoff.js` (labelling package, CCSI file, eCTD project files), `classroom.js`, and for the EU `checks-eu.js` (QRD, excipients, labelling, translation review), `usertest.js` (the simulator) and `epi.js`. No UI code.
+- `src/screens/`: the app. Labels open in tabs: Edit, Preview, Checks, Review, Versions, Core data sheet, Changes, Export, plus Compare, Convert, Proof, Agency comments, User test and Translation review where they apply.
 
 ### Files exchanged with the other apps
 
@@ -86,7 +108,9 @@ Company targets (30 days to submit a safety change, 90 for others, first shipmen
 | CCDS change | `labelling-workbench/ccds-change` | This app → Variations Classifier (Labelling rollout: "Import a change from the Labelling Workbench") |
 | Rollout | `variations-classifier/ccds-rollout` | Variations Classifier → this app (Changes: "Import rollout file") |
 | CCSI | `labelling-workbench/ccsi` | This app → a pharmacovigilance app (reference safety information) |
-| eCTD project | `ectd-dossier-builder/project` | eCTD Dossier Builder → this app (Projects: "From an eCTD project file") |
+| eCTD project | `ectd-dossier-builder/project` | eCTD Dossier Builder → this app (Projects: "From an eCTD project file"; US and EU projects) |
+
+Not yet: an EU labelling package for Module 1.3.1, mapping EU documents to the CCDS, and comparing a generic SmPC with its reference.
 - Work is saved in the browser (IndexedDB). Every record carries `userId` and `classId`, so classroom mode can be switched on without a migration. A project downloads and imports as one JSON file with its pack version and a checksum.
 
 ## Run it locally

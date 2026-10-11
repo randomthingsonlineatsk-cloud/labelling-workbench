@@ -15,11 +15,11 @@ export async function openSample(app, sampleId, docSampleId, tab = 'edit', focus
 export function Learn() {
   const { pack, lessonsDone } = useApp();
   const ls = pack.lessons.lessons;
-  const groups = [['us', 'US labelling', 'The prescribing information, patient labelling, carton and container, SPL and generic labelling.'], ['core', 'Core data sheet and change management', 'The company core data sheet, mapping and deviations, safety labelling changes, agency comment rounds and implementation.']];
+  const groups = [['us', 'US labelling', 'The prescribing information, patient labelling, carton and container, SPL and generic labelling.'], ['core', 'Core data sheet and change management', 'The company core data sheet, mapping and deviations, safety labelling changes, agency comment rounds and implementation.'], ['eu', 'EU product information', 'The QRD template, SmPC 4.8, excipients, additional monitoring, user testing, Braille and safety features, translations, PRAC wording and ePI.']];
   return (
     <div className="page">
       <h1>Learn</h1>
-      <p>{ls.length} short lessons in two modules. Each ends with a four-question check (pass at 80%) and a "Try it" button that opens a sample at the right place. The <a href="#/glossary">glossary</a> explains the terms. Each module has its own certificate on the <a href="#/progress">progress page</a>.</p>
+      <p>{ls.length} short lessons in three modules. Each ends with a four-question check (pass at 80%) and a "Try it" button that opens a sample at the right place. The <a href="#/glossary">glossary</a> explains the terms. Each module has its own certificate on the <a href="#/progress">progress page</a>.</p>
       {groups.map(([m, title, about]) => (
         <section key={m} style={{ marginBottom: '1.5rem' }}>
           <h2 style={{ fontSize: 'var(--step-2)', marginBottom: '.2rem' }}>{title}</h2>

@@ -3,6 +3,28 @@ import { useApp } from '../../ctx.js';
 import { templateFor } from '../../engine/pack.js';
 import { sectionTitle, hasContent } from '../../engine/model.js';
 import CartonMock from '../../components/CartonMock.jsx';
+import { epiSections, epiHtml } from '../../engine/epi.js';
+import { download, slug } from '../../engine/io.js';
+
+const EU = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
+
+// A structured view of the product information, the way an ePI organises it: typed sections with
+// stable identifiers and language. Simplified; not FHIR.
+function EpiView({ doc }) {
+  const secs = epiSections(doc);
+  return (
+    <div lang={doc.meta?.lang ?? 'en'}>
+      <p className="small muted">ePI view: {secs.length} sections, language "{doc.meta?.lang ?? 'en'}", document type {doc.kind === 'smpc' ? 'SmPC' : 'Package leaflet'}. Each section has a stable identifier that an ePI keeps across versions and languages.</p>
+      {secs.map((x) => (
+        <section key={x.id} style={{ borderLeft: '3px solid var(--line)', paddingLeft: '.75rem', margin: '.6rem 0' }}>
+          <div className="small muted" style={{ fontFamily: 'var(--mono, monospace)' }}>{x.id}</div>
+          <h4 style={{ margin: '.1rem 0' }}>{x.title}</h4>
+          {x.paras.map((p, i) => <p key={i} style={{ margin: '.2rem 0' }}>{p}</p>)}
+        </section>
+      ))}
+    </div>
+  );
+}
 
 function Blocks({ blocks, anno }) {
   return (blocks ?? []).map((b) => (
@@ -19,6 +41,7 @@ function Blocks({ blocks, anno }) {
 export default function Preview({ doc }) {
   const { pack } = useApp();
   const [anno, setAnno] = useState(false);
+  const [epi, setEpi] = useState(false);
   const m = doc.meta ?? {};
   if (doc.kind === 'carton' || doc.kind === 'container') return <div><CartonMock doc={doc} /><p className="small muted" style={{ marginTop: '.5rem' }}>Schematic only. Export a PDF from the Export tab.</p></div>;
   const t = templateFor(pack, doc.kind);
@@ -26,6 +49,8 @@ export default function Preview({ doc }) {
     <div>
       <div className="row no-print" style={{ marginBottom: '.75rem' }}>
         <label className="row small"><input type="checkbox" checked={anno} onChange={(e) => setAnno(e.target.checked)} /> Show annotations (annotated label)</label>
+        {(doc.kind === 'smpc' || doc.kind === 'pl') && <label className="row small"><input type="checkbox" checked={epi} onChange={(e) => setEpi(e.target.checked)} /> ePI view (simplified, Watch)</label>}
+        {epi && <button className="btn small" onClick={() => download(`${slug(doc.title)}-epi-view.html`, epiHtml(doc), 'text/html')}>Download ePI view (HTML)</button>}
         <button className="btn small" onClick={() => window.print()}>Print</button>
       </div>
       <article className="label-paper" aria-label={`Preview of ${doc.title}`}>
@@ -55,12 +80,21 @@ export default function Preview({ doc }) {
               {(s.subs ?? []).map((x) => <div key={x.num}><h4>{sectionTitle(x)}</h4><Blocks blocks={x.blocks} anno={anno} /></div>)}
             </section>
           ))}
-        </>) : (<>
+        </>) : epi ? <EpiView doc={doc} /> : (<>
           {doc.fixed?.header && <h2 style={{ textAlign: 'center' }}>{doc.fixed.header}</h2>}
-          <p style={{ textAlign: 'center' }}><b>{m.proprietaryName}</b> ({m.establishedName}) {m.dosageForm}</p>
-          {(doc.sections ?? []).map((s) => <section key={s.num}><h3>{s.title}</h3><Blocks blocks={s.blocks} anno={anno} /></section>)}
+          {doc.fixed?.nameLine ? <p style={{ textAlign: 'center', whiteSpace: 'pre-line' }}><b>{doc.fixed.nameLine}</b></p> : <p style={{ textAlign: 'center' }}><b>{m.proprietaryName}</b> ({m.establishedName}) {m.dosageForm}</p>}
+          {doc.fixed?.blackTriangle && <p><b>{doc.fixed.blackTriangle}</b></p>}
+          {doc.fixed?.readFirst && <div className="bwbox"><p>{doc.fixed.readFirst}</p></div>}
+          {(doc.sections ?? []).map((s) => (
+            <section key={s.num}>
+              <h3>{/^\d/.test(s.num) && EU.includes(doc.kind) ? sectionTitle(s) : s.title}</h3>
+              <Blocks blocks={s.blocks} anno={anno} />
+              {(s.subs ?? []).map((x) => <div key={x.num}><h4>{/^\d/.test(x.num) ? sectionTitle(x) : x.title}</h4><Blocks blocks={x.blocks} anno={anno} /></div>)}
+            </section>
+          ))}
           {doc.fixed?.sideEffects && <p><b>{doc.fixed.sideEffects}</b></p>}
           {doc.fixed?.approval && <p style={{ fontSize: '.8rem' }}>{doc.fixed.approval} Revised: {m.revised}</p>}
+          {doc.fixed?.lastRevised && <p style={{ fontSize: '.85rem' }}>{doc.fixed.lastRevised}</p>}
         </>)}
       </article>
     </div>

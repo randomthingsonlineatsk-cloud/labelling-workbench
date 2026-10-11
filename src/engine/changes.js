@@ -18,13 +18,14 @@ export function isSafety(core, change) {
 }
 
 export function marketRow(core, change, market) {
-  const days = isSafety(core, change) ? core.targets.submitDays.safety : core.targets.submitDays.other;
+  // A PRAC recommendation (or a sample) can set its own deadline in days.
+  const days = change.deadlineDays ?? (isSafety(core, change) ? core.targets.submitDays.safety : core.targets.submitDays.other);
   return { market, step: 0, dates: {}, deadline: addDays(change.startDate, change.trigger === 'o4' && market === 'us' ? core.targets.o4.respond : days), classification: '', firstShip: '', oldStockOut: '', note: '' };
 }
 
-export function newChange(core, { trigger, kind, title, text = '', ccdsVersion = '', startDate, markets = ['us'], notice = null, statements = [], docIds = [], user = null }) {
+export function newChange(core, { trigger, kind, title, text = '', ccdsVersion = '', startDate, markets = ['us'], notice = null, statements = [], docIds = [], user = null, deadlineDays = null }) {
   if (!isDate(startDate)) throw new Error('Give the start date as yyyy-mm-dd.');
-  const c = { id: uid('c'), trigger, kind, title: title || core.kinds.find((k) => k.id === kind)?.label || 'Labelling change', text, ccdsVersion, startDate, statements, docIds, notice, createdAt: now(), userId: user?.userId ?? null, classId: user?.classId ?? null, markets: [], o4: null, log: [] };
+  const c = { id: uid('c'), trigger, kind, title: title || core.kinds.find((k) => k.id === kind)?.label || 'Labelling change', text, ccdsVersion, startDate, statements, docIds, notice, deadlineDays: deadlineDays ?? null, createdAt: now(), userId: user?.userId ?? null, classId: user?.classId ?? null, markets: [], o4: null, log: [] };
   c.markets = markets.map((m) => marketRow(core, c, m));
   if (trigger === 'o4') c.o4 = { notifiedOn: startDate, dueOn: addDays(startDate, core.targets.o4.respond), response: '', respondedOn: '', reasons: '' };
   return c;
@@ -121,5 +122,5 @@ export function applyRolloutFile(core, change, text) {
 export function sampleChange(core, sample, docs, user, on = today()) {
   if (!sample.change) return null;
   const start = addDays(on, -3);
-  return newChange(core, { ...sample.change, notice: sample.change.notice ? { ...sample.change.notice, date: start } : null, startDate: start, docIds: docs.filter((d) => d.kind === 'pi' || d.kind === 'mg').map((d) => d.id), user });
+  return newChange(core, { ...sample.change, notice: sample.change.notice ? { ...sample.change.notice, date: start } : null, startDate: start, docIds: docs.filter((d) => ['pi', 'mg', 'smpc', 'pl'].includes(d.kind) && d.role !== 'translation').map((d) => d.id), user });
 }

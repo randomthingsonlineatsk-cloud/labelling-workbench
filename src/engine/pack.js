@@ -1,6 +1,8 @@
 // Content packs. The engine never hard-codes a region: templates, rules, vocabulary and samples
-// come from the pack folder, built by tools/packs/<region>.py. The core pack (CCDS, change
-// management, agency comment rounds, the proposed PMI) is merged into the US pack at load.
+// come from the pack folders, built by tools/packs/<region>.py. All packs are merged into one at
+// load: document kinds, rule ids and lesson ids are distinct per region, and each project names
+// its region. The core pack (CCDS, change management, agency rounds, the proposed PMI) applies to
+// every region.
 import usPack from '../packs/us/pack.json' with { type: 'json' };
 import usTemplates from '../packs/us/templates.json' with { type: 'json' };
 import usRules from '../packs/us/rules.json' with { type: 'json' };
@@ -20,6 +22,16 @@ import coreLessons from '../packs/core/lessons.json' with { type: 'json' };
 import coreQuiz from '../packs/core/quiz.json' with { type: 'json' };
 import coreDrills from '../packs/core/drills.json' with { type: 'json' };
 import coreGlossary from '../packs/core/glossary.json' with { type: 'json' };
+import euPack from '../packs/eu/pack.json' with { type: 'json' };
+import euTemplates from '../packs/eu/templates.json' with { type: 'json' };
+import euRules from '../packs/eu/rules.json' with { type: 'json' };
+import euVocab from '../packs/eu/vocab.json' with { type: 'json' };
+import euSamples from '../packs/eu/samples.json' with { type: 'json' };
+import euAgency from '../packs/eu/agency.json' with { type: 'json' };
+import euLessons from '../packs/eu/lessons.json' with { type: 'json' };
+import euQuiz from '../packs/eu/quiz.json' with { type: 'json' };
+import euDrills from '../packs/eu/drills.json' with { type: 'json' };
+import euGlossary from '../packs/eu/glossary.json' with { type: 'json' };
 import products from '../data/products.json' with { type: 'json' };
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
@@ -37,24 +49,32 @@ function expandCoreSample(s) {
   return { ...s, docs, module: 'core', proof: null };
 }
 
+const META = (p) => ({ id: p.id, name: p.name, short: p.short, version: p.version, asOf: p.asOf, about: p.about, watch: p.watch });
+
 const merged = {
   ...usPack,
+  regions: { us: META(usPack), eu: META(euPack) },
   kinds: [...usPack.kinds, 'pmi'],
-  sources: [...usPack.sources, ...corePack.sources],
-  templates: { ...usTemplates, ...coreTemplates },
-  rules: [...usRules, ...coreRules],
-  vocab: { ...usVocab, promo: coreVocab.promo },
-  samples: [...usSamples, ...coreSamples.map(expandCoreSample)],
-  lessons: { ...usLessons, lessons: [...usLessons.lessons, ...coreLessons.lessons] },
-  quiz: { topics: [...usQuiz.topics, ...coreQuiz.topics], questions: [...usQuiz.questions, ...coreQuiz.questions] },
-  drills: { drills: [...usDrills.drills, ...coreDrills.drills] },
-  glossary: { terms: [...usGlossary.terms.filter((t) => !/^CC(DS|SI)$|^PMI$/.test(t.term)), ...coreGlossary.terms].sort((a, b) => a.term.localeCompare(b.term)) },
+  kindsByRegion: { us: [...usPack.kinds, 'pmi'], eu: euPack.kinds },
+  langs: euPack.langs,
+  watch: [...usPack.watch.map((w) => ({ ...w, region: 'us' })), ...euPack.watch.map((w) => ({ ...w, region: 'eu' }))],
+  sources: [...usPack.sources, ...corePack.sources, ...euPack.sources],
+  templates: { ...usTemplates, ...coreTemplates, ...euTemplates },
+  rules: [...usRules, ...coreRules, ...euRules],
+  vocab: { ...usVocab, promo: coreVocab.promo, eu: euVocab },
+  samples: [...usSamples.map((x) => ({ ...x, region: 'us' })), ...coreSamples.map(expandCoreSample), ...euSamples.map((x) => ({ ...x, module: 'eu' }))],
+  lessons: { ...usLessons, lessons: [...usLessons.lessons, ...coreLessons.lessons, ...euLessons.lessons] },
+  quiz: { topics: [...usQuiz.topics, ...coreQuiz.topics, ...euQuiz.topics], questions: [...usQuiz.questions, ...coreQuiz.questions, ...euQuiz.questions] },
+  drills: { drills: [...usDrills.drills, ...coreDrills.drills, ...euDrills.drills] },
+  glossary: { terms: [...usGlossary.terms.filter((t) => !/^CC(DS|SI)$|^PMI$/.test(t.term)), ...coreGlossary.terms, ...euGlossary.terms].sort((a, b) => a.term.localeCompare(b.term)) },
   core: corePack,
-  agency: coreAgency,
+  agency: { ...coreAgency, ...euAgency },
 };
 
 export const PACKS = { us: merged };
-export const MODULES = { us: { id: 'us', label: 'US labelling', short: 'US' }, core: { id: 'core', label: 'Core data sheet and change management', short: 'Core' } };
+export const MODULES = { us: { id: 'us', label: 'US labelling', short: 'US' }, core: { id: 'core', label: 'Core data sheet and change management', short: 'Core' }, eu: { id: 'eu', label: 'EU product information', short: 'EU' } };
+export const REGION_LABEL = { us: 'United States', eu: 'European Union' };
+export const kindsFor = (pack, region = 'us') => pack.kindsByRegion?.[region] ?? pack.kinds;
 export const moduleOf = (x) => x?.module ?? 'us';
 
 export const PRODUCTS = products.products;
@@ -77,6 +97,7 @@ export function fill(text, meta = {}) {
 
 // Age of a pack in months, for the banner shown when a pack is more than 12 months old.
 export function packAgeMonths(pack, today = new Date()) {
-  const d = new Date(`${pack.asOf}T00:00:00Z`);
+  const asOf = Object.values(pack.regions ?? {}).map((r) => r.asOf).sort()[0] ?? pack.asOf;
+  const d = new Date(`${asOf}T00:00:00Z`);
   return (today.getUTCFullYear() - d.getUTCFullYear()) * 12 + (today.getUTCMonth() - d.getUTCMonth());
 }

@@ -18,7 +18,8 @@ export function nodeOf(doc, loc) {
   if (loc.area === 'bw') return 'bw';
   if (loc.area === 'fixed') return 'fixed';
   if (loc.area === 'sec') {
-    if (doc.kind === 'pi' || doc.kind === 'pmi') return String(loc.key).split('.')[0];
+    // Subsections (5.1, pl2.1, p1.1) belong to their section's tree node.
+    if (/^(pi|pmi|smpc|pl)$/.test(doc.kind)) return String(loc.key).split('.')[0];
     return loc.key;
   }
   return null;
@@ -78,7 +79,7 @@ export default function Editor({ doc, docs, issues, focus, setFocus, setTab, pro
                 {byNode[n.key] && <span className="sr-only">({byNode[n.key]}s)</span>}
               </button>
               {sel === n.key && n.subs?.length > 0 && (
-                <ul>{n.subs.map((x) => <li key={x.key}><button className="tnode" onClick={() => setFocus({ node: n.key, sub: x.key })}><span className="n">{x.key}</span><span className="t">{x.label}</span></button></li>)}</ul>
+                <ul>{n.subs.map((x) => <li key={x.key}><button className="tnode" onClick={() => setFocus({ node: n.key, sub: x.key })}><span className="n">{/^\d/.test(x.key) ? x.key : ''}</span><span className="t">{x.label}</span></button></li>)}</ul>
               )}
             </li>
           ))}
@@ -101,7 +102,7 @@ export default function Editor({ doc, docs, issues, focus, setFocus, setTab, pro
         <fieldset className="plain" disabled={ro}>
           {sel === 'hl' && <HighlightsPane doc={doc} docs={docs} change={change} ro={ro} pack={pack} />}
           {sel === 'bw' && <BoxedPane doc={doc} change={change} ro={ro} />}
-          {sel === 'fixed' && <FixedPane doc={doc} change={change} ro={ro} t={t} />}
+          {sel === 'fixed' && <FixedPane doc={doc} change={change} ro={ro} t={t} pack={pack} />}
           {sel !== 'hl' && sel !== 'bw' && sel !== 'fixed' && <SectionPane key={sel} doc={doc} num={sel} change={change} ro={ro} t={t} />}
         </fieldset>
         {lastApproved && doc.status === 'draft' && <p className="small muted" style={{ marginTop: '1rem' }}>Version {lastApproved.n} was approved; see Versions to compare this draft with it.</p>}
@@ -222,14 +223,35 @@ function BoxedPane({ doc, change }) {
   );
 }
 
-function FixedPane({ doc, change, t }) {
+function FixedPane({ doc, change, t, pack }) {
   const m = doc.meta ?? {};
+  const eu = ['smpc', 'pl', 'eu-outer', 'eu-blister'].includes(doc.kind);
+  const exList = pack?.vocab?.eu?.excipients ?? [];
   return (
     <div>
       <h2>Title and statements</h2>
-      <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Proprietary name'], ['establishedName', 'Established name'], ['dosageForm', 'Dosage form'], ['revised', 'Revised', 'MM/YYYY'], ['manufacturer', 'Manufacturer or distributor']]} />
+      {eu ? (<>
+        <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Name of the medicinal product'], ['establishedName', 'Active substance'], ['dosageForm', 'Pharmaceutical form'], ['manufacturer', 'Marketing authorisation holder'], ['maNumber', 'Authorisation number(s)']]} />
+        <label className="row small" style={{ margin: '.5rem 0' }}><input type="checkbox" checked={!!m.additionalMonitoring} onChange={(e) => change((d) => { d.meta.additionalMonitoring = e.target.checked; }, 'Additional monitoring status')} /> Under additional monitoring (black triangle)</label>
+        <fieldset className="plain" style={{ margin: '.5rem 0 1rem' }}>
+          <legend className="small" style={{ fontWeight: 600 }}>Excipients with a known effect</legend>
+          {(m.excipients ?? []).map((x, i) => (
+            <div key={i} className="row small" style={{ margin: '.25rem 0' }}>
+              <select aria-label="Excipient" value={x.key} onChange={(e) => change((d) => { d.meta.excipients[i].key = e.target.value; }, 'Excipients')}>{exList.map((r) => <option key={r.key} value={r.key}>{r.label}</option>)}</select>
+              <input type="text" aria-label="Amount" value={x.amount} onChange={(e) => change((d) => { d.meta.excipients[i].amount = e.target.value; }, 'Excipients')} style={{ width: '7rem' }} />
+              <span>per</span>
+              <input type="text" aria-label="Per" value={x.per} onChange={(e) => change((d) => { d.meta.excipients[i].per = e.target.value; }, 'Excipients')} style={{ width: '7rem' }} />
+              <button type="button" className="icon-btn" onClick={() => change((d) => { d.meta.excipients.splice(i, 1); }, 'Excipients')}>Remove</button>
+            </div>
+          ))}
+          <button type="button" className="icon-btn" onClick={() => change((d) => { d.meta.excipients = [...(d.meta.excipients ?? []), { key: exList[0]?.key ?? 'sodium', amount: '', per: 'tablet' }]; }, 'Excipients')}>+ Add an excipient</button>
+          <p className="small muted" style={{ margin: '.3rem 0 0' }}>The checks ask for each excipient's statement in SmPC 4.4, the leaflet (section 2) and carton section 3, as the excipients annex requires.</p>
+        </fieldset>
+      </>) : (
+        <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Proprietary name'], ['establishedName', 'Established name'], ['dosageForm', 'Dosage form'], ['revised', 'Revised', 'MM/YYYY'], ['manufacturer', 'Manufacturer or distributor']]} />
+      )}
       {t.fixed && Object.entries(t.fixed).map(([k, v]) => (
-        <Fixed key={k} label={{ header: 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement', contact: 'Side-effect reporting statement', useStart: 'Opening of Directions for Use' }[k] ?? k} value={doc.fixed?.[k]} want={fill(v, m)} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
+        <Fixed key={k} label={{ header: 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement', contact: 'Side-effect reporting statement', useStart: 'Opening of Directions for Use', blackTriangle: 'Black triangle statement (additional monitoring)', readFirst: '"Read all of this leaflet" box', lastRevised: 'Last revised line', nameLine: 'Name, strength and form' }[k] ?? k} value={doc.fixed?.[k]} want={fill(v, m)} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
       ))}
     </div>
   );
@@ -246,7 +268,7 @@ function SectionPane({ doc, num, change, t }) {
       <h2>{ts && /^\d/.test(ts.num) ? `${ts.num} ` : ''}{tmplTitle}</h2>
       <p>This {ts?.need === 'optional' ? 'optional' : ts?.need ?? ''} section is not in the label.</p>
       <button type="button" className="btn" onClick={() => change((d) => {
-        const ns = { num, title: tmplTitle, blocks: [newBlock()], subs: (ts.fixedSubs ?? []).filter((x) => x.need !== 'optional').map((x) => ({ num: x.num, title: x.title, blocks: [newBlock()] })) };
+        const ns = { num, title: tmplTitle, blocks: [newBlock()], subs: (ts.fixedSubs ?? []).filter((x) => x.need !== 'optional').map((x) => ({ num: x.num, title: fill(x.title, doc.meta), blocks: [newBlock()] })) };
         const order = t.sections.map((x) => x.num);
         d.sections = [...d.sections, ns].sort((a, b) => order.indexOf(a.num) - order.indexOf(b.num));
       }, `Added section ${num}`)}>Add this section</button>
@@ -263,7 +285,7 @@ function SectionPane({ doc, num, change, t }) {
   return (
     <div>
       <div className="pane-head">
-        <h2>{isPi ? `${s.num} ` : ''}{s.title}</h2>
+        <h2>{/^\d/.test(s.num) ? `${s.num} ` : ''}{s.title}</h2>
         {ts?.need !== 'required' && <button type="button" className="btn small danger ghost" onClick={() => { if (window.confirm('Remove this section from the label?')) change((d) => { d.sections.splice(idx, 1); }, `Removed section ${num}`); }}>Remove section</button>}
       </div>
       <label className="field" style={{ marginBottom: '.75rem' }}>Heading
@@ -278,9 +300,9 @@ function SectionPane({ doc, num, change, t }) {
         return (
           <section key={x.num + i} className="sub-card" id={`sub-${x.num}`}>
             <div className="sub-head">
-              <span className="num">{x.num}</span>
+              <span className="num">{/^\d/.test(x.num) ? x.num : '·'}</span>
               <input type="text" value={x.title} aria-label={`Subsection ${x.num} heading`} onChange={(e) => change((d) => { d.sections[idx].subs[i].title = e.target.value; }, `Heading ${x.num}`)} />
-              {fixed && x.title !== fixed.title && <button type="button" className="icon-btn" onClick={() => change((d) => { d.sections[idx].subs[i].title = fixed.title; }, `Heading ${x.num}`)}>Use "{fixed.title}"</button>}
+              {fixed && x.title !== fill(fixed.title, doc.meta) && <button type="button" className="icon-btn" onClick={() => change((d) => { d.sections[idx].subs[i].title = fill(fixed.title, doc.meta); }, `Heading ${x.num}`)}>Use "{fill(fixed.title, doc.meta)}"</button>}
               {freeSubs && <>
                 <button type="button" className="icon-btn" disabled={i === 0} onClick={() => change((d) => { moveSub(d, num, i, -1); }, `Moved ${x.num} up; references renumbered`)} aria-label={`Move ${x.num} up`}>↑</button>
                 <button type="button" className="icon-btn" disabled={i === s.subs.length - 1} onClick={() => change((d) => { moveSub(d, num, i, 1); }, `Moved ${x.num} down; references renumbered`)} aria-label={`Move ${x.num} down`}>↓</button>
@@ -291,10 +313,10 @@ function SectionPane({ doc, num, change, t }) {
           </section>
         );
       })}
-      {isPi && (
+      {(isPi || missingFixed.length > 0) && (
         <div className="row small" style={{ marginTop: '.75rem' }}>
           {freeSubs && <button type="button" className="icon-btn" onClick={() => addSub(`${num}.${(s.subs?.length ?? 0) + 1}`, 'New subsection')}>+ Add subsection {num}.{(s.subs?.length ?? 0) + 1}</button>}
-          {missingFixed.map((f) => <button type="button" key={f.num} className="icon-btn" onClick={() => addSub(f.num, f.title)}>+ {f.num} {f.title}</button>)}
+          {missingFixed.map((f) => <button type="button" key={f.num} className="icon-btn" onClick={() => addSub(f.num, fill(f.title, doc.meta))}>+ {/^\d/.test(f.num) ? `${f.num} ` : ''}{fill(f.title, doc.meta)}</button>)}
           {ts?.extraSubs && <button type="button" className="icon-btn" onClick={() => addSub(nextExtra(), 'Other population')}>+ {nextExtra()} other population</button>}
           {freeSubs && <span className="muted">Moving a subsection renumbers it and rewrites every cross-reference.</span>}
         </div>

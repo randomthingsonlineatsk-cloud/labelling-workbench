@@ -12,7 +12,7 @@ const NOTE = rgb(0.45, 0.3, 0.05);
 const WARN = rgb(0.62, 0.14, 0.14);
 const LETTER = [612, 792];
 
-const MAP = { '‘': "'", '’': "'", '“': '"', '”': '"', '–': '-', '—': '-', '→': '->', '≥': '>=', '≤': '<=', '…': '...', ' ': ' ', '•': '-', '✕': 'x', 'µ': 'mc' };
+const MAP = { '‘': "'", '’': "'", '“': '"', '”': '"', '–': '-', '—': '-', '→': '->', '≥': '>=', '≤': '<=', '…': '...', ' ': ' ', '•': '-', '✕': 'x', 'µ': 'mc', '▼': '(black triangle)', '×': 'x', '⁹': '^9', '«': '"', '»': '"' };
 export const clean = (s) => String(s ?? '').replace(/[‘’“”–—→≥≤… •✕µ]/g, (c) => MAP[c]).replace(/[^\x09\x0a\x0d\x20-\x7e¡-ÿ]/g, '?');
 
 async function setup(title) {
@@ -151,10 +151,18 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
     if (fx.header) w.h(fx.header, 13);
     w.text(`${m.proprietaryName ?? ''} (${m.establishedName ?? ''}) ${m.dosageForm ?? ''}`, { f: bold });
     w.space(4);
-    for (const s of doc.sections ?? []) { w.h(doc.kind === 'pi-old' ? s.title : s.title, 10); writeBlocks(w, s.blocks, opts); }
+    if (fx.nameLine) for (const l of fx.nameLine.split('\n')) w.text(l, { f: bold, size: 9.5 });
+    if (fx.blackTriangle) { w.space(3); w.text(fx.blackTriangle, { f: bold, size: 9 }); }
+    if (fx.readFirst) { w.space(3); w.text(fx.readFirst, { size: 8.5 }); }
+    for (const s of doc.sections ?? []) {
+      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
+      writeBlocks(w, s.blocks, opts);
+      for (const x of s.subs ?? []) { w.h(/^\d/.test(x.num) ? sectionTitle(x) : x.title, 9.5); writeBlocks(w, x.blocks, opts); }
+    }
+    if (fx.lastRevised) w.text(fx.lastRevised, { size: 8.5 });
     if (fx.sideEffects) w.text(fx.sideEffects, { f: bold, size: 9 });
     if (fx.approval) { w.space(6); w.text(fx.approval, { size: 8.5 }); }
-    if (m.revised) w.text(`Revised: ${m.revised}`, { size: 8.5 });
+    if (m.revised && !fx.lastRevised && doc.kind !== 'smpc') w.text(`Revised: ${m.revised}`, { size: 8.5 });
   }
   w.space(8);
   w.text('Training use only. Fictional product and company. Not an approved label and not for submission.', { size: 8, color: WARN });
@@ -205,6 +213,7 @@ export async function diffReportPdf(title, rows, { left = 'Before', right = 'Aft
 // ---------- certificate ----------
 export async function certificatePdf({ name, userId, status, code, region = 'US', date = today() }) {
   const core = status.region === 'core';
+  const eu = status.region === 'eu';
   const { pdf, font, bold } = await setup('Labelling Workbench - portfolio certificate');
   const page = pdf.addPage([792, 612]);
   const { width: W, height: H } = page.getSize();
@@ -213,10 +222,14 @@ export async function certificatePdf({ name, userId, status, code, region = 'US'
   page.drawRectangle({ x: 32, y: 32, width: W - 64, height: H - 64, borderColor: ACCENT, borderWidth: 0.5 });
   [0, 1, 2, 3].forEach((i) => page.drawRectangle({ x: W / 2 - 36, y: H - 72 - i * 7, width: 72 - (i % 2) * 22, height: 3.5, color: i === 1 ? rgb(0.62, 0.14, 0.14) : ACCENT }));
   centre('LABELLING WORKBENCH', bold, 13, H - 112, ACCENT);
-  centre(core ? 'Certificate of completion: core data sheet and change management' : `Certificate of completion: ${region} labelling`, font, core ? 20 : 26, H - 152);
+  centre(core ? 'Certificate of completion: core data sheet and change management' : eu ? 'Certificate of completion: EU product information' : `Certificate of completion: ${region} labelling`, font, core ? 20 : eu ? 24 : 26, H - 152);
   centre('This certifies that', font, 12, H - 190, MUTED);
   centre(name.trim(), font, 28, H - 228);
-  (core ? [
+  (eu ? [
+    `completed all ${status.lessons.length} EU lessons and their checks, an EU quiz round and the capstone drill`,
+    'in the Labelling Workbench: the QRD template, SmPC section 4.8, excipients, additional monitoring, user testing,',
+    'Braille and safety features, translations and implementing PRAC safety wording.',
+  ] : core ? [
     `completed all ${status.lessons.length} core lessons and their checks, a core quiz round and the capstone drill`,
     'in the Labelling Workbench: mapping labels to a company core data sheet, deviations, safety labelling changes,',
     'agency comment rounds and tracking implementation in every market.',

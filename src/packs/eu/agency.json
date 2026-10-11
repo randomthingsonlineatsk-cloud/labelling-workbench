@@ -1,0 +1,54 @@
+{
+ "eu-ostrevia-translation": {
+  "pl-fr": [
+   {
+    "id": "lr-1",
+    "where": "Section 4 (heading and text)",
+    "kind": "revise",
+    "text": "Use the QRD term « effets indésirables » throughout section 4, including the heading, instead of « effets secondaires ».",
+    "expect": {
+     "area": "sec",
+     "num": "pl4",
+     "all": [
+      "effets indésirables"
+     ],
+     "none": [
+      "effets secondaires"
+     ]
+    }
+   },
+   {
+    "id": "lr-2",
+    "where": "Section 3",
+    "kind": "revise",
+    "text": "The starting dose is 10 mg, not 25 mg. Please correct: « un comprimé de 10 mg une fois par jour ».",
+    "expect": {
+     "area": "sec",
+     "num": "pl3",
+     "all": [
+      "10 mg"
+     ]
+    }
+   },
+   {
+    "id": "lr-3",
+    "where": "Grossesse et allaitement",
+    "kind": "revise",
+    "text": "The English text says not to breast-feed for 4 days after the last dose; this period is missing in French.",
+    "expect": {
+     "area": "sec",
+     "num": "pl2.6",
+     "all": [
+      "4 jours"
+     ]
+    }
+   },
+   {
+    "id": "lr-4",
+    "where": "Section 1",
+    "kind": "question",
+    "text": "Minor: « Qu’est-ce que Ostrevia » is the QRD wording and is accepted. No change needed; please confirm."
+   }
+  ]
+ }
+}

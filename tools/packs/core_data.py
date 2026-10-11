@@ -22,11 +22,11 @@ PACK = {
         'shipDays': 90,
         'stockOutDays': 180,
         'o4': {'respond': 30, 'discuss': 30, 'order': 15, 'afterOrder': 15},
-        'note': 'Submit and implementation targets are training defaults (the same defaults as the Variations Classifier). The 505(o)(4) clocks come from the statute as described in FDA guidance.',
+        'note': 'Submit and implementation targets are training defaults (the same defaults as the Variations Classifier). The 505(o)(4) clocks come from the statute as described in FDA guidance; a PRAC recommendation sets its own deadline.',
     },
     'markets': [
         {'id': 'us', 'label': 'United States', 'pack': True},
-        {'id': 'eu', 'label': 'European Union', 'pack': False},
+        {'id': 'eu', 'label': 'European Union', 'pack': True},
         {'id': 'in', 'label': 'India', 'pack': False},
         {'id': 'ca', 'label': 'Canada', 'pack': False},
         {'id': 'ch', 'label': 'Switzerland', 'pack': False},
@@ -39,6 +39,8 @@ PACK = {
         {'id': 'signal', 'label': 'Safety signal (labelling committee decision)', 'safety': True},
         {'id': 'o4', 'label': 'FDA safety labelling change notification, 505(o)(4)', 'safety': True},
         {'id': 'rld', 'label': 'Reference listed drug labelling changed', 'safety': None},
+        {'id': 'prac', 'label': 'PRAC signal recommendation (EU)', 'safety': True},
+        {'id': 'psusa', 'label': 'PSUSA outcome (EU)', 'safety': True},
         {'id': 'other', 'label': 'Other (editorial, new data)', 'safety': False},
     ],
     'kinds': [

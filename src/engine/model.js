@@ -8,7 +8,7 @@ export const uid = (p = 'x') => `${p}-${Date.now().toString(36)}-${Math.random()
 export const now = () => new Date().toISOString();
 const clone = (x) => (typeof structuredClone === 'function' ? structuredClone(x) : JSON.parse(JSON.stringify(x)));
 
-export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)' };
+export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)' };
 export const STATUS = { draft: 'Draft', review: 'In review', changes: 'Changes requested', approved: 'Approved', superseded: 'Superseded', submitted: 'Sent to agency' };
 
 export const newBlock = (t = 'p') => ({ id: uid('b'), t, ...(t === 'ul' ? { items: [''] } : t === 'table' ? { rows: [['', ''], ['', '']] } : { text: '' }) });
@@ -33,7 +33,7 @@ export function projectFromSample(sample, user, { pack = null, product = null } 
   // Keep the sample's order: labels are listed by creation time.
   const t0 = Date.now();
   docs.forEach((d, i) => { d.createdAt = new Date(t0 + i).toISOString(); d.updatedAt = d.createdAt; });
-  const project = { id, title: sample.title, productId: sample.productId, region: 'us', sampleId: sample.id, about: sample.about, userId: user?.userId ?? null, classId: user?.classId ?? null, createdAt: now(), updatedAt: now(), proof: sample.proof ? clone(sample.proof) : null };
+  const project = { id, title: sample.title, productId: sample.productId, region: sample.region ?? 'us', sampleId: sample.id, about: sample.about, userId: user?.userId ?? null, classId: user?.classId ?? null, createdAt: now(), updatedAt: now(), proof: sample.proof ? clone(sample.proof) : null };
   if (project.proof) project.proof.docId = docs.find((d) => d.sampleDocId === sample.proof.docId)?.id ?? null;
   // Core samples: the CCDS, a starting mapping with recorded deviations, extra blank labels.
   if (sample.ccds) project.ccds = clone(sample.ccds);
@@ -46,6 +46,7 @@ export function projectFromSample(sample, user, { pack = null, product = null } 
 // A blank document of a kind, with the template's sections in place and empty.
 export function blankDoc(pack, kind, product, projectId, user) {
   const t = templateFor(pack, kind);
+  if (EU_KINDS.includes(kind)) return blankEuDoc(pack, kind, product, projectId, user);
   const meta = {
     proprietaryName: (product?.brandName ?? '').toUpperCase(), establishedName: product?.inn ?? '',
     dosageForm: (product?.dosageForm ?? '').split(',')[0], route: product?.route ? `for ${product.route} use` : '',
@@ -57,7 +58,7 @@ export function blankDoc(pack, kind, product, projectId, user) {
     Object.assign(fields, { proprietaryName: meta.proprietaryName, establishedName: product ? `(${product.inn}) ${meta.dosageForm}` : '', strength: product?.strengths?.[0] ?? '', dosageForm: meta.dosageForm, rxOnly: 'Rx only', lot: 'LOT: XXXXXX', expiry: 'EXP: YYYY-MM', mgStatement: '' });
     return { ...base, fields, sizes: { proprietaryName: 18, establishedName: 10, strength: 14 }, barcode: true, twoD: true, colour: '#2f6f6a', injectable: /inject|infusion/.test(product?.dosageForm ?? '') };
   }
-  const sections = t.sections.filter((s) => s.need !== 'optional').map((s) => ({ num: s.num, title: s.title.includes('{name}') ? fill(s.title, meta) : s.title, blocks: [newBlock()], subs: (s.fixedSubs ?? []).filter((x) => x.need !== 'optional').map((x) => ({ num: x.num, title: x.title, blocks: [newBlock()] })) }));
+  const sections = t.sections.filter((s) => s.need !== 'optional').map((s) => ({ num: s.num, title: s.title.includes('{name}') ? fill(s.title, meta) : s.title, blocks: [newBlock()], subs: (s.fixedSubs ?? []).filter((x) => x.need !== 'optional').map((x) => ({ num: x.num, title: fill(x.title, meta), blocks: [newBlock()] })) }));
   if (kind === 'pi') {
     const hl = { limitation: fill(t.fixed.limitation, meta), bw: [], bwClose: '', rmc: [], pci: t.fixed.pci };
     for (const h of t.hl) if (h.kind !== 'rmc') hl[h.key] = h.key === 'ar' ? [newBlock(), { ...newBlock(), text: fill(t.fixed.arContact, meta) }] : [newBlock()];
@@ -65,6 +66,23 @@ export function blankDoc(pack, kind, product, projectId, user) {
   }
   if (t.fixed) return { ...base, meta, fixed: Object.fromEntries(Object.entries(t.fixed).map(([k, v]) => [k, fill(v, meta)])), sections };
   return { ...base, meta, sections };
+}
+
+export const EU_KINDS = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
+export const regionOfKind = (kind) => (EU_KINDS.includes(kind) ? 'eu' : 'us');
+
+// EU documents: QRD sections, the product's EU details, names in normal case.
+function blankEuDoc(pack, kind, product, projectId, user) {
+  const t = templateFor(pack, kind);
+  const eu = product?.eu ?? {};
+  const meta = {
+    proprietaryName: product?.brandName ?? '', establishedName: product?.inn ?? '', dosageForm: product?.dosageForm ?? '', route: product?.route ?? '',
+    strengths: product?.strengths ?? [], manufacturer: eu.holder?.name ?? product?.holder?.name ?? '', revised: '', additionalMonitoring: !!eu.additionalMonitoring,
+    excipients: eu.excipients ?? [], lang: 'en', procedure: eu.route ?? 'centralised', maNumber: eu.maNumber ?? '',
+  };
+  const sections = t.sections.filter((s) => s.need === 'required').map((s) => ({ num: s.num, title: fill(s.title, meta), blocks: [newBlock()], subs: (s.fixedSubs ?? []).filter((x) => x.need === 'required').map((x) => ({ num: x.num, title: fill(x.title, meta), blocks: [newBlock()] })) }));
+  const fixed = Object.fromEntries(Object.entries(t.fixed ?? {}).map(([k, v]) => [k, k === 'blackTriangle' && !meta.additionalMonitoring ? '' : fill(v, meta)]));
+  return { id: uid('d'), kind, projectId, title: KIND_LABEL[kind], meta, fixed, sections, status: 'draft', version: 0, waivers: {}, userId: user?.userId ?? null, classId: user?.classId ?? null, createdAt: now(), updatedAt: now() };
 }
 
 // ---------- reading text ----------

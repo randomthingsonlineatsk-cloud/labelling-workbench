@@ -5,10 +5,9 @@ import { runChecks, summarise } from '../engine/checks.js';
 import { KIND_LABEL } from '../engine/model.js';
 import { readFile } from '../engine/io.js';
 import { productFromEctdFile } from '../engine/handoff.js';
-import { moduleOf } from '../engine/pack.js';
+import { moduleOf, kindsFor } from '../engine/pack.js';
 import { Counts, Modal, fmtDate } from '../components/ui.jsx';
 
-const KINDS = ['pi', 'mg', 'ppi', 'ifu', 'carton', 'container', 'pmi'];
 
 export default function Home() {
   const { pack, projects, docs, createFromSample, createBlank, importProject, toast, product } = useApp();
@@ -22,7 +21,7 @@ export default function Home() {
     try {
       const r = productFromEctdFile(await readFile(f), PRODUCTS);
       r.warnings.forEach((w) => toast(w, 'warn'));
-      setShowNew({ productId: r.product.id, title: `${r.product.brandName}: labels for ${r.name || 'the eCTD project'}` });
+      setShowNew({ productId: r.product.id, region: r.region, title: `${r.product.brandName}: labels for ${r.name || 'the eCTD project'}` });
     } catch (err) { toast(err.message, 'error'); }
   };
   const sums = useMemo(() => {
@@ -54,7 +53,7 @@ export default function Home() {
     <div className="page">
       <section className="hero">
         <div>
-          <p className="kicker">Labelling practice · US pack {pack.version}</p>
+          <p className="kicker">Labelling practice · {Object.values(pack.regions).map((r) => `${r.short} pack ${r.version}`).join(' · ')}</p>
           <h1>Write a label, then check it against the rules</h1>
           <p className="lede">Author prescribing information in PLR format, Medication Guides and carton labels for fictional products, keep them in line with the company core data sheet, and take safety changes through agency comments to the pharmacy shelf. Every check names its regulation or guidance, and says where the app simplifies.</p>
           <div className="row">
@@ -97,7 +96,7 @@ export default function Home() {
       )}
 
       <div className="section-head"><h2>Start from a sample</h2><span className="small muted">Each opens as your own copy; the sample stays unchanged.</span></div>
-      {[['us', 'US labelling'], ['core', 'Core data sheet and change management']].map(([m, title]) => (
+      {[['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information']].map(([m, title]) => (
         <section key={m} style={{ marginBottom: '1.25rem' }}>
           <h3 style={{ margin: '.5rem 0' }}>{title}</h3>
           <div className="sample-grid">
@@ -119,8 +118,12 @@ export default function Home() {
 }
 
 function NewProject({ initial, onClose, onCreate }) {
+  const { pack } = useApp();
   const [productId, setProductId] = useState(initial?.productId ?? PRODUCTS[0].id);
+  const [region, setRegion] = useState(initial?.region === 'EU' ? 'eu' : 'us');
   const [kinds, setKinds] = useState(['pi', 'carton']);
+  const KINDS = kindsFor(pack, region).filter((k) => k !== 'pi-old');
+  const pickRegion = (r) => { setRegion(r); setKinds(r === 'eu' ? ['smpc', 'pl', 'eu-outer'] : ['pi', 'carton']); };
   const [title, setTitle] = useState(initial?.title ?? '');
   const toggle = (k) => setKinds((x) => (x.includes(k) ? x.filter((y) => y !== k) : [...x, k]));
   return (
@@ -131,12 +134,18 @@ function NewProject({ initial, onClose, onCreate }) {
             {PRODUCTS.map((p) => <option key={p.id} value={p.id}>{p.brandName} ({p.inn}), {p.dosageForm}</option>)}
           </select>
         </label>
+        <label className="field">Region
+          <select value={region} onChange={(e) => pickRegion(e.target.value)}>
+            <option value="us">United States (FDA)</option>
+            <option value="eu">European Union (EMA, QRD)</option>
+          </select>
+        </label>
         <label className="field">Project name <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Optional" /></label>
         <fieldset className="plain">
-          <legend className="small" style={{ fontWeight: 600, color: 'var(--ink-2)' }}>Labels to create (US)</legend>
+          <legend className="small" style={{ fontWeight: 600, color: 'var(--ink-2)' }}>Documents to create ({region === 'eu' ? 'EU' : 'US'})</legend>
           {KINDS.map((k) => <label key={k} className="row small" style={{ margin: '.25rem 0' }}><input type="checkbox" checked={kinds.includes(k)} onChange={() => toggle(k)} /> {KIND_LABEL[k]}</label>)}
         </fieldset>
-        <div className="row"><button className="btn primary" disabled={!kinds.length} onClick={() => onCreate({ productId, kinds, title })}>Create</button><button className="btn ghost" onClick={onClose}>Cancel</button></div>
+        <div className="row"><button className="btn primary" disabled={!kinds.length} onClick={() => onCreate({ productId, kinds, title, region })}>Create</button><button className="btn ghost" onClick={onClose}>Cancel</button></div>
       </div>
     </Modal>
   );
