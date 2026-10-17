@@ -31,11 +31,12 @@ function textXml(blocks, d) {
   const out = [];
   for (const b of blocks ?? []) {
     if (b.t === 'ul') { out.push(`${pad(d)}<list listType="unordered">`); for (const i of b.items) out.push(`${pad(d + 1)}<item>${esc(i)}</item>`); out.push(`${pad(d)}</list>`); }
-    else if (b.t === 'table') {
+    else if (b.t === 'table' || b.t === 'ar') {
       out.push(`${pad(d)}<table><tbody>`);
       for (const r of b.rows) out.push(`${pad(d + 1)}<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`);
       out.push(`${pad(d)}</tbody></table>`);
-    } else if (blockTexts(b)[0]) out.push(`${pad(d)}<paragraph>${esc(b.text)}</paragraph>`);
+    } else if (b.t === 'fig') out.push(`${pad(d)}<paragraph>[Figure placeholder] ${esc(b.text)}</paragraph>`);
+    else if (blockTexts(b)[0]) out.push(`${pad(d)}<paragraph>${esc(b.text)}</paragraph>`);
   }
   return out;
 }

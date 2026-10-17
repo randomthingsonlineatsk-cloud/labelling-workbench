@@ -6,6 +6,10 @@ follows common practice, or the app's simplification of a template, the rule car
 """
 
 AS_OF = '2026-10-11'
+CHANGES = [
+    {'version': '1.0.1', 'date': '2026-10-17', 'notes': 'Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes.'},
+    {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 5).'},
+]
 
 
 def S(num, title, need='required', subs=None, gloss=None):
@@ -33,7 +37,7 @@ def R(id, title, text, kinds, severity, src, at, simplified=None):
 
 # ---------------------------------------------------------------- Canada
 CA = {
-    'id': 'ca', 'name': 'Canada (Health Canada)', 'short': 'CA', 'version': '1.0.0', 'asOf': AS_OF,
+    'id': 'ca', 'name': 'Canada (Health Canada)', 'short': 'CA', 'version': '1.0.1', 'asOf': AS_OF, 'changes': CHANGES,
     'kinds': ['ca-pm', 'ca-pmi', 'ca-label'],
     'about': 'The product monograph to the Health Canada master template (Part I health professional information, Part II scientific information) and the outer label of a prescription drug under the Food and Drug Regulations: the Pr symbol, the DIN, the proper name, bilingual text and the plain language labelling contact statement.',
     'watch': [],
@@ -118,7 +122,7 @@ CA_PMI_REPORT = 'You can report any suspected side effects associated with the u
 
 # ---------------------------------------------------------------- Switzerland
 CH = {
-    'id': 'ch', 'name': 'Switzerland (Swissmedic)', 'short': 'CH', 'version': '1.0.0', 'asOf': AS_OF,
+    'id': 'ch', 'name': 'Switzerland (Swissmedic)', 'short': 'CH', 'version': '1.0.1', 'asOf': AS_OF, 'changes': CHANGES,
     'kinds': ['ch-fi', 'ch-pi'],
     'about': 'The information for healthcare professionals (Fachinformation, AMZV Annex 4) and the patient information (Patienteninformation, Annex 5.1). Headings and the standard statements are given in German, as Swissmedic publishes them; the practice body text is in English. Official texts are in German, French and Italian.',
     'watch': [
@@ -178,7 +182,7 @@ CH_PI_CHECKED = 'Diese Packungsbeilage wurde im {month} letztmals durch die Arzn
 
 # ---------------------------------------------------------------- Japan
 JP = {
-    'id': 'jp', 'name': 'Japan (MHLW/PMDA)', 'short': 'JP', 'version': '1.0.0', 'asOf': AS_OF,
+    'id': 'jp', 'name': 'Japan (MHLW/PMDA)', 'short': 'JP', 'version': '1.0.1', 'asOf': AS_OF, 'changes': CHANGES,
     'kinds': ['jp-pi'],
     'about': 'The package insert of a prescription drug in the format in use since April 2019 (PSEHB Notification No. 0608-1, 2017): header items, then numbered sections 1 to 26 whose numbers are kept even when a section is empty. Since August 2021 the insert is electronic, reached from a code on the outer box. The practice text is an English rendering; Japanese inserts are in Japanese.',
     'watch': [
@@ -237,7 +241,7 @@ JP_RX = 'Prescription drug (Caution: use only pursuant to the prescription of a 
 
 # ---------------------------------------------------------------- Australia
 AU = {
-    'id': 'au', 'name': 'Australia (TGA)', 'short': 'AU', 'version': '1.0.0', 'asOf': AS_OF,
+    'id': 'au', 'name': 'Australia (TGA)', 'short': 'AU', 'version': '1.0.1', 'asOf': AS_OF, 'changes': CHANGES,
     'kinds': ['au-pi', 'au-cmi'],
     'about': 'The Australian Product Information in the approved form (sections 1 to 10) and the Consumer Medicine Information in the TGA template (a one-page summary and seven sections), with the black triangle scheme. Labels follow Therapeutic Goods Order No. 91 and are not part of this pack.',
     'watch': [],
@@ -288,7 +292,7 @@ AU_PIC = 'For information on the management of overdose, contact the Poisons Inf
 
 # ---------------------------------------------------------------- WHO prequalification
 WHO = {
-    'id': 'who', 'name': 'WHO prequalification (PQT/MED)', 'short': 'WHO', 'version': '1.0.0', 'asOf': AS_OF,
+    'id': 'who', 'name': 'WHO prequalification (PQT/MED)', 'short': 'WHO', 'version': '1.0.1', 'asOf': AS_OF, 'changes': CHANGES,
     'kinds': ['who-smpc'],
     'about': 'The summary of product characteristics of a prequalified finished pharmaceutical product, published as Part 4 of the WHO Public Assessment Report (WHOPAR): an SmPC-style template whose last sections give the supplier, the WHO reference number, the date of prequalification and the date of revision.',
     'watch': [],

@@ -76,6 +76,21 @@
    "about": "Remove every trace of the protected diabetic nephropathy indication and restore the text that is not a permitted difference."
   },
   {
+   "id": "bio-label",
+   "title": "Label a biosimilar",
+   "minutes": 12,
+   "sample": "selvanta-biosimilar",
+   "doc": "pi",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "US-BIO-STMT",
+     "US-BIO-NAME"
+    ]
+   },
+   "about": "Complete the biosimilarity footnote, describe the product as SELVANTA throughout, and decide what to do with the interchangeability sentence (Watch)."
+  },
+  {
    "id": "convert",
    "title": "Map an older-format label to PLR",
    "minutes": 10,

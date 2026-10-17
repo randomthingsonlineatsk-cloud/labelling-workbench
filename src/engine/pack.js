@@ -69,12 +69,13 @@ import intlQuiz from '../packs/intl/quiz.json' with { type: 'json' };
 import intlDrills from '../packs/intl/drills.json' with { type: 'json' };
 import intlGlossary from '../packs/intl/glossary.json' with { type: 'json' };
 import products from '../data/products.json' with { type: 'json' };
+import { sha256 } from './sha256.js';
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
 // A core sample names a base US sample, the documents to keep, text patches and extra blank docs.
 function expandCoreSample(s) {
-  const base = usSamples.find((x) => x.id === s.base);
+  const base = [...usSamples, ...euSamples].find((x) => x.id === s.base);
   const docs = clone(base.docs.filter((d) => s.docs.includes(d.id)));
   for (const p of s.patch ?? []) {
     const d = docs.find((x) => x.id === p.doc);
@@ -85,14 +86,14 @@ function expandCoreSample(s) {
   return { ...s, docs, module: 'core', proof: null };
 }
 
-const META = (p) => ({ id: p.id, name: p.name, short: p.short, version: p.version, asOf: p.asOf, about: p.about, watch: p.watch });
+const META = (p) => ({ id: p.id, name: p.name, short: p.short, version: p.version, asOf: p.asOf, about: p.about, watch: p.watch, changes: p.changes ?? [], sources: (p.sources ?? []).map((s) => s.id) });
 
 const MORE = [[caPack, caTemplates, caRules, caSamples], [chPack, chTemplates, chRules, chSamples], [jpPack, jpTemplates, jpRules, jpSamples], [auPack, auTemplates, auRules, auSamples], [whoPack, whoTemplates, whoRules, whoSamples]];
 const MORE_KINDS = MORE.flatMap(([p]) => p.kinds);
 
 const merged = {
   ...usPack,
-  regions: { us: META(usPack), eu: META(euPack), in: META(inPack), ...Object.fromEntries(MORE.map(([p]) => [p.id, META(p)])), intl: { id: 'intl', name: 'Several markets', short: 'Multi', version: '1.0.0', asOf: caPack.asOf, about: 'The rule cards shared by the Canada, Switzerland, Japan, Australia and WHO packs (strengths, promotional wording), and the capstone that takes one safety change to four of these markets.', watch: [] } },
+  regions: { us: META(usPack), eu: META(euPack), in: META(inPack), ...Object.fromEntries(MORE.map(([p]) => [p.id, META(p)])), intl: { id: 'intl', name: 'Several markets', short: 'Multi', version: caPack.version, asOf: caPack.asOf, changes: caPack.changes, about: 'The rule cards shared by the Canada, Switzerland, Japan, Australia and WHO packs (strengths, promotional wording), and the capstone that takes one safety change to four of these markets.', watch: [] } },
   kinds: [...usPack.kinds, 'pmi'],
   kindsByRegion: { us: [...usPack.kinds, 'pmi'], eu: euPack.kinds, in: inPack.kinds, ...Object.fromEntries(MORE.map(([p]) => [p.id, p.kinds])), intl: MORE_KINDS },
   langs: euPack.langs,
@@ -133,6 +134,29 @@ export function fill(text, meta = {}) {
     .replaceAll('{manufacturer}', meta.manufacturer ?? '')
     .replaceAll('{phone}', meta.phone ?? '')
     .replaceAll('{form}', meta.dosageForm ?? '');
+}
+
+// Rule fingerprints: one short hash per rule card that applies to a region (its own rules and the
+// core rules). Stored with a project when it is made, so an old project opened with a newer pack
+// can list the rules that were added, removed or changed since.
+export function ruleStamp(pack, region = 'us') {
+  const kinds = new Set(kindsFor(pack, region));
+  const out = {};
+  for (const r of pack.rules) {
+    if (!r.id.startsWith('CORE-') && !r.kinds?.some((k) => kinds.has(k))) continue;
+    out[r.id] = sha256(JSON.stringify([r.title, r.text, r.severity, r.kinds, r.at])).slice(0, 10);
+  }
+  return out;
+}
+export const packVersions = (pack) => Object.fromEntries([...Object.values(pack.regions ?? {}).map((r) => [r.id, r.version]), ['core', pack.core?.version]]);
+export function ruleChanges(stamp, pack, region = 'us') {
+  if (!stamp) return null;
+  const now = ruleStamp(pack, region);
+  const title = (id) => ruleById(pack, id)?.title ?? id;
+  const added = Object.keys(now).filter((id) => !(id in stamp)).map((id) => ({ id, title: title(id) }));
+  const removed = Object.keys(stamp).filter((id) => !(id in now)).map((id) => ({ id, title: id }));
+  const changed = Object.keys(now).filter((id) => id in stamp && stamp[id] !== now[id]).map((id) => ({ id, title: title(id) }));
+  return added.length + removed.length + changed.length ? { added, removed, changed } : null;
 }
 
 // Age of a pack in months, for the banner shown when a pack is more than 12 months old.

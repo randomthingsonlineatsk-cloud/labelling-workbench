@@ -2,13 +2,27 @@
  "id": "eu",
  "name": "European Union (EMA, centralised procedure)",
  "short": "EU",
- "version": "1.0.0",
- "asOf": "2026-10-11",
+ "version": "1.1.0",
+ "changes": [
+  {
+   "version": "1.1.0",
+   "date": "2026-10-17",
+   "notes": "Annex II and small immediate packaging templates; generic SmPC compared with its reference (Article 11 omissions); four new rule cards (EU-A2, EU-SMALL, EU-GEN-SAME, EU-GEN-CARVE); vial label and generic samples with drills; 28 more quiz questions."
+  },
+  {
+   "version": "1.0.0",
+   "date": "2026-10-11",
+   "notes": "First release (Phase 3): QRD v10.4 SmPC, package leaflet, outer carton and blister; excipients, black triangle, Braille, safety features, user testing, translations, PRAC and PSUSA, ePI view."
+  }
+ ],
+ "asOf": "2026-10-17",
  "kinds": [
   "smpc",
+  "eu-annex2",
   "pl",
   "eu-outer",
-  "eu-blister"
+  "eu-blister",
+  "eu-small"
  ],
  "about": "Product information for a centrally authorised medicine: the Summary of Product Characteristics (Annex I), the labelling (Annex IIIA: outer carton and blister) and the package leaflet (Annex IIIB), following QRD template version 10.4. National procedures use the same headings with national details. Where a check estimates or simplifies, its rule card says so.",
  "watch": [
@@ -96,6 +110,16 @@
    "id": "ling",
    "title": "EMA: Linguistic review process of product information in the centralised procedure",
    "url": "https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/product-information-requirements/linguistic-review-process-product-information-centralised-procedure"
+  },
+  {
+   "id": "art11",
+   "title": "Directive 2001/83/EC, Article 10 (generic medicinal products) and Article 11 (SmPC; parts referring to indications or dosage forms still covered by patent law may be left out)",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02001L0083-20220101"
+  },
+  {
+   "id": "qrda2",
+   "title": "EMA ePI implementation guide: QRD template for centrally authorised products, Annex II structure (sections A to E)",
+   "url": "https://epi.ema.europa.eu/fhirig/StructureDefinition-EUQRD-CAP-template-new-Annex-II-en.html"
   },
   {
    "id": "epi",

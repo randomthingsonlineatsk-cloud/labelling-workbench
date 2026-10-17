@@ -120,8 +120,8 @@ export default function Home() {
 function NewProject({ initial, onClose, onCreate }) {
   const { pack } = useApp();
   const [productId, setProductId] = useState(initial?.productId ?? PRODUCTS[0].id);
-  const [region, setRegion] = useState({ EU: 'eu', IN: 'in' }[initial?.region] ?? 'us');
-  const [kinds, setKinds] = useState({ EU: ['smpc', 'pl', 'eu-outer'], IN: ['in-pi', 'in-carton', 'in-label'] }[initial?.region] ?? ['pi', 'carton']);
+  const [region, setRegion] = useState({ EU: 'eu', IN: 'in', CA: 'ca', CH: 'ch', JP: 'jp' }[initial?.region] ?? 'us');
+  const [kinds, setKinds] = useState({ EU: ['smpc', 'pl', 'eu-outer'], IN: ['in-pi', 'in-carton', 'in-label'], CA: ['ca-pm', 'ca-pmi', 'ca-label'], CH: ['ch-fi', 'ch-pi'], JP: ['jp-pi'] }[initial?.region] ?? ['pi', 'carton']);
   const KINDS = kindsFor(pack, region).filter((k) => k !== 'pi-old');
   const pickRegion = (r) => { setRegion(r); setKinds(r === 'us' ? ['pi', 'carton'] : r === 'eu' ? ['smpc', 'pl', 'eu-outer'] : kindsFor(pack, r)); };
   const [title, setTitle] = useState(initial?.title ?? '');

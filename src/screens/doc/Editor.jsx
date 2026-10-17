@@ -173,6 +173,14 @@ function HighlightsPane({ doc, docs, change, pack }) {
         ['manufacturer', 'Manufacturer (for the reporting line)'], ['phone', 'Phone (for the reporting line)'], ['patientLabeling', 'Patient labelling'],
       ]} />
       <Fixed label="Limitation statement" value={hl.limitation} want={fill(t.fixed.limitation, m)} onChange={(v) => change((d) => { d.hl.limitation = v; }, 'Highlights limitation statement')} />
+      {doc.role === 'biosimilar' && (
+        <section className="sub-card">
+          <h3>Biosimilarity statement</h3>
+          <p className="small muted">Under the product title: the biosimilar and its reference, each with its proper name, and a footnote on what biosimilar means. Interchangeability is no longer stated here (Watch: the 2023 revised draft guidance).</p>
+          <label className="field">Statement<input type="text" value={hl.bio ?? ''} onChange={(e) => change((d) => { d.hl.bio = e.target.value; }, 'Biosimilarity statement')} placeholder={`${m.proprietaryName} (${m.establishedName}) is biosimilar* to ${m.reference?.name ?? 'REFERENCE'} (${m.reference?.est ?? 'proper name'}).`} /></label>
+          <label className="field">Footnote<textarea rows={4} value={hl.bioNote ?? ''} onChange={(e) => change((d) => { d.hl.bioNote = e.target.value; }, 'Biosimilarity footnote')} placeholder="* Biosimilar means that the biological product is approved based on data demonstrating that it is highly similar to an FDA-approved biological product, known as a reference product, and that there are no clinically meaningful differences between the biosimilar product and the reference product..." /></label>
+        </section>
+      )}
       {(doc.bw || hl.bw?.length > 0) && (
         <section className="sub-card">
           <h3>Boxed warning summary <span className="muted small">(heading comes from the full boxed warning: {doc.bw?.title || 'none'})</span></h3>
@@ -228,7 +236,7 @@ function BoxedPane({ doc, change }) {
 
 function FixedPane({ doc, change, t, pack }) {
   const m = doc.meta ?? {};
-  const eu = ['smpc', 'pl', 'eu-outer', 'eu-blister'].includes(doc.kind);
+  const eu = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'].includes(doc.kind);
   const india = ['in-pi', 'in-carton', 'in-label'].includes(doc.kind);
   const exList = pack?.vocab?.eu?.excipients ?? [];
   const iv = pack?.vocab?.in ?? {};
@@ -353,7 +361,7 @@ function SectionPane({ doc, num, change, t }) {
           {tmplTitle && s.title !== tmplTitle && <button type="button" className="icon-btn" onClick={() => change((d) => { d.sections[idx].title = tmplTitle; }, `Heading ${num}`)}>Use template heading</button>}
         </span>
       </label>
-      <Blocks blocks={s.blocks} label={sectionTitle(s)} types={doc.kind === 'pi' ? ['p', 'ul', 'table'] : ['p', 'ul', 'box', 'table']} idPrefix={`s${num}-`} onChange={(b) => change((d) => { d.sections[idx].blocks = b; }, `Section ${num}`)} />
+      <Blocks blocks={s.blocks} label={sectionTitle(s)} types={doc.kind === 'pi' ? ['p', 'ul', 'table', 'ar', 'fig'] : ['p', 'ul', 'box', 'table', 'ar', 'fig']} idPrefix={`s${num}-`} onChange={(b) => change((d) => { d.sections[idx].blocks = b; }, `Section ${num}`)} />
       {(s.subs ?? []).map((x, i) => {
         const fixed = fixedSubs.find((f) => f.num === x.num);
         return (
@@ -368,7 +376,7 @@ function SectionPane({ doc, num, change, t }) {
               </>}
               {!(fixed && fixed.need === 'required') && <button type="button" className="icon-btn" onClick={() => { if (window.confirm(`Delete ${x.num} ${x.title}?`)) change((d) => { d.sections[idx].subs.splice(i, 1); if (freeSubs) renumberSubs(d, num); }, `Deleted ${x.num}`); }}>Delete</button>}
             </div>
-            <Blocks blocks={x.blocks} label={sectionTitle(x)} idPrefix={`s${x.num}-`} onChange={(b) => change((d) => { d.sections[idx].subs[i].blocks = b; }, `Section ${x.num}`)} />
+            <Blocks blocks={x.blocks} label={sectionTitle(x)} types={doc.kind === 'pi' ? ['p', 'ul', 'table', 'ar', 'fig'] : ['p', 'ul', 'box', 'table', 'ar', 'fig']} idPrefix={`s${x.num}-`} onChange={(b) => change((d) => { d.sections[idx].subs[i].blocks = b; }, `Section ${x.num}`)} />
           </section>
         );
       })}

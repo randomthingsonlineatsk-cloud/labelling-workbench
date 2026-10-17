@@ -1109,6 +1109,188 @@
    "answer": 0,
    "why": "201.80 covers the older format.",
    "cite": "21 CFR 201.80"
+  },
+  {
+   "id": "q8-5",
+   "topic": 8,
+   "q": "Which code system names SPL section types such as Boxed Warning or Indications and Usage?",
+   "options": [
+    "MedDRA",
+    "SNOMED CT",
+    "ATC",
+    "LOINC"
+   ],
+   "answer": 3,
+   "why": "Each SPL section carries a LOINC code for its type.",
+   "cite": "FDA SPL Implementation Guide"
+  },
+  {
+   "id": "q8-6",
+   "topic": 8,
+   "q": "What lets FDA and readers track the versions of one SPL document?",
+   "options": [
+    "A set ID and a version number",
+    "The NDA number alone",
+    "The barcode",
+    "A Federal Register citation"
+   ],
+   "answer": 0,
+   "why": "Every version of a label keeps the same set ID and gets the next version number.",
+   "cite": "FDA SPL Implementation Guide"
+  },
+  {
+   "id": "q8-7",
+   "topic": 8,
+   "q": "Where in an SPL file are the NDC, ingredients and packaging held?",
+   "options": [
+    "In the revision date",
+    "In the product data elements",
+    "In Highlights",
+    "In the boxed warning"
+   ],
+   "answer": 1,
+   "why": "The product data elements describe the product in coded form, separate from the label text.",
+   "cite": "FDA SPL Implementation Guide"
+  },
+  {
+   "id": "q8-8",
+   "topic": 8,
+   "q": "How are SPL files sent to FDA?",
+   "options": [
+    "Through MedWatch",
+    "Through the Purple Book",
+    "Through the FDA Electronic Submissions Gateway",
+    "By fax"
+   ],
+   "answer": 2,
+   "why": "SPL is submitted electronically through the ESG, inside the application or as a listing.",
+   "cite": "FDA SPL resources"
+  },
+  {
+   "id": "q9-7",
+   "topic": 9,
+   "q": "Which regulation lists the permitted differences between a generic label and its reference?",
+   "options": [
+    "21 CFR 201.57(c)",
+    "21 CFR 208.20",
+    "21 CFR 201.80",
+    "21 CFR 314.94(a)(8)(iv)"
+   ],
+   "answer": 3,
+   "why": "314.94(a)(8)(iv) covers the labeling of an ANDA and the differences allowed.",
+   "cite": "21 CFR 314.94"
+  },
+  {
+   "id": "q9-8",
+   "topic": 9,
+   "q": "Under FDA's September 2023 revised draft guidance, what does a biosimilar's labeling carry?",
+   "options": [
+    "One biosimilarity statement, whether or not the product is interchangeable",
+    "An interchangeability statement for interchangeable products",
+    "No statement at all",
+    "The reference product's brand name throughout"
+   ],
+   "answer": 0,
+   "why": "The revised draft recommends the same biosimilarity statement for every biosimilar. It is a draft (Watch).",
+   "cite": "Labeling for Biosimilar and Interchangeable Biosimilar Products (revised draft, 2023)"
+  },
+  {
+   "id": "q9-9",
+   "topic": 9,
+   "q": "Where does FDA show which biosimilars are interchangeable?",
+   "options": [
+    "DailyMed only",
+    "The Purple Book",
+    "The Orange Book",
+    "The label Highlights"
+   ],
+   "answer": 1,
+   "why": "Interchangeability matters at pharmacy dispensing, so FDA points to the Purple Book.",
+   "cite": "FDA updated labeling recommendations for biosimilars"
+  },
+  {
+   "id": "q10-5",
+   "topic": 10,
+   "q": "Which law created FDA's authority under section 505(o)(4)?",
+   "options": [
+    "PDUFA 1992",
+    "21st Century Cures Act 2016",
+    "FDAAA 2007",
+    "Hatch-Waxman 1984"
+   ],
+   "answer": 2,
+   "why": "The Food and Drug Administration Amendments Act of 2007 added safety labeling change authority.",
+   "cite": "FD&C Act 505(o)(4); FDA guidance on safety labeling changes"
+  },
+  {
+   "id": "q10-6",
+   "topic": 10,
+   "q": "If discussions after a 505(o)(4) notice end without agreement, how soon may FDA order the change?",
+   "options": [
+    "Within 30 days",
+    "Within 60 days",
+    "Within 90 days",
+    "Within 15 days"
+   ],
+   "answer": 3,
+   "why": "After the discussion period FDA may issue an order within 15 days.",
+   "cite": "FD&C Act 505(o)(4)(E)"
+  },
+  {
+   "id": "q10-7",
+   "topic": 10,
+   "q": "What should the holder's response to a 505(o)(4) notice contain?",
+   "options": [
+    "A labeling supplement with the change, or a statement of why it is not warranted",
+    "A fee",
+    "A REMS",
+    "A Dear Health Care Provider letter only"
+   ],
+   "answer": 0,
+   "why": "The holder either submits the change or rebuts within 30 days.",
+   "cite": "FD&C Act 505(o)(4)(B)"
+  },
+  {
+   "id": "q10-8",
+   "topic": 10,
+   "q": "What can follow a failure to comply with 505(o)(4)?",
+   "options": [
+    "Loss of patent protection",
+    "Civil money penalties, and the drug can be misbranded",
+    "Automatic withdrawal of approval",
+    "Nothing"
+   ],
+   "answer": 1,
+   "why": "Violations can bring civil penalties, and the product can be deemed misbranded.",
+   "cite": "FD&C Act 303(f)(4), 502(z)"
+  },
+  {
+   "id": "q11-7",
+   "topic": 11,
+   "q": "In PLR, which section number is Contraindications?",
+   "options": [
+    "2",
+    "8",
+    "4",
+    "5"
+   ],
+   "answer": 2,
+   "why": "PLR sections: 1 Indications, 2 Dosage, 3 Forms and strengths, 4 Contraindications, 5 Warnings and precautions.",
+   "cite": "21 CFR 201.57(c)"
+  },
+  {
+   "id": "q11-8",
+   "topic": 11,
+   "q": "When an older-format label is converted, which part must be written new?",
+   "options": [
+    "The carton",
+    "The Medication Guide",
+    "Nothing",
+    "Highlights, with its cross-references"
+   ],
+   "answer": 3,
+   "why": "Highlights and the contents list have no older-format equivalent.",
+   "cite": "21 CFR 201.57(a)"
   }
  ]
 }

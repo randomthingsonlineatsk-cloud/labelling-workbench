@@ -288,7 +288,7 @@ t('hand-off: CCSI file has only core safety statements; eCTD project file gives 
   assert.equal(r.product.id, 'talmisartan-er');
   assert.equal(r.region, 'EU');
   assert.equal(r.warnings.length, 0, 'EU has a pack now');
-  assert.equal(productFromEctdFile(JSON.stringify({ kind: 'ectd-dossier-builder/project', project: { productId: 'nce-tablet', region: 'JP' } }), PRODUCTS).warnings.length, 1);
+  assert.equal(productFromEctdFile(JSON.stringify({ kind: 'ectd-dossier-builder/project', project: { productId: 'nce-tablet', region: 'KR' } }), PRODUCTS).warnings.length, 1);
   assert.throws(() => productFromEctdFile('{"kind":"x"}', PRODUCTS));
 });
 
@@ -307,7 +307,7 @@ t('core certificate: its own lessons, core quiz round and the core capstone', ()
   const lessonsDone = Object.fromEntries(pack.lessons.lessons.map((l) => [`us-${l.id}`, { best: 100 }]));
   let st = certificateStatus({ region: 'core', lessons: pack.lessons, drills: pack.drills, attempts: [], lessonsDone });
   assert.equal(st.lessons.length, 4);
-  assert.equal(st.drills.length, 4);
+  assert.equal(st.drills.length, 5);
   assert.equal(st.eligible, false);
   st = certificateStatus({ region: 'core', lessons: pack.lessons, drills: pack.drills, attempts: [{ kind: 'quiz', topic: 'all', score: 100, total: 10 }, { kind: 'drill', drillId: 'ccds-rollout', score: 100 }], lessonsDone });
   assert.equal(st.eligible, false, 'a US round does not count');

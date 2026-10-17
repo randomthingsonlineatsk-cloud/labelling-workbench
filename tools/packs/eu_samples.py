@@ -2,7 +2,7 @@
 matches the US labels in substance; the other samples plant errors or set up a scenario."""
 import copy
 from lib import P, UL, T
-from eu_core import BT_SMPC, BT_PL, REPORT_SMPC, REPORT_PL, READ_FIRST
+from eu_core import BT_SMPC, BT_PL, REPORT_SMPC, REPORT_PL, READ_FIRST, A2_PSUR, A2_RMP
 
 MAH = 'Halcyon Ridge Pharmaceuticals Europe B.V.'
 MAH_ADDR = 'Fictieweg 21, 3000 CC Voorbeeldhaven, Netherlands'
@@ -186,8 +186,18 @@ def drafts(*docs):
 
 
 # ---------------------------------------------------------------- error hunt
-ERR_SMPC, ERR_PL, ERR_OUTER, ERR_BLISTER = drafts(SMPC, PL, OUTER, BLISTER)
-for d in (ERR_SMPC, ERR_PL, ERR_OUTER, ERR_BLISTER):
+ANNEX2 = {
+    'id': 'annex2', 'kind': 'eu-annex2', 'title': 'Annex II', 'status': 'approved', 'meta': dict(META), 'fixed': {'header': 'ANNEX II'},
+    'sections': [
+        sec('A', 'A. MANUFACTURER(S) RESPONSIBLE FOR BATCH RELEASE', P('Name and address of the manufacturer(s) responsible for batch release'), P(MFR)),
+        sec('B', 'B. CONDITIONS OR RESTRICTIONS REGARDING SUPPLY AND USE', P('Medicinal product subject to medical prescription.')),
+        sec('C', 'C. OTHER CONDITIONS AND REQUIREMENTS OF THE MARKETING AUTHORISATION', subs=[sub('C.1', 'Periodic safety update reports (PSURs)', P(A2_PSUR))]),
+        sec('D', 'D. CONDITIONS OR RESTRICTIONS WITH REGARD TO THE SAFE AND EFFECTIVE USE OF THE MEDICINAL PRODUCT', subs=[sub('D.1', 'Risk management plan (RMP)', P(A2_RMP))]),
+    ],
+}
+
+ERR_SMPC, ERR_PL, ERR_OUTER, ERR_BLISTER, ERR_ANNEX2 = drafts(SMPC, PL, OUTER, BLISTER, ANNEX2)
+for d in (ERR_SMPC, ERR_PL, ERR_OUTER, ERR_BLISTER, ERR_ANNEX2):
     d['answerKey'] = []
 K = lambda d, rule, where, what: d['answerKey'].append({'rule': rule, 'where': where, 'what': what})
 
@@ -236,6 +246,35 @@ K(ERR_OUTER, 'EU-LAB-PART', '12', 'Not one of the authorisation numbers in SmPC 
 
 find(ERR_BLISTER, '2')['blocks'] = [P('')]
 K(ERR_BLISTER, 'EU-REQ', '2', 'The marketing authorisation holder is missing.')
+find(ERR_BLISTER, '4')['blocks'] = [P('Batch')]
+K(ERR_BLISTER, 'EU-SMALL', '4', 'The batch number is not preceded by "Lot".')
+find(ERR_ANNEX2, 'B')['blocks'] = [P('')]
+K(ERR_ANNEX2, 'EU-REQ', 'B', 'The conditions on supply and use are empty.')
+K(ERR_ANNEX2, 'EU-A2', 'B', 'No legal status for supply.')
+find(ERR_ANNEX2, 'C.1')['blocks'] = [P('PSURs are to be submitted every six months.')]
+K(ERR_ANNEX2, 'EU-A2', 'C.1', 'Not the standard PSUR statement (EURD list, Article 107c(7)).')
+
+# ---------------------------------------------------------------- small immediate packaging: a vial label
+VIAL_META = {'proprietaryName': 'Nelvaprox', 'establishedName': 'velnaprozine', 'dosageForm': 'solution for injection', 'route': 'intravenous', 'strengths': ['10 mg/mL'],
+             'manufacturer': 'Halcyon Ridge Pharmaceuticals Europe B.V.', 'revised': '', 'additionalMonitoring': False, 'excipients': [], 'lang': 'en', 'procedure': 'centralised', 'maNumber': 'EU/1/21/9904/001'}
+VIAL = {
+    'id': 'vial', 'kind': 'eu-small', 'title': 'Vial label, 10 mg/mL, 5 mL', 'status': 'approved', 'meta': VIAL_META,
+    'fixed': {'header': 'MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS'},
+    'sections': [
+        sec('1', 'NAME OF THE MEDICINAL PRODUCT AND ROUTE(S) OF ADMINISTRATION', P('Nelvaprox 10 mg/mL solution for injection'), P('velnaprozine'), P('IV')),
+        sec('2', 'METHOD OF ADMINISTRATION', P('Dilute before use.')),
+        sec('3', 'EXPIRY DATE', P('EXP')),
+        sec('4', 'BATCH NUMBER', P('Lot')),
+        sec('5', 'CONTENTS BY WEIGHT, BY VOLUME OR BY UNIT', P('50 mg/5 mL')),
+    ],
+}
+ERR_VIAL, = drafts(VIAL)
+ERR_VIAL['answerKey'] = []
+find(ERR_VIAL, '1')['blocks'] = [P('Nelvaprox 10 mg/mL solution for injection'), P('velnaprozine')]
+K(ERR_VIAL, 'EU-SMALL', '1', 'The route of administration is missing from the name.')
+find(ERR_VIAL, '3')['blocks'] = [P('Use by')]
+K(ERR_VIAL, 'EU-SMALL', '3', 'The expiry date is not preceded by "EXP".')
+find(ERR_VIAL, '5')['blocks'] = [P('5 mL'), P('10 mg/mL')]
 
 # ---------------------------------------------------------------- user test
 UT_PL = drafts(PL)[0]
@@ -323,13 +362,18 @@ PRAC_NOTICE = {
     'sections': ['SmPC 4.4', 'SmPC 4.8', 'Package leaflet section 2', 'Package leaflet section 4'], 'deadlineDays': 60,
 }
 
+from eu_generic import SAMPLES_GEN
+
 SAMPLES = [
     {'id': 'eu-ostrevia-clean', 'region': 'eu', 'productId': 'nce-tablet', 'level': 'Start here', 'title': 'Ostrevia (EU): clean product information',
-     'about': 'The SmPC, package leaflet, outer carton and blister for a centrally authorised product under additional monitoring. Use it to see what a passing QRD set looks like.',
-     'docs': [SMPC, PL, OUTER, BLISTER]},
+     'about': 'The SmPC, Annex II, package leaflet, outer carton and blister for a centrally authorised product under additional monitoring. Use it to see what a passing QRD set looks like.',
+     'docs': [SMPC, ANNEX2, PL, OUTER, BLISTER]},
     {'id': 'eu-ostrevia-errors', 'region': 'eu', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (EU): find and fix the errors',
      'about': 'The same set with about 20 planted errors: QRD headings, black triangle, 4.8 frequencies and reporting text, excipients, standard leaflet statements, Braille and safety features. Compare with the answer key when you are done.',
-     'docs': [ERR_SMPC, ERR_PL, ERR_OUTER, ERR_BLISTER]},
+     'docs': [ERR_SMPC, ERR_ANNEX2, ERR_PL, ERR_OUTER, ERR_BLISTER]},
+    {'id': 'eu-nelvaprox-vial', 'region': 'eu', 'productId': 'sterile-injectable', 'level': 'Practice', 'title': 'Nelvaprox (EU): a small vial label',
+     'about': 'A 5 mL vial is too small for the full particulars, so Annex IIIA allows a minimum set. Two required particulars are missing or wrongly marked: find them and fix the label.',
+     'docs': [ERR_VIAL]},
     {'id': 'eu-ostrevia-usertest', 'region': 'eu', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (EU): pass the user test',
      'about': 'A draft leaflet written in heavy medical language and 12 test questions. Run a round of 10 participants, rewrite what fails, and pass two final rounds on the same text.',
      'docs': [drafts(SMPC)[0], UT_PL]},
@@ -342,6 +386,6 @@ SAMPLES = [
     {'id': 'eu-ostrevia-prac', 'region': 'eu', 'productId': 'nce-tablet', 'level': 'Capstone', 'title': 'Ostrevia (EU): implement a PRAC signal recommendation',
      'about': 'PRAC has recommended new wording on DRESS. Implement it in the SmPC and leaflet, take both through approval, record the variation in the tracker and keep the deadline.',
      'docs': [SMPC, PL], 'change': {'trigger': 'prac', 'kind': 'warning', 'title': 'DRESS (PRAC signal recommendation)', 'notice': PRAC_NOTICE, 'markets': ['eu'], 'deadlineDays': 60}},
-]
+] + SAMPLES_GEN
 
 AGENCY = {'eu-ostrevia-translation': {'pl-fr': LING}}

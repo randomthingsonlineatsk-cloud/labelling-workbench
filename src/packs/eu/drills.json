@@ -46,6 +46,36 @@
    "about": "Children warning, Braille, the safety features and the authorisation number."
   },
   {
+   "id": "eu-annex2-vial",
+   "module": "eu",
+   "title": "Fix Annex II and a small vial label",
+   "minutes": 10,
+   "sample": "eu-nelvaprox-vial",
+   "doc": "vial",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "EU-"
+    ]
+   },
+   "about": "The 5 mL vial carries only the minimum particulars of Annex IIIA: name with the route, method, EXP, Lot and contents. Two are missing or wrongly marked."
+  },
+  {
+   "id": "eu-generic",
+   "module": "eu",
+   "title": "Generic SmPC against the reference",
+   "minutes": 12,
+   "sample": "eu-talmisartan-generic",
+   "doc": "smpc",
+   "goal": {
+    "type": "rules",
+    "prefixes": [
+     "EU-GEN-"
+    ]
+   },
+   "about": "Remove the last mention of the patent-protected indication and restore the warning that must match the reference SmPC."
+  },
+  {
    "id": "eu-lactose",
    "module": "eu",
    "title": "Declare a new excipient",

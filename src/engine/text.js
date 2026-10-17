@@ -55,3 +55,6 @@ export function levenshtein(a, b) {
 
 export const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
 export const escapeRe = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// Module 1 node codes carry a region prefix inside the eCTD app (eu:1.3.1); shown without it.
+export const displayCode = (code) => String(code ?? '').replace(/^(eu|jp|in|ca|ch):/, '');

@@ -2,8 +2,20 @@
  "id": "us",
  "name": "United States (FDA)",
  "short": "US",
- "version": "1.0.0",
- "asOf": "2026-10-11",
+ "version": "1.1.0",
+ "changes": [
+  {
+   "version": "1.1.0",
+   "date": "2026-10-17",
+   "notes": "Biosimilar labelling exercise (Selvanta and its reference Arventa) with three rule cards: the biosimilarity statement, naming the product, and interchangeability statements as a Watch hint after FDA's September 2023 revised draft guidance. Adverse-reaction table and figure blocks in the editor. Thirteen more quiz questions."
+  },
+  {
+   "version": "1.0.0",
+   "date": "2026-10-11",
+   "notes": "First release (Phase 1): PLR and older-format prescribing information, patient labelling, carton and container, generic carve-outs."
+  }
+ ],
+ "asOf": "2026-10-17",
  "kinds": [
   "pi",
   "pi-old",
@@ -15,6 +27,12 @@
  ],
  "about": "Prescribing information in PLR format (21 CFR 201.56 and 201.57) and the older format (21 CFR 201.80), patient labelling (Medication Guide under 21 CFR 208, Patient Package Insert, Instructions for Use), and carton and container labels. The checks follow the regulations and FDA guidance listed below; where a check estimates or simplifies, its rule card says so.",
  "watch": [
+  {
+   "id": "interch",
+   "title": "Interchangeability statements for biosimilars",
+   "text": "FDA's revised draft guidance \"Labeling for Biosimilar and Interchangeable Biosimilar Products\" (September 2023) recommends one biosimilarity statement for every biosimilar, interchangeable or not, and no longer recommends an interchangeability statement: interchangeability is shown in the Purple Book. It also asks whether the statements are needed at all. Until it is final the app treats an interchangeability statement as a hint, never an error.",
+   "src": "biolab23"
+  },
   {
    "id": "pmi",
    "title": "Patient Medication Information (PMI)",
@@ -35,6 +53,16 @@
   }
  ],
  "sources": [
+  {
+   "id": "biolab",
+   "title": "FDA: Updated labeling recommendations for biosimilar and interchangeable biosimilar products (biosimilarity statement, incorporating reference product data)",
+   "url": "https://www.fda.gov/drugs/news-events-human-drugs/updated-fda-labeling-recommendations-biosimilar-and-interchangeable-biosimilar-products"
+  },
+  {
+   "id": "biolab23",
+   "title": "Revised draft guidance \"Labeling for Biosimilar and Interchangeable Biosimilar Products\" (draft revision, September 2023): no interchangeability statement",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/labeling-biosimilar-and-interchangeable-biosimilar-products"
+  },
   {
    "id": "cfr20156",
    "title": "21 CFR 201.56: Requirements on content and format of labeling for human prescription drug and biological products",

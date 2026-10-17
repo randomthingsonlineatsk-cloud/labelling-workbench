@@ -5,7 +5,7 @@
   "productId": "nce-tablet",
   "level": "Start here",
   "title": "Ostrevia (EU): clean product information",
-  "about": "The SmPC, package leaflet, outer carton and blister for a centrally authorised product under additional monitoring. Use it to see what a passing QRD set looks like.",
+  "about": "The SmPC, Annex II, package leaflet, outer carton and blister for a centrally authorised product under additional monitoring. Use it to see what a passing QRD set looks like.",
   "docs": [
    {
     "id": "smpc",
@@ -540,6 +540,105 @@
        }
       ],
       "subs": []
+     }
+    ]
+   },
+   {
+    "id": "annex2",
+    "kind": "eu-annex2",
+    "title": "Annex II",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals Europe B.V.",
+     "revised": "08/2026",
+     "additionalMonitoring": true,
+     "excipients": [
+      {
+       "key": "sodium",
+       "amount": "0.6 mg",
+       "per": "tablet"
+      }
+     ],
+     "lang": "en",
+     "procedure": "centralised",
+     "maNumber": "EU/1/23/9901/001-004"
+    },
+    "fixed": {
+     "header": "ANNEX II"
+    },
+    "sections": [
+     {
+      "num": "A",
+      "title": "A. MANUFACTURER(S) RESPONSIBLE FOR BATCH RELEASE",
+      "blocks": [
+       {
+        "id": "b114",
+        "t": "p",
+        "text": "Name and address of the manufacturer(s) responsible for batch release"
+       },
+       {
+        "id": "b115",
+        "t": "p",
+        "text": "Halcyon Ridge Manufacturing Ireland Ltd., Unit 9, Sample Industrial Estate, Exampleford, Ireland"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "B",
+      "title": "B. CONDITIONS OR RESTRICTIONS REGARDING SUPPLY AND USE",
+      "blocks": [
+       {
+        "id": "b116",
+        "t": "p",
+        "text": "Medicinal product subject to medical prescription."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "C",
+      "title": "C. OTHER CONDITIONS AND REQUIREMENTS OF THE MARKETING AUTHORISATION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "C.1",
+        "title": "Periodic safety update reports (PSURs)",
+        "blocks": [
+         {
+          "id": "b117",
+          "t": "p",
+          "text": "The requirements for submission of PSURs for this medicinal product are set out in the list of Union reference dates (EURD list) provided for under Article 107c(7) of Directive 2001/83/EC and any subsequent updates published on the European medicines web-portal."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "D",
+      "title": "D. CONDITIONS OR RESTRICTIONS WITH REGARD TO THE SAFE AND EFFECTIVE USE OF THE MEDICINAL PRODUCT",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "D.1",
+        "title": "Risk management plan (RMP)",
+        "blocks": [
+         {
+          "id": "b118",
+          "t": "p",
+          "text": "The marketing authorisation holder (MAH) shall perform the required pharmacovigilance activities and interventions detailed in the agreed RMP presented in Module 1.8.2 of the marketing authorisation and any agreed subsequent updates of the RMP. An updated RMP should be submitted: at the request of the European Medicines Agency; whenever the risk management system is modified, especially as the result of new information being received that may lead to a significant change to the benefit/risk profile or as the result of an important (pharmacovigilance or risk minimisation) milestone being reached."
+         }
+        ]
+       }
+      ]
      }
     ]
    },
@@ -1547,7 +1646,7 @@
           "text": "Clinical efficacy: in two 16-week placebo-controlled studies (HALO-1 and HALO-2, 612 patients), an IGA score of 0 or 1 with at least a 2-grade improvement at week 16 was reached by 36% to 48% of patients on Ostrevia and 13% to 15% on placebo."
          },
          {
-          "id": "b115",
+          "id": "b120",
           "t": "p",
           "text": "Ostrevia offers superior efficacy compared with other systemic treatments."
          }
@@ -1716,7 +1815,7 @@
       "title": "DATE OF REVISION OF THE TEXT",
       "blocks": [
        {
-        "id": "b114",
+        "id": "b119",
         "t": "p",
         "text": ""
        }
@@ -1764,6 +1863,122 @@
       "rule": "EU-PROMO",
       "where": "5.1",
       "what": "\"superior\": a comparative, promotional claim."
+     }
+    ]
+   },
+   {
+    "id": "annex2",
+    "kind": "eu-annex2",
+    "title": "Annex II",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals Europe B.V.",
+     "revised": "08/2026",
+     "additionalMonitoring": true,
+     "excipients": [
+      {
+       "key": "sodium",
+       "amount": "0.6 mg",
+       "per": "tablet"
+      }
+     ],
+     "lang": "en",
+     "procedure": "centralised",
+     "maNumber": "EU/1/23/9901/001-004"
+    },
+    "fixed": {
+     "header": "ANNEX II"
+    },
+    "sections": [
+     {
+      "num": "A",
+      "title": "A. MANUFACTURER(S) RESPONSIBLE FOR BATCH RELEASE",
+      "blocks": [
+       {
+        "id": "b114",
+        "t": "p",
+        "text": "Name and address of the manufacturer(s) responsible for batch release"
+       },
+       {
+        "id": "b115",
+        "t": "p",
+        "text": "Halcyon Ridge Manufacturing Ireland Ltd., Unit 9, Sample Industrial Estate, Exampleford, Ireland"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "B",
+      "title": "B. CONDITIONS OR RESTRICTIONS REGARDING SUPPLY AND USE",
+      "blocks": [
+       {
+        "id": "b130",
+        "t": "p",
+        "text": ""
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "C",
+      "title": "C. OTHER CONDITIONS AND REQUIREMENTS OF THE MARKETING AUTHORISATION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "C.1",
+        "title": "Periodic safety update reports (PSURs)",
+        "blocks": [
+         {
+          "id": "b131",
+          "t": "p",
+          "text": "PSURs are to be submitted every six months."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "D",
+      "title": "D. CONDITIONS OR RESTRICTIONS WITH REGARD TO THE SAFE AND EFFECTIVE USE OF THE MEDICINAL PRODUCT",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "D.1",
+        "title": "Risk management plan (RMP)",
+        "blocks": [
+         {
+          "id": "b118",
+          "t": "p",
+          "text": "The marketing authorisation holder (MAH) shall perform the required pharmacovigilance activities and interventions detailed in the agreed RMP presented in Module 1.8.2 of the marketing authorisation and any agreed subsequent updates of the RMP. An updated RMP should be submitted: at the request of the European Medicines Agency; whenever the risk management system is modified, especially as the result of new information being received that may lead to a significant change to the benefit/risk profile or as the result of an important (pharmacovigilance or risk minimisation) milestone being reached."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "EU-REQ",
+      "where": "B",
+      "what": "The conditions on supply and use are empty."
+     },
+     {
+      "rule": "EU-A2",
+      "where": "B",
+      "what": "No legal status for supply."
+     },
+     {
+      "rule": "EU-A2",
+      "where": "C.1",
+      "what": "Not the standard PSUR statement (EURD list, Article 107c(7))."
      }
     ]
    },
@@ -1830,7 +2045,7 @@
         "title": "Do not take Ostrevia",
         "blocks": [
          {
-          "id": "b116",
+          "id": "b121",
           "t": "ul",
           "items": [
            "if you have active tuberculosis (TB) or another serious infection",
@@ -2014,7 +2229,7 @@
         "title": "Reporting of side effects",
         "blocks": [
          {
-          "id": "b117",
+          "id": "b122",
           "t": "p",
           "text": "If you get any side effects, talk to your doctor or pharmacist."
          }
@@ -2244,7 +2459,7 @@
       "title": "SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN",
       "blocks": [
        {
-        "id": "b118",
+        "id": "b123",
         "t": "p",
         "text": "Keep out of reach of children."
        }
@@ -2285,7 +2500,7 @@
       "title": "MARKETING AUTHORISATION NUMBER(S)",
       "blocks": [
        {
-        "id": "b122",
+        "id": "b127",
         "t": "p",
         "text": "EU/1/23/9901/005"
        }
@@ -2309,7 +2524,7 @@
       "title": "INFORMATION IN BRAILLE",
       "blocks": [
        {
-        "id": "b119",
+        "id": "b124",
         "t": "p",
         "text": ""
        }
@@ -2321,7 +2536,7 @@
       "title": "UNIQUE IDENTIFIER - 2D BARCODE",
       "blocks": [
        {
-        "id": "b120",
+        "id": "b125",
         "t": "p",
         "text": ""
        }
@@ -2333,7 +2548,7 @@
       "title": "UNIQUE IDENTIFIER - HUMAN READABLE DATA",
       "blocks": [
        {
-        "id": "b121",
+        "id": "b126",
         "t": "p",
         "text": "PC 09990001234567"
        }
@@ -2422,7 +2637,7 @@
       "title": "NAME OF THE MARKETING AUTHORISATION HOLDER",
       "blocks": [
        {
-        "id": "b123",
+        "id": "b128",
         "t": "p",
         "text": ""
        }
@@ -2446,9 +2661,9 @@
       "title": "BATCH NUMBER",
       "blocks": [
        {
-        "id": "b113",
+        "id": "b129",
         "t": "p",
-        "text": "Lot"
+        "text": "Batch"
        }
       ],
       "subs": []
@@ -2459,6 +2674,130 @@
       "rule": "EU-REQ",
       "where": "2",
       "what": "The marketing authorisation holder is missing."
+     },
+     {
+      "rule": "EU-SMALL",
+      "where": "4",
+      "what": "The batch number is not preceded by \"Lot\"."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "eu-nelvaprox-vial",
+  "region": "eu",
+  "productId": "sterile-injectable",
+  "level": "Practice",
+  "title": "Nelvaprox (EU): a small vial label",
+  "about": "A 5 mL vial is too small for the full particulars, so Annex IIIA allows a minimum set. Two required particulars are missing or wrongly marked: find them and fix the label.",
+  "docs": [
+   {
+    "id": "vial",
+    "kind": "eu-small",
+    "title": "Vial label, 10 mg/mL, 5 mL",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Nelvaprox",
+     "establishedName": "velnaprozine",
+     "dosageForm": "solution for injection",
+     "route": "intravenous",
+     "strengths": [
+      "10 mg/mL"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals Europe B.V.",
+     "revised": "",
+     "additionalMonitoring": false,
+     "excipients": [],
+     "lang": "en",
+     "procedure": "centralised",
+     "maNumber": "EU/1/21/9904/001"
+    },
+    "fixed": {
+     "header": "MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS"
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT AND ROUTE(S) OF ADMINISTRATION",
+      "blocks": [
+       {
+        "id": "b139",
+        "t": "p",
+        "text": "Nelvaprox 10 mg/mL solution for injection"
+       },
+       {
+        "id": "b140",
+        "t": "p",
+        "text": "velnaprozine"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "METHOD OF ADMINISTRATION",
+      "blocks": [
+       {
+        "id": "b135",
+        "t": "p",
+        "text": "Dilute before use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "EXPIRY DATE",
+      "blocks": [
+       {
+        "id": "b141",
+        "t": "p",
+        "text": "Use by"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "BATCH NUMBER",
+      "blocks": [
+       {
+        "id": "b137",
+        "t": "p",
+        "text": "Lot"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "5",
+      "title": "CONTENTS BY WEIGHT, BY VOLUME OR BY UNIT",
+      "blocks": [
+       {
+        "id": "b142",
+        "t": "p",
+        "text": "5 mL"
+       },
+       {
+        "id": "b143",
+        "t": "p",
+        "text": "10 mg/mL"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "EU-SMALL",
+      "where": "1",
+      "what": "The route of administration is missing from the name."
+     },
+     {
+      "rule": "EU-SMALL",
+      "where": "3",
+      "what": "The expiry date is not preceded by \"EXP\"."
      }
     ]
    }
@@ -3086,7 +3425,7 @@
         "title": "Warnings and precautions",
         "blocks": [
          {
-          "id": "b124",
+          "id": "b144",
           "t": "p",
           "text": "Prior to initiation of therapy with Ostrevia, it is imperative that you inform your physician or pharmacist should you have a current infection or recurrent infections, a history of tuberculosis or close contact with an individual with tuberculosis, a history of malignancy or new cutaneous lesions, prior thromboembolic events affecting the lower limbs or pulmonary vasculature, or hepatic dysfunction, since lumiravostat-mediated immunomodulation may predispose to such events."
          }
@@ -3807,12 +4146,12 @@
       "title": "1. Qu’est-ce que Ostrevia et dans quels cas est-il utilisé",
       "blocks": [
        {
-        "id": "b125",
+        "id": "b145",
         "t": "p",
         "text": "Ostrevia contient la substance active lumiravostat. Il agit en calmant la partie du système immunitaire qui provoque l’inflammation de la peau."
        },
        {
-        "id": "b126",
+        "id": "b146",
         "t": "p",
         "text": "Ostrevia est utilisé chez l’adulte pour traiter l’eczéma chronique des mains modéré à sévère, lorsque les crèmes à base de corticoïdes puissants n’ont pas suffi ou ne peuvent pas être utilisées."
        }
@@ -3829,7 +4168,7 @@
         "title": "Ne prenez jamais Ostrevia",
         "blocks": [
          {
-          "id": "b127",
+          "id": "b147",
           "t": "ul",
           "items": [
            "si vous êtes allergique au lumiravostat ou à l’un des autres composants contenus dans ce médicament (mentionnés dans la rubrique 6)",
@@ -3844,12 +4183,12 @@
         "title": "Avertissements et précautions",
         "blocks": [
          {
-          "id": "b128",
+          "id": "b148",
           "t": "p",
           "text": "Adressez-vous à votre médecin ou pharmacien avant de prendre Ostrevia si vous avez une infection, si vous avez eu la tuberculose, un cancer, des caillots sanguins dans les jambes ou les poumons, ou des problèmes de foie."
          },
          {
-          "id": "b129",
+          "id": "b149",
           "t": "p",
           "text": "Vous ferez des analyses de sang avant le début du traitement et pendant celui-ci."
          }
@@ -3860,7 +4199,7 @@
         "title": "Enfants et adolescents",
         "blocks": [
          {
-          "id": "b130",
+          "id": "b150",
           "t": "p",
           "text": "Ne donnez pas ce médicament aux enfants et adolescents de moins de 18 ans."
          }
@@ -3871,7 +4210,7 @@
         "title": "Autres médicaments et Ostrevia",
         "blocks": [
          {
-          "id": "b131",
+          "id": "b151",
           "t": "p",
           "text": "Informez votre médecin ou pharmacien si vous prenez, avez récemment pris ou pourriez prendre tout autre médicament, en particulier le kétoconazole ou la rifampicine."
          }
@@ -3882,12 +4221,12 @@
         "title": "Grossesse et allaitement",
         "blocks": [
          {
-          "id": "b132",
+          "id": "b152",
           "t": "p",
           "text": "Ne prenez pas Ostrevia si vous êtes enceinte. Si vous pouvez tomber enceinte, utilisez une contraception efficace pendant le traitement et pendant 4 semaines après la dernière dose."
          },
          {
-          "id": "b133",
+          "id": "b153",
           "t": "p",
           "text": "N’allaitez pas pendant le traitement."
          }
@@ -3898,7 +4237,7 @@
         "title": "Conduite de véhicules et utilisation de machines",
         "blocks": [
          {
-          "id": "b134",
+          "id": "b154",
           "t": "p",
           "text": "Ostrevia ne devrait pas affecter votre aptitude à conduire ou à utiliser des machines."
          }
@@ -3909,7 +4248,7 @@
         "title": "Ostrevia contient du sodium",
         "blocks": [
          {
-          "id": "b135",
+          "id": "b155",
           "t": "p",
           "text": "Ce médicament contient moins de 1 mmol (23 mg) de sodium par comprimé, c’est-à-dire qu’il est essentiellement « sans sodium »."
          }
@@ -3922,12 +4261,12 @@
       "title": "3. Comment prendre Ostrevia",
       "blocks": [
        {
-        "id": "b136",
+        "id": "b156",
         "t": "p",
         "text": "Veillez à toujours prendre ce médicament en suivant exactement les indications de votre médecin ou pharmacien."
        },
        {
-        "id": "b137",
+        "id": "b157",
         "t": "p",
         "text": "La dose recommandée est d’un comprimé de 25 mg une fois par jour. Votre médecin peut l’augmenter après 12 semaines. Avalez le comprimé en entier, avec ou sans nourriture."
        }
@@ -3938,7 +4277,7 @@
         "title": "Si vous avez pris plus d’Ostrevia que vous n’auriez dû",
         "blocks": [
          {
-          "id": "b138",
+          "id": "b158",
           "t": "p",
           "text": "Parlez-en immédiatement à un médecin ou à un pharmacien."
          }
@@ -3949,7 +4288,7 @@
         "title": "Si vous oubliez de prendre Ostrevia",
         "blocks": [
          {
-          "id": "b139",
+          "id": "b159",
           "t": "p",
           "text": "Prenez-le dès que vous vous en souvenez le même jour. Ne prenez pas de dose double."
          }
@@ -3960,12 +4299,12 @@
         "title": "Si vous arrêtez de prendre Ostrevia",
         "blocks": [
          {
-          "id": "b140",
+          "id": "b160",
           "t": "p",
           "text": "Parlez-en à votre médecin avant d’arrêter. Votre eczéma pourrait réapparaître."
          },
          {
-          "id": "b141",
+          "id": "b161",
           "t": "p",
           "text": "Si vous avez d’autres questions sur l’utilisation de ce médicament, demandez plus d’informations à votre médecin ou à votre pharmacien."
          }
@@ -3978,22 +4317,22 @@
       "title": "4. Quels sont les effets secondaires éventuels",
       "blocks": [
        {
-        "id": "b142",
+        "id": "b162",
         "t": "p",
         "text": "Comme tous les médicaments, ce médicament peut provoquer des effets secondaires, mais ils ne surviennent pas systématiquement chez tout le monde."
        },
        {
-        "id": "b143",
+        "id": "b163",
         "t": "p",
         "text": "Prévenez immédiatement votre médecin si vous remarquez des signes d’infection grave (fièvre, frissons, toux) ou de caillots sanguins (douleur ou gonflement de la jambe, douleur thoracique, essoufflement soudain)."
        },
        {
-        "id": "b144",
+        "id": "b164",
         "t": "p",
         "text": "Très fréquent (peut toucher plus de 1 personne sur 10) : rhume. Fréquent (peut toucher jusqu’à 1 personne sur 10) : maux de tête, nausées, acné, zona, modifications des analyses de sang."
        },
        {
-        "id": "b145",
+        "id": "b165",
         "t": "p",
         "text": "Peu fréquent (peut toucher jusqu’à 1 personne sur 100) : pneumonie, infection de la peau (cellulite), caillots sanguins dans les jambes ou les poumons."
        }
@@ -4004,7 +4343,7 @@
         "title": "Déclaration des effets secondaires",
         "blocks": [
          {
-          "id": "b146",
+          "id": "b166",
           "t": "p",
           "text": "Si vous ressentez un quelconque effet indésirable, parlez-en à votre médecin ou votre pharmacien. Ceci s’applique aussi à tout effet indésirable qui ne serait pas mentionné dans cette notice. Vous pouvez également déclarer les effets indésirables directement via le système national de déclaration décrit en Annexe V. En signalant les effets indésirables, vous contribuez à fournir davantage d’informations sur la sécurité du médicament."
          }
@@ -4017,22 +4356,22 @@
       "title": "5. Comment conserver Ostrevia",
       "blocks": [
        {
-        "id": "b147",
+        "id": "b167",
         "t": "p",
         "text": "Tenir ce médicament hors de la vue et de la portée des enfants."
        },
        {
-        "id": "b148",
+        "id": "b168",
         "t": "p",
         "text": "N’utilisez pas ce médicament après la date de péremption indiquée sur la boîte et la plaquette après EXP. La date de péremption fait référence au dernier jour de ce mois."
        },
        {
-        "id": "b149",
+        "id": "b169",
         "t": "p",
         "text": "Ce médicament ne nécessite pas de précautions particulières de conservation."
        },
        {
-        "id": "b150",
+        "id": "b170",
         "t": "p",
         "text": "Ne jetez aucun médicament au tout-à-l’égout ou avec les ordures ménagères. Demandez à votre pharmacien d’éliminer les médicaments que vous n’utilisez plus. Ces mesures contribueront à protéger l’environnement."
        }
@@ -4049,12 +4388,12 @@
         "title": "Ce que contient Ostrevia",
         "blocks": [
          {
-          "id": "b151",
+          "id": "b171",
           "t": "p",
           "text": "La substance active est le lumiravostat. Chaque comprimé pelliculé contient 10 mg ou 25 mg de lumiravostat."
          },
          {
-          "id": "b152",
+          "id": "b172",
           "t": "p",
           "text": "Les autres composants sont : cellulose microcristalline, croscarmellose sodique, stéarate de magnésium, hypromellose, dioxyde de titane (E171) et, dans le comprimé à 25 mg, oxyde de fer jaune (E172). Voir rubrique 2 « Ostrevia contient du sodium »."
          }
@@ -4065,7 +4404,7 @@
         "title": "Comment se présente Ostrevia et contenu de l’emballage externe",
         "blocks": [
          {
-          "id": "b153",
+          "id": "b173",
           "t": "p",
           "text": "Ostrevia 10 mg se présente sous forme de comprimés blancs et ronds portant les inscriptions « HR » et « 10 ». Ostrevia 25 mg se présente sous forme de comprimés jaunes et ovales portant les inscriptions « HR » et « 25 ». Boîtes de 28 ou 84 comprimés sous plaquettes. Toutes les présentations peuvent ne pas être commercialisées."
          }
@@ -4076,12 +4415,12 @@
         "title": "Titulaire de l’autorisation de mise sur le marché et fabricant",
         "blocks": [
          {
-          "id": "b154",
+          "id": "b174",
           "t": "p",
           "text": "Halcyon Ridge Pharmaceuticals Europe B.V., Fictieweg 21, 3000 CC Voorbeeldhaven, Netherlands"
          },
          {
-          "id": "b155",
+          "id": "b175",
           "t": "p",
           "text": "Halcyon Ridge Manufacturing Ireland Ltd., Unit 9, Sample Industrial Estate, Exampleford, Ireland"
          }
@@ -5040,12 +5379,12 @@
       "title": "NAME OF THE MEDICINAL PRODUCT",
       "blocks": [
        {
-        "id": "b156",
+        "id": "b176",
         "t": "p",
         "text": "Ostrevia 25 mg film-coated tablets"
        },
        {
-        "id": "b157",
+        "id": "b177",
         "t": "p",
         "text": "lumiravostat"
        }
@@ -5057,7 +5396,7 @@
       "title": "STATEMENT OF ACTIVE SUBSTANCE(S)",
       "blocks": [
        {
-        "id": "b158",
+        "id": "b178",
         "t": "p",
         "text": "Each film-coated tablet contains 25 mg lumiravostat."
        }
@@ -5069,7 +5408,7 @@
       "title": "LIST OF EXCIPIENTS",
       "blocks": [
        {
-        "id": "b159",
+        "id": "b179",
         "t": "p",
         "text": "Contains sodium. See the package leaflet for further information."
        }
@@ -5081,7 +5420,7 @@
       "title": "PHARMACEUTICAL FORM AND CONTENTS",
       "blocks": [
        {
-        "id": "b160",
+        "id": "b180",
         "t": "p",
         "text": "Film-coated tablet. 28 film-coated tablets"
        }
@@ -5093,12 +5432,12 @@
       "title": "METHOD AND ROUTE(S) OF ADMINISTRATION",
       "blocks": [
        {
-        "id": "b161",
+        "id": "b181",
         "t": "p",
         "text": "Read the package leaflet before use."
        },
        {
-        "id": "b162",
+        "id": "b182",
         "t": "p",
         "text": "Oral use."
        }
@@ -5110,7 +5449,7 @@
       "title": "SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN",
       "blocks": [
        {
-        "id": "b163",
+        "id": "b183",
         "t": "p",
         "text": "Keep out of the sight and reach of children."
        }
@@ -5122,7 +5461,7 @@
       "title": "EXPIRY DATE",
       "blocks": [
        {
-        "id": "b164",
+        "id": "b184",
         "t": "p",
         "text": "EXP"
        }
@@ -5134,12 +5473,12 @@
       "title": "NAME AND ADDRESS OF THE MARKETING AUTHORISATION HOLDER",
       "blocks": [
        {
-        "id": "b165",
+        "id": "b185",
         "t": "p",
         "text": "Halcyon Ridge Pharmaceuticals Europe B.V."
        },
        {
-        "id": "b166",
+        "id": "b186",
         "t": "p",
         "text": "Fictieweg 21, 3000 CC Voorbeeldhaven, Netherlands"
        }
@@ -5151,7 +5490,7 @@
       "title": "MARKETING AUTHORISATION NUMBER(S)",
       "blocks": [
        {
-        "id": "b167",
+        "id": "b187",
         "t": "p",
         "text": "EU/1/23/9901/003"
        }
@@ -5163,7 +5502,7 @@
       "title": "BATCH NUMBER",
       "blocks": [
        {
-        "id": "b168",
+        "id": "b188",
         "t": "p",
         "text": "Lot"
        }
@@ -5175,7 +5514,7 @@
       "title": "INFORMATION IN BRAILLE",
       "blocks": [
        {
-        "id": "b169",
+        "id": "b189",
         "t": "p",
         "text": "ostrevia 25 mg"
        }
@@ -5187,7 +5526,7 @@
       "title": "UNIQUE IDENTIFIER - 2D BARCODE",
       "blocks": [
        {
-        "id": "b170",
+        "id": "b190",
         "t": "p",
         "text": "2D barcode carrying the unique identifier included."
        }
@@ -5199,17 +5538,17 @@
       "title": "UNIQUE IDENTIFIER - HUMAN READABLE DATA",
       "blocks": [
        {
-        "id": "b171",
+        "id": "b191",
         "t": "p",
         "text": "PC 09990001234574"
        },
        {
-        "id": "b172",
+        "id": "b192",
         "t": "p",
         "text": "SN"
        },
        {
-        "id": "b173",
+        "id": "b193",
         "t": "p",
         "text": "NN"
        }
@@ -6132,5 +6471,969 @@
    ],
    "deadlineDays": 60
   }
+ },
+ {
+  "id": "eu-talmisartan-generic",
+  "region": "eu",
+  "productId": "generic-tablet",
+  "level": "Practice",
+  "title": "Talmisartan Ashvale (EU): generic SmPC against the reference",
+  "about": "A generic SmPC drafted from the reference SmPC (Corvenza, fictional). The diabetic nephropathy indication is still under patent and is left out under Article 11, but one mention remains, and one warning was changed when it should match the reference.",
+  "docs": [
+   {
+    "id": "ref",
+    "title": "Reference SmPC: Corvenza",
+    "status": "approved",
+    "role": "reference",
+    "kind": "smpc",
+    "fixed": {
+     "header": "ANNEX I: SUMMARY OF PRODUCT CHARACTERISTICS",
+     "blackTriangle": ""
+    },
+    "meta": {
+     "proprietaryName": "Corvenza",
+     "establishedName": "talmisartan",
+     "dosageForm": "tablets",
+     "route": "oral",
+     "strengths": [
+      "20 mg",
+      "40 mg",
+      "80 mg"
+     ],
+     "manufacturer": "Northmere Pharma Europe B.V.",
+     "revised": "08/2026",
+     "additionalMonitoring": false,
+     "excipients": [],
+     "lang": "en",
+     "procedure": "dcp",
+     "maNumber": "NL/H/9801/001-003"
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b209",
+        "t": "p",
+        "text": "Corvenza 20 mg tablets"
+       },
+       {
+        "id": "b210",
+        "t": "p",
+        "text": "Corvenza 40 mg tablets"
+       },
+       {
+        "id": "b211",
+        "t": "p",
+        "text": "Corvenza 80 mg tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b212",
+        "t": "p",
+        "text": "Each tablet contains 20 mg talmisartan."
+       },
+       {
+        "id": "b213",
+        "t": "p",
+        "text": "Each tablet contains 40 mg talmisartan."
+       },
+       {
+        "id": "b214",
+        "t": "p",
+        "text": "Each tablet contains 80 mg talmisartan."
+       },
+       {
+        "id": "b215",
+        "t": "p",
+        "text": "For the full list of excipients, see section 6.1."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "PHARMACEUTICAL FORM",
+      "blocks": [
+       {
+        "id": "b216",
+        "t": "p",
+        "text": "Tablet."
+       },
+       {
+        "id": "b217",
+        "t": "p",
+        "text": "White, oval tablets debossed with the strength."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indications",
+        "blocks": [
+         {
+          "id": "b194",
+          "t": "p",
+          "text": "Corvenza is indicated for the treatment of essential hypertension in adults."
+         },
+         {
+          "id": "b195",
+          "t": "p",
+          "text": "Corvenza is indicated for the treatment of renal disease in adult patients with hypertension and type 2 diabetic nephropathy as part of an antihypertensive medicinal product regimen."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b196",
+          "t": "p",
+          "text": "Hypertension: the usual effective dose is 40 mg once daily. Some patients may already benefit at a daily dose of 20 mg. Where the target blood pressure is not achieved, the dose can be increased to a maximum of 80 mg once daily."
+         },
+         {
+          "id": "b197",
+          "t": "p",
+          "text": "Diabetic nephropathy: the recommended maintenance dose is 80 mg once daily."
+         },
+         {
+          "id": "b198",
+          "t": "p",
+          "text": "Renal impairment: no posology adjustment is required in patients with mild to moderate renal impairment."
+         },
+         {
+          "id": "b199",
+          "t": "p",
+          "text": "Paediatric population: the safety and efficacy of Corvenza in children and adolescents aged below 18 years have not been established."
+         },
+         {
+          "id": "b200",
+          "t": "p",
+          "text": "Method of administration: oral use. The tablets may be taken with or without food."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b218",
+          "t": "p",
+          "text": "Hypersensitivity to the active substance or to any of the excipients listed in section 6.1."
+         },
+         {
+          "id": "b219",
+          "t": "p",
+          "text": "Second and third trimesters of pregnancy (see sections 4.4 and 4.6)."
+         },
+         {
+          "id": "b220",
+          "t": "p",
+          "text": "The concomitant use of Corvenza with aliskiren-containing products is contraindicated in patients with diabetes mellitus or renal impairment (GFR <60 mL/min/1.73 m2)."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b221",
+          "t": "p",
+          "text": "Hyperkalaemia: serum potassium should be monitored in patients at risk, such as those with renal impairment or diabetes, or those taking potassium supplements."
+         },
+         {
+          "id": "b222",
+          "t": "p",
+          "text": "Dual blockade of the renin-angiotensin-aldosterone system (RAAS): concomitant use of ACE inhibitors, angiotensin II receptor blockers or aliskiren increases the risk of hypotension, hyperkalaemia and decreased renal function and is not recommended."
+         },
+         {
+          "id": "b223",
+          "t": "p",
+          "text": "Pregnancy: angiotensin II receptor antagonists should not be initiated during pregnancy. When pregnancy is diagnosed, treatment should be stopped immediately."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interaction with other medicinal products and other forms of interaction",
+        "blocks": [
+         {
+          "id": "b224",
+          "t": "p",
+          "text": "Potassium-sparing diuretics, potassium supplements and salt substitutes containing potassium may increase serum potassium. NSAIDs may reduce the antihypertensive effect and worsen renal function."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Fertility, pregnancy and lactation",
+        "blocks": [
+         {
+          "id": "b225",
+          "t": "p",
+          "text": "Pregnancy: not recommended during the first trimester and contraindicated during the second and third trimesters."
+         },
+         {
+          "id": "b226",
+          "t": "p",
+          "text": "Breast-feeding: not recommended."
+         },
+         {
+          "id": "b227",
+          "t": "p",
+          "text": "Fertility: no effects were seen in animal studies."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b228",
+          "t": "p",
+          "text": "Dizziness may occasionally occur when driving or using machines."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b201",
+          "t": "p",
+          "text": "Summary of the safety profile: the most common adverse reactions in hypertension were dizziness, back pain and upper respiratory tract infection."
+         },
+         {
+          "id": "b202",
+          "t": "p",
+          "text": "Adverse reactions are listed by frequency: very common (≥1/10), common (≥1/100 to <1/10), uncommon (≥1/1,000 to <1/100), rare (≥1/10,000 to <1/1,000)."
+         },
+         {
+          "id": "b203",
+          "t": "table",
+          "rows": [
+           [
+            "System organ class",
+            "Common",
+            "Uncommon"
+           ],
+           [
+            "Infections and infestations",
+            "Upper respiratory tract infection",
+            ""
+           ],
+           [
+            "Nervous system disorders",
+            "Dizziness",
+            ""
+           ],
+           [
+            "Musculoskeletal and connective tissue disorders",
+            "Back pain",
+            ""
+           ],
+           [
+            "Metabolism and nutrition disorders",
+            "",
+            "Hyperkalaemia"
+           ]
+          ]
+         },
+         {
+          "id": "b204",
+          "t": "p",
+          "text": "Diabetic nephropathy: in the RENEW-DN study, hyperkalaemia was reported in 18% of patients and 6% with placebo."
+         },
+         {
+          "id": "b205",
+          "t": "p",
+          "text": "Reporting of suspected adverse reactions"
+         },
+         {
+          "id": "b206",
+          "t": "p",
+          "text": "Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b229",
+          "t": "p",
+          "text": "The most likely signs of overdose are hypotension and tachycardia. Treatment should be symptomatic and supportive. Talmisartan is not removed by haemodialysis."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b207",
+          "t": "p",
+          "text": "Mechanism of action: talmisartan is an angiotensin II receptor (type AT1) antagonist."
+         },
+         {
+          "id": "b208",
+          "t": "p",
+          "text": "Diabetic nephropathy: in RENEW-DN (1,513 patients), talmisartan reduced the risk of doubling of serum creatinine, end-stage renal disease or death by 16% compared with placebo."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b230",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 0.5 to 1 hour after dosing. The terminal half-life is about 24 hours."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Preclinical safety data",
+        "blocks": [
+         {
+          "id": "b231",
+          "t": "p",
+          "text": "Preclinical data reveal no special hazard for humans based on conventional studies. Fetotoxicity was seen in animal studies."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "List of excipients",
+        "blocks": [
+         {
+          "id": "b232",
+          "t": "p",
+          "text": "Mannitol, sodium hydroxide, meglumine, povidone, magnesium stearate."
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b233",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "6.3",
+        "title": "Shelf life",
+        "blocks": [
+         {
+          "id": "b234",
+          "t": "p",
+          "text": "3 years"
+         }
+        ]
+       },
+       {
+        "num": "6.4",
+        "title": "Special precautions for storage",
+        "blocks": [
+         {
+          "id": "b235",
+          "t": "p",
+          "text": "This medicinal product does not require any special storage conditions."
+         }
+        ]
+       },
+       {
+        "num": "6.5",
+        "title": "Nature and contents of container",
+        "blocks": [
+         {
+          "id": "b236",
+          "t": "p",
+          "text": "PVC/aluminium blisters of 28 tablets."
+         }
+        ]
+       },
+       {
+        "num": "6.6",
+        "title": "Special precautions for disposal",
+        "blocks": [
+         {
+          "id": "b237",
+          "t": "p",
+          "text": "Any unused medicinal product or waste material should be disposed of in accordance with local requirements."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "MARKETING AUTHORISATION HOLDER",
+      "blocks": [
+       {
+        "id": "b238",
+        "t": "p",
+        "text": "Northmere Pharma Europe B.V., Voorbeeldlaan 5, 4000 DD Fictiestad, Netherlands"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "MARKETING AUTHORISATION NUMBER(S)",
+      "blocks": [
+       {
+        "id": "b239",
+        "t": "p",
+        "text": "NL/H/9801/001-003"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION",
+      "blocks": [
+       {
+        "id": "b240",
+        "t": "p",
+        "text": "Date of first authorisation: 12 March 2014"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DATE OF REVISION OF THE TEXT",
+      "blocks": [
+       {
+        "id": "b241",
+        "t": "p",
+        "text": "August 2026"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "smpc",
+    "title": "SmPC (generic draft): Talmisartan Ashvale",
+    "status": "draft",
+    "role": "generic",
+    "carveOuts": [
+     {
+      "num": "dn",
+      "name": "Diabetic nephropathy",
+      "protected": "Indication still covered by a (fictional) patent until 2029; left out under Article 11 of Directive 2001/83/EC.",
+      "keywords": [
+       "diabetic nephropathy",
+       "nephropathy",
+       "RENEW-DN",
+       "doubling of serum creatinine",
+       "end-stage renal disease",
+       "proteinuria"
+      ]
+     }
+    ],
+    "carved": [
+     "dn"
+    ],
+    "kind": "smpc",
+    "fixed": {
+     "header": "ANNEX I: SUMMARY OF PRODUCT CHARACTERISTICS",
+     "blackTriangle": ""
+    },
+    "meta": {
+     "proprietaryName": "Talmisartan Ashvale",
+     "establishedName": "talmisartan",
+     "dosageForm": "tablets",
+     "route": "oral",
+     "strengths": [
+      "20 mg",
+      "40 mg"
+     ],
+     "manufacturer": "Ashvale Generics Europe B.V.",
+     "revised": "09/2026",
+     "additionalMonitoring": false,
+     "excipients": [],
+     "lang": "en",
+     "procedure": "dcp",
+     "maNumber": "NL/H/9902/001-002"
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b253",
+        "t": "p",
+        "text": "Talmisartan Ashvale 20 mg tablets"
+       },
+       {
+        "id": "b254",
+        "t": "p",
+        "text": "Talmisartan Ashvale 40 mg tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b255",
+        "t": "p",
+        "text": "Each tablet contains 20 mg talmisartan."
+       },
+       {
+        "id": "b256",
+        "t": "p",
+        "text": "Each tablet contains 40 mg talmisartan."
+       },
+       {
+        "id": "b257",
+        "t": "p",
+        "text": "For the full list of excipients, see section 6.1."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "PHARMACEUTICAL FORM",
+      "blocks": [
+       {
+        "id": "b258",
+        "t": "p",
+        "text": "Tablet."
+       },
+       {
+        "id": "b259",
+        "t": "p",
+        "text": "White, oval tablets debossed with the strength."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indications",
+        "blocks": [
+         {
+          "id": "b242",
+          "t": "p",
+          "text": "Talmisartan Ashvale is indicated for the treatment of essential hypertension in adults."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b243",
+          "t": "p",
+          "text": "Hypertension: the usual effective dose is 40 mg once daily. Some patients may already benefit at a daily dose of 20 mg. Where the target blood pressure is not achieved, the dose can be increased to a maximum of 80 mg once daily."
+         },
+         {
+          "id": "b284",
+          "t": "p",
+          "text": "Diabetic nephropathy: the recommended maintenance dose is 80 mg once daily."
+         },
+         {
+          "id": "b244",
+          "t": "p",
+          "text": "Renal impairment: no posology adjustment is required in patients with mild to moderate renal impairment."
+         },
+         {
+          "id": "b245",
+          "t": "p",
+          "text": "Paediatric population: the safety and efficacy of Talmisartan Ashvale in children and adolescents aged below 18 years have not been established."
+         },
+         {
+          "id": "b246",
+          "t": "p",
+          "text": "Method of administration: oral use. The tablets may be taken with or without food."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b260",
+          "t": "p",
+          "text": "Hypersensitivity to the active substance or to any of the excipients listed in section 6.1."
+         },
+         {
+          "id": "b261",
+          "t": "p",
+          "text": "Second and third trimesters of pregnancy (see sections 4.4 and 4.6)."
+         },
+         {
+          "id": "b262",
+          "t": "p",
+          "text": "The concomitant use of Talmisartan Ashvale with aliskiren-containing products is contraindicated in patients with diabetes mellitus or renal impairment (GFR <60 mL/min/1.73 m2)."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b285",
+          "t": "p",
+          "text": "Hyperkalaemia: serum potassium may be checked in some patients."
+         },
+         {
+          "id": "b264",
+          "t": "p",
+          "text": "Dual blockade of the renin-angiotensin-aldosterone system (RAAS): concomitant use of ACE inhibitors, angiotensin II receptor blockers or aliskiren increases the risk of hypotension, hyperkalaemia and decreased renal function and is not recommended."
+         },
+         {
+          "id": "b265",
+          "t": "p",
+          "text": "Pregnancy: angiotensin II receptor antagonists should not be initiated during pregnancy. When pregnancy is diagnosed, treatment should be stopped immediately."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interaction with other medicinal products and other forms of interaction",
+        "blocks": [
+         {
+          "id": "b266",
+          "t": "p",
+          "text": "Potassium-sparing diuretics, potassium supplements and salt substitutes containing potassium may increase serum potassium. NSAIDs may reduce the antihypertensive effect and worsen renal function."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Fertility, pregnancy and lactation",
+        "blocks": [
+         {
+          "id": "b267",
+          "t": "p",
+          "text": "Pregnancy: not recommended during the first trimester and contraindicated during the second and third trimesters."
+         },
+         {
+          "id": "b268",
+          "t": "p",
+          "text": "Breast-feeding: not recommended."
+         },
+         {
+          "id": "b269",
+          "t": "p",
+          "text": "Fertility: no effects were seen in animal studies."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b270",
+          "t": "p",
+          "text": "Dizziness may occasionally occur when driving or using machines."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b247",
+          "t": "p",
+          "text": "Summary of the safety profile: the most common adverse reactions in hypertension were dizziness, back pain and upper respiratory tract infection."
+         },
+         {
+          "id": "b248",
+          "t": "p",
+          "text": "Adverse reactions are listed by frequency: very common (≥1/10), common (≥1/100 to <1/10), uncommon (≥1/1,000 to <1/100), rare (≥1/10,000 to <1/1,000)."
+         },
+         {
+          "id": "b249",
+          "t": "table",
+          "rows": [
+           [
+            "System organ class",
+            "Common",
+            "Uncommon"
+           ],
+           [
+            "Infections and infestations",
+            "Upper respiratory tract infection",
+            ""
+           ],
+           [
+            "Nervous system disorders",
+            "Dizziness",
+            ""
+           ],
+           [
+            "Musculoskeletal and connective tissue disorders",
+            "Back pain",
+            ""
+           ],
+           [
+            "Metabolism and nutrition disorders",
+            "",
+            "Hyperkalaemia"
+           ]
+          ]
+         },
+         {
+          "id": "b250",
+          "t": "p",
+          "text": "Reporting of suspected adverse reactions"
+         },
+         {
+          "id": "b251",
+          "t": "p",
+          "text": "Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b271",
+          "t": "p",
+          "text": "The most likely signs of overdose are hypotension and tachycardia. Treatment should be symptomatic and supportive. Talmisartan is not removed by haemodialysis."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b252",
+          "t": "p",
+          "text": "Mechanism of action: talmisartan is an angiotensin II receptor (type AT1) antagonist."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b272",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 0.5 to 1 hour after dosing. The terminal half-life is about 24 hours."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Preclinical safety data",
+        "blocks": [
+         {
+          "id": "b273",
+          "t": "p",
+          "text": "Preclinical data reveal no special hazard for humans based on conventional studies. Fetotoxicity was seen in animal studies."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "List of excipients",
+        "blocks": [
+         {
+          "id": "b274",
+          "t": "p",
+          "text": "Mannitol, sodium stearyl fumarate, crospovidone, microcrystalline cellulose."
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b275",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "6.3",
+        "title": "Shelf life",
+        "blocks": [
+         {
+          "id": "b276",
+          "t": "p",
+          "text": "2 years"
+         }
+        ]
+       },
+       {
+        "num": "6.4",
+        "title": "Special precautions for storage",
+        "blocks": [
+         {
+          "id": "b277",
+          "t": "p",
+          "text": "This medicinal product does not require any special storage conditions."
+         }
+        ]
+       },
+       {
+        "num": "6.5",
+        "title": "Nature and contents of container",
+        "blocks": [
+         {
+          "id": "b278",
+          "t": "p",
+          "text": "PVC/aluminium blisters of 28 tablets."
+         }
+        ]
+       },
+       {
+        "num": "6.6",
+        "title": "Special precautions for disposal",
+        "blocks": [
+         {
+          "id": "b279",
+          "t": "p",
+          "text": "Any unused medicinal product or waste material should be disposed of in accordance with local requirements."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "MARKETING AUTHORISATION HOLDER",
+      "blocks": [
+       {
+        "id": "b280",
+        "t": "p",
+        "text": "Ashvale Generics Europe B.V., Voorbeeldstraat 10, 1000 AA Voorbeeldstad, Netherlands"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "MARKETING AUTHORISATION NUMBER(S)",
+      "blocks": [
+       {
+        "id": "b281",
+        "t": "p",
+        "text": "NL/H/9902/001-002"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION",
+      "blocks": [
+       {
+        "id": "b282",
+        "t": "p",
+        "text": "Date of first authorisation: 15 November 2022"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DATE OF REVISION OF THE TEXT",
+      "blocks": [
+       {
+        "id": "b283",
+        "t": "p",
+        "text": "September 2026"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "EU-GEN-CARVE",
+      "where": "4.2",
+      "what": "The diabetic nephropathy dose is still in 4.2 although the indication is left out."
+     },
+     {
+      "rule": "EU-GEN-SAME",
+      "where": "4.4",
+      "what": "The hyperkalaemia warning is weaker than the reference SmPC: not a permitted difference."
+     }
+    ]
+   }
+  ]
  }
 ]

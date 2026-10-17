@@ -95,7 +95,8 @@ function writer(pdf, fonts, { header, watermark = 'TRAINING USE ONLY' }) {
 function writeBlocks(w, blocks, { annotate = false, italic, indent = 0, red = false } = {}) {
   for (const b of blocks ?? []) {
     if (b.t === 'ul') for (const it of b.items) w.text(`- ${it}`, { indent: indent + 8 });
-    else if (b.t === 'table') { for (const [i, r] of b.rows.entries()) w.text(r.join('  |  '), { size: 8.5, f: i === 0 ? w.boldFont : undefined, indent }); w.space(3); }
+    else if (b.t === 'fig') w.box('Figure (placeholder)', [b.text || '(no caption)', b.alt ? `Alt text: ${b.alt}` : ''].filter(Boolean));
+    else if (b.t === 'table' || b.t === 'ar') { for (const [i, r] of b.rows.entries()) w.text(r.join('  |  '), { size: 8.5, f: i === 0 ? w.boldFont : undefined, indent }); w.space(3); }
     else if (b.t === 'box') { const [first, ...rest] = String(b.text ?? '').split('\n'); if (red) w.box(first, rest, { border: RED, weight: 2.5 }); else w.box('', [b.text]); }
     else if (blockTexts(b)[0]) w.text(b.text, { indent });
     if (annotate && b.note) w.text(`[Annotation: ${b.note}]`, { size: 8, f: italic, color: NOTE, indent: indent + 8 });
@@ -122,6 +123,8 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
     w.space(4);
     w.text(`${m.proprietaryName} (${m.establishedName}) ${m.dosageForm}, ${m.route}${m.controlled ? ` ${m.controlled}` : ''}`, { f: bold });
     w.text(`Initial U.S. Approval: ${m.initialApproval ?? ''}`, { size: 9 });
+    if (hl.bio) w.text(hl.bio, { f: bold, size: 9 });
+    if (hl.bioNote) w.text(hl.bioNote, { size: 7.5 });
     if (hl.bw?.length) w.box(doc.bw?.title ?? 'WARNING', [...hl.bw.flatMap(blockTexts).map((x) => `- ${x}`), hl.bwClose ?? '']);
     if (hl.rmc?.length) { w.h('RECENT MAJOR CHANGES', 9.5); for (const r of hl.rmc) w.text(`${r.heading}${r.num ? ` (${r.num})` : ''}    ${r.date}`, { size: 9 }); }
     for (const h of t.hl) {
@@ -177,7 +180,7 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
     if (fx.intro) { w.space(3); w.text(fx.intro, { f: italic, size: 8.5 }); }
     if (fx.summaryIntro) { w.space(3); w.text(fx.summaryIntro, { f: italic, size: 8.5 }); }
     for (const s of doc.sections ?? []) {
-      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister', 'in-pi', 'ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
+      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister', 'eu-small', 'in-pi', 'ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
       writeBlocks(w, s.blocks, { ...opts, red: doc.kind === 'in-pi' || doc.kind === 'jp-pi' });
       for (const x of s.subs ?? []) { w.h(/^\d/.test(x.num) ? sectionTitle(x) : x.title, 9.5); writeBlocks(w, x.blocks, opts); }
     }

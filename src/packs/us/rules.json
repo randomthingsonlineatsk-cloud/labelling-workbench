@@ -480,6 +480,44 @@
   "check": "US-ANDA-SAME"
  },
  {
+  "id": "US-BIO-STMT",
+  "title": "Biosimilarity statement and footnote",
+  "text": "The Highlights of a biosimilar carry the biosimilarity statement \"[BIOSIMILAR] ([proper name]) is biosimilar* to [REFERENCE PRODUCT] ([proper name])\", with a footnote explaining that biosimilar means highly similar to the FDA-approved reference product with no clinically meaningful differences, and for which conditions of use biosimilarity was shown.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "biolab",
+  "at": "FDA labeling guidance for biosimilar products (2018, revised draft 2023)",
+  "check": "US-BIO-STMT",
+  "simplified": "The app checks for the statement with both names and the key phrases of the footnote."
+ },
+ {
+  "id": "US-BIO-NAME",
+  "title": "The biosimilar is described by its own name",
+  "text": "Statements about the biosimilar use its own proprietary and proper name (with the four-letter suffix). The reference product's brand name appears only in the biosimilarity statement.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "error",
+  "src": "biolab",
+  "at": "FDA labeling guidance for biosimilar products",
+  "check": "US-BIO-NAME",
+  "simplified": "Simplified: the guidance also covers when to use the core name for data from studies of the reference product; the app only looks for the reference brand name outside the statement."
+ },
+ {
+  "id": "US-BIO-IC",
+  "title": "Interchangeability statement (Watch)",
+  "text": "The September 2023 revised draft guidance no longer recommends an interchangeability statement in labeling; interchangeability is shown in the Purple Book. Shown as a hint until the guidance is final.",
+  "kinds": [
+   "pi"
+  ],
+  "severity": "info",
+  "src": "biolab23",
+  "at": "Revised draft guidance, September 2023",
+  "check": "US-BIO-IC"
+ },
+ {
   "id": "US-ANDA-CARVE",
   "title": "Carve-outs are complete",
   "text": "When a protected indication is carved out under section viii, every mention that depends on it is removed: the indication, its dosing, its clinical studies and its Highlights entries.",

@@ -16,12 +16,20 @@ export default function Rules() {
             <h2 style={{ fontSize: 'var(--step-1)' }}>{r.name}</h2>
             <p className="small">Version <b>{r.version}</b>, as of <b>{r.asOf}</b>. {pack.rules.filter((x) => x.id.startsWith(`${r.id.toUpperCase()}-`)).length} rule cards, {pack.samples.filter((x) => (x.region ?? 'us') === r.id).length} sample projects.</p>
             <p className="small">{r.about}</p>
+            <details className="small">
+              <summary style={{ cursor: 'pointer', fontWeight: 600 }}>About this pack: sources and change log</summary>
+              <h3 style={{ fontSize: '1rem', margin: '.5rem 0 .25rem' }}>Sources</h3>
+              <ul style={{ margin: 0 }}>{(r.sources ?? []).map((id) => { const s = sourceOf(pack, id); return <li key={id}>{s.url ? <a href={s.url} target="_blank" rel="noreferrer">{s.title}</a> : s.title}</li>; })}</ul>
+              <h3 style={{ fontSize: '1rem', margin: '.5rem 0 .25rem' }}>Change log</h3>
+              <ul style={{ margin: 0 }}>{(r.changes ?? []).map((c) => <li key={c.version}><b>{c.version}</b> ({c.date}): {c.notes}</li>)}</ul>
+            </details>
           </div>
         ))}
         <div className="panel">
           <h2 style={{ fontSize: 'var(--step-1)' }}>{pack.core.name}</h2>
           <p className="small">Version <b>{pack.core.version}</b>, as of <b>{pack.core.asOf}</b>. {pack.rules.filter((x) => x.id.startsWith('CORE-')).length} rule cards; applies to every region.</p>
           <p className="small">{pack.core.about}</p>
+          <details className="small"><summary style={{ cursor: 'pointer', fontWeight: 600 }}>About this pack: change log</summary><ul style={{ margin: 0 }}>{(pack.core.changes ?? []).map((c) => <li key={c.version}><b>{c.version}</b> ({c.date}): {c.notes}</li>)}</ul></details>
         </div>
       </div>
       <p className="small muted">Packs are built by generator scripts (tools/packs/us.py, core.py, eu.py, in.py, intl.py) and every rule must cite a source or the build fails. The oldest pack is {packAgeMonths(pack)} month(s) old.</p>

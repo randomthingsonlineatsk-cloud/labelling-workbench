@@ -118,12 +118,23 @@ QUESTIONS = [
       'PV uses the CCSI to decide whether reactions are listed.', 'ICH E2C(R2)'),
     Q('q15-6', 15, 'What does "old stock out" record?', ['The date by which packs with the old labelling have left the company\'s control', 'The expiry date of the product', 'The approval date', 'The date the CCDS was drafted'], 0,
       'It closes the implementation: after it, only the new labelling is distributed.', 'Industry practice'),
+    Q('q12-7', 12, 'Which CIOMS working group introduced core safety information?', ['CIOMS III', 'CIOMS I', 'CIOMS X', 'ICH E6'], 0, 'CIOMS III set out the idea of core safety information; CIOMS V developed it.', 'CIOMS Working Groups III and V'),
+    Q('q12-8', 12, 'Which ICH guideline uses the CCSI as reference safety information in periodic reports?', ['ICH E2C(R2)', 'ICH Q9', 'ICH M4', 'ICH E9'], 0, 'The PBRER compares reactions against the reference safety information, usually the CCSI.', 'ICH E2C(R2)'),
+    Q('q13-7', 13, 'The EU SmPC does not carry a CCDS statement because the EU agreed other wording. How is it mapped?', ['As a deviation with a justification', 'Ignored', 'The SmPC is changed to copy the CCDS', 'The CCDS is changed'], 0, 'Local labels may differ for regulatory reasons; the deviation is recorded and justified.', 'CIOMS Working Group III'),
+    Q('q13-8', 13, "In this app, where must a statement's key terms appear for it to count as found?", ['In the sections the statement is mapped to', 'Anywhere in any label', 'In the title', 'On the carton'], 0, 'Each statement names its target sections for each kind of label.', 'Labelling Workbench core pack'),
+    Q('q14-7', 14, 'What does a PRAC signal recommendation set?', ['The product information wording and a deadline to submit', 'Only a suggestion', 'A US labeling change', 'A price'], 0, 'PRAC recommendations give wording in all EU languages and a deadline for the variation.', 'EMA PRAC recommendations on signals'),
+    Q('q14-8', 14, 'Which trigger in this app has a response clock set by statute?', ['A 505(o)(4) notification', 'A CCDS update', 'An RLD change', 'An internal signal'], 0, '505(o)(4) gives 30 days to respond; company targets are internal choices.', 'FD&C Act 505(o)(4)'),
+    Q('q15-7', 15, 'Where does EU product information go in the eCTD?', ['Module 1.3.1', 'Module 1.14', 'Module 2.5', 'Module 3.2.P.7'], 0, '1.3.1 holds the SmPC, Annex II, labelling and package leaflet.', 'EU Module 1 specification'),
+    Q('q15-8', 15, 'In US Module 1, what goes in 1.14.1?', ['Draft labeling', 'Final labeling', 'Listed drug labeling', 'Promotional material'], 0, '1.14.1 is draft labeling, 1.14.2 final labeling, 1.14.3 listed drug labeling.', 'FDA eCTD Module 1 specification'),
 ]
 
 DRILLS = [
     {'id': 'ccds-map', 'module': 'core', 'title': 'Map the US label to the core data sheet', 'minutes': 20, 'sample': 'ostrevia-ccds', 'doc': 'pi', 'tab': 'core',
      'goal': {'type': 'ccds-map', 'docs': ['pi', 'mg']},
      'about': 'Map CCDS 3.0 to the Ostrevia prescribing information and Medication Guide. Confirm every match, and record a justification for each statement the label does not carry (two are missing on purpose).'},
+    {'id': 'ccds-map-eu', 'module': 'core', 'title': 'Map the EU SmPC to the core data sheet', 'minutes': 20, 'sample': 'ostrevia-ccds-eu', 'doc': 'smpc', 'tab': 'core',
+     'goal': {'type': 'ccds-map', 'docs': ['smpc', 'pl']},
+     'about': 'Map CCDS 3.0 to the Ostrevia SmPC and package leaflet. The EU text words some statements differently and leaves some out: confirm the matches and justify the gaps.'},
     {'id': 'o4-respond', 'module': 'core', 'title': 'Respond to a 505(o)(4) notification', 'minutes': 30, 'sample': 'ostrevia-o4', 'doc': 'pi', 'tab': 'agency',
      'goal': {'type': 'o4'},
      'about': 'FDA has notified you of serious hypersensitivity reactions. Choose your response within the 30-day clock, draft the new warning, Highlights, 6.2, section 17 and Medication Guide text, submit, answer the agency comments and get the labelling agreed.'},

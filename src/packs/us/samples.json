@@ -355,7 +355,7 @@
          },
          {
           "id": "b32",
-          "t": "table",
+          "t": "ar",
           "rows": [
            [
             "Adverse reaction",
@@ -1344,7 +1344,7 @@
          },
          {
           "id": "b32",
-          "t": "table",
+          "t": "ar",
           "rows": [
            [
             "Adverse reaction",
@@ -3747,6 +3747,962 @@
        }
       ],
       "subs": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "selvanta-biosimilar",
+  "productId": "biosimilar-mab",
+  "region": "us",
+  "title": "Selvanta: biosimilar labeling",
+  "level": "Practice",
+  "about": "A draft label for SELVANTA (olvecitamab-kzrt), a fictional biosimilar to ARVENTA (olvecitamab). Add the biosimilarity statement and its footnote, describe the product by its own name, and see how FDA now treats interchangeability (Watch).",
+  "docs": [
+   {
+    "id": "ref",
+    "title": "Reference product label: ARVENTA",
+    "status": "approved",
+    "kind": "pi",
+    "role": "reference",
+    "meta": {
+     "proprietaryName": "ARVENTA",
+     "establishedName": "olvecitamab",
+     "dosageForm": "injection, for intravenous use",
+     "route": "for intravenous use",
+     "controlled": "",
+     "initialApproval": "2022",
+     "revised": "06/2026",
+     "manufacturer": "Lumenfield Biologics Inc.",
+     "phone": "1-800-555-0177",
+     "patientLabeling": "",
+     "strengths": [
+      "100 mg/10 mL",
+      "10 mg/mL"
+     ]
+    },
+    "hl": {
+     "limitation": "These highlights do not include all the information needed to use ARVENTA safely and effectively. See full prescribing information for ARVENTA.",
+     "bw": [],
+     "bwClose": "",
+     "rmc": [],
+     "ind": [
+      {
+       "id": "b176",
+       "t": "p",
+       "text": "ARVENTA is an interleukin-36 receptor antagonist indicated for the treatment of adults with moderate-to-severe chronic hand eczema who are candidates for systemic therapy. (1)"
+      }
+     ],
+     "da": [
+      {
+       "id": "b177",
+       "t": "ul",
+       "items": [
+        "Administer as an intravenous infusion over 60 minutes. (2.1)",
+        "Recommended dosage: 10 mg/kg at Weeks 0, 2 and 4, then every 8 weeks. (2.1)",
+        "Dilute in 0.9% Sodium Chloride Injection before use. (2.2)"
+       ]
+      }
+     ],
+     "dfs": [
+      {
+       "id": "b178",
+       "t": "p",
+       "text": "Injection: 100 mg/10 mL (10 mg/mL) in a single-dose vial. (3)"
+      }
+     ],
+     "ci": [
+      {
+       "id": "b179",
+       "t": "p",
+       "text": "Known serious hypersensitivity to olvecitamab or to any of the excipients. (4)"
+      }
+     ],
+     "wp": [
+      {
+       "id": "b180",
+       "t": "ul",
+       "items": [
+        "Hypersensitivity and infusion-related reactions: If a serious reaction occurs, stop the infusion and start appropriate treatment. (5.1)",
+        "Infections: Do not start during an active, serious infection. Test for tuberculosis before treatment. (5.2)",
+        "Live vaccines: Avoid live vaccines during treatment. (5.3)"
+       ]
+      }
+     ],
+     "ar": [
+      {
+       "id": "b181",
+       "t": "p",
+       "text": "Most common adverse reactions (incidence at least 5% and greater than placebo) are infusion-related reactions, nasopharyngitis and headache. (6.1)"
+      },
+      {
+       "id": "b182",
+       "t": "p",
+       "text": "To report SUSPECTED ADVERSE REACTIONS, contact Lumenfield Biologics Inc. at 1-800-555-0177 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch."
+      }
+     ],
+     "usp": [],
+     "pci": "See 17 for PATIENT COUNSELING INFORMATION"
+    },
+    "bw": null,
+    "sections": [
+     {
+      "num": "1",
+      "title": "INDICATIONS AND USAGE",
+      "blocks": [
+       {
+        "id": "b183",
+        "t": "p",
+        "text": "ARVENTA is indicated for the treatment of adults with moderate-to-severe chronic hand eczema who are candidates for systemic therapy."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "DOSAGE AND ADMINISTRATION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "2.1",
+        "title": "Recommended Dosage",
+        "blocks": [
+         {
+          "id": "b184",
+          "t": "p",
+          "text": "The recommended dosage of ARVENTA is 10 mg/kg administered as an intravenous infusion over 60 minutes at Weeks 0, 2 and 4, then every 8 weeks."
+         }
+        ]
+       },
+       {
+        "num": "2.2",
+        "title": "Preparation and Administration",
+        "blocks": [
+         {
+          "id": "b185",
+          "t": "p",
+          "text": "Dilute the required volume of ARVENTA in 0.9% Sodium Chloride Injection to a final volume of 250 mL. Administer through an infusion set with a 0.2 micron in-line filter. Do not infuse with other medicines."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "3",
+      "title": "DOSAGE FORMS AND STRENGTHS",
+      "blocks": [
+       {
+        "id": "b186",
+        "t": "p",
+        "text": "Injection: 100 mg/10 mL (10 mg/mL) clear to slightly opalescent, colorless to pale yellow solution in a single-dose vial."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CONTRAINDICATIONS",
+      "blocks": [
+       {
+        "id": "b187",
+        "t": "p",
+        "text": "ARVENTA is contraindicated in patients with known serious hypersensitivity to olvecitamab or to any of the excipients [see Warnings and Precautions (5.1)]."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "5",
+      "title": "WARNINGS AND PRECAUTIONS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Hypersensitivity and Infusion-Related Reactions",
+        "blocks": [
+         {
+          "id": "b188",
+          "t": "p",
+          "text": "Serious hypersensitivity reactions, including anaphylaxis, and infusion-related reactions have occurred. If a serious reaction occurs, stop the infusion and start appropriate treatment. Monitor patients during and for 1 hour after each infusion."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Infections",
+        "blocks": [
+         {
+          "id": "b189",
+          "t": "p",
+          "text": "ARVENTA may increase the risk of infections. Do not start treatment in patients with an active, serious infection. Test for tuberculosis before starting ARVENTA."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Live Vaccines",
+        "blocks": [
+         {
+          "id": "b190",
+          "t": "p",
+          "text": "Avoid use of live vaccines in patients treated with ARVENTA."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "ADVERSE REACTIONS",
+      "blocks": [
+       {
+        "id": "b191",
+        "t": "p",
+        "text": "The following clinically significant adverse reactions are described elsewhere in the labeling:"
+       },
+       {
+        "id": "b192",
+        "t": "ul",
+        "items": [
+         "Hypersensitivity and Infusion-Related Reactions [see Warnings and Precautions (5.1)]",
+         "Infections [see Warnings and Precautions (5.2)]"
+        ]
+       }
+      ],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "Clinical Trials Experience",
+        "blocks": [
+         {
+          "id": "b193",
+          "t": "p",
+          "text": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice."
+         },
+         {
+          "id": "b194",
+          "t": "p",
+          "text": "The safety of olvecitamab was evaluated in two placebo-controlled studies in 640 adults with chronic hand eczema."
+         },
+         {
+          "id": "b195",
+          "t": "ar",
+          "rows": [
+           [
+            "Adverse reaction",
+            "olvecitamab 10 mg/kg (N=321)",
+            "Placebo (N=319)"
+           ],
+           [
+            "Infusion-related reaction",
+            "8%",
+            "2%"
+           ],
+           [
+            "Nasopharyngitis",
+            "7%",
+            "5%"
+           ],
+           [
+            "Headache",
+            "6%",
+            "4%"
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Immunogenicity",
+        "blocks": [
+         {
+          "id": "b196",
+          "t": "p",
+          "text": "Anti-drug antibodies developed in 4% of patients; there was no identified effect on safety or effectiveness."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "DRUG INTERACTIONS",
+      "blocks": [
+       {
+        "id": "b197",
+        "t": "p",
+        "text": "No formal drug interaction studies have been conducted with olvecitamab."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "USE IN SPECIFIC POPULATIONS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "8.1",
+        "title": "Pregnancy",
+        "blocks": [
+         {
+          "id": "b198",
+          "t": "p",
+          "text": "Risk Summary"
+         },
+         {
+          "id": "b199",
+          "t": "p",
+          "text": "There are no available data on olvecitamab use in pregnant women. Human IgG is known to cross the placental barrier. In an animal reproduction study, no adverse developmental effects were observed."
+         }
+        ]
+       },
+       {
+        "num": "8.2",
+        "title": "Lactation",
+        "blocks": [
+         {
+          "id": "b200",
+          "t": "p",
+          "text": "Risk Summary"
+         },
+         {
+          "id": "b201",
+          "t": "p",
+          "text": "There are no data on the presence of olvecitamab in human milk. Consider the benefits of breastfeeding together with the mother's clinical need for ARVENTA."
+         }
+        ]
+       },
+       {
+        "num": "8.4",
+        "title": "Pediatric Use",
+        "blocks": [
+         {
+          "id": "b202",
+          "t": "p",
+          "text": "Safety and effectiveness in pediatric patients have not been established."
+         }
+        ]
+       },
+       {
+        "num": "8.5",
+        "title": "Geriatric Use",
+        "blocks": [
+         {
+          "id": "b203",
+          "t": "p",
+          "text": "No overall differences in safety or effectiveness were observed between patients 65 years and older and younger adult patients."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "10",
+      "title": "OVERDOSAGE",
+      "blocks": [
+       {
+        "id": "b204",
+        "t": "p",
+        "text": "There is no specific treatment for overdose. Monitor for signs or symptoms of adverse reactions and give appropriate treatment."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "11",
+      "title": "DESCRIPTION",
+      "blocks": [
+       {
+        "id": "b205",
+        "t": "p",
+        "text": "Olvecitamab is a humanized IgG1 monoclonal antibody (fictional) produced in Chinese hamster ovary cells. ARVENTA injection is a sterile, preservative-free solution: each 10 mL single-dose vial contains 100 mg of olvecitamab, histidine, sucrose, polysorbate 80 and Water for Injection."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "12",
+      "title": "CLINICAL PHARMACOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "12.1",
+        "title": "Mechanism of Action",
+        "blocks": [
+         {
+          "id": "b206",
+          "t": "p",
+          "text": "Olvecitamab binds the interleukin-36 receptor and blocks signaling that drives skin inflammation."
+         }
+        ]
+       },
+       {
+        "num": "12.2",
+        "title": "Pharmacodynamics",
+        "blocks": [
+         {
+          "id": "b207",
+          "t": "p",
+          "text": "Reductions in inflammatory markers in skin were seen by Week 4."
+         }
+        ]
+       },
+       {
+        "num": "12.3",
+        "title": "Pharmacokinetics",
+        "blocks": [
+         {
+          "id": "b208",
+          "t": "p",
+          "text": "Steady state was reached by Week 12. The terminal half-life was about 21 days."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "13",
+      "title": "NONCLINICAL TOXICOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "13.1",
+        "title": "Carcinogenesis, Mutagenesis, Impairment of Fertility",
+        "blocks": [
+         {
+          "id": "b209",
+          "t": "p",
+          "text": "Carcinogenicity and genotoxicity studies have not been conducted. No effects on fertility were seen in monkeys."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "14",
+      "title": "CLINICAL STUDIES",
+      "blocks": [
+       {
+        "id": "b210",
+        "t": "p",
+        "text": "In two 16-week studies (fictional ARC-1 and ARC-2), 41% of patients given olvecitamab 10 mg/kg reached clear or almost clear hands, against 13% given placebo."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "16",
+      "title": "HOW SUPPLIED/STORAGE AND HANDLING",
+      "blocks": [
+       {
+        "id": "b211",
+        "t": "p",
+        "text": "ARVENTA injection: 100 mg/10 mL in a single-dose vial, carton of 1 vial. Store in a refrigerator at 2°C to 8°C in the original carton to protect from light. Do not freeze. Do not shake."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "17",
+      "title": "PATIENT COUNSELING INFORMATION",
+      "blocks": [
+       {
+        "id": "b212",
+        "t": "p",
+        "text": "Advise patients to report signs of an allergic reaction or an infusion reaction, and signs of infection, to their healthcare provider right away."
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "pi",
+    "title": "Prescribing information (biosimilar draft)",
+    "status": "draft",
+    "kind": "pi",
+    "role": "biosimilar",
+    "meta": {
+     "proprietaryName": "SELVANTA",
+     "establishedName": "olvecitamab-kzrt",
+     "dosageForm": "injection, for intravenous use",
+     "route": "for intravenous use",
+     "controlled": "",
+     "initialApproval": "2025",
+     "revised": "09/2026",
+     "manufacturer": "Brightmere Biosimilars Ltd.",
+     "phone": "1-800-555-0188",
+     "patientLabeling": "",
+     "strengths": [
+      "100 mg/10 mL",
+      "10 mg/mL"
+     ],
+     "reference": {
+      "name": "ARVENTA",
+      "est": "olvecitamab"
+     }
+    },
+    "hl": {
+     "limitation": "These highlights do not include all the information needed to use SELVANTA safely and effectively. See full prescribing information for SELVANTA.",
+     "bw": [],
+     "bwClose": "",
+     "rmc": [],
+     "ind": [
+      {
+       "id": "b213",
+       "t": "p",
+       "text": "SELVANTA is an interleukin-36 receptor antagonist indicated for the treatment of adults with moderate-to-severe chronic hand eczema who are candidates for systemic therapy. (1)"
+      }
+     ],
+     "da": [
+      {
+       "id": "b177",
+       "t": "ul",
+       "items": [
+        "Administer as an intravenous infusion over 60 minutes. (2.1)",
+        "Recommended dosage: 10 mg/kg at Weeks 0, 2 and 4, then every 8 weeks. (2.1)",
+        "Dilute in 0.9% Sodium Chloride Injection before use. (2.2)"
+       ]
+      }
+     ],
+     "dfs": [
+      {
+       "id": "b178",
+       "t": "p",
+       "text": "Injection: 100 mg/10 mL (10 mg/mL) in a single-dose vial. (3)"
+      }
+     ],
+     "ci": [
+      {
+       "id": "b179",
+       "t": "p",
+       "text": "Known serious hypersensitivity to olvecitamab or to any of the excipients. (4)"
+      }
+     ],
+     "wp": [
+      {
+       "id": "b180",
+       "t": "ul",
+       "items": [
+        "Hypersensitivity and infusion-related reactions: If a serious reaction occurs, stop the infusion and start appropriate treatment. (5.1)",
+        "Infections: Do not start during an active, serious infection. Test for tuberculosis before treatment. (5.2)",
+        "Live vaccines: Avoid live vaccines during treatment. (5.3)"
+       ]
+      }
+     ],
+     "ar": [
+      {
+       "id": "b214",
+       "t": "p",
+       "text": "Most common adverse reactions (incidence at least 5% and greater than placebo) are infusion-related reactions, nasopharyngitis and headache. (6.1)"
+      },
+      {
+       "id": "b215",
+       "t": "p",
+       "text": "To report SUSPECTED ADVERSE REACTIONS, contact Brightmere Biosimilars Ltd. at 1-800-555-0188 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch."
+      }
+     ],
+     "usp": [],
+     "pci": "See 17 for PATIENT COUNSELING INFORMATION",
+     "bio": "SELVANTA (olvecitamab-kzrt) is biosimilar* to ARVENTA (olvecitamab).",
+     "bioNote": ""
+    },
+    "bw": null,
+    "sections": [
+     {
+      "num": "1",
+      "title": "INDICATIONS AND USAGE",
+      "blocks": [
+       {
+        "id": "b216",
+        "t": "p",
+        "text": "SELVANTA is indicated for the treatment of adults with moderate-to-severe chronic hand eczema who are candidates for systemic therapy."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "DOSAGE AND ADMINISTRATION",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "2.1",
+        "title": "Recommended Dosage",
+        "blocks": [
+         {
+          "id": "b217",
+          "t": "p",
+          "text": "The recommended dosage of SELVANTA is 10 mg/kg administered as an intravenous infusion over 60 minutes at Weeks 0, 2 and 4, then every 8 weeks."
+         }
+        ]
+       },
+       {
+        "num": "2.2",
+        "title": "Preparation and Administration",
+        "blocks": [
+         {
+          "id": "b218",
+          "t": "p",
+          "text": "Dilute the required volume of SELVANTA in 0.9% Sodium Chloride Injection to a final volume of 250 mL. Administer through an infusion set with a 0.2 micron in-line filter. Do not infuse with other medicines."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "3",
+      "title": "DOSAGE FORMS AND STRENGTHS",
+      "blocks": [
+       {
+        "id": "b219",
+        "t": "p",
+        "text": "Injection: 100 mg/10 mL (10 mg/mL) clear to slightly opalescent, colorless to pale yellow solution in a single-dose vial."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CONTRAINDICATIONS",
+      "blocks": [
+       {
+        "id": "b220",
+        "t": "p",
+        "text": "SELVANTA is contraindicated in patients with known serious hypersensitivity to olvecitamab-kzrt or to any of the excipients [see Warnings and Precautions (5.1)]."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "5",
+      "title": "WARNINGS AND PRECAUTIONS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Hypersensitivity and Infusion-Related Reactions",
+        "blocks": [
+         {
+          "id": "b248",
+          "t": "p",
+          "text": "Serious hypersensitivity reactions, including anaphylaxis, and infusion-related reactions have occurred with ARVENTA. If a serious reaction occurs, stop the infusion and start appropriate treatment. Monitor patients during and for 1 hour after each infusion."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Infections",
+        "blocks": [
+         {
+          "id": "b222",
+          "t": "p",
+          "text": "SELVANTA may increase the risk of infections. Do not start treatment in patients with an active, serious infection. Test for tuberculosis before starting SELVANTA."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Live Vaccines",
+        "blocks": [
+         {
+          "id": "b223",
+          "t": "p",
+          "text": "Avoid use of live vaccines in patients treated with SELVANTA."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "ADVERSE REACTIONS",
+      "blocks": [
+       {
+        "id": "b224",
+        "t": "p",
+        "text": "The following clinically significant adverse reactions are described elsewhere in the labeling:"
+       },
+       {
+        "id": "b225",
+        "t": "ul",
+        "items": [
+         "Hypersensitivity and Infusion-Related Reactions [see Warnings and Precautions (5.1)]",
+         "Infections [see Warnings and Precautions (5.2)]"
+        ]
+       }
+      ],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "Clinical Trials Experience",
+        "blocks": [
+         {
+          "id": "b226",
+          "t": "p",
+          "text": "Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice."
+         },
+         {
+          "id": "b227",
+          "t": "p",
+          "text": "The safety of olvecitamab-kzrt was evaluated in two placebo-controlled studies in 640 adults with chronic hand eczema."
+         },
+         {
+          "id": "b228",
+          "t": "ar",
+          "rows": [
+           [
+            "Adverse reaction",
+            "olvecitamab-kzrt 10 mg/kg (N=321)",
+            "Placebo (N=319)"
+           ],
+           [
+            "Infusion-related reaction",
+            "8%",
+            "2%"
+           ],
+           [
+            "Nasopharyngitis",
+            "7%",
+            "5%"
+           ],
+           [
+            "Headache",
+            "6%",
+            "4%"
+           ]
+          ]
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Immunogenicity",
+        "blocks": [
+         {
+          "id": "b229",
+          "t": "p",
+          "text": "Anti-drug antibodies developed in 4% of patients; there was no identified effect on safety or effectiveness."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "DRUG INTERACTIONS",
+      "blocks": [
+       {
+        "id": "b230",
+        "t": "p",
+        "text": "No formal drug interaction studies have been conducted with olvecitamab-kzrt."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "USE IN SPECIFIC POPULATIONS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "8.1",
+        "title": "Pregnancy",
+        "blocks": [
+         {
+          "id": "b231",
+          "t": "p",
+          "text": "Risk Summary"
+         },
+         {
+          "id": "b232",
+          "t": "p",
+          "text": "There are no available data on olvecitamab-kzrt use in pregnant women. Human IgG is known to cross the placental barrier. In an animal reproduction study, no adverse developmental effects were observed."
+         }
+        ]
+       },
+       {
+        "num": "8.2",
+        "title": "Lactation",
+        "blocks": [
+         {
+          "id": "b233",
+          "t": "p",
+          "text": "Risk Summary"
+         },
+         {
+          "id": "b234",
+          "t": "p",
+          "text": "There are no data on the presence of olvecitamab-kzrt in human milk. Consider the benefits of breastfeeding together with the mother's clinical need for SELVANTA."
+         }
+        ]
+       },
+       {
+        "num": "8.4",
+        "title": "Pediatric Use",
+        "blocks": [
+         {
+          "id": "b235",
+          "t": "p",
+          "text": "Safety and effectiveness in pediatric patients have not been established."
+         }
+        ]
+       },
+       {
+        "num": "8.5",
+        "title": "Geriatric Use",
+        "blocks": [
+         {
+          "id": "b236",
+          "t": "p",
+          "text": "No overall differences in safety or effectiveness were observed between patients 65 years and older and younger adult patients."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "10",
+      "title": "OVERDOSAGE",
+      "blocks": [
+       {
+        "id": "b237",
+        "t": "p",
+        "text": "There is no specific treatment for overdose. Monitor for signs or symptoms of adverse reactions and give appropriate treatment."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "11",
+      "title": "DESCRIPTION",
+      "blocks": [
+       {
+        "id": "b246",
+        "t": "p",
+        "text": "Olvecitamab-kzrt is a humanized IgG1 monoclonal antibody (fictional) produced in Chinese hamster ovary cells. SELVANTA injection is a sterile, preservative-free solution: each 10 mL single-dose vial contains 100 mg of olvecitamab-kzrt, histidine, trehalose, polysorbate 20 and Water for Injection."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "12",
+      "title": "CLINICAL PHARMACOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "12.1",
+        "title": "Mechanism of Action",
+        "blocks": [
+         {
+          "id": "b239",
+          "t": "p",
+          "text": "Olvecitamab-kzrt binds the interleukin-36 receptor and blocks signaling that drives skin inflammation."
+         }
+        ]
+       },
+       {
+        "num": "12.2",
+        "title": "Pharmacodynamics",
+        "blocks": [
+         {
+          "id": "b240",
+          "t": "p",
+          "text": "Reductions in inflammatory markers in skin were seen by Week 4."
+         }
+        ]
+       },
+       {
+        "num": "12.3",
+        "title": "Pharmacokinetics",
+        "blocks": [
+         {
+          "id": "b241",
+          "t": "p",
+          "text": "Steady state was reached by Week 12. The terminal half-life was about 21 days."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "13",
+      "title": "NONCLINICAL TOXICOLOGY",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "13.1",
+        "title": "Carcinogenesis, Mutagenesis, Impairment of Fertility",
+        "blocks": [
+         {
+          "id": "b242",
+          "t": "p",
+          "text": "Carcinogenicity and genotoxicity studies have not been conducted. No effects on fertility were seen in monkeys."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "14",
+      "title": "CLINICAL STUDIES",
+      "blocks": [
+       {
+        "id": "b243",
+        "t": "p",
+        "text": "In two 16-week studies (fictional ARC-1 and ARC-2), 41% of patients given olvecitamab-kzrt 10 mg/kg reached clear or almost clear hands, against 13% given placebo."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "16",
+      "title": "HOW SUPPLIED/STORAGE AND HANDLING",
+      "blocks": [
+       {
+        "id": "b247",
+        "t": "p",
+        "text": "SELVANTA injection: 100 mg/10 mL in a single-dose vial, carton of 1 vial. Store in a refrigerator at 2°C to 8°C in the original carton to protect from light. Do not freeze. Discard unused portion."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "17",
+      "title": "PATIENT COUNSELING INFORMATION",
+      "blocks": [
+       {
+        "id": "b245",
+        "t": "p",
+        "text": "Advise patients to report signs of an allergic reaction or an infusion reaction, and signs of infection, to their healthcare provider right away."
+       },
+       {
+        "id": "b249",
+        "t": "p",
+        "text": "SELVANTA is interchangeable with its reference product and may be substituted at the pharmacy."
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "US-BIO-STMT",
+      "where": "Highlights, biosimilarity statement",
+      "what": "The footnote explaining what biosimilar means is missing."
+     },
+     {
+      "rule": "US-BIO-NAME",
+      "where": "5.1",
+      "what": "Describes the risk for ARVENTA instead of SELVANTA."
+     },
+     {
+      "rule": "US-BIO-IC",
+      "where": "17",
+      "what": "An interchangeability statement: the 2023 revised draft no longer recommends it (Watch, a hint only)."
      }
     ]
    }

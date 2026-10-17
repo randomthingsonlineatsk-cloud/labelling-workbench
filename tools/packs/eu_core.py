@@ -10,9 +10,10 @@ PACK = {
     'id': 'eu',
     'name': 'European Union (EMA, centralised procedure)',
     'short': 'EU',
-    'version': '1.0.0',
-    'asOf': '2026-10-11',
-    'kinds': ['smpc', 'pl', 'eu-outer', 'eu-blister'],
+    'version': '1.1.0',
+    'changes': [{'version': '1.1.0', 'date': '2026-10-17', 'notes': 'Annex II and small immediate packaging templates; generic SmPC compared with its reference (Article 11 omissions); four new rule cards (EU-A2, EU-SMALL, EU-GEN-SAME, EU-GEN-CARVE); vial label and generic samples with drills; 28 more quiz questions.'}, {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 3): QRD v10.4 SmPC, package leaflet, outer carton and blister; excipients, black triangle, Braille, safety features, user testing, translations, PRAC and PSUSA, ePI view.'}],
+    'asOf': '2026-10-17',
+    'kinds': ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'],
     'about': (
         'Product information for a centrally authorised medicine: the Summary of Product Characteristics '
         '(Annex I), the labelling (Annex IIIA: outer carton and blister) and the package leaflet (Annex IIIB), '
@@ -41,6 +42,8 @@ PACK = {
         {'id': 'prac', 'title': 'EMA: PRAC recommendations on signals (with product information wording in all EU languages)', 'url': 'https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/pharmacovigilance-post-authorisation/signal-management/prac-recommendations-safety-signals'},
         {'id': 'psusa', 'title': 'HALMED: Variations following PSUSA outcomes and PRAC signal recommendations (C.3.a, C.3.b, C.3.c; deadline set in the recommendation)', 'url': 'https://halmed.hr/en/Lijekovi/Arbitrazni-postupci-PSUSA-postupci-i-PRAC-signali-upute-za-prijavu-izmjena-/Upute-za-prijavu-izmjena-na-temelju-preporuka-PRAC-a-nakon-ocjene-sigurnosnih-signala/'},
         {'id': 'ling', 'title': 'EMA: Linguistic review process of product information in the centralised procedure', 'url': 'https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/product-information-requirements/linguistic-review-process-product-information-centralised-procedure'},
+        {'id': 'art11', 'title': 'Directive 2001/83/EC, Article 10 (generic medicinal products) and Article 11 (SmPC; parts referring to indications or dosage forms still covered by patent law may be left out)', 'url': 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02001L0083-20220101'},
+        {'id': 'qrda2', 'title': 'EMA ePI implementation guide: QRD template for centrally authorised products, Annex II structure (sections A to E)', 'url': 'https://epi.ema.europa.eu/fhirig/StructureDefinition-EUQRD-CAP-template-new-Annex-II-en.html'},
         {'id': 'epi', 'title': 'EMA: Electronic product information (ePI), page updated September 2026', 'url': 'https://www.ema.europa.eu/en/human-regulatory/marketing-authorisation/product-information/electronic-product-information-epi'},
     ],
 }
@@ -102,6 +105,21 @@ BLISTER_SECTIONS = [
     S('1', 'NAME OF THE MEDICINAL PRODUCT'), S('2', 'NAME OF THE MARKETING AUTHORISATION HOLDER'), S('3', 'EXPIRY DATE'), S('4', 'BATCH NUMBER'), S('5', 'OTHER', 'optional'),
 ]
 
+ANNEX2_SECTIONS = [
+    S('A', 'A. MANUFACTURER(S) <OF THE BIOLOGICAL ACTIVE SUBSTANCE(S) AND MANUFACTURER(S)> RESPONSIBLE FOR BATCH RELEASE'),
+    S('B', 'B. CONDITIONS OR RESTRICTIONS REGARDING SUPPLY AND USE'),
+    S('C', 'C. OTHER CONDITIONS AND REQUIREMENTS OF THE MARKETING AUTHORISATION', subs=[X('C.1', 'Periodic safety update reports (PSURs)')]),
+    S('D', 'D. CONDITIONS OR RESTRICTIONS WITH REGARD TO THE SAFE AND EFFECTIVE USE OF THE MEDICINAL PRODUCT', subs=[X('D.1', 'Risk management plan (RMP)'), X('D.2', 'Additional risk minimisation measures', 'optional')]),
+    S('E', 'E. SPECIFIC OBLIGATION TO COMPLETE POST-AUTHORISATION MEASURES FOR THE CONDITIONAL MARKETING AUTHORISATION', 'optional'),
+]
+A2_PSUR = 'The requirements for submission of PSURs for this medicinal product are set out in the list of Union reference dates (EURD list) provided for under Article 107c(7) of Directive 2001/83/EC and any subsequent updates published on the European medicines web-portal.'
+A2_RMP = 'The marketing authorisation holder (MAH) shall perform the required pharmacovigilance activities and interventions detailed in the agreed RMP presented in Module 1.8.2 of the marketing authorisation and any agreed subsequent updates of the RMP. An updated RMP should be submitted: at the request of the European Medicines Agency; whenever the risk management system is modified, especially as the result of new information being received that may lead to a significant change to the benefit/risk profile or as the result of an important (pharmacovigilance or risk minimisation) milestone being reached.'
+
+SMALL_SECTIONS = [
+    S('1', 'NAME OF THE MEDICINAL PRODUCT AND ROUTE(S) OF ADMINISTRATION'), S('2', 'METHOD OF ADMINISTRATION'), S('3', 'EXPIRY DATE'),
+    S('4', 'BATCH NUMBER'), S('5', 'CONTENTS BY WEIGHT, BY VOLUME OR BY UNIT'), S('6', 'OTHER', 'optional'),
+]
+
 BT_SMPC = '▼ This medicinal product is subject to additional monitoring. This will allow quick identification of new safety information. Healthcare professionals are asked to report any suspected adverse reactions. See section 4.8 for how to report adverse reactions.'
 BT_PL = '▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. See the end of section 4 for how to report side effects.'
 REPORT_SMPC = 'Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V.'
@@ -117,6 +135,10 @@ TEMPLATES = {
     'eu-outer': {'kind': 'eu-outer', 'label': 'Outer carton (Annex IIIA)', 'short': 'Outer', 'src': 'qrd', 'numbered': True, 'sections': OUTER_SECTIONS,
                  'fixed': {'header': 'PARTICULARS TO APPEAR ON THE OUTER PACKAGING'},
                  'standard': {'6': 'Keep out of the sight and reach of children.', '17': '2D barcode carrying the unique identifier included.'}},
+    'eu-annex2': {'kind': 'eu-annex2', 'label': 'Annex II (conditions of the marketing authorisation)', 'short': 'Annex II', 'src': 'qrda2', 'sections': ANNEX2_SECTIONS,
+                  'fixed': {'header': 'ANNEX II'}, 'standard': {'C.1': A2_PSUR, 'D.1': A2_RMP}},
+    'eu-small': {'kind': 'eu-small', 'label': 'Small immediate packaging (Annex IIIA)', 'short': 'Small unit', 'src': 'qrd', 'numbered': True, 'sections': SMALL_SECTIONS,
+                 'fixed': {'header': 'MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS'}},
     'eu-blister': {'kind': 'eu-blister', 'label': 'Blister (Annex IIIA)', 'short': 'Blister', 'src': 'qrd', 'numbered': True, 'sections': BLISTER_SECTIONS,
                    'fixed': {'header': 'MINIMUM PARTICULARS TO APPEAR ON BLISTERS OR STRIPS'}},
 }
@@ -158,9 +180,9 @@ def R(id, title, text, kinds, severity, src, at, simplified=None):
 
 
 RULES = [
-    R('EU-HEAD', 'QRD headings, in order', 'Every heading of the QRD template appears with its exact wording and in the template order. Optional headings may be left out.', ['smpc', 'pl', 'eu-outer', 'eu-blister'], 'error', 'qrd', 'QRD template v10.4',
+    R('EU-HEAD', 'QRD headings, in order', 'Every heading of the QRD template appears with its exact wording and in the template order. Optional headings may be left out.', ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'], 'error', 'qrd', 'QRD template v10.4',
       'Alternative wording in angle brackets in the template is accepted as written in the app (for example "<and other handling>").'),
-    R('EU-REQ', 'Required sections are filled', 'Each required section has content. If a section does not apply, the template usually gives the wording to use instead (for example "Not applicable.").', ['smpc', 'pl', 'eu-outer', 'eu-blister'], 'error', 'qrd', 'QRD template v10.4'),
+    R('EU-REQ', 'Required sections are filled', 'Each required section has content. If a section does not apply, the template usually gives the wording to use instead (for example "Not applicable.").', ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'], 'error', 'qrd', 'QRD template v10.4'),
     R('EU-BT', 'Black triangle for additional monitoring', 'A medicine under additional monitoring carries the black inverted triangle and the standard statement at the start of the SmPC and the package leaflet. Medicines not under additional monitoring do not.', ['smpc', 'pl'], 'error', 'am', 'Implementing Regulation 198/2013, Article 1; QRD template'),
     R('EU-48-REPORT', 'Reporting statement in 4.8', 'Section 4.8 ends with the standard text on reporting suspected adverse reactions, pointing to the national reporting system listed in Appendix V.', ['smpc'], 'error', 'qrd', 'QRD template v10.4, section 4.8'),
     R('EU-48-FREQ', 'Frequency categories in 4.8', 'Adverse reactions are listed by MedDRA system organ class and frequency, using the convention very common (≥1/10), common (≥1/100 to <1/10), uncommon (≥1/1,000 to <1/100), rare (≥1/10,000 to <1/1,000), very rare (<1/10,000) and not known. Words such as "frequent" or "occasional" are not used.', ['smpc'], 'warning', 'smpcgl', 'SmPC guideline, section 4.8',
@@ -175,6 +197,14 @@ RULES = [
       'The app checks the text given for Braille, not the embossing itself.'),
     R('EU-SF', 'Safety features', 'Prescription medicines carry a unique identifier in a 2D data matrix and an anti-tampering device. Section 17 states "2D barcode carrying the unique identifier included." and section 18 shows the human-readable product code (PC), serial number (SN) and, where applicable, national reimbursement number (NN).', ['eu-outer'], 'error', 'sf', 'Delegated Regulation (EU) 2016/161, Articles 4 to 7',
       'The app checks the template statements and the PC/SN/NN lines, not a real code.'),
+    R('EU-A2', 'Annex II conditions', 'Annex II names the manufacturer responsible for batch release, gives the legal status for supply in B (for example "Medicinal product subject to medical prescription."), and carries the standard statements on periodic safety update reports (the EURD list, Article 107c(7) of Directive 2001/83/EC) in C and on the risk management plan (Module 1.8.2, when an updated RMP is due) in D.', ['eu-annex2'], 'error', 'qrda2', 'QRD template, Annex II',
+      'The app checks the supply statement and the key phrases of the PSUR and RMP statements, not every word; conditions specific to a product (additional risk minimisation, post-authorisation measures) are not checked.'),
+    R('EU-SMALL', 'Immediate packaging particulars', 'Blisters, strips and small immediate packaging give the expiry date after "EXP" and the batch number after "Lot". Small units also give the route of administration with the name, the method of administration and the contents by weight, volume or unit.', ['eu-blister', 'eu-small'], 'error', 'qrd', 'QRD template v10.4, Annex IIIA; Directive 2001/83/EC, Article 55',
+      'The app checks the prefixes and that the route and contents are given; the date and batch are printed on the packaging line.'),
+    R('EU-GEN-SAME', 'Generic SmPC matches the reference', 'The SmPC of a generic medicinal product follows the reference SmPC. Differences are expected only where the products differ (strengths offered, composition, appearance and excipients in sections 1 to 3 and 6, and the holder, numbers and dates in sections 7 to 10), and in parts left out because they refer to indications or dosage forms still covered by patent law.', ['smpc'], 'error', 'art11', 'Directive 2001/83/EC, Articles 10 and 11',
+      'The app compares section by section after swapping the product and company names; national authorities also accept differences that the app cannot judge, which you would waive with a reason.'),
+    R('EU-GEN-CARVE', 'Patent-protected indication fully left out', 'When an indication still covered by patent law is left out of a generic SmPC, every mention that depends on it goes too: indication, posology, adverse reaction data and clinical data.', ['smpc'], 'error', 'art11', 'Directive 2001/83/EC, Article 11',
+      'Mentions are found by keywords defined for the left-out indication in the exercise.'),
     R('EU-LAB-PART', 'Particulars agree with the SmPC', 'The name, strength, pharmaceutical form, pack size, authorisation number and holder on the packaging agree with the SmPC.', ['eu-outer', 'eu-blister'], 'error', 'dir', 'Directive 2001/83/EC, Articles 54 and 55'),
     R('EU-BLUEBOX', 'Blue box for national particulars', 'Centrally authorised products may carry a "blue box" on the outer packaging for national particulars (for example price or reimbursement) required by a member state.', ['eu-outer'], 'info', 'dir', 'Directive 2001/83/EC, Article 57',
       'Shown as a hint only: whether a blue box is needed depends on the member states where the pack is sold.'),

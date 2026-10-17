@@ -18,6 +18,23 @@
    "about": "Map CCDS 3.0 to the Ostrevia prescribing information and Medication Guide. Confirm every match, and record a justification for each statement the label does not carry (two are missing on purpose)."
   },
   {
+   "id": "ccds-map-eu",
+   "module": "core",
+   "title": "Map the EU SmPC to the core data sheet",
+   "minutes": 20,
+   "sample": "ostrevia-ccds-eu",
+   "doc": "smpc",
+   "tab": "core",
+   "goal": {
+    "type": "ccds-map",
+    "docs": [
+     "smpc",
+     "pl"
+    ]
+   },
+   "about": "Map CCDS 3.0 to the Ostrevia SmPC and package leaflet. The EU text words some statements differently and leaves some out: confirm the matches and justify the gaps."
+  },
+  {
    "id": "o4-respond",
    "module": "core",
    "title": "Respond to a 505(o)(4) notification",

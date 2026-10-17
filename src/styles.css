@@ -361,3 +361,14 @@ details.rule summary { cursor: pointer; color: var(--accent); font-weight: 600; 
 }
 @media print { .topbar, .footer, .no-print, .tabs, .doc-tabs, .drill-bar { display: none !important; } body { background: #fff; } }
 .join-code { font-family: var(--mono, "JetBrains Mono", monospace); letter-spacing: .12em; font-size: 1.1em; }
+
+.block-warn { color: var(--high); margin: .3rem 0 0; padding-left: 1.1rem; }
+p.block-warn { padding-left: 0; }
+.label-paper table.ar th { border: 1px solid #888; padding: .2rem .45rem; text-align: left; font-weight: 700; }
+.label-paper .fig-ph { margin: .6rem 0; }
+.label-paper .fig-box { border: 1px dashed #888; height: 7rem; display: grid; place-items: center; color: #666; font-family: var(--font); font-size: .8rem; }
+.label-paper .fig-ph figcaption { font-size: .8rem; margin-top: .25rem; }
+
+table.keys { border-collapse: collapse; margin: .25rem 0 .75rem; }
+table.keys td { padding: .3rem .6rem .3rem 0; vertical-align: top; }
+kbd { font-family: var(--mono, monospace); font-size: .85em; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: .05rem .35rem; background: var(--bg-2, transparent); white-space: nowrap; }

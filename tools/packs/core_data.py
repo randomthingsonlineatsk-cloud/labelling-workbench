@@ -9,8 +9,9 @@ PACK = {
     'id': 'core',
     'name': 'Core data sheet and change management',
     'short': 'Core',
-    'version': '1.0.0',
-    'asOf': '2026-10-11',
+    'version': '1.1.0',
+    'changes': [{'version': '1.1.0', 'date': '2026-10-17', 'notes': 'CCDS statements now map to the EU SmPC and package leaflet as well as the US label; new sample and drill to map the EU texts. Eight more quiz questions.'}, {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 2): CCDS and CCSI, mapping and deviations, change requests, 505(o)(4), agency comment rounds, implementation tracking.'}],
+    'asOf': '2026-10-17',
     'about': (
         'The company core data sheet (CCDS) and its safety subset (CCSI), mapping local labels to it, '
         'the deviation register, labelling change requests (including FDA safety labelling changes under '
@@ -172,6 +173,32 @@ HBV = S('wp-hbv', 'Special warnings and precautions',
         'Hepatitis B virus reactivation, including cases of hepatic failure, has been reported. Screen for hepatitis B infection before starting treatment. Do not start in patients with active hepatitis B. Monitor patients with evidence of past infection (HBsAg negative, anti-HBc positive) for HBV DNA during treatment, and consult a liver specialist if HBV DNA is detected.',
         True, ['2.2', '5'], ['m1', 'm4'], ['hepatitis B', 'screen|test'], ['hepatitis B'])
 
+# EU targets: SmPC sections and package leaflet sections, with the key terms to look for there.
+EU_MAP = {
+    'ind': (['4.1'], ['hand eczema'], ['pl1'], ['hand eczema']),
+    'dose': (['4.2'], ['10 mg', '25 mg', 'once daily'], ['pl3'], ['10 mg', '25 mg']),
+    'dose-labs': (['4.2', '4.4'], ['tuberculosis', 'lymphocyte', 'neutrophil'], ['pl2.2'], ['tuberculosis|blood test']),
+    'dose-hep': (['4.2'], ['Child-Pugh B|moderate hepatic', 'severe hepatic'], [], []),
+    'dose-cyp': (['4.2', '4.5'], ['CYP3A4 inhibitor', '10 mg'], ['pl2.4'], ['ketoconazole|clarithromycin|fungal']),
+    'ci-hyp': (['4.3'], ['hypersensitivity'], ['pl2.1'], ['allergic']),
+    'wp-inf': (['4.4'], ['serious infection'], ['pl2.2'], ['infection']),
+    'wp-hz': (['4.4'], ['vaccin', 'zoster'], ['pl2.2'], ['vaccin']),
+    'wp-mal': (['4.4'], ['lymphoma', 'skin cancer'], ['pl2.2'], ['cancer']),
+    'wp-thr': (['4.4'], ['thrombo', 'pulmonary embol'], ['pl2.2'], ['blood clot']),
+    'wp-lab': (['4.4'], ['lymphocyte', 'neutrophil', 'liver enzymes'], ['pl2.2'], ['blood test']),
+    'wp-efd': (['4.6'], ['contraception'], ['pl2.6'], ['contraception']),
+    'int-ind': (['4.5'], ['inducer']), 'lact': (['4.6'], ['breast-feeding|breastfe', '4 days'], ['pl2.6'], ['breast']),
+    'ar-common': (['4.8'], ['nasopharyngitis', 'headache', 'nausea', 'acne'], ['pl4'], ['common cold', 'headache', 'nausea|feeling sick', 'acne']),
+    'ar-renal': (['4.2', '5.2'], ['renal']), 'od': (['4.9'], ['supportive', 'dialysis'], ['pl3.1'], ['doctor']),
+    'wp-hbv': (['4.4'], ['hepatitis B', 'screen|test'], ['pl2.2'], ['hepatitis B']),
+}
+for st in CCDS_V3 + [HBV]:
+    m = EU_MAP[st['key']]
+    smpc_t, smpc_terms = m[0], m[1]
+    pl_t, pl_terms = (m[2], m[3]) if len(m) > 2 else ([], [])
+    st['targets'].update({'smpc': smpc_t, 'pl': pl_t})
+    st['terms'].update({'smpc': smpc_terms, 'pl': pl_terms})
+
 CCDS_V4 = [*CCDS_V3[:9], HBV, *CCDS_V3[9:]]
 
 HYPERSENS_NOTE = 'Serious hypersensitivity reactions, including angioedema and anaphylaxis, have been reported after marketing. Discontinue treatment and treat if a serious hypersensitivity reaction occurs.'
@@ -252,6 +279,12 @@ SAMPLES = [
         'title': 'Ostrevia: map the label to the core data sheet',
         'about': 'The approved Ostrevia labels and CCDS 3.0. Map each core statement to the prescribing information and the Medication Guide, confirm the matches, and record a justified deviation wherever the US label differs.',
         'ccds': CCDS, 'docs': ['pi', 'mg', 'carton', 'container'], 'approved': True,
+    },
+    {
+        'id': 'ostrevia-ccds-eu', 'base': 'eu-ostrevia-clean', 'region': 'eu', 'productId': 'nce-tablet', 'level': 'Core',
+        'title': 'Ostrevia (EU): map the SmPC and leaflet to the core data sheet',
+        'about': 'The approved EU SmPC and package leaflet and the same CCDS 3.0. Map each core statement, confirm the matches, and justify every statement the EU text does not carry.',
+        'ccds': CCDS, 'docs': ['smpc', 'pl'], 'approved': True,
     },
     {
         'id': 'ostrevia-ccds4', 'base': 'ostrevia-clean', 'productId': 'nce-tablet', 'level': 'Core',

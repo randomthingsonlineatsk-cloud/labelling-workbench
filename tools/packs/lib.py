@@ -50,6 +50,14 @@ def T(*rows, note=None):
     return b
 
 
+def AR(*rows, note=None):
+    """Adverse-reaction table: first row = column headings, then term and rates."""
+    b = {'id': bid(), 't': 'ar', 'rows': [list(r) for r in rows]}
+    if note:
+        b['note'] = note
+    return b
+
+
 def BOX(text):
     return {'id': bid(), 't': 'box', 'text': text}
 

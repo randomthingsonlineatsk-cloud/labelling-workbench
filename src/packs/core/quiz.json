@@ -381,6 +381,126 @@
    "answer": 1,
    "why": "It closes the implementation: after it, only the new labelling is distributed.",
    "cite": "Industry practice"
+  },
+  {
+   "id": "q12-7",
+   "topic": 12,
+   "module": "core",
+   "q": "Which CIOMS working group introduced core safety information?",
+   "options": [
+    "CIOMS III",
+    "CIOMS I",
+    "CIOMS X",
+    "ICH E6"
+   ],
+   "answer": 0,
+   "why": "CIOMS III set out the idea of core safety information; CIOMS V developed it.",
+   "cite": "CIOMS Working Groups III and V"
+  },
+  {
+   "id": "q12-8",
+   "topic": 12,
+   "module": "core",
+   "q": "Which ICH guideline uses the CCSI as reference safety information in periodic reports?",
+   "options": [
+    "ICH Q9",
+    "ICH M4",
+    "ICH E9",
+    "ICH E2C(R2)"
+   ],
+   "answer": 3,
+   "why": "The PBRER compares reactions against the reference safety information, usually the CCSI.",
+   "cite": "ICH E2C(R2)"
+  },
+  {
+   "id": "q13-7",
+   "topic": 13,
+   "module": "core",
+   "q": "The EU SmPC does not carry a CCDS statement because the EU agreed other wording. How is it mapped?",
+   "options": [
+    "The SmPC is changed to copy the CCDS",
+    "The CCDS is changed",
+    "As a deviation with a justification",
+    "Ignored"
+   ],
+   "answer": 2,
+   "why": "Local labels may differ for regulatory reasons; the deviation is recorded and justified.",
+   "cite": "CIOMS Working Group III"
+  },
+  {
+   "id": "q13-8",
+   "topic": 13,
+   "module": "core",
+   "q": "In this app, where must a statement's key terms appear for it to count as found?",
+   "options": [
+    "On the carton",
+    "In the sections the statement is mapped to",
+    "Anywhere in any label",
+    "In the title"
+   ],
+   "answer": 1,
+   "why": "Each statement names its target sections for each kind of label.",
+   "cite": "Labelling Workbench core pack"
+  },
+  {
+   "id": "q14-7",
+   "topic": 14,
+   "module": "core",
+   "q": "What does a PRAC signal recommendation set?",
+   "options": [
+    "The product information wording and a deadline to submit",
+    "Only a suggestion",
+    "A US labeling change",
+    "A price"
+   ],
+   "answer": 0,
+   "why": "PRAC recommendations give wording in all EU languages and a deadline for the variation.",
+   "cite": "EMA PRAC recommendations on signals"
+  },
+  {
+   "id": "q14-8",
+   "topic": 14,
+   "module": "core",
+   "q": "Which trigger in this app has a response clock set by statute?",
+   "options": [
+    "A CCDS update",
+    "An RLD change",
+    "An internal signal",
+    "A 505(o)(4) notification"
+   ],
+   "answer": 3,
+   "why": "505(o)(4) gives 30 days to respond; company targets are internal choices.",
+   "cite": "FD&C Act 505(o)(4)"
+  },
+  {
+   "id": "q15-7",
+   "topic": 15,
+   "module": "core",
+   "q": "Where does EU product information go in the eCTD?",
+   "options": [
+    "Module 2.5",
+    "Module 3.2.P.7",
+    "Module 1.3.1",
+    "Module 1.14"
+   ],
+   "answer": 2,
+   "why": "1.3.1 holds the SmPC, Annex II, labelling and package leaflet.",
+   "cite": "EU Module 1 specification"
+  },
+  {
+   "id": "q15-8",
+   "topic": 15,
+   "module": "core",
+   "q": "In US Module 1, what goes in 1.14.1?",
+   "options": [
+    "Promotional material",
+    "Draft labeling",
+    "Final labeling",
+    "Listed drug labeling"
+   ],
+   "answer": 1,
+   "why": "1.14.1 is draft labeling, 1.14.2 final labeling, 1.14.3 listed drug labeling.",
+   "cite": "FDA eCTD Module 1 specification"
   }
  ]
 }

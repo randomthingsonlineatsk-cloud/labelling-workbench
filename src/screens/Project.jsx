@@ -20,7 +20,7 @@ import Agency from './doc/Agency.jsx';
 import { scriptFor } from '../engine/agency.js';
 import UserTest from './doc/UserTest.jsx';
 import Translation from './doc/Translation.jsx';
-import { kindsFor } from '../engine/pack.js';
+import { kindsFor, ruleChanges, ruleStamp } from '../engine/pack.js';
 
 const TAB_LABEL = { edit: 'Edit', preview: 'Preview', checks: 'Checks', review: 'Review', versions: 'Versions', compare: 'Compare with reference', convert: 'Convert to PLR', proof: 'Proof check', core: 'Core data sheet', agency: 'Agency comments', changes: 'Changes', usertest: 'User test', translation: 'Translation review', export: 'Export' };
 
@@ -42,11 +42,14 @@ export default function Project({ id, docId, tab }) {
   const issuesByDoc = useMemo(() => Object.fromEntries(docs.map((d) => [d.id, runChecks(d, ctx)])), [docs, ctx]);
 
   useEffect(() => { if (lastDoc.current && lastDoc.current !== doc?.id) setFocus(null); lastDoc.current = doc?.id; }, [doc?.id]);
+  // Alt+1..9 and Alt+Shift+arrows (see the shortcuts dialog); the handler is set after the checks below.
+  const keyRef = useRef(null);
+  useEffect(() => { const h = (e) => keyRef.current?.(e); window.addEventListener('keydown', h); return () => window.removeEventListener('keydown', h); }, []);
   if (!project) return <div className="page"><h1>Project not found</h1><p><a href="#/">Back to projects</a></p></div>;
   if (!doc) return <div className="page"><h1>{project.title}</h1><p>This project has no labels. <button className="btn" onClick={() => setShowAdd(true)}>Add a label</button></p>{showAdd && <AddDoc project={project} product={product} onClose={() => setShowAdd(false)} />}</div>;
 
   const tabs = ['edit', 'preview', 'checks', 'review', 'versions'];
-  if (doc.role === 'generic' && docs.some((d) => d.role === 'reference')) tabs.push('compare');
+  if ((doc.role === 'generic' || doc.role === 'biosimilar') && docs.some((d) => d.role === 'reference')) tabs.push('compare');
   if (doc.kind === 'pi-old') tabs.push('convert');
   if ((doc.kind === 'carton' || doc.kind === 'container') && project.proof?.docId === doc.id) tabs.push('proof');
   if (doc.kind === 'pl' && doc.role !== 'translation') tabs.push('usertest');
@@ -57,6 +60,16 @@ export default function Project({ id, docId, tab }) {
   const cur = tabs.includes(tab) ? tab : 'edit';
   const issues = issuesByDoc[doc.id] ?? [];
   const setTab = (t, f) => { if (f !== undefined) setFocus(f); go(`/p/${project.id}/${doc.id}/${t}`); };
+  keyRef.current = (e) => {
+      if (!e.altKey || e.ctrlKey || e.metaKey) return;
+      const n = /^Digit([1-9])$/.exec(e.code);
+      if (n && !e.shiftKey && tabs[Number(n[1]) - 1]) { e.preventDefault(); setTab(tabs[Number(n[1]) - 1]); return; }
+      if (e.shiftKey && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+        const i = docs.findIndex((d) => d.id === doc.id);
+        const next = docs[i + (e.key === 'ArrowRight' ? 1 : -1)];
+        if (next) { e.preventDefault(); go(`/p/${project.id}/${next.id}/${cur}`); }
+      }
+  };
   const props = { project, doc, docs, product, issues, ctx, focus, setFocus, setTab };
 
   const exportAll = () => {
@@ -84,6 +97,18 @@ export default function Project({ id, docId, tab }) {
           </div>
         </div>
         {project.about && <p className="small muted" style={{ margin: '.3rem 0 0' }}>{project.about}</p>}
+        {(() => {
+          const rc = ruleChanges(project.ruleStamp, pack, project.region ?? 'us');
+          if (!rc) return null;
+          const line = (label, list) => list.length > 0 && <li>{label}: {list.map((r, i) => <React.Fragment key={r.id}>{i ? ', ' : ''}<a href="#/rules">{r.id}</a> ({r.title})</React.Fragment>)}</li>;
+          return (
+            <div className="callout warn" role="status" style={{ margin: '.5rem 0' }}>
+              <b>The rules have changed since this project was made.</b> Re-run the checks and review these rule cards:
+              <ul className="small" style={{ margin: '.3rem 0' }}>{line('Added', rc.added)}{line('Changed', rc.changed)}{line('Removed', rc.removed)}</ul>
+              <button className="btn small" onClick={() => saveProject({ ...project, ruleStamp: ruleStamp(pack, project.region ?? 'us') })}>Mark as reviewed</button>
+            </div>
+          );
+        })()}
         <div className="doc-tabs" role="list" aria-label="Labels in this project">
           {docs.map((d) => (
             <button key={d.id} className="doc-tab" role="listitem" aria-current={d.id === doc.id ? 'true' : undefined} onClick={() => go(`/p/${project.id}/${d.id}/${['compare', 'convert', 'proof', 'agency', 'usertest', 'translation'].includes(cur) ? 'edit' : cur}`)}>

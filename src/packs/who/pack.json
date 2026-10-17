@@ -2,8 +2,20 @@
  "id": "who",
  "name": "WHO prequalification (PQT/MED)",
  "short": "WHO",
- "version": "1.0.0",
+ "version": "1.0.1",
  "asOf": "2026-10-11",
+ "changes": [
+  {
+   "version": "1.0.1",
+   "date": "2026-10-17",
+   "notes": "Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes."
+  },
+  {
+   "version": "1.0.0",
+   "date": "2026-10-11",
+   "notes": "First release (Phase 5)."
+  }
+ ],
  "kinds": [
   "who-smpc"
  ],

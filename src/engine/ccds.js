@@ -3,7 +3,7 @@
 // carries its own mapping (doc.ccdsMap = { version, rows: { key: { status, justification } } }).
 import { findSection, blocksText } from './model.js';
 
-export const MAP_KINDS = ['pi', 'mg'];
+export const MAP_KINDS = ['pi', 'mg', 'smpc', 'pl'];
 export const MAP_STATUS = { aligned: 'Aligned', deviates: 'Deviates', na: 'Not applicable' };
 export const MIN_JUSTIFICATION = 15;
 
