@@ -7,7 +7,7 @@
   {
    "version": "1.1.0",
    "date": "2026-10-17",
-   "notes": "CCDS statements now map to the EU SmPC and package leaflet as well as the US label; new sample and drill to map the EU texts. Eight more quiz questions."
+   "notes": "CCDS statements now map to the EU SmPC and package leaflet as well as the US label; new sample and drill to map the EU texts. Eight more quiz questions. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist."
   },
   {
    "version": "1.0.0",
@@ -159,12 +159,12 @@
   {
    "id": "cioms3",
    "title": "CIOMS Working Groups III and V: Guidelines for Preparing Core Clinical-Safety Information on Drugs (2nd edition, 1999)",
-   "url": "https://cioms.ch/publications/product/guidelines-for-preparing-core-clinical-safety-information-on-drugs-second-edition-report-of-cioms-working-groups-iii-and-v/"
+   "url": "https://cioms.ch/wp-content/uploads/2018/03/Guidelines-for-Preparing-Core-Clinical-Safety-Info-Drugs-Report-of-CIOMS-Working-Group-III-and-V.pdf"
   },
   {
    "id": "e2c",
    "title": "ICH E2C(R2): Periodic Benefit-Risk Evaluation Report (reference safety information and the CCSI)",
-   "url": "https://database.ich.org/sites/default/files/E2C_R2_Guideline.pdf"
+   "url": "https://www.ema.europa.eu/en/ich-e2c-r2-periodic-benefit-risk-evaluation-report-scientific-guideline"
   },
   {
    "id": "o4",
@@ -174,7 +174,7 @@
   {
    "id": "cfr31470",
    "title": "21 CFR 314.70: Supplements and other changes to an approved NDA (CBE-0 for strengthening safety labelling, 314.70(c)(6)(iii))",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.70"
+   "url": "https://www.ecfr.gov/current/title-21/section-314.70"
   },
   {
    "id": "cfr201571",
@@ -183,8 +183,8 @@
   },
   {
    "id": "m1",
-   "title": "FDA eCTD Module 1: Comprehensive Table of Contents Headings and Hierarchy (1.14 Labeling)",
-   "url": "https://www.fda.gov/drugs/electronic-regulatory-submission-and-review/electronic-common-technical-document-ectd"
+   "title": "FDA eCTD resources: Module 1 specification and comprehensive table of contents headings (1.14 Labeling)",
+   "url": "https://www.fda.gov/drugs/electronic-submissions-cder/ectd-resources"
   },
   {
    "id": "pmi",
@@ -193,13 +193,13 @@
   },
   {
    "id": "pmisum",
-   "title": "Summary of the proposed PMI headings: Important Safety Information, Common Side Effects, Directions for Use",
-   "url": "https://www.hlc.com/en/publications/fda-proposes-mandatory-patient-labeling-for-rx-drugs"
+   "title": "Federal Register, 31 May 2023: proposed rule \"Medication Guides: Patient Medication Information\" (Docket FDA-2019-N-5959), with the proposed PMI headings",
+   "url": "https://www.govinfo.gov/content/pkg/FR-2023-05-31/html/2023-11354.htm"
   },
   {
    "id": "promo",
    "title": "21 CFR 201.56(a)(2) and 208.20(b)(2): labeling must not be promotional, false or misleading",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-208/subpart-B/section-208.20"
+   "url": "https://www.ecfr.gov/current/title-21/section-208.20"
   }
  ]
 }

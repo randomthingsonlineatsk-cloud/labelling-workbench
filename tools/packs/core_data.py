@@ -10,7 +10,7 @@ PACK = {
     'name': 'Core data sheet and change management',
     'short': 'Core',
     'version': '1.1.0',
-    'changes': [{'version': '1.1.0', 'date': '2026-10-17', 'notes': 'CCDS statements now map to the EU SmPC and package leaflet as well as the US label; new sample and drill to map the EU texts. Eight more quiz questions.'}, {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 2): CCDS and CCSI, mapping and deviations, change requests, 505(o)(4), agency comment rounds, implementation tracking.'}],
+    'changes': [{'version': '1.1.0', 'date': '2026-10-17', 'notes': 'CCDS statements now map to the EU SmPC and package leaflet as well as the US label; new sample and drill to map the EU texts. Eight more quiz questions. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist.'}, {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 2): CCDS and CCSI, mapping and deviations, change requests, 505(o)(4), agency comment rounds, implementation tracking.'}],
     'asOf': '2026-10-17',
     'about': (
         'The company core data sheet (CCDS) and its safety subset (CCSI), mapping local labels to it, '
@@ -55,15 +55,15 @@ PACK = {
         {'id': 'editorial', 'label': 'Editorial change', 'safety': False},
     ],
     'sources': [
-        {'id': 'cioms3', 'title': 'CIOMS Working Groups III and V: Guidelines for Preparing Core Clinical-Safety Information on Drugs (2nd edition, 1999)', 'url': 'https://cioms.ch/publications/product/guidelines-for-preparing-core-clinical-safety-information-on-drugs-second-edition-report-of-cioms-working-groups-iii-and-v/'},
-        {'id': 'e2c', 'title': 'ICH E2C(R2): Periodic Benefit-Risk Evaluation Report (reference safety information and the CCSI)', 'url': 'https://database.ich.org/sites/default/files/E2C_R2_Guideline.pdf'},
+        {'id': 'cioms3', 'title': 'CIOMS Working Groups III and V: Guidelines for Preparing Core Clinical-Safety Information on Drugs (2nd edition, 1999)', 'url': 'https://cioms.ch/wp-content/uploads/2018/03/Guidelines-for-Preparing-Core-Clinical-Safety-Info-Drugs-Report-of-CIOMS-Working-Group-III-and-V.pdf'},
+        {'id': 'e2c', 'title': 'ICH E2C(R2): Periodic Benefit-Risk Evaluation Report (reference safety information and the CCSI)', 'url': 'https://www.ema.europa.eu/en/ich-e2c-r2-periodic-benefit-risk-evaluation-report-scientific-guideline'},
         {'id': 'o4', 'title': 'FDA guidance: Safety Labeling Changes, Implementation of Section 505(o)(4) of the FD&C Act (July 2013)', 'url': 'https://www.fda.gov/regulatory-information/search-fda-guidance-documents/safety-labeling-changes-implementation-section-505o4-federal-food-drug-and-cosmetic-act'},
-        {'id': 'cfr31470', 'title': '21 CFR 314.70: Supplements and other changes to an approved NDA (CBE-0 for strengthening safety labelling, 314.70(c)(6)(iii))', 'url': 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.70'},
+        {'id': 'cfr31470', 'title': '21 CFR 314.70: Supplements and other changes to an approved NDA (CBE-0 for strengthening safety labelling, 314.70(c)(6)(iii))', 'url': 'https://www.ecfr.gov/current/title-21/section-314.70'},
         {'id': 'cfr201571', 'title': '21 CFR 201.57(c)(6): Warnings and Precautions, and 201.56(a)(2): labeling must be updated when new information becomes available', 'url': 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-B/section-201.56'},
-        {'id': 'm1', 'title': 'FDA eCTD Module 1: Comprehensive Table of Contents Headings and Hierarchy (1.14 Labeling)', 'url': 'https://www.fda.gov/drugs/electronic-regulatory-submission-and-review/electronic-common-technical-document-ectd'},
+        {'id': 'm1', 'title': 'FDA eCTD resources: Module 1 specification and comprehensive table of contents headings (1.14 Labeling)', 'url': 'https://www.fda.gov/drugs/electronic-submissions-cder/ectd-resources'},
         {'id': 'pmi', 'title': 'FDA: Medication Guide; Patient Medication Information, proposed rule (88 FR 35694, 31 May 2023)', 'url': 'https://www.fda.gov/drugs/cder-conversations/patient-medication-information-2023-proposed-rule-help-patients-understand-their-prescription'},
-        {'id': 'pmisum', 'title': 'Summary of the proposed PMI headings: Important Safety Information, Common Side Effects, Directions for Use', 'url': 'https://www.hlc.com/en/publications/fda-proposes-mandatory-patient-labeling-for-rx-drugs'},
-        {'id': 'promo', 'title': '21 CFR 201.56(a)(2) and 208.20(b)(2): labeling must not be promotional, false or misleading', 'url': 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-208/subpart-B/section-208.20'},
+        {'id': 'pmisum', 'title': 'Federal Register, 31 May 2023: proposed rule "Medication Guides: Patient Medication Information" (Docket FDA-2019-N-5959), with the proposed PMI headings', 'url': 'https://www.govinfo.gov/content/pkg/FR-2023-05-31/html/2023-11354.htm'},
+        {'id': 'promo', 'title': '21 CFR 201.56(a)(2) and 208.20(b)(2): labeling must not be promotional, false or misleading', 'url': 'https://www.ecfr.gov/current/title-21/section-208.20'},
     ],
 }
 

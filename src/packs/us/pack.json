@@ -7,7 +7,7 @@
   {
    "version": "1.1.0",
    "date": "2026-10-17",
-   "notes": "Biosimilar labelling exercise (Selvanta and its reference Arventa) with three rule cards: the biosimilarity statement, naming the product, and interchangeability statements as a Watch hint after FDA's September 2023 revised draft guidance. Adverse-reaction table and figure blocks in the editor. Thirteen more quiz questions."
+   "notes": "Biosimilar labelling exercise (Selvanta and its reference Arventa) with three rule cards: the biosimilarity statement, naming the product, and interchangeability statements as a Watch hint after FDA's September 2023 revised draft guidance. Adverse-reaction table and figure blocks in the editor. Thirteen more quiz questions. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist."
   },
   {
    "version": "1.0.0",
@@ -66,82 +66,82 @@
   {
    "id": "cfr20156",
    "title": "21 CFR 201.56: Requirements on content and format of labeling for human prescription drug and biological products",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-B/section-201.56"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.56"
   },
   {
    "id": "cfr20157",
    "title": "21 CFR 201.57: Specific requirements on content and format of labeling (PLR format)",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-B/section-201.57"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.57"
   },
   {
    "id": "cfr20180",
    "title": "21 CFR 201.80: Specific requirements for older-format labeling",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-B/section-201.80"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.80"
   },
   {
    "id": "cfr208",
    "title": "21 CFR Part 208: Medication Guides for prescription drug products",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-208"
+   "url": "https://www.ecfr.gov/current/title-21/part-208"
   },
   {
    "id": "cfr20125",
    "title": "21 CFR 201.25: Bar code label requirements",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.25"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.25"
   },
   {
    "id": "cfr2011",
    "title": "21 CFR 201.1: Drugs; name and place of business of manufacturer, packer, or distributor",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.1"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.1"
   },
   {
    "id": "cfr20110",
    "title": "21 CFR 201.10: Drugs; statement of ingredients (established name prominence)",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.10"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.10"
   },
   {
    "id": "cfr20117",
    "title": "21 CFR 201.17: Drugs; location of expiration date",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.17"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.17"
   },
   {
    "id": "cfr20118",
    "title": "21 CFR 201.18: Drugs; significance of control numbers",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.18"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.18"
   },
   {
    "id": "cfr20151",
    "title": "21 CFR 201.51: Declaration of net quantity of contents",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.51"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.51"
   },
   {
    "id": "cfr201100",
    "title": "21 CFR 201.100: Prescription drugs for human use (Rx only and label statements)",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-D/section-201.100"
+   "url": "https://www.ecfr.gov/current/title-21/section-201.100"
   },
   {
    "id": "ndc",
    "title": "21 CFR 207.33: National Drug Code format",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-207/subpart-C/section-207.33"
+   "url": "https://www.ecfr.gov/current/title-21/section-207.33"
   },
   {
    "id": "cfr31494",
    "title": "21 CFR 314.94(a)(8): ANDA labeling and permitted differences",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-C/section-314.94"
+   "url": "https://www.ecfr.gov/current/title-21/section-314.94"
   },
   {
    "id": "cfr314127",
    "title": "21 CFR 314.127(a)(7): Omission of protected indications from generic labeling",
-   "url": "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-D/section-314.127"
+   "url": "https://www.ecfr.gov/current/title-21/section-314.127"
   },
   {
    "id": "viii",
    "title": "FD&C Act 505(j)(2)(A)(viii) (21 U.S.C. 355): section viii statements",
-   "url": "https://www.law.cornell.edu/uscode/text/21/355"
+   "url": "https://www.govinfo.gov/link/uscode/21/355"
   },
   {
    "id": "plrpage",
    "title": "FDA: PLR requirements for prescribing information (labeling resources and guidances)",
-   "url": "https://www.fda.gov/drugs/laws-acts-and-rules/plr-requirements-prescribing-information"
+   "url": "https://www.fda.gov/drugs/fdas-labeling-resources-human-prescription-drugs/prescribing-information-resources"
   },
   {
    "id": "carton",
@@ -151,12 +151,12 @@
   {
    "id": "ismp",
    "title": "ISMP List of Error-Prone Abbreviations, Symbols and Dose Designations (cited by FDA in its carton and container guidance)",
-   "url": "https://www.ismp.org/recommendations/error-prone-abbreviations-list"
+   "url": "https://home.ecri.org/blogs/ismp-resources/list-of-error-prone-abbreviations"
   },
   {
    "id": "spl",
    "title": "FDA: Structured Product Labeling resources",
-   "url": "https://www.fda.gov/industry/fda-data-standards-advisory-board/structured-product-labeling-resources"
+   "url": "https://www.fda.gov/industry/fda-resources-data-standards/structured-product-labeling-resources"
   },
   {
    "id": "pmi",
@@ -176,7 +176,7 @@
   {
    "id": "biosim",
    "title": "FDA: Biosimilar and interchangeable products labeling resources",
-   "url": "https://www.fda.gov/drugs/biosimilars/biosimilar-and-interchangeable-biologics-more-treatment-choices"
+   "url": "https://www.fda.gov/consumers/consumer-updates/biosimilar-and-interchangeable-biologics-more-treatment-choices"
   }
  ]
 }

@@ -7,7 +7,7 @@ follows common practice, or the app's simplification of a template, the rule car
 
 AS_OF = '2026-10-11'
 CHANGES = [
-    {'version': '1.0.1', 'date': '2026-10-17', 'notes': 'Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes.'},
+    {'version': '1.0.1', 'date': '2026-10-17', 'notes': 'Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist.'},
     {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 5).'},
 ]
 
@@ -44,8 +44,8 @@ CA = {
     'sources': [
         {'id': 'pmtpl', 'title': 'Health Canada: Product monograph master template (issued 2020-10-30, modified 2025-06-13)', 'url': 'https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/product-monograph/master-template.html'},
         {'id': 'pmguide', 'title': 'Health Canada: Guidance document, Product Monograph', 'url': 'https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/product-monograph/guidance-document-product-monograph.html'},
-        {'id': 'fdr', 'title': 'Food and Drug Regulations (C.R.C., c. 870), C.01.004 to C.01.005: labels, Pr symbol, DIN, plain language labelling', 'url': 'https://laws.justice.gc.ca/eng/regulations/c.r.c.,_c._870/page-45.html'},
-        {'id': 'fdra', 'title': 'Food and Drug Regulations (C.R.C., c. 870), A.01.015: label information in English and French', 'url': 'https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/'},
+        {'id': 'fdr', 'title': 'Food and Drug Regulations (C.R.C., c. 870), C.01.004 to C.01.005: labels, Pr symbol, DIN, plain language labelling', 'url': 'https://laws-lois.justice.gc.ca/eng/Regulations/c.r.c.,_c._870/FullText.html'},
+        {'id': 'fdra', 'title': 'Food and Drug Regulations (C.R.C., c. 870), A.01.015: label information in English and French', 'url': 'https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/page-1.html'},
         {'id': 'pll', 'title': 'Health Canada: Plain language labelling regulations for prescription drugs, contact information requirement', 'url': 'https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/applications-submissions/guidance-documents/plain-language-labelling-regulations-prescription-drugs/contact-information-requirement.html'},
     ],
 }
@@ -189,10 +189,10 @@ JP = {
         {'id': 'epijp', 'title': 'Structured electronic package inserts (ePI-JP)', 'src': 'epijp', 'text': 'A FHIR implementation guide for Japanese electronic package inserts is in development. The app shows the section structure only.'},
     ],
     'sources': [
-        {'id': 'jp0608', 'title': 'PSEHB Notification No. 0608-1 (8 June 2017): instructions for package inserts of prescription drugs (English translation)', 'url': 'https://www.phrma-jp.org/wordpress/wp-content/uploads/2019/05/PSEHB-Notification-No.0608-1_E_1.1.pdf'},
+        {'id': 'jp0608', 'title': 'Pharmaceuticals and Medical Devices Safety Information No. 344 (June 2017, MHLW, English by PMDA): the revised package insert format under PSEHB Notification No. 0608-1', 'url': 'https://www.pmda.go.jp/files/000218681.pdf'},
         {'id': 'jp360', 'title': 'Pharmaceuticals and Medical Devices Safety Information No. 360 (February 2019): package inserts under the revised instructions', 'url': 'https://www.pmda.go.jp/files/000227942.pdf'},
         {'id': 'jpepi', 'title': 'PMDA: electronic package inserts (paper inserts abolished in principle from August 2021; code on the outer box)', 'url': 'https://www.pmda.go.jp/english/safety/info-services/e-pack-ins/0001.html'},
-        {'id': 'epijp', 'title': 'Japanese Electronic Medicinal Product Information (ePI-JP), FHIR implementation guide (draft)', 'url': 'https://build.fhir.org/ig/cander2/epi-jp/'},
+        {'id': 'epijp', 'title': 'HL7 Japanese Electronic Medicinal Product Information (ePI-JP) FHIR implementation guide, continuous build (draft)', 'url': 'https://build.fhir.org/ig/cander2/epi-jp/'},
     ],
 }
 
@@ -247,11 +247,11 @@ AU = {
     'watch': [],
     'sources': [
         {'id': 'piform', 'title': 'TGA: Form for providing product information (approved under section 7D of the Therapeutic Goods Act 1989)', 'url': 'https://www.tga.gov.au/sites/default/files/legislation-pi-form-approval-180308.pdf'},
-        {'id': 'cmitpl', 'title': 'TGA: Improved Consumer Medicine Information template (Schedule 12, Therapeutic Goods Regulations 1990)', 'url': 'https://www.tga.gov.au/sites/default/files/improved-consumer-medicine-information-template.pdf'},
+        {'id': 'cmitpl', 'title': 'TGA: Improved Consumer Medicine Information template (Schedule 12, Therapeutic Goods Regulations 1990)', 'url': 'https://www.tga.gov.au/resources/resource/reference-material/improved-consumer-medicine-information-template'},
         {'id': 'cmiguide', 'title': 'TGA: Using the TGA CMI template, guidance for sponsors', 'url': 'https://www.tga.gov.au/resources/resource/guidance/using-tga-cmi-template-guidance-sponsors'},
         {'id': 'aubt', 'title': 'TGA: Black triangle scheme, information for sponsors (statements, placement, five years)', 'url': 'https://www.tga.gov.au/sites/default/files/black-triangle-scheme-information-for-sponsors.pdf'},
         {'id': 'tgo91', 'title': 'TGA: Creating prescription medicine labels that meet requirements (Therapeutic Goods Order No. 91)', 'url': 'https://tga.gov.au/node/289612'},
-        {'id': 'poisons', 'title': 'Poisons Standard (SUSMP): Schedule 4, Prescription Only Medicine', 'url': 'https://www.legislation.gov.au/F2023L00617/asmade/2023-05-26/text/original/epub/OEBPS/document_1/document_1.html'},
+        {'id': 'poisons', 'title': 'TGA: Poisons Standard (SUSMP), current version; Schedule 4, Prescription Only Medicine', 'url': 'https://www.tga.gov.au/resources/publication/publications/poisons-standard-susmp'},
     ],
 }
 
