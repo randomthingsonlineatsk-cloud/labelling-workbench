@@ -721,6 +721,426 @@
    "answer": 0,
    "why": "The consultation closed in August 2025.",
    "cite": "EMA QRD templates page"
+  },
+  {
+   "id": "q16-6",
+   "topic": 16,
+   "module": "eu",
+   "q": "What does Annex II, section B give?",
+   "options": [
+    "The manufacturer of the active substance only",
+    "The undesirable effects",
+    "The price",
+    "The legal status for supply, for example subject to medical prescription"
+   ],
+   "answer": 3,
+   "why": "Section B sets the conditions or restrictions regarding supply and use.",
+   "cite": "QRD template, Annex II"
+  },
+  {
+   "id": "q16-7",
+   "topic": 16,
+   "module": "eu",
+   "q": "Which SmPC section gives the date of revision of the text?",
+   "options": [
+    "7",
+    "6.3",
+    "10",
+    "9"
+   ],
+   "answer": 2,
+   "why": "Section 9 is the date of first authorisation or renewal; section 10 the date of revision.",
+   "cite": "QRD template v10.4"
+  },
+  {
+   "id": "q16-8",
+   "topic": 16,
+   "module": "eu",
+   "q": "What may a generic SmPC leave out under Article 11 of Directive 2001/83/EC?",
+   "options": [
+    "The black triangle",
+    "Parts referring to indications or dosage forms still covered by patent law",
+    "Any warning",
+    "Section 4.8"
+   ],
+   "answer": 1,
+   "why": "The rest of the SmPC follows the reference.",
+   "cite": "Directive 2001/83/EC, Article 11"
+  },
+  {
+   "id": "q16-9",
+   "topic": 16,
+   "module": "eu",
+   "q": "Which particulars does a small vial label carry?",
+   "options": [
+    "Name with route, method, EXP, Lot and contents",
+    "The full outer-carton particulars",
+    "Only the name",
+    "Only the batch"
+   ],
+   "answer": 0,
+   "why": "Small immediate packaging carries the minimum particulars of Annex IIIA.",
+   "cite": "QRD template v10.4, Annex IIIA"
+  },
+  {
+   "id": "q17-6",
+   "topic": 17,
+   "module": "eu",
+   "q": "What does \"uncommon\" mean in 4.8?",
+   "options": [
+    "≥1/100 to <1/10",
+    "≥1/10",
+    "<1/10,000",
+    "≥1/1,000 to <1/100"
+   ],
+   "answer": 3,
+   "why": "The MedDRA frequency convention in the SmPC guideline.",
+   "cite": "SmPC guideline Rev. 2"
+  },
+  {
+   "id": "q17-7",
+   "topic": 17,
+   "module": "eu",
+   "q": "Within each frequency grouping, how are adverse reactions ordered?",
+   "options": [
+    "By date reported",
+    "By study",
+    "By decreasing seriousness",
+    "Alphabetically"
+   ],
+   "answer": 2,
+   "why": "The guideline asks for decreasing seriousness within each frequency group.",
+   "cite": "SmPC guideline Rev. 2, section 4.8"
+  },
+  {
+   "id": "q17-8",
+   "topic": 17,
+   "module": "eu",
+   "q": "What is \"very rare\"?",
+   "options": [
+    "Cannot be estimated",
+    "<1/10,000",
+    "≥1/10,000 to <1/1,000",
+    "≥1/1,000 to <1/100"
+   ],
+   "answer": 1,
+   "why": "\"Not known\" is used when the frequency cannot be estimated.",
+   "cite": "SmPC guideline Rev. 2"
+  },
+  {
+   "id": "q18-6",
+   "topic": 18,
+   "module": "eu",
+   "q": "From what amount must an oral medicine state its sodium content?",
+   "options": [
+    "1 mmol (23 mg) per dose or more",
+    "Any amount",
+    "0.1 mmol",
+    "5 mmol"
+   ],
+   "answer": 0,
+   "why": "From 1 mmol per dose the leaflet gives the amount; below it, it may say essentially sodium-free.",
+   "cite": "Excipients annex, Rev. 2"
+  },
+  {
+   "id": "q18-7",
+   "topic": 18,
+   "module": "eu",
+   "q": "Below 1 mmol (23 mg) sodium per dose, what may the leaflet say?",
+   "options": [
+    "Nothing at all",
+    "\"low salt\"",
+    "\"contains sodium\"",
+    "\"essentially sodium-free\""
+   ],
+   "answer": 3,
+   "why": "The annex gives that wording for small amounts.",
+   "cite": "Excipients annex, Rev. 2"
+  },
+  {
+   "id": "q18-8",
+   "topic": 18,
+   "module": "eu",
+   "q": "Who is the benzyl alcohol warning mainly about?",
+   "options": [
+    "Older adults only",
+    "No one",
+    "Babies and young children, who can have toxic reactions",
+    "Athletes"
+   ],
+   "answer": 2,
+   "why": "Benzyl alcohol can cause toxic and allergic reactions in infants and young children.",
+   "cite": "Excipients annex, Rev. 2"
+  },
+  {
+   "id": "q19-6",
+   "topic": 19,
+   "module": "eu",
+   "q": "Which legislation set up the list of medicines under additional monitoring?",
+   "options": [
+    "Regulation (EU) No 536/2014",
+    "Regulation (EU) No 1235/2010",
+    "Delegated Regulation (EU) 2016/161",
+    "Directive 2001/20/EC"
+   ],
+   "answer": 1,
+   "why": "It amended Regulation 726/2004 (Article 23) to create the list.",
+   "cite": "Regulation (EU) No 1235/2010"
+  },
+  {
+   "id": "q19-7",
+   "topic": 19,
+   "module": "eu",
+   "q": "Who publishes the list of medicines under additional monitoring?",
+   "options": [
+    "EMA",
+    "Each company",
+    "WHO",
+    "The European Parliament"
+   ],
+   "answer": 0,
+   "why": "EMA keeps and publishes the list.",
+   "cite": "EMA: medicines under additional monitoring"
+  },
+  {
+   "id": "q19-8",
+   "topic": 19,
+   "module": "eu",
+   "q": "What is the blue box for?",
+   "options": [
+    "Every EU product's warnings",
+    "Generics only",
+    "Biologicals only",
+    "National particulars on centrally authorised packs"
+   ],
+   "answer": 3,
+   "why": "Article 57 lets member states require particulars such as price, shown in the blue box.",
+   "cite": "Directive 2001/83/EC, Article 57"
+  },
+  {
+   "id": "q20-6",
+   "topic": 20,
+   "module": "eu",
+   "q": "Which guideline sets the EU readability requirements?",
+   "options": [
+    "QRD v11",
+    "Regulation 1235/2010",
+    "The Commission readability guideline, Rev. 1 (2009)",
+    "ICH E3"
+   ],
+   "answer": 2,
+   "why": "It covers layout, wording and user testing.",
+   "cite": "Readability guideline Rev. 1"
+  },
+  {
+   "id": "q20-7",
+   "topic": 20,
+   "module": "eu",
+   "q": "When can bridging replace a full user test?",
+   "options": [
+    "When the leaflet is translated",
+    "When the leaflet is close in content and layout to one already tested",
+    "Never",
+    "For any generic"
+   ],
+   "answer": 1,
+   "why": "Bridging relies on an earlier successful test of a similar leaflet.",
+   "cite": "Readability guideline Rev. 1"
+  },
+  {
+   "id": "q20-8",
+   "topic": 20,
+   "module": "eu",
+   "q": "Which article says the leaflet reflects consultations with target patient groups?",
+   "options": [
+    "Article 59(3)",
+    "Article 11",
+    "Article 56a",
+    "Article 57"
+   ],
+   "answer": 0,
+   "why": "Article 59(3) of Directive 2001/83/EC is the basis for user testing.",
+   "cite": "Directive 2001/83/EC, Article 59(3)"
+  },
+  {
+   "id": "q21-6",
+   "topic": 21,
+   "module": "eu",
+   "q": "Which regulation sets the safety features?",
+   "options": [
+    "Regulation 1235/2010",
+    "Directive 2001/20/EC",
+    "Regulation 726/2004",
+    "Delegated Regulation (EU) 2016/161"
+   ],
+   "answer": 3,
+   "why": "It sets the unique identifier and the anti-tampering device.",
+   "cite": "Delegated Regulation (EU) 2016/161"
+  },
+  {
+   "id": "q21-7",
+   "topic": 21,
+   "module": "eu",
+   "q": "What does the unique identifier contain?",
+   "options": [
+    "Only the batch",
+    "A web address",
+    "Product code, serial number, batch and expiry (and a national number where required)",
+    "Brand name and price"
+   ],
+   "answer": 2,
+   "why": "These data are encoded in the 2D data matrix and printed in human-readable form.",
+   "cite": "Delegated Regulation (EU) 2016/161, Article 4"
+  },
+  {
+   "id": "q21-8",
+   "topic": 21,
+   "module": "eu",
+   "q": "Which article requires the name in Braille?",
+   "options": [
+    "Article 57",
+    "Article 56a",
+    "Article 11",
+    "Article 59"
+   ],
+   "answer": 1,
+   "why": "Article 56a of Directive 2001/83/EC.",
+   "cite": "Directive 2001/83/EC, Article 56a"
+  },
+  {
+   "id": "q22-6",
+   "topic": 22,
+   "module": "eu",
+   "q": "What does a term base hold?",
+   "options": [
+    "The source term, the approved target term and notes",
+    "Prices",
+    "English terms only",
+    "Reviewers' names"
+   ],
+   "answer": 0,
+   "why": "It keeps terms consistent across documents and versions.",
+   "cite": "EMA linguistic review process"
+  },
+  {
+   "id": "q22-7",
+   "topic": 22,
+   "module": "eu",
+   "q": "A translation leaves out a sentence of section 2. What is it?",
+   "options": [
+    "A style choice",
+    "Acceptable",
+    "A term base update",
+    "A completeness error to fix"
+   ],
+   "answer": 3,
+   "why": "Every sentence of the English must be translated.",
+   "cite": "EMA linguistic review process"
+  },
+  {
+   "id": "q22-8",
+   "topic": 22,
+   "module": "eu",
+   "q": "Who prepares the translations of a centrally authorised product?",
+   "options": [
+    "PRAC",
+    "The European Commission",
+    "The applicant or holder",
+    "EMA"
+   ],
+   "answer": 2,
+   "why": "The company translates; member states review them.",
+   "cite": "EMA linguistic review process"
+  },
+  {
+   "id": "q23-6",
+   "topic": 23,
+   "module": "eu",
+   "q": "Which committee assesses safety signals in the EU?",
+   "options": [
+    "COMP",
+    "PRAC",
+    "CMDh",
+    "QRD"
+   ],
+   "answer": 1,
+   "why": "The Pharmacovigilance Risk Assessment Committee.",
+   "cite": "EMA PRAC"
+  },
+  {
+   "id": "q23-7",
+   "topic": 23,
+   "module": "eu",
+   "q": "Where does a holder find when PSURs are due?",
+   "options": [
+    "The EURD list",
+    "SmPC section 10",
+    "Annex IIIB",
+    "The blue box"
+   ],
+   "answer": 0,
+   "why": "Annex II points to the list of Union reference dates.",
+   "cite": "QRD template, Annex II; Directive 2001/83/EC Article 107c(7)"
+  },
+  {
+   "id": "q23-8",
+   "topic": 23,
+   "module": "eu",
+   "q": "Which Annex II section gives the PSUR statement?",
+   "options": [
+    "A",
+    "B",
+    "E",
+    "C"
+   ],
+   "answer": 3,
+   "why": "Section C covers other conditions, including PSURs.",
+   "cite": "QRD template, Annex II"
+  },
+  {
+   "id": "q24-6",
+   "topic": 24,
+   "module": "eu",
+   "q": "What does ePI make possible that a PDF does not?",
+   "options": [
+    "Colour printing",
+    "Skipping approval",
+    "Searching and reusing structured sections across languages and versions",
+    "Nothing"
+   ],
+   "answer": 2,
+   "why": "Structure is the point of ePI.",
+   "cite": "EMA ePI"
+  },
+  {
+   "id": "q24-7",
+   "topic": 24,
+   "module": "eu",
+   "q": "Does ePI change the approved content?",
+   "options": [
+    "It adds promotional text",
+    "No: it is the same approved text in a structured form",
+    "Yes: it shortens the SmPC",
+    "Only for generics"
+   ],
+   "answer": 1,
+   "why": "ePI carries the authorised product information.",
+   "cite": "EMA ePI"
+  },
+  {
+   "id": "q24-8",
+   "topic": 24,
+   "module": "eu",
+   "q": "In this app's ePI view, what stays stable across versions?",
+   "options": [
+    "Section identifiers",
+    "Font size",
+    "Price",
+    "Brand colour"
+   ],
+   "answer": 0,
+   "why": "Stable identifiers let systems link to a section.",
+   "cite": "Labelling Workbench EU pack"
   }
  ]
 }

@@ -1,17 +1,33 @@
 // Data model: projects hold label documents. A document is one region-specific label of one
 // kind (PI, Medication Guide, carton...). Text lives in blocks inside sections; Highlights and
 // carton fields have their own shapes. Every record carries userId and classId.
-import { templateFor, fill } from './pack.js';
+import { templateFor, fill, ruleStamp } from './pack.js';
 
 export const SCHEMA_VERSION = 1;
 export const uid = (p = 'x') => `${p}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 export const now = () => new Date().toISOString();
 const clone = (x) => (typeof structuredClone === 'function' ? structuredClone(x) : JSON.parse(JSON.stringify(x)));
 
-export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)', 'in-pi': 'Package insert (India)', 'in-carton': 'Carton (India)', 'in-label': 'Strip or container label (India)', 'ca-pm': 'Product monograph (Canada)', 'ca-pmi': 'Patient Medication Information (Canada)', 'ca-label': 'Outer label (Canada)', 'ch-fi': 'Fachinformation (Switzerland)', 'ch-pi': 'Patienteninformation (Switzerland)', 'jp-pi': 'Package insert (Japan)', 'au-pi': 'Product Information (Australia)', 'au-cmi': 'Consumer Medicine Information (Australia)', 'who-smpc': 'SmPC (WHO prequalification)' };
+export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)', 'eu-annex2': 'Annex II (EU)', 'eu-small': 'Small immediate packaging (EU)', 'in-pi': 'Package insert (India)', 'in-carton': 'Carton (India)', 'in-label': 'Strip or container label (India)', 'ca-pm': 'Product monograph (Canada)', 'ca-pmi': 'Patient Medication Information (Canada)', 'ca-label': 'Outer label (Canada)', 'ch-fi': 'Fachinformation (Switzerland)', 'ch-pi': 'Patienteninformation (Switzerland)', 'jp-pi': 'Package insert (Japan)', 'au-pi': 'Product Information (Australia)', 'au-cmi': 'Consumer Medicine Information (Australia)', 'who-smpc': 'SmPC (WHO prequalification)' };
 export const STATUS = { draft: 'Draft', review: 'In review', changes: 'Changes requested', approved: 'Approved', superseded: 'Superseded', submitted: 'Sent to agency' };
 
-export const newBlock = (t = 'p') => ({ id: uid('b'), t, ...(t === 'ul' ? { items: [''] } : t === 'table' ? { rows: [['', ''], ['', '']] } : { text: '' }) });
+export const AR_HEAD = ['Adverse reaction', 'Drug (%)', 'Placebo (%)'];
+export const isTable = (b) => b?.t === 'table' || b?.t === 'ar';
+export const newBlock = (t = 'p') => ({ id: uid('b'), t, ...(t === 'ul' ? { items: [''] } : t === 'table' ? { rows: [['', ''], ['', '']] } : t === 'ar' ? { rows: [[...AR_HEAD], ['', '', '']] } : t === 'fig' ? { text: '', alt: '' } : { text: '' }) });
+// Adverse-reaction table: the first row holds the column headings; every other cell after the
+// term must be a percentage, a count or a frequency category. Returns the problems found.
+export function arProblems(b) {
+  const out = [];
+  const rows = (b.rows ?? []).slice(1).filter((r) => r.some((c) => String(c ?? '').trim()));
+  const cols = (b.rows?.[0] ?? []).length;
+  if (cols < 2) out.push('Give at least a term column and one treatment column.');
+  for (const [i, r] of rows.entries()) {
+    if (!String(r[0] ?? '').trim()) out.push(`Row ${i + 1} has no adverse reaction term.`);
+    for (const c of r.slice(1)) if (String(c ?? '').trim() && !/^(<\s*)?\d+(\.\d+)?\s*%?$|^\d+\s*\(\d+(\.\d+)?%?\)$|^(very common|common|uncommon|rare|very rare|not known)$/i.test(String(c).trim())) out.push(`Row ${i + 1}: "${c}" is not a percentage, a count or a frequency category.`);
+    if (r.length !== cols) out.push(`Row ${i + 1} has ${r.length} cells; the headings have ${cols}.`);
+  }
+  return out;
+}
 
 function freshIds(doc) {
   const walk = (blocks) => (blocks ?? []).forEach((b) => { b.id = uid('b'); });
@@ -40,6 +56,7 @@ export function projectFromSample(sample, user, { pack = null, product = null } 
   if (sample.mapped) for (const d of docs) if (d.kind === 'pi' || d.kind === 'mg') d.ccdsMap = { version: sample.mapped, rows: clone(sample.mappedRows?.[d.kind] ?? {}) };
   if (pack && product) for (const k of sample.blank ?? []) { const d = blankDoc(pack, k, product, id, user); d.sampleDocId = k; d.createdAt = new Date(t0 + docs.length).toISOString(); docs.push(d); }
   project.changes = [];
+  if (pack) project.ruleStamp = ruleStamp(pack, project.region);
   return { project, docs };
 }
 
@@ -70,7 +87,7 @@ export function blankDoc(pack, kind, product, projectId, user) {
   return { ...base, meta, sections };
 }
 
-export const EU_KINDS = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
+export const EU_KINDS = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'];
 export const IN_KINDS = ['in-pi', 'in-carton', 'in-label'];
 export const MORE_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'];
 export const regionOfKind = (kind) => (EU_KINDS.includes(kind) ? 'eu' : IN_KINDS.includes(kind) ? 'in' : MORE_KINDS.includes(kind) ? kind.split('-')[0] : 'us');
@@ -132,7 +149,7 @@ function blankEuDoc(pack, kind, product, projectId, user) {
 }
 
 // ---------- reading text ----------
-export const blockTexts = (b) => (b.t === 'ul' ? b.items ?? [] : b.t === 'table' ? (b.rows ?? []).flat() : [b.text ?? '']);
+export const blockTexts = (b) => (b.t === 'ul' ? b.items ?? [] : isTable(b) ? (b.rows ?? []).flat() : [b.text ?? '']);
 export const blocksText = (blocks) => (blocks ?? []).flatMap(blockTexts).join('\n');
 export const hasContent = (blocks) => (blocks ?? []).some((b) => blockTexts(b).some((t) => t.trim()));
 
@@ -186,7 +203,7 @@ export function rewriteRefs(doc, map) {
   const re = /\(((?:\d{1,2}(?:\.\d{1,2})?)(?:\s*,\s*\d{1,2}(?:\.\d{1,2})?)*)\)/g;
   const fix = (t) => String(t).replace(re, (m, inner) => `(${inner.split(/\s*,\s*/).map((n) => map[n] ?? n).join(', ')})`);
   const fixBlocks = (blocks) => (blocks ?? []).forEach((b) => {
-    if (b.t === 'ul') b.items = b.items.map(fix); else if (b.t === 'table') b.rows = b.rows.map((r) => r.map(fix)); else b.text = fix(b.text ?? '');
+    if (b.t === 'ul') b.items = b.items.map(fix); else if (isTable(b)) b.rows = b.rows.map((r) => r.map(fix)); else b.text = fix(b.text ?? '');
   });
   if (doc.hl) { for (const v of Object.values(doc.hl)) if (Array.isArray(v) && v[0]?.id) fixBlocks(v); for (const r of doc.hl.rmc ?? []) if (map[r.num]) r.num = map[r.num]; }
   if (doc.bw) fixBlocks(doc.bw.blocks);

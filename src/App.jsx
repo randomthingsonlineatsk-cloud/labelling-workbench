@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AppCtx } from './ctx.js';
 import { db, getUser, getMeta, setMeta } from './engine/db.js';
-import { PACKS, productById, packAgeMonths, REGION_LABEL } from './engine/pack.js';
+import { PACKS, productById, packAgeMonths, REGION_LABEL, ruleStamp } from './engine/pack.js';
 import { projectFromSample, blankDoc, uid, now } from './engine/model.js';
 import { sampleChange } from './engine/changes.js';
 import { parseProjectFile } from './engine/io.js';
@@ -14,7 +14,10 @@ import Glossary from './screens/Glossary.jsx';
 import Progress from './screens/Progress.jsx';
 import Rules from './screens/Rules.jsx';
 import Classroom from './screens/Classroom.jsx';
-import { Mark } from './components/ui.jsx';
+import { Mark, Modal } from './components/ui.jsx';
+
+export const SHORTCUTS = [['?', 'Show these shortcuts'], ['g then p', 'Projects'], ['g then l', 'Learn'], ['g then q', 'Quiz'], ['g then d', 'Drills'], ['g then r', 'Rules and sources'], ['g then c', 'Classroom'], ['Alt + 1 to 9', 'In a project: switch to the first to ninth tab'], ['Alt + Shift + ← / →', 'In a project: previous or next label'], ['Ctrl or ⌘ + S', 'Work is saved as you type; this confirms it'], ['Esc', 'Close a dialog']];
+const typing = (el) => !!el && (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName));
 
 function useHashRoute() {
   const read = () => (window.location.hash.replace(/^#/, '') || '/').split('/').filter(Boolean).map(decodeURIComponent);
@@ -147,7 +150,7 @@ export default function App() {
     },
     createBlank: async ({ productId, kinds, title, region = 'us' }) => {
       const product = productById(productId);
-      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new ${region === 'eu' ? 'EU product information' : region === 'in' ? 'India label set' : region === 'us' ? 'label set' : `${REGION_LABEL[region] ?? region} product information`}`, productId, region, createdAt: now(), updatedAt: now() });
+      const project = stamp({ id: uid('p'), title: title || `${product.brandName}: new ${region === 'eu' ? 'EU product information' : region === 'in' ? 'India label set' : region === 'us' ? 'label set' : `${REGION_LABEL[region] ?? region} product information`}`, productId, region, ruleStamp: ruleStamp(pack, region), createdAt: now(), updatedAt: now() });
       await db.put('projects', project);
       for (const k of kinds) {
         const d = blankDoc(pack, k, product, project.id, user);
@@ -197,6 +200,21 @@ export default function App() {
   else if (section === 'classroom') screen = <Classroom />;
   else screen = <div className="page"><h1>Page not found</h1><p><a href="#/">Go to your projects</a></p></div>;
 
+  const [showKeys, setShowKeys] = useState(false);
+  const gPending = useRef(0);
+  useEffect(() => {
+    const GO = { p: '/', l: '/learn', q: '/quiz', d: '/drills', r: '/rules', c: '/classroom' };
+    const onKey = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); toast('Your work is saved automatically in this browser.'); return; }
+      if (e.ctrlKey || e.metaKey || e.altKey || typing(e.target)) return;
+      if (e.key === '?') { e.preventDefault(); setShowKeys(true); return; }
+      if (e.key === 'g') { gPending.current = Date.now(); return; }
+      if (Date.now() - gPending.current < 1200 && GO[e.key]) { e.preventDefault(); gPending.current = 0; window.location.hash = `#${GO[e.key]}`; }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [toast]);
+
   const cycleTheme = async () => {
     const next = theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system';
     setTheme(next); try { await setMeta('theme', next); } catch { /* storage blocked */ }
@@ -214,6 +232,7 @@ export default function App() {
             {NAV.map(([k, l]) => <a key={k} href={`#/${k}`} aria-current={current === k ? 'page' : undefined}>{l}</a>)}
           </nav>
           <span className="spacer" />
+          <button className="btn small ghost" onClick={() => setShowKeys(true)} aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">Shortcuts</button>
           <button className="btn small ghost" onClick={cycleTheme} aria-label={`Theme: ${theme}. Change theme`}>Theme: {theme}</button>
         </header>
         {age > 12 && <div className="banner" role="note">A content pack is more than 12 months old (see Rules and sources). Rules may have changed since; check the sources before relying on a result.</div>}
@@ -224,6 +243,13 @@ export default function App() {
           <span>Training use only. Products, companies and people are fictional; nothing here is an approved label or regulatory advice. Your work stays in this browser.</span>
           <span>{Object.values(pack.regions).map((r) => `${r.short} pack ${r.version} (${r.asOf})`).join(' · ')} · Apache-2.0</span>
         </footer>
+        {showKeys && (
+          <Modal title="Keyboard shortcuts" onClose={() => setShowKeys(false)}>
+            <table className="keys"><tbody>{SHORTCUTS.map(([k, v]) => <tr key={k}><td><kbd>{k}</kbd></td><td>{v}</td></tr>)}</tbody></table>
+            <p className="small muted">Every control can also be reached with Tab and used with Enter or Space.</p>
+            <button className="btn primary" onClick={() => setShowKeys(false)}>Close</button>
+          </Modal>
+        )}
         <div className="toasts" aria-live="polite">
           {toasts.map((t) => (
             <div key={t.id} className={`toast ${t.kind}`} role={t.kind === 'error' ? 'alert' : 'status'}>

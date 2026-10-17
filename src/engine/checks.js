@@ -41,7 +41,7 @@ export function runChecks(doc, ctx) {
     out.push(i);
   };
   const kind = doc.kind;
-  if (kind === 'pi') { checkHighlights(doc, ctx, add); checkFpi(doc, ctx, add); if (doc.role === 'generic') checkGeneric(doc, ctx, add); }
+  if (kind === 'pi') { checkHighlights(doc, ctx, add); checkFpi(doc, ctx, add); if (doc.role === 'generic') checkGeneric(doc, ctx, add); if (doc.role === 'biosimilar') checkBiosimilar(doc, ctx, add); }
   if (kind === 'pi-old') checkOld(doc, ctx, add);
   if (kind === 'mg' || kind === 'ppi' || kind === 'ifu') checkPatient(doc, ctx, add);
   if (kind === 'carton' || kind === 'container') checkCarton(doc, ctx, add);
@@ -223,7 +223,7 @@ function checkFpi(doc, ctx, add) {
   const s6 = findSection(doc, '6');
   if (s6) {
     const all = [blocksText(s6.blocks), ...(s6.subs ?? []).map((x) => blocksText(x.blocks))].join('\n');
-    const hasData = /\d+(\.\d+)?%/.test(all) || (s6.subs ?? []).some((x) => x.blocks.some((b) => b.t === 'table'));
+    const hasData = /\d+(\.\d+)?%/.test(all) || (s6.subs ?? []).some((x) => x.blocks.some((b) => b.t === 'table' || b.t === 'ar'));
     if (hasData && !norm(all).includes(norm(t.fixed.arStatement))) add('US-PI-AR-STMT', { area: 'sec', key: (s6.subs?.[0]?.num) ?? '6', label: s6.subs?.[0] ? sectionTitle(s6.subs[0]) : '6 ADVERSE REACTIONS' }, 'The standard clinical trials statement is missing.', `Add: "${t.fixed.arStatement}"`);
   }
   // Strengths
@@ -248,7 +248,9 @@ function checkFpi(doc, ctx, add) {
 }
 
 // ---------------------------------------------------------------- Generic labelling
-const permittedSame = new Set(['3', '11', '16', '17']);
+// Sections where a generic may differ from its reference: US PLR (strengths offered, inactive
+// ingredients, how supplied, company), EU SmPC (name and strengths offered, composition, form, pharmaceutical particulars, 7 to 10).
+const PERMITTED = { pi: new Set(['3', '11', '16', '17']), smpc: new Set(['1', '2', '3', '6', '7', '8', '9', '10']) };
 export function carveFindings(gen) {
   const out = [];
   const carved = (gen.carveOuts ?? []).filter((c) => (gen.carved ?? []).includes(c.num));
@@ -275,6 +277,27 @@ function checkGeneric(doc, ctx, add) {
   for (const row of compareSections(ref, doc)) if (row.status === 'different') add('US-ANDA-SAME', { area: 'sec', key: row.num, label: row.label }, `${row.label} differs from the reference label and is not a permitted difference.`, 'Open Compare to see the words that differ.');
 }
 
+// ---------------------------------------------------------------- Biosimilars
+function checkBiosimilar(doc, ctx, add) {
+  const m = doc.meta ?? {};
+  const refDoc = projectDocs(ctx).find((d) => d.role === 'reference' && d.kind === 'pi');
+  const ref = { name: m.reference?.name ?? refDoc?.meta?.proprietaryName ?? '', est: m.reference?.est ?? refDoc?.meta?.establishedName ?? '' };
+  const hl = doc.hl ?? {};
+  const where = { area: 'hl', key: 'bio', label: 'Highlights, biosimilarity statement' };
+  const want = `${m.proprietaryName} (${m.establishedName}) is biosimilar* to ${ref.name} (${ref.est}).`;
+  const stmt = norm(hl.bio);
+  const okStmt = stmt && new RegExp(`${escapeRe(m.proprietaryName ?? '')}\\s*\\(${escapeRe(m.establishedName ?? '')}\\)\\s+is biosimilar\\*?\\s+to\\s+${escapeRe(ref.name)}\\s*\\(${escapeRe(ref.est)}\\)`, 'i').test(stmt);
+  if (!okStmt) add('US-BIO-STMT', where, stmt ? 'The biosimilarity statement does not name both products with their proper names.' : 'The biosimilarity statement is missing.', `Use: "${want}"`);
+  const note = norm(hl.bioNote);
+  if (!(/highly similar/i.test(note) && /no clinically meaningful differences/i.test(note) && /reference product/i.test(note))) add('US-BIO-STMT', { area: 'hl', key: 'bioNote', label: 'Highlights, biosimilarity footnote' }, note ? 'The footnote does not explain what biosimilar means.' : 'The footnote explaining what biosimilar means is missing.', 'Start: "* Biosimilar means that the biological product is approved based on data demonstrating that it is highly similar to an FDA-approved biological product, known as a reference product, and that there are no clinically meaningful differences..."');
+  if (ref.name) {
+    const re = new RegExp(`\\b${escapeRe(ref.name)}\\b`);
+    const seen = new Set();
+    for (const e of textEntries(doc)) if (re.test(e.text) && !seen.has(e.loc.key)) { seen.add(e.loc.key); add('US-BIO-NAME', e.loc, `${ref.name} (the reference product) is named here.`, `Describe the product as ${m.proprietaryName} (${m.establishedName}); keep the reference name for the biosimilarity statement.`); }
+  }
+  for (const e of textEntries(doc)) if (/\binterchangeab/i.test(e.text)) { add('US-BIO-IC', e.loc, 'An interchangeability statement: the September 2023 revised draft guidance no longer recommends one in labeling.', 'Interchangeability is shown in the Purple Book. This is a Watch item, not an error.'); break; }
+}
+
 // Section-by-section comparison of a generic label with its reference. Words naming the product
 // and the company are normalised first; sentences about a carved-out indication are left to the
 // carve-out check.
@@ -282,8 +305,12 @@ export function compareSections(ref, gen) {
   const rn = ref.meta?.proprietaryName ?? ''; const gn = gen.meta?.proprietaryName ?? '';
   const carved = (gen.carveOuts ?? []).filter((c) => (gen.carved ?? []).includes(c.num));
   const kw = carved.length ? new RegExp(carved.flatMap((c) => c.keywords).map(escapeRe).join('|'), 'i') : null;
-  const swap = (s) => norm(s).split(rn).join(gn).split(ref.meta?.manufacturer ?? '\u0000').join(gen.meta?.manufacturer ?? '').split(ref.meta?.phone ?? '\u0000').join(gen.meta?.phone ?? '');
-  const prep = (text, isRef) => sentences(isRef ? swap(text) : norm(text)).filter((s) => !(kw && kw.test(s))).join(' ');
+  // A biosimilar's proper name carries a suffix (olvecitamab-kzrt); the reference's core name is swapped for it.
+  const re = ref.meta?.establishedName ?? ''; const ge = gen.meta?.establishedName ?? '';
+  const swapEst = re && ge && re !== ge ? (s) => s.replace(new RegExp(`\\b${escapeRe(re)}\\b(?!-)`, 'gi'), (m) => (m[0] === m[0].toUpperCase() ? ge[0].toUpperCase() + ge.slice(1) : ge)) : (s) => s;
+  const swap = (s) => swapEst(norm(s).split(rn).join(gn)).split(ref.meta?.manufacturer ?? '\u0000').join(gen.meta?.manufacturer ?? '').split(ref.meta?.phone ?? '\u0000').join(gen.meta?.phone ?? '');
+  // Each block line is split into sentences on its own, so a table row never merges with the next paragraph.
+  const prep = (text, isRef) => String(text ?? '').split('\n').flatMap((line) => sentences(isRef ? swap(line) : norm(line))).filter((s) => !(kw && kw.test(s))).join(' ');
   const rows = [];
   const all = new Map();
   const collect = (d, side) => { for (const s of d.sections ?? []) { all.set(s.num, { ...(all.get(s.num) ?? {}), [side]: s, label: sectionTitle(s), top: s.num }); for (const x of s.subs ?? []) all.set(x.num, { ...(all.get(x.num) ?? {}), [side]: x, label: sectionTitle(x), top: s.num }); } };
@@ -297,7 +324,7 @@ export function compareSections(ref, gen) {
     else if (a === null) status = 'extra';
     else if (b === null) status = (a === '' ? 'same' : 'missing');
     else if (a === b) status = 'same';
-    else if (permittedSame.has(v.top)) status = 'permitted';
+    else if ((PERMITTED[gen.kind] ?? PERMITTED.pi).has(v.top)) status = 'permitted';
     else if (kw && !a && !b) status = 'same';
     else status = 'different';
     if (status === 'missing' && kw && !a) status = 'same';

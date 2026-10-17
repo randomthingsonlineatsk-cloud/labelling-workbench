@@ -5,8 +5,9 @@ import { templateFor, fill } from './pack.js';
 import { findSection, blocksText, blockTexts, hasContent, textEntries, sectionTitle } from './model.js';
 import { strengths, normStrength, readingGrade, norm, escapeRe } from './text.js';
 import { userTestResult } from './usertest.js';
+import { carveFindings, compareSections } from './checks.js';
 
-export const EU_KINDS = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
+export const EU_KINDS = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'];
 
 const secText = (s) => (s ? [blocksText(s.blocks), ...(s.subs ?? []).map((x) => blocksText(x.blocks))].join('\n') : '');
 const textOf = (doc, num) => secText(findSection(doc, num));
@@ -26,9 +27,12 @@ export function checkEu(doc, ctx, add) {
   const t = templateFor(ctx.pack, doc.kind);
   checkHeadings(doc, t, ctx, add);
   if (doc.kind === 'smpc') checkSmpc(doc, t, ctx, add);
+  if (doc.kind === 'smpc' && doc.role === 'generic') checkEuGeneric(doc, ctx, add);
   if (doc.kind === 'pl') checkPl(doc, t, ctx, add);
   if (doc.kind === 'eu-outer') checkOuter(doc, t, ctx, add);
   if (doc.kind === 'eu-blister') checkBlister(doc, ctx, add);
+  if (doc.kind === 'eu-small') checkSmall(doc, ctx, add);
+  if (doc.kind === 'eu-annex2') checkAnnex2(doc, t, add);
   if (doc.kind === 'smpc' || doc.kind === 'pl') checkPromoEu(doc, ctx, add);
   for (const e of textEntries(doc)) if (/\bQR code\b/i.test(e.text)) { add('EU-QR', e.loc, 'A QR code is mentioned.', 'Submit the QR code and the content it links to for assessment.'); break; }
 }
@@ -105,7 +109,7 @@ function checkSmpc(doc, t, ctx, add) {
     if (!/Appendix V/.test(tx) || !/Reporting suspected adverse reactions after authorisation/i.test(tx)) add('EU-48-REPORT', L(s48), 'The standard text on reporting suspected adverse reactions is missing.', `End 4.8 with "Reporting of suspected adverse reactions" and: "${t.reporting}"`);
     const bad = (euVocab(ctx).nonstandardFrequencies ?? []).filter((w) => new RegExp(`\\b${escapeRe(w)}\\b`, 'i').test(tx));
     if (bad.length) add('EU-48-FREQ', L(s48), `Non-standard frequency words: ${bad.map((w) => `"${w}"`).join(', ')}.`, 'Use the frequency categories: very common, common, uncommon, rare, very rare, not known.');
-    const hasTable = (s48.blocks ?? []).some((b) => b.t === 'table');
+    const hasTable = (s48.blocks ?? []).some((b) => b.t === 'table' || b.t === 'ar');
     if (hasTable && !(euVocab(ctx).frequencies ?? []).some((f) => new RegExp(`\\b${f}\\b`, 'i').test(tx))) add('EU-48-FREQ', L(s48), 'The table of adverse reactions has no frequency categories.', 'Give each reaction a frequency category.');
   }
   const s44 = findSection(doc, '4.4');
@@ -172,8 +176,46 @@ function checkOuter(doc, t, ctx, add) {
   if ((doc.meta?.procedure ?? 'centralised') === 'centralised' && !sec('bb')) add('EU-BLUEBOX', { area: 'sec', key: '18', label: 'Blue box' }, 'No blue box: fine for the common EU text; national particulars (price, reimbursement) would go in one.', 'Add national details only in a blue box, never in the common text.', 'info');
 }
 
+function checkEuGeneric(doc, ctx, add) {
+  for (const f of carveFindings(doc)) add('EU-GEN-CARVE', f.loc, f.msg, 'Remove every mention that depends on the left-out indication: 4.1, 4.2, 4.8 and 5.1.');
+  const ref = (ctx.docs ?? []).find((d) => d.role === 'reference' && d.kind === 'smpc');
+  if (!ref) return;
+  for (const row of compareSections(ref, doc)) if (row.status === 'different' || row.status === 'missing') add('EU-GEN-SAME', { area: 'sec', key: row.num, label: row.label }, `${row.label} ${row.status === 'missing' ? 'is missing from' : 'differs from'} the reference SmPC and is not a permitted difference.`, 'Open Compare to see the words that differ.');
+}
+
 function checkBlister(doc, ctx, add) {
   checkStrengths(doc, ctx, add, ['1']);
+  checkExpLot(doc, add);
+}
+
+// Immediate packaging: the expiry date after "EXP" and the batch number after "Lot" (QRD).
+function checkExpLot(doc, add) {
+  const s3 = findSection(doc, '3');
+  const s4 = findSection(doc, '4');
+  if (s3 && hasContent(s3.blocks) && !/\bEXP\b/.test(blocksText(s3.blocks))) add('EU-SMALL', L(s3), 'The expiry date is not preceded by "EXP".', 'Write "EXP"; the date is printed on the packaging line.');
+  if (s4 && hasContent(s4.blocks) && !/\bLot\b/.test(blocksText(s4.blocks))) add('EU-SMALL', L(s4), 'The batch number is not preceded by "Lot".', 'Write "Lot"; the number is printed on the packaging line.');
+}
+
+function checkSmall(doc, ctx, add) {
+  checkStrengths(doc, ctx, add, ['1']);
+  checkExpLot(doc, add);
+  const s1 = findSection(doc, '1');
+  const route = String(doc.meta?.route ?? '').toLowerCase();
+  const ROUTE = { intravenous: 'IV|intravenous', subcutaneous: 'SC|subcutaneous', intramuscular: 'IM|intramuscular', oral: 'oral', ocular: 'ocular|eye', cutaneous: 'cutaneous', inhalation: 'inhalation' };
+  const re = new RegExp(`\\b(${ROUTE[route] ?? (route || 'IV|SC|IM|oral')})\\b`, 'i');
+  if (s1 && hasContent(s1.blocks) && !re.test(blocksText(s1.blocks))) add('EU-SMALL', L(s1), 'The route of administration is not given with the name.', `Add the route, for example "${route === 'intravenous' ? 'IV' : route || 'IV'}".`);
+  const s5 = findSection(doc, '5');
+  if (s5 && hasContent(s5.blocks) && !/\d+(\.\d+)?\s*(mL|ml|L|mg|g|mcg|µg|units?|IU|tablets?|capsules?|doses?)\b/i.test(blocksText(s5.blocks))) add('EU-SMALL', L(s5), 'The contents are not given by weight, volume or unit.', 'For example "5 mL" or "50 mg/5 mL".');
+}
+
+function checkAnnex2(doc, t, add) {
+  const sB = findSection(doc, 'B');
+  if (sB && hasContent(sB.blocks) && !/subject to (restricted |special )?(and restricted )?medical prescription|not subject to medical prescription/i.test(blocksText(sB.blocks))) add('EU-A2', L(sB), 'Section B does not give the legal status for supply.', 'For example "Medicinal product subject to medical prescription."');
+  if (sB && !hasContent(sB.blocks)) add('EU-A2', L(sB), 'Section B does not give the legal status for supply.', 'For example "Medicinal product subject to medical prescription."');
+  const c1 = findSection(doc, 'C.1');
+  if (c1 && !(/EURD list/i.test(blocksText(c1.blocks)) && /107c\(7\)/.test(blocksText(c1.blocks)))) add('EU-A2', L(c1), 'The PSUR statement is not the standard text (EURD list, Article 107c(7)).', `Use: "${t.standard['C.1']}"`);
+  const d1 = findSection(doc, 'D.1');
+  if (d1 && !(/Module 1\.8\.2/.test(blocksText(d1.blocks)) && /updated RMP/i.test(blocksText(d1.blocks)))) add('EU-A2', L(d1), 'The RMP statement is not the standard text (Module 1.8.2, when an updated RMP is due).', 'Use the template statement on the risk management plan.');
 }
 
 function checkPromoEu(doc, ctx, add) {
@@ -197,7 +239,7 @@ export function translationPairs(doc, src) {
     out.push({ num: s.num, src: s, tgt: findSection(doc, s.num), own: [s.title, blocksText(s.blocks)].join('\n') });
     for (const x of s.subs ?? []) out.push({ num: x.num, src: x, tgt: findSection(doc, x.num), own: [x.title, blocksText(x.blocks)].join('\n') });
   }
-  return out.map((p) => ({ ...p, srcText: p.own, tgtText: p.tgt ? [p.tgt.title, blocksText(p.tgt.blocks)].join('\n') : '' }));
+  return out.map((p) => ({ ...p, srcText: p.own, tgtText: p.tgt ? [p.tgt.title, blocksText(p.tgt.blocks)].join('\n') : '', srcBody: blocksText(p.src.blocks), tgtBody: p.tgt ? blocksText(p.tgt.blocks) : '' }));
 }
 
 export function translationFindings(doc, ctx) {
@@ -207,7 +249,7 @@ export function translationFindings(doc, ctx) {
   const out = [];
   for (const p of translationPairs(doc, src)) {
     const loc = { area: 'sec', key: p.num, label: p.tgt ? sectionTitle(p.tgt) : sectionTitle(p.src) };
-    if (!p.tgt || !norm(p.tgtText)) { out.push({ rule: 'EU-TR-MISS', loc, msg: `"${p.src.title}" has no translation.`, hint: 'Translate the section.' }); continue; }
+    if (!p.tgt || !norm(p.tgtText) || (norm(p.srcBody) && !norm(p.tgtBody))) { out.push({ rule: 'EU-TR-MISS', loc, msg: `"${p.src.title}" has no translation.`, hint: 'Translate the section.' }); continue; }
     for (const tb of terms) {
       if (new RegExp(`\\b${escapeRe(tb.source)}\\b`, 'i').test(p.srcText) && !new RegExp(escapeRe(tb.target), 'i').test(p.tgtText)) out.push({ rule: 'EU-TR-TERM', loc, msg: `"${tb.source}" should be translated as "${tb.target}".`, hint: tb.note ?? 'Use the approved term from the term base.' });
     }

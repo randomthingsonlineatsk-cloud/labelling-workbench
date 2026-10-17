@@ -83,6 +83,21 @@ QUESTIONS = [
     Q('q29-3', 29, 'Who fixes ceiling prices of scheduled formulations?', ['NPPA', 'CDSCO', 'The state drug controller', 'The pharmacist'], 0, 'The National Pharmaceutical Pricing Authority.', 'DPCO 2013'),
     Q('q29-4', 29, 'Which claim is not allowed on a label?', ['That it cures cancer, unless approved for it', 'The strength', 'The storage', 'The batch number'], 0, 'Schedule J lists diseases a drug may not claim to cure or prevent.', 'Schedule J'),
     Q('q29-5', 29, 'The ceiling price is revised downwards. What changes on new packs?', ['The MRP', 'The batch number format', 'The schedule warning', 'The proper name'], 0, 'New packs carry the revised MRP.', 'DPCO 2013'),
+    Q('q25-6', 25, 'What follows "Exp. Date" on a Rule 96 label?', ['The month and year', 'The year only', 'The price', 'The batch number'], 0, 'Dates of manufacture and expiry give the month and year.', 'Drugs Rules, 1945, Rule 96'),
+    Q('q25-7', 25, 'Whose name and address does the label give?', ["The manufacturer's, with the premises where the drug was made", "The pharmacy's", "The distributor's only", "CDSCO's"], 0, 'Rule 96 requires the manufacturer and the address of the premises.', 'Drugs Rules, 1945, Rule 96'),
+    Q('q25-8', 25, 'What does the net content particular give?', ['The quantity in the pack, for example 10 tablets', 'The carton weight', 'The price', 'The batch'], 0, 'Net content is the amount of drug in the container.', 'Drugs Rules, 1945, Rule 96'),
+    Q('q26-6', 26, 'Which schedule\'s caution reads "It is dangerous to take this preparation except under medical supervision"?', ['Schedule G', 'Schedule H', 'Schedule X', 'Schedule H1'], 0, 'That is the Schedule G caution.', 'Drugs Rules, 1945, Rule 97'),
+    Q('q26-7', 26, 'What colour is the box around the Rule 97 caution?', ['Red', 'Black', 'Blue', 'Green'], 0, 'Black type in a completely red rectangular box.', 'Drugs and Cosmetics (Fifth Amendment) Rules, 2018'),
+    Q('q26-8', 26, 'Where does the Rx symbol go?', ['Top left of the label', 'Bottom right', 'On the back panel', 'Anywhere'], 0, 'Conspicuously at the top left.', 'Drugs Rules, 1945, Rule 97'),
+    Q('q27-6', 27, 'Which heading of the insert is DETAILS OF MANUFACTURER?', ['10', '11', '12', '9'], 0, '11 is the permission with date, 12 the date of revision.', 'CDSCO-approved package insert format'),
+    Q('q27-7', 27, 'What does section 12 of the insert give?', ['The date of revision', 'Overdose', 'Storage', 'Packaging'], 0, 'It closes the insert.', 'CDSCO-approved package insert format'),
+    Q('q27-8', 27, 'Where do patient counselling points go?', ['Section 9', 'Section 4.4', 'Section 7', 'Section 11'], 0, 'Section 9 is patient counselling information.', 'CDSCO-approved package insert format'),
+    Q('q28-6', 28, 'How many data elements does Schedule H2 list?', ['Eight', 'Four', 'Twelve', 'Two'], 0, 'From the unique product identification code to the manufacturing licence number.', 'Drugs (Eighth Amendment) Rules, 2022'),
+    Q('q28-7', 28, 'Which is a Schedule H2 data element?', ['The manufacturing licence number', 'The MRP', "The doctor's name", "The patient's name"], 0, 'The licence number is the eighth element.', 'Drugs (Eighth Amendment) Rules, 2022'),
+    Q('q28-8', 28, 'From when are vaccines, anti-cancer and NDPS drugs added to Schedule H2 (Watch)?', ['1 July 2027', '1 August 2023', '1 January 2026', 'Not planned'], 0, 'Antimicrobials follow from 1 July 2028.', 'Schedule H2 extension notice'),
+    Q('q29-6', 29, 'Which order requires the MRP to be inclusive of all taxes?', ['Drugs (Prices Control) Order, 2013', 'Rule 97', 'Schedule H2', 'NDCT Rules, 2019'], 0, 'DPCO 2013 governs the price display.', 'Drugs (Prices Control) Order, 2013'),
+    Q('q29-7', 29, 'Which schedule lists diseases a drug may not claim to prevent or cure?', ['Schedule J', 'Schedule H', 'Schedule M', 'Schedule Y'], 0, 'Schedule J of the Drugs Rules, 1945.', 'Drugs Rules, 1945, Schedule J'),
+    Q('q29-8', 29, 'How is the price shown on a strip sold on its own?', ['MRP with ₹ or Rs., per strip, inclusive of all taxes', 'Only on the carton', 'In US dollars', 'Not at all'], 0, 'The smallest retail pack shows its own MRP.', 'Drugs (Prices Control) Order, 2013'),
 ]
 
 DRILLS = [

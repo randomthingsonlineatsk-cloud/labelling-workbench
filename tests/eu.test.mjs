@@ -25,13 +25,14 @@ let n = 0;
 const t = (name, fn) => { fn(); n++; };
 
 t('EU pack is merged: kinds, rules with sources, samples with region, nine lessons', () => {
-  assert.deepEqual(kindsFor(pack, 'eu'), ['smpc', 'pl', 'eu-outer', 'eu-blister']);
+  assert.deepEqual(kindsFor(pack, 'eu'), ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small']);
   assert.ok(pack.rules.filter((r) => r.id.startsWith('EU-')).length >= 20);
   for (const r of pack.rules) assert.ok(pack.sources.some((s) => s.id === r.src), r.id);
-  assert.ok(pack.samples.filter((s) => s.region === 'eu').length === 6);
+  assert.ok(pack.samples.filter((s) => s.region === 'eu' && s.module === 'eu').length === 8);
   assert.equal(pack.lessons.lessons.filter((l) => l.module === 'eu').length, 9);
   assert.equal(new Set(pack.lessons.lessons.map((l) => l.id)).size, pack.lessons.lessons.length, 'lesson ids unique across modules');
-  assert.equal(pack.regions.eu.version, '1.0.0');
+  assert.equal(pack.regions.eu.version, '1.1.0');
+  assert.equal(pack.regions.eu.changes[0].version, '1.1.0', 'the change log starts with the current version');
 });
 
 t('clean EU set: no errors or warnings on any document', () => {
@@ -180,8 +181,25 @@ t('EU certificate: EU lessons, an EU quiz round and the EU capstone', () => {
   const lessonsDone = Object.fromEntries(pack.lessons.lessons.map((l) => [`us-${l.id}`, { best: 100 }]));
   const st = certificateStatus({ region: 'eu', lessons: pack.lessons, drills: pack.drills, attempts: [{ kind: 'quiz', topic: 'eu', score: 90, total: 10 }, { kind: 'drill', drillId: 'eu-prac', score: 100 }], lessonsDone });
   assert.equal(st.lessons.length, 9);
-  assert.equal(st.drills.length, 7);
+  assert.equal(st.drills.length, 9);
   assert.equal(st.eligible, true);
+});
+
+t('Annex II and the small vial label: standard statements, EXP, Lot and route', () => {
+  const o = open('eu-ostrevia-clean');
+  const a2 = o.docs.find((d) => d.kind === 'eu-annex2');
+  assert.equal(summarise(issues(a2, o)).errors, 0);
+  put(a2, 'D.1', 'The MAH has an RMP.');
+  assert.ok(ids(issues(a2, o)).has('EU-A2'));
+  const v = open('eu-nelvaprox-vial');
+  const vial = v.docs[0];
+  assert.equal(evaluateDrill(drill('eu-annex2-vial'), { docs: v.docs, sample: v.s, pack, product: v.product, project: v.project }).score, 0);
+  put(vial, '1', 'Nelvaprox 10 mg/mL solution for injection', 'velnaprozine', 'IV');
+  put(vial, '3', 'EXP');
+  assert.equal(summarise(issues(vial, v)).errors, 0, JSON.stringify(issues(vial, v).map((i) => i.msg)));
+  assert.equal(evaluateDrill(drill('eu-annex2-vial'), { docs: v.docs, sample: v.s, pack, product: v.product, project: v.project }).score, 100);
+  put(vial, '5', 'some liquid');
+  assert.ok(ids(issues(vial, v)).has('EU-SMALL'));
 });
 
 console.log(`eu: ${n} tests passed`);

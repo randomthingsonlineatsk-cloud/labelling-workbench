@@ -6,12 +6,12 @@ import CartonMock from '../../components/CartonMock.jsx';
 import { epiSections, epiHtml } from '../../engine/epi.js';
 import { download, slug } from '../../engine/io.js';
 
-const EU = ['smpc', 'pl', 'eu-outer', 'eu-blister'];
+const EU = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'];
 const IN = ['in-pi', 'in-carton', 'in-label'];
 const NUMBERED = ['ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'];
 const JP_HDR = [['revised', 'Date of revision'], ['commodity', 'Standard Commodity Classification No.'], ['approval', 'Approval number'], ['storage', 'Storage, shelf life'], ['category', 'Therapeutic category'], ['regulatory', 'Regulatory classification']];
 const PARTS = { 'ca-pm': { 1: 'PART I: HEALTH PROFESSIONAL INFORMATION', 13: 'PART II: SCIENTIFIC INFORMATION' } };
-const txt = (s) => (s?.blocks ?? []).flatMap((b) => (b.t === 'ul' ? b.items : b.t === 'table' ? b.rows.flat() : [b.text ?? ''])).filter((x) => x.trim()).join(' ');
+const txt = (s) => (s?.blocks ?? []).flatMap((b) => (b.t === 'ul' ? b.items : (b.t === 'table' || b.t === 'ar') ? b.rows.flat() : [b.text ?? ''])).filter((x) => x.trim()).join(' ');
 
 // An Indian carton or strip, schematic: the symbol top left in red, the proper name larger than
 // the brand name (scaled from the type sizes), the Rule 97 caution in a red box, then the
@@ -57,6 +57,8 @@ function Blocks({ blocks, anno, red }) {
   return (blocks ?? []).map((b) => (
     <React.Fragment key={b.id}>
       {b.t === 'ul' ? <ul>{b.items.filter((x) => x.trim()).map((x, i) => <li key={i}>{x}</li>)}</ul>
+        : b.t === 'fig' ? <figure className="fig-ph"><div className="fig-box" role="img" aria-label={b.alt || b.text || 'Figure'}>Figure placeholder</div><figcaption>{b.text}</figcaption></figure>
+        : b.t === 'ar' ? <table className="ar"><thead><tr>{(b.rows[0] ?? []).map((c, j) => <th key={j}>{c}</th>)}</tr></thead><tbody>{b.rows.slice(1).map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody></table>
         : b.t === 'table' ? <table><tbody>{b.rows.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody></table>
           : b.t === 'box' ? <div className={red ? 'in-redbox' : 'bwbox'}>{b.text}</div>
             : b.text?.trim() ? <p>{b.text}</p> : null}
@@ -89,6 +91,8 @@ export default function Preview({ doc }) {
             <h4 style={{ borderBottom: 0 }}>HIGHLIGHTS OF PRESCRIBING INFORMATION</h4>
             <p>{doc.hl?.limitation}</p>
             <p><b>{m.proprietaryName} ({m.establishedName}) {m.dosageForm}, {m.route}{m.controlled ? ` ${m.controlled}` : ''}</b><br />Initial U.S. Approval: {m.initialApproval}</p>
+            {doc.hl?.bio && <p><b>{doc.hl.bio}</b></p>}
+            {doc.hl?.bioNote && <p style={{ fontSize: '.75rem' }}>{doc.hl.bioNote}</p>}
             {doc.hl?.bw?.length > 0 && <div className="bwbox"><b>{doc.bw?.title}</b><Blocks blocks={doc.hl.bw} anno={anno} /><p><i>{doc.hl.bwClose}</i></p></div>}
             {doc.hl?.rmc?.length > 0 && <><h4>RECENT MAJOR CHANGES</h4>{doc.hl.rmc.map((r, i) => <p key={i}>{r.heading}{r.num ? ` (${r.num})` : ''} <span style={{ float: 'right' }}>{r.date}</span></p>)}</>}
             {t.hl.filter((h) => h.kind !== 'rmc' && hasContent(doc.hl?.[h.key])).map((h) => <React.Fragment key={h.key}><h4>{h.title}</h4><Blocks blocks={doc.hl[h.key]} anno={anno} /></React.Fragment>)}

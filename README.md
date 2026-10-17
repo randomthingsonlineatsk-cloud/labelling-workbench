@@ -2,8 +2,8 @@
 
 A browser-based practice tool for writing and checking drug labels. Write prescribing information in PLR format, a Medication Guide, patient information, instructions for use and carton and container labels for fictional products. Then:
 
-- run **37 rule checks**, each naming its regulation or guidance and saying where the app simplifies;
-- compare a generic label with its **reference listed drug** and complete a **section viii carve-out**;
+- run **128 rule checks** across eight markets, each naming its regulation or guidance and saying where the app simplifies;
+- compare a generic label with its **reference listed drug** and complete a **section viii carve-out**, write a **biosimilar** label against its reference product, and compare an **EU generic SmPC** with its reference (Article 11 carve-out);
 - convert an **older-format label to PLR**, block by block;
 - **proof** a carton or container mock-up against the approved text;
 - take a label through **author, reviewer and approver** sign-off with an append-only audit trail;
@@ -17,6 +17,7 @@ A browser-based practice tool for writing and checking drug labels. Write prescr
 - write **EU product information** to the QRD template (SmPC, package leaflet, outer carton, blister) with checks for headings, the black triangle, section 4.8, excipients, Braille and the safety features;
 - run a simulated **user test** of a leaflet (the 16-of-20 rule), review a **translation** against a term base with a member state's linguistic comments, implement **PRAC** safety wording, and see a simplified **ePI** view;
 - write an **Indian package insert** in the CDSCO format and the **carton and strip**, with checks for the Rule 96 particulars, the Rule 97 **red-box caution** and Rx/NRx/XRx symbol, the proper name two sizes larger than the brand, the **MRP** "inclusive of all taxes" and the **Schedule H2 QR code**, then implement a CDSCO directive;
+- write adverse-reaction tables that check their own rates and figure placeholders with alt text, use the app **offline** once loaded, and move around with **keyboard shortcuts** (press `?`);
 - work in **five more formats**: the Canadian **product monograph**, Patient Medication Information and bilingual label, the Swiss **Fachinformation** and patient information, the Japanese **package insert** (2019 format), the Australian **PI and CMI**, and the **WHO PQ SmPC**, then take one safety signal to four markets at once.
 
 Third app in a series with the [eCTD Dossier Builder](https://github.com/randomthingsonlineatsk-cloud/ectd-dossier-builder) and the [Variations Classifier](https://github.com/randomthingsonlineatsk-cloud/variations-classifier), using the same fictional products.
@@ -27,7 +28,7 @@ Live site: https://randomthingsonlineatsk-cloud.github.io/labelling-workbench/
 
 ## What is in this release (Phases 1 to 5)
 
-**US pack 1.0.0, dated 2026-10-11.** Document kinds: PLR prescribing information, older-format prescribing information, Medication Guide, Patient Information (PPI), Instructions for Use, carton and container. Built from:
+**US pack 1.1.0, dated 2026-10-17.** Document kinds: PLR prescribing information, older-format prescribing information, Medication Guide, Patient Information (PPI), Instructions for Use, carton and container. Built from:
 
 | Source | Used for |
 |---|---|
@@ -44,9 +45,11 @@ Live site: https://randomthingsonlineatsk-cloud.github.io/labelling-workbench/
 
 **Samples:** a clean Ostrevia label set; the same set with about 25 planted errors; a Talmisartan generic to compare with its reference (Corvenza) and carve out; a Nelvaprox older-format label to convert; Brezovent patient labelling.
 
-**Learning:** 11 lessons, a 76-question quiz bank, 7 drills (including the capstone: a safety signal taken through to approved labels), a glossary, a progress page and a certificate with a verification code.
+**Samples added in 1.1.0:** Selvanta, a biosimilar to Arventa, with the biosimilarity statement and footnote to add and the reference's name to remove.
 
-**Core module 1.0.0, dated 2026-10-11.** The company core data sheet and change management, built from:
+**Learning:** 11 lessons, an 89-question quiz bank, 8 drills (including the capstone: a safety signal taken through to approved labels), a glossary, a progress page and a certificate with a verification code.
+
+**Core module 1.1.0, dated 2026-10-17.** The company core data sheet and change management, built from:
 
 | Source | Used for |
 |---|---|
@@ -61,9 +64,9 @@ Company targets (30 days to submit a safety change, 90 for others, first shipmen
 
 **Core samples:** Ostrevia mapped against CCDS 3.0 (with two deliberate gaps), Ostrevia rolling out CCDS 4.0 (hepatitis B reactivation), Ostrevia responding to a 505(o)(4) notification (hypersensitivity, with six scripted agency comments and a promotional sentence to remove), and a blank PMI to write.
 
-**Core learning:** 4 lessons (12 to 15), 24 quiz questions, 4 drills (the capstone rolls a CCDS change out to every market) and a separate core certificate.
+**Core learning:** 4 lessons (12 to 15), 32 quiz questions, 5 drills (1.1.0 adds mapping the EU SmPC and leaflet to the CCDS) (the capstone rolls a CCDS change out to every market) and a separate core certificate.
 
-**EU pack 1.0.0, dated 2026-10-11.** Document kinds: SmPC (Annex I), package leaflet (Annex IIIB), outer carton and blister (Annex IIIA), for a centrally authorised product. Built from:
+**EU pack 1.1.0, dated 2026-10-17.** Document kinds: SmPC (Annex I), Annex II, package leaflet (Annex IIIB), outer carton, blister and small immediate packaging (Annex IIIA), for a centrally authorised product. Built from:
 
 | Source | Used for |
 |---|---|
@@ -79,11 +82,11 @@ Company targets (30 days to submit a safety change, 90 for others, first shipmen
 
 **EU Watch items:** QRD version 11 and the key information section (consulted on in 2025), and ePI under the new EU legislation.
 
-**EU samples:** Ostrevia's clean product information; the same set with about 20 planted errors; a jargon-heavy leaflet to user test; a French translation with three errors and linguistic review comments; a lactose reformulation (excipients); and the capstone, a PRAC signal recommendation on DRESS with a 60-day deadline.
+**EU samples:** Ostrevia's clean product information; the same set with about 20 planted errors; a jargon-heavy leaflet to user test; a French translation with three errors and linguistic review comments; a lactose reformulation (excipients); the capstone, a PRAC signal recommendation on DRESS with a 60-day deadline; and, in 1.1.0, an Annex II with planted errors, a 5 mL vial label with the minimum particulars, and a generic SmPC (Talmisartan Ashvale) compared with its reference with an indication left out under Article 11.
 
-**EU learning:** 9 lessons (16 to 24), 45 quiz questions, 7 drills and an EU certificate.
+**EU learning:** 9 lessons (16 to 24), 73 quiz questions, 9 drills and an EU certificate.
 
-**India pack 1.0.0, dated 2026-10-11.** Document kinds: package insert (prescribing information), carton, and strip or container label, for a Schedule H new drug made under a manufacturing licence. Built from:
+**India pack 1.0.1, dated 2026-10-11 (change log 2026-10-17).** Document kinds: package insert (prescribing information), carton, and strip or container label, for a Schedule H new drug made under a manufacturing licence. Built from:
 
 | Source | Used for |
 |---|---|
@@ -101,13 +104,13 @@ Where a check follows common practice rather than a rule text (the insert headin
 
 **India samples:** Ostrevia's clean insert, carton and strip; the same set with 14 planted errors (the pre-2018 schedule wording, a missing Rx, a brand name larger than the proper name, Rule 96 prefixes, the MRP wording, the permission date and more); and the capstone, a fictional CDSCO directive: tuberculosis screening wording, Schedule H2 inclusion and a revised ceiling price, within 30 days.
 
-**India learning:** 5 lessons (25 to 29), 25 quiz questions, 3 drills and an India certificate.
+**India learning:** 5 lessons (25 to 29), 40 quiz questions, 3 drills and an India certificate.
 
-**More-markets packs 1.0.0, dated 2026-10-11.** Five small region packs that share one learning module:
+**More-markets packs 1.0.1, dated 2026-10-17.** Five small region packs that share one learning module:
 
 | Region | Document kinds | Signature checks | Built from |
 |---|---|---|---|
-| Canada | Product monograph (Part I and II), Patient Medication Information, outer label | Master template headings (numbers never shift), title page with Pr and the date of authorization, Serious Warnings and Precautions box with cross-references (and its plain-language version), Recent Major Label Changes kept 24 months, the PMI overdose and reporting statements, Pr symbol, eight-digit DIN, proper name at least half the brand size, English and French, plain language labelling contact | PM master template (2020, modified 2025); Food and Drug Regulations C.01.004, C.01.004.01, C.01.005, A.01.015 |
+| Canada | Product monograph (Part I and II), Patient Medication Information, outer label (and the PMI as a separate document) | Master template headings (numbers never shift), title page with Pr and the date of authorization, Serious Warnings and Precautions box with cross-references (and its plain-language version), Recent Major Label Changes kept 24 months, the PMI overdose and reporting statements, Pr symbol, eight-digit DIN, proper name at least half the brand size, English and French, plain language labelling contact | PM master template (2020, modified 2025); Food and Drug Regulations C.01.004, C.01.004.01, C.01.005, A.01.015 |
 | Switzerland | Fachinformation, Patienteninformation | AMZV Annex 4 and 5.1 headings (German), black triangle (Art. 14a), ElViS reporting text, authorisation number "(Swissmedic)", dispensing category, date of the information | AMZV; Swissmedic black triangle and Wegleitung Arzneimittelinformation |
 | Japan | Package insert (English practice text) | Header items A to G, sections 1 to 26 with numbers kept when a section is left out, boxed Warnings, reasons for contraindications | PSEHB Notification No. 0608-1 (2017, applied from April 2019); PMDA electronic inserts (August 2021) |
 | Australia | Product Information, Consumer Medicine Information | PI form headings 1 to 10 and title line, black triangle statements, 4.8 reporting address, Poisons Information Centre 13 11 26, schedule in section 7, CMI template and summary page, CMI standard statements | PI form (s. 7D); CMI template (Schedule 12); black triangle scheme |
@@ -117,9 +120,9 @@ Where a check follows common practice rather than a rule text (the insert headin
 
 **More-markets samples:** a clean and an error set for each region (Ostrevia in Canada, Switzerland, Japan and Australia; Malvaren, a fictional antimalarial, for WHO PQ), and the capstone: an interstitial lung disease signal (CCDS 4.1) taken into the Canadian monograph, the Fachinformation, the Japanese insert and the Australian PI and CMI, with four submissions tracked within 60 days.
 
-**More-markets learning:** 5 lessons (30 to 34), 31 quiz questions, 6 drills and a more-markets certificate.
+**More-markets learning:** 5 lessons (30 to 34), 40 quiz questions, 6 drills and a more-markets certificate.
 
-**Classroom:** the shared Cloudflare Worker in the eCTD Dossier Builder repository serves this app under `/lw/v1` (`lw_` tables). Assignments are drills; students send the drill project, the instructor re-scores it in their own browser and comments. Email reminders use the same Brevo setup as the other apps.
+**Classroom:** the shared classroom server in the eCTD Dossier Builder repository serves this app under `/lw/v1` (`lw_` tables). Assignments are drills; students send the drill project, the instructor re-scores it in their own browser and comments. Email reminders use the same setup as the other apps.
 
 ## Phases
 
@@ -130,6 +133,7 @@ Where a check follows common practice rather than a rule text (the insert headin
 | 3 | EU pack: QRD templates, 4.8 frequencies, excipients, black triangle, blue box, Braille, safety features, user-testing simulator, translations and linguistic review, PRAC and PSUSA triggers, ePI view | Done |
 | 4 | India pack: package insert, carton and strip, Rules 96 and 97, schedule red boxes and symbols, proper-name size, Schedule H2 QR codes, MRP, CDSCO directive capstone | Done |
 | 5 | Canada (product monograph, PMI, label), Switzerland (Fachinformation, patient information), Japan (package insert), Australia (PI, CMI), WHO PQ (SmPC) packs; four-market capstone | Done |
+| Completion pass | The spec items still open after Phase 5: adverse-reaction table and figure blocks; offline use and keyboard shortcuts; a change log and "About this pack" per pack, and a notice on projects whose rules changed since they were made; EU Annex II and small immediate packaging; biosimilar labelling (US) and the EU generic comparison; EU documents mapped to the CCDS; Module 1 labelling packages for the EU, India, Canada, Switzerland and Japan; change requests started from a pharmacovigilance signal file; links from a classification to its lesson; at least 8 quiz questions per lesson; a test for every rule card | Done |
 
 ## How it works
 
@@ -146,10 +150,12 @@ Where a check follows common practice rather than a rule text (the insert headin
 | CCDS change | `labelling-workbench/ccds-change` | This app → Variations Classifier (Labelling rollout: "Import a change from the Labelling Workbench") |
 | Rollout | `variations-classifier/ccds-rollout` | Variations Classifier → this app (Changes: "Import rollout file") |
 | CCSI | `labelling-workbench/ccsi` | This app → a pharmacovigilance app (reference safety information) |
-| eCTD project | `ectd-dossier-builder/project` | eCTD Dossier Builder → this app (Projects: "From an eCTD project file"; US, EU and India projects) |
+| eCTD project | `ectd-dossier-builder/project` | eCTD Dossier Builder → this app (Projects: "From an eCTD project file"; US, EU, India, Canada, Switzerland and Japan projects) |
+| Labelling signal | `pv-app/labelling-signal` | A pharmacovigilance app → this app (Changes: "Fill from a signal file") |
 
-Not yet: an EU labelling package for Module 1.3.1, mapping EU documents to the CCDS, and comparing a generic SmPC with its reference.
-- Work is saved in the browser (IndexedDB). Every record carries `userId` and `classId`, so classroom mode can be switched on without a migration. A project downloads and imports as one JSON file with its pack version and a checksum.
+The labelling package goes to the Module 1 node of the project's region: 1.14 (US), 1.3.1 (EU, one combined product information document), 1.3 (India), 1.3.1 and 1.3.2 (Canada and Switzerland) and 1.8 (Japan). Australia and WHO PQ have no package. Every format is described in [docs/handoff-formats.md](docs/handoff-formats.md).
+- Work is saved in the browser (IndexedDB). Every record carries `userId` and `classId`, so classroom mode can be switched on without a migration. A project downloads and imports as one JSON file with its pack versions, a stamp of the rules it was checked against, and a checksum; opening it after a pack update lists the rules that were added, changed or removed.
+- After the first visit a service worker keeps the app's files, so it opens and works without a network connection (the classroom still needs one).
 
 ## Run it locally
 

@@ -23,7 +23,7 @@ export function evaluateDrill(drill, { docs, sample, pack, product, mapping, pro
     const goals = [];
     for (const kind of g.docs) {
       const d = docs.find((x) => x.kind === kind);
-      const label = kind === 'pi' ? 'prescribing information' : 'Medication Guide';
+      const label = { pi: 'prescribing information', mg: 'Medication Guide', smpc: 'SmPC', pl: 'package leaflet' }[kind] ?? kind;
       const errs = d ? runChecks(d, ctx).filter((i) => i.ruleId.startsWith('CORE-') && i.ruleId !== 'CORE-AGENCY' && !i.waived && i.severity !== 'info') : [{}];
       goals.push({ label: `The ${label} is mapped to CCDS ${cur?.v ?? ''}`, done: !!d && d.ccdsMap?.version === cur?.v });
       goals.push({ label: `Every statement in the ${label} aligned or justified (${errs.length} open)`, done: !!d && d.ccdsMap?.version === cur?.v && errs.length === 0 });

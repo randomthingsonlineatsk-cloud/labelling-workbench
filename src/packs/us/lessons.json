@@ -262,6 +262,13 @@
       "If a method-of-use patent covers one indication, the generic applicant can file a section viii statement and omit that indication (21 CFR 314.127(a)(7)). The carve-out must be complete: the indication, its dosing, any text that depends on it in adverse reactions and clinical studies, and the Highlights entries.",
       "The Compare tab shows the generic against the reference, section by section, with permitted differences marked."
      ]
+    },
+    {
+     "h": "Biosimilars",
+     "p": [
+      "A biosimilar licensed under section 351(k) incorporates the reference product's labeling with appropriate changes. Its Highlights carry a biosimilarity statement, \"[BIOSIMILAR] ([proper name]) is biosimilar* to [REFERENCE] ([proper name])\", with a footnote that explains what biosimilar means. Statements about the product use the biosimilar's own name, and its proper name carries a four-letter suffix (olvecitamab-kzrt).",
+      "Watch: FDA's revised draft guidance of September 2023 recommends the same biosimilarity statement for interchangeable biosimilars and no interchangeability statement in labeling; interchangeability is shown in the Purple Book. The app shows an interchangeability statement as a hint, not an error."
+     ]
     }
    ],
    "tryIt": {

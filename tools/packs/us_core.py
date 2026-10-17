@@ -9,8 +9,9 @@ PACK = {
     'id': 'us',
     'name': 'United States (FDA)',
     'short': 'US',
-    'version': '1.0.0',
-    'asOf': '2026-10-11',
+    'version': '1.1.0',
+    'changes': [{'version': '1.1.0', 'date': '2026-10-17', 'notes': "Biosimilar labelling exercise (Selvanta and its reference Arventa) with three rule cards: the biosimilarity statement, naming the product, and interchangeability statements as a Watch hint after FDA's September 2023 revised draft guidance. Adverse-reaction table and figure blocks in the editor. Thirteen more quiz questions."}, {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 1): PLR and older-format prescribing information, patient labelling, carton and container, generic carve-outs.'}],
+    'asOf': '2026-10-17',
     'kinds': ['pi', 'pi-old', 'mg', 'ppi', 'ifu', 'carton', 'container'],
     'about': (
         'Prescribing information in PLR format (21 CFR 201.56 and 201.57) and the older format '
@@ -20,6 +21,9 @@ PACK = {
         'rule card says so.'
     ),
     'watch': [
+        {'id': 'interch', 'title': 'Interchangeability statements for biosimilars',
+         'text': 'FDA\'s revised draft guidance "Labeling for Biosimilar and Interchangeable Biosimilar Products" (September 2023) recommends one biosimilarity statement for every biosimilar, interchangeable or not, and no longer recommends an interchangeability statement: interchangeability is shown in the Purple Book. It also asks whether the statements are needed at all. Until it is final the app treats an interchangeability statement as a hint, never an error.',
+         'src': 'biolab23'},
         {'id': 'pmi', 'title': 'Patient Medication Information (PMI)',
          'text': 'FDA proposed a one-page Patient Medication Information sheet in May 2023 that would replace Medication Guides and most Patient Package Inserts. As of mid-2026 the rule is still proposed (FDA reconfirmed the existing Medication Guide requirements in a July 2026 information-collection notice). The app teaches it in lesson 6 and never flags its absence; a one-page PMI drill is planned for Phase 2.',
          'src': 'pmi'},
@@ -31,6 +35,8 @@ PACK = {
          'src': 'biosim'},
     ],
     'sources': [
+        {'id': 'biolab', 'title': 'FDA: Updated labeling recommendations for biosimilar and interchangeable biosimilar products (biosimilarity statement, incorporating reference product data)', 'url': 'https://www.fda.gov/drugs/news-events-human-drugs/updated-fda-labeling-recommendations-biosimilar-and-interchangeable-biosimilar-products'},
+        {'id': 'biolab23', 'title': 'Revised draft guidance "Labeling for Biosimilar and Interchangeable Biosimilar Products" (draft revision, September 2023): no interchangeability statement', 'url': 'https://www.fda.gov/regulatory-information/search-fda-guidance-documents/labeling-biosimilar-and-interchangeable-biosimilar-products'},
         {'id': 'cfr20156', 'title': '21 CFR 201.56: Requirements on content and format of labeling for human prescription drug and biological products', 'url': f'{ECFR}/subpart-B/section-201.56'},
         {'id': 'cfr20157', 'title': '21 CFR 201.57: Specific requirements on content and format of labeling (PLR format)', 'url': f'{ECFR}/subpart-B/section-201.57'},
         {'id': 'cfr20180', 'title': '21 CFR 201.80: Specific requirements for older-format labeling', 'url': f'{ECFR}/subpart-B/section-201.80'},
@@ -260,6 +266,11 @@ RULES = [
     R('US-CC-MG', 'Medication Guide statement', 'When a Medication Guide is required, the carton tells the dispenser to provide it: "Dispense the accompanying Medication Guide to each patient."', ['carton'], 'error', 'cfr208', '208.24(d)'),
     # Generic labelling
     R('US-ANDA-SAME', 'Same as the reference label', 'Generic labeling is the same as the reference listed drug labeling, except for permitted differences: for example the manufacturer, inactive ingredients, how supplied, and indications omitted because of patents or exclusivity.', ['pi'], 'warning', 'cfr31494', '314.94(a)(8)(iv)'),
+    R('US-BIO-STMT', 'Biosimilarity statement and footnote', 'The Highlights of a biosimilar carry the biosimilarity statement "[BIOSIMILAR] ([proper name]) is biosimilar* to [REFERENCE PRODUCT] ([proper name])", with a footnote explaining that biosimilar means highly similar to the FDA-approved reference product with no clinically meaningful differences, and for which conditions of use biosimilarity was shown.', ['pi'], 'error', 'biolab', 'FDA labeling guidance for biosimilar products (2018, revised draft 2023)',
+      'The app checks for the statement with both names and the key phrases of the footnote.'),
+    R('US-BIO-NAME', 'The biosimilar is described by its own name', 'Statements about the biosimilar use its own proprietary and proper name (with the four-letter suffix). The reference product\'s brand name appears only in the biosimilarity statement.', ['pi'], 'error', 'biolab', 'FDA labeling guidance for biosimilar products',
+      'Simplified: the guidance also covers when to use the core name for data from studies of the reference product; the app only looks for the reference brand name outside the statement.'),
+    R('US-BIO-IC', 'Interchangeability statement (Watch)', 'The September 2023 revised draft guidance no longer recommends an interchangeability statement in labeling; interchangeability is shown in the Purple Book. Shown as a hint until the guidance is final.', ['pi'], 'info', 'biolab23', 'Revised draft guidance, September 2023'),
     R('US-ANDA-CARVE', 'Carve-outs are complete', 'When a protected indication is carved out under section viii, every mention that depends on it is removed: the indication, its dosing, its clinical studies and its Highlights entries.', ['pi'], 'error', 'cfr314127', '314.127(a)(7); FD&C Act 505(j)(2)(A)(viii)',
       simplified='Mentions are found by keywords defined for each indication in the exercise.'),
 ]

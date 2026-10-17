@@ -3,7 +3,7 @@
 Phone numbers use the 555-01xx range reserved for fiction. NDC labeler codes are invented.
 """
 import copy
-from lib import P, UL, T, BOX, sub, sec
+from lib import AR, P, UL, T, BOX, sub, sec
 
 MFR_HR = 'Halcyon Ridge Pharmaceuticals, Inc.'
 PHONE_HR = '1-800-555-0142'
@@ -91,7 +91,7 @@ ost_sections = [
         subs=[sub('6.1', 'Clinical Trials Experience',
             P('Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice.'),
             P('The safety of OSTREVIA was evaluated in two 16-week, randomized, double-blind, placebo-controlled studies (HALO-1 and HALO-2) in 612 adults with chronic hand eczema. Table 1 lists adverse reactions that occurred in at least 5% of patients treated with OSTREVIA and more often than with placebo.'),
-            T(['Adverse reaction', 'OSTREVIA 10 mg (N=204)', 'OSTREVIA 25 mg (N=205)', 'Placebo (N=203)'],
+            AR(['Adverse reaction', 'OSTREVIA 10 mg (N=204)', 'OSTREVIA 25 mg (N=205)', 'Placebo (N=203)'],
               ['Nasopharyngitis', '11%', '13%', '8%'], ['Headache', '8%', '10%', '5%'], ['Nausea', '6%', '8%', '3%'], ['Acne', '5%', '7%', '2%']))]),
     sec('7', 'DRUG INTERACTIONS', subs=[
         sub('7.1', 'Strong CYP3A4 Inhibitors', P('Lumiravostat exposure increases with strong CYP3A4 inhibitors. Use 10 mg once daily [see Dosage and Administration (2.4)].')),
@@ -503,6 +503,8 @@ def doc(id, title, body, status='draft'):
     d.update(body)
     return d
 
+from us_bio import SAMPLES_BIO
+
 SAMPLES = [
     {'id': 'ostrevia-clean', 'productId': 'nce-tablet', 'title': 'Ostrevia: clean label set', 'level': 'Start here',
      'about': 'A complete, clean PLR prescribing information with a boxed warning, its Medication Guide, carton and bottle label. Use it to see what a passing label looks like and to try the editor.',
@@ -520,4 +522,4 @@ SAMPLES = [
     {'id': 'brezovent-patient', 'productId': 'mdi-aerosol', 'title': 'Brezovent: patient labelling', 'level': 'Practice',
      'about': 'A Patient Information leaflet and an Instructions for Use for a metered-dose inhaler. Use the readability panel to make them plainer.',
      'docs': [doc('ppi', 'Patient Information', brz_ppi), doc('ifu', 'Instructions for Use', brz_ifu)]},
-]
+] + SAMPLES_BIO

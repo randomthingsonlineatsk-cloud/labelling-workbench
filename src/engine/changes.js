@@ -119,6 +119,30 @@ export function applyRolloutFile(core, change, text) {
 
 // The change request a sample starts with. Its notification arrived three days before the sample
 // is opened, so a 505(o)(4) clock is already running.
+// Signal hand-off from a pharmacovigilance app (format in docs/handoff-formats.md). Returns the
+// fields of a new change request: the signal becomes the trigger, with its proposed wording and
+// evidence summary.
+export const PV_SIGNAL_KIND = 'pv-app/labelling-signal';
+export function parseSignalFile(text, product) {
+  let d;
+  try { d = typeof text === 'string' ? JSON.parse(text) : text; } catch { throw new Error('This file is not valid JSON.'); }
+  if (d?.kind !== PV_SIGNAL_KIND) throw new Error('This is not a labelling signal file from a pharmacovigilance app.');
+  if ((d.schema ?? 1) > 1) throw new Error('This signal file was made by a newer version of the pharmacovigilance app.');
+  if (!d.signal?.title || !d.signal?.proposedWording) throw new Error('The signal file needs a title and proposed wording.');
+  const warnings = [];
+  if (product && d.product?.inn && d.product.inn.toLowerCase() !== String(product.inn).toLowerCase()) warnings.push(`The signal is for ${d.product.inn}; this project is for ${product.inn}.`);
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(d.signal.validatedOn ?? '') ? d.signal.validatedOn : null;
+  return {
+    warnings,
+    fields: {
+      trigger: 'signal', kind: d.signal.kind ?? 'warning', title: String(d.signal.title).slice(0, 120),
+      text: `${d.signal.proposedWording}${d.signal.evidence ? `\n\nEvidence: ${d.signal.evidence}` : ''}`,
+      ...(date ? { startDate: date } : {}),
+      ...(Array.isArray(d.signal.markets) && d.signal.markets.length ? { markets: d.signal.markets } : {}),
+    },
+  };
+}
+
 export function sampleChange(core, sample, docs, user, on = today()) {
   if (!sample.change) return null;
   const start = addDays(on, -3);

@@ -2,7 +2,8 @@ import React, { useMemo, useState } from 'react';
 import { useApp } from '../../ctx.js';
 import { splXml } from '../../engine/spl.js';
 import { download, slug } from '../../engine/io.js';
-import { labellingPackage, ccsiFile, m1Section } from '../../engine/handoff.js';
+import { labellingPackage, ccsiFile, m1Section, PKG_REGIONS, PKG_NODE } from '../../engine/handoff.js';
+import { displayCode } from '../../engine/text.js';
 import { currentVersion } from '../../engine/ccds.js';
 import { uid, now } from '../../engine/model.js';
 import { epiHtml } from '../../engine/epi.js';
@@ -10,7 +11,7 @@ import { go } from '../../ctx.js';
 
 export default function Export({ doc, docs, issues, product, project }) {
   const { pack, toast, user, addDoc } = useApp();
-  const eu = ['smpc', 'pl', 'eu-outer', 'eu-blister', 'in-pi', 'in-carton', 'in-label', 'ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'].includes(doc.kind); // not US: no SPL, no US Module 1.14
+  const eu = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small', 'in-pi', 'in-carton', 'in-label', 'ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'].includes(doc.kind); // not US: no SPL, no US Module 1.14
   const [lang, setLang] = useState('fr');
   const startTranslation = async () => {
     const d = JSON.parse(JSON.stringify(doc));
@@ -43,7 +44,7 @@ export default function Export({ doc, docs, issues, product, project }) {
       </div>
       <h3>For the other apps</h3>
       <div className="cat-grid" style={{ marginBottom: '1.25rem' }}>
-        {!eu && <div className="card"><h3>Module 1 labelling package</h3><p className="small">Every label in this project, placed for US Module 1.14 (this label goes to {m1Section(doc)}). In the <a href="https://randomthingsonlineatsk-cloud.github.io/ectd-dossier-builder/" target="_blank" rel="noreferrer">eCTD Dossier Builder</a>, open a US project for {product?.brandName} and use "Import labelling package" on the Sequences tab.</p><button className="btn small primary" onClick={() => download(`${slug(product?.brandName)}-labelling-package.json`, JSON.stringify(labellingPackage({ project, docs, product, pack, user }), null, 1))}>Download package</button></div>}
+        {PKG_REGIONS[project.region ?? 'us'] && <div className="card"><h3>Module 1 labelling package</h3><p className="small">Every label in this project, placed for {PKG_NODE[project.region ?? 'us']} (this label goes to {displayCode(m1Section(doc))}). In the <a href="https://randomthingsonlineatsk-cloud.github.io/ectd-dossier-builder/" target="_blank" rel="noreferrer">eCTD Dossier Builder</a>, open a {PKG_REGIONS[project.region ?? 'us']} project for {product?.brandName} and use "Import labelling package" on the Sequences tab.</p><button className="btn small primary" onClick={() => download(`${slug(product?.brandName)}-labelling-package.json`, JSON.stringify(labellingPackage({ project, docs, product, pack, user }), null, 1))}>Download package</button></div>}
         {currentVersion(project?.ccds) && <div className="card"><h3>CCSI for pharmacovigilance</h3><p className="small">The core safety statements of CCDS {currentVersion(project.ccds).v}, the reference for whether a reaction is listed.</p><button className="btn small" onClick={() => download(`${slug(product?.brandName)}-ccsi.json`, JSON.stringify(ccsiFile({ project, product, user }), null, 1))}>Download CCSI file</button></div>}
       </div>
       <p className="small muted">The whole project (all labels, versions, reviews, the core data sheet, change requests and the audit trail) downloads from the button at the top of the page.</p>

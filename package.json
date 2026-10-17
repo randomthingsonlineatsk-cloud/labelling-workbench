@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "pack": "python3 tools/packs/us.py && python3 tools/packs/core.py && python3 tools/packs/eu.py && python3 tools/packs/in.py && python3 tools/packs/intl.py",
-    "test": "node tests/checks.test.mjs && node tests/workflow.test.mjs && node tests/core.test.mjs && node tests/eu.test.mjs && node tests/in.test.mjs && node tests/intl.test.mjs"
+    "test": "node tests/checks.test.mjs && node tests/workflow.test.mjs && node tests/core.test.mjs && node tests/eu.test.mjs && node tests/in.test.mjs && node tests/intl.test.mjs && node tests/completion.test.mjs"
   },
   "author": "Khan Gulrez Shagufa Fazal Ahmed",
   "license": "Apache-2.0",

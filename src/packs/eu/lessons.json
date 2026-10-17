@@ -21,6 +21,20 @@
      ]
     },
     {
+     "h": "Annex II and small packaging",
+     "p": [
+      "Annex II has four standard parts: A, the manufacturer responsible for batch release; B, the legal status for supply (\"Medicinal product subject to medical prescription.\"); C, other conditions, with the standard statement that PSURs follow the EURD list under Article 107c(7) of Directive 2001/83/EC; and D, the risk management plan in Module 1.8.2 and when an updated RMP is due. E applies only to conditional or exceptional authorisations.",
+      "Immediate packaging that is too small for the full particulars (an ampoule or a small vial) carries a minimum set: the name with the route, the method of administration, the expiry date after \"EXP\", the batch after \"Lot\" and the contents by weight, volume or unit. Blisters carry the name, the holder, EXP and Lot."
+     ]
+    },
+    {
+     "h": "Generics and the reference SmPC",
+     "p": [
+      "The SmPC of a generic follows the reference SmPC. It may differ where the products differ: strengths offered, composition and excipients, appearance, pharmaceutical particulars, and the holder, numbers and dates in sections 7 to 10.",
+      "Article 11 of Directive 2001/83/EC lets the generic leave out parts that refer to indications or dosage forms still covered by patent law. As with a US carve-out, every dependent mention goes: indication, posology, adverse reaction data and clinical data."
+     ]
+    },
+    {
      "h": "What is changing (Watch)",
      "p": [
       "EMA consulted in 2025 on QRD version 11: a shorter leaflet, important information first, warnings grouped by subject and an optional section 7 for long instructions for use. It also consulted on a key information section at the top of the leaflet. Neither is in force; this app checks against v10.4."

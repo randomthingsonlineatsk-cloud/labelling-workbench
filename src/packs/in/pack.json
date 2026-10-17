@@ -2,7 +2,19 @@
  "id": "in",
  "name": "India (CDSCO)",
  "short": "IN",
- "version": "1.0.0",
+ "version": "1.0.1",
+ "changes": [
+  {
+   "version": "1.0.1",
+   "date": "2026-10-17",
+   "notes": "Fifteen more quiz questions (every lesson now has at least eight). No rule changes."
+  },
+  {
+   "version": "1.0.0",
+   "date": "2026-10-11",
+   "notes": "First release (Phase 4): package insert, carton and strip, Rules 96 and 97, Schedule H2, MRP."
+  }
+ ],
  "asOf": "2026-10-11",
  "kinds": [
   "in-pi",

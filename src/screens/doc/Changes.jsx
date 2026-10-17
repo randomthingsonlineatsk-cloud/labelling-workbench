@@ -1,13 +1,21 @@
 import React, { useRef, useState } from 'react';
 import { useApp, go } from '../../ctx.js';
-import { newChange, setStep, respondO4, o4Clock, trackerRows, classifierFile, applyRolloutFile, today, isDate, marketRow } from '../../engine/changes.js';
-import { labellingPackage } from '../../engine/handoff.js';
+import { newChange, setStep, respondO4, o4Clock, trackerRows, classifierFile, applyRolloutFile, today, isDate, marketRow , parseSignalFile} from '../../engine/changes.js';
+import { labellingPackage, PKG_REGIONS, PKG_NODE } from '../../engine/handoff.js';
 import { toCsv, currentVersion } from '../../engine/ccds.js';
 import { download, slug, readFile } from '../../engine/io.js';
 import { RuleCard, StatusPill } from '../../components/ui.jsx';
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
 const CLASSIFIER = 'https://randomthingsonlineatsk-cloud.github.io/variations-classifier/';
+// Lessons in the Variations Classifier that explain the route for each kind of trigger.
+const CLASSIFIER_LESSON = {
+  o4: [5, 'Labeling and safety changes: when FDA asks under 505(o)(4)'],
+  prac: [11, 'One core data sheet, many labels (agreed wording: Type IA-IN)'],
+  psusa: [11, 'One core data sheet, many labels (agreed wording: Type IA-IN)'],
+  ccds: [11, 'One core data sheet, many labels'],
+  signal: [5, 'Labeling and safety changes (CBE-0 and prior approval)'],
+};
 const ECTD = 'https://randomthingsonlineatsk-cloud.github.io/ectd-dossier-builder/';
 
 export default function Changes({ project, docs, product, focus }) {
@@ -56,10 +64,12 @@ export default function Changes({ project, docs, product, focus }) {
                 <RolloutImport onText={(text) => mutate((ch) => { const notes = applyRolloutFile(core, ch, text); if (notes.length) toast(notes.join(' ')); }, 'Rollout file imported.')} />
               </div>
               <a className="small" href={CLASSIFIER} target="_blank" rel="noreferrer">Open the Variations Classifier</a>
+              {CLASSIFIER_LESSON[c.trigger] && <a className="small" href={`${CLASSIFIER}#/learn/${CLASSIFIER_LESSON[c.trigger][0]}`} target="_blank" rel="noreferrer">Lesson: {CLASSIFIER_LESSON[c.trigger][1]}</a>}
+              {(c.trigger === 'prac' || c.trigger === 'psusa') && <a className="small" href={`${CLASSIFIER}#/learn/7`} target="_blank" rel="noreferrer">Lesson: EU variations, the categories</a>}
             </div>
-            {(project.region ?? 'us') === 'us' && <div className="card">
+            {PKG_REGIONS[project.region ?? 'us'] && <div className="card">
               <h3>Labelling package for the eCTD</h3>
-              <p className="small">The linked labels for US Module 1.14 (draft or final by status), with a manifest. The eCTD Dossier Builder imports it into a labeling supplement.</p>
+              <p className="small">The linked labels for {PKG_NODE[project.region ?? 'us']}, draft or final by status, with a manifest. The eCTD Dossier Builder imports them into a new sequence for the change.</p>
               <button className="btn small" onClick={() => { const ds = (c.docIds ?? []).map((id) => docs.find((d) => d.id === id)).filter(Boolean); download(`${slug(product.brandName)}-labelling-package.json`, JSON.stringify(labellingPackage({ project, docs: ds.length ? ds : docs, product, pack, user, change: c }), null, 1)); }}>Download package</button>
               <a className="small" href={ECTD} target="_blank" rel="noreferrer">Open the eCTD Dossier Builder</a>
             </div>}
@@ -86,18 +96,29 @@ function RolloutImport({ onText }) {
 }
 
 function NewChange({ project, docs, onCancel, onCreate }) {
-  const { pack, toast, user } = useApp();
+  const { pack, toast, user, product: productOf } = useApp();
   const core = pack.core;
   const cur = currentVersion(project.ccds);
   const [f, setF] = useState({ trigger: 'signal', kind: 'warning', title: '', text: '', startDate: today(), markets: [project.region === 'intl' ? 'ca' : project.region ?? 'us'], ccdsVersion: cur?.v ?? '' });
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
   const toggle = (m) => setF({ ...f, markets: f.markets.includes(m) ? f.markets.filter((x) => x !== m) : [...f.markets, m] });
   const create = () => {
-    try { onCreate(newChange(core, { ...f, ccdsVersion: f.trigger === 'ccds' ? f.ccdsVersion : '', docIds: docs.filter((d) => d.role !== 'reference' && ['pi', 'mg', 'ppi', 'ifu', 'pmi'].includes(d.kind)).map((d) => d.id), notice: f.trigger === 'o4' ? { from: 'FDA (fictional)', date: f.startDate, title: 'Safety labeling change notification under section 505(o)(4)', text: f.text } : null, user })); }
+    try { onCreate(newChange(core, { ...f, ccdsVersion: f.trigger === 'ccds' ? f.ccdsVersion : '', docIds: docs.filter((d) => d.role !== 'reference' && d.role !== 'translation').map((d) => d.id), notice: f.trigger === 'o4' ? { from: 'FDA (fictional)', date: f.startDate, title: 'Safety labeling change notification under section 505(o)(4)', text: f.text } : null, user })); }
     catch (e) { toast(e.message, 'error'); }
   };
   return (
     <form className="panel grid-2" onSubmit={(e) => { e.preventDefault(); create(); }} aria-label="New change request" style={{ marginBottom: '1rem' }}>
+      <div style={{ gridColumn: '1 / -1' }} className="row small">
+        <span className="muted">From a pharmacovigilance app:</span>
+        <label className="btn small">Fill from a signal file
+          <input type="file" accept=".json,application/json" className="sr-only" onChange={async (e) => {
+            const file = e.target.files[0]; e.target.value = '';
+            if (!file) return;
+            try { const r = parseSignalFile(await file.text(), productOf(project.productId)); setF({ ...f, ...r.fields }); toast(`Signal "${r.fields.title}" loaded.${r.warnings.length ? ` ${r.warnings.join(' ')}` : ''}`, r.warnings.length ? 'warn' : 'info'); }
+            catch (err) { toast(err.message, 'error'); }
+          }} />
+        </label>
+      </div>
       <label className="field">What started it<select value={f.trigger} onChange={set('trigger')}>{core.triggers.map((t) => <option key={t.id} value={t.id}>{t.label}</option>)}</select></label>
       <label className="field">Kind of change<select value={f.kind} onChange={set('kind')}>{core.kinds.map((k) => <option key={k.id} value={k.id}>{k.label}</option>)}</select></label>
       <label className="field">Title<input type="text" value={f.title} onChange={set('title')} placeholder="for example: Photosensitivity warning" /></label>

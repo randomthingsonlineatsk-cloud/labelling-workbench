@@ -401,6 +401,231 @@
    "answer": 0,
    "why": "New packs carry the revised MRP.",
    "cite": "DPCO 2013"
+  },
+  {
+   "id": "q25-6",
+   "topic": 25,
+   "module": "in",
+   "q": "What follows \"Exp. Date\" on a Rule 96 label?",
+   "options": [
+    "The year only",
+    "The price",
+    "The batch number",
+    "The month and year"
+   ],
+   "answer": 3,
+   "why": "Dates of manufacture and expiry give the month and year.",
+   "cite": "Drugs Rules, 1945, Rule 96"
+  },
+  {
+   "id": "q25-7",
+   "topic": 25,
+   "module": "in",
+   "q": "Whose name and address does the label give?",
+   "options": [
+    "The distributor's only",
+    "CDSCO's",
+    "The manufacturer's, with the premises where the drug was made",
+    "The pharmacy's"
+   ],
+   "answer": 2,
+   "why": "Rule 96 requires the manufacturer and the address of the premises.",
+   "cite": "Drugs Rules, 1945, Rule 96"
+  },
+  {
+   "id": "q25-8",
+   "topic": 25,
+   "module": "in",
+   "q": "What does the net content particular give?",
+   "options": [
+    "The batch",
+    "The quantity in the pack, for example 10 tablets",
+    "The carton weight",
+    "The price"
+   ],
+   "answer": 1,
+   "why": "Net content is the amount of drug in the container.",
+   "cite": "Drugs Rules, 1945, Rule 96"
+  },
+  {
+   "id": "q26-6",
+   "topic": 26,
+   "module": "in",
+   "q": "Which schedule's caution reads \"It is dangerous to take this preparation except under medical supervision\"?",
+   "options": [
+    "Schedule G",
+    "Schedule H",
+    "Schedule X",
+    "Schedule H1"
+   ],
+   "answer": 0,
+   "why": "That is the Schedule G caution.",
+   "cite": "Drugs Rules, 1945, Rule 97"
+  },
+  {
+   "id": "q26-7",
+   "topic": 26,
+   "module": "in",
+   "q": "What colour is the box around the Rule 97 caution?",
+   "options": [
+    "Black",
+    "Blue",
+    "Green",
+    "Red"
+   ],
+   "answer": 3,
+   "why": "Black type in a completely red rectangular box.",
+   "cite": "Drugs and Cosmetics (Fifth Amendment) Rules, 2018"
+  },
+  {
+   "id": "q26-8",
+   "topic": 26,
+   "module": "in",
+   "q": "Where does the Rx symbol go?",
+   "options": [
+    "On the back panel",
+    "Anywhere",
+    "Top left of the label",
+    "Bottom right"
+   ],
+   "answer": 2,
+   "why": "Conspicuously at the top left.",
+   "cite": "Drugs Rules, 1945, Rule 97"
+  },
+  {
+   "id": "q27-6",
+   "topic": 27,
+   "module": "in",
+   "q": "Which heading of the insert is DETAILS OF MANUFACTURER?",
+   "options": [
+    "9",
+    "10",
+    "11",
+    "12"
+   ],
+   "answer": 1,
+   "why": "11 is the permission with date, 12 the date of revision.",
+   "cite": "CDSCO-approved package insert format"
+  },
+  {
+   "id": "q27-7",
+   "topic": 27,
+   "module": "in",
+   "q": "What does section 12 of the insert give?",
+   "options": [
+    "The date of revision",
+    "Overdose",
+    "Storage",
+    "Packaging"
+   ],
+   "answer": 0,
+   "why": "It closes the insert.",
+   "cite": "CDSCO-approved package insert format"
+  },
+  {
+   "id": "q27-8",
+   "topic": 27,
+   "module": "in",
+   "q": "Where do patient counselling points go?",
+   "options": [
+    "Section 4.4",
+    "Section 7",
+    "Section 11",
+    "Section 9"
+   ],
+   "answer": 3,
+   "why": "Section 9 is patient counselling information.",
+   "cite": "CDSCO-approved package insert format"
+  },
+  {
+   "id": "q28-6",
+   "topic": 28,
+   "module": "in",
+   "q": "How many data elements does Schedule H2 list?",
+   "options": [
+    "Twelve",
+    "Two",
+    "Eight",
+    "Four"
+   ],
+   "answer": 2,
+   "why": "From the unique product identification code to the manufacturing licence number.",
+   "cite": "Drugs (Eighth Amendment) Rules, 2022"
+  },
+  {
+   "id": "q28-7",
+   "topic": 28,
+   "module": "in",
+   "q": "Which is a Schedule H2 data element?",
+   "options": [
+    "The patient's name",
+    "The manufacturing licence number",
+    "The MRP",
+    "The doctor's name"
+   ],
+   "answer": 1,
+   "why": "The licence number is the eighth element.",
+   "cite": "Drugs (Eighth Amendment) Rules, 2022"
+  },
+  {
+   "id": "q28-8",
+   "topic": 28,
+   "module": "in",
+   "q": "From when are vaccines, anti-cancer and NDPS drugs added to Schedule H2 (Watch)?",
+   "options": [
+    "1 July 2027",
+    "1 August 2023",
+    "1 January 2026",
+    "Not planned"
+   ],
+   "answer": 0,
+   "why": "Antimicrobials follow from 1 July 2028.",
+   "cite": "Schedule H2 extension notice"
+  },
+  {
+   "id": "q29-6",
+   "topic": 29,
+   "module": "in",
+   "q": "Which order requires the MRP to be inclusive of all taxes?",
+   "options": [
+    "Rule 97",
+    "Schedule H2",
+    "NDCT Rules, 2019",
+    "Drugs (Prices Control) Order, 2013"
+   ],
+   "answer": 3,
+   "why": "DPCO 2013 governs the price display.",
+   "cite": "Drugs (Prices Control) Order, 2013"
+  },
+  {
+   "id": "q29-7",
+   "topic": 29,
+   "module": "in",
+   "q": "Which schedule lists diseases a drug may not claim to prevent or cure?",
+   "options": [
+    "Schedule M",
+    "Schedule Y",
+    "Schedule J",
+    "Schedule H"
+   ],
+   "answer": 2,
+   "why": "Schedule J of the Drugs Rules, 1945.",
+   "cite": "Drugs Rules, 1945, Schedule J"
+  },
+  {
+   "id": "q29-8",
+   "topic": 29,
+   "module": "in",
+   "q": "How is the price shown on a strip sold on its own?",
+   "options": [
+    "Not at all",
+    "MRP with ₹ or Rs., per strip, inclusive of all taxes",
+    "Only on the carton",
+    "In US dollars"
+   ],
+   "answer": 1,
+   "why": "The smallest retail pack shows its own MRP.",
+   "cite": "Drugs (Prices Control) Order, 2013"
   }
  ]
 }

@@ -10,3 +10,8 @@ import '@fontsource/jetbrains-mono/400.css';
 import './styles.css';
 
 createRoot(document.getElementById('root')).render(<App />);
+
+// Offline after the first load: the service worker (built by tools/sw-plugin.js) precaches the app.
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(() => { /* offline support is optional */ }); });
+}

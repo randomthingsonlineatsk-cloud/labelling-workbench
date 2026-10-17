@@ -2,6 +2,7 @@
 // reviews and audit trail, the pack version used and a SHA-256 checksum of the contents.
 import { SCHEMA_VERSION, uid } from './model.js';
 import { sha256 } from './sha256.js';
+import { ruleStamp, ruleChanges, packVersions } from './pack.js';
 
 export const FILE_KIND = 'labelling-workbench/project';
 
@@ -10,7 +11,8 @@ export function exportProject({ project, docs, versions, reviews, audit, pack, u
   return JSON.stringify({
     kind: FILE_KIND, schema: SCHEMA_VERSION, exportedAt: new Date().toISOString(),
     notice: 'Training use only. Fictional products and companies; not regulatory advice.',
-    pack: { id: pack.id, version: pack.version, asOf: pack.asOf },
+    pack: { id: pack.id, version: pack.version, asOf: pack.asOf, versions: packVersions(pack) },
+    rules: project.ruleStamp ?? ruleStamp(pack, project.region ?? 'us'),
     user: { userId: user?.userId ?? null, classId: user?.classId ?? null, displayName: user?.displayName ?? '' },
     checksum: sha256(JSON.stringify(body)),
     ...body,
@@ -26,11 +28,14 @@ export function parseProjectFile(text, user, pack) {
   const warnings = [];
   const body = { project: d.project, docs: d.docs ?? [], versions: d.versions ?? [], reviews: d.reviews ?? [], audit: d.audit ?? [] };
   if (d.checksum && sha256(JSON.stringify(body)) !== d.checksum) warnings.push('The checksum does not match: the file was edited after export. It has been imported anyway.');
-  if (d.pack && pack && d.pack.version !== pack.version) warnings.push(`This project was made with pack ${d.pack.version} (${d.pack.asOf}); this app uses ${pack.version} (${pack.asOf}). Some rules may have changed.`);
+  const region = d.project?.region ?? 'us';
+  const changes = d.rules && pack ? ruleChanges(d.rules, pack, region) : null;
+  if (changes) warnings.push(`Rules have changed since this project was exported: ${changes.added.length} added, ${changes.changed.length} changed, ${changes.removed.length} removed. The project page lists them.`);
+  else if (!d.rules && d.pack && pack && d.pack.version !== pack.version) warnings.push(`This project was made with pack ${d.pack.version} (${d.pack.asOf}); this app uses ${pack.version} (${pack.asOf}). Some rules may have changed.`);
   const own = (x) => ({ ...x, importedFrom: { userId: x.userId ?? null, classId: x.classId ?? null }, userId: user?.userId ?? x.userId, classId: user?.classId ?? x.classId ?? null });
   const pid = uid('p');
   const docIds = Object.fromEntries(body.docs.map((x) => [x.id, uid('d')]));
-  const project = own({ ...body.project, id: pid, title: `${body.project.title} (imported)` });
+  const project = own({ ...body.project, id: pid, title: `${body.project.title} (imported)`, ruleStamp: d.rules ?? body.project.ruleStamp ?? null });
   if (project.proof?.docId) project.proof.docId = docIds[project.proof.docId] ?? null;
   if (project.changes) project.changes = project.changes.map((c) => ({ ...c, docIds: (c.docIds ?? []).map((id) => docIds[id]).filter(Boolean) }));
   return {

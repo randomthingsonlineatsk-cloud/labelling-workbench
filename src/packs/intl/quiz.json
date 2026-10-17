@@ -491,6 +491,141 @@
    "answer": 2,
    "why": "Standard optional wording.",
    "cite": "Section guidance 6.4"
+  },
+  {
+   "id": "q30-8",
+   "topic": 30,
+   "module": "intl",
+   "q": "Which toll-free number does Reporting side effects give in the Canadian PMI?",
+   "options": [
+    "13 11 26",
+    "1-866-234-2345",
+    "1-844-764-7669",
+    "1-800-FDA-1088"
+   ],
+   "answer": 1,
+   "why": "1-844-764-7669 is the poison control number in the Overdose box.",
+   "cite": "PM master template, Patient Medication Information"
+  },
+  {
+   "id": "q31-7",
+   "topic": 31,
+   "module": "intl",
+   "q": "In which languages are Swiss texts published?",
+   "options": [
+    "German, French and Italian",
+    "English only",
+    "German only",
+    "Every EU language"
+   ],
+   "answer": 0,
+   "why": "The official languages; English translations are not binding.",
+   "cite": "AMZV; Swissmedic"
+  },
+  {
+   "id": "q31-8",
+   "topic": 31,
+   "module": "intl",
+   "q": "How does the Swiss patient information end?",
+   "options": [
+    "With the price",
+    "With the batch number",
+    "With the ATC code",
+    "With the month it was last checked by Swissmedic"
+   ],
+   "answer": 3,
+   "why": "\"Diese Packungsbeilage wurde im ... letztmals durch die Arzneimittelbehörde (Swissmedic) geprüft.\"",
+   "cite": "AMZV Annex 5.1"
+  },
+  {
+   "id": "q32-7",
+   "topic": 32,
+   "module": "intl",
+   "q": "How many numbered sections does the 2019-format Japanese insert have?",
+   "options": [
+    "10",
+    "12",
+    "26",
+    "17"
+   ],
+   "answer": 2,
+   "why": "From 1 WARNINGS to 26 MARKETING AUTHORIZATION HOLDER, etc.",
+   "cite": "PSEHB Notification No. 0608-1"
+  },
+  {
+   "id": "q32-8",
+   "topic": 32,
+   "module": "intl",
+   "q": "What comes before section 1 of the insert?",
+   "options": [
+    "Clinical studies",
+    "The header items, starting with the date of preparation or revision",
+    "Overdosage",
+    "Packaging"
+   ],
+   "answer": 1,
+   "why": "Header items A to G precede the numbered sections.",
+   "cite": "PSEHB Notification No. 0608-1"
+  },
+  {
+   "id": "q33-7",
+   "topic": 33,
+   "module": "intl",
+   "q": "Which section of the full CMI covers side effects?",
+   "options": [
+    "6",
+    "4",
+    "2",
+    "7"
+   ],
+   "answer": 0,
+   "why": "\"Are there any side effects?\" is section 6.",
+   "cite": "TGA CMI template"
+  },
+  {
+   "id": "q33-8",
+   "topic": 33,
+   "module": "intl",
+   "q": "Where does the PI point to www.tga.gov.au/reporting-problems?",
+   "options": [
+    "Section 4.9",
+    "Section 8",
+    "Section 10",
+    "Section 4.8"
+   ],
+   "answer": 3,
+   "why": "4.9 gives the Poisons Information Centre number.",
+   "cite": "TGA PI form"
+  },
+  {
+   "id": "q34-7",
+   "topic": 34,
+   "module": "intl",
+   "q": "Which section of a WHO PQ SmPC names the supplier?",
+   "options": [
+    "9",
+    "1",
+    "7",
+    "8"
+   ],
+   "answer": 2,
+   "why": "8 is the WHO reference number, 9 the date of prequalification.",
+   "cite": "WHOPAR Part 4"
+  },
+  {
+   "id": "q34-8",
+   "topic": 34,
+   "module": "intl",
+   "q": "What does section 9 give?",
+   "options": [
+    "The date of revision",
+    "The date of prequalification",
+    "The WHO reference number",
+    "The supplier"
+   ],
+   "answer": 1,
+   "why": "Section 10 is the date of revision of the text.",
+   "cite": "WHOPAR Part 4"
   }
  ]
 }

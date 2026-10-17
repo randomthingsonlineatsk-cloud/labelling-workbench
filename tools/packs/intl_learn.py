@@ -107,6 +107,15 @@ QUESTIONS = [
     Q('q34-4', 34, 'What does the opening statement of the SmPC say?', ['It covers the uses prequalified by WHO; national authorities may authorise others', 'It is legally binding in every country', 'It replaces national labelling', 'It is a summary for patients'], 0, 'It sets the scope.', 'WHOPAR Part 4'),
     Q('q34-5', 34, 'Which frequency word belongs in section 4.8?', ['Uncommon', 'Often', 'Sometimes', 'Occasionally'], 0, 'The MedDRA convention.', 'Section guidance 4.8'),
     Q('q34-6', 34, 'Which storage wording does the section guidance offer for 6.4?', ['"Do not store above 30°C"', '"Store cool"', '"Room temperature"', '"Keep dry if possible"'], 0, 'Standard optional wording.', 'Section guidance 6.4'),
+    Q('q30-8', 30, 'Which toll-free number does Reporting side effects give in the Canadian PMI?', ['1-866-234-2345', '1-844-764-7669', '1-800-FDA-1088', '13 11 26'], 0, '1-844-764-7669 is the poison control number in the Overdose box.', 'PM master template, Patient Medication Information'),
+    Q('q31-7', 31, 'In which languages are Swiss texts published?', ['German, French and Italian', 'English only', 'German only', 'Every EU language'], 0, 'The official languages; English translations are not binding.', 'AMZV; Swissmedic'),
+    Q('q31-8', 31, 'How does the Swiss patient information end?', ['With the month it was last checked by Swissmedic', 'With the price', 'With the batch number', 'With the ATC code'], 0, '"Diese Packungsbeilage wurde im ... letztmals durch die Arzneimittelbehörde (Swissmedic) geprüft."', 'AMZV Annex 5.1'),
+    Q('q32-7', 32, 'How many numbered sections does the 2019-format Japanese insert have?', ['26', '17', '10', '12'], 0, 'From 1 WARNINGS to 26 MARKETING AUTHORIZATION HOLDER, etc.', 'PSEHB Notification No. 0608-1'),
+    Q('q32-8', 32, 'What comes before section 1 of the insert?', ['The header items, starting with the date of preparation or revision', 'Overdosage', 'Packaging', 'Clinical studies'], 0, 'Header items A to G precede the numbered sections.', 'PSEHB Notification No. 0608-1'),
+    Q('q33-7', 33, 'Which section of the full CMI covers side effects?', ['6', '4', '2', '7'], 0, '"Are there any side effects?" is section 6.', 'TGA CMI template'),
+    Q('q33-8', 33, 'Where does the PI point to www.tga.gov.au/reporting-problems?', ['Section 4.8', 'Section 4.9', 'Section 8', 'Section 10'], 0, '4.9 gives the Poisons Information Centre number.', 'TGA PI form'),
+    Q('q34-7', 34, 'Which section of a WHO PQ SmPC names the supplier?', ['7', '8', '9', '1'], 0, '8 is the WHO reference number, 9 the date of prequalification.', 'WHOPAR Part 4'),
+    Q('q34-8', 34, 'What does section 9 give?', ['The date of prequalification', 'The WHO reference number', 'The supplier', 'The date of revision'], 0, 'Section 10 is the date of revision of the text.', 'WHOPAR Part 4'),
 ]
 
 DRILLS = [

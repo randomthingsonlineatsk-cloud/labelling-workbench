@@ -5,9 +5,11 @@
   "text": "Every heading of the QRD template appears with its exact wording and in the template order. Optional headings may be left out.",
   "kinds": [
    "smpc",
+   "eu-annex2",
    "pl",
    "eu-outer",
-   "eu-blister"
+   "eu-blister",
+   "eu-small"
   ],
   "severity": "error",
   "src": "qrd",
@@ -21,9 +23,11 @@
   "text": "Each required section has content. If a section does not apply, the template usually gives the wording to use instead (for example \"Not applicable.\").",
   "kinds": [
    "smpc",
+   "eu-annex2",
    "pl",
    "eu-outer",
-   "eu-blister"
+   "eu-blister",
+   "eu-small"
   ],
   "severity": "error",
   "src": "qrd",
@@ -145,6 +149,59 @@
   "at": "Delegated Regulation (EU) 2016/161, Articles 4 to 7",
   "check": "EU-SF",
   "simplified": "The app checks the template statements and the PC/SN/NN lines, not a real code."
+ },
+ {
+  "id": "EU-A2",
+  "title": "Annex II conditions",
+  "text": "Annex II names the manufacturer responsible for batch release, gives the legal status for supply in B (for example \"Medicinal product subject to medical prescription.\"), and carries the standard statements on periodic safety update reports (the EURD list, Article 107c(7) of Directive 2001/83/EC) in C and on the risk management plan (Module 1.8.2, when an updated RMP is due) in D.",
+  "kinds": [
+   "eu-annex2"
+  ],
+  "severity": "error",
+  "src": "qrda2",
+  "at": "QRD template, Annex II",
+  "check": "EU-A2",
+  "simplified": "The app checks the supply statement and the key phrases of the PSUR and RMP statements, not every word; conditions specific to a product (additional risk minimisation, post-authorisation measures) are not checked."
+ },
+ {
+  "id": "EU-SMALL",
+  "title": "Immediate packaging particulars",
+  "text": "Blisters, strips and small immediate packaging give the expiry date after \"EXP\" and the batch number after \"Lot\". Small units also give the route of administration with the name, the method of administration and the contents by weight, volume or unit.",
+  "kinds": [
+   "eu-blister",
+   "eu-small"
+  ],
+  "severity": "error",
+  "src": "qrd",
+  "at": "QRD template v10.4, Annex IIIA; Directive 2001/83/EC, Article 55",
+  "check": "EU-SMALL",
+  "simplified": "The app checks the prefixes and that the route and contents are given; the date and batch are printed on the packaging line."
+ },
+ {
+  "id": "EU-GEN-SAME",
+  "title": "Generic SmPC matches the reference",
+  "text": "The SmPC of a generic medicinal product follows the reference SmPC. Differences are expected only where the products differ (strengths offered, composition, appearance and excipients in sections 1 to 3 and 6, and the holder, numbers and dates in sections 7 to 10), and in parts left out because they refer to indications or dosage forms still covered by patent law.",
+  "kinds": [
+   "smpc"
+  ],
+  "severity": "error",
+  "src": "art11",
+  "at": "Directive 2001/83/EC, Articles 10 and 11",
+  "check": "EU-GEN-SAME",
+  "simplified": "The app compares section by section after swapping the product and company names; national authorities also accept differences that the app cannot judge, which you would waive with a reason."
+ },
+ {
+  "id": "EU-GEN-CARVE",
+  "title": "Patent-protected indication fully left out",
+  "text": "When an indication still covered by patent law is left out of a generic SmPC, every mention that depends on it goes too: indication, posology, adverse reaction data and clinical data.",
+  "kinds": [
+   "smpc"
+  ],
+  "severity": "error",
+  "src": "art11",
+  "at": "Directive 2001/83/EC, Article 11",
+  "check": "EU-GEN-CARVE",
+  "simplified": "Mentions are found by keywords defined for the left-out indication in the exercise."
  },
  {
   "id": "EU-LAB-PART",

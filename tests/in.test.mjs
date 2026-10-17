@@ -28,7 +28,7 @@ t('India pack is merged: kinds, rules with sources, samples, five lessons', () =
   assert.equal(pack.samples.filter((s) => s.region === 'in').length, 3);
   assert.equal(pack.lessons.lessons.filter((l) => l.module === 'in').length, 5);
   assert.equal(new Set(pack.lessons.lessons.map((l) => l.id)).size, pack.lessons.lessons.length, 'lesson ids unique across modules');
-  assert.equal(pack.quiz.questions.filter((q) => q.module === 'in').length, 25);
+  assert.equal(pack.quiz.questions.filter((q) => q.module === 'in').length, 40);
   assert.equal(regionOfKind('in-carton'), 'in');
 });
 

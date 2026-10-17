@@ -108,6 +108,10 @@ LESSONS = {'region': 'us', 'lessons': [
             'If a method-of-use patent covers one indication, the generic applicant can file a section viii statement and omit that indication (21 CFR 314.127(a)(7)). The carve-out must be complete: the indication, its dosing, any text that depends on it in adverse reactions and clinical studies, and the Highlights entries.',
             'The Compare tab shows the generic against the reference, section by section, with permitted differences marked.',
         ]),
+        ('Biosimilars', [
+            'A biosimilar licensed under section 351(k) incorporates the reference product\'s labeling with appropriate changes. Its Highlights carry a biosimilarity statement, "[BIOSIMILAR] ([proper name]) is biosimilar* to [REFERENCE] ([proper name])", with a footnote that explains what biosimilar means. Statements about the product use the biosimilar\'s own name, and its proper name carries a four-letter suffix (olvecitamab-kzrt).',
+            'Watch: FDA\'s revised draft guidance of September 2023 recommends the same biosimilarity statement for interchangeable biosimilars and no interchangeability statement in labeling; interchangeability is shown in the Purple Book. The app shows an interchangeability statement as a hint, not an error.',
+        ]),
     ], try_it={'sample': 'talmisartan-generic', 'doc': 'pi', 'tab': 'compare'}),
     L(10, 'Safety labelling changes under 505(o)(4)', 6, [
         ('FDA can require a change', [
@@ -221,6 +225,19 @@ QUIZ = {'topics': [{'id': l['id'], 'label': f"{l['id']}. {l['title']}"} for l in
     Q('q11-4', 11, 'Old-format drug interaction text under Precautions moves to:', ['7 Drug Interactions', '12.1', '5', '10'], 0, 'PLR gives drug interactions their own section.', '21 CFR 201.57(c)(8)'),
     Q('q11-5', 11, 'Which part is new when converting to PLR?', ['Description', 'Highlights', 'Overdosage', 'How Supplied'], 1, 'The older format has no Highlights.', '21 CFR 201.57(a)'),
     Q('q11-6', 11, 'Older-format labels are governed by:', ['21 CFR 201.80', '21 CFR 201.57', '21 CFR 208', '21 CFR 314.94'], 0, '201.80 covers the older format.', '21 CFR 201.80'),
+    Q('q8-5', 8, 'Which code system names SPL section types such as Boxed Warning or Indications and Usage?', ['MedDRA', 'SNOMED CT', 'ATC', 'LOINC'], 3, 'Each SPL section carries a LOINC code for its type.', 'FDA SPL Implementation Guide'),
+    Q('q8-6', 8, 'What lets FDA and readers track the versions of one SPL document?', ['A set ID and a version number', 'The NDA number alone', 'The barcode', 'A Federal Register citation'], 0, 'Every version of a label keeps the same set ID and gets the next version number.', 'FDA SPL Implementation Guide'),
+    Q('q8-7', 8, 'Where in an SPL file are the NDC, ingredients and packaging held?', ['In the revision date', 'In the product data elements', 'In Highlights', 'In the boxed warning'], 1, 'The product data elements describe the product in coded form, separate from the label text.', 'FDA SPL Implementation Guide'),
+    Q('q8-8', 8, 'How are SPL files sent to FDA?', ['Through MedWatch', 'Through the Purple Book', 'Through the FDA Electronic Submissions Gateway', 'By fax'], 2, 'SPL is submitted electronically through the ESG, inside the application or as a listing.', 'FDA SPL resources'),
+    Q('q9-7', 9, 'Which regulation lists the permitted differences between a generic label and its reference?', ['21 CFR 201.57(c)', '21 CFR 208.20', '21 CFR 201.80', '21 CFR 314.94(a)(8)(iv)'], 3, '314.94(a)(8)(iv) covers the labeling of an ANDA and the differences allowed.', '21 CFR 314.94'),
+    Q('q9-8', 9, "Under FDA's September 2023 revised draft guidance, what does a biosimilar's labeling carry?", ['One biosimilarity statement, whether or not the product is interchangeable', 'An interchangeability statement for interchangeable products', 'No statement at all', "The reference product's brand name throughout"], 0, 'The revised draft recommends the same biosimilarity statement for every biosimilar. It is a draft (Watch).', 'Labeling for Biosimilar and Interchangeable Biosimilar Products (revised draft, 2023)'),
+    Q('q9-9', 9, 'Where does FDA show which biosimilars are interchangeable?', ['DailyMed only', 'The Purple Book', 'The Orange Book', 'The label Highlights'], 1, 'Interchangeability matters at pharmacy dispensing, so FDA points to the Purple Book.', 'FDA updated labeling recommendations for biosimilars'),
+    Q('q10-5', 10, "Which law created FDA's authority under section 505(o)(4)?", ['PDUFA 1992', '21st Century Cures Act 2016', 'FDAAA 2007', 'Hatch-Waxman 1984'], 2, 'The Food and Drug Administration Amendments Act of 2007 added safety labeling change authority.', 'FD&C Act 505(o)(4); FDA guidance on safety labeling changes'),
+    Q('q10-6', 10, 'If discussions after a 505(o)(4) notice end without agreement, how soon may FDA order the change?', ['Within 30 days', 'Within 60 days', 'Within 90 days', 'Within 15 days'], 3, 'After the discussion period FDA may issue an order within 15 days.', 'FD&C Act 505(o)(4)(E)'),
+    Q('q10-7', 10, "What should the holder's response to a 505(o)(4) notice contain?", ['A labeling supplement with the change, or a statement of why it is not warranted', 'A fee', 'A REMS', 'A Dear Health Care Provider letter only'], 0, 'The holder either submits the change or rebuts within 30 days.', 'FD&C Act 505(o)(4)(B)'),
+    Q('q10-8', 10, 'What can follow a failure to comply with 505(o)(4)?', ['Loss of patent protection', 'Civil money penalties, and the drug can be misbranded', 'Automatic withdrawal of approval', 'Nothing'], 1, 'Violations can bring civil penalties, and the product can be deemed misbranded.', 'FD&C Act 303(f)(4), 502(z)'),
+    Q('q11-7', 11, 'In PLR, which section number is Contraindications?', ['2', '8', '4', '5'], 2, 'PLR sections: 1 Indications, 2 Dosage, 3 Forms and strengths, 4 Contraindications, 5 Warnings and precautions.', '21 CFR 201.57(c)'),
+    Q('q11-8', 11, 'When an older-format label is converted, which part must be written new?', ['The carton', 'The Medication Guide', 'Nothing', 'Highlights, with its cross-references'], 3, 'Highlights and the contents list have no older-format equivalent.', '21 CFR 201.57(a)'),
 ]}
 
 DRILLS = {'drills': [
@@ -234,6 +251,8 @@ DRILLS = {'drills': [
      'about': 'Six planted errors on a vial carton. Clear them all.'},
     {'id': 'carve', 'title': 'Complete the carve-out', 'minutes': 15, 'sample': 'talmisartan-generic', 'doc': 'pi', 'goal': {'type': 'rules', 'prefixes': ['US-ANDA-', 'US-HL-REF']},
      'about': 'Remove every trace of the protected diabetic nephropathy indication and restore the text that is not a permitted difference.'},
+    {'id': 'bio-label', 'title': 'Label a biosimilar', 'minutes': 12, 'sample': 'selvanta-biosimilar', 'doc': 'pi', 'goal': {'type': 'rules', 'prefixes': ['US-BIO-STMT', 'US-BIO-NAME']},
+     'about': 'Complete the biosimilarity footnote, describe the product as SELVANTA throughout, and decide what to do with the interchangeability sentence (Watch).'},
     {'id': 'convert', 'title': 'Map an older-format label to PLR', 'minutes': 10, 'sample': 'nelvaprox-convert', 'doc': 'old', 'goal': {'type': 'convert', 'pass': 80},
      'about': 'Send each block of the older-format label to its PLR section. 80% or more passes.'},
     {'id': 'capstone', 'title': 'Capstone: a safety update from signal to approved labels', 'minutes': 45, 'sample': 'ostrevia-clean', 'doc': 'pi', 'capstone': True,

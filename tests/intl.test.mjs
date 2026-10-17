@@ -27,14 +27,14 @@ const REGIONS = ['ca', 'ch', 'jp', 'au', 'who'];
 const CLEAN = { ca: 'ca-ostrevia-clean', ch: 'ch-ostrevia-clean', jp: 'jp-ostrevia-clean', au: 'au-ostrevia-clean', who: 'who-malvaren-clean' };
 const ERRORS = { ca: 'ca-ostrevia-errors', ch: 'ch-ostrevia-errors', jp: 'jp-ostrevia-errors', au: 'au-ostrevia-errors', who: 'who-malvaren-errors' };
 
-t('five regions merged: kinds, rules with sources, samples, five lessons, 31 questions', () => {
+t('five regions merged: kinds, rules with sources, samples, five lessons, 40 questions', () => {
   for (const r of REGIONS) { assert.ok(pack.regions[r], r); assert.ok(kindsFor(pack, r).length >= 1, r); }
   assert.deepEqual(kindsFor(pack, 'au'), ['au-pi', 'au-cmi']);
   assert.deepEqual(kindsFor(pack, 'ca'), ['ca-pm', 'ca-pmi', 'ca-label']);
   assert.equal(regionOfKind('who-smpc'), 'who');
   for (const r of pack.rules) assert.ok(pack.sources.some((s) => s.id === r.src), r.id);
   assert.equal(pack.lessons.lessons.filter((l) => l.module === 'intl').length, 5);
-  assert.equal(pack.quiz.questions.filter((q) => q.module === 'intl').length, 31);
+  assert.equal(pack.quiz.questions.filter((q) => q.module === 'intl').length, 40);
   assert.equal(new Set(pack.lessons.lessons.map((l) => l.id)).size, pack.lessons.lessons.length);
   assert.equal(new Set(pack.rules.map((r) => r.id)).size, pack.rules.length);
   assert.ok(pack.core.markets.find((m) => m.id === 'au')?.pack);
