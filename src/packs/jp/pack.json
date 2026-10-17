@@ -8,7 +8,7 @@
   {
    "version": "1.0.1",
    "date": "2026-10-17",
-   "notes": "Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes."
+   "notes": "Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist."
   },
   {
    "version": "1.0.0",
@@ -31,8 +31,8 @@
  "sources": [
   {
    "id": "jp0608",
-   "title": "PSEHB Notification No. 0608-1 (8 June 2017): instructions for package inserts of prescription drugs (English translation)",
-   "url": "https://www.phrma-jp.org/wordpress/wp-content/uploads/2019/05/PSEHB-Notification-No.0608-1_E_1.1.pdf"
+   "title": "Pharmaceuticals and Medical Devices Safety Information No. 344 (June 2017, MHLW, English by PMDA): the revised package insert format under PSEHB Notification No. 0608-1",
+   "url": "https://www.pmda.go.jp/files/000218681.pdf"
   },
   {
    "id": "jp360",
@@ -46,7 +46,7 @@
   },
   {
    "id": "epijp",
-   "title": "Japanese Electronic Medicinal Product Information (ePI-JP), FHIR implementation guide (draft)",
+   "title": "HL7 Japanese Electronic Medicinal Product Information (ePI-JP) FHIR implementation guide, continuous build (draft)",
    "url": "https://build.fhir.org/ig/cander2/epi-jp/"
   }
  ]

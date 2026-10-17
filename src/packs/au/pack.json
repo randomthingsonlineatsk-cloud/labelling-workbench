@@ -8,7 +8,7 @@
   {
    "version": "1.0.1",
    "date": "2026-10-17",
-   "notes": "Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes."
+   "notes": "Nine more quiz questions in the shared module (every lesson now has at least eight). No rule changes. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist."
   },
   {
    "version": "1.0.0",
@@ -31,7 +31,7 @@
   {
    "id": "cmitpl",
    "title": "TGA: Improved Consumer Medicine Information template (Schedule 12, Therapeutic Goods Regulations 1990)",
-   "url": "https://www.tga.gov.au/sites/default/files/improved-consumer-medicine-information-template.pdf"
+   "url": "https://www.tga.gov.au/resources/resource/reference-material/improved-consumer-medicine-information-template"
   },
   {
    "id": "cmiguide",
@@ -50,8 +50,8 @@
   },
   {
    "id": "poisons",
-   "title": "Poisons Standard (SUSMP): Schedule 4, Prescription Only Medicine",
-   "url": "https://www.legislation.gov.au/F2023L00617/asmade/2023-05-26/text/original/epub/OEBPS/document_1/document_1.html"
+   "title": "TGA: Poisons Standard (SUSMP), current version; Schedule 4, Prescription Only Medicine",
+   "url": "https://www.tga.gov.au/resources/publication/publications/poisons-standard-susmp"
   }
  ]
 }

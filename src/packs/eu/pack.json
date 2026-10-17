@@ -7,7 +7,7 @@
   {
    "version": "1.1.0",
    "date": "2026-10-17",
-   "notes": "Annex II and small immediate packaging templates; generic SmPC compared with its reference (Article 11 omissions); four new rule cards (EU-A2, EU-SMALL, EU-GEN-SAME, EU-GEN-CARVE); vial label and generic samples with drills; 28 more quiz questions."
+   "notes": "Annex II and small immediate packaging templates; generic SmPC compared with its reference (Article 11 omissions); four new rule cards (EU-A2, EU-SMALL, EU-GEN-SAME, EU-GEN-CARVE); vial label and generic samples with drills; 28 more quiz questions. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist."
   },
   {
    "version": "1.0.0",
@@ -49,7 +49,7 @@
   {
    "id": "qrd",
    "title": "EMA: Product-information (QRD) templates, human, version 10.4 (February 2024)",
-   "url": "https://www.ema.europa.eu/en/human-regulatory/marketing-authorisation/product-information/product-information-templates-human"
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/product-information-requirements/product-information-templates-human"
   },
   {
    "id": "qrdann",
@@ -59,27 +59,27 @@
   {
    "id": "smpcgl",
    "title": "European Commission: A Guideline on Summary of Product Characteristics (SmPC), Rev. 2 (September 2009)",
-   "url": "https://health.ec.europa.eu/system/files/2016-11/smpc_guideline_rev2_en_0.pdf"
+   "url": "https://health.ec.europa.eu/document/download/6a043dea-7d0f-4252-947b-cef58f53d37e_en"
   },
   {
    "id": "dir",
    "title": "Directive 2001/83/EC, Articles 54 to 59 (labelling and package leaflet), 56a (Braille), 57 (blue box)",
-   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02001L0083-20220101"
+   "url": "https://eur-lex.europa.eu/eli/dir/2001/83"
   },
   {
    "id": "excip",
    "title": "Annex to the European Commission guideline on excipients in the labelling and package leaflet of medicinal products for human use, Rev. 2 (November 2019, updated 2022)",
-   "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/annex-european-commission-guideline-excipients-labelling-package-leaflet-medicinal-products-human-use-sante-2017-11668-revision-2_en.pdf"
+   "url": "https://www.ema.europa.eu/en/annex-european-commission-guideline-excipients-labelling-package-leaflet-medicinal-products-human-use"
   },
   {
    "id": "read",
-   "title": "European Commission: Guideline on the readability of the labelling and package leaflet of medicinal products for human use, Rev. 1 (January 2009)",
-   "url": "https://health.ec.europa.eu/system/files/2016-11/2009_01_12_readability_guideline_final_en_0.pdf"
+   "title": "EudraLex Volume 2C: Guideline on the readability of the labelling and package leaflet of medicinal products for human use, Rev. 1 (2009)",
+   "url": "https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-2_en"
   },
   {
    "id": "readno",
-   "title": "Norwegian Medical Products Agency: Readability testing and bridging (summary of the success criteria)",
-   "url": "https://www.dmp.no/en/approval-of-medicines/approval-and-follow-up-of-marketing-authorisation-ma/Product-information---templates-and-guidance/readability-testing-and-bridging"
+   "title": "HALMED (Croatian agency): instructions on readability testing of the package leaflet",
+   "url": "https://halmed.hr/en/Lijekovi/Upute-za-podnositelje-zahtjeva/Uputa-o-ispitivanju-razumljivosti-i-jednostavnosti-Upute-o-lijeku/"
   },
   {
    "id": "am",
@@ -89,7 +89,7 @@
   {
    "id": "sf",
    "title": "Commission Delegated Regulation (EU) 2016/161: safety features (unique identifier and anti-tampering device)",
-   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0161"
+   "url": "https://eur-lex.europa.eu/eli/reg_del/2016/161/oj"
   },
   {
    "id": "qr",
@@ -109,7 +109,7 @@
   {
    "id": "ling",
    "title": "EMA: Linguistic review process of product information in the centralised procedure",
-   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/product-information-requirements/linguistic-review-process-product-information-centralised-procedure"
+   "url": "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/linguistic-review-process-product-information-centralised-procedure-human_en.pdf"
   },
   {
    "id": "art11",
@@ -124,7 +124,7 @@
   {
    "id": "epi",
    "title": "EMA: Electronic product information (ePI), page updated September 2026",
-   "url": "https://www.ema.europa.eu/en/human-regulatory/marketing-authorisation/product-information/electronic-product-information-epi"
+   "url": "https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/product-information-requirements/electronic-product-information-epi"
   }
  ],
  "langs": {
