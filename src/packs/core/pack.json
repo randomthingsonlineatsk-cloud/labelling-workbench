@@ -2,8 +2,13 @@
  "id": "core",
  "name": "Core data sheet and change management",
  "short": "Core",
- "version": "1.1.0",
+ "version": "1.2.0",
  "changes": [
+  {
+   "version": "1.2.0",
+   "date": "2026-11-09",
+   "notes": "United Kingdom added to the markets of a labelling change. UK SmPCs and leaflets can be mapped to the CCDS (they use the EU section numbers). New Label drift monitor across markets."
+  },
   {
    "version": "1.1.0",
    "date": "2026-10-17",
@@ -15,7 +20,7 @@
    "notes": "First release (Phase 2): CCDS and CCSI, mapping and deviations, change requests, 505(o)(4), agency comment rounds, implementation tracking."
   }
  ],
- "asOf": "2026-10-17",
+ "asOf": "2026-11-09",
  "about": "The company core data sheet (CCDS) and its safety subset (CCSI), mapping local labels to it, the deviation register, labelling change requests (including FDA safety labelling changes under section 505(o)(4)), agency comment rounds and implementation tracking. Company targets are training defaults; real companies set their own in their procedures.",
  "targets": {
   "submitDays": {
@@ -71,6 +76,11 @@
   {
    "id": "who",
    "label": "WHO prequalification",
+   "pack": true
+  },
+  {
+   "id": "uk",
+   "label": "United Kingdom",
    "pack": true
   }
  ],

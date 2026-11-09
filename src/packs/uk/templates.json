@@ -1,0 +1,368 @@
+{
+ "uk-smpc": {
+  "kind": "uk-smpc",
+  "label": "SmPC (United Kingdom)",
+  "short": "SmPC",
+  "src": "hmr",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "NAME OF THE MEDICINAL PRODUCT",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "PHARMACEUTICAL FORM",
+    "need": "required"
+   },
+   {
+    "num": "4",
+    "title": "CLINICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "4.1",
+      "title": "Therapeutic indications",
+      "need": "required"
+     },
+     {
+      "num": "4.2",
+      "title": "Posology and method of administration",
+      "need": "required"
+     },
+     {
+      "num": "4.3",
+      "title": "Contraindications",
+      "need": "required"
+     },
+     {
+      "num": "4.4",
+      "title": "Special warnings and precautions for use",
+      "need": "required"
+     },
+     {
+      "num": "4.5",
+      "title": "Interaction with other medicinal products and other forms of interaction",
+      "need": "required"
+     },
+     {
+      "num": "4.6",
+      "title": "Fertility, pregnancy and lactation",
+      "need": "required"
+     },
+     {
+      "num": "4.7",
+      "title": "Effects on ability to drive and use machines",
+      "need": "required"
+     },
+     {
+      "num": "4.8",
+      "title": "Undesirable effects",
+      "need": "required"
+     },
+     {
+      "num": "4.9",
+      "title": "Overdose",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "5",
+    "title": "PHARMACOLOGICAL PROPERTIES",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "5.1",
+      "title": "Pharmacodynamic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.2",
+      "title": "Pharmacokinetic properties",
+      "need": "required"
+     },
+     {
+      "num": "5.3",
+      "title": "Preclinical safety data",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "6",
+    "title": "PHARMACEUTICAL PARTICULARS",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "6.1",
+      "title": "List of excipients",
+      "need": "required"
+     },
+     {
+      "num": "6.2",
+      "title": "Incompatibilities",
+      "need": "required"
+     },
+     {
+      "num": "6.3",
+      "title": "Shelf life",
+      "need": "required"
+     },
+     {
+      "num": "6.4",
+      "title": "Special precautions for storage",
+      "need": "required"
+     },
+     {
+      "num": "6.5",
+      "title": "Nature and contents of container",
+      "need": "required"
+     },
+     {
+      "num": "6.6",
+      "title": "Special precautions for disposal and other handling",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "7",
+    "title": "MARKETING AUTHORISATION HOLDER",
+    "need": "required"
+   },
+   {
+    "num": "8",
+    "title": "MARKETING AUTHORISATION NUMBER(S)",
+    "need": "required"
+   },
+   {
+    "num": "9",
+    "title": "DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION",
+    "need": "required"
+   },
+   {
+    "num": "10",
+    "title": "DATE OF REVISION OF THE TEXT",
+    "need": "required"
+   }
+  ],
+  "fixed": {
+   "blackTriangle": "▼ This medicinal product is subject to additional monitoring. This will allow quick identification of new safety information. Healthcare professionals are asked to report any suspected adverse reactions. See section 4.8 for how to report adverse reactions."
+  }
+ },
+ "uk-pil": {
+  "kind": "uk-pil",
+  "label": "Patient information leaflet (United Kingdom)",
+  "short": "PIL",
+  "src": "hmr",
+  "sections": [
+   {
+    "num": "pl1",
+    "title": "1. What {name} is and what it is used for",
+    "need": "required"
+   },
+   {
+    "num": "pl2",
+    "title": "2. What you need to know before you take {name}",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl2.1",
+      "title": "Do not take {name}",
+      "need": "required"
+     },
+     {
+      "num": "pl2.2",
+      "title": "Warnings and precautions",
+      "need": "required"
+     },
+     {
+      "num": "pl2.4",
+      "title": "Other medicines and {name}",
+      "need": "required"
+     },
+     {
+      "num": "pl2.6",
+      "title": "Pregnancy and breast-feeding",
+      "need": "required"
+     },
+     {
+      "num": "pl2.7",
+      "title": "Driving and using machines",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "pl3",
+    "title": "3. How to take {name}",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl3.1",
+      "title": "If you take more {name} than you should",
+      "need": "required"
+     },
+     {
+      "num": "pl3.2",
+      "title": "If you forget to take {name}",
+      "need": "required"
+     },
+     {
+      "num": "pl3.3",
+      "title": "If you stop taking {name}",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "pl4",
+    "title": "4. Possible side effects",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl4.1",
+      "title": "Reporting of side effects",
+      "need": "required"
+     }
+    ]
+   },
+   {
+    "num": "pl5",
+    "title": "5. How to store {name}",
+    "need": "required"
+   },
+   {
+    "num": "pl6",
+    "title": "6. Contents of the pack and other information",
+    "need": "required",
+    "fixedSubs": [
+     {
+      "num": "pl6.1",
+      "title": "What {name} contains",
+      "need": "required"
+     },
+     {
+      "num": "pl6.2",
+      "title": "What {name} looks like and contents of the pack",
+      "need": "required"
+     },
+     {
+      "num": "pl6.3",
+      "title": "Marketing Authorisation Holder and Manufacturer",
+      "need": "required"
+     }
+    ]
+   }
+  ],
+  "fixed": {
+   "header": "Package leaflet: Information for the patient",
+   "blackTriangle": "▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. See the end of section 4 for how to report side effects.",
+   "lastRevised": "This leaflet was last revised in {month}."
+  }
+ },
+ "uk-carton": {
+  "kind": "uk-carton",
+  "label": "Outer carton (United Kingdom)",
+  "short": "Carton",
+  "src": "hmr",
+  "numbered": true,
+  "sections": [
+   {
+    "num": "1",
+    "title": "NAME OF THE MEDICINAL PRODUCT",
+    "need": "required"
+   },
+   {
+    "num": "2",
+    "title": "STATEMENT OF ACTIVE SUBSTANCE(S)",
+    "need": "required"
+   },
+   {
+    "num": "3",
+    "title": "LIST OF EXCIPIENTS",
+    "need": "optional"
+   },
+   {
+    "num": "4",
+    "title": "PHARMACEUTICAL FORM AND CONTENTS",
+    "need": "required"
+   },
+   {
+    "num": "5",
+    "title": "METHOD AND ROUTE(S) OF ADMINISTRATION",
+    "need": "required"
+   },
+   {
+    "num": "6",
+    "title": "SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN",
+    "need": "required"
+   },
+   {
+    "num": "7",
+    "title": "OTHER SPECIAL WARNING(S), IF NECESSARY",
+    "need": "optional"
+   },
+   {
+    "num": "8",
+    "title": "EXPIRY DATE",
+    "need": "required"
+   },
+   {
+    "num": "9",
+    "title": "SPECIAL STORAGE CONDITIONS",
+    "need": "optional"
+   },
+   {
+    "num": "10",
+    "title": "SPECIAL PRECAUTIONS FOR DISPOSAL, IF APPROPRIATE",
+    "need": "optional"
+   },
+   {
+    "num": "11",
+    "title": "NAME AND ADDRESS OF THE MARKETING AUTHORISATION HOLDER",
+    "need": "required"
+   },
+   {
+    "num": "12",
+    "title": "MARKETING AUTHORISATION NUMBER(S)",
+    "need": "required"
+   },
+   {
+    "num": "13",
+    "title": "BATCH NUMBER",
+    "need": "required"
+   },
+   {
+    "num": "14",
+    "title": "LEGAL CATEGORY (POM, P OR GSL)",
+    "need": "required"
+   },
+   {
+    "num": "15",
+    "title": "INSTRUCTIONS ON USE",
+    "need": "optional"
+   },
+   {
+    "num": "16",
+    "title": "INFORMATION IN BRAILLE",
+    "need": "required"
+   },
+   {
+    "num": "17",
+    "title": "2D BARCODE AND SERIAL NUMBER (OPTIONAL IN THE UK)",
+    "need": "optional"
+   }
+  ],
+  "fixed": {
+   "ukOnly": "UK Only"
+  }
+ }
+}

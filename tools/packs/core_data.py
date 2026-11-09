@@ -9,9 +9,9 @@ PACK = {
     'id': 'core',
     'name': 'Core data sheet and change management',
     'short': 'Core',
-    'version': '1.1.0',
-    'changes': [{'version': '1.1.0', 'date': '2026-10-17', 'notes': 'CCDS statements now map to the EU SmPC and package leaflet as well as the US label; new sample and drill to map the EU texts. Eight more quiz questions. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist.'}, {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 2): CCDS and CCSI, mapping and deviations, change requests, 505(o)(4), agency comment rounds, implementation tracking.'}],
-    'asOf': '2026-10-17',
+    'version': '1.2.0',
+    'changes': [{'version': '1.2.0', 'date': '2026-11-09', 'notes': 'United Kingdom added to the markets of a labelling change. UK SmPCs and leaflets can be mapped to the CCDS (they use the EU section numbers). New Label drift monitor across markets.'}, {'version': '1.1.0', 'date': '2026-10-17', 'notes': 'CCDS statements now map to the EU SmPC and package leaflet as well as the US label; new sample and drill to map the EU texts. Eight more quiz questions. Source links checked on 2026-10-17: moved pages updated and secondary sources replaced with official ones where they exist.'}, {'version': '1.0.0', 'date': '2026-10-11', 'notes': 'First release (Phase 2): CCDS and CCSI, mapping and deviations, change requests, 505(o)(4), agency comment rounds, implementation tracking.'}],
+    'asOf': '2026-11-09',
     'about': (
         'The company core data sheet (CCDS) and its safety subset (CCSI), mapping local labels to it, '
         'the deviation register, labelling change requests (including FDA safety labelling changes under '
@@ -34,6 +34,7 @@ PACK = {
         {'id': 'jp', 'label': 'Japan', 'pack': True},
         {'id': 'au', 'label': 'Australia', 'pack': True},
         {'id': 'who', 'label': 'WHO prequalification', 'pack': True},
+        {'id': 'uk', 'label': 'United Kingdom', 'pack': True},
     ],
     'statuses': ['Not started', 'Wording drafted', 'Submitted', 'Approved', 'Implemented'],
     'triggers': [

@@ -693,7 +693,7 @@
   {
    "id": "q6-7",
    "topic": 6,
-   "q": "Status of FDA's Patient Medication Information (PMI) rule as of mid-2026:",
+   "q": "Status of FDA's Patient Medication Information (PMI) rule as of November 2026:",
    "options": [
     "Final and in force",
     "Proposed, not yet final",
@@ -701,7 +701,7 @@
     "Applies only to biologics"
    ],
    "answer": 1,
-   "why": "PMI was proposed in May 2023 and was still proposed in mid-2026.",
+   "why": "PMI was proposed in May 2023 and was still proposed in November 2026. The July 2026 Federal Register notice was a paperwork (information collection) notice for Medication Guides, not a final rule.",
    "cite": "FDA PMI proposed rule (2023); FR 2026-13346"
   },
   {

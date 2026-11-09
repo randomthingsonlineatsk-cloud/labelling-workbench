@@ -12,7 +12,10 @@
    "jp-pi",
    "au-pi",
    "au-cmi",
-   "who-smpc"
+   "who-smpc",
+   "uk-smpc",
+   "uk-pil",
+   "uk-carton"
   ],
   "severity": "warning",
   "src": "pmtpl",
@@ -32,7 +35,10 @@
    "jp-pi",
    "au-pi",
    "au-cmi",
-   "who-smpc"
+   "who-smpc",
+   "uk-smpc",
+   "uk-pil",
+   "uk-carton"
   ],
   "severity": "warning",
   "src": "pmguide",

@@ -1,0 +1,48 @@
+{
+ "id": "uk",
+ "name": "United Kingdom (MHRA)",
+ "short": "UK",
+ "version": "1.0.0",
+ "asOf": "2026-11-09",
+ "changes": [
+  {
+   "version": "1.0.0",
+   "date": "2026-11-09",
+   "notes": "First release: SmPC, patient information leaflet and outer carton for UK-wide marketing authorisations (Windsor Framework, from 1 January 2025), the UK black triangle and Yellow Card statements, the PL number and the \"UK Only\" pack marking."
+  }
+ ],
+ "kinds": [
+  "uk-smpc",
+  "uk-pil",
+  "uk-carton"
+ ],
+ "about": "Product information for a UK-wide marketing authorisation granted by MHRA: the SmPC and the patient information leaflet use the same headings as the EU (QRD) documents, with UK wording where it differs: the Yellow Card Scheme for reporting, the UK black triangle statements, the PL number, a holder established in the UK, and no EU-only references. Since 1 January 2025 (Windsor Framework) every pack placed on the UK market carries \"UK Only\", and the EU Falsified Medicines Directive safety features no longer apply anywhere in the UK.",
+ "watch": [],
+ "sources": [
+  {
+   "id": "hmr",
+   "title": "The Human Medicines Regulations 2012 (SI 2012/1916): Schedule 24 (packaging particulars) and Schedule 27 (package leaflets)",
+   "url": "https://www.legislation.gov.uk/uksi/2012/1916/contents"
+  },
+  {
+   "id": "ukwf",
+   "title": "MHRA: Labelling and packaging of medicinal products for human use following agreement of the Windsor Framework",
+   "url": "https://www.gov.uk/government/publications/labelling-and-packaging-of-medicinal-products-for-human-use-following-agreement-of-the-windsor-framework/labelling-and-packaging-of-medicinal-products-for-human-use-following-agreement-of-the-windsor-framework"
+  },
+  {
+   "id": "ukwfx",
+   "title": "MHRA: Windsor Framework explainer (\"UK Only\" wording, font size, stickers, safety features)",
+   "url": "https://assets.publishing.service.gov.uk/media/673cc5cf7e8a3c98a090fe94/MHRA_Windsor_Framework_Explainer.pdf"
+  },
+  {
+   "id": "ukbt",
+   "title": "MHRA: Black Triangle Scheme (statements for the SmPC and the leaflet, and the reporting wording)",
+   "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/396808/Black_Triangle_Scheme_-_new_medicines_and_vaccines_subject_to_EU-wide_additional_monitoring.pdf"
+  },
+  {
+   "id": "ukyc",
+   "title": "MHRA: The Yellow Card scheme, guidance for healthcare professionals, patients and the public",
+   "url": "https://www.gov.uk/guidance/the-yellow-card-scheme-guidance-for-healthcare-professionals-patients-and-the-public"
+  }
+ ]
+}

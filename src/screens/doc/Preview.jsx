@@ -8,7 +8,7 @@ import { download, slug } from '../../engine/io.js';
 
 const EU = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'];
 const IN = ['in-pi', 'in-carton', 'in-label'];
-const NUMBERED = ['ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'];
+const NUMBERED = ['ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-carton'];
 const JP_HDR = [['revised', 'Date of revision'], ['commodity', 'Standard Commodity Classification No.'], ['approval', 'Approval number'], ['storage', 'Storage, shelf life'], ['category', 'Therapeutic category'], ['regulatory', 'Regulatory classification']];
 const PARTS = { 'ca-pm': { 1: 'PART I: HEALTH PROFESSIONAL INFORMATION', 13: 'PART II: SCIENTIFIC INFORMATION' } };
 const txt = (s) => (s?.blocks ?? []).flatMap((b) => (b.t === 'ul' ? b.items : (b.t === 'table' || b.t === 'ar') ? b.rows.flat() : [b.text ?? ''])).filter((x) => x.trim()).join(' ');
@@ -119,6 +119,7 @@ export default function Preview({ doc }) {
           {doc.fixed?.header && (red ? <p style={{ textAlign: 'center', fontWeight: 700 }}>{doc.fixed.header}</p> : <h2 style={{ textAlign: 'center' }}>{doc.fixed.header}</h2>)}
           {doc.fixed?.nameLine ? <p style={{ textAlign: 'center', whiteSpace: 'pre-line' }}><b>{doc.fixed.nameLine}</b></p> : <p style={{ textAlign: 'center' }}>{m.scheduleSymbol && <sup>{m.scheduleSymbol}</sup>}<b>{m.proprietaryName}</b> ({m.establishedName}) {m.dosageForm}</p>}
           {doc.fixed?.blackTriangle && <p><b>{doc.fixed.blackTriangle}</b></p>}
+          {doc.fixed?.ukOnly && <p style={{ textAlign: 'right' }}><span style={{ border: '1.5px solid currentColor', padding: '.1rem .4rem', fontWeight: 700, fontSize: `${Math.max(7, Number(m.ukOnlySize) || 8) * 1.33}px` }}>{doc.fixed.ukOnly}</span></p>}
           {doc.fixed?.readFirst && <div className="bwbox"><p>{doc.fixed.readFirst}</p></div>}
           {doc.fixed?.readThis && <p style={{ textAlign: 'center' }}><b>{doc.fixed.readThis}</b></p>}
           {doc.fixed?.intro && <p><i>{doc.fixed.intro}</i></p>}

@@ -1,0 +1,1745 @@
+[
+ {
+  "id": "uk-ostrevia-clean",
+  "region": "uk",
+  "productId": "nce-tablet",
+  "level": "Start here",
+  "title": "Ostrevia (United Kingdom): clean SmPC, leaflet and carton",
+  "about": "A UK-wide marketing authorisation under the Windsor Framework: the black triangle, Yellow Card reporting, the PL number, the UK holder, \"UK Only\" on the carton and the legal category POM.",
+  "docs": [
+   {
+    "id": "smpc",
+    "kind": "uk-smpc",
+    "title": "Summary of Product Characteristics",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "additionalMonitoring": true,
+     "plNumber": "PL 99101/0001",
+     "lang": "en"
+    },
+    "fixed": {
+     "blackTriangle": "▼ This medicinal product is subject to additional monitoring. This will allow quick identification of new safety information. Healthcare professionals are asked to report any suspected adverse reactions. See section 4.8 for how to report adverse reactions."
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b281",
+        "t": "p",
+        "text": "Ostrevia 10 mg film-coated tablets"
+       },
+       {
+        "id": "b282",
+        "t": "p",
+        "text": "Ostrevia 25 mg film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b283",
+        "t": "p",
+        "text": "Each film-coated tablet contains 10 mg or 25 mg lumiravostat."
+       },
+       {
+        "id": "b284",
+        "t": "p",
+        "text": "Excipient with known effect: each tablet contains less than 1 mmol sodium (23 mg), that is to say essentially \"sodium-free\". For the full list of excipients, see section 6.1."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "PHARMACEUTICAL FORM",
+      "blocks": [
+       {
+        "id": "b285",
+        "t": "p",
+        "text": "Film-coated tablet."
+       },
+       {
+        "id": "b286",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       },
+       {
+        "id": "b287",
+        "t": "p",
+        "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indications",
+        "blocks": [
+         {
+          "id": "b288",
+          "t": "p",
+          "text": "Ostrevia is indicated for the treatment of adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b289",
+          "t": "p",
+          "text": "The recommended dose is 10 mg once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks."
+         },
+         {
+          "id": "b290",
+          "t": "p",
+          "text": "Moderate hepatic impairment: 10 mg once daily. Severe hepatic impairment: not recommended."
+         },
+         {
+          "id": "b291",
+          "t": "p",
+          "text": "With strong CYP3A4 inhibitors (for example ketoconazole or clarithromycin): 10 mg once daily."
+         },
+         {
+          "id": "b292",
+          "t": "p",
+          "text": "Method of administration: oral use. Swallow the tablet whole with water."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b293",
+          "t": "p",
+          "text": "Hypersensitivity to the active substance or to any of the excipients listed in section 6.1. Active tuberculosis or active serious infection. Pregnancy (see section 4.6)."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b294",
+          "t": "p",
+          "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+         },
+         {
+          "id": "b295",
+          "t": "p",
+          "text": "Malignancy, including lymphoma and non-melanoma skin cancer, has been reported. Consider the risks and benefits before starting treatment in patients with a known malignancy."
+         },
+         {
+          "id": "b296",
+          "t": "p",
+          "text": "Venous thromboembolism, including deep vein thrombosis and pulmonary embolism, has been reported. Use with caution in patients with risk factors and stop treatment if it occurs."
+         },
+         {
+          "id": "b297",
+          "t": "p",
+          "text": "Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interaction with other medicinal products and other forms of interaction",
+        "blocks": [
+         {
+          "id": "b298",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase lumiravostat exposure (use 10 mg once daily). Strong CYP3A4 inducers, such as rifampicin, reduce exposure; avoid concomitant use."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Fertility, pregnancy and lactation",
+        "blocks": [
+         {
+          "id": "b299",
+          "t": "p",
+          "text": "Lumiravostat caused embryo-fetal toxicity in rats and rabbits. It is contraindicated in pregnancy. Women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose."
+         },
+         {
+          "id": "b300",
+          "t": "p",
+          "text": "It is not known whether lumiravostat passes into human milk. Do not breastfeed during treatment and for 4 days after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b301",
+          "t": "p",
+          "text": "Ostrevia has no or negligible influence on the ability to drive and use machines."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b302",
+          "t": "table",
+          "rows": [
+           [
+            "Frequency",
+            "Adverse reactions"
+           ],
+           [
+            "Very common",
+            "nasopharyngitis"
+           ],
+           [
+            "Common",
+            "headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, alanine aminotransferase increased"
+           ],
+           [
+            "Uncommon",
+            "pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism"
+           ]
+          ]
+         },
+         {
+          "id": "b303",
+          "t": "p",
+          "text": "Reporting of suspected adverse reactions: Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the Yellow Card Scheme at www.mhra.gov.uk/yellowcard or search for MHRA Yellow Card in the Google Play or Apple App Store."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b304",
+          "t": "p",
+          "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b305",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+         },
+         {
+          "id": "b306",
+          "t": "p",
+          "text": "Dose-dependent reductions in markers of skin inflammation were seen within 2 weeks."
+         },
+         {
+          "id": "b307",
+          "t": "p",
+          "text": "Clinical efficacy: In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b308",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Preclinical safety data",
+        "blocks": [
+         {
+          "id": "b309",
+          "t": "p",
+          "text": "Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to the human exposure at 25 mg."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "List of excipients",
+        "blocks": [
+         {
+          "id": "b310",
+          "t": "p",
+          "text": "Microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)."
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b311",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "6.3",
+        "title": "Shelf life",
+        "blocks": [
+         {
+          "id": "b312",
+          "t": "p",
+          "text": "3 years."
+         }
+        ]
+       },
+       {
+        "num": "6.4",
+        "title": "Special precautions for storage",
+        "blocks": [
+         {
+          "id": "b313",
+          "t": "p",
+          "text": "This medicinal product does not require any special storage conditions."
+         }
+        ]
+       },
+       {
+        "num": "6.5",
+        "title": "Nature and contents of container",
+        "blocks": [
+         {
+          "id": "b314",
+          "t": "p",
+          "text": "Aluminium/aluminium blisters in cartons of 28 or 84 film-coated tablets. Not all pack sizes may be marketed."
+         }
+        ]
+       },
+       {
+        "num": "6.6",
+        "title": "Special precautions for disposal and other handling",
+        "blocks": [
+         {
+          "id": "b315",
+          "t": "p",
+          "text": "No special requirements."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "MARKETING AUTHORISATION HOLDER",
+      "blocks": [
+       {
+        "id": "b316",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals UK Ltd, 10 Example Street, Sampletown, AB1 2CD, United Kingdom"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "MARKETING AUTHORISATION NUMBER(S)",
+      "blocks": [
+       {
+        "id": "b317",
+        "t": "p",
+        "text": "PL 99101/0001"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION",
+      "blocks": [
+       {
+        "id": "b318",
+        "t": "p",
+        "text": "Date of first authorisation: 12 March 2025"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DATE OF REVISION OF THE TEXT",
+      "blocks": [
+       {
+        "id": "b319",
+        "t": "p",
+        "text": "August 2026"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "pil",
+    "kind": "uk-pil",
+    "title": "Patient information leaflet",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "additionalMonitoring": true,
+     "plNumber": "PL 99101/0001",
+     "lang": "en"
+    },
+    "fixed": {
+     "header": "Package leaflet: Information for the patient",
+     "blackTriangle": "▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. See the end of section 4 for how to report side effects.",
+     "lastRevised": "This leaflet was last revised in August 2026."
+    },
+    "sections": [
+     {
+      "num": "pl1",
+      "title": "1. What Ostrevia is and what it is used for",
+      "blocks": [
+       {
+        "id": "b320",
+        "t": "p",
+        "text": "Ostrevia contains the active substance lumiravostat. It calms the immune activity that causes long-lasting hand eczema. It is used in adults when creams with strong corticosteroids have not helped enough or cannot be used."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "pl2",
+      "title": "2. What you need to know before you take Ostrevia",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "pl2.1",
+        "title": "Do not take Ostrevia",
+        "blocks": [
+         {
+          "id": "b321",
+          "t": "ul",
+          "items": [
+           "if you are allergic to lumiravostat or any of the other ingredients of this medicine (listed in section 6)",
+           "if you have tuberculosis or another serious infection",
+           "if you are pregnant"
+          ]
+         }
+        ]
+       },
+       {
+        "num": "pl2.2",
+        "title": "Warnings and precautions",
+        "blocks": [
+         {
+          "id": "b322",
+          "t": "p",
+          "text": "Talk to your doctor or pharmacist before taking Ostrevia if you have an infection, have had cancer, or have had blood clots. Your doctor will test you for tuberculosis and do blood tests before and during treatment."
+         }
+        ]
+       },
+       {
+        "num": "pl2.4",
+        "title": "Other medicines and Ostrevia",
+        "blocks": [
+         {
+          "id": "b323",
+          "t": "p",
+          "text": "Tell your doctor or pharmacist if you are taking, have recently taken or might take any other medicines, especially ketoconazole, clarithromycin or rifampicin."
+         }
+        ]
+       },
+       {
+        "num": "pl2.6",
+        "title": "Pregnancy and breast-feeding",
+        "blocks": [
+         {
+          "id": "b324",
+          "t": "p",
+          "text": "Do not take Ostrevia if you are pregnant. Use effective contraception during treatment and for 4 weeks after your last dose. Do not breast-feed during treatment and for 4 days after your last dose."
+         }
+        ]
+       },
+       {
+        "num": "pl2.7",
+        "title": "Driving and using machines",
+        "blocks": [
+         {
+          "id": "b325",
+          "t": "p",
+          "text": "Ostrevia is not expected to affect your ability to drive or use machines."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "pl3",
+      "title": "3. How to take Ostrevia",
+      "blocks": [
+       {
+        "id": "b326",
+        "t": "p",
+        "text": "Always take this medicine exactly as your doctor or pharmacist has told you. The usual dose is one 10 mg tablet once a day. Your doctor may increase it to 25 mg once a day."
+       }
+      ],
+      "subs": [
+       {
+        "num": "pl3.1",
+        "title": "If you take more Ostrevia than you should",
+        "blocks": [
+         {
+          "id": "b327",
+          "t": "p",
+          "text": "Talk to your doctor or pharmacist straight away."
+         }
+        ]
+       },
+       {
+        "num": "pl3.2",
+        "title": "If you forget to take Ostrevia",
+        "blocks": [
+         {
+          "id": "b328",
+          "t": "p",
+          "text": "Take it as soon as you remember on the same day. Do not take a double dose to make up for a forgotten tablet."
+         }
+        ]
+       },
+       {
+        "num": "pl3.3",
+        "title": "If you stop taking Ostrevia",
+        "blocks": [
+         {
+          "id": "b329",
+          "t": "p",
+          "text": "Talk to your doctor before you stop."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "pl4",
+      "title": "4. Possible side effects",
+      "blocks": [
+       {
+        "id": "b330",
+        "t": "p",
+        "text": "Like all medicines, this medicine can cause side effects, although not everybody gets them. Tell your doctor straight away if you get signs of a serious infection (fever, cough, painful skin rash) or of a blood clot (painful swollen leg, chest pain, sudden breathlessness)."
+       },
+       {
+        "id": "b331",
+        "t": "p",
+        "text": "Very common (may affect more than 1 in 10 people): cold symptoms. Common (may affect up to 1 in 10 people): headache, nausea, acne, shingles, changes in blood tests. Uncommon (may affect up to 1 in 100 people): pneumonia, skin infection, blood clots."
+       }
+      ],
+      "subs": [
+       {
+        "num": "pl4.1",
+        "title": "Reporting of side effects",
+        "blocks": [
+         {
+          "id": "b332",
+          "t": "p",
+          "text": "If you get any side effects, talk to your doctor, pharmacist or nurse. This includes any possible side effects not listed in this leaflet. You can also report side effects directly via the Yellow Card Scheme at www.mhra.gov.uk/yellowcard or search for MHRA Yellow Card in the Google Play or Apple App Store. By reporting side effects you can help provide more information on the safety of this medicine."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "pl5",
+      "title": "5. How to store Ostrevia",
+      "blocks": [
+       {
+        "id": "b333",
+        "t": "p",
+        "text": "Keep this medicine out of the sight and reach of children. Do not use this medicine after the expiry date which is stated on the carton and blister after EXP. Do not throw away any medicines via wastewater or household waste. Ask your pharmacist how to throw away medicines you no longer use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "pl6",
+      "title": "6. Contents of the pack and other information",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "pl6.1",
+        "title": "What Ostrevia contains",
+        "blocks": [
+         {
+          "id": "b334",
+          "t": "p",
+          "text": "The active substance is lumiravostat. The other ingredients are microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)."
+         }
+        ]
+       },
+       {
+        "num": "pl6.2",
+        "title": "What Ostrevia looks like and contents of the pack",
+        "blocks": [
+         {
+          "id": "b335",
+          "t": "p",
+          "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+         },
+         {
+          "id": "b336",
+          "t": "p",
+          "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+         },
+         {
+          "id": "b337",
+          "t": "p",
+          "text": "Cartons of 28 or 84 tablets. Not all pack sizes may be marketed."
+         }
+        ]
+       },
+       {
+        "num": "pl6.3",
+        "title": "Marketing Authorisation Holder and Manufacturer",
+        "blocks": [
+         {
+          "id": "b338",
+          "t": "p",
+          "text": "Marketing Authorisation Holder: Halcyon Ridge Pharmaceuticals UK Ltd, 10 Example Street, Sampletown, AB1 2CD, United Kingdom."
+         },
+         {
+          "id": "b339",
+          "t": "p",
+          "text": "Manufacturer: Halcyon Ridge Manufacturing Ireland Ltd., Unit 9, Sample Industrial Estate, Exampleford, Ireland."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "carton",
+    "kind": "uk-carton",
+    "title": "Outer carton, 10 mg",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "additionalMonitoring": true,
+     "plNumber": "PL 99101/0001",
+     "lang": "en",
+     "ukOnlySize": 8,
+     "sticker": false
+    },
+    "fixed": {
+     "ukOnly": "UK Only"
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b340",
+        "t": "p",
+        "text": "Ostrevia 10 mg film-coated tablets"
+       },
+       {
+        "id": "b341",
+        "t": "p",
+        "text": "lumiravostat"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "STATEMENT OF ACTIVE SUBSTANCE(S)",
+      "blocks": [
+       {
+        "id": "b342",
+        "t": "p",
+        "text": "Each film-coated tablet contains 10 mg lumiravostat."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "PHARMACEUTICAL FORM AND CONTENTS",
+      "blocks": [
+       {
+        "id": "b343",
+        "t": "p",
+        "text": "28 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "5",
+      "title": "METHOD AND ROUTE(S) OF ADMINISTRATION",
+      "blocks": [
+       {
+        "id": "b344",
+        "t": "p",
+        "text": "Read the package leaflet before use. Oral use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "6",
+      "title": "SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN",
+      "blocks": [
+       {
+        "id": "b345",
+        "t": "p",
+        "text": "Keep out of the sight and reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "EXPIRY DATE",
+      "blocks": [
+       {
+        "id": "b346",
+        "t": "p",
+        "text": "EXP"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "11",
+      "title": "NAME AND ADDRESS OF THE MARKETING AUTHORISATION HOLDER",
+      "blocks": [
+       {
+        "id": "b347",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals UK Ltd, 10 Example Street, Sampletown, AB1 2CD, United Kingdom"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "12",
+      "title": "MARKETING AUTHORISATION NUMBER(S)",
+      "blocks": [
+       {
+        "id": "b348",
+        "t": "p",
+        "text": "PL 99101/0001"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "13",
+      "title": "BATCH NUMBER",
+      "blocks": [
+       {
+        "id": "b349",
+        "t": "p",
+        "text": "Lot"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "14",
+      "title": "LEGAL CATEGORY (POM, P OR GSL)",
+      "blocks": [
+       {
+        "id": "b350",
+        "t": "p",
+        "text": "POM"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "16",
+      "title": "INFORMATION IN BRAILLE",
+      "blocks": [
+       {
+        "id": "b351",
+        "t": "p",
+        "text": "Ostrevia 10 mg"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "uk-ostrevia-errors",
+  "region": "uk",
+  "productId": "nce-tablet",
+  "level": "Practice",
+  "title": "Ostrevia (United Kingdom): find and fix the errors",
+  "about": "11 planted errors left over from the EU texts and old packs: the black triangle, Appendix V instead of the Yellow Card Scheme, an EU number and holder, the leaflet date, the missing \"UK Only\", the legal category and an EU safety-features claim.",
+  "docs": [
+   {
+    "id": "smpc",
+    "kind": "uk-smpc",
+    "title": "Summary of Product Characteristics",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "additionalMonitoring": true,
+     "plNumber": "PL 99101/0001",
+     "lang": "en"
+    },
+    "fixed": {
+     "blackTriangle": ""
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b281",
+        "t": "p",
+        "text": "Ostrevia 10 mg film-coated tablets"
+       },
+       {
+        "id": "b282",
+        "t": "p",
+        "text": "Ostrevia 25 mg film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "QUALITATIVE AND QUANTITATIVE COMPOSITION",
+      "blocks": [
+       {
+        "id": "b283",
+        "t": "p",
+        "text": "Each film-coated tablet contains 10 mg or 25 mg lumiravostat."
+       },
+       {
+        "id": "b284",
+        "t": "p",
+        "text": "Excipient with known effect: each tablet contains less than 1 mmol sodium (23 mg), that is to say essentially \"sodium-free\". For the full list of excipients, see section 6.1."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "3",
+      "title": "PHARMACEUTICAL FORM",
+      "blocks": [
+       {
+        "id": "b285",
+        "t": "p",
+        "text": "Film-coated tablet."
+       },
+       {
+        "id": "b286",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       },
+       {
+        "id": "b287",
+        "t": "p",
+        "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "CLINICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "4.1",
+        "title": "Therapeutic indications",
+        "blocks": [
+         {
+          "id": "b288",
+          "t": "p",
+          "text": "Ostrevia is indicated for the treatment of adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable."
+         }
+        ]
+       },
+       {
+        "num": "4.2",
+        "title": "Posology and method of administration",
+        "blocks": [
+         {
+          "id": "b289",
+          "t": "p",
+          "text": "The recommended dose is 10 mg once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks."
+         },
+         {
+          "id": "b290",
+          "t": "p",
+          "text": "Moderate hepatic impairment: 10 mg once daily. Severe hepatic impairment: not recommended."
+         },
+         {
+          "id": "b291",
+          "t": "p",
+          "text": "With strong CYP3A4 inhibitors (for example ketoconazole or clarithromycin): 10 mg once daily."
+         },
+         {
+          "id": "b292",
+          "t": "p",
+          "text": "Method of administration: oral use. Swallow the tablet whole with water."
+         }
+        ]
+       },
+       {
+        "num": "4.3",
+        "title": "Contraindications",
+        "blocks": [
+         {
+          "id": "b293",
+          "t": "p",
+          "text": "Hypersensitivity to the active substance or to any of the excipients listed in section 6.1. Active tuberculosis or active serious infection. Pregnancy (see section 4.6)."
+         }
+        ]
+       },
+       {
+        "num": "4.4",
+        "title": "Special warnings and precautions for use",
+        "blocks": [
+         {
+          "id": "b294",
+          "t": "p",
+          "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+         },
+         {
+          "id": "b295",
+          "t": "p",
+          "text": "Malignancy, including lymphoma and non-melanoma skin cancer, has been reported. Consider the risks and benefits before starting treatment in patients with a known malignancy."
+         },
+         {
+          "id": "b296",
+          "t": "p",
+          "text": "Venous thromboembolism, including deep vein thrombosis and pulmonary embolism, has been reported. Use with caution in patients with risk factors and stop treatment if it occurs."
+         },
+         {
+          "id": "b297",
+          "t": "p",
+          "text": "Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+         }
+        ]
+       },
+       {
+        "num": "4.5",
+        "title": "Interaction with other medicinal products and other forms of interaction",
+        "blocks": [
+         {
+          "id": "b298",
+          "t": "p",
+          "text": "Strong CYP3A4 inhibitors increase lumiravostat exposure (use 10 mg once daily). Strong CYP3A4 inducers, such as rifampicin, reduce exposure; avoid concomitant use."
+         }
+        ]
+       },
+       {
+        "num": "4.6",
+        "title": "Fertility, pregnancy and lactation",
+        "blocks": [
+         {
+          "id": "b299",
+          "t": "p",
+          "text": "Lumiravostat caused embryo-fetal toxicity in rats and rabbits. It is contraindicated in pregnancy. Women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose."
+         },
+         {
+          "id": "b300",
+          "t": "p",
+          "text": "It is not known whether lumiravostat passes into human milk. Do not breastfeed during treatment and for 4 days after the last dose."
+         }
+        ]
+       },
+       {
+        "num": "4.7",
+        "title": "Effects on ability to drive and use machines",
+        "blocks": [
+         {
+          "id": "b301",
+          "t": "p",
+          "text": "Ostrevia has no or negligible influence on the ability to drive and use machines."
+         }
+        ]
+       },
+       {
+        "num": "4.8",
+        "title": "Undesirable effects",
+        "blocks": [
+         {
+          "id": "b352",
+          "t": "table",
+          "rows": [
+           [
+            "Frequency",
+            "Adverse reactions"
+           ],
+           [
+            "Very common",
+            "nasopharyngitis"
+           ],
+           [
+            "Common",
+            "headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, alanine aminotransferase increased"
+           ],
+           [
+            "Uncommon",
+            "pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism"
+           ]
+          ]
+         },
+         {
+          "id": "b353",
+          "t": "p",
+          "text": "Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V."
+         }
+        ]
+       },
+       {
+        "num": "4.9",
+        "title": "Overdose",
+        "blocks": [
+         {
+          "id": "b304",
+          "t": "p",
+          "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "5",
+      "title": "PHARMACOLOGICAL PROPERTIES",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "5.1",
+        "title": "Pharmacodynamic properties",
+        "blocks": [
+         {
+          "id": "b305",
+          "t": "p",
+          "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+         },
+         {
+          "id": "b306",
+          "t": "p",
+          "text": "Dose-dependent reductions in markers of skin inflammation were seen within 2 weeks."
+         },
+         {
+          "id": "b307",
+          "t": "p",
+          "text": "Clinical efficacy: In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+         }
+        ]
+       },
+       {
+        "num": "5.2",
+        "title": "Pharmacokinetic properties",
+        "blocks": [
+         {
+          "id": "b308",
+          "t": "p",
+          "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+         }
+        ]
+       },
+       {
+        "num": "5.3",
+        "title": "Preclinical safety data",
+        "blocks": [
+         {
+          "id": "b309",
+          "t": "p",
+          "text": "Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to the human exposure at 25 mg."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "6",
+      "title": "PHARMACEUTICAL PARTICULARS",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "6.1",
+        "title": "List of excipients",
+        "blocks": [
+         {
+          "id": "b310",
+          "t": "p",
+          "text": "Microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)."
+         }
+        ]
+       },
+       {
+        "num": "6.2",
+        "title": "Incompatibilities",
+        "blocks": [
+         {
+          "id": "b311",
+          "t": "p",
+          "text": "Not applicable."
+         }
+        ]
+       },
+       {
+        "num": "6.3",
+        "title": "Shelf life",
+        "blocks": [
+         {
+          "id": "b312",
+          "t": "p",
+          "text": "3 years."
+         }
+        ]
+       },
+       {
+        "num": "6.4",
+        "title": "Special precautions for storage",
+        "blocks": [
+         {
+          "id": "b313",
+          "t": "p",
+          "text": "This medicinal product does not require any special storage conditions."
+         }
+        ]
+       },
+       {
+        "num": "6.5",
+        "title": "Nature and contents of container",
+        "blocks": [
+         {
+          "id": "b314",
+          "t": "p",
+          "text": "Aluminium/aluminium blisters in cartons of 28 or 84 film-coated tablets. Not all pack sizes may be marketed."
+         }
+        ]
+       },
+       {
+        "num": "6.6",
+        "title": "Special precautions for disposal and other handling",
+        "blocks": [
+         {
+          "id": "b315",
+          "t": "p",
+          "text": "No special requirements."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "7",
+      "title": "MARKETING AUTHORISATION HOLDER",
+      "blocks": [
+       {
+        "id": "b355",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals Europe B.V., Fictieweg 21, 3000 CC Voorbeeldhaven, Netherlands"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "MARKETING AUTHORISATION NUMBER(S)",
+      "blocks": [
+       {
+        "id": "b354",
+        "t": "p",
+        "text": "EU/1/23/9901/001-004"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "9",
+      "title": "DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION",
+      "blocks": [
+       {
+        "id": "b318",
+        "t": "p",
+        "text": "Date of first authorisation: 12 March 2025"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "10",
+      "title": "DATE OF REVISION OF THE TEXT",
+      "blocks": [
+       {
+        "id": "b319",
+        "t": "p",
+        "text": "August 2026"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "UK-BT",
+      "where": "Before section 1",
+      "what": "The product is subject to additional monitoring: the ▼ and statement are missing."
+     },
+     {
+      "rule": "UK-YC",
+      "where": "4.8",
+      "what": "The EU wording: report via the Yellow Card Scheme instead."
+     },
+     {
+      "rule": "UK-EU",
+      "where": "4.8",
+      "what": "Appendix V is an EU reference."
+     },
+     {
+      "rule": "UK-MA",
+      "where": "8",
+      "what": "An EU number instead of the PL number."
+     },
+     {
+      "rule": "UK-EU",
+      "where": "8",
+      "what": "An EU marketing authorisation number."
+     },
+     {
+      "rule": "UK-MAH",
+      "where": "7",
+      "what": "The EU holder, not the UK holder."
+     }
+    ]
+   },
+   {
+    "id": "pil",
+    "kind": "uk-pil",
+    "title": "Patient information leaflet",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "additionalMonitoring": true,
+     "plNumber": "PL 99101/0001",
+     "lang": "en"
+    },
+    "fixed": {
+     "header": "Package leaflet: Information for the patient",
+     "blackTriangle": "▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. See the end of section 4 for how to report side effects.",
+     "lastRevised": "This leaflet was last revised recently."
+    },
+    "sections": [
+     {
+      "num": "pl1",
+      "title": "1. What Ostrevia is and what it is used for",
+      "blocks": [
+       {
+        "id": "b320",
+        "t": "p",
+        "text": "Ostrevia contains the active substance lumiravostat. It calms the immune activity that causes long-lasting hand eczema. It is used in adults when creams with strong corticosteroids have not helped enough or cannot be used."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "pl2",
+      "title": "2. What you need to know before you take Ostrevia",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "pl2.1",
+        "title": "Do not take Ostrevia",
+        "blocks": [
+         {
+          "id": "b321",
+          "t": "ul",
+          "items": [
+           "if you are allergic to lumiravostat or any of the other ingredients of this medicine (listed in section 6)",
+           "if you have tuberculosis or another serious infection",
+           "if you are pregnant"
+          ]
+         }
+        ]
+       },
+       {
+        "num": "pl2.2",
+        "title": "Warnings and precautions",
+        "blocks": [
+         {
+          "id": "b322",
+          "t": "p",
+          "text": "Talk to your doctor or pharmacist before taking Ostrevia if you have an infection, have had cancer, or have had blood clots. Your doctor will test you for tuberculosis and do blood tests before and during treatment."
+         }
+        ]
+       },
+       {
+        "num": "pl2.4",
+        "title": "Other medicines and Ostrevia",
+        "blocks": [
+         {
+          "id": "b323",
+          "t": "p",
+          "text": "Tell your doctor or pharmacist if you are taking, have recently taken or might take any other medicines, especially ketoconazole, clarithromycin or rifampicin."
+         }
+        ]
+       },
+       {
+        "num": "pl2.6",
+        "title": "Pregnancy and breast-feeding",
+        "blocks": [
+         {
+          "id": "b324",
+          "t": "p",
+          "text": "Do not take Ostrevia if you are pregnant. Use effective contraception during treatment and for 4 weeks after your last dose. Do not breast-feed during treatment and for 4 days after your last dose."
+         }
+        ]
+       },
+       {
+        "num": "pl2.7",
+        "title": "Driving and using machines",
+        "blocks": [
+         {
+          "id": "b325",
+          "t": "p",
+          "text": "Ostrevia is not expected to affect your ability to drive or use machines."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "pl3",
+      "title": "3. How to take Ostrevia",
+      "blocks": [
+       {
+        "id": "b326",
+        "t": "p",
+        "text": "Always take this medicine exactly as your doctor or pharmacist has told you. The usual dose is one 10 mg tablet once a day. Your doctor may increase it to 25 mg once a day."
+       }
+      ],
+      "subs": [
+       {
+        "num": "pl3.1",
+        "title": "If you take more Ostrevia than you should",
+        "blocks": [
+         {
+          "id": "b327",
+          "t": "p",
+          "text": "Talk to your doctor or pharmacist straight away."
+         }
+        ]
+       },
+       {
+        "num": "pl3.2",
+        "title": "If you forget to take Ostrevia",
+        "blocks": [
+         {
+          "id": "b328",
+          "t": "p",
+          "text": "Take it as soon as you remember on the same day. Do not take a double dose to make up for a forgotten tablet."
+         }
+        ]
+       },
+       {
+        "num": "pl3.3",
+        "title": "If you stop taking Ostrevia",
+        "blocks": [
+         {
+          "id": "b329",
+          "t": "p",
+          "text": "Talk to your doctor before you stop."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "pl4",
+      "title": "4. Possible side effects",
+      "blocks": [
+       {
+        "id": "b330",
+        "t": "p",
+        "text": "Like all medicines, this medicine can cause side effects, although not everybody gets them. Tell your doctor straight away if you get signs of a serious infection (fever, cough, painful skin rash) or of a blood clot (painful swollen leg, chest pain, sudden breathlessness)."
+       },
+       {
+        "id": "b331",
+        "t": "p",
+        "text": "Very common (may affect more than 1 in 10 people): cold symptoms. Common (may affect up to 1 in 10 people): headache, nausea, acne, shingles, changes in blood tests. Uncommon (may affect up to 1 in 100 people): pneumonia, skin infection, blood clots."
+       }
+      ],
+      "subs": [
+       {
+        "num": "pl4.1",
+        "title": "Reporting of side effects",
+        "blocks": [
+         {
+          "id": "b356",
+          "t": "p",
+          "text": "If you get any side effects, talk to your doctor, pharmacist or nurse. This includes any possible side effects not listed in this leaflet."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "num": "pl5",
+      "title": "5. How to store Ostrevia",
+      "blocks": [
+       {
+        "id": "b333",
+        "t": "p",
+        "text": "Keep this medicine out of the sight and reach of children. Do not use this medicine after the expiry date which is stated on the carton and blister after EXP. Do not throw away any medicines via wastewater or household waste. Ask your pharmacist how to throw away medicines you no longer use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "pl6",
+      "title": "6. Contents of the pack and other information",
+      "blocks": [],
+      "subs": [
+       {
+        "num": "pl6.1",
+        "title": "What Ostrevia contains",
+        "blocks": [
+         {
+          "id": "b334",
+          "t": "p",
+          "text": "The active substance is lumiravostat. The other ingredients are microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)."
+         }
+        ]
+       },
+       {
+        "num": "pl6.2",
+        "title": "What Ostrevia looks like and contents of the pack",
+        "blocks": [
+         {
+          "id": "b335",
+          "t": "p",
+          "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+         },
+         {
+          "id": "b336",
+          "t": "p",
+          "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+         },
+         {
+          "id": "b337",
+          "t": "p",
+          "text": "Cartons of 28 or 84 tablets. Not all pack sizes may be marketed."
+         }
+        ]
+       },
+       {
+        "num": "pl6.3",
+        "title": "Marketing Authorisation Holder and Manufacturer",
+        "blocks": [
+         {
+          "id": "b338",
+          "t": "p",
+          "text": "Marketing Authorisation Holder: Halcyon Ridge Pharmaceuticals UK Ltd, 10 Example Street, Sampletown, AB1 2CD, United Kingdom."
+         },
+         {
+          "id": "b339",
+          "t": "p",
+          "text": "Manufacturer: Halcyon Ridge Manufacturing Ireland Ltd., Unit 9, Sample Industrial Estate, Exampleford, Ireland."
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "UK-YC",
+      "where": "4",
+      "what": "No Yellow Card reporting statement."
+     },
+     {
+      "rule": "UK-REQ",
+      "where": "Last revised",
+      "what": "No month and year."
+     }
+    ]
+   },
+   {
+    "id": "carton",
+    "kind": "uk-carton",
+    "title": "Outer carton, 10 mg",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Ostrevia",
+     "establishedName": "lumiravostat",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "additionalMonitoring": true,
+     "plNumber": "PL 99101/0001",
+     "lang": "en",
+     "ukOnlySize": 8,
+     "sticker": false
+    },
+    "fixed": {
+     "ukOnly": ""
+    },
+    "sections": [
+     {
+      "num": "1",
+      "title": "NAME OF THE MEDICINAL PRODUCT",
+      "blocks": [
+       {
+        "id": "b340",
+        "t": "p",
+        "text": "Ostrevia 10 mg film-coated tablets"
+       },
+       {
+        "id": "b341",
+        "t": "p",
+        "text": "lumiravostat"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "2",
+      "title": "STATEMENT OF ACTIVE SUBSTANCE(S)",
+      "blocks": [
+       {
+        "id": "b342",
+        "t": "p",
+        "text": "Each film-coated tablet contains 10 mg lumiravostat."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "4",
+      "title": "PHARMACEUTICAL FORM AND CONTENTS",
+      "blocks": [
+       {
+        "id": "b343",
+        "t": "p",
+        "text": "28 film-coated tablets"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "5",
+      "title": "METHOD AND ROUTE(S) OF ADMINISTRATION",
+      "blocks": [
+       {
+        "id": "b344",
+        "t": "p",
+        "text": "Read the package leaflet before use. Oral use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "6",
+      "title": "SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN",
+      "blocks": [
+       {
+        "id": "b345",
+        "t": "p",
+        "text": "Keep out of the sight and reach of children."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "8",
+      "title": "EXPIRY DATE",
+      "blocks": [
+       {
+        "id": "b346",
+        "t": "p",
+        "text": "EXP"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "11",
+      "title": "NAME AND ADDRESS OF THE MARKETING AUTHORISATION HOLDER",
+      "blocks": [
+       {
+        "id": "b347",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals UK Ltd, 10 Example Street, Sampletown, AB1 2CD, United Kingdom"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "12",
+      "title": "MARKETING AUTHORISATION NUMBER(S)",
+      "blocks": [
+       {
+        "id": "b348",
+        "t": "p",
+        "text": "PL 99101/0001"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "13",
+      "title": "BATCH NUMBER",
+      "blocks": [
+       {
+        "id": "b349",
+        "t": "p",
+        "text": "Lot"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "14",
+      "title": "LEGAL CATEGORY (POM, P OR GSL)",
+      "blocks": [
+       {
+        "id": "b357",
+        "t": "p",
+        "text": "Prescription medicine"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "16",
+      "title": "INFORMATION IN BRAILLE",
+      "blocks": [
+       {
+        "id": "b351",
+        "t": "p",
+        "text": "Ostrevia 10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "17",
+      "title": "2D BARCODE AND SERIAL NUMBER (OPTIONAL IN THE UK)",
+      "blocks": [
+       {
+        "id": "b358",
+        "t": "p",
+        "text": "2D barcode carrying the unique identifier included (EU FMD)."
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "UK-ONLY",
+      "where": "\"UK Only\"",
+      "what": "The pack must show \"UK Only\"."
+     },
+     {
+      "rule": "UK-LEGAL",
+      "where": "14",
+      "what": "Use the legal category POM."
+     },
+     {
+      "rule": "UK-FMD",
+      "where": "17",
+      "what": "EU safety features no longer apply in the UK."
+     }
+    ]
+   }
+  ]
+ }
+]

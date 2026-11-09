@@ -96,7 +96,7 @@ export default function Home() {
       )}
 
       <div className="section-head"><h2>Start from a sample</h2><span className="small muted">Each opens as your own copy; the sample stays unchanged.</span></div>
-      {[['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling'], ['intl', 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ']].map(([m, title]) => (
+      {[['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling'], ['intl', 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ, United Kingdom']].map(([m, title]) => (
         <section key={m} style={{ marginBottom: '1.25rem' }}>
           <h3 style={{ margin: '.5rem 0' }}>{title}</h3>
           <div className="sample-grid">
@@ -143,6 +143,7 @@ function NewProject({ initial, onClose, onCreate }) {
             <option value="ch">Switzerland (Swissmedic)</option>
             <option value="jp">Japan (MHLW/PMDA)</option>
             <option value="au">Australia (TGA)</option>
+            <option value="uk">United Kingdom (MHRA)</option>
             <option value="who">WHO prequalification</option>
           </select>
         </label>

@@ -24,6 +24,11 @@
    "id": 34,
    "label": "34. WHO prequalification: the SmPC of a WHOPAR",
    "module": "intl"
+  },
+  {
+   "id": 35,
+   "label": "35. United Kingdom: product information after the Windsor Framework",
+   "module": "intl"
   }
  ],
  "questions": [
@@ -626,6 +631,126 @@
    "answer": 1,
    "why": "Section 10 is the date of revision of the text.",
    "cite": "WHOPAR Part 4"
+  },
+  {
+   "id": "q35-1",
+   "topic": 35,
+   "module": "intl",
+   "q": "Since when have MHRA licences been UK-wide, including Northern Ireland?",
+   "options": [
+    "1 January 2025",
+    "1 January 2021",
+    "15 January 2026",
+    "31 January 2020"
+   ],
+   "answer": 0,
+   "why": "The Windsor Framework arrangements for medicines started on 1 January 2025.",
+   "cite": "MHRA Windsor Framework guidance"
+  },
+  {
+   "id": "q35-2",
+   "topic": 35,
+   "module": "intl",
+   "q": "Where do UK healthcare professionals report suspected adverse reactions, as SmPC 4.8 says?",
+   "options": [
+    "The national reporting system in Appendix V",
+    "EudraVigilance directly",
+    "MedWatch",
+    "The Yellow Card Scheme"
+   ],
+   "answer": 3,
+   "why": "Appendix V is the EU list; UK texts use the Yellow Card Scheme.",
+   "cite": "MHRA Yellow Card scheme"
+  },
+  {
+   "id": "q35-3",
+   "topic": 35,
+   "module": "intl",
+   "q": "What words must appear on the outer pack of a medicine placed on the UK market from 2025?",
+   "options": [
+    "GB/NI",
+    "UKCA",
+    "UK Only",
+    "Not for EU sale"
+   ],
+   "answer": 2,
+   "why": "Conspicuous, legible, indelible, at least 7 point.",
+   "cite": "MHRA Windsor Framework explainer"
+  },
+  {
+   "id": "q35-4",
+   "topic": 35,
+   "module": "intl",
+   "q": "Do the EU Falsified Medicines Directive safety features apply in Northern Ireland from 2025?",
+   "options": [
+    "Only for biologics",
+    "No, they no longer apply anywhere in the UK",
+    "Yes, in Northern Ireland only",
+    "Yes, everywhere in the UK"
+   ],
+   "answer": 1,
+   "why": "A 2D barcode is optional and must not be recognisable by the European repository system.",
+   "cite": "MHRA Windsor Framework explainer"
+  },
+  {
+   "id": "q35-5",
+   "topic": 35,
+   "module": "intl",
+   "q": "Which number belongs in section 8 of a UK SmPC?",
+   "options": [
+    "PL 99101/0001",
+    "EU/1/23/9901/001",
+    "AUST R 999101",
+    "99101 (Swissmedic)"
+   ],
+   "answer": 0,
+   "why": "PL followed by five digits, a slash and four digits.",
+   "cite": "Windsor Framework labelling guidance"
+  },
+  {
+   "id": "q35-6",
+   "topic": 35,
+   "module": "intl",
+   "q": "Where does the black triangle statement go in a UK leaflet?",
+   "options": [
+    "At the end of section 4",
+    "In section 6",
+    "On the carton only",
+    "Right after the name of the medicine"
+   ],
+   "answer": 3,
+   "why": "In the SmPC it goes before section 1.",
+   "cite": "MHRA Black Triangle Scheme"
+  },
+  {
+   "id": "q35-7",
+   "topic": 35,
+   "module": "intl",
+   "q": "Until when could \"UK Only\" be applied with a sticker?",
+   "options": [
+    "31 December 2025",
+    "Stickers were never allowed",
+    "30 June 2025",
+    "31 December 2024"
+   ],
+   "answer": 2,
+   "why": "After that it is printed on the pack.",
+   "cite": "MHRA Windsor Framework explainer"
+  },
+  {
+   "id": "q35-8",
+   "topic": 35,
+   "module": "intl",
+   "q": "Which products need not carry \"UK Only\"?",
+   "options": [
+    "Biological medicines",
+    "Traditional herbal and homeopathic registrations, and export-only packs",
+    "Pharmacy (P) medicines",
+    "General sale (GSL) medicines"
+   ],
+   "answer": 1,
+   "why": "The requirement covers licensed medicines of every legal category.",
+   "cite": "MHRA Windsor Framework explainer"
   }
  ]
 }

@@ -161,6 +161,40 @@
     "doc": "smpc"
    },
    "watch": false
+  },
+  {
+   "id": 35,
+   "module": "intl",
+   "title": "United Kingdom: product information after the Windsor Framework",
+   "minutes": 8,
+   "sections": [
+    {
+     "h": "UK-wide licences",
+     "p": [
+      "Since 1 January 2025, under the Windsor Framework, MHRA licenses medicines for the whole of the UK, Northern Ireland included. A UK-wide licence has a PL number, PL followed by five digits, a slash and four digits, and EU authorisations no longer cover Northern Ireland.",
+      "The SmPC and the patient information leaflet keep the familiar headings, as in the EU QRD templates: SmPC sections 1 to 10, leaflet sections 1 to 6. What changes is the UK detail: the PL number in SmPC section 8 and on the carton, a marketing authorisation holder established in the UK, and no EU-only references such as Appendix V or the EU annexes."
+     ]
+    },
+    {
+     "h": "Reporting and the black triangle",
+     "p": [
+      "SmPC section 4.8 ends with the Yellow Card paragraph: healthcare professionals report suspected adverse reactions via the Yellow Card Scheme at www.mhra.gov.uk/yellowcard or through the MHRA Yellow Card app. The leaflet ends section 4 with the matching patient text under \"Reporting of side effects\".",
+      "Medicines subject to additional monitoring in the UK show the inverted black triangle with the standard statement: before section 1 of the SmPC (\"This medicinal product is subject to additional monitoring...\") and right after the name in the leaflet (\"This medicine is subject to additional monitoring...\")."
+     ]
+    },
+    {
+     "h": "The pack",
+     "p": [
+      "Every pack placed on the UK market from 1 January 2025 carries the words \"UK Only\" on the outer packaging: conspicuous, legible and indelible, in a font of at least 7 point, not hidden by other text. Stickers were allowed only until 30 June 2025. Traditional herbal and homeopathic registrations and export-only packs are exempt.",
+      "The EU Falsified Medicines Directive safety features no longer apply anywhere in the UK. A 2D barcode and serial number are optional, but must not be recognisable by the European repository system; anti-tamper devices are encouraged. The carton also gives the legal category: POM, P or GSL."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "uk-ostrevia-errors",
+    "doc": "smpc"
+   },
+   "watch": false
   }
  ]
 }

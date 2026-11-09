@@ -180,7 +180,7 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
     if (fx.intro) { w.space(3); w.text(fx.intro, { f: italic, size: 8.5 }); }
     if (fx.summaryIntro) { w.space(3); w.text(fx.summaryIntro, { f: italic, size: 8.5 }); }
     for (const s of doc.sections ?? []) {
-      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister', 'eu-small', 'in-pi', 'ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
+      w.h(/^\d/.test(s.num) && ['smpc', 'eu-outer', 'eu-blister', 'eu-small', 'in-pi', 'ca-pm', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-carton'].includes(doc.kind) ? sectionTitle(s) : s.title, 10);
       writeBlocks(w, s.blocks, { ...opts, red: doc.kind === 'in-pi' || doc.kind === 'jp-pi' });
       for (const x of s.subs ?? []) { w.h(/^\d/.test(x.num) ? sectionTitle(x) : x.title, 9.5); writeBlocks(w, x.blocks, opts); }
     }
