@@ -1,0 +1,138 @@
+[
+ {
+  "id": "UK-HEAD",
+  "title": "SmPC, leaflet and carton headings",
+  "text": "The SmPC and the patient information leaflet use the standard headings, in order, as in the EU (QRD) templates that MHRA continues to accept; the carton gives the particulars of Schedule 24 in the usual order.",
+  "kinds": [
+   "uk-smpc",
+   "uk-pil",
+   "uk-carton"
+  ],
+  "severity": "error",
+  "src": "hmr",
+  "at": "Human Medicines Regulations 2012, Schedules 24 and 27",
+  "check": "UK-HEAD",
+  "simplified": "The app checks the headings of the UK documents in this pack; MHRA accepts the QRD-style headings for national products."
+ },
+ {
+  "id": "UK-REQ",
+  "title": "Required content is filled",
+  "text": "Each required heading of the SmPC and the leaflet, and each mandatory particular of the carton, has content.",
+  "kinds": [
+   "uk-smpc",
+   "uk-pil",
+   "uk-carton"
+  ],
+  "severity": "error",
+  "src": "hmr",
+  "at": "Schedules 24 and 27",
+  "check": "UK-REQ"
+ },
+ {
+  "id": "UK-BT",
+  "title": "Black triangle",
+  "text": "A medicine subject to additional monitoring in the UK shows the inverted black triangle and the standard statement before section 1 of the SmPC and after the name in the leaflet; others do not.",
+  "kinds": [
+   "uk-smpc",
+   "uk-pil"
+  ],
+  "severity": "error",
+  "src": "ukbt",
+  "at": "MHRA Black Triangle Scheme",
+  "check": "UK-BT"
+ },
+ {
+  "id": "UK-YC",
+  "title": "Yellow Card reporting",
+  "text": "SmPC section 4.8 and the end of leaflet section 4 tell healthcare professionals and patients to report suspected adverse reactions through the Yellow Card Scheme (www.mhra.gov.uk/yellowcard or the MHRA Yellow Card app), not \"the national reporting system listed in Appendix V\".",
+  "kinds": [
+   "uk-smpc",
+   "uk-pil"
+  ],
+  "severity": "error",
+  "src": "ukyc",
+  "at": "MHRA Yellow Card scheme",
+  "check": "UK-YC",
+  "simplified": "The app checks for the Yellow Card Scheme and its web address, not every word of the paragraph."
+ },
+ {
+  "id": "UK-MA",
+  "title": "UK marketing authorisation number",
+  "text": "SmPC section 8 and the carton give the PL number (PL followed by five digits, a slash and four digits). An EU number (EU/1/...) does not belong on UK product information.",
+  "kinds": [
+   "uk-smpc",
+   "uk-carton"
+  ],
+  "severity": "error",
+  "src": "ukwf",
+  "at": "Windsor Framework labelling guidance; Schedule 24",
+  "check": "UK-MA",
+  "simplified": "Numbers with the prefix PLGB or PLNI, from before 2025, raise a warning to check the number MHRA now holds for the UK-wide licence."
+ },
+ {
+  "id": "UK-EU",
+  "title": "No EU-only references",
+  "text": "UK texts do not refer to the European Medicines Agency, to Appendix V or to the EU annexes, and do not carry EU numbers or EU local representatives.",
+  "kinds": [
+   "uk-smpc",
+   "uk-pil",
+   "uk-carton"
+  ],
+  "severity": "error",
+  "src": "ukwf",
+  "at": "Windsor Framework labelling guidance",
+  "check": "UK-EU"
+ },
+ {
+  "id": "UK-MAH",
+  "title": "Holder established in the UK",
+  "text": "The marketing authorisation holder named in SmPC section 7, the leaflet and the carton is established in the UK.",
+  "kinds": [
+   "uk-smpc",
+   "uk-pil",
+   "uk-carton"
+  ],
+  "severity": "warning",
+  "src": "hmr",
+  "at": "Human Medicines Regulations 2012",
+  "check": "UK-MAH",
+  "simplified": "The app looks for \"United Kingdom\", \"UK\" or a UK postcode in the address."
+ },
+ {
+  "id": "UK-ONLY",
+  "title": "\"UK Only\" on the pack",
+  "text": "Every pack placed on the UK market from 1 January 2025 shows the words \"UK Only\" conspicuously on the outer packaging, legible, indelible and not hidden by other text, in a font of at least 7 point. Stickers were allowed only until 30 June 2025.",
+  "kinds": [
+   "uk-carton"
+  ],
+  "severity": "error",
+  "src": "ukwfx",
+  "at": "MHRA Windsor Framework explainer",
+  "check": "UK-ONLY",
+  "simplified": "Traditional herbal and homeopathic registrations, and packs made only for export, are exempt; the app assumes a licensed medicine for the UK."
+ },
+ {
+  "id": "UK-FMD",
+  "title": "No EU safety features",
+  "text": "The EU Falsified Medicines Directive safety features no longer apply anywhere in the UK. A 2D barcode and serial number are optional, but must not be recognisable by the European repository system. Anti-tamper devices are encouraged, not required.",
+  "kinds": [
+   "uk-carton"
+  ],
+  "severity": "warning",
+  "src": "ukwfx",
+  "at": "MHRA Windsor Framework explainer",
+  "check": "UK-FMD"
+ },
+ {
+  "id": "UK-LEGAL",
+  "title": "Legal category",
+  "text": "The carton gives the legal category: POM (prescription only medicine), P (pharmacy) or GSL (general sale list).",
+  "kinds": [
+   "uk-carton"
+  ],
+  "severity": "error",
+  "src": "hmr",
+  "at": "Schedule 24",
+  "check": "UK-LEGAL"
+ }
+]

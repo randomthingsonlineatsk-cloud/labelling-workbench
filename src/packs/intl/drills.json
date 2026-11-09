@@ -94,6 +94,27 @@
    "about": "The scope statement, the reference number, the dates, the frequencies, a heading and the posology."
   },
   {
+   "id": "uk-fix",
+   "module": "intl",
+   "title": "United Kingdom: fix the SmPC, leaflet and carton",
+   "minutes": 12,
+   "sample": "uk-ostrevia-errors",
+   "doc": "smpc",
+   "goal": {
+    "type": "rules-multi",
+    "docs": [
+     "smpc",
+     "pil",
+     "carton"
+    ],
+    "prefixes": [
+     "UK-",
+     "INTL-"
+    ]
+   },
+   "about": "Turn texts copied from the EU into UK texts: the black triangle, Yellow Card reporting, the PL number and UK holder, the leaflet date, \"UK Only\", the legal category and the safety features."
+  },
+  {
    "id": "intl-ild",
    "module": "intl",
    "capstone": true,

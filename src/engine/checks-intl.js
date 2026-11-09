@@ -5,8 +5,8 @@ import { templateFor, fill } from './pack.js';
 import { findSection, blocksText, hasContent, textEntries, sectionTitle } from './model.js';
 import { strengths, norm, escapeRe } from './text.js';
 
-export const INTL_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'];
-const PREFIX = { ca: 'CA', ch: 'CH', jp: 'JP', au: 'AU', who: 'WHO' };
+export const INTL_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton'];
+const PREFIX = { ca: 'CA', ch: 'CH', jp: 'JP', au: 'AU', who: 'WHO', uk: 'UK' };
 export const intlRegion = (kind) => kind.split('-')[0];
 
 const secText = (s) => (s ? [blocksText(s.blocks), ...(s.subs ?? []).map((x) => blocksText(x.blocks))].join('\n') : '');
@@ -32,7 +32,7 @@ export function checkIntl(doc, ctx, add) {
   const P = PREFIX[intlRegion(doc.kind)];
   if (doc.kind === 'jp-pi') checkJpHeadings(doc, t, add);
   else checkHeadings(doc, t, P, add);
-  ({ 'ca-pm': checkCaPm, 'ca-pmi': checkCaPmi, 'ca-label': checkCaLabel, 'ch-fi': checkChFi, 'ch-pi': checkChPi, 'jp-pi': checkJp, 'au-pi': checkAuPi, 'au-cmi': checkAuCmi, 'who-smpc': checkWho })[doc.kind](doc, t, ctx, add);
+  ({ 'ca-pm': checkCaPm, 'ca-pmi': checkCaPmi, 'ca-label': checkCaLabel, 'ch-fi': checkChFi, 'ch-pi': checkChPi, 'jp-pi': checkJp, 'au-pi': checkAuPi, 'au-cmi': checkAuCmi, 'who-smpc': checkWho, 'uk-smpc': checkUkSmpc, 'uk-pil': checkUkPil, 'uk-carton': checkUkCarton })[doc.kind](doc, t, ctx, add);
   checkStrengths(doc, ctx, add);
   checkPromo(doc, ctx, add);
 }
@@ -44,7 +44,7 @@ function checkHeadings(doc, t, P, add) {
   let last = -1;
   for (const s of doc.sections ?? []) {
     const i = order.indexOf(s.num);
-    if (i < 0) { if (doc.kind !== 'ca-label') add(`${P}-HEAD`, L(s), `"${s.title}" is not a heading of the template.`, 'Remove it, or move its content under the right heading.', 'warning'); continue; }
+    if (i < 0) { if (!['ca-label', 'uk-carton'].includes(doc.kind)) add(`${P}-HEAD`, L(s), `"${s.title}" is not a heading of the template.`, 'Remove it, or move its content under the right heading.', 'warning'); continue; }
     if (i < last) add(`${P}-HEAD`, L(s), `"${s.title}" is out of order.`, 'Keep the order of the template.');
     last = Math.max(last, i);
   }
@@ -53,8 +53,8 @@ function checkHeadings(doc, t, P, add) {
     const want = fill(ts.title, m);
     const label = /^\d/.test(ts.num) ? `${ts.num} ${want}` : want;
     if (!s) { if (ts.need === 'required') add(`${P}-REQ`, { area: 'sec', key: ts.num, label }, `"${label}" is missing.`, 'Add the section with its content.'); continue; }
-    if (doc.kind !== 'ca-label' && simple(s.title) !== simple(want)) add(`${P}-HEAD`, L(s), `Heading "${s.title}" should be "${want}".`, 'Use the heading of the template.');
-    if (ts.need === 'required' && !filled(s)) add(`${P}-REQ`, L(s), `"${label}" is empty.`, doc.kind === 'ca-label' ? 'This item must be on the label.' : 'Fill it, or say why it does not apply.');
+    if (!['ca-label', 'uk-carton'].includes(doc.kind) && simple(s.title) !== simple(want)) add(`${P}-HEAD`, L(s), `Heading "${s.title}" should be "${want}".`, 'Use the heading of the template.');
+    if (ts.need === 'required' && !filled(s)) add(`${P}-REQ`, L(s), `"${label}" is empty.`, ['ca-label', 'uk-carton'].includes(doc.kind) ? 'This item must be on the label.' : 'Fill it, or say why it does not apply.');
     for (const fs of ts.fixedSubs ?? []) {
       const x = (s.subs ?? []).find((y) => y.num === fs.num);
       const wantSub = fill(fs.title, m);
@@ -319,7 +319,71 @@ function checkWho(doc, t, ctx, add) {
 }
 
 // ---------------------------------------------------------------- shared
-const STR_SECTIONS = { 'ca-pm': ['6'], 'ca-label': ['l4', 'l9'], 'ch-fi': ['f2'], 'ch-pi': ['p9'], 'jp-pi': ['3.1'], 'au-pi': ['2'], 'au-cmi': ['7'], 'who-smpc': ['2'] };
+const STR_SECTIONS = { 'ca-pm': ['6'], 'ca-label': ['l4', 'l9'], 'ch-fi': ['f2'], 'ch-pi': ['p9'], 'jp-pi': ['3.1'], 'au-pi': ['2'], 'au-cmi': ['7'], 'who-smpc': ['2'], 'uk-smpc': ['2'], 'uk-carton': ['1', '2'] };
+
+// ---------------------------------------------------------------- United Kingdom
+const PL_RE = /\bPL(GB|NI)?\s?(\d{5})\/(\d{4})\b/i;
+const EU_ONLY = [[/appendix\s+v\b/i, 'Appendix V (the EU list of national reporting systems)'], [/european medicines agency|\bEMA\b/i, 'the European Medicines Agency'], [/\bEU\/\d\/\d{2}\/\d+/i, 'an EU marketing authorisation number'], [/\bannex\s+(I|II|III)[AB]?\b/i, 'an EU annex'], [/local representative/i, 'an EU local representative']];
+const UK_ADDR = /united kingdom|\bUK\b|\b[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\b/;
+function ukBt(doc, add) {
+  const m = doc.meta ?? {};
+  const bt = doc.fixed?.blackTriangle ?? '';
+  const loc = F('blackTriangle', 'Black triangle');
+  const ok = bt.trim().startsWith('▼') && /subject to additional monitoring/i.test(bt) && /quick identification of new safety information/i.test(bt);
+  if (m.additionalMonitoring && !ok) add('UK-BT', loc, bt.trim() ? 'The black triangle statement is not the standard wording.' : 'The medicine is subject to additional monitoring, but the ▼ and statement are missing.', doc.kind === 'uk-smpc' ? 'Put the ▼ and the statement before section 1.' : 'Put the ▼ and the statement right after the name of the medicine.');
+  if (!m.additionalMonitoring && bt.trim()) add('UK-BT', loc, 'The medicine is not subject to additional monitoring, but the statement is shown.', 'Remove it.', 'warning');
+}
+function ukEu(doc, add) {
+  const seen = new Set();
+  for (const e of textEntries(doc)) for (const [re, what] of EU_ONLY) {
+    if (seen.has(what) || !re.test(e.text)) continue;
+    seen.add(what);
+    add('UK-EU', e.loc, `The text refers to ${what}.`, 'UK product information uses UK details: the Yellow Card Scheme, the PL number and the UK holder.');
+  }
+}
+function ukMa(doc, s, add) {
+  if (!filled(s)) return;
+  const tx = secText(s);
+  const m = PL_RE.exec(tx);
+  if (!m) add('UK-MA', L(s), 'No PL number (PL followed by five digits, a slash and four digits).', 'For example "PL 99101/0001".');
+  else if (m[1]) add('UK-MA', L(s), `"${m[0]}" uses the ${m[1].toUpperCase()} prefix from before UK-wide licensing.`, 'Check the number MHRA now holds for the UK-wide licence (from 1 January 2025).', 'warning');
+}
+function ukMah(doc, s, add) {
+  if (filled(s) && !UK_ADDR.test(secText(s))) add('UK-MAH', L(s), 'The holder’s address does not appear to be in the United Kingdom.', 'The marketing authorisation holder is established in the UK.');
+}
+function checkUkSmpc(doc, t, ctx, add) {
+  ukBt(doc, add);
+  const s48 = findSection(doc, '4.8');
+  const tx = secText(s48);
+  if (filled(s48) && !(/yellow card/i.test(tx) && /(mhra\.gov\.uk\/yellowcard|yellowcard\.mhra\.gov\.uk)/i.test(tx))) add('UK-YC', L(s48), 'Section 4.8 does not tell healthcare professionals to report through the Yellow Card Scheme.', `End 4.8 with: "${V(ctx).ukYcSmpc}"`);
+  ukMa(doc, findSection(doc, '8'), add);
+  ukMah(doc, findSection(doc, '7'), add);
+  ukEu(doc, add);
+}
+function checkUkPil(doc, t, ctx, add) {
+  ukBt(doc, add);
+  const s41 = findSection(doc, 'pl4.1') ?? findSection(doc, 'pl4');
+  const tx = secText(findSection(doc, 'pl4'));
+  if (filled(findSection(doc, 'pl4')) && !(/yellow card/i.test(tx) && /(mhra\.gov\.uk\/yellowcard|yellowcard\.mhra\.gov\.uk)/i.test(tx))) add('UK-YC', L(s41), 'Section 4 does not tell patients they can report side effects through the Yellow Card Scheme.', `Under "Reporting of side effects": "${V(ctx).ukYcPil}"`);
+  ukMah(doc, findSection(doc, 'pl6.3') ?? findSection(doc, 'pl6'), add);
+  if (!new RegExp(`last revised in (${EN_MONTHS}) \\d{4}`, 'i').test(doc.fixed?.lastRevised ?? '')) add('UK-REQ', F('lastRevised', 'Last revised'), 'The leaflet does not give the month and year it was last revised.', '"This leaflet was last revised in August 2026."');
+  ukEu(doc, add);
+}
+function checkUkCarton(doc, t, ctx, add) {
+  const m = doc.meta ?? {};
+  const only = doc.fixed?.ukOnly ?? '';
+  if (simple(only) !== 'uk only') add('UK-ONLY', F('ukOnly', '"UK Only"'), only.trim() ? `"${only}" is not the required wording.` : 'The pack does not show "UK Only".', 'Show "UK Only" conspicuously on the outer packaging.');
+  else if (Number(m.ukOnlySize) && Number(m.ukOnlySize) < 7) add('UK-ONLY', F('ukOnly', '"UK Only"'), `"UK Only" is in ${m.ukOnlySize} point; MHRA asks for at least 7.`, 'Use a font of at least 7 point.');
+  if (m.sticker) add('UK-ONLY', F('ukOnly', '"UK Only"'), '"UK Only" is on a sticker; stickers were allowed only until 30 June 2025.', 'Print it on the pack.');
+  const s14 = findSection(doc, '14');
+  if (filled(s14) && !/\b(POM|P|GSL)\b|prescription only medicine|pharmacy medicine|general sale/i.test(secText(s14))) add('UK-LEGAL', L(s14), 'The legal category is not POM, P or GSL.', 'For a prescription medicine: "POM".');
+  const s17 = findSection(doc, '17');
+  if (filled(s17) && /\bFMD\b|EMVS|european (medicines )?verification|unique identifier/i.test(secText(s17))) add('UK-FMD', L(s17), 'The pack claims EU safety features.', 'EU FMD features no longer apply in the UK; a 2D barcode is optional and must not be recognisable by the European repository system.');
+  ukMa(doc, findSection(doc, '12'), add);
+  ukMah(doc, findSection(doc, '11'), add);
+  ukEu(doc, add);
+}
+
 function checkStrengths(doc, ctx, add) {
   const want = new Set((doc.meta?.strengths ?? ctx.product?.strengths ?? []).flatMap((s) => strengths(s)));
   if (!want.size) return;

@@ -1,5 +1,5 @@
 {
- "_about": "Fictional products shared with the eCTD Dossier Builder and the Variations Classifier (same ids, names and companies). Application numbers are invented. EU details (procedure, authorisation numbers, EU holders) match the Variations Classifier; all are invented. Canadian, Swiss, Japanese and WHO details also come from the Variations Classifier; Australian details are added here.",
+ "_about": "Fictional products shared with the eCTD Dossier Builder and the Variations Classifier (same ids, names and companies). Application numbers are invented. EU details (procedure, authorisation numbers, EU holders) match the Variations Classifier; all are invented. Canadian, Swiss, Japanese and WHO details also come from the Variations Classifier; Australian details are added here. UK PL numbers and UK holders match the Variations Classifier and are invented.",
  "products": [
   {
    "id": "nce-tablet",
@@ -87,6 +87,15 @@
      "name": "Halcyon Ridge Pharmaceuticals Australia Pty Ltd",
      "address": "Level 5, 10 Example Street, Fictionville NSW 2000, Australia"
     }
+   },
+   "uk": {
+    "plNumber": "PL 99101/0001",
+    "blackTriangle": true,
+    "legalCategory": "POM",
+    "holder": {
+     "name": "Halcyon Ridge Pharmaceuticals UK Ltd",
+     "address": "10 Example Street, Sampletown, AB1 2CD, United Kingdom"
+    }
    }
   },
   {
@@ -150,6 +159,15 @@
      "address": "4-5-6 Sample-dori, Fictional-shi, Osaka 500-0000, Japan",
      "contact": "Kenji Mori, Regulatory Affairs"
     }
+   },
+   "uk": {
+    "plNumber": "PL 99102/0002",
+    "blackTriangle": false,
+    "legalCategory": "POM",
+    "holder": {
+     "name": "Ashvale Generics UK Ltd",
+     "address": "11 Example Street, Sampletown, AB2 2CD, United Kingdom"
+    }
    }
   },
   {
@@ -208,6 +226,15 @@
      "address": "7-8-9 Example-machi, Fictional-ku, Tokyo 101-0000, Japan",
      "contact": "Yui Tanaka, Regulatory Affairs"
     }
+   },
+   "uk": {
+    "plNumber": "PL 99103/0003",
+    "blackTriangle": false,
+    "legalCategory": "POM",
+    "holder": {
+     "name": "Calderon Therapeutics UK Ltd",
+     "address": "12 Example Street, Sampletown, AB3 2CD, United Kingdom"
+    }
    }
   },
   {
@@ -258,6 +285,15 @@
      "name": "Meridale Japan K.K.",
      "address": "2-4-6 Sample-cho, Example-shi, Kanagawa 200-0000, Japan",
      "contact": "Daiki Ito, Regulatory Affairs"
+    }
+   },
+   "uk": {
+    "plNumber": "PL 99104/0001",
+    "blackTriangle": false,
+    "legalCategory": "POM",
+    "holder": {
+     "name": "Meridale Therapeutics UK Ltd",
+     "address": "13 Example Street, Sampletown, AB4 2CD, United Kingdom"
     }
    }
   },
@@ -315,6 +351,15 @@
      "address": "3-6-9 Fictional-dori, Example-ku, Tokyo 102-0000, Japan",
      "contact": "Sota Kobayashi, Regulatory Affairs"
     }
+   },
+   "uk": {
+    "plNumber": "PL 99105/0002",
+    "blackTriangle": true,
+    "legalCategory": "POM",
+    "holder": {
+     "name": "Lumenfield Biologics UK Ltd",
+     "address": "14 Example Street, Sampletown, AB5 2CD, United Kingdom"
+    }
    }
   },
   {
@@ -365,6 +410,15 @@
      "name": "Brightmere Japan G.K.",
      "address": "5-5-5 Example-cho, Fictional-shi, Aichi 400-0000, Japan",
      "contact": "Mio Yamada, Regulatory Affairs"
+    }
+   },
+   "uk": {
+    "plNumber": "PL 99106/0003",
+    "blackTriangle": true,
+    "legalCategory": "POM",
+    "holder": {
+     "name": "Brightmere Biosimilars UK Ltd",
+     "address": "15 Example Street, Sampletown, AB6 2CD, United Kingdom"
     }
    }
   },
@@ -422,6 +476,15 @@
      "name": "Northvale Japan K.K.",
      "address": "8-1-2 Sample-machi, Example-ku, Tokyo 103-0000, Japan",
      "contact": "Riku Nakamura, Regulatory Affairs"
+    }
+   },
+   "uk": {
+    "plNumber": "PL 99107/0001",
+    "blackTriangle": false,
+    "legalCategory": "POM",
+    "holder": {
+     "name": "Northvale Respiratory UK Ltd",
+     "address": "16 Example Street, Sampletown, AB7 2CD, United Kingdom"
     }
    }
   },

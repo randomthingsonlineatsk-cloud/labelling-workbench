@@ -3,7 +3,7 @@ and Malvaren (arterolin and lumexantine) dispersible tablets, a fictional antima
 prequalified by WHO. Numbers, holders and dates are invented."""
 import copy
 from lib import P, UL, T, BOX, sec, sub
-from intl_core import (CA_PM_TITLE, CA_PMI_READ, CA_PMI_OD, CA_PMI_REPORT, CH_BT_FI, CH_BT_PI, CH_REPORT, CH_PI_HEADER, JP_RX, AU_BT_PI, AU_BT_CMI, AU_SUM_INTRO, AU_CMI_REPORT, AU_PIC, WHO_INTRO)
+from intl_core import (CA_PM_TITLE, CA_PMI_READ, CA_PMI_OD, CA_PMI_REPORT, CH_BT_FI, CH_BT_PI, CH_REPORT, CH_PI_HEADER, JP_RX, AU_BT_PI, AU_BT_CMI, AU_SUM_INTRO, AU_CMI_REPORT, AU_PIC, WHO_INTRO, UK_BT_SMPC, UK_BT_PIL, UK_YC_SMPC, UK_YC_PIL, UK_ONLY)
 
 # ---------------------------------------------------------------- shared Ostrevia facts
 IND = 'adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable'
@@ -322,6 +322,7 @@ WHO_SMPC = {
 }
 
 
+
 # ---------------------------------------------------------------- error versions
 def find(doc, num):
     for s in doc['sections']:
@@ -468,6 +469,109 @@ C_DOCS = copy.deepcopy([CA_PM, CH_FI, JP_PI, AU_PI, AU_CMI])
 for d, nid in zip(C_DOCS, ['ca-pm', 'ch-fi', 'jp-pi', 'au-pi', 'au-cmi']):
     d['id'] = nid
 
+
+# ---------------------------------------------------------------- United Kingdom
+UK_HOLDER = 'Halcyon Ridge Pharmaceuticals UK Ltd, 10 Example Street, Sampletown, AB1 2CD, United Kingdom'
+UK_META = {'proprietaryName': 'Ostrevia', 'establishedName': 'lumiravostat', 'dosageForm': 'film-coated tablets', 'route': 'oral', 'strengths': ['10 mg', '25 mg'],
+           'manufacturer': 'Halcyon Ridge Pharmaceuticals UK Ltd', 'additionalMonitoring': True, 'plNumber': 'PL 99101/0001', 'lang': 'en'}
+
+UK_SMPC = {
+    'id': 'smpc', 'kind': 'uk-smpc', 'title': 'Summary of Product Characteristics', 'status': 'approved', 'meta': dict(UK_META),
+    'fixed': {'blackTriangle': UK_BT_SMPC},
+    'sections': [
+        sec('1', 'NAME OF THE MEDICINAL PRODUCT', P('Ostrevia 10 mg film-coated tablets'), P('Ostrevia 25 mg film-coated tablets')),
+        sec('2', 'QUALITATIVE AND QUANTITATIVE COMPOSITION', P('Each film-coated tablet contains 10 mg or 25 mg lumiravostat.'), P('Excipient with known effect: each tablet contains less than 1 mmol sodium (23 mg), that is to say essentially "sodium-free". For the full list of excipients, see section 6.1.')),
+        sec('3', 'PHARMACEUTICAL FORM', P('Film-coated tablet.'), P(DESC10), P(DESC25)),
+        sec('4', 'CLINICAL PARTICULARS', subs=[
+            sub('4.1', 'Therapeutic indications', P(f'Ostrevia is indicated for the treatment of {IND}.')),
+            sub('4.2', 'Posology and method of administration', P(DOSE), P(HEP), P(CYP), P('Method of administration: oral use. Swallow the tablet whole with water.')),
+            sub('4.3', 'Contraindications', P('Hypersensitivity to the active substance or to any of the excipients listed in section 6.1. Active tuberculosis or active serious infection. Pregnancy (see section 4.6).')),
+            sub('4.4', 'Special warnings and precautions for use', P(INF), P(MAL), P(VTE), P(LAB)),
+            sub('4.5', 'Interaction with other medicinal products and other forms of interaction', P(INTER)),
+            sub('4.6', 'Fertility, pregnancy and lactation', P(PREG), P(LACT)),
+            sub('4.7', 'Effects on ability to drive and use machines', P('Ostrevia has no or negligible influence on the ability to drive and use machines.')),
+            sub('4.8', 'Undesirable effects', ar_table(), P(UK_YC_SMPC)),
+            sub('4.9', 'Overdose', P(OD))]),
+        sec('5', 'PHARMACOLOGICAL PROPERTIES', subs=[sub('5.1', 'Pharmacodynamic properties', P(MOA), P(PD), P('Clinical efficacy: ' + TRIAL)), sub('5.2', 'Pharmacokinetic properties', P(PK)), sub('5.3', 'Preclinical safety data', P(TOX))]),
+        sec('6', 'PHARMACEUTICAL PARTICULARS', subs=[
+            sub('6.1', 'List of excipients', P(EXC[0].upper() + EXC[1:] + '.')), sub('6.2', 'Incompatibilities', P('Not applicable.')),
+            sub('6.3', 'Shelf life', P('3 years.')), sub('6.4', 'Special precautions for storage', P('This medicinal product does not require any special storage conditions.')),
+            sub('6.5', 'Nature and contents of container', P('Aluminium/aluminium blisters in cartons of 28 or 84 film-coated tablets. Not all pack sizes may be marketed.')),
+            sub('6.6', 'Special precautions for disposal and other handling', P('No special requirements.'))]),
+        sec('7', 'MARKETING AUTHORISATION HOLDER', P(UK_HOLDER)),
+        sec('8', 'MARKETING AUTHORISATION NUMBER(S)', P('PL 99101/0001')),
+        sec('9', 'DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION', P('Date of first authorisation: 12 March 2025')),
+        sec('10', 'DATE OF REVISION OF THE TEXT', P('August 2026')),
+    ],
+}
+
+UK_PIL = {
+    'id': 'pil', 'kind': 'uk-pil', 'title': 'Patient information leaflet', 'status': 'approved', 'meta': dict(UK_META),
+    'fixed': {'header': 'Package leaflet: Information for the patient', 'blackTriangle': UK_BT_PIL, 'lastRevised': 'This leaflet was last revised in August 2026.'},
+    'sections': [
+        sec('pl1', '1. What Ostrevia is and what it is used for', P('Ostrevia contains the active substance lumiravostat. It calms the immune activity that causes long-lasting hand eczema. It is used in adults when creams with strong corticosteroids have not helped enough or cannot be used.')),
+        sec('pl2', '2. What you need to know before you take Ostrevia', subs=[
+            sub('pl2.1', 'Do not take Ostrevia', UL('if you are allergic to lumiravostat or any of the other ingredients of this medicine (listed in section 6)', 'if you have tuberculosis or another serious infection', 'if you are pregnant')),
+            sub('pl2.2', 'Warnings and precautions', P('Talk to your doctor or pharmacist before taking Ostrevia if you have an infection, have had cancer, or have had blood clots. Your doctor will test you for tuberculosis and do blood tests before and during treatment.')),
+            sub('pl2.4', 'Other medicines and Ostrevia', P('Tell your doctor or pharmacist if you are taking, have recently taken or might take any other medicines, especially ketoconazole, clarithromycin or rifampicin.')),
+            sub('pl2.6', 'Pregnancy and breast-feeding', P('Do not take Ostrevia if you are pregnant. Use effective contraception during treatment and for 4 weeks after your last dose. Do not breast-feed during treatment and for 4 days after your last dose.')),
+            sub('pl2.7', 'Driving and using machines', P('Ostrevia is not expected to affect your ability to drive or use machines.'))]),
+        sec('pl3', '3. How to take Ostrevia', P('Always take this medicine exactly as your doctor or pharmacist has told you. The usual dose is one 10 mg tablet once a day. Your doctor may increase it to 25 mg once a day.'), subs=[
+            sub('pl3.1', 'If you take more Ostrevia than you should', P('Talk to your doctor or pharmacist straight away.')),
+            sub('pl3.2', 'If you forget to take Ostrevia', P('Take it as soon as you remember on the same day. Do not take a double dose to make up for a forgotten tablet.')),
+            sub('pl3.3', 'If you stop taking Ostrevia', P('Talk to your doctor before you stop.'))]),
+        sec('pl4', '4. Possible side effects', P('Like all medicines, this medicine can cause side effects, although not everybody gets them. Tell your doctor straight away if you get signs of a serious infection (fever, cough, painful skin rash) or of a blood clot (painful swollen leg, chest pain, sudden breathlessness).'), P('Very common (may affect more than 1 in 10 people): cold symptoms. Common (may affect up to 1 in 10 people): headache, nausea, acne, shingles, changes in blood tests. Uncommon (may affect up to 1 in 100 people): pneumonia, skin infection, blood clots.'), subs=[
+            sub('pl4.1', 'Reporting of side effects', P(UK_YC_PIL))]),
+        sec('pl5', '5. How to store Ostrevia', P('Keep this medicine out of the sight and reach of children. Do not use this medicine after the expiry date which is stated on the carton and blister after EXP. Do not throw away any medicines via wastewater or household waste. Ask your pharmacist how to throw away medicines you no longer use.')),
+        sec('pl6', '6. Contents of the pack and other information', subs=[
+            sub('pl6.1', 'What Ostrevia contains', P('The active substance is lumiravostat. The other ingredients are ' + EXC + '.')),
+            sub('pl6.2', 'What Ostrevia looks like and contents of the pack', P(DESC10), P(DESC25), P('Cartons of 28 or 84 tablets. Not all pack sizes may be marketed.')),
+            sub('pl6.3', 'Marketing Authorisation Holder and Manufacturer', P('Marketing Authorisation Holder: ' + UK_HOLDER + '.'), P('Manufacturer: Halcyon Ridge Manufacturing Ireland Ltd., Unit 9, Sample Industrial Estate, Exampleford, Ireland.'))]),
+    ],
+}
+
+UK_CARTON = {
+    'id': 'carton', 'kind': 'uk-carton', 'title': 'Outer carton, 10 mg', 'status': 'approved', 'meta': {**UK_META, 'strengths': ['10 mg'], 'ukOnlySize': 8, 'sticker': False},
+    'fixed': {'ukOnly': UK_ONLY},
+    'sections': [
+        sec('1', 'NAME OF THE MEDICINAL PRODUCT', P('Ostrevia 10 mg film-coated tablets'), P('lumiravostat')),
+        sec('2', 'STATEMENT OF ACTIVE SUBSTANCE(S)', P('Each film-coated tablet contains 10 mg lumiravostat.')),
+        sec('4', 'PHARMACEUTICAL FORM AND CONTENTS', P('28 film-coated tablets')),
+        sec('5', 'METHOD AND ROUTE(S) OF ADMINISTRATION', P('Read the package leaflet before use. Oral use.')),
+        sec('6', 'SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN', P('Keep out of the sight and reach of children.')),
+        sec('8', 'EXPIRY DATE', P('EXP')),
+        sec('11', 'NAME AND ADDRESS OF THE MARKETING AUTHORISATION HOLDER', P(UK_HOLDER)),
+        sec('12', 'MARKETING AUTHORISATION NUMBER(S)', P('PL 99101/0001')),
+        sec('13', 'BATCH NUMBER', P('Lot')),
+        sec('14', 'LEGAL CATEGORY (POM, P OR GSL)', P('POM')),
+        sec('16', 'INFORMATION IN BRAILLE', P('Ostrevia 10 mg')),
+    ],
+}
+
+
+# United Kingdom: 11
+E_UK_SMPC, E_UK_PIL, E_UK_CARTON = drafts(UK_SMPC, UK_PIL, UK_CARTON)
+E_UK_SMPC['fixed']['blackTriangle'] = ''
+K(E_UK_SMPC, 'UK-BT', 'Before section 1', 'The product is subject to additional monitoring: the ▼ and statement are missing.')
+find(E_UK_SMPC, '4.8')['blocks'] = [ar_table(), P('Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V.')]
+K(E_UK_SMPC, 'UK-YC', '4.8', 'The EU wording: report via the Yellow Card Scheme instead.')
+K(E_UK_SMPC, 'UK-EU', '4.8', 'Appendix V is an EU reference.')
+find(E_UK_SMPC, '8')['blocks'] = [P('EU/1/23/9901/001-004')]
+K(E_UK_SMPC, 'UK-MA', '8', 'An EU number instead of the PL number.')
+K(E_UK_SMPC, 'UK-EU', '8', 'An EU marketing authorisation number.')
+find(E_UK_SMPC, '7')['blocks'] = [P('Halcyon Ridge Pharmaceuticals Europe B.V., Fictieweg 21, 3000 CC Voorbeeldhaven, Netherlands')]
+K(E_UK_SMPC, 'UK-MAH', '7', 'The EU holder, not the UK holder.')
+find(E_UK_PIL, 'pl4.1')['blocks'] = [P('If you get any side effects, talk to your doctor, pharmacist or nurse. This includes any possible side effects not listed in this leaflet.')]
+K(E_UK_PIL, 'UK-YC', '4', 'No Yellow Card reporting statement.')
+E_UK_PIL['fixed']['lastRevised'] = 'This leaflet was last revised recently.'
+K(E_UK_PIL, 'UK-REQ', 'Last revised', 'No month and year.')
+E_UK_CARTON['fixed']['ukOnly'] = ''
+K(E_UK_CARTON, 'UK-ONLY', '"UK Only"', 'The pack must show "UK Only".')
+find(E_UK_CARTON, '14')['blocks'] = [P('Prescription medicine')]
+K(E_UK_CARTON, 'UK-LEGAL', '14', 'Use the legal category POM.')
+E_UK_CARTON['sections'].append(sec('17', '2D BARCODE AND SERIAL NUMBER (OPTIONAL IN THE UK)', P('2D barcode carrying the unique identifier included (EU FMD).')))
+K(E_UK_CARTON, 'UK-FMD', '17', 'EU safety features no longer apply in the UK.')
+
 SAMPLES = [
     {'id': 'ca-ostrevia-clean', 'region': 'ca', 'productId': 'nce-tablet', 'level': 'Start here', 'title': 'Ostrevia (Canada): clean product monograph and label', 'about': 'Part I and Part II of the product monograph to the master template, with the Serious Warnings and Precautions box and Recent Major Label Changes, the Patient Medication Information, and the bilingual outer label with Pr, DIN and the reporting contact.', 'docs': [CA_PM, CA_PMI, CA_LABEL]},
     {'id': 'ca-ostrevia-errors', 'region': 'ca', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (Canada): find and fix the errors', 'about': '17 planted errors: the title page, the box without cross-references, a stale label change, an old heading, the patient version\'s missing warnings box and standard statements, Rx instead of Pr, a short DIN, the proper name size, French, the reporting statement and more.', 'docs': [E_CA_PM, E_CA_PMI, E_CA_LABEL]},
@@ -479,6 +583,8 @@ SAMPLES = [
     {'id': 'au-ostrevia-errors', 'region': 'au', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (Australia): find and fix the errors', 'about': '9 planted errors: the title line, the black triangle, the Poisons Information Centre, the schedule, a heading, and the CMI standard statements.', 'docs': [E_AU_PI, E_AU_CMI]},
     {'id': 'who-malvaren-clean', 'region': 'who', 'productId': 'pq-antimalarial', 'level': 'Start here', 'title': 'Malvaren (WHO PQ): clean SmPC', 'about': 'A prequalified paediatric antimalarial: the WHOPAR Part 4 SmPC with weight-band dosing, the MedDRA frequency table, the supplier, the WHO reference number and the dates.', 'docs': [WHO_SMPC]},
     {'id': 'who-malvaren-errors', 'region': 'who', 'productId': 'pq-antimalarial', 'level': 'Practice', 'title': 'Malvaren (WHO PQ): find and fix the errors', 'about': '6 planted errors: the scope statement, the reference number, the dates, the 4.8 frequencies, a heading and empty posology.', 'docs': [E_WHO]},
+    {'id': 'uk-ostrevia-clean', 'region': 'uk', 'productId': 'nce-tablet', 'level': 'Start here', 'title': 'Ostrevia (United Kingdom): clean SmPC, leaflet and carton', 'about': 'A UK-wide marketing authorisation under the Windsor Framework: the black triangle, Yellow Card reporting, the PL number, the UK holder, "UK Only" on the carton and the legal category POM.', 'docs': [UK_SMPC, UK_PIL, UK_CARTON]},
+    {'id': 'uk-ostrevia-errors', 'region': 'uk', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (United Kingdom): find and fix the errors', 'about': '11 planted errors left over from the EU texts and old packs: the black triangle, Appendix V instead of the Yellow Card Scheme, an EU number and holder, the leaflet date, the missing "UK Only", the legal category and an EU safety-features claim.', 'docs': [E_UK_SMPC, E_UK_PIL, E_UK_CARTON]},
     {'id': 'intl-ostrevia-ild', 'region': 'intl', 'productId': 'nce-tablet', 'level': 'Capstone', 'title': 'Ostrevia: one safety signal, four markets',
      'about': 'A new interstitial lung disease warning reaches Canada, Switzerland, Japan and Australia at once. Put it in the right sections of each format, move the dates, approve, and track the four submissions within 60 days.',
      'docs': C_DOCS, 'change': {'trigger': 'signal', 'kind': 'warning', 'title': 'Interstitial lung disease (CCDS 4.1)', 'notice': SIGNAL, 'markets': ['ca', 'ch', 'jp', 'au'], 'deadlineDays': 60}},

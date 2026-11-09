@@ -36,7 +36,7 @@ export default function Rules() {
       <h2 style={{ fontSize: 'var(--step-2)' }}>Watch items</h2>
       <p className="small muted">Rules that are proposed or changing. The app teaches them but never reports them as errors.</p>
       <div className="cat-grid" style={{ marginBottom: '1.5rem' }}>
-        {pack.watch.map((w) => { const s = sourceOf(pack, w.src); return <div key={w.id} className="card"><span className="kicker">Watch · {{ eu: 'EU', in: 'India', ca: 'Canada', ch: 'Switzerland', jp: 'Japan', au: 'Australia', who: 'WHO PQ' }[w.region] ?? 'US'}</span><h3>{w.title}</h3><p className="small" style={{ margin: 0 }}>{w.text}</p><a className="small" href={s.url} target="_blank" rel="noreferrer">{s.title}</a></div>; })}
+        {pack.watch.map((w) => { const s = sourceOf(pack, w.src); return <div key={w.id} className="card"><span className="kicker">Watch · {{ eu: 'EU', in: 'India', ca: 'Canada', ch: 'Switzerland', jp: 'Japan', au: 'Australia', who: 'WHO PQ', uk: 'UK' }[w.region] ?? 'US'}</span><h3>{w.title}</h3><p className="small" style={{ margin: 0 }}>{w.text}</p><a className="small" href={s.url} target="_blank" rel="noreferrer">{s.title}</a></div>; })}
       </div>
       <div className="section-head"><h2 style={{ margin: 0, fontSize: 'var(--step-2)' }}>Rule cards</h2>
         <label className="field" style={{ minWidth: 240 }}>Applies to

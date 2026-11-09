@@ -320,6 +320,70 @@ WHO_SECTIONS = [
 ]
 WHO_INTRO = "This summary of product characteristics focuses on uses of the medicine covered by WHO's Prequalification Team - Medicines. The medicine may be authorised for additional or different uses by national medicines regulatory authorities."
 
+
+# ---------------------------------------------------------------- United Kingdom
+UK_CHANGES = [{'version': '1.0.0', 'date': '2026-11-09', 'notes': 'First release: SmPC, patient information leaflet and outer carton for UK-wide marketing authorisations (Windsor Framework, from 1 January 2025), the UK black triangle and Yellow Card statements, the PL number and the "UK Only" pack marking.'}]
+UK = {
+    'id': 'uk', 'name': 'United Kingdom (MHRA)', 'short': 'UK', 'version': '1.0.0', 'asOf': '2026-11-09', 'changes': UK_CHANGES,
+    'kinds': ['uk-smpc', 'uk-pil', 'uk-carton'],
+    'about': 'Product information for a UK-wide marketing authorisation granted by MHRA: the SmPC and the patient information leaflet use the same headings as the EU (QRD) documents, with UK wording where it differs: the Yellow Card Scheme for reporting, the UK black triangle statements, the PL number, a holder established in the UK, and no EU-only references. Since 1 January 2025 (Windsor Framework) every pack placed on the UK market carries "UK Only", and the EU Falsified Medicines Directive safety features no longer apply anywhere in the UK.',
+    'watch': [],
+    'sources': [
+        {'id': 'hmr', 'title': 'The Human Medicines Regulations 2012 (SI 2012/1916): Schedule 24 (packaging particulars) and Schedule 27 (package leaflets)', 'url': 'https://www.legislation.gov.uk/uksi/2012/1916/contents'},
+        {'id': 'ukwf', 'title': 'MHRA: Labelling and packaging of medicinal products for human use following agreement of the Windsor Framework', 'url': 'https://www.gov.uk/government/publications/labelling-and-packaging-of-medicinal-products-for-human-use-following-agreement-of-the-windsor-framework/labelling-and-packaging-of-medicinal-products-for-human-use-following-agreement-of-the-windsor-framework'},
+        {'id': 'ukwfx', 'title': 'MHRA: Windsor Framework explainer ("UK Only" wording, font size, stickers, safety features)', 'url': 'https://assets.publishing.service.gov.uk/media/673cc5cf7e8a3c98a090fe94/MHRA_Windsor_Framework_Explainer.pdf'},
+        {'id': 'ukbt', 'title': 'MHRA: Black Triangle Scheme (statements for the SmPC and the leaflet, and the reporting wording)', 'url': 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/396808/Black_Triangle_Scheme_-_new_medicines_and_vaccines_subject_to_EU-wide_additional_monitoring.pdf'},
+        {'id': 'ukyc', 'title': 'MHRA: The Yellow Card scheme, guidance for healthcare professionals, patients and the public', 'url': 'https://www.gov.uk/guidance/the-yellow-card-scheme-guidance-for-healthcare-professionals-patients-and-the-public'},
+    ],
+}
+
+UK_SMPC_SECTIONS = [
+    S('1', 'NAME OF THE MEDICINAL PRODUCT'),
+    S('2', 'QUALITATIVE AND QUANTITATIVE COMPOSITION'),
+    S('3', 'PHARMACEUTICAL FORM'),
+    S('4', 'CLINICAL PARTICULARS', subs=[X('4.1', 'Therapeutic indications'), X('4.2', 'Posology and method of administration'), X('4.3', 'Contraindications'), X('4.4', 'Special warnings and precautions for use'),
+                                        X('4.5', 'Interaction with other medicinal products and other forms of interaction'), X('4.6', 'Fertility, pregnancy and lactation'), X('4.7', 'Effects on ability to drive and use machines'),
+                                        X('4.8', 'Undesirable effects'), X('4.9', 'Overdose')]),
+    S('5', 'PHARMACOLOGICAL PROPERTIES', subs=[X('5.1', 'Pharmacodynamic properties'), X('5.2', 'Pharmacokinetic properties'), X('5.3', 'Preclinical safety data')]),
+    S('6', 'PHARMACEUTICAL PARTICULARS', subs=[X('6.1', 'List of excipients'), X('6.2', 'Incompatibilities'), X('6.3', 'Shelf life'), X('6.4', 'Special precautions for storage'), X('6.5', 'Nature and contents of container'), X('6.6', 'Special precautions for disposal and other handling')]),
+    S('7', 'MARKETING AUTHORISATION HOLDER'),
+    S('8', 'MARKETING AUTHORISATION NUMBER(S)'),
+    S('9', 'DATE OF FIRST AUTHORISATION/RENEWAL OF THE AUTHORISATION'),
+    S('10', 'DATE OF REVISION OF THE TEXT'),
+]
+UK_PIL_SECTIONS = [
+    S('pl1', '1. What {name} is and what it is used for'),
+    S('pl2', '2. What you need to know before you take {name}', subs=[X('pl2.1', 'Do not take {name}'), X('pl2.2', 'Warnings and precautions'), X('pl2.4', 'Other medicines and {name}'), X('pl2.6', 'Pregnancy and breast-feeding'), X('pl2.7', 'Driving and using machines')]),
+    S('pl3', '3. How to take {name}', subs=[X('pl3.1', 'If you take more {name} than you should'), X('pl3.2', 'If you forget to take {name}'), X('pl3.3', 'If you stop taking {name}')]),
+    S('pl4', '4. Possible side effects', subs=[X('pl4.1', 'Reporting of side effects')]),
+    S('pl5', '5. How to store {name}'),
+    S('pl6', '6. Contents of the pack and other information', subs=[X('pl6.1', 'What {name} contains'), X('pl6.2', 'What {name} looks like and contents of the pack'), X('pl6.3', 'Marketing Authorisation Holder and Manufacturer')]),
+]
+UK_CARTON_SECTIONS = [
+    S('1', 'NAME OF THE MEDICINAL PRODUCT'),
+    S('2', 'STATEMENT OF ACTIVE SUBSTANCE(S)'),
+    S('3', 'LIST OF EXCIPIENTS', 'optional'),
+    S('4', 'PHARMACEUTICAL FORM AND CONTENTS'),
+    S('5', 'METHOD AND ROUTE(S) OF ADMINISTRATION'),
+    S('6', 'SPECIAL WARNING THAT THE MEDICINAL PRODUCT MUST BE STORED OUT OF THE SIGHT AND REACH OF CHILDREN'),
+    S('7', 'OTHER SPECIAL WARNING(S), IF NECESSARY', 'optional'),
+    S('8', 'EXPIRY DATE'),
+    S('9', 'SPECIAL STORAGE CONDITIONS', 'optional'),
+    S('10', 'SPECIAL PRECAUTIONS FOR DISPOSAL, IF APPROPRIATE', 'optional'),
+    S('11', 'NAME AND ADDRESS OF THE MARKETING AUTHORISATION HOLDER'),
+    S('12', 'MARKETING AUTHORISATION NUMBER(S)'),
+    S('13', 'BATCH NUMBER'),
+    S('14', 'LEGAL CATEGORY (POM, P OR GSL)'),
+    S('15', 'INSTRUCTIONS ON USE', 'optional'),
+    S('16', 'INFORMATION IN BRAILLE'),
+    S('17', '2D BARCODE AND SERIAL NUMBER (OPTIONAL IN THE UK)', 'optional'),
+]
+UK_BT_SMPC = '▼ This medicinal product is subject to additional monitoring. This will allow quick identification of new safety information. Healthcare professionals are asked to report any suspected adverse reactions. See section 4.8 for how to report adverse reactions.'
+UK_BT_PIL = '▼ This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get. See the end of section 4 for how to report side effects.'
+UK_YC_SMPC = 'Reporting of suspected adverse reactions: Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the Yellow Card Scheme at www.mhra.gov.uk/yellowcard or search for MHRA Yellow Card in the Google Play or Apple App Store.'
+UK_YC_PIL = 'If you get any side effects, talk to your doctor, pharmacist or nurse. This includes any possible side effects not listed in this leaflet. You can also report side effects directly via the Yellow Card Scheme at www.mhra.gov.uk/yellowcard or search for MHRA Yellow Card in the Google Play or Apple App Store. By reporting side effects you can help provide more information on the safety of this medicine.'
+UK_ONLY = 'UK Only'
+
 TEMPLATES = {
     'ca-pm': {'kind': 'ca-pm', 'label': 'Product monograph (Canada)', 'short': 'PM', 'src': 'pmtpl', 'numbered': True, 'sections': CA_PM_SECTIONS, 'fixed': {'title': CA_PM_TITLE}},
     'ca-pmi': {'kind': 'ca-pmi', 'label': 'Patient Medication Information (Canada)', 'short': 'PMI', 'src': 'pmtpl', 'sections': CA_PMI_SECTIONS, 'fixed': {'readThis': CA_PMI_READ}},
@@ -329,6 +393,9 @@ TEMPLATES = {
     'jp-pi': {'kind': 'jp-pi', 'label': 'Package insert (Japan)', 'short': 'PI', 'src': 'jp0608', 'numbered': True, 'sections': JP_SECTIONS, 'fixed': {h['key']: '' for h in JP_HEADER}},
     'au-pi': {'kind': 'au-pi', 'label': 'Product Information (Australia)', 'short': 'PI', 'src': 'piform', 'numbered': True, 'sections': AU_PI_SECTIONS, 'fixed': {'title': AU_PI_TITLE, 'blackTriangle': AU_BT_PI}},
     'au-cmi': {'kind': 'au-cmi', 'label': 'Consumer Medicine Information (Australia)', 'short': 'CMI', 'src': 'cmitpl', 'sections': AU_CMI_SECTIONS, 'fixed': {'blackTriangle': AU_BT_CMI, 'summaryIntro': AU_SUM_INTRO, 'prepared': 'This leaflet was prepared in {month}.'}},
+    'uk-smpc': {'kind': 'uk-smpc', 'label': 'SmPC (United Kingdom)', 'short': 'SmPC', 'src': 'hmr', 'numbered': True, 'sections': UK_SMPC_SECTIONS, 'fixed': {'blackTriangle': UK_BT_SMPC}},
+    'uk-pil': {'kind': 'uk-pil', 'label': 'Patient information leaflet (United Kingdom)', 'short': 'PIL', 'src': 'hmr', 'sections': UK_PIL_SECTIONS, 'fixed': {'header': 'Package leaflet: Information for the patient', 'blackTriangle': UK_BT_PIL, 'lastRevised': 'This leaflet was last revised in {month}.'}},
+    'uk-carton': {'kind': 'uk-carton', 'label': 'Outer carton (United Kingdom)', 'short': 'Carton', 'src': 'hmr', 'numbered': True, 'sections': UK_CARTON_SECTIONS, 'fixed': {'ukOnly': UK_ONLY}},
     'who-smpc': {'kind': 'who-smpc', 'label': 'SmPC (WHO prequalification)', 'short': 'SmPC', 'src': 'whoex', 'numbered': True, 'sections': WHO_SECTIONS, 'fixed': {'intro': WHO_INTRO}},
 }
 
@@ -342,7 +409,7 @@ FR_MARKERS = {
     'l14': {'label': 'contact and reporting statement', 're': 'signal|déclar'},
 }
 
-ALL = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc']
+ALL = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton']
 RULES = [
     # Canada
     R('CA-HEAD', 'Product monograph headings, in order', 'The product monograph uses the numbered headings of the master template in order: 1 Indications to 12 Special Handling Instructions in Part I, 13 Pharmaceutical Information to 17 Supporting Product Monographs in Part II. The Patient Medication Information uses the plain-language headings of the template.', ['ca-pm', 'ca-pmi'], 'error', 'pmtpl', 'Product monograph master template',
@@ -388,13 +455,25 @@ RULES = [
     R('WHO-REF', 'WHO reference number', 'Section 8 gives the WHO reference number of the prequalified product (for example "MA999(a)").', ['who-smpc'], 'error', 'whoex', 'WHOPAR Part 4, section 8'),
     R('WHO-DATE', 'Dates', 'Section 9 gives the date of prequalification and section 10 the month and year of the last revision, not earlier than prequalification.', ['who-smpc'], 'error', 'whoex', 'WHOPAR Part 4, sections 9 and 10'),
     R('WHO-48', 'Frequency terms in 4.8', 'Undesirable effects use the MedDRA frequency convention (very common, common, uncommon, rare, very rare, not known), not words such as "often" or "sometimes".', ['who-smpc'], 'warning', 'whop4', 'Section guidance, 4.8'),
+    # United Kingdom
+    R('UK-HEAD', 'SmPC, leaflet and carton headings', 'The SmPC and the patient information leaflet use the standard headings, in order, as in the EU (QRD) templates that MHRA continues to accept; the carton gives the particulars of Schedule 24 in the usual order.', ['uk-smpc', 'uk-pil', 'uk-carton'], 'error', 'hmr', 'Human Medicines Regulations 2012, Schedules 24 and 27', 'The app checks the headings of the UK documents in this pack; MHRA accepts the QRD-style headings for national products.'),
+    R('UK-REQ', 'Required content is filled', 'Each required heading of the SmPC and the leaflet, and each mandatory particular of the carton, has content.', ['uk-smpc', 'uk-pil', 'uk-carton'], 'error', 'hmr', 'Schedules 24 and 27'),
+    R('UK-BT', 'Black triangle', 'A medicine subject to additional monitoring in the UK shows the inverted black triangle and the standard statement before section 1 of the SmPC and after the name in the leaflet; others do not.', ['uk-smpc', 'uk-pil'], 'error', 'ukbt', 'MHRA Black Triangle Scheme'),
+    R('UK-YC', 'Yellow Card reporting', 'SmPC section 4.8 and the end of leaflet section 4 tell healthcare professionals and patients to report suspected adverse reactions through the Yellow Card Scheme (www.mhra.gov.uk/yellowcard or the MHRA Yellow Card app), not "the national reporting system listed in Appendix V".', ['uk-smpc', 'uk-pil'], 'error', 'ukyc', 'MHRA Yellow Card scheme', 'The app checks for the Yellow Card Scheme and its web address, not every word of the paragraph.'),
+    R('UK-MA', 'UK marketing authorisation number', 'SmPC section 8 and the carton give the PL number (PL followed by five digits, a slash and four digits). An EU number (EU/1/...) does not belong on UK product information.', ['uk-smpc', 'uk-carton'], 'error', 'ukwf', 'Windsor Framework labelling guidance; Schedule 24', 'Numbers with the prefix PLGB or PLNI, from before 2025, raise a warning to check the number MHRA now holds for the UK-wide licence.'),
+    R('UK-EU', 'No EU-only references', 'UK texts do not refer to the European Medicines Agency, to Appendix V or to the EU annexes, and do not carry EU numbers or EU local representatives.', ['uk-smpc', 'uk-pil', 'uk-carton'], 'error', 'ukwf', 'Windsor Framework labelling guidance'),
+    R('UK-MAH', 'Holder established in the UK', 'The marketing authorisation holder named in SmPC section 7, the leaflet and the carton is established in the UK.', ['uk-smpc', 'uk-pil', 'uk-carton'], 'warning', 'hmr', 'Human Medicines Regulations 2012', 'The app looks for "United Kingdom", "UK" or a UK postcode in the address.'),
+    R('UK-ONLY', '"UK Only" on the pack', 'Every pack placed on the UK market from 1 January 2025 shows the words "UK Only" conspicuously on the outer packaging, legible, indelible and not hidden by other text, in a font of at least 7 point. Stickers were allowed only until 30 June 2025.', ['uk-carton'], 'error', 'ukwfx', 'MHRA Windsor Framework explainer', 'Traditional herbal and homeopathic registrations, and packs made only for export, are exempt; the app assumes a licensed medicine for the UK.'),
+    R('UK-FMD', 'No EU safety features', 'The EU Falsified Medicines Directive safety features no longer apply anywhere in the UK. A 2D barcode and serial number are optional, but must not be recognisable by the European repository system. Anti-tamper devices are encouraged, not required.', ['uk-carton'], 'warning', 'ukwfx', 'MHRA Windsor Framework explainer'),
+    R('UK-LEGAL', 'Legal category', 'The carton gives the legal category: POM (prescription only medicine), P (pharmacy) or GSL (general sale list).', ['uk-carton'], 'error', 'hmr', 'Schedule 24'),
     # Shared
     R('INTL-STR', 'Strengths agree', 'The strengths in the composition and dosage form sections agree with the product.', ALL, 'warning', 'pmtpl', 'Every template (composition and pharmaceutical form)'),
     R('INTL-PROMO', 'No promotional wording', 'Product information states facts. Words such as "best", "safest" or "superior" do not belong in it.', ALL, 'warning', 'pmguide', 'Every template; product information is not advertising'),
 ]
 
-REGIONS = {'ca': CA, 'ch': CH, 'jp': JP, 'au': AU, 'who': WHO}
+REGIONS = {'ca': CA, 'ch': CH, 'jp': JP, 'au': AU, 'who': WHO, 'uk': UK}
 VOCAB = {
     'jpHeader': JP_HEADER, 'jpRx': JP_RX, 'chBtCore': CH_BT_CORE, 'chReport': CH_REPORT, 'caPmiOd': CA_PMI_OD, 'caPmiReport': CA_PMI_REPORT, 'auCmiReport': AU_CMI_REPORT, 'auCmiSe': AU_CMI_SE, 'auPic': AU_PIC,
+    'ukYcSmpc': UK_YC_SMPC, 'ukYcPil': UK_YC_PIL,
     'frMarkers': FR_MARKERS, 'promo': PROMO, 'nonstandardFrequencies': NONSTANDARD_FREQ, 'frequencies': ['very common', 'common', 'uncommon', 'rare', 'very rare', 'not known'],
 }

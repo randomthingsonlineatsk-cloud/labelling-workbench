@@ -1,4 +1,4 @@
-"""More-markets learning content: lessons 30 to 34, quiz questions, drills and glossary terms."""
+"""More-markets learning content: lessons 30 to 35, quiz questions, drills and glossary terms."""
 
 
 def L(id, title, minutes, sections, try_it=None):
@@ -68,6 +68,20 @@ LESSONS = [
             'Prequalified medicines are bought by procurement agencies for national programmes, often for children. Weight-band dosing tables, preparation of dispersible tablets and the MedDRA frequency convention in 4.8 matter more than brand wording.',
         ]),
     ], try_it={'sample': 'who-malvaren-errors', 'doc': 'smpc'}),
+    L(35, 'United Kingdom: product information after the Windsor Framework', 8, [
+        ('UK-wide licences', [
+            'Since 1 January 2025, under the Windsor Framework, MHRA licenses medicines for the whole of the UK, Northern Ireland included. A UK-wide licence has a PL number, PL followed by five digits, a slash and four digits, and EU authorisations no longer cover Northern Ireland.',
+            'The SmPC and the patient information leaflet keep the familiar headings, as in the EU QRD templates: SmPC sections 1 to 10, leaflet sections 1 to 6. What changes is the UK detail: the PL number in SmPC section 8 and on the carton, a marketing authorisation holder established in the UK, and no EU-only references such as Appendix V or the EU annexes.',
+        ]),
+        ('Reporting and the black triangle', [
+            'SmPC section 4.8 ends with the Yellow Card paragraph: healthcare professionals report suspected adverse reactions via the Yellow Card Scheme at www.mhra.gov.uk/yellowcard or through the MHRA Yellow Card app. The leaflet ends section 4 with the matching patient text under "Reporting of side effects".',
+            'Medicines subject to additional monitoring in the UK show the inverted black triangle with the standard statement: before section 1 of the SmPC ("This medicinal product is subject to additional monitoring...") and right after the name in the leaflet ("This medicine is subject to additional monitoring...").',
+        ]),
+        ('The pack', [
+            'Every pack placed on the UK market from 1 January 2025 carries the words "UK Only" on the outer packaging: conspicuous, legible and indelible, in a font of at least 7 point, not hidden by other text. Stickers were allowed only until 30 June 2025. Traditional herbal and homeopathic registrations and export-only packs are exempt.',
+            'The EU Falsified Medicines Directive safety features no longer apply anywhere in the UK. A 2D barcode and serial number are optional, but must not be recognisable by the European repository system; anti-tamper devices are encouraged. The carton also gives the legal category: POM, P or GSL.',
+        ]),
+    ], try_it={'sample': 'uk-ostrevia-errors', 'doc': 'smpc'}),
 ]
 
 
@@ -116,6 +130,14 @@ QUESTIONS = [
     Q('q33-8', 33, 'Where does the PI point to www.tga.gov.au/reporting-problems?', ['Section 4.8', 'Section 4.9', 'Section 8', 'Section 10'], 0, '4.9 gives the Poisons Information Centre number.', 'TGA PI form'),
     Q('q34-7', 34, 'Which section of a WHO PQ SmPC names the supplier?', ['7', '8', '9', '1'], 0, '8 is the WHO reference number, 9 the date of prequalification.', 'WHOPAR Part 4'),
     Q('q34-8', 34, 'What does section 9 give?', ['The date of prequalification', 'The WHO reference number', 'The supplier', 'The date of revision'], 0, 'Section 10 is the date of revision of the text.', 'WHOPAR Part 4'),
+    Q('q35-1', 35, 'Since when have MHRA licences been UK-wide, including Northern Ireland?', ['1 January 2025', '1 January 2021', '15 January 2026', '31 January 2020'], 0, 'The Windsor Framework arrangements for medicines started on 1 January 2025.', 'MHRA Windsor Framework guidance'),
+    Q('q35-2', 35, 'Where do UK healthcare professionals report suspected adverse reactions, as SmPC 4.8 says?', ['The Yellow Card Scheme', 'The national reporting system in Appendix V', 'EudraVigilance directly', 'MedWatch'], 0, 'Appendix V is the EU list; UK texts use the Yellow Card Scheme.', 'MHRA Yellow Card scheme'),
+    Q('q35-3', 35, 'What words must appear on the outer pack of a medicine placed on the UK market from 2025?', ['UK Only', 'Not for EU sale', 'GB/NI', 'UKCA'], 0, 'Conspicuous, legible, indelible, at least 7 point.', 'MHRA Windsor Framework explainer'),
+    Q('q35-4', 35, 'Do the EU Falsified Medicines Directive safety features apply in Northern Ireland from 2025?', ['No, they no longer apply anywhere in the UK', 'Yes, in Northern Ireland only', 'Yes, everywhere in the UK', 'Only for biologics'], 0, 'A 2D barcode is optional and must not be recognisable by the European repository system.', 'MHRA Windsor Framework explainer'),
+    Q('q35-5', 35, 'Which number belongs in section 8 of a UK SmPC?', ['PL 99101/0001', 'EU/1/23/9901/001', 'AUST R 999101', '99101 (Swissmedic)'], 0, 'PL followed by five digits, a slash and four digits.', 'Windsor Framework labelling guidance'),
+    Q('q35-6', 35, 'Where does the black triangle statement go in a UK leaflet?', ['Right after the name of the medicine', 'At the end of section 4', 'In section 6', 'On the carton only'], 0, 'In the SmPC it goes before section 1.', 'MHRA Black Triangle Scheme'),
+    Q('q35-7', 35, 'Until when could "UK Only" be applied with a sticker?', ['30 June 2025', '31 December 2024', '31 December 2025', 'Stickers were never allowed'], 0, 'After that it is printed on the pack.', 'MHRA Windsor Framework explainer'),
+    Q('q35-8', 35, 'Which products need not carry "UK Only"?', ['Traditional herbal and homeopathic registrations, and export-only packs', 'Pharmacy (P) medicines', 'General sale (GSL) medicines', 'Biological medicines'], 0, 'The requirement covers licensed medicines of every legal category.', 'MHRA Windsor Framework explainer'),
 ]
 
 DRILLS = [
@@ -129,11 +151,16 @@ DRILLS = [
      'about': 'The title, the black triangle, the Poisons Information Centre, the schedule, a heading and the CMI standard statements.'},
     {'id': 'who-fix', 'module': 'intl', 'title': 'WHO PQ: fix the SmPC', 'minutes': 8, 'sample': 'who-malvaren-errors', 'doc': 'smpc', 'goal': {'type': 'rules', 'prefixes': ['WHO-', 'INTL-']},
      'about': 'The scope statement, the reference number, the dates, the frequencies, a heading and the posology.'},
+    {'id': 'uk-fix', 'module': 'intl', 'title': 'United Kingdom: fix the SmPC, leaflet and carton', 'minutes': 12, 'sample': 'uk-ostrevia-errors', 'doc': 'smpc', 'goal': {'type': 'rules-multi', 'docs': ['smpc', 'pil', 'carton'], 'prefixes': ['UK-', 'INTL-']},
+     'about': 'Turn texts copied from the EU into UK texts: the black triangle, Yellow Card reporting, the PL number and UK holder, the leaflet date, "UK Only", the legal category and the safety features.'},
     {'id': 'intl-ild', 'module': 'intl', 'capstone': True, 'title': 'Capstone: one safety signal, four markets', 'minutes': 35, 'sample': 'intl-ostrevia-ild', 'doc': 'ca-pm', 'tab': 'changes', 'goal': {'type': 'rollout-intl'},
      'about': 'Add the interstitial lung disease warning to the Canadian monograph, the Swiss Fachinformation, the Japanese insert and the Australian PI and CMI in the right places, move each date on, approve all five, and classify and submit in the four markets within 60 days.'},
 ]
 
 GLOSSARY = [
+    {'term': 'UK Only', 'def': 'Words every pack placed on the UK market must carry from 1 January 2025 under the Windsor Framework.'},
+    {'term': 'Yellow Card Scheme', 'def': 'The UK system for reporting suspected adverse reactions to MHRA, named in SmPC 4.8 and leaflet section 4.'},
+    {'term': 'Windsor Framework', 'def': 'The UK and EU arrangement under which MHRA has licensed medicines UK-wide since 1 January 2025.'},
     {'term': 'Abgabekategorie', 'def': 'Swiss dispensing category (A to E), given in the packs section.'},
     {'term': 'AMZV', 'def': 'Arzneimittel-Zulassungsverordnung: the Swissmedic ordinance on authorisation requirements, whose annexes set the Fachinformation and patient information.'},
     {'term': 'ARTG', 'def': 'Australian Register of Therapeutic Goods; AUST R numbers identify registered medicines.'},

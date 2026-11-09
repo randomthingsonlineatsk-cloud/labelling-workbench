@@ -1,6 +1,18 @@
 {
  "terms": [
   {
+   "term": "UK Only",
+   "def": "Words every pack placed on the UK market must carry from 1 January 2025 under the Windsor Framework."
+  },
+  {
+   "term": "Yellow Card Scheme",
+   "def": "The UK system for reporting suspected adverse reactions to MHRA, named in SmPC 4.8 and leaflet section 4."
+  },
+  {
+   "term": "Windsor Framework",
+   "def": "The UK and EU arrangement under which MHRA has licensed medicines UK-wide since 1 January 2025."
+  },
+  {
    "term": "Abgabekategorie",
    "def": "Swiss dispensing category (A to E), given in the packs section."
   },

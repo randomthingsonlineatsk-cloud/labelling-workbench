@@ -2,8 +2,13 @@
  "id": "us",
  "name": "United States (FDA)",
  "short": "US",
- "version": "1.1.0",
+ "version": "1.1.1",
  "changes": [
+  {
+   "version": "1.1.1",
+   "date": "2026-11-09",
+   "notes": "Patient Medication Information watch item corrected: the July 2026 Federal Register notice (2026-13346) is a paperwork notice for the existing Medication Guide information collection, not a final rule; the PMI rule is still proposed (checked 2026-11-09). No rule changes."
+  },
   {
    "version": "1.1.0",
    "date": "2026-10-17",
@@ -15,7 +20,7 @@
    "notes": "First release (Phase 1): PLR and older-format prescribing information, patient labelling, carton and container, generic carve-outs."
   }
  ],
- "asOf": "2026-10-17",
+ "asOf": "2026-11-09",
  "kinds": [
   "pi",
   "pi-old",
@@ -36,7 +41,7 @@
   {
    "id": "pmi",
    "title": "Patient Medication Information (PMI)",
-   "text": "FDA proposed a one-page Patient Medication Information sheet in May 2023 that would replace Medication Guides and most Patient Package Inserts. As of mid-2026 the rule is still proposed (FDA reconfirmed the existing Medication Guide requirements in a July 2026 information-collection notice). The app teaches it in lesson 6 and never flags its absence; a one-page PMI drill is planned for Phase 2.",
+   "text": "FDA proposed a one-page Patient Medication Information sheet in May 2023 that would replace Medication Guides and most Patient Package Inserts. As of November 2026 the rule is still proposed. The July 2026 Federal Register notice (2026-13346) is not a final rule: it is a paperwork notice submitting the existing Medication Guide information collection (OMB 0910-0393, reinstatement with change) to OMB, and it says comments about the PMI proposal (RIN 0910-AH68, 88 FR 35694) were moved to the rulemaking docket for continued consideration. The app teaches it in lesson 6 and never flags its absence; a one-page PMI drill is planned for Phase 2.",
    "src": "pmi"
   },
   {
@@ -165,7 +170,7 @@
   },
   {
    "id": "mgnotice",
-   "title": "Federal Register 2026-13346: Medication Guides information collection (July 2026)",
+   "title": "Federal Register 2026-13346 (1 July 2026): Medication Guides information collection submitted to OMB (a paperwork notice, not a final rule)",
    "url": "https://public-inspection.federalregister.gov/2026-13346.pdf"
   },
   {

@@ -8,7 +8,7 @@ export const uid = (p = 'x') => `${p}-${Date.now().toString(36)}-${Math.random()
 export const now = () => new Date().toISOString();
 const clone = (x) => (typeof structuredClone === 'function' ? structuredClone(x) : JSON.parse(JSON.stringify(x)));
 
-export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)', 'eu-annex2': 'Annex II (EU)', 'eu-small': 'Small immediate packaging (EU)', 'in-pi': 'Package insert (India)', 'in-carton': 'Carton (India)', 'in-label': 'Strip or container label (India)', 'ca-pm': 'Product monograph (Canada)', 'ca-pmi': 'Patient Medication Information (Canada)', 'ca-label': 'Outer label (Canada)', 'ch-fi': 'Fachinformation (Switzerland)', 'ch-pi': 'Patienteninformation (Switzerland)', 'jp-pi': 'Package insert (Japan)', 'au-pi': 'Product Information (Australia)', 'au-cmi': 'Consumer Medicine Information (Australia)', 'who-smpc': 'SmPC (WHO prequalification)' };
+export const KIND_LABEL = { pi: 'Prescribing information', 'pi-old': 'Prescribing information (older format)', mg: 'Medication Guide', ppi: 'Patient Information', ifu: 'Instructions for Use', carton: 'Carton', container: 'Container label', pmi: 'Patient Medication Information (proposed)', smpc: 'SmPC', pl: 'Package leaflet', 'eu-outer': 'Outer carton (EU)', 'eu-blister': 'Blister (EU)', 'eu-annex2': 'Annex II (EU)', 'eu-small': 'Small immediate packaging (EU)', 'in-pi': 'Package insert (India)', 'in-carton': 'Carton (India)', 'in-label': 'Strip or container label (India)', 'ca-pm': 'Product monograph (Canada)', 'ca-pmi': 'Patient Medication Information (Canada)', 'ca-label': 'Outer label (Canada)', 'ch-fi': 'Fachinformation (Switzerland)', 'ch-pi': 'Patienteninformation (Switzerland)', 'jp-pi': 'Package insert (Japan)', 'au-pi': 'Product Information (Australia)', 'au-cmi': 'Consumer Medicine Information (Australia)', 'who-smpc': 'SmPC (WHO prequalification)', 'uk-smpc': 'SmPC (United Kingdom)', 'uk-pil': 'Patient information leaflet (United Kingdom)', 'uk-carton': 'Outer carton (United Kingdom)' };
 export const STATUS = { draft: 'Draft', review: 'In review', changes: 'Changes requested', approved: 'Approved', superseded: 'Superseded', submitted: 'Sent to agency' };
 
 export const AR_HEAD = ['Adverse reaction', 'Drug (%)', 'Placebo (%)'];
@@ -89,7 +89,7 @@ export function blankDoc(pack, kind, product, projectId, user) {
 
 export const EU_KINDS = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small'];
 export const IN_KINDS = ['in-pi', 'in-carton', 'in-label'];
-export const MORE_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc'];
+export const MORE_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton'];
 export const regionOfKind = (kind) => (EU_KINDS.includes(kind) ? 'eu' : IN_KINDS.includes(kind) ? 'in' : MORE_KINDS.includes(kind) ? kind.split('-')[0] : 'us');
 
 // Canada, Switzerland, Japan, Australia and WHO PQ documents: the template's sections, the
@@ -108,6 +108,7 @@ function blankMoreDoc(pack, kind, product, projectId, user) {
   if (r === 'jp') Object.assign(meta, { warnings: false });
   if (r === 'au') Object.assign(meta, { additionalMonitoring: !!reg.blackTriangle });
   if (r === 'who') Object.assign(meta, { pqRef: reg.pqRef ?? '' });
+  if (r === 'uk') Object.assign(meta, { additionalMonitoring: !!reg.blackTriangle, plNumber: reg.plNumber ?? '', ...(kind === 'uk-carton' ? { ukOnlySize: 8, sticker: false } : {}) });
   const sections = t.sections.filter((s) => s.need !== 'optional').map((s) => ({ num: s.num, title: fill(s.title, meta), blocks: [newBlock()], subs: (s.fixedSubs ?? []).filter((x) => x.need !== 'optional').map((x) => ({ num: x.num, title: fill(x.title, meta), blocks: [newBlock()] })) }));
   const fixed = Object.fromEntries(Object.entries(t.fixed ?? {}).map(([k, v]) => [k, k === 'blackTriangle' && !meta.additionalMonitoring ? '' : fill(v, meta).replace('{month}', 'MONTH YEAR')]));
   return { id: uid('d'), kind, projectId, title: KIND_LABEL[kind], meta, fixed, sections, status: 'draft', version: 0, waivers: {}, userId: user?.userId ?? null, classId: user?.classId ?? null, createdAt: now(), updatedAt: now() };

@@ -3,7 +3,10 @@
 // carries its own mapping (doc.ccdsMap = { version, rows: { key: { status, justification } } }).
 import { findSection, blocksText } from './model.js';
 
-export const MAP_KINDS = ['pi', 'mg', 'smpc', 'pl'];
+export const MAP_KINDS = ['pi', 'mg', 'smpc', 'pl', 'uk-smpc', 'uk-pil'];
+// UK SmPCs and leaflets use the EU section numbers, so CCDS targets for the EU texts apply to them.
+const ALIAS = { 'uk-smpc': 'smpc', 'uk-pil': 'pl' };
+export const mapKind = (kind) => ALIAS[kind] ?? kind;
 export const MAP_STATUS = { aligned: 'Aligned', deviates: 'Deviates', na: 'Not applicable' };
 export const MIN_JUSTIFICATION = 15;
 
@@ -48,10 +51,10 @@ const safeRe = (t) => { try { return new RegExp(t, 'i'); } catch { return new Re
 
 // Is the statement present in this label? Every term group must match in the mapped text.
 export function autoMatch(doc, st) {
-  const targets = st.targets?.[doc.kind] ?? [];
+  const targets = st.targets?.[mapKind(doc.kind)] ?? [];
   if (!targets.length) return { applies: false, found: false, missingTerms: [] };
   const text = targets.map((t) => targetText(doc, t)).join('\n');
-  const terms = st.terms?.[doc.kind] ?? [];
+  const terms = st.terms?.[mapKind(doc.kind)] ?? [];
   const missingTerms = terms.filter((t) => !safeRe(t).test(text));
   return { applies: true, found: text.trim().length > 0 && missingTerms.length === 0, missingTerms, targets };
 }
@@ -122,7 +125,7 @@ export function impactOf(from, to, docs) {
     else if (p.text !== s.text || p.ccsi !== s.ccsi) out.push({ change: 'changed', st: s, prev: p });
   }
   for (const [k, p] of before) if (!after.has(k)) out.push({ change: 'removed', st: p });
-  return out.map((x) => ({ ...x, labels: docs.filter((d) => MAP_KINDS.includes(d.kind) && d.role !== 'reference' && (x.st.targets?.[d.kind] ?? []).length).map((d) => ({ docId: d.id, title: d.title, kind: d.kind, targets: x.st.targets[d.kind] })) }));
+  return out.map((x) => ({ ...x, labels: docs.filter((d) => MAP_KINDS.includes(d.kind) && d.role !== 'reference' && (x.st.targets?.[mapKind(d.kind)] ?? []).length).map((d) => ({ docId: d.id, title: d.title, kind: d.kind, targets: x.st.targets[mapKind(d.kind)] })) }));
 }
 
 // The deviation register across a project's labels.

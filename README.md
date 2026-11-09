@@ -120,7 +120,13 @@ Where a check follows common practice rather than a rule text (the insert headin
 
 **More-markets samples:** a clean and an error set for each region (Ostrevia in Canada, Switzerland, Japan and Australia; Malvaren, a fictional antimalarial, for WHO PQ), and the capstone: an interstitial lung disease signal (CCDS 4.1) taken into the Canadian monograph, the Fachinformation, the Japanese insert and the Australian PI and CMI, with four submissions tracked within 60 days.
 
-**More-markets learning:** 5 lessons (30 to 34), 40 quiz questions, 6 drills and a more-markets certificate.
+**More-markets learning:** 6 lessons (30 to 35), 48 quiz questions, 7 drills and a more-markets certificate.
+
+**United Kingdom pack (MHRA).** The SmPC, the patient information leaflet and the outer carton for a UK-wide marketing authorisation (Windsor Framework, from 1 January 2025): the same headings as the EU documents, with UK wording where it differs. Ten rule cards check the UK black triangle statements, Yellow Card reporting in SmPC 4.8 and leaflet section 4 (not Appendix V), the PL number (with a warning for PLGB and PLNI numbers from before 2025), a holder established in the UK, no EU-only references, "UK Only" on the pack (at least 7 point, no stickers after 30 June 2025), the legal category (POM, P, GSL) and no EU safety-features claims. A clean and an error sample (11 planted errors), lesson 35, eight quiz questions and a drill. UK SmPCs and leaflets map to the core data sheet with the EU targets, and the UK is a market for labelling changes, as in the Variations Classifier's UK pack. Sources: MHRA Windsor Framework labelling guidance and explainer, the Black Triangle Scheme, the Yellow Card guidance and the Human Medicines Regulations 2012.
+
+**Label drift monitor.** For one product, a heatmap of how far each market's label has drifted from the core data sheet: the CCDS version each market is mapped to, every statement of the current CCDS (aligned, a justified deviation, or missing), the labelling changes still open, how old they are and which safety changes are past their target, with one harmonisation score per market (the formula and weights are shown, as training defaults) and a list of gaps to close, worst first, downloadable as CSV. It runs on a practice portfolio (Ostrevia in eight markets after CCDS 4.0) or on the user's own projects.
+
+**FDA Patient Medication Information (Watch).** Corrected: the 1 July 2026 Federal Register notice (2026-13346) is a paperwork notice for the existing Medication Guide information collection, not a final rule; the PMI rule is still proposed (checked 9 November 2026).
 
 **Classroom:** the shared classroom server in the eCTD Dossier Builder repository serves this app under `/lw/v1` (`lw_` tables). Assignments are drills; students send the drill project, the instructor re-scores it in their own browser and comments. Email reminders use the same setup as the other apps.
 
@@ -133,6 +139,7 @@ Where a check follows common practice rather than a rule text (the insert headin
 | 3 | EU pack: QRD templates, 4.8 frequencies, excipients, black triangle, blue box, Braille, safety features, user-testing simulator, translations and linguistic review, PRAC and PSUSA triggers, ePI view | Done |
 | 4 | India pack: package insert, carton and strip, Rules 96 and 97, schedule red boxes and symbols, proper-name size, Schedule H2 QR codes, MRP, CDSCO directive capstone | Done |
 | 5 | Canada (product monograph, PMI, label), Switzerland (Fachinformation, patient information), Japan (package insert), Australia (PI, CMI), WHO PQ (SmPC) packs; four-market capstone | Done |
+| 6 | United Kingdom pack (Windsor Framework), Label drift monitor, PMI watch item corrected | Done |
 | Completion pass | The spec items still open after Phase 5: adverse-reaction table and figure blocks; offline use and keyboard shortcuts; a change log and "About this pack" per pack, and a notice on projects whose rules changed since they were made; EU Annex II and small immediate packaging; biosimilar labelling (US) and the EU generic comparison; EU documents mapped to the CCDS; Module 1 labelling packages for the EU, India, Canada, Switzerland and Japan; change requests started from a pharmacovigilance signal file; links from a classification to its lesson; at least 8 quiz questions per lesson; a test for every rule card | Done |
 
 ## How it works

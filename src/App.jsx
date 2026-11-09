@@ -13,6 +13,7 @@ import Drills from './screens/Drills.jsx';
 import Glossary from './screens/Glossary.jsx';
 import Progress from './screens/Progress.jsx';
 import Rules from './screens/Rules.jsx';
+import Drift from './screens/Drift.jsx';
 import Classroom from './screens/Classroom.jsx';
 import { Mark, Modal } from './components/ui.jsx';
 
@@ -30,7 +31,7 @@ function useHashRoute() {
   return parts;
 }
 
-const NAV = [['', 'Projects'], ['learn', 'Learn'], ['quiz', 'Quiz'], ['drills', 'Drills'], ['progress', 'Progress'], ['classroom', 'Classroom'], ['rules', 'Rules and sources']];
+const NAV = [['', 'Projects'], ['drift', 'Label drift'], ['learn', 'Learn'], ['quiz', 'Quiz'], ['drills', 'Drills'], ['progress', 'Progress'], ['classroom', 'Classroom'], ['rules', 'Rules and sources']];
 
 export default function App() {
   const route = useHashRoute();
@@ -197,6 +198,7 @@ export default function App() {
   else if (section === 'glossary') screen = <Glossary />;
   else if (section === 'progress') screen = <Progress />;
   else if (section === 'rules') screen = <Rules />;
+  else if (section === 'drift') screen = <Drift />;
   else if (section === 'classroom') screen = <Classroom />;
   else screen = <div className="page"><h1>Page not found</h1><p><a href="#/">Go to your projects</a></p></div>;
 

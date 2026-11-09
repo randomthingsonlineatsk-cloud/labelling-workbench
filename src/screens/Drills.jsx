@@ -3,7 +3,7 @@ import { useApp } from '../ctx.js';
 import { openSample } from './Learn.jsx';
 import { moduleOf } from '../engine/pack.js';
 
-const GROUPS = [['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling'], ['intl', 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ']];
+const GROUPS = [['us', 'US labelling'], ['core', 'Core data sheet and change management'], ['eu', 'EU product information'], ['in', 'India labelling'], ['intl', 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ, United Kingdom']];
 
 export default function Drills() {
   const app = useApp();
