@@ -23,8 +23,8 @@ export function certificateStatus({ region = 'us', lessons, drills, attempts, le
   return { region, lessons: ls, drills: ds, quiz, criteria, eligible: criteria.every((c) => c.done >= c.of) };
 }
 
+export const verificationBasis = ({ name, userId, status, date }) => JSON.stringify({ app: 'labelling-workbench', region: status.region, name: name.trim(), userId, date, lessons: status.lessons.map((l) => [l.id, l.best]), quiz: status.quiz?.score ?? null, drills: status.drills.map((d) => [d.id, d.best]) });
 export function verificationCode({ name, userId, status, date }) {
-  const basis = JSON.stringify({ app: 'labelling-workbench', region: status.region, name: name.trim(), userId, date, lessons: status.lessons.map((l) => [l.id, l.best]), quiz: status.quiz?.score ?? null, drills: status.drills.map((d) => [d.id, d.best]) });
-  const h = sha256(basis).toUpperCase();
+  const h = sha256(verificationBasis({ name, userId, status, date })).toUpperCase();
   return `LW-${h.slice(0, 4)}-${h.slice(4, 8)}-${h.slice(8, 12)}`;
 }

@@ -17,6 +17,14 @@ export default function Progress() {
     const { certificatePdf } = await import('../engine/pdf.js');
     download(`labelling-workbench-${st.region}-certificate-${date}.pdf`, new Blob([await certificatePdf({ name, userId: user.userId, status: st, code, region: pack.short, date })], { type: 'application/pdf' }));
   };
+  const record = async (st) => {
+    if (name.trim().length < 2) { toast('Type your name as it should appear.', 'warn'); return; }
+    await updateUser({ displayName: name.trim() });
+    const { lwRecord } = await import('../engine/passport.js');
+    const date = new Date().toISOString().slice(0, 10);
+    download(`labelling-workbench-${st.region}-passport-${date}.json`, JSON.stringify(lwRecord({ name, userId: user.userId, status: st, date }), null, 2));
+    toast('Passport record saved. Add it to your Skills Passport on the pharmolecule site.');
+  };
   return (
     <div className="page" style={{ maxWidth: 900 }}>
       <h1>Progress</h1>
@@ -34,10 +42,10 @@ export default function Progress() {
               <li key={c.id}><span className={`tick ${c.done >= c.of ? 'on' : ''}`} aria-hidden="true">{c.done >= c.of ? '✓' : ''}</span><span>{c.id === 'quiz' && st.region !== 'us' ? c.label.replace('A mixed quiz round', { eu: 'An EU', core: 'A core', in: 'An India', intl: 'A more-markets' }[st.region] + ' module quiz round') : c.label}: <b>{c.done} of {c.of}</b></span></li>
             ))}
           </ul>
-          <div className="row"><button className="btn primary" disabled={!st.eligible} onClick={() => make(st)}>Download certificate PDF</button>{!st.eligible && <span className="small muted">Opens when every criterion is met.</span>}</div>
+          <div className="row"><button className="btn primary" disabled={!st.eligible} onClick={() => make(st)}>Download certificate PDF</button><button className="btn" disabled={!st.eligible} onClick={() => record(st)}>Passport record (JSON)</button>{!st.eligible && <span className="small muted">Opens when every criterion is met.</span>}</div>
         </section>
       ))}
-      <p className="small muted">The certificate is a portfolio exercise, not an accreditation. Its verification code is a hash of your name, learner ID, date and scores.</p>
+      <p className="small muted">The certificate is a portfolio exercise, not an accreditation. Its verification code is a hash of your name, learner ID, date and scores. The passport record (JSON) carries a certificate to the <a href="https://randomthingsonlineatsk-cloud.github.io/pharmolecule/passport.html" target="_blank" rel="noopener">Regulatory Skills Passport</a>, which checks it and puts it on one page with your certificates from the other apps.</p>
       <h3>Lessons</h3>
       <div className="table-wrap"><table className="data"><thead><tr><th>Lesson</th><th>Best check</th></tr></thead><tbody>{status.lessons.map((l) => <tr key={l.id}><td><a href={`#/learn/${l.id}`}>{l.id}. {l.title}</a></td><td>{l.best === null ? '—' : `${l.best}%`}</td></tr>)}</tbody></table></div>
       <h3 style={{ marginTop: '1.25rem' }}>Drills</h3>
