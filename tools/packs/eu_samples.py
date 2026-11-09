@@ -76,7 +76,7 @@ SMPC = {
         ]),
         sec('5', 'PHARMACOLOGICAL PROPERTIES', subs=[
             sub('5.1', 'Pharmacodynamic properties', P('Pharmacotherapeutic group: immunosuppressants, ATC code: not yet assigned.'), P('Mechanism of action: lumiravostat is a reversible inhibitor of the fictional STRK1 kinase.'),
-                P('Clinical efficacy: in two 16-week placebo-controlled studies (HALO-1 and HALO-2, 612 patients), an IGA score of 0 or 1 with at least a 2-grade improvement at week 16 was reached by 36% to 48% of patients on Ostrevia and 13% to 15% on placebo.')),
+                P('Clinical efficacy: in two 16-week placebo-controlled studies (VERDANT-1 and VERDANT-2, 1,248 patients), an IGA score of 0 or 1 with at least a 2-grade improvement at week 16 was reached by 36% to 48% of patients on Ostrevia and 13% to 15% on placebo.')),
             sub('5.2', 'Pharmacokinetic properties', P('Peak plasma concentrations are reached 1 to 2 hours after an oral dose. The mean terminal half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4.')),
             sub('5.3', 'Preclinical safety data', P('Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to human exposure.')),
         ]),
