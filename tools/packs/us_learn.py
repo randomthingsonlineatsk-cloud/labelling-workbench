@@ -257,7 +257,7 @@ DRILLS = {'drills': [
      'about': 'Send each block of the older-format label to its PLR section. 80% or more passes.'},
     {'id': 'capstone', 'title': 'Capstone: a safety update from signal to approved labels', 'minutes': 45, 'sample': 'ostrevia-clean', 'doc': 'pi', 'capstone': True,
      'goal': {'type': 'capstone', 'keyword': 'interstitial lung disease', 'mgKeyword': 'lung', 'section': '5'},
-     'about': 'Signal (fictional): in the HALO-LTE extension study, 6 cases of interstitial lung disease (ILD) were reported in patients taking OSTREVIA, 2 of them serious. The labelling committee has agreed to add a warning. Add a new Warnings and Precautions subsection on interstitial lung disease, summarise it in Highlights with its section number, add a Recent Major Changes entry dated with the new revision date, update the revision date, tell patients in the Medication Guide (shortness of breath or cough), and take the PI and the Medication Guide through review to approval with no open errors or warnings.'},
+     'about': 'Signal (fictional): in the VERDANT-LTE extension study, 6 cases of interstitial lung disease (ILD) were reported in patients taking OSTREVIA, 2 of them serious. The labelling committee has agreed to add a warning. Add a new Warnings and Precautions subsection on interstitial lung disease, summarise it in Highlights with its section number, add a Recent Major Changes entry dated with the new revision date, update the revision date, tell patients in the Medication Guide (shortness of breath or cough), and take the PI and the Medication Guide through review to approval with no open errors or warnings.'},
 ]}
 
 GLOSSARY = {'terms': [

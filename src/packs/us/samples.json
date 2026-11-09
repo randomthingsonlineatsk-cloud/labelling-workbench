@@ -139,7 +139,7 @@
         "Malignancies, including lymphoma and non-melanoma skin cancer, have been observed in patients treated with OSTREVIA [see Warnings and Precautions (5.2)].",
         "Thrombosis, including deep venous thrombosis and pulmonary embolism, has occurred in patients treated with OSTREVIA. Avoid OSTREVIA in patients at increased risk of thrombosis [see Warnings and Precautions (5.3)]."
        ],
-       "note": "Boxed warning wording agreed with the agency in the fictional 2023 review; thrombosis added 08/2026 after the fictional HALO-LTE signal."
+       "note": "Boxed warning wording agreed with the agency in the fictional 2023 review; thrombosis added 08/2026 after the fictional VERDANT-LTE signal."
       }
      ]
     },
@@ -152,7 +152,7 @@
         "id": "b12",
         "t": "p",
         "text": "OSTREVIA is indicated for the treatment of adults with moderate-to-severe chronic hand eczema whose disease is inadequately controlled with topical corticosteroids or for whom topical corticosteroids are not advisable.",
-        "note": "Wording from the fictional HALO-1 and HALO-2 study populations (14)."
+        "note": "Wording from the fictional VERDANT-1 and VERDANT-2 study populations (14)."
        },
        {
         "id": "b13",
@@ -290,7 +290,7 @@
           "id": "b25",
           "t": "p",
           "text": "Deep venous thrombosis and pulmonary embolism have been reported in patients treated with OSTREVIA, including in the long-term extension study. Avoid OSTREVIA in patients who may be at increased risk of thrombosis. Discontinue OSTREVIA promptly and evaluate patients who develop symptoms of thrombosis.",
-          "note": "Added 08/2026 after the fictional HALO-LTE signal; see the change request in Phase 2."
+          "note": "Added 08/2026 after the fictional VERDANT-LTE signal; see the change request in Phase 2."
          }
         ]
        },
@@ -351,7 +351,7 @@
          {
           "id": "b31",
           "t": "p",
-          "text": "The safety of OSTREVIA was evaluated in two 16-week, randomized, double-blind, placebo-controlled studies (HALO-1 and HALO-2) in 612 adults with chronic hand eczema. Table 1 lists adverse reactions that occurred in at least 5% of patients treated with OSTREVIA and more often than with placebo."
+          "text": "The safety of OSTREVIA was evaluated in two 16-week, randomized, double-blind, placebo-controlled studies (VERDANT-1 and VERDANT-2) in 1,248 adults with chronic hand eczema. Table 1 lists adverse reactions that occurred in at least 5% of patients treated with OSTREVIA and more often than with placebo."
          },
          {
           "id": "b32",
@@ -508,7 +508,7 @@
          {
           "id": "b45",
           "t": "p",
-          "text": "Of the 612 patients in the clinical studies, 58 (9%) were 65 years of age and older. No overall differences in safety or effectiveness were observed between these patients and younger adults."
+          "text": "Of the 1,248 patients in the clinical studies, 115 (9%) were 65 years of age and older. No overall differences in safety or effectiveness were observed between these patients and younger adults."
          }
         ]
        },
@@ -624,8 +624,8 @@
        {
         "id": "b55",
         "t": "p",
-        "text": "Two 16-week, randomized, double-blind, placebo-controlled studies (HALO-1 and HALO-2) enrolled 612 adults with moderate-to-severe chronic hand eczema inadequately controlled with topical corticosteroids. The primary endpoint was the proportion of patients with an Investigator Global Assessment (IGA) score of clear or almost clear (0 or 1) with at least a 2-grade improvement at week 16.",
-        "note": "Fictional studies HALO-1 (n=306) and HALO-2 (n=306); figures match the eCTD sample dossier Module 2.7.3."
+        "text": "Two 16-week, randomized, double-blind, placebo-controlled studies (VERDANT-1 and VERDANT-2) enrolled 1,248 adults with moderate-to-severe chronic hand eczema inadequately controlled with topical corticosteroids. The primary endpoint was the proportion of patients with an Investigator Global Assessment (IGA) score of clear or almost clear (0 or 1) with at least a 2-grade improvement at week 16.",
+        "note": "Fictional studies VERDANT-1 (n=306) and VERDANT-2 (n=306); figures match the eCTD sample dossier Module 2.7.3."
        },
        {
         "id": "b56",
@@ -638,13 +638,13 @@
           "Placebo"
          ],
          [
-          "IGA 0 or 1 (HALO-1)",
+          "IGA 0 or 1 (VERDANT-1)",
           "36%",
           "45%",
           "13%"
          ],
          [
-          "IGA 0 or 1 (HALO-2)",
+          "IGA 0 or 1 (VERDANT-2)",
           "39%",
           "48%",
           "15%"
@@ -1152,7 +1152,7 @@
         "id": "b12",
         "t": "p",
         "text": "OSTREVIA is indicated for the treatment of adults with moderate-to-severe chronic hand eczema whose disease is inadequately controlled with topical corticosteroids or for whom topical corticosteroids are not advisable.",
-        "note": "Wording from the fictional HALO-1 and HALO-2 study populations (14)."
+        "note": "Wording from the fictional VERDANT-1 and VERDANT-2 study populations (14)."
        },
        {
         "id": "b13",
@@ -1284,7 +1284,7 @@
           "id": "b25",
           "t": "p",
           "text": "Deep venous thrombosis and pulmonary embolism have been reported in patients treated with OSTREVIA, including in the long-term extension study. Avoid OSTREVIA in patients who may be at increased risk of thrombosis. Discontinue OSTREVIA promptly and evaluate patients who develop symptoms of thrombosis.",
-          "note": "Added 08/2026 after the fictional HALO-LTE signal; see the change request in Phase 2."
+          "note": "Added 08/2026 after the fictional VERDANT-LTE signal; see the change request in Phase 2."
          }
         ]
        },
@@ -1340,7 +1340,7 @@
          {
           "id": "b31",
           "t": "p",
-          "text": "The safety of OSTREVIA was evaluated in two 16-week, randomized, double-blind, placebo-controlled studies (HALO-1 and HALO-2) in 612 adults with chronic hand eczema. Table 1 lists adverse reactions that occurred in at least 5% of patients treated with OSTREVIA and more often than with placebo."
+          "text": "The safety of OSTREVIA was evaluated in two 16-week, randomized, double-blind, placebo-controlled studies (VERDANT-1 and VERDANT-2) in 1,248 adults with chronic hand eczema. Table 1 lists adverse reactions that occurred in at least 5% of patients treated with OSTREVIA and more often than with placebo."
          },
          {
           "id": "b32",
@@ -1492,7 +1492,7 @@
          {
           "id": "b45",
           "t": "p",
-          "text": "Of the 612 patients in the clinical studies, 58 (9%) were 65 years of age and older. No overall differences in safety or effectiveness were observed between these patients and younger adults."
+          "text": "Of the 1,248 patients in the clinical studies, 115 (9%) were 65 years of age and older. No overall differences in safety or effectiveness were observed between these patients and younger adults."
          }
         ]
        },
@@ -1608,8 +1608,8 @@
        {
         "id": "b55",
         "t": "p",
-        "text": "Two 16-week, randomized, double-blind, placebo-controlled studies (HALO-1 and HALO-2) enrolled 612 adults with moderate-to-severe chronic hand eczema inadequately controlled with topical corticosteroids. The primary endpoint was the proportion of patients with an Investigator Global Assessment (IGA) score of clear or almost clear (0 or 1) with at least a 2-grade improvement at week 16.",
-        "note": "Fictional studies HALO-1 (n=306) and HALO-2 (n=306); figures match the eCTD sample dossier Module 2.7.3."
+        "text": "Two 16-week, randomized, double-blind, placebo-controlled studies (VERDANT-1 and VERDANT-2) enrolled 1,248 adults with moderate-to-severe chronic hand eczema inadequately controlled with topical corticosteroids. The primary endpoint was the proportion of patients with an Investigator Global Assessment (IGA) score of clear or almost clear (0 or 1) with at least a 2-grade improvement at week 16.",
+        "note": "Fictional studies VERDANT-1 (n=306) and VERDANT-2 (n=306); figures match the eCTD sample dossier Module 2.7.3."
        },
        {
         "id": "b56",
@@ -1622,13 +1622,13 @@
           "Placebo"
          ],
          [
-          "IGA 0 or 1 (HALO-1)",
+          "IGA 0 or 1 (VERDANT-1)",
           "36%",
           "45%",
           "13%"
          ],
          [
-          "IGA 0 or 1 (HALO-2)",
+          "IGA 0 or 1 (VERDANT-2)",
           "39%",
           "48%",
           "15%"

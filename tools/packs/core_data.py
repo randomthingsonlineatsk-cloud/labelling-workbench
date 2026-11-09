@@ -208,7 +208,7 @@ CCDS = {
     'productId': 'nce-tablet',
     'owner': 'Halcyon Ridge Pharmaceuticals, Inc. (fictional), Global Labelling',
     'versions': [
-        {'v': '3.0', 'date': '2026-08-03', 'status': 'effective', 'note': 'Thrombosis added to the core safety information after the fictional HALO-LTE signal (labelling committee, July 2026).', 'statements': CCDS_V3},
+        {'v': '3.0', 'date': '2026-08-03', 'status': 'effective', 'note': 'Thrombosis added to the core safety information after the fictional VERDANT-LTE signal (labelling committee, July 2026).', 'statements': CCDS_V3},
     ],
 }
 CCDS_WITH_V4 = {**CCDS, 'versions': [

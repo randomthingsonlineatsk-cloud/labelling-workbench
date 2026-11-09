@@ -21,7 +21,7 @@ ost_bw = {
         UL('Serious infections leading to hospitalization or death have occurred in patients treated with OSTREVIA. Avoid use in patients with an active, serious infection. If a serious infection develops, interrupt OSTREVIA until the infection is controlled [see Warnings and Precautions (5.1)].',
            'Malignancies, including lymphoma and non-melanoma skin cancer, have been observed in patients treated with OSTREVIA [see Warnings and Precautions (5.2)].',
            'Thrombosis, including deep venous thrombosis and pulmonary embolism, has occurred in patients treated with OSTREVIA. Avoid OSTREVIA in patients at increased risk of thrombosis [see Warnings and Precautions (5.3)].',
-           note='Boxed warning wording agreed with the agency in the fictional 2023 review; thrombosis added 08/2026 after the fictional HALO-LTE signal.'),
+           note='Boxed warning wording agreed with the agency in the fictional 2023 review; thrombosis added 08/2026 after the fictional VERDANT-LTE signal.'),
     ],
 }
 
@@ -53,7 +53,7 @@ ost_hl = {
 
 ost_sections = [
     sec('1', 'INDICATIONS AND USAGE',
-        P('OSTREVIA is indicated for the treatment of adults with moderate-to-severe chronic hand eczema whose disease is inadequately controlled with topical corticosteroids or for whom topical corticosteroids are not advisable.', note='Wording from the fictional HALO-1 and HALO-2 study populations (14).'),
+        P('OSTREVIA is indicated for the treatment of adults with moderate-to-severe chronic hand eczema whose disease is inadequately controlled with topical corticosteroids or for whom topical corticosteroids are not advisable.', note='Wording from the fictional VERDANT-1 and VERDANT-2 study populations (14).'),
         P('Limitations of Use: Use of OSTREVIA in combination with other systemic immunosuppressants or biologic immunomodulators is not recommended.')),
     sec('2', 'DOSAGE AND ADMINISTRATION', subs=[
         sub('2.1', 'Recommended Dosage',
@@ -79,7 +79,7 @@ ost_sections = [
         sub('5.2', 'Malignancy',
             P('Malignancies, including lymphoma and non-melanoma skin cancer, were observed in clinical studies of OSTREVIA. Consider the risks and benefits before starting OSTREVIA in patients with a known malignancy other than a successfully treated non-melanoma skin cancer. Periodic skin examinations are recommended.')),
         sub('5.3', 'Thrombosis',
-            P('Deep venous thrombosis and pulmonary embolism have been reported in patients treated with OSTREVIA, including in the long-term extension study. Avoid OSTREVIA in patients who may be at increased risk of thrombosis. Discontinue OSTREVIA promptly and evaluate patients who develop symptoms of thrombosis.', note='Added 08/2026 after the fictional HALO-LTE signal; see the change request in Phase 2.')),
+            P('Deep venous thrombosis and pulmonary embolism have been reported in patients treated with OSTREVIA, including in the long-term extension study. Avoid OSTREVIA in patients who may be at increased risk of thrombosis. Discontinue OSTREVIA promptly and evaluate patients who develop symptoms of thrombosis.', note='Added 08/2026 after the fictional VERDANT-LTE signal; see the change request in Phase 2.')),
         sub('5.4', 'Laboratory Abnormalities',
             P('Treatment with OSTREVIA was associated with decreases in lymphocyte and neutrophil counts, decreases in hemoglobin, and increases in liver enzymes. Monitor these values at baseline, 4 weeks after starting treatment and every 3 months thereafter. Interrupt treatment if the absolute lymphocyte count falls below 500 cells/mm3, the absolute neutrophil count falls below 1,000 cells/mm3 or hemoglobin falls below 8 g/dL.')),
         sub('5.5', 'Embryo-Fetal Toxicity',
@@ -90,7 +90,7 @@ ost_sections = [
         UL('Serious Infections [see Warnings and Precautions (5.1)]', 'Malignancy [see Warnings and Precautions (5.2)]', 'Thrombosis [see Warnings and Precautions (5.3)]', 'Laboratory Abnormalities [see Warnings and Precautions (5.4)]'),
         subs=[sub('6.1', 'Clinical Trials Experience',
             P('Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice.'),
-            P('The safety of OSTREVIA was evaluated in two 16-week, randomized, double-blind, placebo-controlled studies (HALO-1 and HALO-2) in 612 adults with chronic hand eczema. Table 1 lists adverse reactions that occurred in at least 5% of patients treated with OSTREVIA and more often than with placebo.'),
+            P('The safety of OSTREVIA was evaluated in two 16-week, randomized, double-blind, placebo-controlled studies (VERDANT-1 and VERDANT-2) in 1,248 adults with chronic hand eczema. Table 1 lists adverse reactions that occurred in at least 5% of patients treated with OSTREVIA and more often than with placebo.'),
             AR(['Adverse reaction', 'OSTREVIA 10 mg (N=204)', 'OSTREVIA 25 mg (N=205)', 'Placebo (N=203)'],
               ['Nasopharyngitis', '11%', '13%', '8%'], ['Headache', '8%', '10%', '5%'], ['Nausea', '6%', '8%', '3%'], ['Acne', '5%', '7%', '2%']))]),
     sec('7', 'DRUG INTERACTIONS', subs=[
@@ -111,7 +111,7 @@ ost_sections = [
             P('Pregnancy Testing: Verify the pregnancy status of females of reproductive potential before starting OSTREVIA.'),
             P('Contraception: Advise females of reproductive potential to use effective contraception during treatment with OSTREVIA and for 4 weeks after the last dose.')),
         sub('8.4', 'Pediatric Use', P('The safety and effectiveness of OSTREVIA in pediatric patients have not been established.')),
-        sub('8.5', 'Geriatric Use', P('Of the 612 patients in the clinical studies, 58 (9%) were 65 years of age and older. No overall differences in safety or effectiveness were observed between these patients and younger adults.')),
+        sub('8.5', 'Geriatric Use', P('Of the 1,248 patients in the clinical studies, 115 (9%) were 65 years of age and older. No overall differences in safety or effectiveness were observed between these patients and younger adults.')),
         sub('8.6', 'Hepatic Impairment', P('Lumiravostat exposure increased in patients with moderate hepatic impairment. Reduce the dosage in moderate hepatic impairment; OSTREVIA is not recommended in severe hepatic impairment [see Dosage and Administration (2.3)].')),
     ]),
     sec('10', 'OVERDOSAGE', P('There is no specific antidote for OSTREVIA overdose. In case of overdose, monitor the patient for signs and symptoms of adverse reactions and give supportive care. Hemodialysis is not expected to remove lumiravostat.')),
@@ -129,8 +129,8 @@ ost_sections = [
         sub('13.1', 'Carcinogenesis, Mutagenesis, Impairment of Fertility', P('In a 2-year rat carcinogenicity study, lumiravostat did not increase the incidence of tumors at exposures up to 4 times the MRHD. Lumiravostat was not mutagenic in the bacterial reverse mutation assay. Fertility was not affected in male or female rats at exposures up to 6 times the MRHD.')),
     ]),
     sec('14', 'CLINICAL STUDIES',
-        P('Two 16-week, randomized, double-blind, placebo-controlled studies (HALO-1 and HALO-2) enrolled 612 adults with moderate-to-severe chronic hand eczema inadequately controlled with topical corticosteroids. The primary endpoint was the proportion of patients with an Investigator Global Assessment (IGA) score of clear or almost clear (0 or 1) with at least a 2-grade improvement at week 16.', note='Fictional studies HALO-1 (n=306) and HALO-2 (n=306); figures match the eCTD sample dossier Module 2.7.3.'),
-        T(['Endpoint at week 16', 'OSTREVIA 10 mg', 'OSTREVIA 25 mg', 'Placebo'], ['IGA 0 or 1 (HALO-1)', '36%', '45%', '13%'], ['IGA 0 or 1 (HALO-2)', '39%', '48%', '15%'])),
+        P('Two 16-week, randomized, double-blind, placebo-controlled studies (VERDANT-1 and VERDANT-2) enrolled 1,248 adults with moderate-to-severe chronic hand eczema inadequately controlled with topical corticosteroids. The primary endpoint was the proportion of patients with an Investigator Global Assessment (IGA) score of clear or almost clear (0 or 1) with at least a 2-grade improvement at week 16.', note='Fictional studies VERDANT-1 (n=306) and VERDANT-2 (n=306); figures match the eCTD sample dossier Module 2.7.3.'),
+        T(['Endpoint at week 16', 'OSTREVIA 10 mg', 'OSTREVIA 25 mg', 'Placebo'], ['IGA 0 or 1 (VERDANT-1)', '36%', '45%', '13%'], ['IGA 0 or 1 (VERDANT-2)', '39%', '48%', '15%'])),
     sec('16', 'HOW SUPPLIED/STORAGE AND HANDLING',
         UL('10 mg tablets: white, round, film-coated, debossed "HR" and "10"; bottles of 30 (NDC 99999-1010-3).',
            '25 mg tablets: yellow, oval, film-coated, debossed "HR" and "25"; bottles of 30 (NDC 99999-1025-3).'),
