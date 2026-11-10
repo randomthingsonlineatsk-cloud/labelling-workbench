@@ -5,8 +5,8 @@ import { templateFor, fill } from './pack.js';
 import { findSection, blocksText, hasContent, textEntries, sectionTitle } from './model.js';
 import { strengths, norm, escapeRe } from './text.js';
 
-export const INTL_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton'];
-const PREFIX = { ca: 'CA', ch: 'CH', jp: 'JP', au: 'AU', who: 'WHO', uk: 'UK' };
+export const INTL_KINDS = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton', 'cn-pi', 'cn-label'];
+const PREFIX = { ca: 'CA', ch: 'CH', jp: 'JP', au: 'AU', who: 'WHO', uk: 'UK', cn: 'CN' };
 export const intlRegion = (kind) => kind.split('-')[0];
 
 const secText = (s) => (s ? [blocksText(s.blocks), ...(s.subs ?? []).map((x) => blocksText(x.blocks))].join('\n') : '');
@@ -32,7 +32,7 @@ export function checkIntl(doc, ctx, add) {
   const P = PREFIX[intlRegion(doc.kind)];
   if (doc.kind === 'jp-pi') checkJpHeadings(doc, t, add);
   else checkHeadings(doc, t, P, add);
-  ({ 'ca-pm': checkCaPm, 'ca-pmi': checkCaPmi, 'ca-label': checkCaLabel, 'ch-fi': checkChFi, 'ch-pi': checkChPi, 'jp-pi': checkJp, 'au-pi': checkAuPi, 'au-cmi': checkAuCmi, 'who-smpc': checkWho, 'uk-smpc': checkUkSmpc, 'uk-pil': checkUkPil, 'uk-carton': checkUkCarton })[doc.kind](doc, t, ctx, add);
+  ({ 'ca-pm': checkCaPm, 'ca-pmi': checkCaPmi, 'ca-label': checkCaLabel, 'ch-fi': checkChFi, 'ch-pi': checkChPi, 'jp-pi': checkJp, 'au-pi': checkAuPi, 'au-cmi': checkAuCmi, 'who-smpc': checkWho, 'uk-smpc': checkUkSmpc, 'uk-pil': checkUkPil, 'uk-carton': checkUkCarton, 'cn-pi': checkCnPi, 'cn-label': checkCnLabel })[doc.kind](doc, t, ctx, add);
   checkStrengths(doc, ctx, add);
   checkPromo(doc, ctx, add);
 }
@@ -44,7 +44,7 @@ function checkHeadings(doc, t, P, add) {
   let last = -1;
   for (const s of doc.sections ?? []) {
     const i = order.indexOf(s.num);
-    if (i < 0) { if (!['ca-label', 'uk-carton'].includes(doc.kind)) add(`${P}-HEAD`, L(s), `"${s.title}" is not a heading of the template.`, 'Remove it, or move its content under the right heading.', 'warning'); continue; }
+    if (i < 0) { if (!['ca-label', 'uk-carton', 'cn-label'].includes(doc.kind)) add(`${P}-HEAD`, L(s), `"${s.title}" is not a heading of the template.`, 'Remove it, or move its content under the right heading.', 'warning'); continue; }
     if (i < last) add(`${P}-HEAD`, L(s), `"${s.title}" is out of order.`, 'Keep the order of the template.');
     last = Math.max(last, i);
   }
@@ -53,8 +53,8 @@ function checkHeadings(doc, t, P, add) {
     const want = fill(ts.title, m);
     const label = /^\d/.test(ts.num) ? `${ts.num} ${want}` : want;
     if (!s) { if (ts.need === 'required') add(`${P}-REQ`, { area: 'sec', key: ts.num, label }, `"${label}" is missing.`, 'Add the section with its content.'); continue; }
-    if (!['ca-label', 'uk-carton'].includes(doc.kind) && simple(s.title) !== simple(want)) add(`${P}-HEAD`, L(s), `Heading "${s.title}" should be "${want}".`, 'Use the heading of the template.');
-    if (ts.need === 'required' && !filled(s)) add(`${P}-REQ`, L(s), `"${label}" is empty.`, ['ca-label', 'uk-carton'].includes(doc.kind) ? 'This item must be on the label.' : 'Fill it, or say why it does not apply.');
+    if (!['ca-label', 'uk-carton', 'cn-label'].includes(doc.kind) && simple(s.title) !== simple(want)) add(`${P}-HEAD`, L(s), `Heading "${s.title}" should be "${want}".`, 'Use the heading of the template.');
+    if (ts.need === 'required' && !filled(s)) add(`${P}-REQ`, L(s), `"${label}" is empty.`, ['ca-label', 'uk-carton', 'cn-label'].includes(doc.kind) ? 'This item must be on the label.' : 'Fill it, or say why it does not apply.');
     for (const fs of ts.fixedSubs ?? []) {
       const x = (s.subs ?? []).find((y) => y.num === fs.num);
       const wantSub = fill(fs.title, m);
@@ -319,7 +319,7 @@ function checkWho(doc, t, ctx, add) {
 }
 
 // ---------------------------------------------------------------- shared
-const STR_SECTIONS = { 'ca-pm': ['6'], 'ca-label': ['l4', 'l9'], 'ch-fi': ['f2'], 'ch-pi': ['p9'], 'jp-pi': ['3.1'], 'au-pi': ['2'], 'au-cmi': ['7'], 'who-smpc': ['2'], 'uk-smpc': ['2'], 'uk-carton': ['1', '2'] };
+const STR_SECTIONS = { 'ca-pm': ['6'], 'ca-label': ['l4', 'l9'], 'ch-fi': ['f2'], 'ch-pi': ['p9'], 'jp-pi': ['3.1'], 'au-pi': ['2'], 'au-cmi': ['7'], 'who-smpc': ['2'], 'uk-smpc': ['2'], 'uk-carton': ['1', '2'], 'cn-pi': ['c5'], 'cn-label': ['l5'] };
 
 // ---------------------------------------------------------------- United Kingdom
 const PL_RE = /\bPL(GB|NI)?\s?(\d{5})\/(\d{4})\b/i;
@@ -382,6 +382,65 @@ function checkUkCarton(doc, t, ctx, add) {
   ukMa(doc, findSection(doc, '12'), add);
   ukMah(doc, findSection(doc, '11'), add);
   ukEu(doc, add);
+}
+
+// ---------------------------------------------------------------- China
+const CN_DATE = /(\d{4})年(\d{1,2})月(\d{1,2})日/g;
+const cnDates = (text) => [...String(text ?? '').matchAll(CN_DATE)].map((m) => Number(m[1]) * 10000 + Number(m[2]) * 100 + Number(m[3]));
+const CN_APN = /国药准字\s*(HJ|SJ|ZJ|H|S|Z)\d{8}\b/;
+const NO_DATA = /no (clinical )?stud|not (been )?studied|no reliable reference|not established|未进行|无可靠参考/i;
+function checkCnPi(doc, t, ctx, add) {
+  const m = doc.meta ?? {};
+  const f = doc.fixed ?? {};
+  const d = String(f.dates ?? '');
+  const approved = /核准日期[:：]?\s*(\d{4}年\d{1,2}月\d{1,2}日)/.exec(d);
+  if (!approved) add('CN-DATE', F('dates', 'Approval and revision dates'), 'No approval date (核准日期) in YYYY年MM月DD日 form.', 'Give the date NMPA approved the registration, for example "核准日期：2024年05月20日".');
+  else {
+    const all = cnDates(d);
+    const first = all[0];
+    if (all.slice(1).some((x) => x < first)) add('CN-DATE', F('dates', 'Approval and revision dates'), 'A revision date is earlier than the approval date.', 'Revision dates (修改日期) come after the approval date.');
+    else if (all.slice(1).some((x, i) => x < all[i])) add('CN-DATE', F('dates', 'Approval and revision dates'), 'The revision dates are not in order.', 'List each revision date below the approval date, in time order.');
+  }
+  if (!/说明书\s*$/.test(String(f.title ?? '').trim())) add('CN-RX', F('title', 'Title'), 'The title does not end in 说明书.', `Use "${m.proprietaryName ?? 'XXX'}说明书".`);
+  if (simple(f.rx) !== simple(V(ctx).cnRx ?? '请仔细阅读说明书并在医师或药师指导下使用')) add('CN-RX', F('rx', 'Line under the title'), f.rx?.trim() ? `"${f.rx}" is not the required line.` : 'The line under the title is missing.', '"请仔细阅读说明书并在医师或药师指导下使用".');
+  const s0 = findSection(doc, 'c0');
+  if (m.warnings) {
+    if (!filled(s0)) add('CN-WARN', s0 ? L(s0) : { area: 'sec', key: 'c0', label: '警示语' }, 'The drug has serious safety issues, but there is no warning statement.', 'Add the warning statement under the title.');
+    else if (!(s0.blocks ?? []).some((b) => b.t === 'box' && b.text?.trim())) add('CN-WARN', L(s0), 'The warning statement is not set apart.', 'Put it in a boxed block, in bold.');
+  }
+  const s1 = findSection(doc, 'c1');
+  if (filled(s1)) {
+    const txt = secText(s1);
+    const miss = [['common name', /common name|通用名称/i], ['English name', /english name|英文名称/i], ['pinyin', /pinyin|汉语拼音/i]].filter(([, re]) => !re.test(txt)).map(([n]) => n);
+    if (miss.length) add('CN-NAME', L(s1), `【药品名称】 does not give the ${miss.join(', ')}.`, 'List the common name, the trade name (if any), the English name and the pinyin.');
+  }
+  for (const n of ['c10', 'c11', 'c12', 'c13', 'c15']) {
+    const s = findSection(doc, n);
+    if (s && filled(s) && /^\s*(none|n\/a|无|-)\s*\.?\s*$/i.test(secText(s))) add('CN-REQ', L(s), `${s.title} only says "${secText(s).trim()}".`, 'If there are no data, say that no study was done and there is no reliable reference.');
+  }
+  const s21 = findSection(doc, 'c21');
+  if (filled(s21) && !/\d+\s*(个月|months?)/i.test(secText(s21))) add('CN-SHELF', L(s21), 'The shelf life is not given in months.', 'For example "36个月 (36 months)".');
+  const s23 = findSection(doc, 'c23');
+  if (filled(s23) && !CN_APN.test(secText(s23))) add('CN-APN', L(s23), `"${secText(s23).trim().slice(0, 40)}" is not an approval number in the current form.`, 'Use 国药准字 with the letter code and eight digits, for example 国药准字HJ20260101.');
+  if (filled(s23) && m.imported && /国药准字\s*[HSZ]\d/.test(secText(s23))) add('CN-APN', L(s23), 'An imported drug has a domestic letter code.', 'Imported drugs use HJ, SJ or ZJ.', 'warning');
+  for (const [n, who] of [['c24', 'holder'], ['c25', 'manufacturer']]) {
+    const s = findSection(doc, n);
+    if (filled(s) && !/address|地址/i.test(secText(s))) add('CN-MAH', L(s), `The ${who} item gives no address.`, 'Give the name and the address as on the production licence (registered address for the holder, production address for the manufacturer).');
+  }
+  const s26 = findSection(doc, 'c26');
+  if (m.imported && !filled(s26)) add('CN-MAH', s26 ? L(s26) : { area: 'sec', key: 'c26', label: '【境内联系人】' }, 'An imported drug, but no domestic contact.', 'Add 【境内联系人】: the company in China the overseas holder designates, with its address and telephone.');
+}
+function checkCnLabel(doc, t, ctx, add) {
+  const m = doc.meta ?? {};
+  const s13 = findSection(doc, 'l13');
+  const exp = secText(s13).trim();
+  if (filled(s13) && !/^有效期至\s*\d{4}(年\d{2}月(\d{2}日)?|\.\d{2}(\.\d{2})?\.?|\/\d{2}(\/\d{2})?)\s*$/.test(exp)) add('CN-EXPLAB', L(s13), `"${exp}" is not in a permitted form.`, 'Year first in four digits, then month (and day) in two: 有效期至2028年04月, 有效期至2028.04. or 有效期至2028/04/30.');
+  const sz = m.sizes ?? {};
+  if (m.sameLine) add('CN-GNAME', F('names', 'Name layout'), 'The trade name is on the same line as the common name.', 'Put the trade name on its own line.');
+  if (Number(sz.common) && Number(sz.trade) && Number(sz.trade) > Number(sz.common) * Math.SQRT1_2 + 1e-9) add('CN-GNAME', F('names', 'Type sizes'), `The trade name (${sz.trade} pt) is more prominent than half the character area of the common name (${sz.common} pt).`, `At ${sz.common} pt for the common name, keep the trade name at ${Math.floor(Number(sz.common) * Math.SQRT1_2 * 10) / 10} pt or less.`);
+  if (m.topThird === false) add('CN-GNAME', F('names', 'Name layout'), 'The common name is not in the top third of the label.', 'On a horizontal label, place the common name prominently in the top third.');
+  const s14 = findSection(doc, 'l14');
+  if (filled(s14) && !CN_APN.test(secText(s14))) add('CN-APN', L(s14), 'The approval number is not in the current form.', 'Use 国药准字 with the letter code and eight digits.');
 }
 
 function checkStrengths(doc, ctx, add) {

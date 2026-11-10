@@ -39,7 +39,7 @@ export default function Editor({ doc, docs, issues, focus, setFocus, setTab, pro
   const nodes = useMemo(() => {
     const out = [];
     if (doc.kind === 'pi') { out.push({ key: 'hl', label: 'Highlights', n: 'HL' }); out.push({ key: 'bw', label: doc.bw ? 'Boxed warning' : 'Boxed warning (none)', n: 'BW', absent: !doc.bw }); }
-    if (doc.fixed || doc.kind === 'mg' || doc.kind === 'ppi' || doc.kind === 'ifu') out.push({ key: 'fixed', label: ['in-carton', 'in-label'].includes(doc.kind) ? 'Product, schedule and type sizes' : doc.kind === 'ca-label' ? 'Product and type sizes' : 'Title and statements', n: '·' });
+    if (doc.fixed || doc.kind === 'mg' || doc.kind === 'ppi' || doc.kind === 'ifu') out.push({ key: 'fixed', label: ['in-carton', 'in-label'].includes(doc.kind) ? 'Product, schedule and type sizes' : ['ca-label', 'cn-label'].includes(doc.kind) ? 'Product and type sizes' : 'Title and statements', n: '·' });
     const present = new Map((doc.sections ?? []).map((s) => [s.num, s]));
     const seen = new Set();
     for (const ts of t.sections) {
@@ -240,7 +240,7 @@ function FixedPane({ doc, change, t, pack }) {
   const india = ['in-pi', 'in-carton', 'in-label'].includes(doc.kind);
   const exList = pack?.vocab?.eu?.excipients ?? [];
   const iv = pack?.vocab?.in ?? {};
-  const more = ['ca-pm', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton'].includes(doc.kind);
+  const more = ['ca-pm', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton', 'cn-pi', 'cn-label'].includes(doc.kind);
   const reg = doc.kind.split('-')[0];
   const flag = (k, label) => <label className="row small" style={{ margin: '.35rem 0' }}><input type="checkbox" checked={!!m[k]} onChange={(e) => change((d) => { d.meta[k] = e.target.checked; }, label)} /> {label}</label>;
   const num = (k, label, hint) => (
@@ -260,10 +260,11 @@ function FixedPane({ doc, change, t, pack }) {
     au: [['proprietaryName', 'Trade name'], ['establishedName', 'Active ingredient'], ['dosageForm', 'Dosage form']],
     uk: [['proprietaryName', 'Name of the medicinal product'], ['establishedName', 'Active substance'], ['plNumber', 'PL number', 'For example PL 99101/0001']],
     who: [['proprietaryName', 'Name of the medicinal product'], ['establishedName', 'Active substances'], ['pqRef', 'WHO reference number', 'For example MA999(a)']],
+    cn: [['proprietaryName', 'Drug name (used in the title)'], ['establishedName', 'Common name (通用名称)']],
   };
   return (
     <div>
-      <h2>{india && doc.kind !== 'in-pi' ? 'Product, schedule and type sizes' : doc.kind === 'ca-label' ? 'Product and type sizes' : 'Title and statements'}</h2>
+      <h2>{india && doc.kind !== 'in-pi' ? 'Product, schedule and type sizes' : ['ca-label', 'cn-label'].includes(doc.kind) ? 'Product and type sizes' : 'Title and statements'}</h2>
       {more ? (<>
         <MetaFields doc={doc} change={change} fields={MORE_FIELDS[reg]} />
         {strengthsField}
@@ -320,8 +321,24 @@ function FixedPane({ doc, change, t, pack }) {
       </>) : (
         <MetaFields doc={doc} change={change} fields={[['proprietaryName', 'Proprietary name'], ['establishedName', 'Established name'], ['dosageForm', 'Dosage form'], ['revised', 'Revised', 'MM/YYYY'], ['manufacturer', 'Manufacturer or distributor']]} />
       )}
+      {doc.kind === 'cn-pi' && (<>
+        <label className="row small" style={{ margin: '.5rem 0' }}><input type="checkbox" checked={!!m.imported} onChange={(e) => change((d) => { d.meta.imported = e.target.checked; }, 'Imported drug')} /> Imported drug (made outside China): 【境内联系人】 is needed</label>
+        <label className="row small" style={{ margin: '.5rem 0' }}><input type="checkbox" checked={!!m.warnings} onChange={(e) => change((d) => { d.meta.warnings = e.target.checked; }, 'Warning statement')} /> Serious safety issues: a warning statement (警示语) is needed</label>
+      </>)}
+      {doc.kind === 'cn-label' && (
+        <div className="row" style={{ gap: '1rem', flexWrap: 'wrap', margin: '.5rem 0' }}>
+          <label className="field">Common name type size (pt)
+            <input type="number" min="4" max="48" value={m.sizes?.common ?? ''} onChange={(e) => change((d) => { d.meta.sizes = { ...(d.meta.sizes ?? {}), common: e.target.value === '' ? '' : Number(e.target.value) }; }, 'Type sizes')} />
+          </label>
+          <label className="field">Trade name type size (pt)
+            <input type="number" min="4" max="48" value={m.sizes?.trade ?? ''} onChange={(e) => change((d) => { d.meta.sizes = { ...(d.meta.sizes ?? {}), trade: e.target.value === '' ? '' : Number(e.target.value) }; }, 'Type sizes')} />
+          </label>
+          <label className="row small"><input type="checkbox" checked={!!m.sameLine} onChange={(e) => change((d) => { d.meta.sameLine = e.target.checked; }, 'Name layout')} /> Trade name on the same line as the common name</label>
+          <label className="row small"><input type="checkbox" checked={m.topThird !== false} onChange={(e) => change((d) => { d.meta.topThird = e.target.checked; }, 'Name layout')} /> Common name in the top third of the label</label>
+        </div>
+      )}
       {t.fixed && Object.entries(t.fixed).map(([k, v]) => (
-        <Fixed key={k} label={{ header: doc.kind === 'in-pi' ? 'Statement at the top of the insert' : 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement', contact: 'Side-effect reporting statement', useStart: 'Opening of Directions for Use', blackTriangle: 'Black triangle statement (additional monitoring)', readFirst: '"Read all of this leaflet" box', lastRevised: 'Last revised line', ukOnly: '"UK Only" wording on the outer pack', nameLine: 'Name, strength and form', title: 'Title', intro: 'Opening statement', summaryIntro: 'CMI summary introduction', prepared: '"This leaflet was prepared in" line', lastChecked: 'Last line (checked by Swissmedic)', readThis: 'Opening line', ...(doc.kind === 'jp-pi' ? { revised: 'A. Date of preparation or revision', commodity: 'B. Standard Commodity Classification Number', approval: 'C. Approval number, date of initial marketing', storage: 'D. Storage, shelf life', category: 'E. Therapeutic category', regulatory: 'F. Regulatory classification' } : {}) }[k] ?? k} value={doc.fixed?.[k]} want={v && !String(v).includes('{month}') && !(k === 'blackTriangle' && !m.additionalMonitoring) ? fill(v, m) : undefined} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
+        <Fixed key={k} label={{ header: doc.kind === 'in-pi' ? 'Statement at the top of the insert' : 'Title', sideEffects: 'Side-effect reporting statement', approval: 'FDA approval statement', contact: 'Side-effect reporting statement', useStart: 'Opening of Directions for Use', blackTriangle: 'Black triangle statement (additional monitoring)', readFirst: '"Read all of this leaflet" box', lastRevised: 'Last revised line', ukOnly: '"UK Only" wording on the outer pack', nameLine: 'Name, strength and form', title: 'Title', intro: 'Opening statement', summaryIntro: 'CMI summary introduction', prepared: '"This leaflet was prepared in" line', lastChecked: 'Last line (checked by Swissmedic)', readThis: 'Opening line', dates: 'Approval and revision dates (top left)', rx: 'Line under the title', ...(doc.kind === 'jp-pi' ? { revised: 'A. Date of preparation or revision', commodity: 'B. Standard Commodity Classification Number', approval: 'C. Approval number, date of initial marketing', storage: 'D. Storage, shelf life', category: 'E. Therapeutic category', regulatory: 'F. Regulatory classification' } : {}) }[k] ?? k} value={doc.fixed?.[k]} want={v && k !== 'dates' && !String(v).includes('{month}') && !(k === 'blackTriangle' && !m.additionalMonitoring) ? fill(v, m) : undefined} onChange={(val) => change((d) => { d.fixed = { ...(d.fixed ?? {}), [k]: val }; }, `Statement: ${k}`)} />
       ))}
     </div>
   );

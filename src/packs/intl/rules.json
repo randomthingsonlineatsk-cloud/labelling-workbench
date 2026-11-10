@@ -15,7 +15,9 @@
    "who-smpc",
    "uk-smpc",
    "uk-pil",
-   "uk-carton"
+   "uk-carton",
+   "cn-pi",
+   "cn-label"
   ],
   "severity": "warning",
   "src": "pmtpl",
@@ -38,7 +40,9 @@
    "who-smpc",
    "uk-smpc",
    "uk-pil",
-   "uk-carton"
+   "uk-carton",
+   "cn-pi",
+   "cn-label"
   ],
   "severity": "warning",
   "src": "pmguide",

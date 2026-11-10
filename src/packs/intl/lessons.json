@@ -195,6 +195,41 @@
     "doc": "smpc"
    },
    "watch": false
+  },
+  {
+   "id": 36,
+   "module": "intl",
+   "title": "China: the package insert and the outer label",
+   "minutes": 9,
+   "sections": [
+    {
+     "h": "The insert",
+     "p": [
+      "A Chinese package insert (说明书) of a chemical drug or therapeutic biological product follows the general format CDE published in 2022. At the top left are the approval date (核准日期), the date NMPA approved the registration, and below it every revision date (修改日期) in order. The title is the drug name followed by 说明书, and under it the line \"请仔细阅读说明书并在医师或药师指导下使用\": read the insert carefully and use the medicine under the guidance of a physician or pharmacist.",
+      "A warning statement (警示语) sits under the title, in bold and set apart, when the drug has serious adverse reactions or safety issues; otherwise it is left out. Then come the items in 【】 brackets in a fixed order, from 【药品名称】 (common name, trade name, English name, pinyin), 【成份】, 【性状】, 【适应症】, 【规格】 and 【用法用量】 to 【贮藏】, 【包装】, 【有效期】 (in months), 【执行标准】 and 【批准文号】.",
+      "Pregnancy, children, the elderly, interactions and overdose are not left out when there are no data: the item says that no study was done and there is no reliable reference."
+     ]
+    },
+    {
+     "h": "Holder, manufacturer and the domestic contact",
+     "p": [
+      "Since the 2019 Drug Administration Law the insert ends with 【上市许可持有人】 and 【生产企业】, each with the name and address as on the production licence. For a drug made outside China, 【境内联系人】 gives the company in China that the overseas holder designates; the 2026 Implementing Regulations (Article 25, in force 15 May 2026) require its details in the insert.",
+      "The approval number is 国药准字 with a letter code and eight digits: H for chemical drugs, S for biological products, Z for traditional Chinese medicines, and HJ, SJ or ZJ for imported drugs."
+     ]
+    },
+    {
+     "h": "The label",
+     "p": [
+      "Order No. 24 (2006) lists what the outer label shows: common name, composition, description, indications, strength, dosage, adverse reactions, contraindications, precautions, storage, date of manufacture, batch, expiry, approval number and manufacturer; items that do not fit may say \"详见说明书\" (see the package insert).",
+      "The expiry date runs year, month, day, with a four-digit year: 有效期至2028年04月, 有效期至2028.04. or 有效期至2028/04/30. The common name is prominent, in the top third of a horizontal label; the trade name is on another line and not more prominent, its character area at most half that of the common name."
+     ]
+    }
+   ],
+   "tryIt": {
+    "sample": "cn-ostrevia-errors",
+    "doc": "pi"
+   },
+   "watch": false
   }
  ]
 }

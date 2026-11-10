@@ -169,6 +169,7 @@ export async function labelPdf(doc, pack, { annotate = false } = {}) {
   } else {
     const fx = doc.fixed ?? {};
     if (fx.title) w.h(fx.title, 12);
+    if (doc.kind === 'cn-pi') for (const k of ['dates', 'rx']) if (fx[k]) w.text(fx[k], { size: 8.5 });
     if (doc.kind === 'jp-pi') for (const k of ['revised', 'commodity', 'approval', 'storage', 'category', 'regulatory']) if (fx[k]) w.text(fx[k], { size: 8.5 });
     if (fx.header) w.h(fx.header, doc.kind === 'in-pi' ? 10 : 13);
     w.text(`${m.scheduleSymbol ? `${m.scheduleSymbol} ` : ''}${m.proprietaryName ?? ''} (${m.establishedName ?? ''}) ${m.dosageForm ?? ''}`, { f: bold });

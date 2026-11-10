@@ -1,6 +1,18 @@
 {
  "terms": [
   {
+   "term": "说明书 (package insert)",
+   "def": "The Chinese package insert; for chemical drugs and therapeutic biologics it follows the CDE general format of 2022."
+  },
+  {
+   "term": "国药准字",
+   "def": "The prefix of a Chinese drug approval number, followed by a letter code (H, S, Z; HJ, SJ, ZJ for imported drugs) and eight digits."
+  },
+  {
+   "term": "境内联系人",
+   "def": "The domestic contact an overseas holder designates, named in the package insert of an imported drug."
+  },
+  {
    "term": "UK Only",
    "def": "Words every pack placed on the UK market must carry from 1 January 2025 under the Windsor Framework."
   },

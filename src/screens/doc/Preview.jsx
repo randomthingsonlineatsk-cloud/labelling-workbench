@@ -114,7 +114,9 @@ export default function Preview({ doc }) {
             </section>
           ))}
         </>) : epi ? <EpiView doc={doc} /> : (<>
+          {doc.kind === 'cn-pi' && doc.fixed?.dates && <p className="small" style={{ whiteSpace: 'pre-line' }}>{doc.fixed.dates}</p>}
           {doc.fixed?.title && <h2 style={{ textAlign: 'center' }}>{doc.fixed.title}</h2>}
+          {doc.kind === 'cn-pi' && doc.fixed?.rx && <p style={{ textAlign: 'center' }}>{doc.fixed.rx}</p>}
           {doc.kind === 'jp-pi' && <table><tbody>{JP_HDR.map(([k, l]) => <tr key={k}><td>{l}</td><td>{doc.fixed?.[k]}</td></tr>)}</tbody></table>}
           {doc.fixed?.header && (red ? <p style={{ textAlign: 'center', fontWeight: 700 }}>{doc.fixed.header}</p> : <h2 style={{ textAlign: 'center' }}>{doc.fixed.header}</h2>)}
           {doc.fixed?.nameLine ? <p style={{ textAlign: 'center', whiteSpace: 'pre-line' }}><b>{doc.fixed.nameLine}</b></p> : <p style={{ textAlign: 'center' }}>{m.scheduleSymbol && <sup>{m.scheduleSymbol}</sup>}<b>{m.proprietaryName}</b> ({m.establishedName}) {m.dosageForm}</p>}

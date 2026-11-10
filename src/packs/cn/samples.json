@@ -1,0 +1,1359 @@
+[
+ {
+  "id": "cn-ostrevia-clean",
+  "region": "cn",
+  "productId": "nce-tablet",
+  "level": "Start here",
+  "title": "Ostrevia (China): clean package insert and outer label",
+  "about": "An imported drug: the approval and revision dates, the title and reading line, the boxed warning statement, the 【】 items in order with the four names, the holder, manufacturer and domestic contact, and the outer label with the expiry date and name sizes.",
+  "docs": [
+   {
+    "id": "pi",
+    "kind": "cn-pi",
+    "title": "Package insert (English practice text)",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Ostrevia (Lumiravostat Tablets)",
+     "establishedName": "lumiravostat tablets",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals, Inc.",
+     "imported": true,
+     "warnings": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "dates": "核准日期：2025年03月18日\n修改日期：2026年08月20日",
+     "title": "Ostrevia (Lumiravostat Tablets)说明书",
+     "rx": "请仔细阅读说明书并在医师或药师指导下使用"
+    },
+    "sections": [
+     {
+      "num": "c0",
+      "title": "警示语",
+      "blocks": [
+       {
+        "id": "b359",
+        "t": "box",
+        "text": "Warning: serious infections, malignancy and thrombosis\nSerious infections, including tuberculosis, some fatal, malignancies including lymphoma, and venous thromboembolism have been reported (see 【不良反应】 and 【注意事项】). Screen for tuberculosis before treatment."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c1",
+      "title": "【药品名称】",
+      "blocks": [
+       {
+        "id": "b360",
+        "t": "p",
+        "text": "Common name: Lumiravostat Tablets"
+       },
+       {
+        "id": "b361",
+        "t": "p",
+        "text": "Trade name: Ostrevia"
+       },
+       {
+        "id": "b362",
+        "t": "p",
+        "text": "English name: Lumiravostat Tablets"
+       },
+       {
+        "id": "b363",
+        "t": "p",
+        "text": "Pinyin: Lumiruowasita Pian"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "【成份】",
+      "blocks": [
+       {
+        "id": "b364",
+        "t": "p",
+        "text": "The active ingredient is lumiravostat."
+       },
+       {
+        "id": "b365",
+        "t": "p",
+        "text": "Excipients: microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "【性状】",
+      "blocks": [
+       {
+        "id": "b366",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       },
+       {
+        "id": "b367",
+        "t": "p",
+        "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "【适应症】",
+      "blocks": [
+       {
+        "id": "b368",
+        "t": "p",
+        "text": "For adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "【规格】",
+      "blocks": [
+       {
+        "id": "b369",
+        "t": "p",
+        "text": "(1) 10 mg (2) 25 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "【用法用量】",
+      "blocks": [
+       {
+        "id": "b370",
+        "t": "p",
+        "text": "The recommended dose is 10 mg once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks."
+       },
+       {
+        "id": "b371",
+        "t": "p",
+        "text": "Moderate hepatic impairment: 10 mg once daily. Severe hepatic impairment: not recommended."
+       },
+       {
+        "id": "b372",
+        "t": "p",
+        "text": "With strong CYP3A4 inhibitors (for example ketoconazole or clarithromycin): 10 mg once daily."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c7",
+      "title": "【不良反应】",
+      "blocks": [
+       {
+        "id": "b373",
+        "t": "table",
+        "rows": [
+         [
+          "Frequency",
+          "Adverse reactions"
+         ],
+         [
+          "Very common",
+          "nasopharyngitis"
+         ],
+         [
+          "Common",
+          "headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, alanine aminotransferase increased"
+         ],
+         [
+          "Uncommon",
+          "pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism"
+         ]
+        ]
+       },
+       {
+        "id": "b374",
+        "t": "p",
+        "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "【禁忌】",
+      "blocks": [
+       {
+        "id": "b375",
+        "t": "ul",
+        "items": [
+         "Hypersensitivity to lumiravostat or any excipient.",
+         "Active tuberculosis or an active serious infection.",
+         "Pregnancy."
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "【注意事项】",
+      "blocks": [
+       {
+        "id": "b376",
+        "t": "p",
+        "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+       },
+       {
+        "id": "b377",
+        "t": "p",
+        "text": "Malignancy, including lymphoma and non-melanoma skin cancer, has been reported. Consider the risks and benefits before starting treatment in patients with a known malignancy."
+       },
+       {
+        "id": "b378",
+        "t": "p",
+        "text": "Venous thromboembolism, including deep vein thrombosis and pulmonary embolism, has been reported. Use with caution in patients with risk factors and stop treatment if it occurs."
+       },
+       {
+        "id": "b379",
+        "t": "p",
+        "text": "Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "【孕妇及哺乳期妇女用药】",
+      "blocks": [
+       {
+        "id": "b380",
+        "t": "p",
+        "text": "Lumiravostat caused embryo-fetal toxicity in rats and rabbits. It is contraindicated in pregnancy. Women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose."
+       },
+       {
+        "id": "b381",
+        "t": "p",
+        "text": "It is not known whether lumiravostat passes into human milk. Do not breastfeed during treatment and for 4 days after the last dose."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "【儿童用药】",
+      "blocks": [
+       {
+        "id": "b382",
+        "t": "p",
+        "text": "The safety and efficacy in children under 18 years have not been established; no clinical study was done in children and there is no reliable reference."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "【老年用药】",
+      "blocks": [
+       {
+        "id": "b383",
+        "t": "p",
+        "text": "Infections occurred more often in patients aged 65 and over. Use with care while monitoring the patient."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "【药物相互作用】",
+      "blocks": [
+       {
+        "id": "b384",
+        "t": "p",
+        "text": "Strong CYP3A4 inhibitors increase lumiravostat exposure (use 10 mg once daily). Strong CYP3A4 inducers, such as rifampicin, reduce exposure; avoid concomitant use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "【药物过量】",
+      "blocks": [
+       {
+        "id": "b385",
+        "t": "p",
+        "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c16",
+      "title": "【临床药理】",
+      "blocks": [
+       {
+        "id": "b386",
+        "t": "p",
+        "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+       },
+       {
+        "id": "b387",
+        "t": "p",
+        "text": "Dose-dependent reductions in markers of skin inflammation were seen within 2 weeks."
+       },
+       {
+        "id": "b388",
+        "t": "p",
+        "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c17",
+      "title": "【临床试验】",
+      "blocks": [
+       {
+        "id": "b389",
+        "t": "p",
+        "text": "In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c18",
+      "title": "【药理毒理】",
+      "blocks": [
+       {
+        "id": "b390",
+        "t": "p",
+        "text": "Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to the human exposure at 25 mg."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c19",
+      "title": "【贮藏】",
+      "blocks": [
+       {
+        "id": "b391",
+        "t": "p",
+        "text": "Store below 30°C, in the original package to protect from moisture."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c20",
+      "title": "【包装】",
+      "blocks": [
+       {
+        "id": "b392",
+        "t": "p",
+        "text": "Aluminium/aluminium blister, 14 tablets per blister, 2 blisters per box."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c21",
+      "title": "【有效期】",
+      "blocks": [
+       {
+        "id": "b393",
+        "t": "p",
+        "text": "36个月 (36 months)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c22",
+      "title": "【执行标准】",
+      "blocks": [
+       {
+        "id": "b394",
+        "t": "p",
+        "text": "JX20250001 (imported drug registration standard, fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c23",
+      "title": "【批准文号】",
+      "blocks": [
+       {
+        "id": "b395",
+        "t": "p",
+        "text": "10 mg: 国药准字HJ20260101; 25 mg: 国药准字HJ20260108"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c24",
+      "title": "【上市许可持有人】",
+      "blocks": [
+       {
+        "id": "b396",
+        "t": "p",
+        "text": "Name: Halcyon Ridge Pharmaceuticals, Inc. Registered address: 400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA. Telephone: +1 555 0100. Website: www.halcyonridge.example"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c25",
+      "title": "【生产企业】",
+      "blocks": [
+       {
+        "id": "b397",
+        "t": "p",
+        "text": "Name: Halcyon Ridge Pharmaceuticals, Inc. Production address: 18 Foundry Road, Fictionburg, PA 17000, USA. Telephone: +1 555 0101."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c26",
+      "title": "【境内联系人】",
+      "blocks": [
+       {
+        "id": "b398",
+        "t": "p",
+        "text": "Name: Ostrevia (Shanghai) Regulatory Services Co., Ltd. Address: Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China. Postcode: 200000. Telephone: 021-5555 0100 (fictional)."
+       }
+      ],
+      "subs": []
+     }
+    ]
+   },
+   {
+    "id": "label",
+    "kind": "cn-label",
+    "title": "Outer label, 10 mg (English practice text)",
+    "status": "approved",
+    "meta": {
+     "proprietaryName": "Ostrevia (Lumiravostat Tablets)",
+     "establishedName": "lumiravostat tablets",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals, Inc.",
+     "imported": true,
+     "warnings": true,
+     "lang": "en",
+     "sizes": {
+      "common": 16,
+      "trade": 10
+     },
+     "sameLine": false,
+     "topThird": true
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "l1",
+      "title": "通用名称",
+      "blocks": [
+       {
+        "id": "b399",
+        "t": "p",
+        "text": "Lumiravostat Tablets (Ostrevia on a separate line)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l2",
+      "title": "成份",
+      "blocks": [
+       {
+        "id": "b400",
+        "t": "p",
+        "text": "Each tablet contains 10 mg lumiravostat."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l3",
+      "title": "性状",
+      "blocks": [
+       {
+        "id": "b401",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l4",
+      "title": "适应症",
+      "blocks": [
+       {
+        "id": "b402",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l5",
+      "title": "规格",
+      "blocks": [
+       {
+        "id": "b403",
+        "t": "p",
+        "text": "10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l6",
+      "title": "用法用量",
+      "blocks": [
+       {
+        "id": "b404",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l7",
+      "title": "不良反应",
+      "blocks": [
+       {
+        "id": "b405",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l8",
+      "title": "禁忌",
+      "blocks": [
+       {
+        "id": "b406",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l9",
+      "title": "注意事项",
+      "blocks": [
+       {
+        "id": "b407",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l10",
+      "title": "贮藏",
+      "blocks": [
+       {
+        "id": "b408",
+        "t": "p",
+        "text": "Store below 30°C."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l11",
+      "title": "生产日期",
+      "blocks": [
+       {
+        "id": "b409",
+        "t": "p",
+        "text": "2026年06月"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l12",
+      "title": "产品批号",
+      "blocks": [
+       {
+        "id": "b410",
+        "t": "p",
+        "text": "HR26061"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l13",
+      "title": "有效期",
+      "blocks": [
+       {
+        "id": "b411",
+        "t": "p",
+        "text": "有效期至2029年05月"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l14",
+      "title": "批准文号",
+      "blocks": [
+       {
+        "id": "b412",
+        "t": "p",
+        "text": "国药准字HJ20260101"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l15",
+      "title": "上市许可持有人",
+      "blocks": [
+       {
+        "id": "b413",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals, Inc., 400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l16",
+      "title": "生产企业",
+      "blocks": [
+       {
+        "id": "b414",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals, Inc., 18 Foundry Road, Fictionburg, PA 17000, USA"
+       }
+      ],
+      "subs": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cn-ostrevia-errors",
+  "region": "cn",
+  "productId": "nce-tablet",
+  "level": "Practice",
+  "title": "Ostrevia (China): find and fix the errors",
+  "about": "11 planted errors: a revision date before the approval, the reading line, an unboxed warning, missing names, \"None\" for children, the shelf life, an old approval number, no domestic contact, a strength, the label expiry date and the trade name size.",
+  "docs": [
+   {
+    "id": "pi",
+    "kind": "cn-pi",
+    "title": "Package insert (English practice text)",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Ostrevia (Lumiravostat Tablets)",
+     "establishedName": "lumiravostat tablets",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg",
+      "25 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals, Inc.",
+     "imported": true,
+     "warnings": true,
+     "lang": "en"
+    },
+    "fixed": {
+     "dates": "核准日期：2025年03月18日\n修改日期：2024年11月02日",
+     "title": "Ostrevia (Lumiravostat Tablets)说明书",
+     "rx": "请遵医嘱"
+    },
+    "sections": [
+     {
+      "num": "c0",
+      "title": "警示语",
+      "blocks": [
+       {
+        "id": "b415",
+        "t": "p",
+        "text": "Warning: serious infections, malignancy and thrombosis\nSerious infections, including tuberculosis, some fatal, malignancies including lymphoma, and venous thromboembolism have been reported (see 【不良反应】 and 【注意事项】). Screen for tuberculosis before treatment."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c1",
+      "title": "【药品名称】",
+      "blocks": [
+       {
+        "id": "b416",
+        "t": "p",
+        "text": "Common name: Lumiravostat Tablets"
+       },
+       {
+        "id": "b417",
+        "t": "p",
+        "text": "Trade name: Ostrevia"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c2",
+      "title": "【成份】",
+      "blocks": [
+       {
+        "id": "b364",
+        "t": "p",
+        "text": "The active ingredient is lumiravostat."
+       },
+       {
+        "id": "b365",
+        "t": "p",
+        "text": "Excipients: microcrystalline cellulose, mannitol, croscarmellose sodium, magnesium stearate; film coat: hypromellose, titanium dioxide, macrogol (25 mg tablets also iron oxide yellow)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c3",
+      "title": "【性状】",
+      "blocks": [
+       {
+        "id": "b366",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       },
+       {
+        "id": "b367",
+        "t": "p",
+        "text": "25 mg: yellow, oval, film-coated tablets debossed \"HR\" on one side and \"25\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c4",
+      "title": "【适应症】",
+      "blocks": [
+       {
+        "id": "b368",
+        "t": "p",
+        "text": "For adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c5",
+      "title": "【规格】",
+      "blocks": [
+       {
+        "id": "b421",
+        "t": "p",
+        "text": "(1) 10 mg (2) 20 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c6",
+      "title": "【用法用量】",
+      "blocks": [
+       {
+        "id": "b370",
+        "t": "p",
+        "text": "The recommended dose is 10 mg once daily, with or without food. The dose may be increased to 25 mg once daily if the response is inadequate after 12 weeks."
+       },
+       {
+        "id": "b371",
+        "t": "p",
+        "text": "Moderate hepatic impairment: 10 mg once daily. Severe hepatic impairment: not recommended."
+       },
+       {
+        "id": "b372",
+        "t": "p",
+        "text": "With strong CYP3A4 inhibitors (for example ketoconazole or clarithromycin): 10 mg once daily."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c7",
+      "title": "【不良反应】",
+      "blocks": [
+       {
+        "id": "b373",
+        "t": "table",
+        "rows": [
+         [
+          "Frequency",
+          "Adverse reactions"
+         ],
+         [
+          "Very common",
+          "nasopharyngitis"
+         ],
+         [
+          "Common",
+          "headache, nausea, acne, herpes zoster, lymphopenia, neutropenia, alanine aminotransferase increased"
+         ],
+         [
+          "Uncommon",
+          "pneumonia, cellulitis, deep vein thrombosis, pulmonary embolism"
+         ]
+        ]
+       },
+       {
+        "id": "b374",
+        "t": "p",
+        "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c8",
+      "title": "【禁忌】",
+      "blocks": [
+       {
+        "id": "b375",
+        "t": "ul",
+        "items": [
+         "Hypersensitivity to lumiravostat or any excipient.",
+         "Active tuberculosis or an active serious infection.",
+         "Pregnancy."
+        ]
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c9",
+      "title": "【注意事项】",
+      "blocks": [
+       {
+        "id": "b376",
+        "t": "p",
+        "text": "Serious infections, including tuberculosis, pneumonia, cellulitis and herpes zoster, have been reported, some leading to hospitalization or death. Screen patients for latent tuberculosis before starting treatment and treat it first. Interrupt treatment if a serious infection develops."
+       },
+       {
+        "id": "b377",
+        "t": "p",
+        "text": "Malignancy, including lymphoma and non-melanoma skin cancer, has been reported. Consider the risks and benefits before starting treatment in patients with a known malignancy."
+       },
+       {
+        "id": "b378",
+        "t": "p",
+        "text": "Venous thromboembolism, including deep vein thrombosis and pulmonary embolism, has been reported. Use with caution in patients with risk factors and stop treatment if it occurs."
+       },
+       {
+        "id": "b379",
+        "t": "p",
+        "text": "Monitor lymphocyte and neutrophil counts, haemoglobin and liver enzymes at baseline, at 4 weeks and every 3 months."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c10",
+      "title": "【孕妇及哺乳期妇女用药】",
+      "blocks": [
+       {
+        "id": "b380",
+        "t": "p",
+        "text": "Lumiravostat caused embryo-fetal toxicity in rats and rabbits. It is contraindicated in pregnancy. Women of childbearing potential should use effective contraception during treatment and for 4 weeks after the last dose."
+       },
+       {
+        "id": "b381",
+        "t": "p",
+        "text": "It is not known whether lumiravostat passes into human milk. Do not breastfeed during treatment and for 4 days after the last dose."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c11",
+      "title": "【儿童用药】",
+      "blocks": [
+       {
+        "id": "b418",
+        "t": "p",
+        "text": "None."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c12",
+      "title": "【老年用药】",
+      "blocks": [
+       {
+        "id": "b383",
+        "t": "p",
+        "text": "Infections occurred more often in patients aged 65 and over. Use with care while monitoring the patient."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c13",
+      "title": "【药物相互作用】",
+      "blocks": [
+       {
+        "id": "b384",
+        "t": "p",
+        "text": "Strong CYP3A4 inhibitors increase lumiravostat exposure (use 10 mg once daily). Strong CYP3A4 inducers, such as rifampicin, reduce exposure; avoid concomitant use."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c15",
+      "title": "【药物过量】",
+      "blocks": [
+       {
+        "id": "b385",
+        "t": "p",
+        "text": "There is no specific antidote. Monitor the patient for signs of adverse reactions and give supportive treatment. Lumiravostat is not removed by haemodialysis to a meaningful extent."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c16",
+      "title": "【临床药理】",
+      "blocks": [
+       {
+        "id": "b386",
+        "t": "p",
+        "text": "Lumiravostat is a reversible inhibitor of the fictional STRK1 kinase, which signals downstream of several cytokines involved in skin inflammation."
+       },
+       {
+        "id": "b387",
+        "t": "p",
+        "text": "Dose-dependent reductions in markers of skin inflammation were seen within 2 weeks."
+       },
+       {
+        "id": "b388",
+        "t": "p",
+        "text": "Peak plasma concentrations are reached 1 to 2 hours after a dose. The half-life is about 16 hours. Lumiravostat is metabolised mainly by CYP3A4."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c17",
+      "title": "【临床试验】",
+      "blocks": [
+       {
+        "id": "b389",
+        "t": "p",
+        "text": "In two 16-week placebo-controlled studies (fictional HANDS-1 and HANDS-2, 1,210 adults), 38% of patients on lumiravostat 25 mg and 31% on 10 mg reached clear or almost clear hands, against 12% on placebo."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c18",
+      "title": "【药理毒理】",
+      "blocks": [
+       {
+        "id": "b390",
+        "t": "p",
+        "text": "Lumiravostat was not genotoxic. Embryo-fetal toxicity was seen in rats and rabbits at exposures close to the human exposure at 25 mg."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c19",
+      "title": "【贮藏】",
+      "blocks": [
+       {
+        "id": "b391",
+        "t": "p",
+        "text": "Store below 30°C, in the original package to protect from moisture."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c20",
+      "title": "【包装】",
+      "blocks": [
+       {
+        "id": "b392",
+        "t": "p",
+        "text": "Aluminium/aluminium blister, 14 tablets per blister, 2 blisters per box."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c21",
+      "title": "【有效期】",
+      "blocks": [
+       {
+        "id": "b419",
+        "t": "p",
+        "text": "3 years"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c22",
+      "title": "【执行标准】",
+      "blocks": [
+       {
+        "id": "b394",
+        "t": "p",
+        "text": "JX20250001 (imported drug registration standard, fictional)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c23",
+      "title": "【批准文号】",
+      "blocks": [
+       {
+        "id": "b420",
+        "t": "p",
+        "text": "H20180001"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c24",
+      "title": "【上市许可持有人】",
+      "blocks": [
+       {
+        "id": "b396",
+        "t": "p",
+        "text": "Name: Halcyon Ridge Pharmaceuticals, Inc. Registered address: 400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA. Telephone: +1 555 0100. Website: www.halcyonridge.example"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "c25",
+      "title": "【生产企业】",
+      "blocks": [
+       {
+        "id": "b397",
+        "t": "p",
+        "text": "Name: Halcyon Ridge Pharmaceuticals, Inc. Production address: 18 Foundry Road, Fictionburg, PA 17000, USA. Telephone: +1 555 0101."
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "CN-DATE",
+      "where": "Approval and revision dates",
+      "what": "The revision date is earlier than the approval date."
+     },
+     {
+      "rule": "CN-RX",
+      "where": "Line under the title",
+      "what": "Not the required line."
+     },
+     {
+      "rule": "CN-WARN",
+      "where": "警示语",
+      "what": "Not set apart in a box."
+     },
+     {
+      "rule": "CN-NAME",
+      "where": "【药品名称】",
+      "what": "No English name or pinyin."
+     },
+     {
+      "rule": "CN-REQ",
+      "where": "【儿童用药】",
+      "what": "Says \"None\" instead of explaining that no study was done."
+     },
+     {
+      "rule": "CN-SHELF",
+      "where": "【有效期】",
+      "what": "Not in months."
+     },
+     {
+      "rule": "CN-APN",
+      "where": "【批准文号】",
+      "what": "An old import registration number, not 国药准字HJ."
+     },
+     {
+      "rule": "CN-MAH",
+      "where": "【境内联系人】",
+      "what": "An imported drug without the domestic contact."
+     },
+     {
+      "rule": "INTL-STR",
+      "where": "【规格】",
+      "what": "20 mg is not a strength."
+     }
+    ]
+   },
+   {
+    "id": "label",
+    "kind": "cn-label",
+    "title": "Outer label, 10 mg (English practice text)",
+    "status": "draft",
+    "meta": {
+     "proprietaryName": "Ostrevia (Lumiravostat Tablets)",
+     "establishedName": "lumiravostat tablets",
+     "dosageForm": "film-coated tablets",
+     "route": "oral",
+     "strengths": [
+      "10 mg"
+     ],
+     "manufacturer": "Halcyon Ridge Pharmaceuticals, Inc.",
+     "imported": true,
+     "warnings": true,
+     "lang": "en",
+     "sizes": {
+      "common": 12,
+      "trade": 14
+     },
+     "sameLine": false,
+     "topThird": true
+    },
+    "fixed": {},
+    "sections": [
+     {
+      "num": "l1",
+      "title": "通用名称",
+      "blocks": [
+       {
+        "id": "b399",
+        "t": "p",
+        "text": "Lumiravostat Tablets (Ostrevia on a separate line)"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l2",
+      "title": "成份",
+      "blocks": [
+       {
+        "id": "b400",
+        "t": "p",
+        "text": "Each tablet contains 10 mg lumiravostat."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l3",
+      "title": "性状",
+      "blocks": [
+       {
+        "id": "b401",
+        "t": "p",
+        "text": "10 mg: white, round, film-coated tablets debossed \"HR\" on one side and \"10\" on the other."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l4",
+      "title": "适应症",
+      "blocks": [
+       {
+        "id": "b402",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l5",
+      "title": "规格",
+      "blocks": [
+       {
+        "id": "b403",
+        "t": "p",
+        "text": "10 mg"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l6",
+      "title": "用法用量",
+      "blocks": [
+       {
+        "id": "b404",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l7",
+      "title": "不良反应",
+      "blocks": [
+       {
+        "id": "b405",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l8",
+      "title": "禁忌",
+      "blocks": [
+       {
+        "id": "b406",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l9",
+      "title": "注意事项",
+      "blocks": [
+       {
+        "id": "b407",
+        "t": "p",
+        "text": "See the package insert (详见说明书)."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l10",
+      "title": "贮藏",
+      "blocks": [
+       {
+        "id": "b408",
+        "t": "p",
+        "text": "Store below 30°C."
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l11",
+      "title": "生产日期",
+      "blocks": [
+       {
+        "id": "b409",
+        "t": "p",
+        "text": "2026年06月"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l12",
+      "title": "产品批号",
+      "blocks": [
+       {
+        "id": "b410",
+        "t": "p",
+        "text": "HR26061"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l13",
+      "title": "有效期",
+      "blocks": [
+       {
+        "id": "b422",
+        "t": "p",
+        "text": "EXP 05/2029"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l14",
+      "title": "批准文号",
+      "blocks": [
+       {
+        "id": "b412",
+        "t": "p",
+        "text": "国药准字HJ20260101"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l15",
+      "title": "上市许可持有人",
+      "blocks": [
+       {
+        "id": "b413",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals, Inc., 400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA"
+       }
+      ],
+      "subs": []
+     },
+     {
+      "num": "l16",
+      "title": "生产企业",
+      "blocks": [
+       {
+        "id": "b414",
+        "t": "p",
+        "text": "Halcyon Ridge Pharmaceuticals, Inc., 18 Foundry Road, Fictionburg, PA 17000, USA"
+       }
+      ],
+      "subs": []
+     }
+    ],
+    "answerKey": [
+     {
+      "rule": "CN-EXPLAB",
+      "where": "有效期",
+      "what": "Month before year and no 有效期至."
+     },
+     {
+      "rule": "CN-GNAME",
+      "where": "Type sizes",
+      "what": "The trade name is larger than the common name."
+     }
+    ]
+   }
+  ]
+ }
+]
