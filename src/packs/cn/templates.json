@@ -1,0 +1,282 @@
+{
+ "cn-pi": {
+  "kind": "cn-pi",
+  "label": "Package insert (China)",
+  "short": "PI",
+  "src": "cde22",
+  "sections": [
+   {
+    "num": "c0",
+    "title": "警示语",
+    "need": "optional",
+    "gloss": "Warning statement (boxed, in bold, under the title)"
+   },
+   {
+    "num": "c1",
+    "title": "【药品名称】",
+    "need": "required",
+    "gloss": "Drug name: common name, trade name, English name, pinyin"
+   },
+   {
+    "num": "c2",
+    "title": "【成份】",
+    "need": "required",
+    "gloss": "Composition"
+   },
+   {
+    "num": "c3",
+    "title": "【性状】",
+    "need": "required",
+    "gloss": "Description"
+   },
+   {
+    "num": "c4",
+    "title": "【适应症】",
+    "need": "required",
+    "gloss": "Indications"
+   },
+   {
+    "num": "c5",
+    "title": "【规格】",
+    "need": "required",
+    "gloss": "Strength"
+   },
+   {
+    "num": "c6",
+    "title": "【用法用量】",
+    "need": "required",
+    "gloss": "Dosage and administration"
+   },
+   {
+    "num": "c7",
+    "title": "【不良反应】",
+    "need": "required",
+    "gloss": "Adverse reactions"
+   },
+   {
+    "num": "c8",
+    "title": "【禁忌】",
+    "need": "required",
+    "gloss": "Contraindications"
+   },
+   {
+    "num": "c9",
+    "title": "【注意事项】",
+    "need": "required",
+    "gloss": "Precautions"
+   },
+   {
+    "num": "c10",
+    "title": "【孕妇及哺乳期妇女用药】",
+    "need": "required",
+    "gloss": "Use in pregnancy and breastfeeding"
+   },
+   {
+    "num": "c11",
+    "title": "【儿童用药】",
+    "need": "required",
+    "gloss": "Paediatric use"
+   },
+   {
+    "num": "c12",
+    "title": "【老年用药】",
+    "need": "required",
+    "gloss": "Geriatric use"
+   },
+   {
+    "num": "c13",
+    "title": "【药物相互作用】",
+    "need": "required",
+    "gloss": "Drug interactions"
+   },
+   {
+    "num": "c14",
+    "title": "【药物滥用和药物依赖】",
+    "need": "optional",
+    "gloss": "Drug abuse and dependence"
+   },
+   {
+    "num": "c15",
+    "title": "【药物过量】",
+    "need": "required",
+    "gloss": "Overdose"
+   },
+   {
+    "num": "c16",
+    "title": "【临床药理】",
+    "need": "required",
+    "gloss": "Clinical pharmacology"
+   },
+   {
+    "num": "c17",
+    "title": "【临床试验】",
+    "need": "required",
+    "gloss": "Clinical studies"
+   },
+   {
+    "num": "c18",
+    "title": "【药理毒理】",
+    "need": "required",
+    "gloss": "Pharmacology and toxicology"
+   },
+   {
+    "num": "c19",
+    "title": "【贮藏】",
+    "need": "required",
+    "gloss": "Storage"
+   },
+   {
+    "num": "c20",
+    "title": "【包装】",
+    "need": "required",
+    "gloss": "Packaging"
+   },
+   {
+    "num": "c21",
+    "title": "【有效期】",
+    "need": "required",
+    "gloss": "Shelf life (in months)"
+   },
+   {
+    "num": "c22",
+    "title": "【执行标准】",
+    "need": "required",
+    "gloss": "Standard applied"
+   },
+   {
+    "num": "c23",
+    "title": "【批准文号】",
+    "need": "required",
+    "gloss": "Approval number"
+   },
+   {
+    "num": "c24",
+    "title": "【上市许可持有人】",
+    "need": "required",
+    "gloss": "Marketing authorisation holder: name, registered address, postcode, telephone and fax, website"
+   },
+   {
+    "num": "c25",
+    "title": "【生产企业】",
+    "need": "required",
+    "gloss": "Manufacturer: name, production address, postcode, telephone and fax, website"
+   },
+   {
+    "num": "c26",
+    "title": "【境内联系人】",
+    "need": "optional",
+    "gloss": "Domestic contact designated by an overseas holder (imported drugs)"
+   }
+  ],
+  "fixed": {
+   "dates": "核准日期：",
+   "title": "{name}说明书",
+   "rx": "请仔细阅读说明书并在医师或药师指导下使用"
+  }
+ },
+ "cn-label": {
+  "kind": "cn-label",
+  "label": "Outer label (China)",
+  "short": "Label",
+  "src": "ord24",
+  "sections": [
+   {
+    "num": "l1",
+    "title": "通用名称",
+    "need": "required",
+    "gloss": "Common name"
+   },
+   {
+    "num": "l2",
+    "title": "成份",
+    "need": "required",
+    "gloss": "Composition"
+   },
+   {
+    "num": "l3",
+    "title": "性状",
+    "need": "required",
+    "gloss": "Description"
+   },
+   {
+    "num": "l4",
+    "title": "适应症",
+    "need": "required",
+    "gloss": "Indications"
+   },
+   {
+    "num": "l5",
+    "title": "规格",
+    "need": "required",
+    "gloss": "Strength"
+   },
+   {
+    "num": "l6",
+    "title": "用法用量",
+    "need": "required",
+    "gloss": "Dosage and administration"
+   },
+   {
+    "num": "l7",
+    "title": "不良反应",
+    "need": "required",
+    "gloss": "Adverse reactions (or \"see the package insert\")"
+   },
+   {
+    "num": "l8",
+    "title": "禁忌",
+    "need": "required",
+    "gloss": "Contraindications (or \"see the package insert\")"
+   },
+   {
+    "num": "l9",
+    "title": "注意事项",
+    "need": "required",
+    "gloss": "Precautions (or \"see the package insert\")"
+   },
+   {
+    "num": "l10",
+    "title": "贮藏",
+    "need": "required",
+    "gloss": "Storage"
+   },
+   {
+    "num": "l11",
+    "title": "生产日期",
+    "need": "required",
+    "gloss": "Date of manufacture"
+   },
+   {
+    "num": "l12",
+    "title": "产品批号",
+    "need": "required",
+    "gloss": "Batch number"
+   },
+   {
+    "num": "l13",
+    "title": "有效期",
+    "need": "required",
+    "gloss": "Expiry date"
+   },
+   {
+    "num": "l14",
+    "title": "批准文号",
+    "need": "required",
+    "gloss": "Approval number"
+   },
+   {
+    "num": "l15",
+    "title": "上市许可持有人",
+    "need": "required",
+    "gloss": "Marketing authorisation holder"
+   },
+   {
+    "num": "l16",
+    "title": "生产企业",
+    "need": "required",
+    "gloss": "Manufacturer"
+   }
+  ],
+  "fixed": {}
+ }
+}

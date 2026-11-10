@@ -61,6 +61,10 @@ import ukPack from '../packs/uk/pack.json' with { type: 'json' };
 import ukTemplates from '../packs/uk/templates.json' with { type: 'json' };
 import ukRules from '../packs/uk/rules.json' with { type: 'json' };
 import ukSamples from '../packs/uk/samples.json' with { type: 'json' };
+import cnPack from '../packs/cn/pack.json' with { type: 'json' };
+import cnTemplates from '../packs/cn/templates.json' with { type: 'json' };
+import cnRules from '../packs/cn/rules.json' with { type: 'json' };
+import cnSamples from '../packs/cn/samples.json' with { type: 'json' };
 import whoPack from '../packs/who/pack.json' with { type: 'json' };
 import whoTemplates from '../packs/who/templates.json' with { type: 'json' };
 import whoRules from '../packs/who/rules.json' with { type: 'json' };
@@ -92,12 +96,12 @@ function expandCoreSample(s) {
 
 const META = (p) => ({ id: p.id, name: p.name, short: p.short, version: p.version, asOf: p.asOf, about: p.about, watch: p.watch, changes: p.changes ?? [], sources: (p.sources ?? []).map((s) => s.id) });
 
-const MORE = [[caPack, caTemplates, caRules, caSamples], [chPack, chTemplates, chRules, chSamples], [jpPack, jpTemplates, jpRules, jpSamples], [auPack, auTemplates, auRules, auSamples], [whoPack, whoTemplates, whoRules, whoSamples], [ukPack, ukTemplates, ukRules, ukSamples]];
+const MORE = [[caPack, caTemplates, caRules, caSamples], [chPack, chTemplates, chRules, chSamples], [jpPack, jpTemplates, jpRules, jpSamples], [auPack, auTemplates, auRules, auSamples], [whoPack, whoTemplates, whoRules, whoSamples], [ukPack, ukTemplates, ukRules, ukSamples], [cnPack, cnTemplates, cnRules, cnSamples]];
 const MORE_KINDS = MORE.flatMap(([p]) => p.kinds);
 
 const merged = {
   ...usPack,
-  regions: { us: META(usPack), eu: META(euPack), in: META(inPack), ...Object.fromEntries(MORE.map(([p]) => [p.id, META(p)])), intl: { id: 'intl', name: 'Several markets', short: 'Multi', version: caPack.version, asOf: caPack.asOf, changes: caPack.changes, about: 'The rule cards shared by the Canada, Switzerland, Japan, Australia, WHO and United Kingdom packs (strengths, promotional wording), and the capstone that takes one safety change to four of these markets.', watch: [] } },
+  regions: { us: META(usPack), eu: META(euPack), in: META(inPack), ...Object.fromEntries(MORE.map(([p]) => [p.id, META(p)])), intl: { id: 'intl', name: 'Several markets', short: 'Multi', version: caPack.version, asOf: caPack.asOf, changes: caPack.changes, about: 'The rule cards shared by the Canada, Switzerland, Japan, Australia, WHO, United Kingdom and China packs (strengths, promotional wording), and the capstone that takes one safety change to four of these markets.', watch: [] } },
   kinds: [...usPack.kinds, 'pmi'],
   kindsByRegion: { us: [...usPack.kinds, 'pmi'], eu: euPack.kinds, in: inPack.kinds, ...Object.fromEntries(MORE.map(([p]) => [p.id, p.kinds])), intl: MORE_KINDS },
   langs: euPack.langs,
@@ -116,8 +120,8 @@ const merged = {
 };
 
 export const PACKS = { us: merged };
-export const MODULES = { us: { id: 'us', label: 'US labelling', short: 'US' }, core: { id: 'core', label: 'Core data sheet and change management', short: 'Core' }, eu: { id: 'eu', label: 'EU product information', short: 'EU' }, in: { id: 'in', label: 'India labelling', short: 'India' }, intl: { id: 'intl', label: 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ, United Kingdom', short: 'More markets' } };
-export const REGION_LABEL = { us: 'United States', eu: 'European Union', in: 'India', ca: 'Canada', ch: 'Switzerland', jp: 'Japan', au: 'Australia', who: 'WHO prequalification', uk: 'United Kingdom', intl: 'Several markets' };
+export const MODULES = { us: { id: 'us', label: 'US labelling', short: 'US' }, core: { id: 'core', label: 'Core data sheet and change management', short: 'Core' }, eu: { id: 'eu', label: 'EU product information', short: 'EU' }, in: { id: 'in', label: 'India labelling', short: 'India' }, intl: { id: 'intl', label: 'More markets: Canada, Switzerland, Japan, Australia, WHO PQ, United Kingdom, China', short: 'More markets' } };
+export const REGION_LABEL = { us: 'United States', eu: 'European Union', in: 'India', ca: 'Canada', ch: 'Switzerland', jp: 'Japan', au: 'Australia', who: 'WHO prequalification', uk: 'United Kingdom', cn: 'China', intl: 'Several markets' };
 export const kindsFor = (pack, region = 'us') => pack.kindsByRegion?.[region] ?? pack.kinds;
 export const moduleOf = (x) => x?.module ?? 'us';
 

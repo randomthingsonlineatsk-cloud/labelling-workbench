@@ -1,0 +1,142 @@
+[
+ {
+  "id": "CN-HEAD",
+  "title": "Insert items and label particulars, in order",
+  "text": "The package insert uses the items of the CDE general format, headed in 【】 brackets and in the fixed order from 【药品名称】 to 【生产企业】 and 【境内联系人】; the outer label gives the particulars of Article 18 of Order No. 24.",
+  "kinds": [
+   "cn-pi",
+   "cn-label"
+  ],
+  "severity": "error",
+  "src": "cde22",
+  "at": "CDE general format (2022); Order No. 24, Article 18",
+  "check": "CN-HEAD"
+ },
+ {
+  "id": "CN-REQ",
+  "title": "Required content is filled",
+  "text": "Each required item has content. Pregnancy, children, elderly, interactions and overdose are not left out when there are no data: the item says that no study was done and there is no reliable reference. On the outer label, adverse reactions, contraindications and precautions may say \"详见说明书\" (see the package insert) when they do not fit.",
+  "kinds": [
+   "cn-pi",
+   "cn-label"
+  ],
+  "severity": "error",
+  "src": "cde22",
+  "at": "CDE general format (2022); Order No. 24, Article 18",
+  "check": "CN-REQ"
+ },
+ {
+  "id": "CN-DATE",
+  "title": "Approval and revision dates",
+  "text": "The top left of the first page gives the approval date (核准日期), the date NMPA approved the registration, with each revision date (修改日期) below it in order, none earlier than the approval.",
+  "kinds": [
+   "cn-pi"
+  ],
+  "severity": "error",
+  "src": "cde22",
+  "at": "CDE general format; Order No. 24, Article 15",
+  "check": "CN-DATE",
+  "simplified": "The app reads dates written as YYYY年MM月DD日."
+ },
+ {
+  "id": "CN-RX",
+  "title": "Title and reading line",
+  "text": "The title is the drug name followed by 说明书, and under it the line \"请仔细阅读说明书并在医师或药师指导下使用\" (read the insert carefully and use the medicine under the guidance of a physician or pharmacist).",
+  "kinds": [
+   "cn-pi"
+  ],
+  "severity": "error",
+  "src": "cde22",
+  "at": "CDE general format, title",
+  "check": "CN-RX"
+ },
+ {
+  "id": "CN-WARN",
+  "title": "Warning statement",
+  "text": "When the drug has serious adverse reactions or serious safety issues, a warning statement (警示语) sits under the title in bold, set apart; otherwise the item is left out.",
+  "kinds": [
+   "cn-pi"
+  ],
+  "severity": "error",
+  "src": "cde22",
+  "at": "CDE general format, 警示语",
+  "check": "CN-WARN",
+  "simplified": "The app checks that the warning is in a boxed block."
+ },
+ {
+  "id": "CN-NAME",
+  "title": "Drug name item",
+  "text": "【药品名称】 gives the common name (通用名称), the trade name if there is one (商品名称), the English name (英文名称) and the pinyin (汉语拼音).",
+  "kinds": [
+   "cn-pi"
+  ],
+  "severity": "error",
+  "src": "gf202",
+  "at": "Detailed rules (2006), 【药品名称】",
+  "check": "CN-NAME",
+  "simplified": "The practice text labels the four names in English; the app looks for each label."
+ },
+ {
+  "id": "CN-SHELF",
+  "title": "Shelf life in months",
+  "text": "【有效期】 gives the shelf life in months (for example 36个月, 36 months).",
+  "kinds": [
+   "cn-pi"
+  ],
+  "severity": "error",
+  "src": "gf202",
+  "at": "Detailed rules (2006), 【有效期】",
+  "check": "CN-SHELF"
+ },
+ {
+  "id": "CN-APN",
+  "title": "Approval number",
+  "text": "【批准文号】 and the label give the drug approval number: 国药准字 followed by a letter code (H chemical, S biological, Z traditional Chinese medicine; HJ, SJ or ZJ for an imported drug) and eight digits.",
+  "kinds": [
+   "cn-pi",
+   "cn-label"
+  ],
+  "severity": "error",
+  "src": "gf202",
+  "at": "Detailed rules (2006), 【批准文号】",
+  "check": "CN-APN",
+  "simplified": "Older imported drugs carry an import registration number (进口药品注册证号, H or S plus eight digits); the app expects the current form."
+ },
+ {
+  "id": "CN-MAH",
+  "title": "Holder, manufacturer and domestic contact",
+  "text": "【上市许可持有人】 and 【生产企业】 give the name and address as on the production licence. For a drug made outside China, 【境内联系人】 gives the domestic company the overseas holder designates (Implementing Regulations, Article 25).",
+  "kinds": [
+   "cn-pi"
+  ],
+  "severity": "error",
+  "src": "impl",
+  "at": "Implementing Regulations (2026), Article 25; CDE general format",
+  "check": "CN-MAH"
+ },
+ {
+  "id": "CN-EXPLAB",
+  "title": "Expiry date on the label",
+  "text": "The label gives the expiry date in year, month (and day) order, the year in four digits and the month and day in two: 有效期至2028年04月, 有效期至2028.04. or 有效期至2028/04/30.",
+  "kinds": [
+   "cn-label"
+  ],
+  "severity": "error",
+  "src": "ord24",
+  "at": "Order No. 24, Article 23",
+  "check": "CN-EXPLAB"
+ },
+ {
+  "id": "CN-GNAME",
+  "title": "Common name prominent; trade name not more prominent",
+  "text": "The common name is prominent, in one font, size and colour, in the top third of a horizontal label; the trade name is not on the same line and not more prominent, its character area at most half that of the common name.",
+  "kinds": [
+   "cn-label"
+  ],
+  "severity": "error",
+  "src": "ord24",
+  "at": "Order No. 24, Articles 25 and 26",
+  "check": "CN-GNAME",
+  "simplified": "The app compares type sizes: a trade name larger than about 0.7 times the common name (half the character area) fails."
+ }
+]

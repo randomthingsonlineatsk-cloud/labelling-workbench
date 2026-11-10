@@ -115,6 +115,26 @@
    "about": "Turn texts copied from the EU into UK texts: the black triangle, Yellow Card reporting, the PL number and UK holder, the leaflet date, \"UK Only\", the legal category and the safety features."
   },
   {
+   "id": "cn-fix",
+   "module": "intl",
+   "title": "China: fix the package insert and outer label",
+   "minutes": 12,
+   "sample": "cn-ostrevia-errors",
+   "doc": "pi",
+   "goal": {
+    "type": "rules-multi",
+    "docs": [
+     "pi",
+     "label"
+    ],
+    "prefixes": [
+     "CN-",
+     "INTL-"
+    ]
+   },
+   "about": "The dates, the reading line, the warning box, the four names, the paediatric item, the shelf life, the approval number, the domestic contact, a strength, the label expiry and the trade name size."
+  },
+  {
    "id": "intl-ild",
    "module": "intl",
    "capstone": true,

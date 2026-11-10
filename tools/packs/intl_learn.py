@@ -82,6 +82,21 @@ LESSONS = [
             'The EU Falsified Medicines Directive safety features no longer apply anywhere in the UK. A 2D barcode and serial number are optional, but must not be recognisable by the European repository system; anti-tamper devices are encouraged. The carton also gives the legal category: POM, P or GSL.',
         ]),
     ], try_it={'sample': 'uk-ostrevia-errors', 'doc': 'smpc'}),
+    L(36, 'China: the package insert and the outer label', 9, [
+        ('The insert', [
+            'A Chinese package insert (说明书) of a chemical drug or therapeutic biological product follows the general format CDE published in 2022. At the top left are the approval date (核准日期), the date NMPA approved the registration, and below it every revision date (修改日期) in order. The title is the drug name followed by 说明书, and under it the line "请仔细阅读说明书并在医师或药师指导下使用": read the insert carefully and use the medicine under the guidance of a physician or pharmacist.',
+            'A warning statement (警示语) sits under the title, in bold and set apart, when the drug has serious adverse reactions or safety issues; otherwise it is left out. Then come the items in 【】 brackets in a fixed order, from 【药品名称】 (common name, trade name, English name, pinyin), 【成份】, 【性状】, 【适应症】, 【规格】 and 【用法用量】 to 【贮藏】, 【包装】, 【有效期】 (in months), 【执行标准】 and 【批准文号】.',
+            'Pregnancy, children, the elderly, interactions and overdose are not left out when there are no data: the item says that no study was done and there is no reliable reference.',
+        ]),
+        ('Holder, manufacturer and the domestic contact', [
+            'Since the 2019 Drug Administration Law the insert ends with 【上市许可持有人】 and 【生产企业】, each with the name and address as on the production licence. For a drug made outside China, 【境内联系人】 gives the company in China that the overseas holder designates; the 2026 Implementing Regulations (Article 25, in force 15 May 2026) require its details in the insert.',
+            'The approval number is 国药准字 with a letter code and eight digits: H for chemical drugs, S for biological products, Z for traditional Chinese medicines, and HJ, SJ or ZJ for imported drugs.',
+        ]),
+        ('The label', [
+            'Order No. 24 (2006) lists what the outer label shows: common name, composition, description, indications, strength, dosage, adverse reactions, contraindications, precautions, storage, date of manufacture, batch, expiry, approval number and manufacturer; items that do not fit may say "详见说明书" (see the package insert).',
+            'The expiry date runs year, month, day, with a four-digit year: 有效期至2028年04月, 有效期至2028.04. or 有效期至2028/04/30. The common name is prominent, in the top third of a horizontal label; the trade name is on another line and not more prominent, its character area at most half that of the common name.',
+        ]),
+    ], try_it={'sample': 'cn-ostrevia-errors', 'doc': 'pi'}),
 ]
 
 
@@ -138,6 +153,14 @@ QUESTIONS = [
     Q('q35-6', 35, 'Where does the black triangle statement go in a UK leaflet?', ['Right after the name of the medicine', 'At the end of section 4', 'In section 6', 'On the carton only'], 0, 'In the SmPC it goes before section 1.', 'MHRA Black Triangle Scheme'),
     Q('q35-7', 35, 'Until when could "UK Only" be applied with a sticker?', ['30 June 2025', '31 December 2024', '31 December 2025', 'Stickers were never allowed'], 0, 'After that it is printed on the pack.', 'MHRA Windsor Framework explainer'),
     Q('q35-8', 35, 'Which products need not carry "UK Only"?', ['Traditional herbal and homeopathic registrations, and export-only packs', 'Pharmacy (P) medicines', 'General sale (GSL) medicines', 'Biological medicines'], 0, 'The requirement covers licensed medicines of every legal category.', 'MHRA Windsor Framework explainer'),
+    Q('q36-1', 36, 'What line goes under the title of a Chinese package insert?', ['请仔细阅读说明书并在医师或药师指导下使用', '处方药', '请遵医嘱', '仅供医疗专业人士使用'], 0, 'Read the insert carefully and use it under a physician\'s or pharmacist\'s guidance.', 'CDE general format (2022)'),
+    Q('q36-2', 36, 'Where do the approval and revision dates go?', ['Top left of the first page, revisions below the approval date', 'At the end, under the manufacturer', 'In 【有效期】', 'On the label only'], 0, 'Revision dates are listed in time order below the approval date.', 'CDE general format (2022)'),
+    Q('q36-3', 36, 'How is the shelf life given in 【有效期】?', ['In months', 'In years', 'As an expiry date', 'In days'], 0, 'For example 36个月.', 'Detailed rules (2006)'),
+    Q('q36-4', 36, 'An imported drug: which item names the company in China the overseas holder designates?', ['【境内联系人】', '【生产企业】', '【包装】', '【执行标准】'], 0, 'The 2026 Implementing Regulations, Article 25, require it.', 'Implementing Regulations (2026), Article 25'),
+    Q('q36-5', 36, 'Which approval number fits an imported chemical drug?', ['国药准字HJ20260101', '国药准字H20260101', 'H20180001', 'PL 99101/0001'], 0, 'HJ, SJ or ZJ for imported drugs, then eight digits.', 'Detailed rules (2006), 【批准文号】'),
+    Q('q36-6', 36, 'Which expiry date on a Chinese label is in a permitted form?', ['有效期至2029年05月', 'EXP 05/2029', '05.2029', '有效期至05/2029'], 0, 'Year first in four digits, then month (and day) in two.', 'Order No. 24, Article 23'),
+    Q('q36-7', 36, 'On a Chinese label, the trade name may be:', ['On another line, no more prominent, at most half the character area of the common name', 'Larger than the common name if it is a registered trademark', 'On the same line as the common name', 'Anywhere, in any size'], 0, 'The common name is the prominent one.', 'Order No. 24, Articles 25 and 26'),
+    Q('q36-8', 36, 'There are no paediatric data. What does 【儿童用药】 say?', ['That no study was done and there is no reliable reference', 'Nothing: the item is left out', '"None"', '"Not applicable"'], 0, 'The item stays and explains the lack of data.', 'CDE general format (2022)'),
 ]
 
 DRILLS = [
@@ -153,11 +176,16 @@ DRILLS = [
      'about': 'The scope statement, the reference number, the dates, the frequencies, a heading and the posology.'},
     {'id': 'uk-fix', 'module': 'intl', 'title': 'United Kingdom: fix the SmPC, leaflet and carton', 'minutes': 12, 'sample': 'uk-ostrevia-errors', 'doc': 'smpc', 'goal': {'type': 'rules-multi', 'docs': ['smpc', 'pil', 'carton'], 'prefixes': ['UK-', 'INTL-']},
      'about': 'Turn texts copied from the EU into UK texts: the black triangle, Yellow Card reporting, the PL number and UK holder, the leaflet date, "UK Only", the legal category and the safety features.'},
+    {'id': 'cn-fix', 'module': 'intl', 'title': 'China: fix the package insert and outer label', 'minutes': 12, 'sample': 'cn-ostrevia-errors', 'doc': 'pi', 'goal': {'type': 'rules-multi', 'docs': ['pi', 'label'], 'prefixes': ['CN-', 'INTL-']},
+     'about': 'The dates, the reading line, the warning box, the four names, the paediatric item, the shelf life, the approval number, the domestic contact, a strength, the label expiry and the trade name size.'},
     {'id': 'intl-ild', 'module': 'intl', 'capstone': True, 'title': 'Capstone: one safety signal, four markets', 'minutes': 35, 'sample': 'intl-ostrevia-ild', 'doc': 'ca-pm', 'tab': 'changes', 'goal': {'type': 'rollout-intl'},
      'about': 'Add the interstitial lung disease warning to the Canadian monograph, the Swiss Fachinformation, the Japanese insert and the Australian PI and CMI in the right places, move each date on, approve all five, and classify and submit in the four markets within 60 days.'},
 ]
 
 GLOSSARY = [
+    {'term': '说明书 (package insert)', 'def': 'The Chinese package insert; for chemical drugs and therapeutic biologics it follows the CDE general format of 2022.'},
+    {'term': '国药准字', 'def': 'The prefix of a Chinese drug approval number, followed by a letter code (H, S, Z; HJ, SJ, ZJ for imported drugs) and eight digits.'},
+    {'term': '境内联系人', 'def': 'The domestic contact an overseas holder designates, named in the package insert of an imported drug.'},
     {'term': 'UK Only', 'def': 'Words every pack placed on the UK market must carry from 1 January 2025 under the Windsor Framework.'},
     {'term': 'Yellow Card Scheme', 'def': 'The UK system for reporting suspected adverse reactions to MHRA, named in SmPC 4.8 and leaflet section 4.'},
     {'term': 'Windsor Framework', 'def': 'The UK and EU arrangement under which MHRA has licensed medicines UK-wide since 1 January 2025.'},

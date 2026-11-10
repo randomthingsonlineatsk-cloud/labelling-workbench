@@ -96,6 +96,18 @@
      "name": "Halcyon Ridge Pharmaceuticals UK Ltd",
      "address": "10 Example Street, Sampletown, AB1 2CD, United Kingdom"
     }
+   },
+   "cn": {
+    "approvalNumber": "国药准字HJ20260101",
+    "imported": true,
+    "holder": {
+     "name": "Halcyon Ridge Pharmaceuticals, Inc.",
+     "address": "400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA"
+    },
+    "agent": {
+     "name": "Ostrevia (Shanghai) Regulatory Services Co., Ltd.",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China"
+    }
    }
   },
   {
@@ -168,6 +180,18 @@
      "name": "Ashvale Generics UK Ltd",
      "address": "11 Example Street, Sampletown, AB2 2CD, United Kingdom"
     }
+   },
+   "cn": {
+    "approvalNumber": "国药准字HJ20260102",
+    "imported": true,
+    "holder": {
+     "name": "Ashvale Generics Ltd.",
+     "address": "Plot 21, Fictional Pharma Park, Example Town, India"
+    },
+    "agent": {
+     "name": "Talmisartan Tablets (Shanghai) Regulatory Services Co., Ltd.",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China"
+    }
    }
   },
   {
@@ -235,6 +259,18 @@
      "name": "Calderon Therapeutics UK Ltd",
      "address": "12 Example Street, Sampletown, AB3 2CD, United Kingdom"
     }
+   },
+   "cn": {
+    "approvalNumber": "国药准字HJ20260103",
+    "imported": true,
+    "holder": {
+     "name": "Calderon Therapeutics Inc.",
+     "address": "77 Meridian Court, Fictionburg, MA 02000, USA"
+    },
+    "agent": {
+     "name": "Talvera XR (Shanghai) Regulatory Services Co., Ltd.",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China"
+    }
    }
   },
   {
@@ -294,6 +330,18 @@
     "holder": {
      "name": "Meridale Therapeutics UK Ltd",
      "address": "13 Example Street, Sampletown, AB4 2CD, United Kingdom"
+    }
+   },
+   "cn": {
+    "approvalNumber": "国药准字HJ20260104",
+    "imported": true,
+    "holder": {
+     "name": "Meridale Therapeutics Inc.",
+     "address": "77 Harbor View Road, Fictionville, MA 02000, USA"
+    },
+    "agent": {
+     "name": "Nelvaprox (Shanghai) Regulatory Services Co., Ltd.",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China"
     }
    }
   },
@@ -360,6 +408,18 @@
      "name": "Lumenfield Biologics UK Ltd",
      "address": "14 Example Street, Sampletown, AB5 2CD, United Kingdom"
     }
+   },
+   "cn": {
+    "approvalNumber": "国药准字SJ20260105",
+    "imported": true,
+    "holder": {
+     "name": "Lumenfield Biologics Inc.",
+     "address": "9 Brightwater Parkway, Fictionville, NC 27000, USA"
+    },
+    "agent": {
+     "name": "Arventa (Shanghai) Regulatory Services Co., Ltd.",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China"
+    }
    }
   },
   {
@@ -419,6 +479,18 @@
     "holder": {
      "name": "Brightmere Biosimilars UK Ltd",
      "address": "15 Example Street, Sampletown, AB6 2CD, United Kingdom"
+    }
+   },
+   "cn": {
+    "approvalNumber": "国药准字SJ20260106",
+    "imported": true,
+    "holder": {
+     "name": "Brightmere Biosimilars Ltd.",
+     "address": "3 Orchard Science Park, Exampletown, Ireland"
+    },
+    "agent": {
+     "name": "Selvanta (Shanghai) Regulatory Services Co., Ltd.",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China"
     }
    }
   },
@@ -485,6 +557,18 @@
     "holder": {
      "name": "Northvale Respiratory UK Ltd",
      "address": "16 Example Street, Sampletown, AB7 2CD, United Kingdom"
+    }
+   },
+   "cn": {
+    "approvalNumber": "国药准字HJ20260107",
+    "imported": true,
+    "holder": {
+     "name": "Northvale Respiratory Inc.",
+     "address": "12 Cedar Mill Lane, Fictionton, PA 19000, USA"
+    },
+    "agent": {
+     "name": "Brezovent (Shanghai) Regulatory Services Co., Ltd.",
+     "address": "Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China"
     }
    }
   },

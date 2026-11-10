@@ -11,7 +11,7 @@ import { go } from '../../ctx.js';
 
 export default function Export({ doc, docs, issues, product, project }) {
   const { pack, toast, user, addDoc } = useApp();
-  const eu = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small', 'in-pi', 'in-carton', 'in-label', 'ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton'].includes(doc.kind); // not US: no SPL, no US Module 1.14
+  const eu = ['smpc', 'eu-annex2', 'pl', 'eu-outer', 'eu-blister', 'eu-small', 'in-pi', 'in-carton', 'in-label', 'ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton', 'cn-pi', 'cn-label'].includes(doc.kind); // not US: no SPL, no US Module 1.14
   const [lang, setLang] = useState('fr');
   const startTranslation = async () => {
     const d = JSON.parse(JSON.stringify(doc));

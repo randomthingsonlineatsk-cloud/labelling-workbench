@@ -3,7 +3,7 @@ and Malvaren (arterolin and lumexantine) dispersible tablets, a fictional antima
 prequalified by WHO. Numbers, holders and dates are invented."""
 import copy
 from lib import P, UL, T, BOX, sec, sub
-from intl_core import (CA_PM_TITLE, CA_PMI_READ, CA_PMI_OD, CA_PMI_REPORT, CH_BT_FI, CH_BT_PI, CH_REPORT, CH_PI_HEADER, JP_RX, AU_BT_PI, AU_BT_CMI, AU_SUM_INTRO, AU_CMI_REPORT, AU_PIC, WHO_INTRO, UK_BT_SMPC, UK_BT_PIL, UK_YC_SMPC, UK_YC_PIL, UK_ONLY)
+from intl_core import (CA_PM_TITLE, CA_PMI_READ, CA_PMI_OD, CA_PMI_REPORT, CH_BT_FI, CH_BT_PI, CH_REPORT, CH_PI_HEADER, JP_RX, AU_BT_PI, AU_BT_CMI, AU_SUM_INTRO, AU_CMI_REPORT, AU_PIC, WHO_INTRO, UK_BT_SMPC, UK_BT_PIL, UK_YC_SMPC, UK_YC_PIL, UK_ONLY, CN_RX)
 
 # ---------------------------------------------------------------- shared Ostrevia facts
 IND = 'adults with moderate to severe chronic hand eczema that has not responded adequately to potent topical corticosteroids, or when these are not advisable'
@@ -572,6 +572,93 @@ K(E_UK_CARTON, 'UK-LEGAL', '14', 'Use the legal category POM.')
 E_UK_CARTON['sections'].append(sec('17', '2D BARCODE AND SERIAL NUMBER (OPTIONAL IN THE UK)', P('2D barcode carrying the unique identifier included (EU FMD).')))
 K(E_UK_CARTON, 'UK-FMD', '17', 'EU safety features no longer apply in the UK.')
 
+
+# ---------------------------------------------------------------- China
+CN_META = {'proprietaryName': 'Ostrevia (Lumiravostat Tablets)', 'establishedName': 'lumiravostat tablets', 'dosageForm': 'film-coated tablets', 'route': 'oral', 'strengths': ['10 mg', '25 mg'],
+           'manufacturer': 'Halcyon Ridge Pharmaceuticals, Inc.', 'imported': True, 'warnings': True, 'lang': 'en'}
+CN_HOLDER = 'Name: Halcyon Ridge Pharmaceuticals, Inc. Registered address: 400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA. Telephone: +1 555 0100. Website: www.halcyonridge.example'
+CN_MAKER = 'Name: Halcyon Ridge Pharmaceuticals, Inc. Production address: 18 Foundry Road, Fictionburg, PA 17000, USA. Telephone: +1 555 0101.'
+CN_AGENT = 'Name: Ostrevia (Shanghai) Regulatory Services Co., Ltd. Address: Room 101, 1 Example Road, Pudong New Area, Shanghai 200000, China. Postcode: 200000. Telephone: 021-5555 0100 (fictional).'
+CN_PI = {
+    'id': 'pi', 'kind': 'cn-pi', 'title': 'Package insert (English practice text)', 'status': 'approved', 'meta': dict(CN_META),
+    'fixed': {'dates': '核准日期：2025年03月18日\n修改日期：2026年08月20日', 'title': 'Ostrevia (Lumiravostat Tablets)说明书', 'rx': CN_RX},
+    'sections': [
+        sec('c0', '警示语', BOX('Warning: serious infections, malignancy and thrombosis\nSerious infections, including tuberculosis, some fatal, malignancies including lymphoma, and venous thromboembolism have been reported (see 【不良反应】 and 【注意事项】). Screen for tuberculosis before treatment.')),
+        sec('c1', '【药品名称】', P('Common name: Lumiravostat Tablets'), P('Trade name: Ostrevia'), P('English name: Lumiravostat Tablets'), P('Pinyin: Lumiruowasita Pian')),
+        sec('c2', '【成份】', P('The active ingredient is lumiravostat.'), P('Excipients: ' + EXC + '.')),
+        sec('c3', '【性状】', P(DESC10), P(DESC25)),
+        sec('c4', '【适应症】', P(f'For {IND}.')),
+        sec('c5', '【规格】', P('(1) 10 mg (2) 25 mg')),
+        sec('c6', '【用法用量】', P(DOSE), P(HEP), P(CYP)),
+        sec('c7', '【不良反应】', ar_table(), P(INF)),
+        sec('c8', '【禁忌】', UL('Hypersensitivity to lumiravostat or any excipient.', 'Active tuberculosis or an active serious infection.', 'Pregnancy.')),
+        sec('c9', '【注意事项】', P(INF), P(MAL), P(VTE), P(LAB)),
+        sec('c10', '【孕妇及哺乳期妇女用药】', P(PREG), P(LACT)),
+        sec('c11', '【儿童用药】', P('The safety and efficacy in children under 18 years have not been established; no clinical study was done in children and there is no reliable reference.')),
+        sec('c12', '【老年用药】', P('Infections occurred more often in patients aged 65 and over. Use with care while monitoring the patient.')),
+        sec('c13', '【药物相互作用】', P(INTER)),
+        sec('c15', '【药物过量】', P(OD)),
+        sec('c16', '【临床药理】', P(MOA), P(PD), P(PK)),
+        sec('c17', '【临床试验】', P(TRIAL)),
+        sec('c18', '【药理毒理】', P(TOX)),
+        sec('c19', '【贮藏】', P('Store below 30°C, in the original package to protect from moisture.')),
+        sec('c20', '【包装】', P('Aluminium/aluminium blister, 14 tablets per blister, 2 blisters per box.')),
+        sec('c21', '【有效期】', P('36个月 (36 months)')),
+        sec('c22', '【执行标准】', P('JX20250001 (imported drug registration standard, fictional)')),
+        sec('c23', '【批准文号】', P('10 mg: 国药准字HJ20260101; 25 mg: 国药准字HJ20260108')),
+        sec('c24', '【上市许可持有人】', P(CN_HOLDER)),
+        sec('c25', '【生产企业】', P(CN_MAKER)),
+        sec('c26', '【境内联系人】', P(CN_AGENT)),
+    ],
+}
+CN_LABEL = {
+    'id': 'label', 'kind': 'cn-label', 'title': 'Outer label, 10 mg (English practice text)', 'status': 'approved',
+    'meta': {**CN_META, 'strengths': ['10 mg'], 'sizes': {'common': 16, 'trade': 10}, 'sameLine': False, 'topThird': True}, 'fixed': {},
+    'sections': [
+        sec('l1', '通用名称', P('Lumiravostat Tablets (Ostrevia on a separate line)')),
+        sec('l2', '成份', P('Each tablet contains 10 mg lumiravostat.')),
+        sec('l3', '性状', P(DESC10)),
+        sec('l4', '适应症', P('See the package insert (详见说明书).')),
+        sec('l5', '规格', P('10 mg')),
+        sec('l6', '用法用量', P('See the package insert (详见说明书).')),
+        sec('l7', '不良反应', P('See the package insert (详见说明书).')),
+        sec('l8', '禁忌', P('See the package insert (详见说明书).')),
+        sec('l9', '注意事项', P('See the package insert (详见说明书).')),
+        sec('l10', '贮藏', P('Store below 30°C.')),
+        sec('l11', '生产日期', P('2026年06月')),
+        sec('l12', '产品批号', P('HR26061')),
+        sec('l13', '有效期', P('有效期至2029年05月')),
+        sec('l14', '批准文号', P('国药准字HJ20260101')),
+        sec('l15', '上市许可持有人', P('Halcyon Ridge Pharmaceuticals, Inc., 400 Larkspur Way, Suite 12, Fictionville, NJ 08000, USA')),
+        sec('l16', '生产企业', P('Halcyon Ridge Pharmaceuticals, Inc., 18 Foundry Road, Fictionburg, PA 17000, USA')),
+    ],
+}
+
+# China: 11
+E_CN_PI, E_CN_LABEL = drafts(CN_PI, CN_LABEL)
+E_CN_PI['fixed']['dates'] = '核准日期：2025年03月18日\n修改日期：2024年11月02日'
+K(E_CN_PI, 'CN-DATE', 'Approval and revision dates', 'The revision date is earlier than the approval date.')
+E_CN_PI['fixed']['rx'] = '请遵医嘱'
+K(E_CN_PI, 'CN-RX', 'Line under the title', 'Not the required line.')
+find(E_CN_PI, 'c0')['blocks'] = [P(find(CN_PI, 'c0')['blocks'][0]['text'])]
+K(E_CN_PI, 'CN-WARN', '警示语', 'Not set apart in a box.')
+find(E_CN_PI, 'c1')['blocks'] = [P('Common name: Lumiravostat Tablets'), P('Trade name: Ostrevia')]
+K(E_CN_PI, 'CN-NAME', '【药品名称】', 'No English name or pinyin.')
+find(E_CN_PI, 'c11')['blocks'] = [P('None.')]
+K(E_CN_PI, 'CN-REQ', '【儿童用药】', 'Says "None" instead of explaining that no study was done.')
+find(E_CN_PI, 'c21')['blocks'] = [P('3 years')]
+K(E_CN_PI, 'CN-SHELF', '【有效期】', 'Not in months.')
+find(E_CN_PI, 'c23')['blocks'] = [P('H20180001')]
+K(E_CN_PI, 'CN-APN', '【批准文号】', 'An old import registration number, not 国药准字HJ.')
+E_CN_PI['sections'] = [x for x in E_CN_PI['sections'] if x['num'] != 'c26']
+K(E_CN_PI, 'CN-MAH', '【境内联系人】', 'An imported drug without the domestic contact.')
+find(E_CN_PI, 'c5')['blocks'] = [P('(1) 10 mg (2) 20 mg')]
+K(E_CN_PI, 'INTL-STR', '【规格】', '20 mg is not a strength.')
+find(E_CN_LABEL, 'l13')['blocks'] = [P('EXP 05/2029')]
+K(E_CN_LABEL, 'CN-EXPLAB', '有效期', 'Month before year and no 有效期至.')
+E_CN_LABEL['meta']['sizes'] = {'common': 12, 'trade': 14}
+K(E_CN_LABEL, 'CN-GNAME', 'Type sizes', 'The trade name is larger than the common name.')
+
 SAMPLES = [
     {'id': 'ca-ostrevia-clean', 'region': 'ca', 'productId': 'nce-tablet', 'level': 'Start here', 'title': 'Ostrevia (Canada): clean product monograph and label', 'about': 'Part I and Part II of the product monograph to the master template, with the Serious Warnings and Precautions box and Recent Major Label Changes, the Patient Medication Information, and the bilingual outer label with Pr, DIN and the reporting contact.', 'docs': [CA_PM, CA_PMI, CA_LABEL]},
     {'id': 'ca-ostrevia-errors', 'region': 'ca', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (Canada): find and fix the errors', 'about': '17 planted errors: the title page, the box without cross-references, a stale label change, an old heading, the patient version\'s missing warnings box and standard statements, Rx instead of Pr, a short DIN, the proper name size, French, the reporting statement and more.', 'docs': [E_CA_PM, E_CA_PMI, E_CA_LABEL]},
@@ -585,6 +672,8 @@ SAMPLES = [
     {'id': 'who-malvaren-errors', 'region': 'who', 'productId': 'pq-antimalarial', 'level': 'Practice', 'title': 'Malvaren (WHO PQ): find and fix the errors', 'about': '6 planted errors: the scope statement, the reference number, the dates, the 4.8 frequencies, a heading and empty posology.', 'docs': [E_WHO]},
     {'id': 'uk-ostrevia-clean', 'region': 'uk', 'productId': 'nce-tablet', 'level': 'Start here', 'title': 'Ostrevia (United Kingdom): clean SmPC, leaflet and carton', 'about': 'A UK-wide marketing authorisation under the Windsor Framework: the black triangle, Yellow Card reporting, the PL number, the UK holder, "UK Only" on the carton and the legal category POM.', 'docs': [UK_SMPC, UK_PIL, UK_CARTON]},
     {'id': 'uk-ostrevia-errors', 'region': 'uk', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (United Kingdom): find and fix the errors', 'about': '11 planted errors left over from the EU texts and old packs: the black triangle, Appendix V instead of the Yellow Card Scheme, an EU number and holder, the leaflet date, the missing "UK Only", the legal category and an EU safety-features claim.', 'docs': [E_UK_SMPC, E_UK_PIL, E_UK_CARTON]},
+    {'id': 'cn-ostrevia-clean', 'region': 'cn', 'productId': 'nce-tablet', 'level': 'Start here', 'title': 'Ostrevia (China): clean package insert and outer label', 'about': 'An imported drug: the approval and revision dates, the title and reading line, the boxed warning statement, the 【】 items in order with the four names, the holder, manufacturer and domestic contact, and the outer label with the expiry date and name sizes.', 'docs': [CN_PI, CN_LABEL]},
+    {'id': 'cn-ostrevia-errors', 'region': 'cn', 'productId': 'nce-tablet', 'level': 'Practice', 'title': 'Ostrevia (China): find and fix the errors', 'about': '11 planted errors: a revision date before the approval, the reading line, an unboxed warning, missing names, "None" for children, the shelf life, an old approval number, no domestic contact, a strength, the label expiry date and the trade name size.', 'docs': [E_CN_PI, E_CN_LABEL]},
     {'id': 'intl-ostrevia-ild', 'region': 'intl', 'productId': 'nce-tablet', 'level': 'Capstone', 'title': 'Ostrevia: one safety signal, four markets',
      'about': 'A new interstitial lung disease warning reaches Canada, Switzerland, Japan and Australia at once. Put it in the right sections of each format, move the dates, approve, and track the four submissions within 60 days.',
      'docs': C_DOCS, 'change': {'trigger': 'signal', 'kind': 'warning', 'title': 'Interstitial lung disease (CCDS 4.1)', 'notice': SIGNAL, 'markets': ['ca', 'ch', 'jp', 'au'], 'deadlineDays': 60}},

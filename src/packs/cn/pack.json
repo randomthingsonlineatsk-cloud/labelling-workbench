@@ -1,0 +1,49 @@
+{
+ "id": "cn",
+ "name": "China (NMPA)",
+ "short": "CN",
+ "version": "1.0.0",
+ "asOf": "2026-11-10",
+ "changes": [
+  {
+   "version": "1.0.0",
+   "date": "2026-11-10",
+   "notes": "First release: the package insert (说明书) in the CDE format for chemical drugs and therapeutic biologics, with the holder, manufacturer and domestic contact items, and the outer label under SFDA Order No. 24 (common and trade name display, expiry date format)."
+  }
+ ],
+ "kinds": [
+  "cn-pi",
+  "cn-label"
+ ],
+ "about": "The package insert (说明书) of a chemical drug or therapeutic biological product in the general format CDE published in 2022, and the outer label under the Provisions for Drug Package Inserts and Labels (SFDA Order No. 24, 2006). Items are headed in 【】 brackets and keep a fixed order; the insert opens with the approval and revision dates, the title \"XXX说明书\" and the line asking the patient to read it and use the medicine under a physician's or pharmacist's guidance. Since the 2019 Drug Administration Law the insert names the marketing authorisation holder; for an imported drug, the 2026 Implementing Regulations require the details of the domestic company the overseas holder designates. The practice text is an English rendering under the Chinese headings; real inserts are in Chinese.",
+ "watch": [
+  {
+   "id": "cnepi",
+   "title": "Electronic and accessible package inserts",
+   "src": "impl",
+   "text": "Since 15 May 2026 holders must offer inserts in accessible formats (voice, large print, Braille, electronic); an electronic insert must match the approved text. The app checks the printed text only."
+  }
+ ],
+ "sources": [
+  {
+   "id": "ord24",
+   "title": "Provisions for Drug Package Inserts and Labels (SFDA Order No. 24, in force since 1 June 2006)",
+   "url": "https://www.fadada.com/article/Basics-004682"
+  },
+  {
+   "id": "cde22",
+   "title": "CDE: General format and writing guide for package inserts of chemical drugs and therapeutic biological products (2022)",
+   "url": "https://cnppa.org/Public/editor/attached/file/20220524/20220524082412_78057.pdf"
+  },
+  {
+   "id": "gf202",
+   "title": "SFDA: Detailed rules for package inserts of chemical drugs and biological products (Guoshiyaojianzhu [2006] No. 202)",
+   "url": "https://www.pharnexcloud.com/data/zcfg_0e98cdbd2ddc024ea777f41cb2426a12.html"
+  },
+  {
+   "id": "impl",
+   "title": "Regulations for the Implementation of the Drug Administration Law (State Council Order No. 828, in force since 15 May 2026), Articles 25 and 26",
+   "url": "https://www.mee.gov.cn/zcwj/gwywj/202601/t20260128_1142757.shtml"
+  }
+ ]
+}

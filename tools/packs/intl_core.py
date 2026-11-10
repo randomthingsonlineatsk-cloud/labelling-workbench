@@ -239,6 +239,72 @@ JP_HEADER = [
 ]
 JP_RX = 'Prescription drug (Caution: use only pursuant to the prescription of a physician, etc.)'
 
+# ---------------------------------------------------------------- China
+CN_CHANGES = [{'version': '1.0.0', 'date': '2026-11-10', 'notes': 'First release: the package insert (说明书) in the CDE format for chemical drugs and therapeutic biologics, with the holder, manufacturer and domestic contact items, and the outer label under SFDA Order No. 24 (common and trade name display, expiry date format).'}]
+CN = {
+    'id': 'cn', 'name': 'China (NMPA)', 'short': 'CN', 'version': '1.0.0', 'asOf': '2026-11-10', 'changes': CN_CHANGES,
+    'kinds': ['cn-pi', 'cn-label'],
+    'about': 'The package insert (说明书) of a chemical drug or therapeutic biological product in the general format CDE published in 2022, and the outer label under the Provisions for Drug Package Inserts and Labels (SFDA Order No. 24, 2006). Items are headed in 【】 brackets and keep a fixed order; the insert opens with the approval and revision dates, the title "XXX说明书" and the line asking the patient to read it and use the medicine under a physician\'s or pharmacist\'s guidance. Since the 2019 Drug Administration Law the insert names the marketing authorisation holder; for an imported drug, the 2026 Implementing Regulations require the details of the domestic company the overseas holder designates. The practice text is an English rendering under the Chinese headings; real inserts are in Chinese.',
+    'watch': [
+        {'id': 'cnepi', 'title': 'Electronic and accessible package inserts', 'src': 'impl', 'text': 'Since 15 May 2026 holders must offer inserts in accessible formats (voice, large print, Braille, electronic); an electronic insert must match the approved text. The app checks the printed text only.'},
+    ],
+    'sources': [
+        {'id': 'ord24', 'title': 'Provisions for Drug Package Inserts and Labels (SFDA Order No. 24, in force since 1 June 2006)', 'url': 'https://www.fadada.com/article/Basics-004682'},
+        {'id': 'cde22', 'title': 'CDE: General format and writing guide for package inserts of chemical drugs and therapeutic biological products (2022)', 'url': 'https://cnppa.org/Public/editor/attached/file/20220524/20220524082412_78057.pdf'},
+        {'id': 'gf202', 'title': 'SFDA: Detailed rules for package inserts of chemical drugs and biological products (Guoshiyaojianzhu [2006] No. 202)', 'url': 'https://www.pharnexcloud.com/data/zcfg_0e98cdbd2ddc024ea777f41cb2426a12.html'},
+        {'id': 'impl', 'title': 'Regulations for the Implementation of the Drug Administration Law (State Council Order No. 828, in force since 15 May 2026), Articles 25 and 26', 'url': 'https://www.mee.gov.cn/zcwj/gwywj/202601/t20260128_1142757.shtml'},
+    ],
+}
+
+CN_PI_SECTIONS = [
+    S('c0', '警示语', 'optional', gloss='Warning statement (boxed, in bold, under the title)'),
+    S('c1', '【药品名称】', gloss='Drug name: common name, trade name, English name, pinyin'),
+    S('c2', '【成份】', gloss='Composition'),
+    S('c3', '【性状】', gloss='Description'),
+    S('c4', '【适应症】', gloss='Indications'),
+    S('c5', '【规格】', gloss='Strength'),
+    S('c6', '【用法用量】', gloss='Dosage and administration'),
+    S('c7', '【不良反应】', gloss='Adverse reactions'),
+    S('c8', '【禁忌】', gloss='Contraindications'),
+    S('c9', '【注意事项】', gloss='Precautions'),
+    S('c10', '【孕妇及哺乳期妇女用药】', gloss='Use in pregnancy and breastfeeding'),
+    S('c11', '【儿童用药】', gloss='Paediatric use'),
+    S('c12', '【老年用药】', gloss='Geriatric use'),
+    S('c13', '【药物相互作用】', gloss='Drug interactions'),
+    S('c14', '【药物滥用和药物依赖】', 'optional', gloss='Drug abuse and dependence'),
+    S('c15', '【药物过量】', gloss='Overdose'),
+    S('c16', '【临床药理】', gloss='Clinical pharmacology'),
+    S('c17', '【临床试验】', gloss='Clinical studies'),
+    S('c18', '【药理毒理】', gloss='Pharmacology and toxicology'),
+    S('c19', '【贮藏】', gloss='Storage'),
+    S('c20', '【包装】', gloss='Packaging'),
+    S('c21', '【有效期】', gloss='Shelf life (in months)'),
+    S('c22', '【执行标准】', gloss='Standard applied'),
+    S('c23', '【批准文号】', gloss='Approval number'),
+    S('c24', '【上市许可持有人】', gloss='Marketing authorisation holder: name, registered address, postcode, telephone and fax, website'),
+    S('c25', '【生产企业】', gloss='Manufacturer: name, production address, postcode, telephone and fax, website'),
+    S('c26', '【境内联系人】', 'optional', gloss='Domestic contact designated by an overseas holder (imported drugs)'),
+]
+CN_LABEL_SECTIONS = [
+    S('l1', '通用名称', gloss='Common name'),
+    S('l2', '成份', gloss='Composition'),
+    S('l3', '性状', gloss='Description'),
+    S('l4', '适应症', gloss='Indications'),
+    S('l5', '规格', gloss='Strength'),
+    S('l6', '用法用量', gloss='Dosage and administration'),
+    S('l7', '不良反应', gloss='Adverse reactions (or "see the package insert")'),
+    S('l8', '禁忌', gloss='Contraindications (or "see the package insert")'),
+    S('l9', '注意事项', gloss='Precautions (or "see the package insert")'),
+    S('l10', '贮藏', gloss='Storage'),
+    S('l11', '生产日期', gloss='Date of manufacture'),
+    S('l12', '产品批号', gloss='Batch number'),
+    S('l13', '有效期', gloss='Expiry date'),
+    S('l14', '批准文号', gloss='Approval number'),
+    S('l15', '上市许可持有人', gloss='Marketing authorisation holder'),
+    S('l16', '生产企业', gloss='Manufacturer'),
+]
+CN_RX = '请仔细阅读说明书并在医师或药师指导下使用'
+
 # ---------------------------------------------------------------- Australia
 AU = {
     'id': 'au', 'name': 'Australia (TGA)', 'short': 'AU', 'version': '1.0.1', 'asOf': AS_OF, 'changes': CHANGES,
@@ -396,6 +462,8 @@ TEMPLATES = {
     'uk-smpc': {'kind': 'uk-smpc', 'label': 'SmPC (United Kingdom)', 'short': 'SmPC', 'src': 'hmr', 'numbered': True, 'sections': UK_SMPC_SECTIONS, 'fixed': {'blackTriangle': UK_BT_SMPC}},
     'uk-pil': {'kind': 'uk-pil', 'label': 'Patient information leaflet (United Kingdom)', 'short': 'PIL', 'src': 'hmr', 'sections': UK_PIL_SECTIONS, 'fixed': {'header': 'Package leaflet: Information for the patient', 'blackTriangle': UK_BT_PIL, 'lastRevised': 'This leaflet was last revised in {month}.'}},
     'uk-carton': {'kind': 'uk-carton', 'label': 'Outer carton (United Kingdom)', 'short': 'Carton', 'src': 'hmr', 'numbered': True, 'sections': UK_CARTON_SECTIONS, 'fixed': {'ukOnly': UK_ONLY}},
+    'cn-pi': {'kind': 'cn-pi', 'label': 'Package insert (China)', 'short': 'PI', 'src': 'cde22', 'sections': CN_PI_SECTIONS, 'fixed': {'dates': '核准日期：', 'title': '{name}说明书', 'rx': CN_RX}},
+    'cn-label': {'kind': 'cn-label', 'label': 'Outer label (China)', 'short': 'Label', 'src': 'ord24', 'sections': CN_LABEL_SECTIONS, 'fixed': {}},
     'who-smpc': {'kind': 'who-smpc', 'label': 'SmPC (WHO prequalification)', 'short': 'SmPC', 'src': 'whoex', 'numbered': True, 'sections': WHO_SECTIONS, 'fixed': {'intro': WHO_INTRO}},
 }
 
@@ -409,7 +477,7 @@ FR_MARKERS = {
     'l14': {'label': 'contact and reporting statement', 're': 'signal|déclar'},
 }
 
-ALL = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton']
+ALL = ['ca-pm', 'ca-pmi', 'ca-label', 'ch-fi', 'ch-pi', 'jp-pi', 'au-pi', 'au-cmi', 'who-smpc', 'uk-smpc', 'uk-pil', 'uk-carton', 'cn-pi', 'cn-label']
 RULES = [
     # Canada
     R('CA-HEAD', 'Product monograph headings, in order', 'The product monograph uses the numbered headings of the master template in order: 1 Indications to 12 Special Handling Instructions in Part I, 13 Pharmaceutical Information to 17 Supporting Product Monographs in Part II. The Patient Medication Information uses the plain-language headings of the template.', ['ca-pm', 'ca-pmi'], 'error', 'pmtpl', 'Product monograph master template',
@@ -466,14 +534,26 @@ RULES = [
     R('UK-ONLY', '"UK Only" on the pack', 'Every pack placed on the UK market from 1 January 2025 shows the words "UK Only" conspicuously on the outer packaging, legible, indelible and not hidden by other text, in a font of at least 7 point. Stickers were allowed only until 30 June 2025.', ['uk-carton'], 'error', 'ukwfx', 'MHRA Windsor Framework explainer', 'Traditional herbal and homeopathic registrations, and packs made only for export, are exempt; the app assumes a licensed medicine for the UK.'),
     R('UK-FMD', 'No EU safety features', 'The EU Falsified Medicines Directive safety features no longer apply anywhere in the UK. A 2D barcode and serial number are optional, but must not be recognisable by the European repository system. Anti-tamper devices are encouraged, not required.', ['uk-carton'], 'warning', 'ukwfx', 'MHRA Windsor Framework explainer'),
     R('UK-LEGAL', 'Legal category', 'The carton gives the legal category: POM (prescription only medicine), P (pharmacy) or GSL (general sale list).', ['uk-carton'], 'error', 'hmr', 'Schedule 24'),
+    # China
+    R('CN-HEAD', 'Insert items and label particulars, in order', 'The package insert uses the items of the CDE general format, headed in 【】 brackets and in the fixed order from 【药品名称】 to 【生产企业】 and 【境内联系人】; the outer label gives the particulars of Article 18 of Order No. 24.', ['cn-pi', 'cn-label'], 'error', 'cde22', 'CDE general format (2022); Order No. 24, Article 18'),
+    R('CN-REQ', 'Required content is filled', 'Each required item has content. Pregnancy, children, elderly, interactions and overdose are not left out when there are no data: the item says that no study was done and there is no reliable reference. On the outer label, adverse reactions, contraindications and precautions may say "详见说明书" (see the package insert) when they do not fit.', ['cn-pi', 'cn-label'], 'error', 'cde22', 'CDE general format (2022); Order No. 24, Article 18'),
+    R('CN-DATE', 'Approval and revision dates', 'The top left of the first page gives the approval date (核准日期), the date NMPA approved the registration, with each revision date (修改日期) below it in order, none earlier than the approval.', ['cn-pi'], 'error', 'cde22', 'CDE general format; Order No. 24, Article 15', 'The app reads dates written as YYYY年MM月DD日.'),
+    R('CN-RX', 'Title and reading line', 'The title is the drug name followed by 说明书, and under it the line "请仔细阅读说明书并在医师或药师指导下使用" (read the insert carefully and use the medicine under the guidance of a physician or pharmacist).', ['cn-pi'], 'error', 'cde22', 'CDE general format, title'),
+    R('CN-WARN', 'Warning statement', 'When the drug has serious adverse reactions or serious safety issues, a warning statement (警示语) sits under the title in bold, set apart; otherwise the item is left out.', ['cn-pi'], 'error', 'cde22', 'CDE general format, 警示语', 'The app checks that the warning is in a boxed block.'),
+    R('CN-NAME', 'Drug name item', '【药品名称】 gives the common name (通用名称), the trade name if there is one (商品名称), the English name (英文名称) and the pinyin (汉语拼音).', ['cn-pi'], 'error', 'gf202', 'Detailed rules (2006), 【药品名称】', 'The practice text labels the four names in English; the app looks for each label.'),
+    R('CN-SHELF', 'Shelf life in months', '【有效期】 gives the shelf life in months (for example 36个月, 36 months).', ['cn-pi'], 'error', 'gf202', 'Detailed rules (2006), 【有效期】'),
+    R('CN-APN', 'Approval number', '【批准文号】 and the label give the drug approval number: 国药准字 followed by a letter code (H chemical, S biological, Z traditional Chinese medicine; HJ, SJ or ZJ for an imported drug) and eight digits.', ['cn-pi', 'cn-label'], 'error', 'gf202', 'Detailed rules (2006), 【批准文号】', 'Older imported drugs carry an import registration number (进口药品注册证号, H or S plus eight digits); the app expects the current form.'),
+    R('CN-MAH', 'Holder, manufacturer and domestic contact', '【上市许可持有人】 and 【生产企业】 give the name and address as on the production licence. For a drug made outside China, 【境内联系人】 gives the domestic company the overseas holder designates (Implementing Regulations, Article 25).', ['cn-pi'], 'error', 'impl', 'Implementing Regulations (2026), Article 25; CDE general format'),
+    R('CN-EXPLAB', 'Expiry date on the label', 'The label gives the expiry date in year, month (and day) order, the year in four digits and the month and day in two: 有效期至2028年04月, 有效期至2028.04. or 有效期至2028/04/30.', ['cn-label'], 'error', 'ord24', 'Order No. 24, Article 23'),
+    R('CN-GNAME', 'Common name prominent; trade name not more prominent', 'The common name is prominent, in one font, size and colour, in the top third of a horizontal label; the trade name is not on the same line and not more prominent, its character area at most half that of the common name.', ['cn-label'], 'error', 'ord24', 'Order No. 24, Articles 25 and 26', 'The app compares type sizes: a trade name larger than about 0.7 times the common name (half the character area) fails.'),
     # Shared
     R('INTL-STR', 'Strengths agree', 'The strengths in the composition and dosage form sections agree with the product.', ALL, 'warning', 'pmtpl', 'Every template (composition and pharmaceutical form)'),
     R('INTL-PROMO', 'No promotional wording', 'Product information states facts. Words such as "best", "safest" or "superior" do not belong in it.', ALL, 'warning', 'pmguide', 'Every template; product information is not advertising'),
 ]
 
-REGIONS = {'ca': CA, 'ch': CH, 'jp': JP, 'au': AU, 'who': WHO, 'uk': UK}
+REGIONS = {'ca': CA, 'ch': CH, 'jp': JP, 'au': AU, 'who': WHO, 'uk': UK, 'cn': CN}
 VOCAB = {
     'jpHeader': JP_HEADER, 'jpRx': JP_RX, 'chBtCore': CH_BT_CORE, 'chReport': CH_REPORT, 'caPmiOd': CA_PMI_OD, 'caPmiReport': CA_PMI_REPORT, 'auCmiReport': AU_CMI_REPORT, 'auCmiSe': AU_CMI_SE, 'auPic': AU_PIC,
-    'ukYcSmpc': UK_YC_SMPC, 'ukYcPil': UK_YC_PIL,
+    'ukYcSmpc': UK_YC_SMPC, 'ukYcPil': UK_YC_PIL, 'cnRx': CN_RX,
     'frMarkers': FR_MARKERS, 'promo': PROMO, 'nonstandardFrequencies': NONSTANDARD_FREQ, 'frequencies': ['very common', 'common', 'uncommon', 'rare', 'very rare', 'not known'],
 }

@@ -29,6 +29,11 @@
    "id": 35,
    "label": "35. United Kingdom: product information after the Windsor Framework",
    "module": "intl"
+  },
+  {
+   "id": 36,
+   "label": "36. China: the package insert and the outer label",
+   "module": "intl"
   }
  ],
  "questions": [
@@ -751,6 +756,126 @@
    "answer": 1,
    "why": "The requirement covers licensed medicines of every legal category.",
    "cite": "MHRA Windsor Framework explainer"
+  },
+  {
+   "id": "q36-1",
+   "topic": 36,
+   "module": "intl",
+   "q": "What line goes under the title of a Chinese package insert?",
+   "options": [
+    "请仔细阅读说明书并在医师或药师指导下使用",
+    "处方药",
+    "请遵医嘱",
+    "仅供医疗专业人士使用"
+   ],
+   "answer": 0,
+   "why": "Read the insert carefully and use it under a physician's or pharmacist's guidance.",
+   "cite": "CDE general format (2022)"
+  },
+  {
+   "id": "q36-2",
+   "topic": 36,
+   "module": "intl",
+   "q": "Where do the approval and revision dates go?",
+   "options": [
+    "At the end, under the manufacturer",
+    "In 【有效期】",
+    "On the label only",
+    "Top left of the first page, revisions below the approval date"
+   ],
+   "answer": 3,
+   "why": "Revision dates are listed in time order below the approval date.",
+   "cite": "CDE general format (2022)"
+  },
+  {
+   "id": "q36-3",
+   "topic": 36,
+   "module": "intl",
+   "q": "How is the shelf life given in 【有效期】?",
+   "options": [
+    "As an expiry date",
+    "In days",
+    "In months",
+    "In years"
+   ],
+   "answer": 2,
+   "why": "For example 36个月.",
+   "cite": "Detailed rules (2006)"
+  },
+  {
+   "id": "q36-4",
+   "topic": 36,
+   "module": "intl",
+   "q": "An imported drug: which item names the company in China the overseas holder designates?",
+   "options": [
+    "【执行标准】",
+    "【境内联系人】",
+    "【生产企业】",
+    "【包装】"
+   ],
+   "answer": 1,
+   "why": "The 2026 Implementing Regulations, Article 25, require it.",
+   "cite": "Implementing Regulations (2026), Article 25"
+  },
+  {
+   "id": "q36-5",
+   "topic": 36,
+   "module": "intl",
+   "q": "Which approval number fits an imported chemical drug?",
+   "options": [
+    "国药准字HJ20260101",
+    "国药准字H20260101",
+    "H20180001",
+    "PL 99101/0001"
+   ],
+   "answer": 0,
+   "why": "HJ, SJ or ZJ for imported drugs, then eight digits.",
+   "cite": "Detailed rules (2006), 【批准文号】"
+  },
+  {
+   "id": "q36-6",
+   "topic": 36,
+   "module": "intl",
+   "q": "Which expiry date on a Chinese label is in a permitted form?",
+   "options": [
+    "EXP 05/2029",
+    "05.2029",
+    "有效期至05/2029",
+    "有效期至2029年05月"
+   ],
+   "answer": 3,
+   "why": "Year first in four digits, then month (and day) in two.",
+   "cite": "Order No. 24, Article 23"
+  },
+  {
+   "id": "q36-7",
+   "topic": 36,
+   "module": "intl",
+   "q": "On a Chinese label, the trade name may be:",
+   "options": [
+    "On the same line as the common name",
+    "Anywhere, in any size",
+    "On another line, no more prominent, at most half the character area of the common name",
+    "Larger than the common name if it is a registered trademark"
+   ],
+   "answer": 2,
+   "why": "The common name is the prominent one.",
+   "cite": "Order No. 24, Articles 25 and 26"
+  },
+  {
+   "id": "q36-8",
+   "topic": 36,
+   "module": "intl",
+   "q": "There are no paediatric data. What does 【儿童用药】 say?",
+   "options": [
+    "\"Not applicable\"",
+    "That no study was done and there is no reliable reference",
+    "Nothing: the item is left out",
+    "\"None\""
+   ],
+   "answer": 1,
+   "why": "The item stays and explains the lack of data.",
+   "cite": "CDE general format (2022)"
   }
  ]
 }

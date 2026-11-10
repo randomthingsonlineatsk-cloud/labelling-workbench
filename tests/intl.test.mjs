@@ -23,18 +23,19 @@ let n = 0;
 const tests = [];
 const t = (name, fn) => tests.push([name, fn]);
 
-const REGIONS = ['ca', 'ch', 'jp', 'au', 'who', 'uk'];
-const CLEAN = { ca: 'ca-ostrevia-clean', ch: 'ch-ostrevia-clean', jp: 'jp-ostrevia-clean', au: 'au-ostrevia-clean', who: 'who-malvaren-clean', uk: 'uk-ostrevia-clean' };
-const ERRORS = { ca: 'ca-ostrevia-errors', ch: 'ch-ostrevia-errors', jp: 'jp-ostrevia-errors', au: 'au-ostrevia-errors', who: 'who-malvaren-errors', uk: 'uk-ostrevia-errors' };
+const REGIONS = ['ca', 'ch', 'jp', 'au', 'who', 'uk', 'cn'];
+const CLEAN = { ca: 'ca-ostrevia-clean', ch: 'ch-ostrevia-clean', jp: 'jp-ostrevia-clean', au: 'au-ostrevia-clean', who: 'who-malvaren-clean', uk: 'uk-ostrevia-clean', cn: 'cn-ostrevia-clean' };
+const ERRORS = { ca: 'ca-ostrevia-errors', ch: 'ch-ostrevia-errors', jp: 'jp-ostrevia-errors', au: 'au-ostrevia-errors', who: 'who-malvaren-errors', uk: 'uk-ostrevia-errors', cn: 'cn-ostrevia-errors' };
 
-t('six regions merged: kinds, rules with sources, samples, six lessons, 48 questions', () => {
+t('seven regions merged: kinds, rules with sources, samples, seven lessons, 56 questions', () => {
   for (const r of REGIONS) { assert.ok(pack.regions[r], r); assert.ok(kindsFor(pack, r).length >= 1, r); }
   assert.deepEqual(kindsFor(pack, 'au'), ['au-pi', 'au-cmi']);
   assert.deepEqual(kindsFor(pack, 'ca'), ['ca-pm', 'ca-pmi', 'ca-label']);
   assert.equal(regionOfKind('who-smpc'), 'who');
   for (const r of pack.rules) assert.ok(pack.sources.some((s) => s.id === r.src), r.id);
-  assert.equal(pack.lessons.lessons.filter((l) => l.module === 'intl').length, 6);
-  assert.equal(pack.quiz.questions.filter((q) => q.module === 'intl').length, 48);
+  assert.equal(pack.lessons.lessons.filter((l) => l.module === 'intl').length, 7);
+  assert.equal(pack.quiz.questions.filter((q) => q.module === 'intl').length, 56);
+  assert.deepEqual(kindsFor(pack, 'cn'), ['cn-pi', 'cn-label']);
   assert.deepEqual(kindsFor(pack, 'uk'), ['uk-smpc', 'uk-pil', 'uk-carton']);
   assert.ok(pack.core.markets.find((m) => m.id === 'uk')?.pack);
   assert.equal(new Set(pack.lessons.lessons.map((l) => l.id)).size, pack.lessons.lessons.length);
@@ -65,6 +66,28 @@ for (const r of REGIONS) {
     }
   });
 }
+
+t('China: dates, approval number, domestic contact, label expiry and name sizes', () => {
+  const o = open('cn-ostrevia-clean');
+  const pi = o.docs.find((d) => d.kind === 'cn-pi');
+  pi.fixed.dates = '核准日期：2025年03月18日\n修改日期：2026年08月20日\n修改日期：2026年02月01日';
+  assert.ok(issues(pi, o).some((i) => i.ruleId === 'CN-DATE' && /not in order/.test(i.msg)));
+  pi.fixed.dates = '核准日期：2025年03月18日';
+  put(pi, 'c23', '国药准字H20260101');
+  assert.ok(issues(pi, o).some((i) => i.ruleId === 'CN-APN' && /domestic letter code/.test(i.msg)));
+  pi.meta.imported = false;
+  assert.ok(!ids(issues(pi, o)).has('CN-APN'));
+  const label = o.docs.find((d) => d.kind === 'cn-label');
+  for (const ok of ['有效期至2029年05月', '有效期至2029.05.', '有效期至2029/05/31', '有效期至2029年05月31日']) { put(label, 'l13', ok); assert.ok(!ids(issues(label, o)).has('CN-EXPLAB'), ok); }
+  put(label, 'l13', '有效期至05/2029');
+  assert.ok(ids(issues(label, o)).has('CN-EXPLAB'));
+  label.meta.sizes = { common: 16, trade: 11.3 };
+  assert.ok(!ids(issues(label, o)).has('CN-GNAME'), 'half the character area is allowed');
+  label.meta.sizes = { common: 16, trade: 12 };
+  assert.ok(ids(issues(label, o)).has('CN-GNAME'));
+  findSection(pi, 'c3').title = '性状';
+  assert.ok(issues(pi, o).some((i) => i.ruleId === 'CN-HEAD' && /【性状】/.test(i.msg)), 'headings keep their brackets');
+});
 
 t('Canada: proper name half the brand size; DIN must match the product; Pr only on prescription drugs', () => {
   const o = open('ca-ostrevia-clean');
@@ -158,11 +181,11 @@ t('fix drills reach 100 when the clean text is restored', () => {
   assert.equal(evaluateDrill(drill('au-fix'), ctx).score, 100);
 });
 
-t('more-markets certificate: six lessons, a module quiz round and the capstone', () => {
+t('more-markets certificate: seven lessons, a module quiz round and the capstone', () => {
   const lessonsDone = Object.fromEntries(pack.lessons.lessons.map((l) => [`us-${l.id}`, { best: 100 }]));
   const st = certificateStatus({ region: 'intl', lessons: pack.lessons, drills: pack.drills, attempts: [{ kind: 'quiz', topic: 'intl', score: 90, total: 10 }, { kind: 'drill', drillId: 'intl-ild', score: 100 }], lessonsDone });
-  assert.equal(st.lessons.length, 6);
-  assert.equal(st.drills.length, 7);
+  assert.equal(st.lessons.length, 7);
+  assert.equal(st.drills.length, 8);
   assert.equal(st.eligible, true);
 });
 
