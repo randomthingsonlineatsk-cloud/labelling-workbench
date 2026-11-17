@@ -7,6 +7,7 @@ import { displayCode } from '../../engine/text.js';
 import { currentVersion } from '../../engine/ccds.js';
 import { uid, now } from '../../engine/model.js';
 import { epiHtml } from '../../engine/epi.js';
+import { leafletFile, LEAFLET_KINDS } from '../../engine/leaflet.js';
 import { go } from '../../ctx.js';
 
 export default function Export({ doc, docs, issues, product, project }) {
@@ -45,6 +46,7 @@ export default function Export({ doc, docs, issues, product, project }) {
       <h3>For the other apps</h3>
       <div className="cat-grid" style={{ marginBottom: '1.25rem' }}>
         {PKG_REGIONS[project.region ?? 'us'] && <div className="card"><h3>Module 1 labelling package</h3><p className="small">Every label in this project, placed for {PKG_NODE[project.region ?? 'us']} (this label goes to {displayCode(m1Section(doc))}). In the <a href="https://randomthingsonlineatsk-cloud.github.io/ectd-dossier-builder/" target="_blank" rel="noreferrer">eCTD Dossier Builder</a>, open a {PKG_REGIONS[project.region ?? 'us']} project for {product?.brandName} and use "Import labelling package" on the Sequences tab.</p><button className="btn small primary" onClick={() => download(`${slug(product?.brandName)}-labelling-package.json`, JSON.stringify(labellingPackage({ project, docs, product, pack, user }), null, 1))}>Download package</button></div>}
+        {LEAFLET_KINDS.includes(doc.kind) && <div className="card"><h3>Leaflet for the Plain Language Lab</h3><p className="small">The headings and text of this {doc.kind === 'pl' ? 'package leaflet' : 'Medication Guide'}, for readability work, risk numbers and a simulated user test in the <a href="https://randomthingsonlineatsk-cloud.github.io/plain-language-lab/" target="_blank" rel="noreferrer">Plain Language Lab</a>. The structure stays here.</p><button className="btn small" onClick={() => download(`${name}.leaflet.json`, JSON.stringify(leafletFile(doc), null, 2))}>Download</button></div>}
         {currentVersion(project?.ccds) && <div className="card"><h3>CCSI for pharmacovigilance</h3><p className="small">The core safety statements of CCDS {currentVersion(project.ccds).v}, the reference for whether a reaction is listed.</p><button className="btn small" onClick={() => download(`${slug(product?.brandName)}-ccsi.json`, JSON.stringify(ccsiFile({ project, product, user }), null, 1))}>Download CCSI file</button></div>}
       </div>
       <p className="small muted">The whole project (all labels, versions, reviews, the core data sheet, change requests and the audit trail) downloads from the button at the top of the page.</p>
